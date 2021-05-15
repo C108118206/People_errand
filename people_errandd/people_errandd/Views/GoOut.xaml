@@ -12,10 +12,11 @@
         <ResourceDictionary>
             <Style x:Key="title" TargetType="StackLayout">
                 <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="Margin" Value="0,10,0,0" />
                 <Setter Property="BackgroundColor" Value="#D9E1E8" />
             </Style>
             <Style x:Key="title*" TargetType="Label">
-                <Setter Property="TextColor" Value="Crimson" />
+                <Setter Property="TextColor" Value="#CA2D2D" />
                 <Setter Property="FontSize" Value="25" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="Margin" Value="15,10,0,0" />
@@ -64,7 +65,7 @@
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="WidthRequest" Value="120"/>
-                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="CornerRadius" Value="8"/>
                 <Setter Property="Margin" Value="20"/>
                 <Setter Property="Text" Value="提出申請"/>
             </Style>

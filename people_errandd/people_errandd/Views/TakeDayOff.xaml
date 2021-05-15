@@ -13,7 +13,7 @@
         <ResourceDictionary>
             <Style x:Key="frame" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="#CADBE9" />
-                <Setter Property="CornerRadius" Value="50" />
+                <Setter Property="CornerRadius" Value="30" />
                 <Setter Property="HeightRequest" Value="300" />
                 <Setter Property="WidthRequest" Value="1000" />
                 <Setter Property="Margin" Value="0,-40,0,10" />
@@ -48,7 +48,7 @@
                 <Setter Property="FontSize" Value="18"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="WidthRequest" Value="120"/>
-                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="CornerRadius" Value="8"/>
                 <Setter Property="Margin" Value="20"/>
                 <Setter Property="Text" Value="提出申請"/>
             </Style>
