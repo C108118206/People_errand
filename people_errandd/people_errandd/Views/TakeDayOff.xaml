@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="people_errandd.Views.TakeDayOff"
+             BackgroundColor="White">
+    <NavigationPage.TitleView>
+        <Label Text="請假申請" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="18" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
+    </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem ></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="frame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#CADBE9" />
+                <Setter Property="CornerRadius" Value="50" />
+                <Setter Property="HeightRequest" Value="300" />
+                <Setter Property="WidthRequest" Value="1000" />
+                <Setter Property="Margin" Value="0,-40,0,10" />
+            </Style>
+           
+            <Style x:Key="date" TargetType="DatePicker">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="WidthRequest" Value="180" />
+                <Setter Property="FontSize" Value="17" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Format" Value="yyyy-MM-dd (dddd)" />
+            </Style>
+            <Style x:Key="title*" TargetType="Label">
+                <Setter Property="TextColor" Value="Crimson" />
+                <Setter Property="FontSize" Value="25" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="30,10,0,0" />
+                <Setter Property="Text" Value="*" />
+            </Style>
+            <Style x:Key="titletext" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="Margin" Value="0,12,0,0" />
+            </Style>
+            <Style x:Key="button" TargetType="Button">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BackgroundColor" Value="#7F9EB2"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="WidthRequest" Value="120"/>
+                <Setter Property="CornerRadius" Value="20"/>
+                <Setter Property="Margin" Value="20"/>
+                <Setter Property="Text" Value="提出申請"/>
+            </Style>
+          
+            <Style x:Key="entry" TargetType="Entry">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="PlaceholderColor" Value="Black"/>
+                <Setter Property="WidthRequest" Value="300"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                <Setter Property="Placeholder" Value="原因"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <ScrollView>
+           
+                <StackLayout>
+                    <Frame  Style="{StaticResource frame}">
+                        <StackLayout >
+                        <Label/>
+                        <Image  Source="nerd" HorizontalOptions="Center" Margin="15"></Image>
+                        <Label Text="選擇 : " FontSize="17" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                                <DatePicker x:Name="startDatePicker" Style="{StaticResource date}"/>
+                  
+                            <Label  Text="到" FontSize="18" TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold"></Label>
+                            <DatePicker x:Name="endDatePicker"
+                            
+                            Style="{StaticResource date}"
+                            MinimumDate="{Binding Source={x:Reference startDatePicker},Path=Date}"/>
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout  Orientation="Horizontal">
+                        <Label Style="{StaticResource title*}"></Label>
+                        <Label Text="假別 :" Style="{StaticResource titletext}"></Label>
+                    </StackLayout>
+
+                <Picker  TitleColor="Black" WidthRequest="300" HorizontalOptions="Center" FontAttributes="Bold" FontSize="16">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>事假</x:String>
+                            <x:String>病假</x:String>
+                            <x:String>公假</x:String>
+                            <x:String>喪假</x:String>
+                            <x:String>產假</x:String>
+                            <x:String>生理假</x:String>
+                            <x:String>流產假</x:String>
+                            <x:String>產前假</x:String>
+                            <x:String>陪產假</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <StackLayout Orientation="Horizontal">
+                        <Label Style="{StaticResource title*}"></Label>
+                        <Label Text="請假原因 :" Style="{StaticResource titletext}"></Label>
+                    </StackLayout>
+                    <Entry  Style="{StaticResource entry}"></Entry>
+                    <Button Style="{StaticResource button}"></Button>
+                </StackLayout>
+
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="people_errandd.Views.ClassSchedule"
+             xmlns:viewmodels="clr-namespace:people_errandd.ViewModels"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom">
+    <NavigationPage.TitleView>
+        <Label Text="查看班表" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="18" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
+    </NavigationPage.TitleView>
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem ></ToolbarItem>
+    </TabbedPage.ToolbarItems>
+   
+
+    <TabbedPage.BarBackgroundColor>
+        <Color x:Uid="colorPrimary">#71AED7</Color>
+    </TabbedPage.BarBackgroundColor>
+
+    <TabbedPage.BarTextColor>
+        <Color x:Uid="colorPrimary">#ffffff</Color>
+    </TabbedPage.BarTextColor>
+
+    <TabbedPage.SelectedTabColor>
+        <Color x:Uid="colorPrimary">#ffffff</Color>
+    </TabbedPage.SelectedTabColor>
+
+    <!--Pages can be added as references or inline-->
+    <ContentPage Title="日" BackgroundColor="White" IconImageSource="sun">
+        <ContentPage.BindingContext>
+            <viewmodels:ItemPreviewViewModel  />
+        </ContentPage.BindingContext>
+        <ContentPage.Resources>
+            <ResourceDictionary>
+                <Style TargetType="Grid">
+                    <Setter Property="VisualStateManager.VisualStateGroups">
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="White" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </Setter>
+                </Style>
+
+
+                <Style x:Key="datebutton" TargetType="Button">
+                    <Setter Property="Margin" Value="1,5,10,5" />
+                    <Setter Property="HeightRequest" Value="60" />
+                    <Setter Property="WidthRequest" Value="60" />
+                    <Setter Property="CornerRadius" Value="30" />
+                    <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                    <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                </Style>
+                <Style x:Key="datelabel" TargetType="Label">
+                    <Setter Property="FontFamily" Value="13" />
+                    <Setter Property="FontAttributes" Value="Bold" />
+                    <Setter Property="HorizontalOptions" Value="Center" />
+                    <Setter Property="TextColor" Value="Black" />
+                </Style>
+            </ResourceDictionary>
+        </ContentPage.Resources>
+
+        <ContentPage.Content>
+            <StackLayout>
+
+                <!--直線開始-->
+                <StackLayout>
+                    <CollectionView Margin="70,65,0,0" ItemsSource="{Binding delList}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout
+                                Margin="20"
+                                Orientation="Horizontal"
+                                Spacing="0">
+                                    <StackLayout>
+
+                                        <Label
+                                        FontAttributes="Bold"
+                                        FontSize="16"
+                                        Text="{Binding tim}"
+                                        TextColor="Black">
+
+                                        </Label>
+                                    </StackLayout>
+
+                                    <StackLayout Margin="30,0,20,0">
+                                        <Frame
+                                        Margin="0"
+                                        Padding="0"
+                                        BackgroundColor="White"
+                                        CornerRadius="16"
+                                        HeightRequest="30"
+                                        WidthRequest="30">
+                                            <Frame
+                                            Margin="7"
+                                            Padding="0"
+                                            BackgroundColor="{Binding colorFrame}"
+                                            CornerRadius="8"
+                                            HeightRequest="16"
+                                            HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="CenterAndExpand"
+                                            WidthRequest="16" />
+                                        </Frame>
+                                        <BoxView
+                                        x:Name="line1"
+                                        Margin="0,-5,0,0"
+                                        BackgroundColor="{Binding colorLine}"
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="FillAndExpand"
+                                        WidthRequest="2" />
+                                    </StackLayout>
+
+                                    <StackLayout Margin="20,0,20,0">
+                                        <Label
+                                        FontAttributes="Bold"
+                                        FontSize="15"
+                                        TextDecorations="Underline"
+                                        Text="{Binding Name}"
+                                        TextColor="Black">
+                                        </Label>
+                                        <Label
+                                        FontAttributes="Bold"
+                                        FontSize="14"
+                                        Text="{Binding Location}"
+                                        TextColor="#353866">
+                                        </Label>
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="一" IconImageSource="mon">
+        <ContentPage.BindingContext>
+            <viewmodels:ItemPreviewViewModel  />
+        </ContentPage.BindingContext>
+        <ContentPage.Resources>
+            <ResourceDictionary>
+                <Style TargetType="Grid">
+                    <Setter Property="VisualStateManager.VisualStateGroups">
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="White" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </Setter>
+                </Style>
+
+
+                <Style x:Key="datebutton" TargetType="Button">
+                    <Setter Property="Margin" Value="1,5,10,5" />
+                    <Setter Property="HeightRequest" Value="60" />
+                    <Setter Property="WidthRequest" Value="60" />
+                    <Setter Property="CornerRadius" Value="30" />
+                    <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                    <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                </Style>
+                <Style x:Key="datelabel" TargetType="Label">
+                    <Setter Property="FontFamily" Value="13" />
+                    <Setter Property="FontAttributes" Value="Bold" />
+                    <Setter Property="HorizontalOptions" Value="Center" />
+                    <Setter Property="TextColor" Value="Black" />
+                </Style>
+            </ResourceDictionary>
+        </ContentPage.Resources>
+
+        <ContentPage.Content>
+            <StackLayout>
+
+                <!--直線開始-->
+                <StackLayout>
+                    <CollectionView Margin="70,65,0,0" ItemsSource="{Binding delList}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout
+                                Margin="20"
+                                Orientation="Horizontal"
+                                Spacing="0">
+                                    <StackLayout>
+
+                                        <Label
+                                        FontAttributes="Bold"
+                                        FontSize="16"
+                                        Text="{Binding tim}"
+                                        TextColor="Black">
+
+                                        </Label>
+                                    </StackLayout>
+
+                                    <StackLayout Margin="30,0,20,0">
+                                        <Frame
+                                        Margin="0"
+                                        Padding="0"
+                                        BackgroundColor="White"
+                                        CornerRadius="16"
+                                        HeightRequest="30"
+                                        WidthRequest="30">
+                                            <Frame
+                                            Margin="7"
+                                            Padding="0"
+                                            BackgroundColor="{Binding colorFrame}"
+                                            CornerRadius="8"
+                                            HeightRequest="16"
+                                            HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="CenterAndExpand"
+                                            WidthRequest="16" />
+                                        </Frame>
+                                        <BoxView
+                                        x:Name="line1"
+                                        Margin="0,-5,0,0"
+                                        BackgroundColor="{Binding colorLine}"
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="FillAndExpand"
+                                        WidthRequest="2" />
+                                    </StackLayout>
+
+                                    <StackLayout Margin="20,0,20,0">
+                                        <Label
+                                        FontAttributes="Bold"
+                                        FontSize="15"
+                                        TextDecorations="Underline"
+                                        Text="{Binding Name}"
+                                        TextColor="Black">
+                                        </Label>
+                                        <Label
+                                        FontAttributes="Bold"
+                                        FontSize="14"
+                                        Text="{Binding Location}"
+                                        TextColor="#353866">
+                                        </Label>
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="二" IconImageSource="tue" ></ContentPage>
+    <ContentPage Title="三" IconImageSource="wed" ></ContentPage>
+    <ContentPage Title="四" IconImageSource="thu"></ContentPage>
+    <ContentPage Title="五" IconImageSource="fri"></ContentPage>
+    <ContentPage Title="六" IconImageSource="sat"></ContentPage>
+
+</TabbedPage>

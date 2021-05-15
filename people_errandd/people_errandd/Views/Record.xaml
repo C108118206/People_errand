@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:people_errandd.ViewModels"
+             x:Class="people_errandd.Views.Record"
+             BackgroundColor="#B3DEE5">
+    <NavigationPage.TitleView>
+        <Label Text="查看紀錄" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="18" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
+    </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem ></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <viewmodels:RecordViewModels  />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="date" TargetType="DatePicker">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="FontSize" Value="17" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Format" Value="yyyy-MM-dd (dddd)" />
+            </Style>
+            <Style x:Key="punchframe" TargetType="Frame">
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="HeightRequest" Value="150" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="Margin" Value="20" />
+            </Style>
+            <Style x:Key="punchimage" TargetType="Image">
+                <Setter Property="WidthRequest" Value="50" />
+                <Setter Property="HeightRequest" Value="50" />
+            </Style>
+            <Style x:Key="punchlabel" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style x:Key="dayoffframe" TargetType="Frame">
+                <Setter Property="HeightRequest" Value="230" />
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="Margin" Value="30,0,30,20" />
+            </Style>
+            <Style x:Key="dayoffimage" TargetType="Image">
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="WidthRequest" Value="50" />
+                <Setter Property="Margin" Value="20,0,0,0" />
+                <Setter Property="Source" Value="nerd.png" />
+            </Style>
+            <Style x:Key="dayofftitle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Margin" Value="0,15,0,0" />
+            </Style>
+            <Style x:Key="dayoffframeContent" TargetType="Frame">
+                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Margin" Value="10" />
+            </Style>
+            <Style x:Key="dayoffframeContent1" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="dayoffframeContent2" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="gooutframe" TargetType="Frame">
+                <Setter Property="HeightRequest" Value="250" />
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="Margin" Value="30,0,30,20" />
+            </Style>
+            <Style x:Key="gooutimage" TargetType="Image">
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="WidthRequest" Value="50" />
+                <Setter Property="Margin" Value="20,0,0,0" />
+                <Setter Property="Source" Value="goouttt.png" />
+            </Style>
+            <Style x:Key="goouttitle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Margin" Value="10,15,0,0" />
+            </Style>
+            <Style x:Key="gooutframeContent" TargetType="Frame">
+                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Margin" Value="10" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <ScrollView>
+            <StackLayout Orientation="Vertical" >
+
+                
+                <Label></Label>
+                <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image  Grid.Row="0" Grid.Column="0" Source="date" HorizontalOptions="Center"  HeightRequest="30"></Image>
+                    <DatePicker  Grid.Row="0" Grid.Column="1" x:Name="startDatePicker" Style="{StaticResource date}" />
+                    <ImageButton Clicked="choose" BackgroundColor="#B3DEE5" Margin="30,0,0,0" Grid.Row="0" Grid.Column="2" Source="a14" HorizontalOptions="Center" HeightRequest="50"></ImageButton>
+                </StackLayout>
+                
+                <!--
+                //上下班
+                <StackLayout>
+                    <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center">
+                        <Frame Grid.Column="0" Style="{StaticResource punchframe}">
+                            <StackLayout>
+                                <Image Source="worker" Style="{StaticResource punchimage}"></Image>
+                                <Label Text="上班" Style="{StaticResource punchlabel}" ></Label>
+                                <Label Text="09:05" Style="{StaticResource punchlabel}" ></Label>
+                                <Label Text="遲到" Style="{StaticResource punchlabel}" TextColor="Crimson"></Label>
+                            </StackLayout>
+                        </Frame>
+                        <Frame  Grid.Column="1" Style="{StaticResource punchframe}">
+                            <StackLayout>
+                                <Image Source="workeroff" Style="{StaticResource punchimage}"></Image>
+                                <Label Text="下班" Style="{StaticResource punchlabel}"></Label>
+                                <Label Text="17:05" Style="{StaticResource punchlabel}"></Label>
+                                <Label Text="正常" Style="{StaticResource punchlabel}"></Label>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                    //請假
+                    <Frame Style="{StaticResource dayoffframe}">
+                        <StackLayout Grid.Row="1">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Start">
+                                <Image Style="{StaticResource dayoffimage}"></Image>
+                                <Label Text="請假紀錄" Style="{StaticResource dayofftitle}"></Label>
+                            </StackLayout>
+                            //
+                            <Frame Style="{StaticResource dayoffframeContent}">
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Label Text="日期 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                        <Label Text="2021-04-01~2021-04-03" Style="{StaticResource dayoffframeContent2}"></Label>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Label Text="假別 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                        <Label Text="病假" Style="{StaticResource dayoffframeContent2}"></Label>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Label Text="事由 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                        <Label Text="發燒" Style="{StaticResource dayoffframeContent2}"></Label>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Label Text="狀態 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                        <Label Text="已審核" Style="{StaticResource dayoffframeContent2}"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                            //
+                            <CollectionView
+                                x:Name="listdayoff"
+                                ItemsSource="{Binding list}">
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Vertical" />
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Frame  Style="{StaticResource dayoffframeContent}">
+                                                <StackLayout>
+                                                    <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Start">
+                                                        <Label Text="日期 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                                        <Label Text="{Binding startdate}" Style="{StaticResource dayoffframeContent2}"></Label>
+                                                        <Label Text="~" Style="{StaticResource dayoffframeContent1}"></Label>
+                                                        <Label Text="{Binding enddate}" Style="{StaticResource dayoffframeContent2}"></Label>
+                                                    </StackLayout>
+                                                    <StackLayout  Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Start">
+                                                        <Label Text="假別 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                                        <Label Text="{Binding choice}" Style="{StaticResource dayoffframeContent2}"></Label>
+                                                    </StackLayout>
+                                                    <StackLayout  Grid.Row="2" Orientation="Horizontal" HorizontalOptions="Start">
+                                                        <Label Text="事由 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                                        <Label Text="{Binding dayoffcause}" Style="{StaticResource dayoffframeContent2}"></Label>
+                                                    </StackLayout>
+                                                    <StackLayout  Grid.Row="3" Orientation="Horizontal" HorizontalOptions="Start">
+                                                        <Label Text="狀態 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                                        <Label Text="{Binding dayoffstatus}" Style="{StaticResource dayoffframeContent2}"></Label>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </Frame>
+                                        </Grid>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+
+                            </CollectionView>
+
+                    </Frame>
+                  //公出
+                    <Frame Style="{StaticResource gooutframe}">
+                        <StackLayout Grid.Row="2">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Start">
+                                <Image Style="{StaticResource gooutimage}"></Image>
+                                <Label Text="公出紀錄" Style="{StaticResource goouttitle}"></Label>
+                            </StackLayout>
+                            //
+                            <Frame Style="{StaticResource gooutframeContent}">
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Label Text="出 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                        <Label Text="2021-04-01" Style="{StaticResource dayoffframeContent2}"></Label>
+                                        <Label Text="13:00" Style="{StaticResource dayoffframeContent2}"></Label>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Label Text="回 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                        <Label Text="2021-04-01" Style="{StaticResource dayoffframeContent2}"></Label>
+                                        <Label Text="13:00" Style="{StaticResource dayoffframeContent2}"></Label>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Label Text="地點 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                        <Label Text="nkust" Style="{StaticResource dayoffframeContent2}"></Label>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Label Text="事由 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                        <Label Text="開會" Style="{StaticResource dayoffframeContent2}"></Label>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                        <Label Text="狀態 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                        <Label Text="已審核" Style="{StaticResource dayoffframeContent2}"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                            //
+                            <CollectionView
+                                x:Name="list"
+                                ItemsSource="{Binding listgoout}">
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Vertical" />
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Frame  Style="{StaticResource dayoffframeContent}">
+                                                <StackLayout>
+                                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                                        <Label Text="出 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                                        <Label Text="{Binding godate}" Style="{StaticResource dayoffframeContent2}"></Label>
+                                                        <Label Text="{Binding gotime}" Style="{StaticResource dayoffframeContent2}"></Label>
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                                        <Label Text="回 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                                        <Label Text="{Binding backdate}" Style="{StaticResource dayoffframeContent2}"></Label>
+                                                        <Label Text="{Binding backtime}" Style="{StaticResource dayoffframeContent2}"></Label>
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                                        <Label Text="地點 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                                        <Label Text="{Binding location}" Style="{StaticResource dayoffframeContent2}"></Label>
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                                        <Label Text="事由 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                                        <Label Text="{Binding gooutcause}" Style="{StaticResource dayoffframeContent2}"></Label>
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                                        <Label Text="狀態 :" Style="{StaticResource dayoffframeContent1}"></Label>
+                                                        <Label Text="{Binding gooutstatus}" Style="{StaticResource dayoffframeContent2}"></Label>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </Frame>
+                                        </Grid>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+
+                            </CollectionView>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+           -->
+            <!-- 上下班new
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <CollectionView
+                        x:Name="WorkWorkofflist"
+                        Grid.Row="1"
+                        Margin="40,0,0,0"
+                        ItemsSource="{Binding worklist}"
+                        SelectionMode="None"
+                        VerticalScrollBarVisibility="Never">
+                                    <CollectionView.ItemsLayout>
+                                        <LinearItemsLayout Orientation="Vertical" />
+                                    </CollectionView.ItemsLayout>
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid RowSpacing="0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                    <RowDefinition Height="0.8" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="auto" />
+                                                </Grid.ColumnDefinitions>
+                                      
+                                            <Image
+                                              Grid.Row="0"
+                                        Grid.Column="0"
+                                        Margin="0,20,0,20"
+                                            Aspect="AspectFit"
+                                            HeightRequest="36"
+                                            Source="{Binding image}"
+                                            WidthRequest="36" />
+                                            <StackLayout
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Margin="20,0,0,0"
+                                        Spacing="0"
+                                        VerticalOptions="Center">
+                                                <Label
+                                            FontSize="18"
+                                            Text="{Binding workorworkoff}"
+                                             FontAttributes="Bold"
+                                            TextColor="Black" />
+                                                <Label
+                                            FontFamily="PoppinsMedium"
+                                            FontSize="18"
+                                                  FontAttributes="Bold"
+                                            LineBreakMode="TailTruncation"
+                                            Text="{Binding time}" />
+
+                                            </StackLayout>
+                                            <Label
+                                        Grid.Row="0"
+                                        Grid.Column="2"
+                                        Margin="0,0,40,0"
+                                        FontFamily="PoppinsMedium"
+                                        FontSize="15"
+                                                      FontAttributes="Bold"
+                                        Text="{Binding status}"
+                                        TextColor="{Binding color}"
+                                        VerticalOptions="Center">
+
+                                            </Label>
+                                            <BoxView
+                                        Grid.Row="1"
+                                        Grid.ColumnSpan="3"
+                                        Margin="0,0,40,0"
+                                        BackgroundColor="#5D5454"
+                                        HeightRequest="10"
+                                        HorizontalOptions="FillAndExpand" />
+                                          
+                                    </Grid>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+             
+                    </Grid>
+            -->
+            <!-- gooutnew
+                <Grid  HorizontalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Label Margin="0,10,0,0" HorizontalOptions="Center" FontAttributes="Bold"  Text="公出申請"/>
+                    <CollectionView
+                        x:Name="WorkWorkofflist"
+                        Grid.Row="1"
+                        Margin="40,0,0,0"
+                        HorizontalOptions="Center"
+                        ItemsSource="{Binding gooutlist}"
+                        SelectionMode="None"
+                        VerticalScrollBarVisibility="Never">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="0.8" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image
+                                              Grid.Row="0"
+                                        Grid.Column="0"
+                                        Margin="10,0,0,0"
+                                            Aspect="AspectFit"
+                                            HeightRequest="50"
+                                            Source="goouttt"
+                                            WidthRequest="50" />
+                                    <StackLayout
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Margin="42,0,0,0"
+                                        Spacing="0"
+                                        VerticalOptions="Center">
+                                        <Label 
+                                             Margin="0,10,0,0"
+                                            FontSize="15"
+                                            Text="時間  :"
+                                             FontAttributes="Bold"
+                                            TextColor="Black" />
+                                        <Label
+                                             Margin="0,10,0,0"
+                                            FontSize="15"
+                                            Text="地點  :"
+                                             FontAttributes="Bold"
+                                            TextColor="Black" />
+                                        <Label
+                                             Margin="0,10,0,0"
+                                            FontSize="15"
+                                            Text="事由  :"
+                                             FontAttributes="Bold"
+                                            TextColor="Black" />
+                                        <Label
+                                             Margin="0,10,0,10"
+                                            FontSize="15"
+                                            Text="狀態  :"
+                                             FontAttributes="Bold"
+                                            TextColor="Black" />
+                                    </StackLayout>
+                                    <StackLayout
+                                        Grid.Row="0"
+                                        Grid.Column="2"
+                                        Margin="0,0,60,0"
+                                        Spacing="0"
+                                        VerticalOptions="Center">
+                                        <StackLayout Orientation="Horizontal">
+                                        <Label
+                                             Margin="0,10,0,0"
+                                            FontSize="15"
+                                            Text="{Binding leavegoouttime}"
+                                             FontAttributes="Bold"
+                                            TextColor="Black" />
+                                            <Label
+                                             Margin="0,10,0,0"
+                                            FontSize="15"
+                                            Text="~"
+                                             FontAttributes="Bold"
+                                            TextColor="Black" />
+                                        <Label
+                                             Margin="0,10,0,0"
+                                            FontSize="15"
+                                            Text="{Binding backgoouttime}"
+                                              FontAttributes="Bold"
+                                            TextColor="Black" />
+                                        </StackLayout>
+                                        <Label
+                                             Margin="0,10,0,0"
+                                            FontSize="15"
+                                            Text="{Binding location}"
+                                             FontAttributes="Bold"
+                                            TextColor="Black" />
+                                        <Label
+                                             Margin="0,10,0,0"
+                                            FontSize="15"
+                                            Text="{Binding messagegoout}"
+                                        FontAttributes="Bold"
+                                            TextColor="Black" />
+                                        <Label
+                                             Margin="0,10,0,10"
+                                            FontSize="15"
+                                            Text="{Binding statusgoout}"
+                                             FontAttributes="Bold"
+                                            TextColor="{Binding color}" />
+                                    </StackLayout>
+                                  
+                                    <BoxView
+                                        Grid.Row="1"
+                                        Grid.ColumnSpan="3"
+                                        Margin="0,0,40,0"
+                                        BackgroundColor="#5D5454"
+                                        HeightRequest="10"
+                                        HorizontalOptions="FillAndExpand" />
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                </Grid>
+            -->
+                
+                <Grid  HorizontalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Label Margin="0,10,0,0" HorizontalOptions="Center" FontAttributes="Bold"  Text="請假申請"/>
+                    <CollectionView
+                        x:Name="WorkWorkofflist"
+                        Grid.Row="1"
+                        Margin="40,0,0,0"
+                        HorizontalOptions="Center"
+                        ItemsSource="{Binding dayofflist}"
+                        SelectionMode="None"
+                        VerticalScrollBarVisibility="Never">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="0.8" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image
+                                              Grid.Row="0"
+                                        Grid.Column="0"
+                                        Margin="10,0,0,0"
+                                            Aspect="AspectFit"
+                                            HeightRequest="50"
+                                            Source="nerd"
+                                            WidthRequest="50" />
+                                    <StackLayout
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Margin="42,0,0,0"
+                                        Spacing="0"
+                                        VerticalOptions="Center">
+                                        <Label 
+                                             Margin="0,10,0,0"
+                                            FontSize="15"
+                                            Text="開始  :"
+                                             FontAttributes="Bold"
+                                            TextColor="Black" />
+                                        <Label 
+                                             Margin="0,10,0,0"
+                                            FontSize="15"
+                                            Text="結束  :"
+                                             FontAttributes="Bold"
+                                            TextColor="Black" />
+                                        <Label
+                                             Margin="0,10,0,0"
+                                            FontSize="15"
+                                            Text="假別  :"
+                                             FontAttributes="Bold"
+                                            TextColor="Black" />
+                                        <Label
+                                             Margin="0,10,0,0"
+                                            FontSize="15"
+                                            Text="事由  :"
+                                             FontAttributes="Bold"
+                                            TextColor="Black" />
+                                        <Label
+                                             Margin="0,10,0,10"
+                                            FontSize="15"
+                                            Text="狀態  :"
+                                             FontAttributes="Bold"
+                                            TextColor="Black" />
+                                    </StackLayout>
+                                    <StackLayout
+                                        Grid.Row="0"
+                                        Grid.Column="2"
+                                        Margin="0,0,80,0"
+                                        Spacing="0"
+                                        VerticalOptions="Center">
+                                       
+                                            <Label
+                                             Margin="0,0,0,0"
+                                            FontSize="15"
+                                               FontAttributes="Bold"
+                                            Text="{Binding leavedayoff}"
+                                            TextColor="Black" />
+                                      
+                                            <Label
+                                             Margin="0,10,0,0"
+                                            FontSize="15"
+                                            Text="{Binding backdayoff}"
+                                              FontAttributes="Bold"
+                                            TextColor="Black" />
+                                       
+                                        <Label
+                                             Margin="0,10,0,0"
+                                            FontSize="15"
+                                             FontAttributes="Bold"
+                                            Text="{Binding selection}"
+                                            TextColor="Black" />
+                                        <Label
+                                             Margin="0,10,0,0"
+                                            FontSize="15"
+                                            Text="{Binding messagedayoff}"
+                                        FontAttributes="Bold"
+                                            TextColor="Black" />
+                                        <Label
+                                             Margin="0,10,0,0"
+                                            FontSize="15"
+                                            Text="{Binding statusdayoff}"
+                                             FontAttributes="Bold"
+                                            TextColor="{Binding color}" />
+                                    </StackLayout>
+
+                                    <BoxView
+                                        Grid.Row="1"
+                                        Grid.ColumnSpan="3"
+                                        Margin="0,0,40,0"
+                                        BackgroundColor="#5D5454"
+                                        HeightRequest="10"
+                                        HorizontalOptions="FillAndExpand" />
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                </Grid>
+                
+            </StackLayout>
+
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

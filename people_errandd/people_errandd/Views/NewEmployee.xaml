@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="people_errandd.Views.NewEmployee"
+              BackgroundColor="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+        <ScrollView>
+            <StackLayout Orientation="Vertical" >
+                <StackLayout BackgroundColor="#E0E6EC" HeightRequest="220" >
+                    <StackLayout
+                    Orientation="Horizontal" 
+                    HeightRequest="65">
+                        <Image
+                        HorizontalOptions="Start"
+                        Source="back2.png"
+                        WidthRequest="40"
+                        Margin="10,0,0,0">
+                            <Image.GestureRecognizers>
+                                <!-- <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" /> -->
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Text="新增員工" FontSize="18" FontAttributes="Bold" Margin="100,20,70,0" TextColor="Black" HorizontalOptions="Center"></Label>
+
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Frame  Margin="60,20,0,0"
+                       BorderColor="Black"
+                       CornerRadius="50"
+                       HeightRequest="50"
+                       WidthRequest="50"
+                       IsClippedToBounds="True"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"
+                       >
+                            <Image 
+                         Aspect="AspectFill"
+                         Margin="-20"
+                         
+                         HeightRequest="10"
+                         WidthRequest="10" />
+                        </Frame>
+                        <Entry Placeholder="姓名" PlaceholderColor="Black" TextColor="Black" FontSize="18" FontAttributes="Bold" WidthRequest="150" Margin="10,50,0,10"></Entry>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" >
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="group.png" HeightRequest="25" Margin="40,30,0,0"></Image>
+                        <Label Text="部門" TextColor="Black" FontSize="18" Margin="1" Padding="0,30,0,0" FontAttributes="Bold" ></Label>
+                    </StackLayout>
+                    <Entry FontSize="16" PlaceholderColor="Black"  ClearButtonVisibility="WhileEditing" Placeholder="行銷部" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" WidthRequest="320" Margin="40,0,0,0"></Entry>
+                    <StackLayout Orientation="Horizontal"  >
+                        <Image Source="person.png" HeightRequest="25" Margin="40,5,0,0"></Image>
+                        <Label Text="職稱" TextColor="Black" FontSize="18" Margin="1" Padding="0,5,0,0" FontAttributes="Bold"></Label>
+                    </StackLayout>
+                    <Entry FontSize="16" Placeholder="職員"   ClearButtonVisibility="WhileEditing" PlaceholderColor="Black" FontAttributes="Bold"  TextColor="Black" HorizontalOptions="Start" HorizontalTextAlignment="Start" WidthRequest="320" Margin="40,0,0,0"></Entry>
+                    <StackLayout Orientation="Horizontal"  >
+                        <Image Source="phone.png" HeightRequest="25" Margin="40,5,0,0"></Image>
+                        <Label Text="電話" TextColor="Black" FontSize="18" Margin="1" Padding="0,5,0,0"  FontAttributes="Bold"></Label>
+                    </StackLayout>
+                    <Entry FontSize="16" Placeholder="電話"  PlaceholderColor="Black"  FontAttributes="Bold"  TextColor="Black" HorizontalOptions="Start" ClearButtonVisibility="WhileEditing"  HorizontalTextAlignment="Start" WidthRequest="320" Keyboard="Telephone" MaxLength="10" Margin="40,0,0,0"></Entry>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="mail.png"  HeightRequest="25" Margin="40,5,0,0"></Image>
+                        <Label Text="Email" TextColor="Black" FontSize="18" Margin="1" Padding="0,5,0,0" FontAttributes="Bold"></Label>
+                    </StackLayout>
+                    <Entry FontSize="16" Placeholder="Email"  PlaceholderColor="Black" FontAttributes="Bold"  TextColor="Black" HorizontalOptions="Start" ClearButtonVisibility="WhileEditing"  HorizontalTextAlignment="Start" WidthRequest="320" Keyboard="Email" Margin="40,0,0,0"></Entry>
+                    <Button BackgroundColor="#8EC0E4" TextColor="White" Text="新增" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center" WidthRequest="120" CornerRadius="20" Margin="20" ></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

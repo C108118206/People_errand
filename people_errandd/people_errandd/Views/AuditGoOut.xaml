@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="people_errandd.Views.AuditGoOut"
+             BackgroundColor="#99CED4"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="header" TargetType="StackLayout">
+                <Setter Property="HeightRequest" Value="65" />
+                <Setter Property="Orientation" Value="Horizontal" />
+            </Style>
+            <Style x:Key="headerimage" TargetType="Image">
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="WidthRequest" Value="40" />
+                <Setter Property="Source" Value="back2" />
+                <Setter Property="Margin" Value="10,0,0,0" />
+                <Setter Property="BackgroundColor" Value="#99CED4"/>
+            </Style>
+            <Style x:Key="headerlabel" TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="110,20,100,0" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="frame" TargetType="Frame">
+                <Setter Property="BorderColor" Value="LightGray" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="HeightRequest" Value="260"/>
+                <Setter Property="WidthRequest" Value="260"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="Margin" Value="10,0,10,0"/>
+            </Style>
+            <Style x:Key="title" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="0,5" />
+            </Style>
+            <Style x:Key="okbutton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#57BC90" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CornerRadius" Value="10" />
+            </Style>
+            <Style x:Key="nobutton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#AF473C" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CornerRadius" Value="10" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ScrollView >
+                <StackLayout Orientation="Vertical" >
+                    <StackLayout Style="{StaticResource header}">
+                        <Image Style="{StaticResource headerimage}">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Text="審核公出"  Style="{StaticResource headerlabel}"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,20">
+                        <Image 
+                            Source="date.png"
+                            HorizontalOptions="Center"
+                            WidthRequest="25"
+                               />
+                        <DatePicker x:Name="startDatePicker"
+                                Format="yyyy-MM-dd (ddd)"
+                                WidthRequest="180"
+                                FontSize="16"
+                                HorizontalOptions="Center"
+                                FontAttributes="Bold"
+                                     />
+                    </StackLayout>
+                    <!--
+                    <Frame  Style="{StaticResource frame}">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" >
+                                <Image Source="a18.png"/>
+                                <Label Text="Amy" Style="{StaticResource title}"></Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                <Image Source="in2.png"/>
+                                <Label Text="高雄85大樓"  Style="{StaticResource title}"></Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" >
+                                <Image Source="message.png"/>
+                                <Label  Text="...more" TextColor="Gray" Style="{StaticResource title}"></Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Start" >
+                                <Image Source="date.png"/>
+                                <Label Text="去: 2021-03-28 13:00" Style="{StaticResource title}"></Label>
+                            </StackLayout>
+                            <Label Text="回: 2021-03-28 15:00" Margin="43,0" Style="{StaticResource title}"></Label>
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Button Text="✓ 審核通過" Margin="10,15,15,30"  Style="{StaticResource okbutton}"/>
+                                <Button Text="✘ 取消申請" Margin="15,15,10,30" Style="{StaticResource nobutton}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+-->
+                    <CollectionView
+                                x:Name="list"
+                                ItemsSource="{Binding listgoout}">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Frame  Style="{StaticResource frame}">
+                                        <StackLayout>
+                                            <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Start" >
+                                                <Image Grid.Column="0" Source="a18.png"/>
+                                                <Label Grid.Column="1" Text="{Binding name}" Style="{StaticResource title}"></Label>
+                                            </StackLayout>
+                                            <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Start">
+                                                <Image Grid.Column="0" Source="in2.png"/>
+                                                <Label Grid.Column="1" Text="{Binding location}"  Style="{StaticResource title}"></Label>
+                                            </StackLayout>
+                                            <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="Start" >
+                                                <Image Grid.Column="0" Source="message.png"/>
+                                                <Label Grid.Column="1" Text="{Binding message}"  Style="{StaticResource title}"></Label>
+                                            </StackLayout>
+                                            <StackLayout Grid.Row="3" Orientation="Horizontal" HorizontalOptions="Start" >
+                                                <Image Source="date.png"/>
+
+                                                <Label Grid.Column="0" Text="去: " Style="{StaticResource title}"></Label>
+                                                <Label Grid.Column="1" Text="{Binding godate }" Style="{StaticResource title}"></Label>
+                                                <Label Grid.Column="2" Text="{Binding gotime}" Style="{StaticResource title}"></Label>
+                                            </StackLayout>
+
+                                            <StackLayout Grid.Row="4" Orientation="Horizontal"  Margin="43,0,0,0" >
+                                                <Label Grid.Column="0" Text="回: " Style="{StaticResource title}"></Label>
+                                                <Label Grid.Column="1" Text="{Binding backdate }" Style="{StaticResource title}"></Label>
+                                                <Label Grid.Column="2" Text="{Binding backtime}" Style="{StaticResource title}"></Label>
+                                            </StackLayout>
+                                            <StackLayout Grid.Row="5" Orientation="Horizontal" HorizontalOptions="Center">
+                                                <Button Grid.Column="0" Text="✓ 審核通過" Margin="10,15,15,30"  Style="{StaticResource okbutton}"/>
+                                                <Button Grid.Column="1" Text="✘ 取消申請" Margin="15,15,10,30"  Style="{StaticResource nobutton}"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
+
+
+
+                </StackLayout>
+            </ScrollView>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

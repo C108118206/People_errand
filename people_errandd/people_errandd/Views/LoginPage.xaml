@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="people_errandd.Views.LoginPage"
+             BackgroundColor="White"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="title" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="40" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="40,100,0,0"/>
+            </Style>
+            <Style x:Key="image" TargetType="Image">
+                <Setter Property="Margin" Value="10,90,0,0" />
+                <Setter Property="HeightRequest" Value="45" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="entry" TargetType="Entry">
+                <Setter Property="WidthRequest" Value="300" />
+                <Setter Property="HeightRequest" Value="80" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="PlaceholderColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
+            </Style>
+            <Style x:Key="Button" TargetType="Button">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="WidthRequest" Value="150" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="BackgroundColor" Value="#DAE9F4" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Margin" Value="50" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout
+            x:Name="RootContainer"
+            Margin="0,0,0,-800"
+            BackgroundColor="White"
+            Spacing="0">
+            <Frame
+                Margin="0,-40,0,0"
+                Padding="0,40,0,24"
+                BackgroundColor="#263959"
+                CornerRadius="48">
+
+                <ScrollView HeightRequest="550">
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Punch." Style="{StaticResource title}"></Label>
+                            <Image x:Name="image" Source="teamworker" Style="{StaticResource image}"></Image>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical">
+
+                            <Entry x:Name="company"    Margin="0,45,0,0"  Placeholder="組織ID" Style="{StaticResource entry}"></Entry>
+                            <Entry x:Name="account"     Margin="0,0,0,0"  Placeholder="組織驗證碼" Style="{StaticResource entry}"></Entry>
+
+                            <Button x:Name="button"  Text="登入" Style="{StaticResource Button}" Clicked="LogInButton" ></Button>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+
+            </Frame>
+        </StackLayout>
+
+
+    </Grid>
+</ContentPage>
