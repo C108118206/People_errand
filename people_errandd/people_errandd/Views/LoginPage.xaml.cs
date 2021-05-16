@@ -21,7 +21,7 @@ namespace people_errandd.Views
             //隱藏navigationpage導航欄。
             NavigationPage.SetHasNavigationBar(this, false);
             Animation ani = new Animation();
-             var deviceId = Preferences.Get("uuid", string.Empty);
+            var deviceId = Preferences.Get("uuid", string.Empty);
             if (string.IsNullOrEmpty(deviceId))
             {
                 deviceId = Guid.NewGuid().ToString();
@@ -34,17 +34,15 @@ namespace people_errandd.Views
             var uuu = Preferences.Get("uuid", "");
             if (await Login.ConfirmCompanyHash(company.Text.Trim()))
             {
-                if (await Login.ConfirmUUID(uuu))
-                {
-                    Navigation.InsertPageBefore(new MainPage(), this);
-                    await Navigation.PopAsync();
-                    Preferences.Set("Login", "exist");
-                }
-                else
+                if (!await Login.ConfirmUUID(uuu))
                 {
                     await Login.SetUUID();
-                    Navigation.InsertPageBefore(new MainPage(), this);
-                    await Navigation.PopAsync();
+                }
+                Navigation.InsertPageBefore(new MainPage(), this);
+                await Navigation.PopAsync();
+                if (string.IsNullOrEmpty(Preferences.Get("Login", string.Empty)))
+                {
+                    Preferences.Set("Login", await Login.GetHashAccount(uuu));
                 }
             }
             else

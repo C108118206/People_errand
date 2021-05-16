@@ -30,16 +30,19 @@ namespace people_errandd
             InitializeComponent();
             CultureInfo ChineseCulture = new CultureInfo("zh-TW");
             CultureInfo.DefaultThreadCurrentCulture = ChineseCulture;
+            
+           
+                MainPage = new NavigationPage(new LoginPage());
+            
+        }
+
+        protected override void OnStart()
+        {
             bool hasKey = Preferences.ContainsKey("Login");
             if (hasKey)
             {
                 MainPage = new NavigationPage(new MainPage());
             }
-            else { MainPage = new NavigationPage(new LoginPage()); }
-        }
-
-        protected override void OnStart()
-        {
         }
 
         protected override void OnSleep()

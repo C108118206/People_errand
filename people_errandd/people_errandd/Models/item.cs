@@ -34,10 +34,14 @@ namespace people_errandd.Models
         public string name { get; set; }
         public string phonecode { get; set; }
         public DateTime createTime { get; set; }
-
         public string companyhash { get; set; }
-
-
+    }
+    public class Records
+    {
+        [PrimaryKey,AutoIncrement]
+        public int ID { get; set; }
+        public string Nmae { get; set; }
+        public DateTime Date { get; set; }
     }
 
 }

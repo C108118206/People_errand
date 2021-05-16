@@ -2413,18 +2413,18 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lonel\\.nuget\\packages\\": {},
+    "C:\\Users\\likem\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\people_errandd\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+      "projectUniqueName": "D:\\0517\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
       "projectName": "people_errandd.Android",
-      "projectPath": "D:\\people_errandd\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
-      "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
-      "outputPath": "D:\\people_errandd\\People_errand\\people_errandd\\people_errandd.Android\\obj\\",
+      "projectPath": "D:\\0517\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+      "packagesPath": "C:\\Users\\likem\\.nuget\\packages\\",
+      "outputPath": "D:\\0517\\People_errand\\people_errandd\\people_errandd.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2432,7 +2432,7 @@
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\lonel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\likem\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -2447,8 +2447,8 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "D:\\people_errandd\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
-              "projectPath": "D:\\people_errandd\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+            "D:\\0517\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "D:\\0517\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
             }
           }
         }
