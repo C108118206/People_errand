@@ -2413,24 +2413,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lmh_flower\\.nuget\\packages\\": {},
+    "C:\\Users\\lonel\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\People_errand-0427_Week7\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+      "projectUniqueName": "D:\\people_errandd\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
       "projectName": "people_errandd.Android",
-      "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand-0427_Week7\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
-      "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand-0427_Week7\\people_errandd\\people_errandd.Android\\obj\\",
+      "projectPath": "D:\\people_errandd\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+      "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
+      "outputPath": "D:\\people_errandd\\People_errand\\people_errandd\\people_errandd.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\lmh_flower\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lonel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2439,14 +2442,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\Public\\Documents\\Infragistics\\NuGet\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "C:\\Users\\lmh_flower\\source\\repos\\People_errand-0427_Week7\\people_errandd\\people_errandd\\people_errandd.csproj": {
-              "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand-0427_Week7\\people_errandd\\people_errandd\\people_errandd.csproj"
+            "D:\\people_errandd\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "D:\\people_errandd\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
             }
           }
         }

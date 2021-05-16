@@ -8,13 +8,13 @@ namespace people_errandd.Models
 
     public class work
     {
-      //  public int ID { get; set; }
+        //  public int ID { get; set; }
         public string hashAccount { get; set; }
 
         public int workTypeId { get; set; }
         public double coordinateX { get; set; }
         public double coordinateY { get; set; }
-      //  public DateTime Date { get; set; }
+        //  public DateTime Date { get; set; }
 
     }
     public class company
@@ -34,6 +34,8 @@ namespace people_errandd.Models
         public string name { get; set; }
         public string phonecode { get; set; }
         public DateTime createTime { get; set; }
+
+        public string companyhash { get; set; }
 
 
     }

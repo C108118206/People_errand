@@ -12,7 +12,7 @@ using System.Threading;
 
 namespace people_errandd.Views
 {
-    //[QueryProperty(nameof(ItemId),nameof(ItemId))]
+    //[QueryProperty(nameof(ItemId), nameof(ItemId))]
     public partial class MainPage : ContentPage
     {
         //public string ItemId
@@ -30,7 +30,7 @@ namespace people_errandd.Views
         //        item item = await App.DataBase.GetNoteAsync(id);
         //        BindingContext = item;
         //    }
-        //    catch(Exception)
+        //    catch (Exception)
         //    {
         //        Console.WriteLine("Failed to load item");
         //    }
@@ -42,9 +42,9 @@ namespace people_errandd.Views
             //隱藏navigationpage導航欄
             NavigationPage.SetHasNavigationBar(this, false);
             //BindingContext = new item();
-            // var companyitem = new company();
-            // username.BindingContext = companyitem;
-            // username.SetBinding(Label.TextProperty, "Name");
+            var companyitem = new company();
+            username.BindingContext = companyitem;
+            username.SetBinding(Label.TextProperty, "Name");
 
 
         }
@@ -52,37 +52,38 @@ namespace people_errandd.Views
         private async void GoToWork(object sender, EventArgs e)
         {
 
-            //work item = new work();
-            ////item = await App.DataBase.GetNoteAsync();
+            work item = new work();
+            //item = await App.DataBase.GetNoteAsync();
 
-            //try
-            //{
-            //    var request = new GeolocationRequest(GeolocationAccuracy.Medium);
-            //    var location = await Geolocation.GetLocationAsync(request);
+            try
+            {
+                var request = new GeolocationRequest(GeolocationAccuracy.Medium);
+                var location = await Geolocation.GetLocationAsync(request);
 
-            //    geoLocation geoLocation = new geoLocation();
-            //    if (await HttpResponse.workGet() == 2)
-            //    {
-            //        if (await geoLocation.GetCurrentLocation() == true)
-            //        {await HttpResponse.workPost(1);
-            //            await DisplayAlert("", "上班打卡成功", "確定");
-            //        }
-            //        else
-            //        {
-            //            await DisplayAlert("", "位置錯誤 "+location.Latitude.ToString()+" "+location.Longitude.ToString(), "確定");
+                geoLocation geoLocation = new geoLocation();
+                if (await HttpResponse.workGet() == 2)
+                {
+                    if (await geoLocation.GetCurrentLocation() == true)
+                    {
+                        // await HttpResponse.workPost(1);
+                        await DisplayAlert("", "上班打卡成功", "確定");
+                    }
+                    else
+                    {
+                        await DisplayAlert("", "位置錯誤 " + location.Latitude.ToString() + " " + location.Longitude.ToString(), "確定");
 
-            //        }
-            //    }
-            //    else
-            //    {
-            //        await DisplayAlert("error", "已上班", "確定");
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //    await DisplayAlert("", "錯誤", "");
-            //    throw;
-            //}
+                    }
+                }
+                else
+                {
+                    await DisplayAlert("error", "已上班", "確定");
+                }
+            }
+            catch (Exception)
+            {
+                await DisplayAlert("", "錯誤", "");
+                throw;
+            }
 
 
 
@@ -93,40 +94,41 @@ namespace people_errandd.Views
         private async void OffWork(object sender, EventArgs e)
         {
 
-            //try
-            //{
-            //    geoLocation geoLocation = new geoLocation();
-            //    if (await HttpResponse.workGet() == 1)
-            //    {
-            //        if (await geoLocation.GetCurrentLocation() == true)
-            //        {//await HttpResponse.workPost(2);
-            //            await DisplayAlert("", "下班打卡成功", "確定");
-            //        }
-            //        else
-            //        {
-            //            await DisplayAlert("", "位置錯誤", "確定");
-            //        }
-            //    }
-            //    else
-            //    {
-            //        await DisplayAlert("error", "已下班", "確定");
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //    await DisplayAlert("", "錯誤", "");
-            //    throw;
-            //}
+            try
+            {
+                geoLocation geoLocation = new geoLocation();
+                if (await HttpResponse.workGet() == 1)
+                {
+                    if (await geoLocation.GetCurrentLocation() == true)
+                    {//await HttpResponse.workPost(2);
+                        await DisplayAlert("", "下班打卡成功", "確定");
+                    }
+                    else
+                    {
+                        await DisplayAlert("", "位置錯誤", "確定");
+                    }
+                }
+                else
+                {
+                    await DisplayAlert("error", "已下班", "確定");
+                }
+            }
+            catch (Exception)
+            {
+                await DisplayAlert("", "錯誤", "");
+                throw;
+            }
 
 
 
 
         }
 
-            private async void LogOutButton(object sender, EventArgs e)
+        private async void LogOutButton(object sender, EventArgs e)
         {
             Navigation.InsertPageBefore(new LoginPage(), this);
             await Navigation.PopToRootAsync();
+            Preferences.Remove("Login");
 
         }
         private async void AboutPageButton(object sender, EventArgs e)
@@ -142,6 +144,6 @@ namespace people_errandd.Views
             await Navigation.PushAsync(new GoOut());
 
         }
-      
+
     }
 }

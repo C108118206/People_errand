@@ -20,49 +20,40 @@ namespace people_errandd.Views
             InitializeComponent();
             //隱藏navigationpage導航欄。
             NavigationPage.SetHasNavigationBar(this, false);
-
             Animation ani = new Animation();
-
-            var deviceId = Preferences.Get("me", string.Empty);
-           if(string.IsNullOrEmpty(deviceId))
+             var deviceId = Preferences.Get("uuid", string.Empty);
+            if (string.IsNullOrEmpty(deviceId))
             {
                 deviceId = Guid.NewGuid().ToString();
-                Preferences.Set("me", deviceId);
-                
+                Preferences.Set("uuid", deviceId);
             }
-
         }
-        
+
         private async void LogInButton(object sender, EventArgs e)
         {
-            //var m = Preferences.Get("me","");
-            //await DisplayAlert("", m, "ok");
-            Navigation.InsertPageBefore(new MainPage(), this);
-            await Navigation.PopAsync();
-            //try
-            //{
-            //    if (await HttpResponse.employee(company.Text.Trim(), account.Text.Trim()))
-            //    {
-            //        Navigation.InsertPageBefore(new MainPage(), this);
-            //        await Navigation.PopAsync();
-                    
-            //    }
-            //    else if (company.Text.Trim() == "0" && account.Text.Trim() == "manager")
-            //    {
-            //        Navigation.InsertPageBefore(new MainPageeM(), this);
-            //        await Navigation.PopToRootAsync();
-            //    }   
-            //    else
-            //    {
-            //        await DisplayAlert("錯誤", "輸入錯誤", "請重新輸入");
-            //    }
-            //}
-            //catch (Exception)
-            //{
-                
-            //    throw;
-            //}
-            
+            var uuu = Preferences.Get("uuid", "");
+            if (await Login.ConfirmCompanyHash(company.Text.Trim()))
+            {
+                if (await Login.ConfirmUUID(uuu))
+                {
+                    Navigation.InsertPageBefore(new MainPage(), this);
+                    await Navigation.PopAsync();
+                    Preferences.Set("Login", "exist");
+                }
+                else
+                {
+                    await Login.SetUUID();
+                    Navigation.InsertPageBefore(new MainPage(), this);
+                    await Navigation.PopAsync();
+                }
+            }
+            else
+            {
+                await DisplayAlert("錯誤", "輸入錯誤", "請重新輸入");
+            }
+
+
+
         }
 
     }
