@@ -82,8 +82,8 @@ namespace people_errandd.ViewModels
         void CreateCollection()
         {
 
-            Xamarin.Forms.Color frColor = Xamarin.Forms.Color.FromHex("#CADBE9");
-            Xamarin.Forms.Color linColor = Xamarin.Forms.Color.FromHex("#CADBE9");
+            Xamarin.Forms.Color frColor = Xamarin.Forms.Color.FromHex("#67AEC6");
+            Xamarin.Forms.Color linColor = Xamarin.Forms.Color.FromHex("#67AEC6");
 
             for (int i = 0; i < tempData.Count; i++)
             {
@@ -95,8 +95,8 @@ namespace people_errandd.ViewModels
                 {
                     if (i < currentFlag)
                     {
-                        frColor = Xamarin.Forms.Color.FromHex("#CADBE9");
-                        linColor = Xamarin.Forms.Color.FromHex("#CADBE9");
+                        frColor = Xamarin.Forms.Color.FromHex("#67AEC6");
+                        linColor = Xamarin.Forms.Color.FromHex("#67AEC6");
                     }
                     else
                     {

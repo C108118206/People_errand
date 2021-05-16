@@ -91,8 +91,8 @@
                                     <Label Text="上班" Style="{StaticResource Buttontext}"></Label>
                                 </StackLayout>
                                 <StackLayout Grid.Row="0" Grid.Column="1">
-                                    <Button Opacity="0.5" ImageSource="workeroff.png" Style="{StaticResource button2}" Clicked="OffWork"></Button>
-                                    <Label Opacity="0.5" Text="下班" Style="{StaticResource Buttontext}"></Label>
+                                    <Button Opacity="0.2" ImageSource="workeroff.png" Style="{StaticResource button2}" Clicked="OffWork"></Button>
+                                    <Label Opacity="0.2" Text="下班" Style="{StaticResource Buttontext}"></Label>
                                 </StackLayout>
                             </StackLayout>
                             <StackLayout Grid.Row="5"  Orientation="Horizontal">
