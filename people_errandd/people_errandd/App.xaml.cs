@@ -29,9 +29,7 @@ namespace people_errandd
         {
             InitializeComponent();
             CultureInfo ChineseCulture = new CultureInfo("zh-TW");
-            CultureInfo.DefaultThreadCurrentCulture = ChineseCulture;
-            
-           
+            CultureInfo.DefaultThreadCurrentCulture = ChineseCulture; 
                 MainPage = new NavigationPage(new LoginPage());
             
         }
