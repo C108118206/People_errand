@@ -5,11 +5,12 @@
              BackgroundColor="#9BAEC8">
     <ContentPage.Resources>
         <ResourceDictionary>
+            <StyleSheet Source="/Stylesheet1.css"/>
             <Style x:Key="name" TargetType="Label">
                 <Setter Property="FontFamily" Value="Chalkduster" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="30" />
+                <Setter Property="FontSize" Value="20" />
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="Margin" Value="0,5,0,0"/>
             </Style>

@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:people_errandd.ViewModels"
              x:Class="people_errandd.Views.Record"
-             BackgroundColor="#B3DEE5">
+             BackgroundColor="White">
     <NavigationPage.TitleView>
-        <Label Text="查看紀錄" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="18" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
+        <Label Text="查看紀錄" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" FontSize="18" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
     </NavigationPage.TitleView>
     <ContentPage.ToolbarItems>
         <ToolbarItem ></ToolbarItem>
@@ -24,79 +24,54 @@
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="Format" Value="yyyy-MM-dd (dddd)" />
             </Style>
-            <Style x:Key="punchframe" TargetType="Frame">
-                <Setter Property="WidthRequest" Value="100" />
-                <Setter Property="HeightRequest" Value="150" />
-                <Setter Property="CornerRadius" Value="20" />
-                <Setter Property="Margin" Value="20" />
+            <Style x:Key="select" TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="Margin" Value="18,0,0,0"/>
+                <Setter Property="Source" Value="a14"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="50"/>
             </Style>
-            <Style x:Key="punchimage" TargetType="Image">
-                <Setter Property="WidthRequest" Value="50" />
-                <Setter Property="HeightRequest" Value="50" />
+            <Style x:Key="Collection" TargetType="CollectionView">
+                <Setter Property="Margin" Value="40,0,0,0"/>
+                <Setter Property="SelectionMode" Value="None"/>
+                <Setter Property="VerticalScrollBarVisibility" Value="Never"/>
             </Style>
-            <Style x:Key="punchlabel" TargetType="Label">
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="FontSize" Value="16" />
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="TextColor" Value="Black" />
+            <Style x:Key="workimage" TargetType="Image">
+                <Setter Property="Margin" Value="10,20,0,20"/>
+                <Setter Property="Aspect" Value="AspectFit"/>
+                <Setter Property="WidthRequest" Value="36"/>
+                <Setter Property="HeightRequest" Value="36"/>
             </Style>
-            <Style x:Key="dayoffframe" TargetType="Frame">
-                <Setter Property="HeightRequest" Value="230" />
-                <Setter Property="WidthRequest" Value="100" />
-                <Setter Property="CornerRadius" Value="20" />
-                <Setter Property="Margin" Value="30,0,30,20" />
+            <Style x:Key="worklabel" TargetType="Label">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="PoppinsMedium"/>
             </Style>
-            <Style x:Key="dayoffimage" TargetType="Image">
-                <Setter Property="HeightRequest" Value="50" />
-                <Setter Property="WidthRequest" Value="50" />
-                <Setter Property="Margin" Value="20,0,0,0" />
-                <Setter Property="Source" Value="nerd.png" />
+            <Style x:Key="line" TargetType="BoxView">
+                <Setter Property="Margin" Value="0,0,45,0"/>
+                <Setter Property="BackgroundColor" Value="#807D7D"/>
+                <Setter Property="HeightRequest" Value="5"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
             </Style>
-            <Style x:Key="dayofftitle" TargetType="Label">
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="16" />
-                <Setter Property="TextColor" Value="Black" />
-                <Setter Property="Margin" Value="0,15,0,0" />
+            <Style x:Key="gooutanddayoff" TargetType="Label">
+                <Setter Property="Margin" Value="0,10,0,0"/>
+                <Setter Property="TextColor" Value="#263959"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
-            <Style x:Key="dayoffframeContent" TargetType="Frame">
-                <Setter Property="BorderColor" Value="Black" />
-                <Setter Property="WidthRequest" Value="200" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="Margin" Value="10" />
+            <Style x:Key="gooutanddayofftitle" TargetType="Label">
+                <Setter Property="Margin" Value="0,10,0,0"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="15"/>
             </Style>
-            <Style x:Key="dayoffframeContent1" TargetType="Label">
-                <Setter Property="TextColor" Value="Black" />
-                <Setter Property="FontSize" Value="15" />
-                <Setter Property="FontAttributes" Value="Bold" />
-            </Style>
-            <Style x:Key="dayoffframeContent2" TargetType="Label">
-                <Setter Property="TextColor" Value="Black" />
-                <Setter Property="FontSize" Value="13" />
-                <Setter Property="FontAttributes" Value="Bold" />
-            </Style>
-            <Style x:Key="gooutframe" TargetType="Frame">
-                <Setter Property="HeightRequest" Value="250" />
-                <Setter Property="WidthRequest" Value="100" />
-                <Setter Property="CornerRadius" Value="20" />
-                <Setter Property="Margin" Value="30,0,30,20" />
-            </Style>
-            <Style x:Key="gooutimage" TargetType="Image">
-                <Setter Property="HeightRequest" Value="50" />
-                <Setter Property="WidthRequest" Value="50" />
-                <Setter Property="Margin" Value="20,0,0,0" />
-                <Setter Property="Source" Value="goouttt.png" />
-            </Style>
-            <Style x:Key="goouttitle" TargetType="Label">
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="16" />
-                <Setter Property="TextColor" Value="Black" />
-                <Setter Property="Margin" Value="10,15,0,0" />
-            </Style>
-            <Style x:Key="gooutframeContent" TargetType="Frame">
-                <Setter Property="BorderColor" Value="Black" />
-                <Setter Property="WidthRequest" Value="400" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="Margin" Value="10" />
+            <Style x:Key="gooutanddayoffcontent" TargetType="Label">
+                <Setter Property="Margin" Value="0,10,0,0"/>
+                <Setter Property="TextColor" Value="#766C6C"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="15"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -109,13 +84,11 @@
 
         <ScrollView>
             <StackLayout Orientation="Vertical" >
-
-                
                 <Label></Label>
                 <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Center">
                     <Image  Grid.Row="0" Grid.Column="0" Source="date" HorizontalOptions="Center"  HeightRequest="30"></Image>
                     <DatePicker  Grid.Row="0" Grid.Column="1" x:Name="startDatePicker" Style="{StaticResource date}" />
-                    <ImageButton Clicked="choose" BackgroundColor="#B3DEE5" Margin="30,0,0,0" Grid.Row="0" Grid.Column="2" Source="a14" HorizontalOptions="Center" HeightRequest="50"></ImageButton>
+                    <ImageButton Clicked="choose"  Grid.Row="0" Grid.Column="2"  Style="{StaticResource select}"></ImageButton>
                 </StackLayout>
                 
                 <!--
@@ -301,108 +274,19 @@
                     </Frame>
                 </StackLayout>
            -->
-
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
-                        </Grid.RowDefinitions>
-                        <CollectionView
-                        x:Name="WorkWorkofflist"
-                        Grid.Row="1"
-                        Margin="40,0,0,0"
-                        ItemsSource="{Binding worklist}"
-                        SelectionMode="None"
-                        VerticalScrollBarVisibility="Never">
-                                    <CollectionView.ItemsLayout>
-                                        <LinearItemsLayout Orientation="Vertical" />
-                                    </CollectionView.ItemsLayout>
-                                    <CollectionView.ItemTemplate>
-                                        <DataTemplate>
-                                            <Grid RowSpacing="0">
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="*" />
-                                                    <RowDefinition Height="0.8" />
-                                                </Grid.RowDefinitions>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="auto" />
-                                                    <ColumnDefinition Width="*" />
-                                                    <ColumnDefinition Width="auto" />
-                                                </Grid.ColumnDefinitions>
-                                      
-                                            <Image
-                                              Grid.Row="0"
-                                        Grid.Column="0"
-                                        Margin="0,20,0,20"
-                                            Aspect="AspectFit"
-                                            HeightRequest="36"
-                                            Source="{Binding image}"
-                                            WidthRequest="36" />
-                                            <StackLayout
-                                        Grid.Row="0"
-                                        Grid.Column="1"
-                                        Margin="20,0,0,0"
-                                        Spacing="0"
-                                        VerticalOptions="Center">
-                                                <Label
-                                            FontSize="18"
-                                            Text="{Binding workorworkoff}"
-                                             FontAttributes="Bold"
-                                            TextColor="Black" />
-                                                <Label
-                                            FontFamily="PoppinsMedium"
-                                            FontSize="18"
-                                                  FontAttributes="Bold"
-                                            LineBreakMode="TailTruncation"
-                                            Text="{Binding time}" />
-
-                                            </StackLayout>
-                                            <Label
-                                        Grid.Row="0"
-                                        Grid.Column="2"
-                                        Margin="0,0,45,0"
-                                        FontFamily="PoppinsMedium"
-                                        FontSize="15"
-                                                      FontAttributes="Bold"
-                                        Text="{Binding status}"
-                                        TextColor="{Binding color}"
-                                        VerticalOptions="Center">
-
-                                            </Label>
-                                            <BoxView
-                                        Grid.Row="1"
-                                        Grid.ColumnSpan="3"
-                                        Margin="0,0,45,0"
-                                        BackgroundColor="#5D5454"
-                                        HeightRequest="10"
-                                        HorizontalOptions="FillAndExpand" />
-                                          
-                                    </Grid>
-                                        </DataTemplate>
-                                    </CollectionView.ItemTemplate>
-                                </CollectionView>
-             
-                    </Grid>
-           
-            <!-- gooutnew
-                <Grid  HorizontalOptions="Center">
+<!--上班new
+                <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
-                    <Label Margin="0,10,0,0"  TextColor="#263959" FontSize="15" HorizontalOptions="Center" FontAttributes="Bold"  Text="公出申請"/>
                     <CollectionView
-                        x:Name="WorkWorkofflist"
-                        Grid.Row="1"
-                        Margin="40,0,0,0"
-                        HorizontalOptions="Center"
-                        ItemsSource="{Binding gooutlist}"
-                        SelectionMode="None"
-                        VerticalScrollBarVisibility="Never">
+                            x:Name="WorkWorkofflist"
+                            Grid.Row="1"
+                            ItemsSource="{Binding worklist}"
+                            Style="{StaticResource Collection}">
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Vertical" />
                         </CollectionView.ItemsLayout>
@@ -418,106 +302,52 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="auto" />
                                     </Grid.ColumnDefinitions>
+
                                     <Image
-                                              Grid.Row="0"
-                                        Grid.Column="0"
-                                        Margin="10,0,0,0"
-                                            Aspect="AspectFit"
-                                            HeightRequest="50"
-                                            Source="goouttt"
-                                            WidthRequest="50" />
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            Style="{StaticResource workimage}"
+                                            Source="{Binding image}"
+                                        />
                                     <StackLayout
-                                        Grid.Row="0"
-                                        Grid.Column="1"
-                                        Margin="42,0,0,0"
-                                        Spacing="0"
-                                        VerticalOptions="Center">
-                                        <Label 
-                                             Margin="0,10,0,0"
-                                            FontSize="15"
-                                            Text="時間  :"
-                                             FontAttributes="Bold"
-                                            TextColor="Black" />
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            Margin="20,0,0,0"
+                                            Spacing="0"
+                                            VerticalOptions="Center">
                                         <Label
-                                             Margin="0,10,0,0"
-                                            FontSize="15"
-                                            Text="地點  :"
-                                             FontAttributes="Bold"
-                                            TextColor="Black" />
+                                             Text="{Binding workorworkoff}"
+                                             Style="{StaticResource worklabel}"/>
                                         <Label
-                                             Margin="0,10,0,0"
-                                            FontSize="15"
-                                            Text="事由  :"
-                                             FontAttributes="Bold"
-                                            TextColor="Black" />
-                                        <Label
-                                             Margin="0,10,0,10"
-                                            FontSize="15"
-                                            Text="狀態  :"
-                                             FontAttributes="Bold"
-                                            TextColor="Black" />
+                                            TextColor="#766C6C"
+                                             Style="{StaticResource worklabel}"
+                                             LineBreakMode="TailTruncation"
+                                             Text="{Binding time}" />
+
                                     </StackLayout>
-                                    <StackLayout
-                                        Grid.Row="0"
-                                        Grid.Column="2"
-                                        Margin="0,0,60,0"
-                                        Spacing="0"
-                                        VerticalOptions="Center">
-                                        <StackLayout Orientation="Horizontal">
-                                        <Label
-                                             Margin="0,10,0,0"
-                                            FontSize="15"
-                                            Text="{Binding leavegoouttime}"
-                                             FontAttributes="Bold"
-                                            TextColor="Black" />
-                                            <Label
-                                             Margin="0,10,0,0"
-                                            FontSize="15"
-                                            Text="~"
-                                             FontAttributes="Bold"
-                                            TextColor="Black" />
-                                        <Label
-                                             Margin="0,10,0,0"
-                                            FontSize="15"
-                                            Text="{Binding backgoouttime}"
-                                              FontAttributes="Bold"
-                                            TextColor="Black" />
-                                        </StackLayout>
-                                        <Label
-                                             Margin="0,10,0,0"
-                                            FontSize="15"
-                                            Text="{Binding location}"
-                                             FontAttributes="Bold"
-                                            TextColor="Black" />
-                                        <Label
-                                             Margin="0,10,0,0"
-                                            FontSize="15"
-                                            Text="{Binding messagegoout}"
-                                        FontAttributes="Bold"
-                                            TextColor="Black" />
-                                        <Label
-                                             Margin="0,10,0,10"
-                                            FontSize="15"
-                                            Text="{Binding statusgoout}"
-                                             FontAttributes="Bold"
-                                            TextColor="{Binding color}" />
-                                    </StackLayout>
-                                  
+                                    <Label
+                                            Grid.Row="0"
+                                            Grid.Column="2"
+                                            Margin="0,0,45,0"
+                                            Style="{StaticResource worklabel}"
+                                            Text="{Binding status}"
+                                            TextColor="{Binding color}"
+                                            VerticalOptions="Center">
+
+                                    </Label>
                                     <BoxView
-                                        Grid.Row="1"
-                                        Grid.ColumnSpan="3"
-                                        Margin="0,0,40,0"
-                                        BackgroundColor="#5D5454"
-                                        HeightRequest="10"
-                                        HorizontalOptions="FillAndExpand" />
+                                          Grid.Row="1"
+                                          Grid.ColumnSpan="3"
+                                          Style="{StaticResource line}" />
+
                                 </Grid>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
 
                 </Grid>
-            -->
-                <!--請假new
+-->
+              <!--goout new
                 <Grid  HorizontalOptions="Center">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -525,15 +355,115 @@
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
-                    <Label Margin="0,10,0,0" TextColor="#263959" FontSize="15" HorizontalOptions="Center" FontAttributes="Bold"  Text="請假申請"/>
+                    <Label Style="{StaticResource gooutanddayoff}" Text="公出申請"/>
                     <CollectionView
-                        x:Name="WorkWorkofflist"
+                        x:Name="gooutlist"
                         Grid.Row="1"
-                        Margin="40,0,0,0"
-                        HorizontalOptions="Center"
+                       Style="{StaticResource Collection}"
+                        ItemsSource="{Binding gooutlist}">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="0.8" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="auto" />
+                                    </Grid.ColumnDefinitions>
+                                   
+                                    <StackLayout
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Margin="10,0,0,0"
+                                        HorizontalOptions="Center"
+                                        Spacing="0"
+                                        VerticalOptions="Center">
+                                        <Label 
+                                           Style="{StaticResource gooutanddayofftitle}"
+                                            Text="時間  :"
+                                           />
+                                        <Label
+                                            Style="{StaticResource gooutanddayofftitle}"
+                                            Text="地點  :"
+                                           />
+                                        <Label
+                                             Style="{StaticResource gooutanddayofftitle}"
+                                            Text="事由  :"
+                                           />
+                                        <Label
+                                            Margin="0,10,0,10"
+                                             Style="{StaticResource gooutanddayofftitle}"
+                                            Text="狀態  :"
+                                            />
+                                    </StackLayout>
+                                    <StackLayout
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Margin="0,0,150,0"
+                                        HorizontalOptions="Center"
+                                        Spacing="0"
+                                        VerticalOptions="Center">
+                                        <StackLayout Orientation="Horizontal">
+                                        <Label
+                                            Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding leavegoouttime}"
+                                             />
+                                            <Label
+                                            Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="~"
+                                            />
+                                        <Label
+                                            Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding backgoouttime}"
+                                              />
+                                        </StackLayout>
+                                        <Label
+                                            Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding location}"
+                                            />
+                                        <Label
+                                            Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding messagegoout}"
+                                        />
+                                        <Label
+                                             Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding statusgoout}"
+                                            Margin="0,10,0,10"
+                                            TextColor="{Binding color}" />
+                                    </StackLayout>
+                                  
+                                    <BoxView
+                                        Grid.Row="1"
+                                        Grid.ColumnSpan="3"
+                                        Style="{StaticResource line}" />
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                </Grid>
+          -->
+              
+                <Grid  HorizontalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Label Style="{StaticResource gooutanddayoff}" Text="請假申請"/>
+                    <CollectionView
+                        x:Name="dayofflist"
+                        Grid.Row="1"
+                        Style="{StaticResource Collection}"
                         ItemsSource="{Binding dayofflist}"
-                        SelectionMode="None"
-                        VerticalScrollBarVisibility="Never">
+                       >
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Vertical" />
                         </CollectionView.ItemsLayout>
@@ -550,99 +480,70 @@
                                         <ColumnDefinition Width="auto" />
                                     </Grid.ColumnDefinitions>
                                  
-                                        <Image
-                                              Grid.Row="0"
-                                        Grid.Column="0"
-                                        Margin="10,0,0,0"
-                                            Aspect="AspectFit"
-                                            HeightRequest="50"
-                                            Source="nerd"
-                                            WidthRequest="50" />
                                     <StackLayout
                                         Grid.Row="0"
-                                        Grid.Column="1"
-                                        Margin="42,0,0,0"
+                                        Grid.Column="0"
+                                        Margin="10,0,0,0"
                                         Spacing="0"
                                         VerticalOptions="Center">
                                         <Label 
-                                             Margin="0,10,0,0"
-                                            FontSize="15"
+                                           Style="{StaticResource gooutanddayofftitle}"
                                             Text="開始  :"
-                                             FontAttributes="Bold"
-                                            TextColor="Black" />
+                                           />
                                         <Label 
-                                             Margin="0,10,0,0"
-                                            FontSize="15"
+                                             Style="{StaticResource gooutanddayofftitle}"
                                             Text="結束  :"
-                                             FontAttributes="Bold"
-                                            TextColor="Black" />
+                                             />
                                         <Label
-                                             Margin="0,10,0,0"
-                                            FontSize="15"
+                                            Style="{StaticResource gooutanddayofftitle}"
                                             Text="假別  :"
-                                             FontAttributes="Bold"
-                                            TextColor="Black" />
+                                            />
                                         <Label
-                                             Margin="0,10,0,0"
-                                            FontSize="15"
+                                       Style="{StaticResource gooutanddayofftitle}"
                                             Text="事由  :"
-                                             FontAttributes="Bold"
-                                            TextColor="Black" />
+                                             />
                                         <Label
-                                             Margin="0,10,0,10"
-                                            FontSize="15"
+                                              Margin="0,10,0,10"
+                                           Style="{StaticResource gooutanddayofftitle}"
                                             Text="狀態  :"
-                                             FontAttributes="Bold"
-                                            TextColor="Black" />
+                                           />
                                     </StackLayout>
                                   
                                     <StackLayout
                                         Grid.Row="0"
-                                        Grid.Column="2"
+                                        Grid.Column="1"
                                         Margin="0,0,80,0"
                                         Spacing="0"
                                         VerticalOptions="Center">
                                        
                                             <Label
-                                             Margin="0,0,0,0"
-                                            FontSize="15"
-                                               FontAttributes="Bold"
+                                           Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding leavedayoff}"
-                                            TextColor="Black" />
+                                            />
                                       
                                             <Label
-                                             Margin="0,10,0,0"
-                                            FontSize="15"
+                                             Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding backdayoff}"
-                                              FontAttributes="Bold"
-                                            TextColor="Black" />
+                                            />
                                        
                                         <Label
-                                             Margin="0,10,0,0"
-                                            FontSize="15"
-                                             FontAttributes="Bold"
+                                          Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding selection}"
-                                            TextColor="Black" />
+                                            />
                                         <Label
-                                             Margin="0,10,0,0"
-                                            FontSize="15"
+                                            Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding messagedayoff}"
-                                        FontAttributes="Bold"
-                                            TextColor="Black" />
+                                        />
                                         <Label
-                                             Margin="0,10,0,0"
-                                            FontSize="15"
+                                             Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding statusdayoff}"
-                                             FontAttributes="Bold"
+                  Margin="0,10,0,10"
                                             TextColor="{Binding color}" />
                                     </StackLayout>
                                     <BoxView
                                         Grid.Row="1"
-                                        Grid.ColumnSpan="3"
-                                        Margin="0,0,40,0"
-                                        BackgroundColor="#5D5454"
-                                        HeightRequest="10"
-                                        HorizontalOptions="FillAndExpand" />
+                                        Grid.ColumnSpan="2"
+                                        Style="{StaticResource line}" />
 
                                 </Grid>
                             </DataTemplate>
@@ -650,7 +551,7 @@
                     </CollectionView>
 
                 </Grid>
-                -->
+            
             </StackLayout>
 
         </ScrollView>

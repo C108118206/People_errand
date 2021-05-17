@@ -12,12 +12,11 @@
         <ResourceDictionary>
             <Style x:Key="title" TargetType="StackLayout">
                 <Setter Property="Orientation" Value="Horizontal" />
-                <Setter Property="Margin" Value="0,10,0,0" />
                 <Setter Property="BackgroundColor" Value="#D9E1E8" />
             </Style>
             <Style x:Key="title*" TargetType="Label">
                 <Setter Property="TextColor" Value="#CA2D2D" />
-                <Setter Property="FontSize" Value="25" />
+                <Setter Property="FontSize" Value="28" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="Margin" Value="15,10,0,0" />
                 <Setter Property="Text" Value="*" />
@@ -25,8 +24,8 @@
             <Style x:Key="titletext" TargetType="Label">
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="18" />
-                <Setter Property="Margin" Value="0,12,0,0" />
+                <Setter Property="FontSize" Value="19" />
+                <Setter Property="Margin" Value="0,15,0,0" />
             </Style>
             <Style x:Key="date" TargetType="DatePicker">
                 <Setter Property="HorizontalOptions" Value="Start" />

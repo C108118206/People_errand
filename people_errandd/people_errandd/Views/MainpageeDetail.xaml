@@ -45,7 +45,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <StackLayout Orientation="Vertical" >
-                <Frame BackgroundColor="White" WidthRequest="1000" HeightRequest="1500" CornerRadius="30" Margin="0,50,0,-1000">
+                <Frame BackgroundColor="White" WidthRequest="900" HeightRequest="1200" CornerRadius="30" Margin="0,50,0,800">
                     <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="0,20,0,0">
                         <Button Grid.Row="0" Text="↓" FontSize="45" Style="{StaticResource ButtonDown}"  Clicked="GoBackButton"></Button>
                         <StackLayout Margin="0,8,0,0">

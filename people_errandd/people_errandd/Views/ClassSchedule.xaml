@@ -11,7 +11,40 @@
     <TabbedPage.ToolbarItems>
         <ToolbarItem ></ToolbarItem>
     </TabbedPage.ToolbarItems>
-   
+    <TabbedPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="datebutton" TargetType="Button">
+                <Setter Property="Margin" Value="1,5,10,5" />
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="WidthRequest" Value="60" />
+                <Setter Property="CornerRadius" Value="30" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style x:Key="datelabel" TargetType="Label">
+                <Setter Property="FontFamily" Value="13" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+            <Style x:Key="date" TargetType="DatePicker">
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="WidthRequest" Value="120" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Format" Value="MM-dd (dddd)" />
+            </Style>
+            <Style x:Key="titletext" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="Margin" Value="0,30,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </TabbedPage.Resources>
 
     <TabbedPage.BarBackgroundColor>
         <Color x:Uid="colorPrimary">#88BBD6</Color>
@@ -48,46 +81,20 @@
                 </Style>
 
 
-                <Style x:Key="datebutton" TargetType="Button">
-                    <Setter Property="Margin" Value="1,5,10,5" />
-                    <Setter Property="HeightRequest" Value="60" />
-                    <Setter Property="WidthRequest" Value="60" />
-                    <Setter Property="CornerRadius" Value="30" />
-                    <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                    <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-                </Style>
-                <Style x:Key="datelabel" TargetType="Label">
-                    <Setter Property="FontFamily" Value="13" />
-                    <Setter Property="FontAttributes" Value="Bold" />
-                    <Setter Property="HorizontalOptions" Value="Center" />
-                    <Setter Property="TextColor" Value="Black" />
-                </Style>
-                <Style x:Key="date" TargetType="DatePicker">
-                    <Setter Property="HorizontalOptions" Value="Start" />
-                    <Setter Property="WidthRequest" Value="120" />
-                    <Setter Property="FontSize" Value="15" />
-                    <Setter Property="TextColor" Value="Black" />
-                    <Setter Property="FontAttributes" Value="Bold" />
-                    <Setter Property="HorizontalOptions" Value="Center" />
-                    <Setter Property="Format" Value="MM-dd (dddd)" />
-                </Style>
-                <Style x:Key="titletext" TargetType="Label">
-                    <Setter Property="TextColor" Value="Black" />
-                    <Setter Property="FontAttributes" Value="Bold" />
-                    <Setter Property="FontSize" Value="15" />
-                    <Setter Property="Margin" Value="0,30,0,0" />
-                </Style>
+              
             </ResourceDictionary>
         </ContentPage.Resources>
 
         <ContentPage.Content>
             <StackLayout>
-                <StackLayout HorizontalOptions="Center" HeightRequest="90" WidthRequest="10000" BackgroundColor="#88BBD6" Orientation="Horizontal">
-                    <Label Margin="40,30,0,0" Text="選擇:" Style="{StaticResource titletext}"></Label>
-                    <DatePicker Margin="0,10,0,20" Style="{StaticResource date}"></DatePicker>
+                <Frame  BackgroundColor="#88BBD6" >
+                <StackLayout HeightRequest="60" HorizontalOptions="Center"  Orientation="Horizontal">
+                    <Label  Text="選擇:" Style="{StaticResource titletext}"></Label>
+                    <DatePicker Margin="0,15,0,0" Style="{StaticResource date}"></DatePicker>
                     <Label Text="至"  Style="{StaticResource titletext}"></Label>
-                    <DatePicker Margin="0,10,0,20" Style="{StaticResource date}" ></DatePicker>
+                    <DatePicker Margin="0,15,0,0" Style="{StaticResource date}" ></DatePicker>
                 </StackLayout>
+                </Frame>
                 <!--直線開始-->
                 <StackLayout>
                     <CollectionView Margin="70,20,0,0" ItemsSource="{Binding delList}">
@@ -179,22 +186,6 @@
                             </VisualStateGroup>
                         </VisualStateGroupList>
                     </Setter>
-                </Style>
-
-
-                <Style x:Key="datebutton" TargetType="Button">
-                    <Setter Property="Margin" Value="1,5,10,5" />
-                    <Setter Property="HeightRequest" Value="60" />
-                    <Setter Property="WidthRequest" Value="60" />
-                    <Setter Property="CornerRadius" Value="30" />
-                    <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                    <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-                </Style>
-                <Style x:Key="datelabel" TargetType="Label">
-                    <Setter Property="FontFamily" Value="13" />
-                    <Setter Property="FontAttributes" Value="Bold" />
-                    <Setter Property="HorizontalOptions" Value="Center" />
-                    <Setter Property="TextColor" Value="Black" />
                 </Style>
             </ResourceDictionary>
         </ContentPage.Resources>

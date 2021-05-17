@@ -170,9 +170,6 @@
     <BundleResource Include="Resources\date.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\a14.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\audit.png" />
   </ItemGroup>
   <ItemGroup>
@@ -240,5 +237,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\worker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\a14.png" />
   </ItemGroup>
 </Project>

@@ -67,9 +67,7 @@ namespace people_errandd.ViewModels
         {
             source3.Add(new RecordModels
             {
-                leavegooutdate = "2021-05-15 (星期六)",
                 leavegoouttime = "10:10",
-                backgooutdate = "2021-05-15 (星期六)",
                 backgoouttime = "11:10",
                 location = "nkust",
                 messagegoout = "開會",
@@ -78,17 +76,8 @@ namespace people_errandd.ViewModels
 
 
             });
-            source3.Add(new RecordModels
-            {
-                leavegooutdate = "2021-05-15 (星期六)",
-                leavegoouttime = "10:10",
-                backgooutdate = "2021-05-15 (星期六)",
-                backgoouttime = "11:10",
-                location = "高雄巨蛋",
-                messagegoout = "採購",
-                statusgoout = "已審核",
-                color = "#000000"
-            });
+            
+
 
 
             gooutlist = new ObservableCollection<RecordModels>(source3);
@@ -112,7 +101,7 @@ namespace people_errandd.ViewModels
                 selection = "病假",
                 messagedayoff = "發燒",
                 statusdayoff = "已審核",
-                color = "#000000"
+                color = "#766C6C"
             });
 
 
