@@ -7,44 +7,42 @@ namespace people_errandd.ViewModels
 {
     class geoLocation
     {
-        
-
-        public async Task<bool> GetCurrentLocation()
+        public static async Task<(double, double)> GetLocation()
         {
-            
+            var request = new GeolocationRequest(GeolocationAccuracy.Medium);
+            var location = await Geolocation.GetLocationAsync(request);
+            return (location.Latitude, location.Longitude);
+        }
+        public bool GetCurrentLocation(double X, double Y)
+        {
             try
             {
-
-                var request = new GeolocationRequest(GeolocationAccuracy.Medium);
-                var location = await Geolocation.GetLocationAsync(request);
                 Location locationCompany = new Location(22.7522, 120.3287);
-                if (location != null)
+                Location locationNow = new Location(X, Y);
+                double distance = Location.CalculateDistance(locationNow, locationCompany, DistanceUnits.Kilometers);
+                if (distance < 0.05)
                 {
-                    Location locationNow = new Location(location.Latitude, location.Longitude);                  
-                    double distance = Location.CalculateDistance(locationNow, locationCompany, DistanceUnits.Kilometers);
-                    if(distance<0.05)
-                    {
-                        return true;
-                    }
+                    return true;
                 }
+
                 return false;
             }
-            catch (FeatureNotSupportedException fnsEx)
-            {
-                // Handle not supported on device exception
-            }
-            catch (FeatureNotEnabledException fneEx)
-            {
-                // Handle not enabled on device exception
-            }
-            catch (PermissionException pEx)
-            {
-                // Handle permission exception
-            }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // Unable to get location
             }
+            //catch (FeatureNotSupportedException fnsEx)
+            //{
+            //    // Handle not supported on device exception
+            //}
+            //catch (FeatureNotEnabledException fneEx)
+            //{
+            //    // Handle not enabled on device exception
+            //}
+            //catch (PermissionException pEx)
+            //{
+            //    // Handle permission exception
+            //}
             return false;
         }
     }

@@ -7,6 +7,7 @@ using people_errandd.Models;
 using System.Collections;
 using System.Globalization;
 using System.IO;
+using Xamarin.Essentials;
 
 namespace people_errandd
 {
@@ -15,12 +16,12 @@ namespace people_errandd
         static phoneCodeDataBase dataBase;
         public static phoneCodeDataBase DataBase
         {
-            get 
-            { 
-                    if(dataBase == null)
-                    {
+            get
+            {
+                if (dataBase == null)
+                {
                     dataBase = new phoneCodeDataBase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"));
-                    }
+                }
                 return dataBase;
             }
         }
@@ -29,11 +30,19 @@ namespace people_errandd
             InitializeComponent();
             CultureInfo ChineseCulture = new CultureInfo("zh-TW");
             CultureInfo.DefaultThreadCurrentCulture = ChineseCulture;
-            MainPage = new NavigationPage(new LoginPage());
-            }
+            
+           
+                MainPage = new NavigationPage(new LoginPage());
+            
+        }
 
         protected override void OnStart()
         {
+            bool hasKey = Preferences.ContainsKey("Login");
+            if (hasKey)
+            {
+                MainPage = new NavigationPage(new MainPage());
+            }
         }
 
         protected override void OnSleep()
