@@ -93,7 +93,7 @@
                 </StackLayout>
                 
                 
-<!--上班new
+
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -165,7 +165,7 @@
                     </CollectionView>
 
                 </Grid>
--->
+
               <!--
                 <Grid  HorizontalOptions="Center">
                     <Grid.RowDefinitions>
@@ -269,7 +269,7 @@
 
                 </Grid>
           -->
-       
+       <!--
                 <Grid  HorizontalOptions="Center">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -371,7 +371,7 @@
                     </CollectionView>
 
                 </Grid>
-           
+           -->
             </StackLayout>
 
         </ScrollView>

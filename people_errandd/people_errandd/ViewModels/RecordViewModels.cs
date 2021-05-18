@@ -74,7 +74,6 @@ namespace people_errandd.ViewModels
                 statusgoout = "未審核",
                 color = "#BA4545"
 
-
             });
             
 
@@ -94,15 +93,7 @@ namespace people_errandd.ViewModels
                  color = "#BA4545"
 
             });
-            source4.Add(new RecordModels
-            {
-                leavedayoff = "2021-05-15",
-                backdayoff = "2021-05-16",
-                selection = "病假",
-                messagedayoff = "發燒",
-                statusdayoff = "已審核",
-                color = "#766C6C"
-            });
+            
 
 
             dayofflist = new ObservableCollection<RecordModels>(source4);

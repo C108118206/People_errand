@@ -14,8 +14,7 @@ namespace people_errandd.Models
         public string workorworkoff { get; set; }
         public string color { get; set; }
 
-        public string leavegooutdate { get; set; }
-        public string backgooutdate { get; set; }
+        
         public string leavegoouttime { get; set; }
         public string backgoouttime { get; set; }
         public string location { get; set; }
