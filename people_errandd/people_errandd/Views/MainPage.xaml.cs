@@ -39,11 +39,15 @@ namespace people_errandd.Views
             //var companyitem = new company();
             //username.BindingContext = companyitem;
             //username.SetBinding(Label.TextProperty, "Name");
-            var _hashAccount = Preferences.Get("Login","1");
+            var _hashAccount = Preferences.Get("Login","");
             HttpResponse._HashAccount = _hashAccount;
             var request = new GeolocationRequest(GeolocationAccuracy.Medium);
             var location = Geolocation.GetLocationAsync(request);
-
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            status.Text = Preferences.Get("statusNow", "");
         }
 
         private async void GoToWork(object sender, EventArgs e)
@@ -60,12 +64,20 @@ namespace people_errandd.Views
                         if (await Work.PostWork(1, x, y))
                         {
                             await DisplayAlert("", "上班打卡成功", "確定");
+                            await App.DataBase.SaveRecordAsync(new RecordModels
+                            {
+                                status = "上班",
+                                time=DateTime.Now.ToString()
+                            });
+                           Preferences.Set("statusNow", "上班中");
+                           status.Text = Preferences.Get("statusNow", "");
+
                         }
                         else
                         {
-                            await DisplayAlert("Error", "發生錯誤"+HttpResponse._HashAccount, "確定");
+                            await DisplayAlert("Error", "發生錯誤" + HttpResponse._HashAccount, "確定");
                         }
-                }                
+                    }                
                     else
                     {
                         await DisplayAlert("", "位置錯誤\n" + x + "\n" + y, "確定");
@@ -73,7 +85,7 @@ namespace people_errandd.Views
                 }
                 else if (await Work.GetWorkType() == 500)
                 {
-                    await DisplayAlert("Error", "錯誤", "確定");
+                    await DisplayAlert("Error", "錯誤"+ HttpResponse._HashAccount, "確定");
                 }
                 else
                 {
@@ -97,9 +109,17 @@ namespace people_errandd.Views
                 {
                     (double x,double y) = await geoLocation.GetLocation();
                     if (geoLocation.GetCurrentLocation(x,y) == true)
-                    {   if (await Work.PostWork(2, x, y))
+                    {
+                        if (await Work.PostWork(2, x, y))
                         {
+                            await App.DataBase.SaveRecordAsync(new RecordModels
+                            {
+                                status = "下班",
+                                time = DateTime.Now.ToString()
+                            });
                             await DisplayAlert("", "下班打卡成功", "確定");
+                            Preferences.Set("statusNow", "已下班");
+                            status.Text = Preferences.Get("statusNow", "");
                         }
                         else
                         {

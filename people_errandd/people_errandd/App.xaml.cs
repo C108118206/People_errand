@@ -13,14 +13,14 @@ namespace people_errandd
 {
     public partial class App : Application
     {
-        static phoneCodeDataBase dataBase;
-        public static phoneCodeDataBase DataBase
+        static Database dataBase;
+        public static Database DataBase
         {
             get
             {
                 if (dataBase == null)
                 {
-                    dataBase = new phoneCodeDataBase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"));
+                    dataBase = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"));
                 }
                 return dataBase;
             }
@@ -36,11 +36,11 @@ namespace people_errandd
 
         protected override void OnStart()
         {
-            bool hasKey = Preferences.ContainsKey("Login");
-            if (hasKey)
-            {
-                MainPage = new NavigationPage(new MainPage());
-            }
+            //bool hasKey = Preferences.ContainsKey("Login");
+            //if (hasKey)
+            //{
+            //    MainPage = new NavigationPage(new MainPage());
+            //}
         }
 
         protected override void OnSleep()

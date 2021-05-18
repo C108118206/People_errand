@@ -6,20 +6,20 @@ using SQLite;
 
 namespace people_errandd.Models
 {
-    class Database
+    public class Database
     {
         readonly SQLiteAsyncConnection _database;
         public Database(string dbpath)
         {
             _database = new SQLiteAsyncConnection(dbpath);
-            _database.CreateTableAsync<Records>().Wait();
+            _database.CreateTableAsync<RecordModels>().Wait();
         }
 
-        public Task<List<Records>> GetRecordsAsync()
+        public Task<List<RecordModels>> GetRecordsAsync()
         {
-            return _database.Table<Records>().ToListAsync();
+            return _database.Table<RecordModels>().ToListAsync();
         }
-        public Task<int> SaveRecordAsync(Records records)
+        public Task<int> SaveRecordAsync(RecordModels records)
         {
             return _database.InsertAsync(records);
         }

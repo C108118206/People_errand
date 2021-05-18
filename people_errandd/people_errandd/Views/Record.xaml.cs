@@ -13,6 +13,11 @@ namespace people_errandd.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Record : ContentPage
     {
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            Worklist.ItemsSource = await App.DataBase.GetRecordsAsync();
+        }
         public Record()
         {
             InitializeComponent();

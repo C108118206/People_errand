@@ -10,9 +10,9 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem ></ToolbarItem>
     </ContentPage.ToolbarItems>
-    <ContentPage.BindingContext>
+    <!--<ContentPage.BindingContext>
         <viewmodels:RecordViewModels  />
-    </ContentPage.BindingContext>
+    </ContentPage.BindingContext>-->
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="date" TargetType="DatePicker">
@@ -277,12 +277,12 @@
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
-                    <Label Style="{StaticResource gooutanddayoff}"  Text="請假申請"/>
+                    <Label Style="{StaticResource gooutanddayoff}"  Text="打卡紀錄"/>
                     <CollectionView
-                        x:Name="WorkWorkofflist"
+                        x:Name="Worklist"
                         Grid.Row="1"
                          Style="{StaticResource Collection}"
-                        ItemsSource="{Binding dayofflist}"
+                        ItemsSource="{Binding worklist}"
                        >
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Vertical" />
@@ -308,13 +308,13 @@
                                         VerticalOptions="Center">
                                         <Label 
                                              Style="{StaticResource gooutanddayofftitle}"
-                                            Text="開始  :"
+                                            Text="狀態 :"
                                            />
                                         <Label 
                                            Style="{StaticResource gooutanddayofftitle}"
-                                            Text="結束  :"
+                                            Text="時間:"
                                             />
-                                        <Label
+                                        <!--<Label
                                              Style="{StaticResource gooutanddayofftitle}"
                                             Text="假別  :"
                                           />
@@ -325,7 +325,7 @@
                                         <Label
                                               Style="{StaticResource gooutanddayofftitle}"
                                             Text="狀態  :"
-                                            Margin="0,10,0,10" />
+                                            Margin="0,10,0,10" />-->
                                     </StackLayout>
                                   
                                     <StackLayout
@@ -337,15 +337,15 @@
                                        
                                             <Label
                                               Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding leavedayoff}"
+                                            Text="{Binding status}"
                                            />
                                       
                                             <Label
                                              Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding backdayoff}"
+                                            Text="{Binding time}"
                                              />
                                        
-                                        <Label
+                                        <!--<Label
                                               Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding selection}"
                                             TextColor="#766C6C" />
@@ -358,7 +358,7 @@
                                              Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding statusdayoff}"
                                              Margin="0,10,0,10"
-                                            TextColor="{Binding color}" />
+                                            TextColor="{Binding color}" />-->
                                     </StackLayout>
                                     <BoxView
                                         Grid.Row="1"
