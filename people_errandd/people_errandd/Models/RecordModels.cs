@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,8 +9,11 @@ namespace people_errandd.Models
 {
     public class RecordModels
     {
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
         public string status { get; set; }
         public string time { get; set; }
+<<<<<<< HEAD
         public string image { get; set; }
         public string workorworkoff { get; set; }
         public string color { get; set; }
@@ -25,6 +29,8 @@ namespace people_errandd.Models
         public string selection { get; set; }
         public string messagedayoff { get; set; }
         public string statusdayoff { get; set; }
+=======
+>>>>>>> 8d5c5bf2e9d0eff316132bb3e13535a730ae4d3c
 
     }
 }
