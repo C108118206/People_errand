@@ -93,7 +93,7 @@
                 </StackLayout>
                 
                 
-<!--
+
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -165,7 +165,7 @@
                     </CollectionView>
 
                 </Grid>
--->
+
               <!--
                 <Grid  HorizontalOptions="Center">
                     <Grid.RowDefinitions>
@@ -364,12 +364,7 @@
                                         Grid.Row="1"
                                         Grid.ColumnSpan="2"
                                          Style="{StaticResource line}" />
-<!--
-                                </Grid>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-    -->
+
 
                 
      
