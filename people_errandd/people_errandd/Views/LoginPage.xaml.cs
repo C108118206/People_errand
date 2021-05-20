@@ -53,6 +53,10 @@ namespace people_errandd.Views
 
 
         }
+        private async void QuestionButton(object sender, EventArgs e)
+        {
+            await DisplayAlert("", "有任何問題，請與我們聯繫", "確定");
+        }
 
     }
 }

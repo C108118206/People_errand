@@ -5,7 +5,7 @@
              BackgroundColor="#9BAEC8">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <StyleSheet Source="/Stylesheet1.css"/>
+ 
             <Style x:Key="name" TargetType="Label">
                 <Setter Property="FontFamily" Value="Chalkduster" />
                 <Setter Property="TextColor" Value="Black" />
