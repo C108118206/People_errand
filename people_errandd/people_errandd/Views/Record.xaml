@@ -57,7 +57,7 @@
             <Style x:Key="gooutanddayoff" TargetType="Label">
                 <Setter Property="Margin" Value="0,10,0,0"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontSize" Value="18"/>
                 <Setter Property="TextColor" Value="#263959"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
@@ -70,6 +70,7 @@
             </Style>
             <Style x:Key="gooutanddayoffcontent" TargetType="Label">
                 <Setter Property="Margin" Value="0,10,0,0"/>
+                <Setter Property="HorizontalOptions" Value="End"/>
                 <Setter Property="TextColor" Value="#807D7D"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontSize" Value="15"/>
@@ -278,7 +279,7 @@
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                    
-                    <Label Style="{StaticResource gooutanddayoff}"  Text="打卡紀錄"/>
+                    <Label Style="{StaticResource gooutanddayoff}" CharacterSpacing="5" Text="打卡紀錄"/>
                  
                     <CollectionView
                         x:Name="Worklist"
@@ -334,10 +335,11 @@
                                     <StackLayout
                                         Grid.Row="0"
                                         Grid.Column="1"
-                                        Margin="0,0,80,0"
+                                        Margin="0,0,60,0"
                                         Spacing="0"
-                                        VerticalOptions="Center">
-
+                                        HorizontalOptions="End"
+                                        VerticalOptions="End">
+                        
                                         <Label
                                               Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding status}"

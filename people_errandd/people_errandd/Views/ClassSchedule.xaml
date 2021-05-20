@@ -89,9 +89,8 @@
             <StackLayout>
 
                 <Frame  BackgroundColor="#88BBD6" >
-                <StackLayout HeightRequest="60" HorizontalOptions="Center"  Orientation="Horizontal">
-                    <Label  Text="選擇:" Style="{StaticResource titletext}"></Label>
-                    <DatePicker Margin="0,15,0,0" Style="{StaticResource date}"></DatePicker>
+                    <StackLayout HeightRequest="60" HorizontalOptions="Center"  Orientation="Horizontal">
+                        <DatePicker Margin="0,15,0,0" Style="{StaticResource date}"></DatePicker>
                     <Label Text="至"  Style="{StaticResource titletext}"></Label>
                     <DatePicker Margin="0,15,0,0" Style="{StaticResource date}" ></DatePicker>
                 </StackLayout>

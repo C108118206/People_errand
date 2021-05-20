@@ -5,7 +5,7 @@
              BackgroundColor="#D9E1E8">
     
     <NavigationPage.TitleView>
-        <Label Text="公出申請" HorizontalTextAlignment="Center" TextColor="Black" FontSize="25" FontAttributes="Bold"  VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
+        <Label Text="公出申請" HorizontalTextAlignment="Center" TextColor="Black" FontSize="18" FontAttributes="Bold"  VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
     </NavigationPage.TitleView>
    
     <ContentPage.ToolbarItems>
@@ -248,12 +248,12 @@
                     </Frame>
                     <StackLayout Grid.Row="1" Margin="0,10,0,0" Orientation="Horizontal">
                         <Label Style="{StaticResource title*}"></Label>
-                        <Label Text="假別 :" Style="{StaticResource titletext}"></Label>
+                        <Label Text="地點 :" Style="{StaticResource titletext}"></Label>
                     </StackLayout>
                     <Entry  Style="{StaticResource entry}"></Entry>
                     <StackLayout  Margin="0,10,0,0" Orientation="Horizontal">
                         <Label Style="{StaticResource title*}"></Label>
-                        <Label Text="請假原因 :" Style="{StaticResource titletext}"></Label>
+                        <Label Text="事由 :" Style="{StaticResource titletext}"></Label>
                     </StackLayout>
                     <Entry  Style="{StaticResource entry}"></Entry>
                     <Button Style="{StaticResource button}"></Button>
