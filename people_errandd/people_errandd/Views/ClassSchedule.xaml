@@ -6,7 +6,7 @@
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              android:TabbedPage.ToolbarPlacement="Bottom">
     <NavigationPage.TitleView>
-        <Label Text="查看班表" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="18" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
+        <Label Text="查看班表" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
     </NavigationPage.TitleView>
     <TabbedPage.ToolbarItems>
         <ToolbarItem ></ToolbarItem>

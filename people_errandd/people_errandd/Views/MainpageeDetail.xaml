@@ -12,7 +12,7 @@
                 <Setter Property="HeightRequest" Value="110" />
                 <Setter Property="WidthRequest" Value="50" />
                 <Setter Property="CornerRadius" Value="20" />
-                <Setter Property="Margin" Value="0,-60,10,0"/>
+                <Setter Property="Margin" Value="0,-50,10,0"/>
             </Style>
             <Style x:Key="Button1" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#A8D3F1" />
@@ -37,18 +37,21 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView>
+
         <Grid BackgroundColor="#8CC5D7">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
+           <!-- <ScrollView>  -->
             <StackLayout Orientation="Vertical" >
-                <Frame BackgroundColor="White" WidthRequest="900" HeightRequest="1200" CornerRadius="30" Margin="0,50,0,800">
+                <Frame BackgroundColor="White" WidthRequest="900" HeightRequest="1500" CornerRadius="30" Margin="0,50,0,-800">
+                       
                     <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="0,20,0,0">
                         <Button Grid.Row="0" Text="↓" FontSize="45" Style="{StaticResource ButtonDown}"  Clicked="GoBackButton"></Button>
-                        <StackLayout Margin="0,8,0,0">
+                         
+                                <StackLayout Margin="0,8,0,0">
                             <StackLayout Grid.Row="1" Orientation="Horizontal">
                                 <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
                                     <Button ImageSource="worker.png" Style="{StaticResource Button1}" Clicked="GoToWork"></Button>
@@ -85,11 +88,13 @@
                             </StackLayout>
 
                         </StackLayout>
+                               
                     </StackLayout>
-
-                </Frame>
+                       
+                    </Frame>
             </StackLayout>
+
         </Grid>
-        </ScrollView>
+
     </ContentPage.Content>
 </ContentPage>

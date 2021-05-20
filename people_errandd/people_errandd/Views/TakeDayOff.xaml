@@ -5,7 +5,7 @@
              BackgroundColor="#D9E1E8">
   
     <NavigationPage.TitleView>
-        <Label Text="請假申請" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="18" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
+        <Label Text="請假申請" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
     </NavigationPage.TitleView>
 
     <ContentPage.ToolbarItems>

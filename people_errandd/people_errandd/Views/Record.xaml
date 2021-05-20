@@ -5,7 +5,7 @@
              x:Class="people_errandd.Views.Record"
              BackgroundColor="White">
     <NavigationPage.TitleView>
-        <Label Text="查看紀錄" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" FontSize="18" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
+        <Label Text="查看紀錄" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
     </NavigationPage.TitleView>
     <ContentPage.ToolbarItems>
         <ToolbarItem ></ToolbarItem>
