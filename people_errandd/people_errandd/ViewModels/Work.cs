@@ -10,9 +10,7 @@ namespace people_errandd.ViewModels
 {
     class Work : HttpResponse
     {
-
-
-        public static async Task<int> GetWorkType()
+        public  async Task<int> GetWorkType()
         {
             response = await client.GetAsync(basic_url + ControllerNameWorkRecord + _HashAccount);
             if (response.StatusCode.ToString() == "NoContent")
@@ -21,13 +19,13 @@ namespace people_errandd.ViewModels
             }
             else if (response.StatusCode.ToString() == "OK")
             {
-                string json = await response.Content.ReadAsStringAsync();
-                work workStatus = JsonConvert.DeserializeObject<work>(json);
+                GetResponse = await response.Content.ReadAsStringAsync();
+                work workStatus = JsonConvert.DeserializeObject<work>(GetResponse);
                 return workStatus.workTypeId;
             }
             return 500;
         }
-        public static async Task<bool> PostWork(int _WorkTypeId, double _coordinateX, double _coordinateY)
+        public async Task<bool> PostWork(int _WorkTypeId, double _coordinateX, double _coordinateY)
         {
             List<work> works = new List<work>();
             work work = new work()
