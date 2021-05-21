@@ -51,6 +51,10 @@ namespace people_errandd.Views
                 await DisplayAlert("錯誤", "輸入錯誤", "請重新輸入");
             }
         }
+        private async void QuestionButton(object sender, EventArgs e)
+        {
+            await DisplayAlert("", "有任何問題，請與我們聯繫", "確定");
+        }
 
     }
 }

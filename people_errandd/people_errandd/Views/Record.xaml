@@ -5,7 +5,7 @@
              x:Class="people_errandd.Views.Record"
              BackgroundColor="White">
     <NavigationPage.TitleView>
-        <Label Text="查看紀錄" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" FontSize="18" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
+        <Label Text="查看紀錄" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
     </NavigationPage.TitleView>
     <ContentPage.ToolbarItems>
         <ToolbarItem ></ToolbarItem>
@@ -57,7 +57,7 @@
             <Style x:Key="gooutanddayoff" TargetType="Label">
                 <Setter Property="Margin" Value="0,10,0,0"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontSize" Value="18"/>
                 <Setter Property="TextColor" Value="#263959"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
@@ -70,6 +70,7 @@
             </Style>
             <Style x:Key="gooutanddayoffcontent" TargetType="Label">
                 <Setter Property="Margin" Value="0,10,0,0"/>
+                <Setter Property="HorizontalOptions" Value="End"/>
                 <Setter Property="TextColor" Value="#807D7D"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontSize" Value="15"/>
@@ -91,9 +92,9 @@
                     <DatePicker  Grid.Row="0" Grid.Column="1" x:Name="startDatePicker" Style="{StaticResource date}" />
                     <ImageButton Clicked="choose"  Grid.Row="0" Grid.Column="2"  Style="{StaticResource select}"></ImageButton>
                 </StackLayout>
-                
-                
-<!--上班new
+
+
+                <!--上班new
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -166,7 +167,7 @@
 
                 </Grid>
 -->
-              <!--
+                <!--
                 <Grid  HorizontalOptions="Center">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -269,7 +270,7 @@
 
                 </Grid>
           -->
-       
+
                 <Grid  HorizontalOptions="Center">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -277,7 +278,9 @@
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
-                    <Label Style="{StaticResource gooutanddayoff}"  Text="打卡紀錄"/>
+                   
+                    <Label Style="{StaticResource gooutanddayoff}" CharacterSpacing="5" Text="打卡紀錄"/>
+                 
                     <CollectionView
                         x:Name="Worklist"
                         Grid.Row="1"
@@ -299,7 +302,7 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="auto" />
                                     </Grid.ColumnDefinitions>
-                                 
+
                                     <StackLayout
                                         Grid.Row="0"
                                         Grid.Column="0"
@@ -311,8 +314,9 @@
                                             Text="狀態 :"
                                            />
                                         <Label 
+                                             Margin="0,10,0,10"
                                            Style="{StaticResource gooutanddayofftitle}"
-                                            Text="時間:"
+                                            Text="時間 :"
                                             />
                                         <!--<Label
                                              Style="{StaticResource gooutanddayofftitle}"
@@ -327,24 +331,26 @@
                                             Text="狀態  :"
                                             Margin="0,10,0,10" />-->
                                     </StackLayout>
-                                  
+
                                     <StackLayout
                                         Grid.Row="0"
                                         Grid.Column="1"
-                                        Margin="0,0,80,0"
+                                        Margin="0,0,60,0"
                                         Spacing="0"
-                                        VerticalOptions="Center">
-                                       
-                                            <Label
+                                        HorizontalOptions="End"
+                                        VerticalOptions="End">
+                        
+                                        <Label
                                               Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding status}"
                                            />
-                                      
-                                            <Label
+
+                                        <Label
+                                             Margin="0,10,0,10"
                                              Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding time}"
                                              />
-                                       
+
                                         <!--<Label
                                               Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding selection}"
@@ -371,7 +377,7 @@
                     </CollectionView>
 
                 </Grid>
-           
+
             </StackLayout>
 
         </ScrollView>

@@ -15,7 +15,7 @@ namespace people_errandd.Views
         public TakeDayOff()
         {
             InitializeComponent();
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#CADBE9");
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#D9E1E8");
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
         }
         private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)

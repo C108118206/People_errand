@@ -20,11 +20,11 @@ namespace people_errandd.Views
 
         private async void GoToWork(object sender, EventArgs e)
         {
-            await DisplayAlert("", "上班打卡成功 ! 恭喜老爺賀喜夫人", "確定");
+            await DisplayAlert("", "上班打卡成功 ! ", "確定");
         }
         private async void OffWork(object sender, EventArgs e)
         {
-            await DisplayAlert("", "下班打卡成功 ! 恭喜老爺賀喜夫人", "確定");
+            await DisplayAlert("", "下班打卡成功 ! ", "確定");
         }
         private async void GoBackButton(object sender, EventArgs e)
         {

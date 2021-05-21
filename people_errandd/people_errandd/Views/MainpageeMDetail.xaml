@@ -37,7 +37,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView>
+
         <Grid BackgroundColor="#8CC5D7">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
@@ -106,6 +106,5 @@
                 </Frame>
             </StackLayout>
         </Grid>
-        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
