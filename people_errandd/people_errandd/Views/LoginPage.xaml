@@ -7,33 +7,53 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="title" TargetType="Label">
-                <Setter Property="TextColor" Value="White" />
+                <Setter Property="TextColor" Value="#263959" />
                 <Setter Property="FontSize" Value="40" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="Margin" Value="40,100,0,0"/>
+                <Setter Property="Margin" Value="40,160,0,0"/>
             </Style>
             <Style x:Key="image" TargetType="Image">
-                <Setter Property="Margin" Value="10,90,0,0" />
-                <Setter Property="HeightRequest" Value="45" />
+                <Setter Property="Margin" Value="20,150,0,0" />
+                <Setter Property="HeightRequest" Value="60" />
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
+            <Style x:Key="entrytitle" TargetType="Label">
+                <Setter Property="TextColor" Value="#263959" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="50,60,0,-20"/>
+            </Style>
             <Style x:Key="entry" TargetType="Entry">
-                <Setter Property="WidthRequest" Value="300" />
+                <Setter Property="WidthRequest" Value="280" />
+                <Setter Property="Margin" Value="50,0,50,0"/>
                 <Setter Property="HeightRequest" Value="80" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="TextColor" Value="White" />
-                <Setter Property="PlaceholderColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="TextColor" Value="#7F7B7B" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
             </Style>
-            <Style x:Key="Button" TargetType="Button">
+            <Style x:Key="Sign in" TargetType="Label">
+                <Setter Property="TextColor" Value="#263959" />
+                <Setter Property="FontSize" Value="40" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="WidthRequest" Value="150" />
+                <Setter Property="Margin" Value="40,50,0,0"/>
+            </Style>
+            <Style x:Key="Button" TargetType="Button">
+                <Setter Property="Margin" Value="90,40,0,0" />
+                <Setter Property="BackgroundColor" Value="#263959"/>
+                <Setter Property="VerticalOptions" Value="End"/>
+                <Setter Property="HorizontalOptions" Value="End"/>
+                <Setter Property="HeightRequest" Value="80"/>
+                <Setter Property="WidthRequest" Value="80"/>
+                <Setter Property="CornerRadius" Value="80"/>
+            </Style>
+            <Style x:Key="Question" TargetType="Button">
                 <Setter Property="FontSize" Value="18" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="BackgroundColor" Value="#DAE9F4" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="#263959" />
                 <Setter Property="CornerRadius" Value="10" />
-                <Setter Property="Margin" Value="50" />
+                <Setter Property="Margin" Value="30,-5,0,0" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -42,12 +62,14 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        <!-- origin 
         <StackLayout
             x:Name="RootContainer"
             Margin="0,0,0,-800"
             BackgroundColor="White"
             Spacing="0">
             <Frame
+                WidthRequest="10000"
                 Margin="0,-40,0,0"
                 Padding="0,40,0,24"
                 BackgroundColor="#263959"
@@ -68,7 +90,53 @@
 
             </Frame>
         </StackLayout>
-
-
+-->
+        <!-- 111111
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Punch." Style="{StaticResource title}"></Label>
+                <Image x:Name="image" Source="logintitle" Style="{StaticResource image}"></Image>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="組織ID" Style="{StaticResource entrytitle}"></Label>
+                <Entry x:Name="company"   Style="{StaticResource entry}"></Entry>
+                <Button x:Name="button" Text="→" Style="{StaticResource Button}" Clicked="LogInButton" ></Button>
+            </StackLayout>
+            <Button  Text="如何使用" Style="{StaticResource Question}" Clicked="QuestionButton" ></Button>
+        </StackLayout>
+        -->
+     
+        <StackLayout>
+            <StackLayout Grid.Row="0" Orientation="Horizontal">
+                <Label  Grid.Column="0" Text="差勤打卡" Style="{StaticResource title}"></Label>
+                <Image Grid.Column="1" Source="login2" Style="{StaticResource image}"></Image>
+            </StackLayout>
+            <Label Grid.Row="1" Text="組織ID" Style="{StaticResource entrytitle}"></Label>
+            <Entry Grid.Row="2" x:Name="company"   Style="{StaticResource entry}"></Entry>
+            <StackLayout Grid.Row="3" Orientation="Horizontal">
+                <Label Grid.Column="0" Text="Sign in"  Style="{StaticResource Sign in}"></Label>
+                <Button  Grid.Column="1" ImageSource="arrow"  Style="{StaticResource Button}" Clicked="LogInButton" ></Button>
+               </StackLayout>
+            <Button Grid.Row="4" Text="如何使用" Style="{StaticResource Question}" Clicked="QuestionButton" ></Button>
+        </StackLayout>
+       
+        <!-- 3333333
+            <StackLayout>
+            <Image x:Name="image" Source="loginpage2" Style="{StaticResource image}"></Image>
+            <Frame Margin="0,0,0,0" HorizontalOptions="Center">
+                    <StackLayout>
+                        <Label Text="差勤打卡" Style="{StaticResource title}"></Label>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="組織ID" Style="{StaticResource entrytitle}"></Label>
+                            <Entry x:Name="company"   Style="{StaticResource entry}"></Entry>
+                        </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="登入" Style="{StaticResource Button}" Clicked="LogInButton" ></Button>
+                        </StackLayout>
+                        <Button  Text="如何使用" Style="{StaticResource Question}" Clicked="QuestionButton" ></Button>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        -->
     </Grid>
 </ContentPage>
