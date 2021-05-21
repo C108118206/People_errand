@@ -4287,3 +4287,4 @@ C:\Users\lmh_flower\source\repos\People_errand-0427_Week7\people_errandd\people_
 C:\Users\lmh_flower\source\repos\People_errand-0427_Week7\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\loginpage2.png
 C:\Users\lmh_flower\source\repos\People_errand-0427_Week7\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\arrow.png
 C:\Users\lmh_flower\source\repos\People_errand-0427_Week7\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\login2.png
+C:\Users\lmh_flower\source\repos\People_errand-0427_Week7\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\schedule2.png

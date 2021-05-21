@@ -250,4 +250,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\arrow.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\schedule2.png" />
+  </ItemGroup>
 </Project>

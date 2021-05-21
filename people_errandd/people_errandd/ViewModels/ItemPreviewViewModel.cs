@@ -18,9 +18,9 @@ namespace people_errandd.ViewModels
     class ItemPreviewViewModel : INotifyPropertyChanged
     {
 
-        readonly IList<Category> source2;
+
         readonly IList<DeliverySteps> source;
-        public ObservableCollection<Category> categories { get; private set; }
+
         public ObservableCollection<DeliverySteps> delList { get; private set; }
 
         int currentFlag = 3; //Starts from 0
@@ -69,10 +69,6 @@ namespace people_errandd.ViewModels
         public ICommand CatTapCommand { get; set; }
         public ItemPreviewViewModel()
         {
-           
-            source2 = new List<Category>();
-           
-            CreateCategoriesCollection();
 
             source = new List<DeliverySteps>();
             CreateCollection();
@@ -119,55 +115,7 @@ namespace people_errandd.ViewModels
         }
 
 
-        void CreateCategoriesCollection()
-        {
-            source2.Add(new Category
-            {
-                image = "mon.png",
-                title = "04/05",
-                link = "5693 Products"
-            });
-            source2.Add(new Category
-            {
-                image = "tue.png",
-                title = "04/06",
-                link = "1124 Products"
-            });
-            source2.Add(new Category
-            {
-                image = "wed.png",
-                title = "04/07",
-                link = "5693 Products"
-            });
-
-            source2.Add(new Category
-            {
-                image = "thu.png",
-                title = "04/08",
-                link = "5693 Products"
-            });
-
-            source2.Add(new Category
-            {
-                image = "fri.png",
-                title = "04/09",
-                link = "5693 Products"
-            });
-            source2.Add(new Category
-            {
-                image = "sat.png",
-                title = "04/10",
-                link = "5693 Products"
-            });
-            source2.Add(new Category
-            {
-                image = "sun.png",
-                title = "04/11",
-                link = "5693 Products"
-            });
-
-            categories = new ObservableCollection<Category>(source2);
-        }
+        
         
         
 

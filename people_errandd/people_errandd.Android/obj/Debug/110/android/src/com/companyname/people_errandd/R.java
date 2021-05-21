@@ -6552,19 +6552,20 @@ public final class R {
     public static final int phone=0x7f0700a8;
     public static final int sat=0x7f0700a9;
     public static final int schedule=0x7f0700aa;
-    public static final int select=0x7f0700ab;
-    public static final int strategy=0x7f0700ac;
-    public static final int sun=0x7f0700ad;
-    public static final int teamworker=0x7f0700ae;
-    public static final int test_custom_background=0x7f0700af;
-    public static final int thu=0x7f0700b0;
-    public static final int tooltip_frame_dark=0x7f0700b1;
-    public static final int tooltip_frame_light=0x7f0700b2;
-    public static final int tue=0x7f0700b3;
-    public static final int wed=0x7f0700b4;
-    public static final int work=0x7f0700b5;
-    public static final int worker=0x7f0700b6;
-    public static final int workeroff=0x7f0700b7;
+    public static final int schedule2=0x7f0700ab;
+    public static final int select=0x7f0700ac;
+    public static final int strategy=0x7f0700ad;
+    public static final int sun=0x7f0700ae;
+    public static final int teamworker=0x7f0700af;
+    public static final int test_custom_background=0x7f0700b0;
+    public static final int thu=0x7f0700b1;
+    public static final int tooltip_frame_dark=0x7f0700b2;
+    public static final int tooltip_frame_light=0x7f0700b3;
+    public static final int tue=0x7f0700b4;
+    public static final int wed=0x7f0700b5;
+    public static final int work=0x7f0700b6;
+    public static final int worker=0x7f0700b7;
+    public static final int workeroff=0x7f0700b8;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

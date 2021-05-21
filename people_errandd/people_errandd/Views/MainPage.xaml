@@ -14,6 +14,15 @@
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="Margin" Value="0,5,0,0"/>
             </Style>
+            <Style x:Key="gpsframe" TargetType="Frame">
+                <Setter Property="Opacity" Value="0.5" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="HeightRequest" Value="25" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0,20,0,20" />
+                <Setter Property="Padding" Value="20,10,20,10" />
+            </Style>
             <Style x:Key="button1" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#A8D3F1" /> 
                 <Setter Property="VerticalOptions" Value="Center" />
@@ -34,10 +43,11 @@
                 <Setter Property="WidthRequest" Value="120" />
                 <Setter Property="Margin" Value="10,10" />
             </Style>
-            <Style x:Key="Buttontext" TargetType="Label">
+            <Style x:Key="text" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontSize" Value="18" />
                 <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="TextColor" Value="Black" />
             </Style>
         </ResourceDictionary>
@@ -54,8 +64,8 @@
 
             <StackLayout Orientation="Vertical" >
                 <StackLayout  Margin="20,20,0,0" Grid.Row="0"  Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Start">
-                    <Label Text="目前狀態  : " HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  Style="{StaticResource Buttontext}" />
-                    <Label x:Name="status" Text="" TextDecorations="Underline" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  Style="{StaticResource Buttontext}" />
+                    <Label Text="目前狀態  : "   Style="{StaticResource text}" />
+                    <Label x:Name="status" Text="" TextDecorations="Underline"  Style="{StaticResource text}" />
                 </StackLayout>
                 <StackLayout Grid.Row="1" Margin="0,30,0,0" VerticalOptions="Center" HorizontalOptions="Center" Orientation="Horizontal" >
                     <Frame 
@@ -72,15 +82,11 @@
                              WidthRequest="20" />
                     </Frame>
                 </StackLayout>
-                <Label x:Name="username" Text="Hi ! Marry" Style="{StaticResource name}"  Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center"></Label>
-                <Frame Grid.Row="3" Opacity="0.5" CornerRadius="10" WidthRequest="200" HeightRequest="20" HorizontalOptions="Center" Margin="0,20,0,20" Padding="20,10,20,10">
+                <Label x:Name="username" Text="Hi ! Marry" Grid.Row="2" Style="{StaticResource name}" ></Label>
+                <Frame Grid.Row="3" Style="{StaticResource gpsframe}">
                     <Label
                             Text="GPS 定位已開啟"
-                            Opacity="0.7"
-                            TextColor="Black"
-                            FontAttributes="Bold"
-                            FontSize="15"
-                           HorizontalOptions="Center">
+                            Style="{StaticResource text}">
                     </Label>
                 </Frame>
                 <Frame WidthRequest="1000" HeightRequest="500" CornerRadius="30"  Margin="0,0,0,-200">
@@ -88,21 +94,21 @@
                         <StackLayout Grid.Row="4" Orientation="Horizontal">
                             <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Center">
                                 <Button ImageSource="worker.png" Style="{StaticResource button1}" Clicked="GoToWork"></Button>
-                                <Label Text="上班" Style="{StaticResource Buttontext}"></Label>
+                                <Label Text="上班" Style="{StaticResource text}"></Label>
                             </StackLayout>
                             <StackLayout Grid.Row="0" Grid.Column="1">
                                 <Button Opacity="0.2" ImageSource="workeroff.png" Style="{StaticResource button2}" Clicked="OffWork"></Button>
-                                <Label Opacity="0.2" Text="下班" Style="{StaticResource Buttontext}"></Label>
+                                <Label Opacity="0.2" Text="下班" Style="{StaticResource text}"></Label>
                             </StackLayout>
                         </StackLayout>
                         <StackLayout Grid.Row="5"  Orientation="Horizontal">
                             <StackLayout  Grid.Row="0" Grid.Column="0" HorizontalOptions="Center">
                                 <Button ImageSource="goouttt.png" Style="{StaticResource button2}" Clicked="GoOutButton"></Button>
-                                <Label Text="公出" Style="{StaticResource Buttontext}"></Label>
+                                <Label Text="公出" Style="{StaticResource text}"></Label>
                             </StackLayout>
                             <StackLayout Grid.Row="0" Grid.Column="1">
                                 <Button ImageSource="more1"  Style="{StaticResource button1}" Clicked="DetailButton"></Button>
-                                <Label Text="更多" Style="{StaticResource Buttontext}"></Label>
+                                <Label Text="更多" Style="{StaticResource text}"></Label>
                             </StackLayout>
                         </StackLayout>
 

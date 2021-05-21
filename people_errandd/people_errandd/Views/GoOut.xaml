@@ -5,7 +5,7 @@
              BackgroundColor="#D9E1E8">
     
     <NavigationPage.TitleView>
-        <Label Text="公出申請" HorizontalTextAlignment="Center" TextColor="Black" FontSize="20" FontAttributes="Bold"  VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
+        <Label Text="公出申請" TextColor="Black" FontSize="20" HorizontalTextAlignment="Center"  FontAttributes="Bold"  VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
     </NavigationPage.TitleView>
    
     <ContentPage.ToolbarItems>
@@ -77,7 +77,6 @@
                 <Setter Property="Margin" Value="0,20,0,0" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="WidthRequest" Value="280" />
-                <Setter Property="Margin" Value="0,20,0,0" />
                 <Setter Property="CornerRadius" Value="10" />
             </Style>
             <Style x:Key="title*" TargetType="Label">
@@ -90,12 +89,12 @@
             <Style x:Key="titletext" TargetType="Label">
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="19" />
+                <Setter Property="FontSize" Value="20" />
             </Style>
             <Style x:Key="date" TargetType="DatePicker">
                 <Setter Property="HorizontalOptions" Value="Start" />
                 <Setter Property="WidthRequest" Value="250" />
-                <Setter Property="FontSize" Value="17" />
+                <Setter Property="FontSize" Value="18" />
                 <Setter Property="TextColor" Value="#696969" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="HorizontalOptions" Value="Center" />
@@ -104,7 +103,7 @@
             <Style x:Key="time" TargetType="TimePicker">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="WidthRequest" Value="250" />
-                <Setter Property="FontSize" Value="17" />
+                <Setter Property="FontSize" Value="18" />
                 <Setter Property="TextColor" Value="#696969" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="Format" Value="t" />
@@ -114,7 +113,7 @@
                 <Setter Property="HeightRequest" Value="50" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="WidthRequest" Value="250" />
-                <Setter Property="FontSize" Value="17" />
+                <Setter Property="FontSize" Value="18" />
                 <Setter Property="TextColor" Value="#696969" />
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>
@@ -196,8 +195,8 @@
                                 <Label Style="{StaticResource title*}"></Label>
                                 <Label Text="起始日期＆時間" Style="{StaticResource titletext}"></Label>
                             </StackLayout>
-                            <DatePicker Grid.Row="1" x:Name="startDatePicker" Style="{StaticResource date}"/>
-                            <TimePicker Grid.Row="2" x:Name="_timePicker" Style="{StaticResource time}" />
+                            <DatePicker Grid.Row="1" Style="{StaticResource date}"/>
+                            <TimePicker Grid.Row="2" Style="{StaticResource time}" />
                         </StackLayout>
                     </Frame>
                     <Frame Grid.Row="1"  Style="{StaticResource frame}">
@@ -206,11 +205,9 @@
                                 <Label Style="{StaticResource title*}"></Label>
                                 <Label Text="結束日期＆時間" Style="{StaticResource titletext}"></Label>
                             </StackLayout>
-                            <DatePicker Grid.Row="1" x:Name="endDatePicker"
-                            Style="{StaticResource date}"
-                            MinimumDate="{Binding Source={x:Reference startDatePicker},Path=Date}"
-                            />
-                            <TimePicker Grid.Row="2" x:Name="_timePicker2" Style="{StaticResource time}"/>
+                            <DatePicker Grid.Row="1" Style="{StaticResource date}"
+                            MinimumDate="{Binding Source={x:Reference startDatePicker},Path=Date}"/>
+                            <TimePicker Grid.Row="2"  Style="{StaticResource time}"/>
                         </StackLayout>
                     </Frame>
                     <Frame Grid.Row="2" Style="{StaticResource frame}">
@@ -232,7 +229,6 @@
                         </StackLayout>
                     </Frame>
                     <Button  Grid.Row="4" Style="{StaticResource button}"></Button>
-                
                     <!-- 3333333333
                     <Frame Grid.Row="0" Style="{StaticResource frame}">
                         <StackLayout >
