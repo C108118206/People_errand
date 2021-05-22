@@ -21,6 +21,8 @@ namespace people_errandd.Models
         public static readonly string ControllerNameWorkRecord = "EmployeeWorkRecords/";//workRecord api
         public static string _HashAccount { get; set; }
         public static string companyHash { get; set; }
+
+        public static string GetResponse { get; set; }
         //public static string uuid { get; set; }
         //static string company_hash = "67103E3E43ED266D8FC2F37CEB11E6";        
         //public static async Task workPost(int workTypeId)

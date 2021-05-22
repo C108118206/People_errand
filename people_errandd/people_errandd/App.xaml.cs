@@ -36,11 +36,11 @@ namespace people_errandd
 
         protected override void OnStart()
         {
-            //bool hasKey = Preferences.ContainsKey("Login");
-            //if (hasKey)
-            //{
-            //    MainPage = new NavigationPage(new MainPage());
-            //}
+            bool hasKey = Preferences.ContainsKey("Login");
+            if (hasKey)
+            {
+                MainPage = new NavigationPage(new MainPage());
+            }
         }
 
         protected override void OnSleep()

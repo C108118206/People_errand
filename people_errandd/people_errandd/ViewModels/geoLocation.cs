@@ -7,7 +7,7 @@ namespace people_errandd.ViewModels
 {
     class geoLocation
     {
-        public static async Task<(double, double)> GetLocation()
+        public  async Task<(double, double)> GetLocation()
         {
             var request = new GeolocationRequest(GeolocationAccuracy.Medium);
             var location = await Geolocation.GetLocationAsync(request);
@@ -28,21 +28,8 @@ namespace people_errandd.ViewModels
                 return false;
             }
             catch (Exception)
-            {
-                // Unable to get location
-            }
-            //catch (FeatureNotSupportedException fnsEx)
-            //{
-            //    // Handle not supported on device exception
-            //}
-            //catch (FeatureNotEnabledException fneEx)
-            //{
-            //    // Handle not enabled on device exception
-            //}
-            //catch (PermissionException pEx)
-            //{
-            //    // Handle permission exception
-            //}
+            {          
+            }         
             return false;
         }
     }

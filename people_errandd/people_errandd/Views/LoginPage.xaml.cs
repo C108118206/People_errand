@@ -15,6 +15,7 @@ namespace people_errandd.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
+        private readonly Login Login = new Login();
         public LoginPage()
         {
             InitializeComponent();
@@ -38,20 +39,17 @@ namespace people_errandd.Views
                 {
                     await Login.SetUUID();
                 }
-                Navigation.InsertPageBefore(new MainPage(), this);
-                await Navigation.PopAsync();
                 if (string.IsNullOrEmpty(Preferences.Get("Login", string.Empty)))
                 {
                     Preferences.Set("Login", await Login.GetHashAccount(uuu));
                 }
+                Navigation.InsertPageBefore(new MainPage(), this);
+                await Navigation.PopAsync();             
             }
             else
             {
                 await DisplayAlert("錯誤", "輸入錯誤", "請重新輸入");
             }
-
-
-
         }
         private async void QuestionButton(object sender, EventArgs e)
         {

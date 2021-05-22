@@ -28,6 +28,7 @@ namespace people_errandd.Views
         }
         private async void GoBackButton(object sender, EventArgs e)
         {
+
             await Navigation.PopAsync();
         }
 
