@@ -23,6 +23,8 @@
     <TabbedPage.SelectedTabColor>
         <Color x:Uid="colorPrimary">#ffffff</Color>
     </TabbedPage.SelectedTabColor>
+
+
     <TabbedPage.Resources>
         <ResourceDictionary>
          
@@ -84,9 +86,10 @@
             <StackLayout>
                 <Frame  BackgroundColor="#88BBD6" >
                     <StackLayout HeightRequest="50" HorizontalOptions="Center"  Orientation="Horizontal">
-                        <DatePicker  Style="{StaticResource date}"></DatePicker>
+                        <DatePicker x:Name="StartDate"  Style="{StaticResource date}"></DatePicker>
                         <Label Text="至"  Style="{StaticResource titletext}"></Label>
-                        <DatePicker Style="{StaticResource date}" ></DatePicker>
+                        <DatePicker Style="{StaticResource date}" 
+                                     x:Name="EndDate" IsTabStop="True"></DatePicker>
                     </StackLayout>
                 </Frame>
                 <!--直線開始-->
@@ -140,7 +143,8 @@
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
-    <ContentPage Title="一" IconImageSource="mon">
+    <ContentPage Title="一"  IconImageSource="mon">
+      
         <ContentPage.BindingContext>
             <viewmodels:ItemPreviewViewModel  />
         </ContentPage.BindingContext>

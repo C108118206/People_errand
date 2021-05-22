@@ -195,7 +195,7 @@
                                 <Label Style="{StaticResource title*}"></Label>
                                 <Label Text="起始日期＆時間" Style="{StaticResource titletext}"></Label>
                             </StackLayout>
-                            <DatePicker Grid.Row="1" Style="{StaticResource date}"/>
+                            <DatePicker Grid.Row="1" x:Name="startDatePicker" Style="{StaticResource date}"/>
                             <TimePicker Grid.Row="2" Style="{StaticResource time}" />
                         </StackLayout>
                     </Frame>
