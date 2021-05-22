@@ -16,32 +16,38 @@ namespace people_errandd.Views
     public partial class LoginPage : ContentPage
     {
         private readonly Login Login = new Login();
+        private string deviceId;
         public LoginPage()
         {
             InitializeComponent();
             //隱藏navigationpage導航欄。
             NavigationPage.SetHasNavigationBar(this, false);
             Animation ani = new Animation();
-            var deviceId = Preferences.Get("uuid", string.Empty);
-            if (string.IsNullOrEmpty(deviceId))
-            {
-                deviceId = Guid.NewGuid().ToString();
-                Preferences.Set("uuid", deviceId);
+            
+            if (string.IsNullOrEmpty(Preferences.Get("uuid", string.Empty)))
+            { 
+                Preferences.Set("uuid", Guid.NewGuid().ToString());          
             }
+            deviceId = Preferences.Get("uuid", "");
+          
         }
 
         private async void LogInButton(object sender, EventArgs e)
         {
-            var uuu = Preferences.Get("uuid", "");
+            if(Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+               await  DisplayAlert("Error", "No Intenet", "OK");
+                return;
+            }           
             if (await Login.ConfirmCompanyHash(company.Text.Trim()))
             {
-                if (!await Login.ConfirmUUID(uuu))
+                if (!await Login.ConfirmUUID(deviceId))
                 {
                     await Login.SetUUID();
                 }
                 if (string.IsNullOrEmpty(Preferences.Get("Login", string.Empty)))
                 {
-                    Preferences.Set("Login", await Login.GetHashAccount(uuu));
+                    Preferences.Set("Login", await Login.GetHashAccount(deviceId));
                 }
                 Navigation.InsertPageBefore(new MainPage(), this);
                 await Navigation.PopAsync();             

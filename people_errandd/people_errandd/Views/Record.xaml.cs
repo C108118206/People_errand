@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Diagnostics;
@@ -16,7 +16,10 @@ namespace people_errandd.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            Worklist.ItemsSource = await App.DataBase.GetRecordsAsync();
+            Worklist.ItemsSource = await App.DataBase.GetWorkRecordsAsync();
+            //Worklist.ItemsSource = await App.DataBase.GetWorkRecordsAsync();
+            //Preferences.Get("Record", "await App.DataBase.GetWorkRecordsAsync()");
+           // Worklist.ItemsSource =(Preferences.Get("Record", "await App.DataBase.GetWorkRecordsAsync()"));
         }
         public Record()
         {
@@ -28,10 +31,24 @@ namespace people_errandd.Views
         {
             Navigation.PopAsync();
         }
-        async void choose(object sender, EventArgs e)
+        async void RecordChooseButton(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("請選擇:", "Cancel", null, "上下班", "請假", "公出");
-            Debug.WriteLine("Action: " + action);
+            var ActionSheet = await DisplayActionSheet("請選擇:", "Cancel", null, "上下班", "請假", "公出");
+            //Debug.WriteLine("Action: " + ActionSheet);
+            switch (ActionSheet)
+            {
+                case "Cancel":            
+                    break;
+                case "上下班":
+                    Worklist.ItemsSource = await App.DataBase.GetWorkRecordsAsync();
+                    break;
+                case "請假":
+                    Worklist.ItemsSource = await App.DataBase.GetDayOffRecordsAsync();
+                    break;
+                case "公出":
+                    Worklist.ItemsSource = await App.DataBase.GetGoOutRecordsAsync();
+                    break;
+            }
         }
 
     }

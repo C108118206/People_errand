@@ -90,7 +90,7 @@
                 <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Center">
                     <Image  Grid.Row="0" Grid.Column="0" Source="date" HorizontalOptions="Center"  HeightRequest="30"></Image>
                     <DatePicker  Grid.Row="0" Grid.Column="1" x:Name="startDatePicker" Style="{StaticResource date}" />
-                    <ImageButton Clicked="choose"  Grid.Row="0" Grid.Column="2"  Style="{StaticResource select}"></ImageButton>
+                    <ImageButton Clicked="RecordChooseButton"  Grid.Row="0" Grid.Column="2"  Style="{StaticResource select}"></ImageButton>
                 </StackLayout>
 
 

@@ -14,22 +14,61 @@ namespace people_errandd.Views
         private readonly Work Work = new Work();
         bool allowTap = true;
         private readonly geoLocation geoLocation = new geoLocation();
+
         public MainPage()
         {
             InitializeComponent();
             //隱藏navigationpage導航欄
             NavigationPage.SetHasNavigationBar(this, false);      
             var _hashAccount = Preferences.Get("Login","");
-            HttpResponse._HashAccount = _hashAccount;          
+            HttpResponse._HashAccount = _hashAccount;
+            //var location =Geolocation.GetLastKnownLocationAsync();
+            //if(location==null)
+           // {
+              var  location = Geolocation.GetLocationAsync(new GeolocationRequest
+                {
+                    DesiredAccuracy = GeolocationAccuracy.Medium,
+                    Timeout = TimeSpan.FromSeconds(30)
+                });
+            //}
+            if(location==null)
+            {
+                GPSText.Text = "GPS 定位未開啟";
+            }
+            else
+            {
+                GPSText.Text= "GPS 定位已開啟";
+            }
+           
         }
         protected override void OnAppearing()
         {
+            
             base.OnAppearing();
             status.Text = Preferences.Get("statusNow", "");
             Preferences.Get("WorkOnButtonStatus", workOn.IsEnabled = true);
             Preferences.Get("WorkOffButtonStatus", workOff.IsEnabled = false);
-            Preferences.Get("WOrkOnBUttonview", workOn.Opacity = 1);
-            Preferences.Get("WOrkOffBUttonview", workOff.Opacity = 0.2);
+            Preferences.Get("WorkOnButtonView", workOn.Opacity = 1);
+            Preferences.Get("WorkOffButtonView", workOff.Opacity = 0.2);
+            Preferences.Get("WorkOnText", workOnText.Opacity = 1);
+            Preferences.Get("WorkOffText", workOffText.Opacity = 0.2);
+            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+        }
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            Connectivity.ConnectivityChanged -= Connectivity_ConnectivityChanged;
+        }
+        private void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+        {
+          if(e.NetworkAccess == NetworkAccess.Internet)
+            {
+                LabelConnection.FadeTo(0).ContinueWith((result) => { });
+            }
+            else
+            {
+                LabelConnection.FadeTo(1).ContinueWith((result) => { });
+            }
         }
 
         private async void GoToWork(object sender, EventArgs e)
@@ -40,7 +79,7 @@ namespace people_errandd.Views
                 if (allowTap)
                 {
                     allowTap = false;
-
+                    
                     if (await Work.GetWorkType() == 2 || await Work.GetWorkType() == 0)
                     {
                         (double x, double y) = await geoLocation.GetLocation();
@@ -49,7 +88,7 @@ namespace people_errandd.Views
                             if (await Work.PostWork(1, x, y))
                             {
                                 
-                                await App.DataBase.SaveRecordAsync(new RecordModels
+                                await App.DataBase.SaveRecordAsync(new WorkRecordModels
                                 {
                                     status = "上班",
                                     time = DateTime.Now.ToString()
@@ -105,7 +144,7 @@ namespace people_errandd.Views
                         {
                             if (await Work.PostWork(2, x, y))
                             {
-                                await App.DataBase.SaveRecordAsync(new RecordModels
+                                await App.DataBase.SaveRecordAsync(new WorkRecordModels
                                 {
                                     status = "下班",
                                     time = DateTime.Now.ToString()
@@ -151,8 +190,10 @@ namespace people_errandd.Views
             status.Text = Preferences.Get("statusNow", "");
             Preferences.Set("WorkOffButtonStauts", workOff.IsEnabled = false);
             Preferences.Set("WorkOnButtonStauts", workOn.IsEnabled = true);
-            Preferences.Set("WOrkOnBUttonview", workOn.Opacity = 1);
-            Preferences.Set("WOrkOffBUttonview", workOff.Opacity = 0.2);
+            Preferences.Set("WorkOnButtonView", workOn.Opacity = 1);
+            Preferences.Set("WorkOffButtonView", workOff.Opacity = 0.2);
+            Preferences.Set("WorkOnText", workOnText.Opacity = 1);
+            Preferences.Set("WorkOffText", workOffText.Opacity = 0.2);
         }
         private async Task WorkOnSet()
         {
@@ -161,8 +202,10 @@ namespace people_errandd.Views
             status.Text = Preferences.Get("statusNow", "");
             Preferences.Set("WorkOnButtonStauts", workOn.IsEnabled = false);
             Preferences.Set("WorkOffButtonStauts", workOff.IsEnabled = true);
-            Preferences.Set("WOrkOnBUttonview", workOn.Opacity = 0.2);
-            Preferences.Set("WOrkOffBUttonview", workOff.Opacity = 1);
+            Preferences.Set("WorkOnButtonView", workOn.Opacity = 0.2);
+            Preferences.Set("WorkOffButtonView", workOff.Opacity = 1);
+            Preferences.Set("WorkOnText", workOnText.Opacity = 0.2);
+            Preferences.Set("WorkOffText", workOffText.Opacity = 1);
         }
      
         private async void DetailButton(object sender, EventArgs e)

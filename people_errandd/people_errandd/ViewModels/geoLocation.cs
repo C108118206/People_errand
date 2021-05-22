@@ -9,9 +9,17 @@ namespace people_errandd.ViewModels
     {
         public  async Task<(double, double)> GetLocation()
         {
-            var request = new GeolocationRequest(GeolocationAccuracy.Medium);
-            var location = await Geolocation.GetLocationAsync(request);
-            return (location.Latitude, location.Longitude);
+            try
+            {
+                var request = new GeolocationRequest(GeolocationAccuracy.Medium);
+                var location = await Geolocation.GetLocationAsync(request);
+                return (location.Latitude, location.Longitude);
+            }
+            catch(Exception)
+            {
+
+            }
+            return (0,0);
         }
         public bool GetCurrentLocation(double X, double Y)
         {
