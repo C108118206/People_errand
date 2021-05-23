@@ -245,9 +245,6 @@
     <BundleResource Include="Resources\logintitle.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\loginpage2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\arrow.png" />
   </ItemGroup>
   <ItemGroup>
@@ -255,5 +252,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\hours24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\loginpage.png" />
   </ItemGroup>
 </Project>

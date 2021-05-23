@@ -6510,7 +6510,7 @@ public final class R {
     public static final int in2=0x7f07007d;
     public static final int lock=0x7f07007e;
     public static final int login2=0x7f07007f;
-    public static final int loginpage2=0x7f070080;
+    public static final int loginpage=0x7f070080;
     public static final int logintitle=0x7f070081;
     public static final int mail=0x7f070082;
     public static final int material_ic_calendar_black_24dp=0x7f070083;

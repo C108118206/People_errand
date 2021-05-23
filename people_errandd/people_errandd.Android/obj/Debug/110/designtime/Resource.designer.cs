@@ -11743,7 +11743,7 @@ namespace people_errandd.Droid
 			public const int Login2 = 2131165184;
 			
 			// aapt resource value: 0x7F07007A
-			public const int loginpage2 = 2131165306;
+			public const int loginpage = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
 			public const int logintitle = 2131165307;
