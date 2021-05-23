@@ -20,11 +20,23 @@ namespace people_errandd.Views
             NavigationPage.SetHasNavigationBar(this, false);      
             var _hashAccount = Preferences.Get("Login","");
             HttpResponse._HashAccount = _hashAccount;
-            var location = Geolocation.GetLocationAsync(new GeolocationRequest
-            {
-                DesiredAccuracy = GeolocationAccuracy.Medium,
-                Timeout = TimeSpan.FromSeconds(30)
-            });
+            //var location = Geolocation.GetLocationAsync(new GeolocationRequest
+            //{
+            //    DesiredAccuracy = GeolocationAccuracy.Medium,
+            //    Timeout = TimeSpan.FromSeconds(30)
+            //});
+            //var request = new GeolocationRequest(GeolocationAccuracy.Medium);
+            //var location = Geolocation.GetLocationAsync(request).Result;
+            //Work.PostWork(location.Latitude, location.Longitude);
+            //if(location==null)
+            //{
+            //    GPSText.Text = "GPS 定位未開啟";
+            //}
+            //else
+            //{
+            //    GPSText.Text = "GPS 定位已開啟";
+            //}
+
         }
         protected override void OnAppearing()
         {         
@@ -36,15 +48,9 @@ namespace people_errandd.Views
             Preferences.Get("WorkOffButtonView", workOff.Opacity = 0.2);
             Preferences.Get("WorkOnText", workOnText.Opacity = 1);
             Preferences.Get("WorkOffText", workOffText.Opacity = 0.2);
-            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;        
-            //if (location == null)
-            //{
-            //    GPSText.Text = "GPS  定位未開啟";
-            //}
-            //else
-            //{
-            //    GPSText.Text = "GPS  定位已開啟";
-            //}
+            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged; 
+            
+           
         }
         protected override void OnDisappearing()
         {

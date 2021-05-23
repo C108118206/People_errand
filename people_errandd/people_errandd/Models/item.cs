@@ -39,9 +39,9 @@ namespace people_errandd.Models
     public class DayOff
     {
         public string hashaccount { get; set; }
-        public int leave_type_id { get; set; }
+        public int Leave_type_id { get; set; }
         public string reason { get; set; }
-        public string StartDate { get; set; }
-        public string EndDate { get; set; }
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
     }
 }
