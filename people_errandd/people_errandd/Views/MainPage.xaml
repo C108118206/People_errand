@@ -50,6 +50,23 @@
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="TextColor" Value="Black" />
             </Style>
+            <Style x:Key="warning" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="CharacterSpacing" Value="2" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="Margin" Value="0,20,0,0" />
+            </Style>
+            <Style x:Key="warningframe" TargetType="Frame">
+                <Setter Property="WidthRequest" Value="380" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0,0,0,20" />
+                <Setter Property="Padding" Value="0,0,0,20" />
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="Opacity" Value="0.8" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -86,7 +103,7 @@
                 <Frame Grid.Row="3" Style="{StaticResource gpsframe}">
                     <Label
                             x:Name="GPSText"
-                         Text="{Binding GPSText}"
+                         Text="GPS 定位已開啟"
                             Style="{StaticResource text}">
                     </Label>
                 </Frame>
@@ -114,16 +131,10 @@
                         </StackLayout>
                     </StackLayout>
                 </Frame>
+                <Frame x:Name="FrameConnection" Opacity="0" Style="{StaticResource warningframe}">
+                    <Label x:Name="LabelConnection" Opacity="0" Text="No Internet Connection" Style="{StaticResource warning}"></Label>
+                </Frame>
             </StackLayout>
-            <Label Grid.Row="1" Margin="0,35,0,0"
-                   HorizontalOptions="Center"
-                   Text="No Internet Connection"
-                   x:Name="LabelConnection"
-                   Opacity="0"
-                   FontSize="14"
-                   TextColor="White"
-                   BackgroundColor="Black"
-                   />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

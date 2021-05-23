@@ -95,7 +95,7 @@
                 <Setter Property="TextColor" Value="#696969" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="Format" Value="yyyy-MM-dd (dddd)" />
+                <Setter Property="Format" Value="yyyy-MM-dd(dddd) HH:mm" />
             </Style>
             <Style x:Key="time" TargetType="TimePicker">
                 <Setter Property="HorizontalOptions" Value="Center" />

@@ -36,4 +36,12 @@ namespace people_errandd.Models
         public DateTime createTime { get; set; }
         public string companyhash { get; set; }
     }
+    public class DayOff
+    {
+        public string hashaccount { get; set; }
+        public int leave_type_id { get; set; }
+        public string reason { get; set; }
+        public string StartDate { get; set; }
+        public string EndDate { get; set; }
+    }
 }

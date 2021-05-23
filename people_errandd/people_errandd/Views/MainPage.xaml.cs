@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 
 namespace people_errandd.Views
 {
-    
-    //[QueryProperty(nameof(ItemId), nameof(ItemId))]
     public partial class MainPage : ContentPage
     {
         private readonly Work Work = new Work();
@@ -22,28 +20,14 @@ namespace people_errandd.Views
             NavigationPage.SetHasNavigationBar(this, false);      
             var _hashAccount = Preferences.Get("Login","");
             HttpResponse._HashAccount = _hashAccount;
-            //var location =Geolocation.GetLastKnownLocationAsync();
-            //if(location==null)
-           // {
-              var  location = Geolocation.GetLocationAsync(new GeolocationRequest
-                {
-                    DesiredAccuracy = GeolocationAccuracy.Medium,
-                    Timeout = TimeSpan.FromSeconds(30)
-                });
-            //}
-            if(location==null)
+            var location = Geolocation.GetLocationAsync(new GeolocationRequest
             {
-                GPSText.Text = "GPS 定位未開啟";
-            }
-            else
-            {
-                GPSText.Text= "GPS 定位已開啟";
-            }
-           
+                DesiredAccuracy = GeolocationAccuracy.Medium,
+                Timeout = TimeSpan.FromSeconds(30)
+            });
         }
         protected override void OnAppearing()
-        {
-            
+        {         
             base.OnAppearing();
             status.Text = Preferences.Get("statusNow", "");
             Preferences.Get("WorkOnButtonStatus", workOn.IsEnabled = true);
@@ -52,7 +36,15 @@ namespace people_errandd.Views
             Preferences.Get("WorkOffButtonView", workOff.Opacity = 0.2);
             Preferences.Get("WorkOnText", workOnText.Opacity = 1);
             Preferences.Get("WorkOffText", workOffText.Opacity = 0.2);
-            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;        
+            //if (location == null)
+            //{
+            //    GPSText.Text = "GPS  定位未開啟";
+            //}
+            //else
+            //{
+            //    GPSText.Text = "GPS  定位已開啟";
+            //}
         }
         protected override void OnDisappearing()
         {
@@ -64,16 +56,17 @@ namespace people_errandd.Views
           if(e.NetworkAccess == NetworkAccess.Internet)
             {
                 LabelConnection.FadeTo(0).ContinueWith((result) => { });
+                FrameConnection.FadeTo(0).ContinueWith((result) => { });
             }
             else
             {
                 LabelConnection.FadeTo(1).ContinueWith((result) => { });
+                FrameConnection.FadeTo(0.845621).ContinueWith((result) => { });
             }
         }
 
         private async void GoToWork(object sender, EventArgs e)
         {
-
             try
             {
                 if (allowTap)
@@ -86,8 +79,7 @@ namespace people_errandd.Views
                         if (geoLocation.GetCurrentLocation(x, y) == true)
                         {
                             if (await Work.PostWork(1, x, y))
-                            {
-                                
+                            {                  
                                 await App.DataBase.SaveRecordAsync(new WorkRecordModels
                                 {
                                     status = "上班",
@@ -124,12 +116,9 @@ namespace people_errandd.Views
             finally 
             {
                 allowTap = true;
-            }
-
-            
+            }         
         }
-
-        private async void OffWork(object sender, EventArgs e)
+       private async void OffWork(object sender, EventArgs e)
         {
 
             try
@@ -206,8 +195,7 @@ namespace people_errandd.Views
             Preferences.Set("WorkOffButtonView", workOff.Opacity = 1);
             Preferences.Set("WorkOnText", workOnText.Opacity = 0.2);
             Preferences.Set("WorkOffText", workOffText.Opacity = 1);
-        }
-     
+        }  
         private async void DetailButton(object sender, EventArgs e)
         {
             try
@@ -244,7 +232,7 @@ namespace people_errandd.Views
             {
                 if (allowTap)
                 {
-                    allowTap = true;
+                    allowTap = false;
                     await Navigation.PushAsync(new GoOut());
                 }
             }
