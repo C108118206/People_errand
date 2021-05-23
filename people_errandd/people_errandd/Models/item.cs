@@ -14,6 +14,8 @@ namespace people_errandd.Models
         public int workTypeId { get; set; }
         public double coordinateX { get; set; }
         public double coordinateY { get; set; }
+        
+        public bool enabler { get; set; }
         public DateTime Date { get; set; }
 
     }
@@ -39,9 +41,9 @@ namespace people_errandd.Models
     public class DayOff
     {
         public string hashaccount { get; set; }
-        public int leave_type_id { get; set; }
+        public int Leavetypeid { get; set; }
         public string reason { get; set; }
-        public string StartDate { get; set; }
-        public string EndDate { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
     }
 }

@@ -23,9 +23,11 @@
     <TabbedPage.SelectedTabColor>
         <Color x:Uid="colorPrimary">#ffffff</Color>
     </TabbedPage.SelectedTabColor>
+
+
     <TabbedPage.Resources>
         <ResourceDictionary>
-         
+
             <Style x:Key="date" TargetType="DatePicker">
                 <Setter Property="HorizontalOptions" Value="Start" />
                 <Setter Property="WidthRequest" Value="120" />
@@ -73,7 +75,7 @@
         </ResourceDictionary>
     </TabbedPage.Resources>
 
-  
+
 
     <!--Pages can be added as references or inline-->
     <ContentPage Title="日" BackgroundColor="White" IconImageSource="sun">
@@ -84,9 +86,9 @@
             <StackLayout>
                 <Frame  BackgroundColor="#88BBD6" >
                     <StackLayout HeightRequest="50" HorizontalOptions="Center"  Orientation="Horizontal">
-                        <DatePicker  Style="{StaticResource date}"></DatePicker>
+                        <DatePicker x:Name="StartDate" DateSelected="OnDateSelected" Style="{StaticResource date}"></DatePicker>
                         <Label Text="至"  Style="{StaticResource titletext}"></Label>
-                        <DatePicker Style="{StaticResource date}" ></DatePicker>
+                        <DatePicker Style="{StaticResource date}"  x:Name="EndDate" ></DatePicker>
                     </StackLayout>
                 </Frame>
                 <!--直線開始-->
@@ -140,22 +142,16 @@
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
-    <ContentPage Title="一" IconImageSource="mon">
+    <ContentPage Title="一"  IconImageSource="mon">
+
         <ContentPage.BindingContext>
             <viewmodels:ItemPreviewViewModel  />
         </ContentPage.BindingContext>
         <ContentPage.Content>
             <StackLayout>
-                <Frame  BackgroundColor="#88BBD6" >
-                    <StackLayout HeightRequest="50" HorizontalOptions="Center"  Orientation="Horizontal">
-                        <DatePicker  Style="{StaticResource date}"></DatePicker>
-                        <Label Text="至"  Style="{StaticResource titletext}"></Label>
-                        <DatePicker Style="{StaticResource date}" ></DatePicker>
-                    </StackLayout>
-                </Frame>
                 <!--直線開始-->
                 <StackLayout>
-                    <CollectionView Margin="70,20,0,0" ItemsSource="{Binding delList}">
+                    <CollectionView Margin="70,115,0,0" ItemsSource="{Binding delList}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <!--每條線的寬度-->
@@ -205,18 +201,20 @@
         </ContentPage.Content>
     </ContentPage>
 
-    <ContentPage Title="二" IconImageSource="tue" ></ContentPage>
-    <ContentPage Title="三" IconImageSource="wed" >
-       
+    <ContentPage Title="二"  IconImageSource="tue" >
+
     </ContentPage>
-    <ContentPage Title="四" IconImageSource="thu">
-      
+    <ContentPage Title="三" IconImageSource="wed" >
+
+    </ContentPage>
+    <ContentPage Title="四"  IconImageSource="thu">
+
     </ContentPage>
     <ContentPage Title="五" IconImageSource="fri">
-      
+
     </ContentPage>
-    <ContentPage Title="六" IconImageSource="sat">
-      
+    <ContentPage Title="六"  IconImageSource="sat">
+
     </ContentPage>
 
 </TabbedPage>

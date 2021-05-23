@@ -3,23 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="people_errandd.Views.AboutPage"
              BackgroundColor="White">
+
     <NavigationPage.TitleView>
-        <Label Text="個人資料" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="18" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
+        <Label Text="個人資料" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" Margin="-15,0,0,0"></Label>
     </NavigationPage.TitleView>
+
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="完成"  Activated="RefButtonClicked"></ToolbarItem>
+        <ToolbarItem Text="完成   "  Activated="RefButtonClicked"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style x:Key="okbutton" TargetType="Button">
-                <Setter Property="FontSize" Value="18" />
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="TextColor" Value="#166BA2" />
-                <Setter Property="BackgroundColor" Value="#8CC5D7"/>
-                <Setter Property="HorizontalOptions" Value="End" />
-            </Style>
             <Style x:Key="name" TargetType="Label">
-                <Setter Property="FontSize" Value="25" />
+                <Setter Property="FontSize" Value="30" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="HorizontalOptions" Value="Center" />
@@ -27,24 +22,20 @@
             </Style>
             <Style x:Key="contentimage" TargetType="Image">
                 <Setter Property="HeightRequest" Value="25" />
-                <Setter Property="Margin" Value="40,10,0,0" />
+                <Setter Property="Margin" Value="30,10,0,0" />
             </Style>
             <Style x:Key="contenttitle" TargetType="Label">
                 <Setter Property="FontSize" Value="18" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="Margin" Value="1" />
-                <Setter Property="Padding" Value="0,10,0,0" />
+                <Setter Property="Margin" Value="0,10,0,0" />
                 <Setter Property="TextColor" Value="Black" />
             </Style>
             <Style x:Key="contententry" TargetType="Entry">
-                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontSize" Value="15" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="WidthRequest" Value="250" />
+                <Setter Property="WidthRequest" Value="280" />
                 <Setter Property="TextColor" Value="Black" />
-                <Setter Property="PlaceholderColor" Value="Black" />
-                <Setter Property="Placeholder" Value="Black" />
-                <Setter Property="Margin" Value="30,0,0,0" />
-                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="HorizontalTextAlignment" Value="End" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
             </Style>
@@ -56,11 +47,11 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        
+
         <ScrollView>
             <StackLayout Orientation="Vertical" >
                 <StackLayout BackgroundColor="#8CC5D7" HeightRequest="200" >
-                   
+
                     <StackLayout  >
                         <Frame 
                        BorderColor="Black"
@@ -85,10 +76,10 @@
 
                 <StackLayout Orientation="Vertical" >
                     <StackLayout Orientation="Horizontal">
-                        <Image Source="group.png"  Margin="40,35,0,0" Style="{StaticResource contentimage}"></Image>
-                        <Label Text="部門" Padding="0,35,0,0" Style="{StaticResource contenttitle}" ></Label>
+                        <Image Source="group.png"  Margin="30,35,0,0" Style="{StaticResource contentimage}"></Image>
+                        <Label Text="部門" Margin="0,35,0,0" Style="{StaticResource contenttitle}" ></Label>
                     </StackLayout>
-                    <Entry  PlaceholderColor="Gray" IsReadOnly="True" Placeholder="行銷部" Style="{StaticResource contententry}"></Entry>
+                    <Entry Placeholder="行銷部" PlaceholderColor="Gray" IsReadOnly="True" Style="{StaticResource contententry}"></Entry>
                     <StackLayout Orientation="Horizontal"  >
                         <Image Source="person.png" Style="{StaticResource contentimage}"></Image>
                         <Label Text="職稱" Style="{StaticResource contenttitle}" ></Label>
@@ -98,13 +89,13 @@
                         <Image Source="phone.png" Style="{StaticResource contentimage}"></Image>
                         <Label Text="電話" Style="{StaticResource contenttitle}" ></Label>
                     </StackLayout>
-                    <Entry Placeholder="電話"  Keyboard="Telephone" MaxLength="10" Style="{StaticResource contententry}"></Entry>
+                    <Entry   Keyboard="Telephone" MaxLength="10" Style="{StaticResource contententry}"></Entry>
                     <StackLayout Orientation="Horizontal">
                         <Image Source="mail.png" Style="{StaticResource contentimage}"></Image>
                         <Label Text="Email" Style="{StaticResource contenttitle}" ></Label>
                     </StackLayout>
-                    <Entry Placeholder="Email" Keyboard="Email" Style="{StaticResource contententry}"></Entry>
-                   
+                    <Entry  Keyboard="Email" Style="{StaticResource contententry}"></Entry>
+
                 </StackLayout>
             </StackLayout>
         </ScrollView>

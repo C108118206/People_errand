@@ -13,7 +13,7 @@
                 <Setter Property="Margin" Value="40,160,0,0"/>
             </Style>
             <Style x:Key="image" TargetType="Image">
-                <Setter Property="Margin" Value="20,150,0,0" />
+                <Setter Property="Margin" Value="30,150,0,0" />
                 <Setter Property="HeightRequest" Value="60" />
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
@@ -105,7 +105,7 @@
             <Button  Text="如何使用" Style="{StaticResource Question}" Clicked="QuestionButton" ></Button>
         </StackLayout>
         -->
-     
+
         <StackLayout>
             <StackLayout Grid.Row="0" Orientation="Horizontal">
                 <Label  Grid.Column="0" Text="差勤打卡" Style="{StaticResource title}"></Label>
@@ -116,10 +116,10 @@
             <StackLayout Grid.Row="3" Orientation="Horizontal">
                 <Label Grid.Column="0" Text="Sign in"  Style="{StaticResource Sign in}"></Label>
                 <Button  Grid.Column="1" ImageSource="arrow"  Style="{StaticResource Button}" Clicked="LogInButton" ></Button>
-               </StackLayout>
+            </StackLayout>
             <Button Grid.Row="4" Text="如何使用" Style="{StaticResource Question}" Clicked="QuestionButton" ></Button>
         </StackLayout>
-       
+
         <!-- 3333333
             <StackLayout>
             <Image x:Name="image" Source="loginpage2" Style="{StaticResource image}"></Image>

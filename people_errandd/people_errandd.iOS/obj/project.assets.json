@@ -1524,11 +1524,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\people_errandd\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "projectUniqueName": "D:\\people_errandd\\People_errand\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
       "projectName": "people_errandd.iOS",
-      "projectPath": "D:\\people_errandd\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "projectPath": "D:\\people_errandd\\People_errand\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
       "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
-      "outputPath": "D:\\people_errandd\\People_errand\\people_errandd\\people_errandd.iOS\\obj\\",
+      "outputPath": "D:\\people_errandd\\People_errand\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1551,8 +1551,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\people_errandd\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
-              "projectPath": "D:\\people_errandd\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+            "D:\\people_errandd\\People_errand\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "D:\\people_errandd\\People_errand\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
             }
           }
         }

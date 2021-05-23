@@ -16,9 +16,10 @@ namespace people_errandd.Models
     }
     public class DayOffRecordModels
     {
-        public string image { get; set; }
-        public string workorworkoff { get; set; }
-        public string color { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+        public string   Reason { get; set; }
+        public string DayOffType { get; set; }
     }
     public class GoOutRecordModels {
         public string leavegoouttime { get; set; }

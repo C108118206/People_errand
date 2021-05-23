@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodels="clr-namespace:people_errandd.ViewModels"
+             xmlns:local="clr-namespace:people_errandd.Views"         
              x:Class="people_errandd.Views.Record"
              BackgroundColor="White">
     <NavigationPage.TitleView>
@@ -75,7 +75,138 @@
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontSize" Value="15"/>
             </Style>
+            <DataTemplate x:Key="WorkRecord">
+                <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="0.8" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Margin="10,0,0,0"
+                                        Spacing="0"
+                                        VerticalOptions="Center">
+                        <Label 
+                                             Style="{StaticResource gooutanddayofftitle}"
+                                            Text="狀態 :"
+                                           />
+                        <Label 
+                                             Margin="0,10,0,10"
+                                           Style="{StaticResource gooutanddayofftitle}"
+                                            Text="時間 :"
+                                            />
+                    </StackLayout>
+                    <StackLayout
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Margin="0,0,60,0"
+                                        Spacing="0"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="End">
+
+                        <Label
+                                              Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding status}"
+                                           />
+
+                        <Label
+                                             Margin="0,10,0,10"
+                                             Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding time}"
+                                             />
+                    </StackLayout>
+                    <BoxView
+                                        Grid.Row="1"
+                                        Grid.ColumnSpan="2"
+                                         Style="{StaticResource line}" />
+
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="DayOffRecord">
+                <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="0.8" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Margin="10,0,0,0"
+                                        Spacing="0"
+                                        VerticalOptions="Center">
+                        <Label 
+                                             Style="{StaticResource gooutanddayofftitle}"
+                                            Text="起始時間 :"
+                                           />
+                        <Label 
+                                             Margin="0,10,0,10"
+                                           Style="{StaticResource gooutanddayofftitle}"
+                                            Text="結束時間 :"
+                                            />
+                        <Label 
+                                             Margin="0,10,0,10"
+                                           Style="{StaticResource gooutanddayofftitle}"
+                                            Text="假別 :"
+                                            />
+                        <Label 
+                                             Margin="0,10,0,10"
+                                           Style="{StaticResource gooutanddayofftitle}"
+                                            Text="理由 :"
+                                            />
+                    </StackLayout>
+                    <StackLayout
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Margin="0,0,60,0"
+                                        Spacing="0"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="End">
+
+                        <Label
+                                              Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding StartTime}"
+                                           />
+
+                        <Label
+                                             Margin="0,10,0,10"
+                                             Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding EndTime}"
+                                             />
+                        <Label
+                                             Margin="0,10,0,10"
+                                             Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding DayOffTime}"
+                                             />
+                        <Label
+                                             Margin="0,10,0,10"
+                                             Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding Reason}"
+                                             />
+                    </StackLayout>
+                    <BoxView
+                                        Grid.Row="1"
+                                        Grid.ColumnSpan="2"
+                                         Style="{StaticResource line}" />
+                </Grid>
+            </DataTemplate>
+            <local:RecordsSelector x:Key="RecordSelector"
+                                             WorkRecords="{StaticResource WorkRecord}"
+                                             DayOffRecords="{StaticResource DayOffRecord}" />
         </ResourceDictionary>
+        
     </ContentPage.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -93,184 +224,6 @@
                     <ImageButton Clicked="RecordChooseButton"  Grid.Row="0" Grid.Column="2"  Style="{StaticResource select}"></ImageButton>
                 </StackLayout>
 
-
-                <!--上班new
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                    </Grid.RowDefinitions>
-                    <CollectionView
-                            x:Name="WorkWorkofflist"
-                            Grid.Row="1"
-                            ItemsSource="{Binding worklist}"
-                            Style="{StaticResource Collection}">
-                        <CollectionView.ItemsLayout>
-                            <LinearItemsLayout Orientation="Vertical" />
-                        </CollectionView.ItemsLayout>
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <Grid RowSpacing="0">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="0.8" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="auto" />
-                                    </Grid.ColumnDefinitions>
-
-                                    <Image
-                                            Grid.Row="0"
-                                            Grid.Column="0"
-                                            Style="{StaticResource workimage}"
-                                            Source="{Binding image}"
-                                        />
-                                    <StackLayout
-                                            Grid.Row="0"
-                                            Grid.Column="1"
-                                            Margin="20,0,0,0"
-                                            Spacing="0"
-                                            VerticalOptions="Center">
-                                        <Label
-                                             Text="{Binding workorworkoff}"
-                                             Style="{StaticResource worklabel}"/>
-                                        <Label
-                                            TextColor="#766C6C"
-                                             Style="{StaticResource worklabel}"
-                                             LineBreakMode="TailTruncation"
-                                             Text="{Binding time}" />
-
-                                    </StackLayout>
-                                    <Label
-                                            Grid.Row="0"
-                                            Grid.Column="2"
-                                            Margin="0,0,45,0"
-                                            Style="{StaticResource worklabel}"
-                                            Text="{Binding status}"
-                                            TextColor="{Binding color}"
-                                            VerticalOptions="Center">
-
-                                    </Label>
-                                    <BoxView
-                                          Grid.Row="1"
-                                          Grid.ColumnSpan="3"
-                                          Style="{StaticResource line}" />
-
-                                </Grid>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-
-                </Grid>
--->
-                <!--
-                <Grid  HorizontalOptions="Center">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                    </Grid.RowDefinitions>
-                    <Label Style="{StaticResource gooutanddayoff}" Text="公出申請"/>
-                    <CollectionView
-                        x:Name="gooutlist"
-                        Grid.Row="1"
-                       Style="{StaticResource Collection}"
-                        ItemsSource="{Binding gooutlist}">
-                        <CollectionView.ItemsLayout>
-                            <LinearItemsLayout Orientation="Vertical" />
-                        </CollectionView.ItemsLayout>
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <Grid RowSpacing="0">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="0.8" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="auto" />
-                                    </Grid.ColumnDefinitions>
-                                   
-                                    <StackLayout
-                                        Grid.Row="0"
-                                        Grid.Column="0"
-                                        Margin="10,0,0,0"
-                                        HorizontalOptions="Center"
-                                        Spacing="0"
-                                        VerticalOptions="Center">
-                                        <Label 
-                                            Style="{StaticResource gooutanddayofftitle}"
-                                            Text="時間  :"
-                                             />
-                                        <Label
-                                            Style="{StaticResource gooutanddayofftitle}"
-                                            Text="地點  :"
-                                              />
-                                        <Label
-                                           Style="{StaticResource gooutanddayofftitle}"
-                                            Text="事由  :"
-                                            />
-                                        <Label
-                                            Margin="0,10,0,10"
-                                            Style="{StaticResource gooutanddayofftitle}"
-                                            Text="狀態  :"
-                                            />
-                                    </StackLayout>
-                                    <StackLayout
-                                        Grid.Row="0"
-                                        Grid.Column="1"
-                                        Margin="0,0,150,0"
-                                        HorizontalOptions="Center"
-                                        Spacing="0"
-                                        VerticalOptions="Center">
-                                        <StackLayout Orientation="Horizontal">
-                                        <Label
-                                           Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding leavegoouttime}"
-                                            />
-                                            <Label
-                                             Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="~"
-                                            />
-                                        <Label
-                                             Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding backgoouttime}"
-                                            />
-                                        </StackLayout>
-                                        <Label
-                                               Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding location}"
-                                            />
-                                        <Label
-                                             Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding messagegoout}"
-                                      />
-                                        <Label
-                                             Margin="0,10,0,10"
-                                             Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding statusgoout}"
-                                           
-                                            TextColor="{Binding color}" />
-                                    </StackLayout>
-                                  
-                                    <BoxView
-                                        Grid.Row="1"
-                                        Grid.ColumnSpan="3"
-                                        Style="{StaticResource line}" />
-                                </Grid>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-
-                </Grid>
-          -->
-
                 <Grid  HorizontalOptions="Center">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -280,18 +233,19 @@
                     </Grid.RowDefinitions>
                    
                     <Label Style="{StaticResource gooutanddayoff}" CharacterSpacing="5" Text="打卡紀錄"/>
-                 
+
                     <CollectionView
                         x:Name="Worklist"
                         Grid.Row="1"
                          Style="{StaticResource Collection}"
-                        ItemsSource="{Binding worklist}"
-                       >
+                        ItemsSource="{Binding Record}"
+                        >
+                        
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Vertical" />
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
-                            <DataTemplate>
+                            <DataTemplate >
                                 <Grid RowSpacing="0">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*" />
@@ -318,20 +272,7 @@
                                            Style="{StaticResource gooutanddayofftitle}"
                                             Text="時間 :"
                                             />
-                                        <!--<Label
-                                             Style="{StaticResource gooutanddayofftitle}"
-                                            Text="假別  :"
-                                          />
-                                        <Label
-                                             Style="{StaticResource gooutanddayofftitle}"
-                                            Text="事由  :"
-                                           />
-                                        <Label
-                                              Style="{StaticResource gooutanddayofftitle}"
-                                            Text="狀態  :"
-                                            Margin="0,10,0,10" />-->
                                     </StackLayout>
-
                                     <StackLayout
                                         Grid.Row="0"
                                         Grid.Column="1"
@@ -339,7 +280,7 @@
                                         Spacing="0"
                                         HorizontalOptions="End"
                                         VerticalOptions="End">
-                        
+
                                         <Label
                                               Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding status}"
@@ -350,21 +291,6 @@
                                              Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding time}"
                                              />
-
-                                        <!--<Label
-                                              Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding selection}"
-                                            TextColor="#766C6C" />
-                                        <Label
-                                              Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding messagedayoff}"
-                                        />
-                                        <Label
-                                            
-                                             Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding statusdayoff}"
-                                             Margin="0,10,0,10"
-                                            TextColor="{Binding color}" />-->
                                     </StackLayout>
                                     <BoxView
                                         Grid.Row="1"

@@ -12,7 +12,7 @@ namespace people_errandd.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Record : ContentPage
-    {
+    { 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
@@ -33,14 +33,15 @@ namespace people_errandd.Views
         }
         async void RecordChooseButton(object sender, EventArgs e)
         {
+            RecordsSelector rs = new RecordsSelector();
             var ActionSheet = await DisplayActionSheet("請選擇:", "Cancel", null, "上下班", "請假", "公出");
             //Debug.WriteLine("Action: " + ActionSheet);
             switch (ActionSheet)
             {
-                case "Cancel":            
+                case "Cancel":
                     break;
                 case "上下班":
-                    Worklist.ItemsSource = await App.DataBase.GetWorkRecordsAsync();
+                    Worklist.ItemsSource = await App.DataBase.GetWorkRecordsAsync();                  
                     break;
                 case "請假":
                     Worklist.ItemsSource = await App.DataBase.GetDayOffRecordsAsync();
@@ -49,7 +50,15 @@ namespace people_errandd.Views
                     Worklist.ItemsSource = await App.DataBase.GetGoOutRecordsAsync();
                     break;
             }
-        }
-
+        }     
+    }
+    public class RecordsSelector : DataTemplateSelector
+    {
+        public DataTemplate WorkRecords { get; set; }
+        public DataTemplate DayOffRecords { get; set; }
+        protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
+        {
+            return WorkRecords;
+        }        
     }
 }

@@ -25,7 +25,7 @@ namespace people_errandd.ViewModels
             }
             return 500;
         }
-        public async Task<bool> PostWork(int _WorkTypeId, double _coordinateX, double _coordinateY)
+        public async Task<bool> PostWork(int _WorkTypeId, double _coordinateX, double _coordinateY ,bool _enable)
         {
             List<work> works = new List<work>();
             work work = new work()
@@ -33,13 +33,39 @@ namespace people_errandd.ViewModels
                 workTypeId = _WorkTypeId,
                 hashAccount = _HashAccount,
                 coordinateX = _coordinateX,
-                coordinateY = _coordinateY
+                coordinateY = _coordinateY,
+                enabler = _enable
             };
             works.Add(work);
             var WorkRecord= JsonConvert.SerializeObject(works);
             HttpContent content = new StringContent(WorkRecord);
             content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
             response = await client.PostAsync(basic_url + ControllerNameWorkRecord + "add_workRecord", content);
+            if (response.StatusCode.ToString() == "OK")
+            {
+                return true;
+            }
+            //else
+            //{
+            //    我就去死;
+            //}
+            return false;
+        }
+        public bool PostWork(double _coordinateX, double _coordinateY)
+        {
+            List<work> works = new List<work>();
+            work work = new work()
+            {
+                workTypeId =0,
+                hashAccount = _HashAccount,
+                coordinateX = _coordinateX,
+                coordinateY = _coordinateY
+            };
+            works.Add(work);
+            var WorkRecord = JsonConvert.SerializeObject(works);
+            HttpContent content = new StringContent(WorkRecord);
+            content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+            response = client.PostAsync(basic_url + ControllerNameWorkRecord + "add_workRecord", content).Result;
             if (response.StatusCode.ToString() == "OK")
             {
                 return true;

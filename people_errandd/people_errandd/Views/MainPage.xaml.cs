@@ -17,34 +17,51 @@ namespace people_errandd.Views
         {
             InitializeComponent();
             //隱藏navigationpage導航欄
-            NavigationPage.SetHasNavigationBar(this, false);      
-            var _hashAccount = Preferences.Get("Login","");
+            NavigationPage.SetHasNavigationBar(this, false);
+            var _hashAccount = Preferences.Get("Login", "");
             HttpResponse._HashAccount = _hashAccount;
-            var location = Geolocation.GetLocationAsync(new GeolocationRequest
+            GetLocation();
+        }
+        private async void GetLocation()
+        {
+            var request = new GeolocationRequest(GeolocationAccuracy.Medium);
+            var location = await Geolocation.GetLocationAsync(request);
+            try
             {
-                DesiredAccuracy = GeolocationAccuracy.Medium,
-                Timeout = TimeSpan.FromSeconds(30)
-            });
+                if (location == null)
+                {
+                    GPSText.Text = "GPS 定位未開啟";
+                }
+                else
+                {
+                    GPSText.Text = "GPS 定位已開啟";
+                    switch (await Work.GetWorkType())
+                    {
+                        case 0:
+                        case 1:
+                            await Work.PostWork(1, location.Latitude, location.Longitude, false);
+                            break;
+                        case 2:
+                            await Work.PostWork(2, location.Latitude, location.Longitude, false);
+                            break;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
         }
         protected override void OnAppearing()
-        {         
+        {
             base.OnAppearing();
             status.Text = Preferences.Get("statusNow", "");
-            Preferences.Get("WorkOnButtonStatus", workOn.IsEnabled = true);
-            Preferences.Get("WorkOffButtonStatus", workOff.IsEnabled = false);
-            Preferences.Get("WorkOnButtonView", workOn.Opacity = 1);
-            Preferences.Get("WorkOffButtonView", workOff.Opacity = 0.2);
-            Preferences.Get("WorkOnText", workOnText.Opacity = 1);
-            Preferences.Get("WorkOffText", workOffText.Opacity = 0.2);
-            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;        
-            //if (location == null)
-            //{
-            //    GPSText.Text = "GPS  定位未開啟";
-            //}
-            //else
-            //{
-            //    GPSText.Text = "GPS  定位已開啟";
-            //}
+            workOn.IsEnabled = Preferences.Get("WorkOnButtonStauts", workOn.IsEnabled = false);
+            workOff.IsEnabled = Preferences.Get("WorkOffButtonStauts", workOff.IsEnabled = true);
+            workOn.Opacity = Preferences.Get("WorkOnButtonView", workOn.Opacity = 0.2);
+            workOff.Opacity = Preferences.Get("WorkOffButtonView", workOff.Opacity = 1);
+            workOnText.Opacity = Preferences.Get("WorkOnText", workOnText.Opacity = 0.2);
+            workOffText.Opacity = Preferences.Get("WorkOffText", workOffText.Opacity = 1);
+            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
         }
         protected override void OnDisappearing()
         {
@@ -53,7 +70,7 @@ namespace people_errandd.Views
         }
         private void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
         {
-          if(e.NetworkAccess == NetworkAccess.Internet)
+            if (e.NetworkAccess == NetworkAccess.Internet)
             {
                 LabelConnection.FadeTo(0).ContinueWith((result) => { });
                 FrameConnection.FadeTo(0).ContinueWith((result) => { });
@@ -72,21 +89,21 @@ namespace people_errandd.Views
                 if (allowTap)
                 {
                     allowTap = false;
-                    
+
                     if (await Work.GetWorkType() == 2 || await Work.GetWorkType() == 0)
                     {
                         (double x, double y) = await geoLocation.GetLocation();
                         if (geoLocation.GetCurrentLocation(x, y) == true)
                         {
-                            if (await Work.PostWork(1, x, y))
-                            {                  
+                            if (await Work.PostWork(1, x, y, true))
+                            {
+                                await DisplayAlert("", "上班打卡成功", "確定");
                                 await App.DataBase.SaveRecordAsync(new WorkRecordModels
                                 {
                                     status = "上班",
                                     time = DateTime.Now.ToString()
                                 });
-                                await WorkOnSet();
-                                base.OnAppearing();
+                                WorkOnSet();
                             }
                             else
                             {
@@ -113,33 +130,33 @@ namespace people_errandd.Views
                 await DisplayAlert("", "錯誤", "");
                 throw;
             }
-            finally 
+            finally
             {
                 allowTap = true;
-            }         
+            }
         }
-       private async void OffWork(object sender, EventArgs e)
+        private async void OffWork(object sender, EventArgs e)
         {
 
             try
             {
                 if (allowTap)
                 {
-                    allowTap = false;                 
+                    allowTap = false;
                     if (await Work.GetWorkType() == 1)
                     {
                         (double x, double y) = await geoLocation.GetLocation();
                         if (geoLocation.GetCurrentLocation(x, y) == true)
                         {
-                            if (await Work.PostWork(2, x, y))
+                            if (await Work.PostWork(2, x, y, true))
                             {
+                                await DisplayAlert("", "下班打卡成功", "確定");
                                 await App.DataBase.SaveRecordAsync(new WorkRecordModels
                                 {
                                     status = "下班",
                                     time = DateTime.Now.ToString()
                                 });
-                                await WorkOffSet();
-                                base.OnAppearing();
+                                WorkOffSet();
                             }
                             else
                             {
@@ -172,9 +189,8 @@ namespace people_errandd.Views
             }
         }
 
-        private async Task WorkOffSet()
+        private void WorkOffSet()
         {
-            await DisplayAlert("", "下班打卡成功", "確定");
             Preferences.Set("statusNow", "已下班");
             status.Text = Preferences.Get("statusNow", "");
             Preferences.Set("WorkOffButtonStauts", workOff.IsEnabled = false);
@@ -184,9 +200,9 @@ namespace people_errandd.Views
             Preferences.Set("WorkOnText", workOnText.Opacity = 1);
             Preferences.Set("WorkOffText", workOffText.Opacity = 0.2);
         }
-        private async Task WorkOnSet()
+        private void WorkOnSet()
         {
-            await DisplayAlert("", "上班打卡成功", "確定");
+
             Preferences.Set("statusNow", "上班中");
             status.Text = Preferences.Get("statusNow", "");
             Preferences.Set("WorkOnButtonStauts", workOn.IsEnabled = false);
@@ -195,7 +211,7 @@ namespace people_errandd.Views
             Preferences.Set("WorkOffButtonView", workOff.Opacity = 1);
             Preferences.Set("WorkOnText", workOnText.Opacity = 0.2);
             Preferences.Set("WorkOffText", workOffText.Opacity = 1);
-        }  
+        }
         private async void DetailButton(object sender, EventArgs e)
         {
             try
