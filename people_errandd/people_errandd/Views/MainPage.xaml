@@ -2,10 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="people_errandd.Views.MainPage"
-             BackgroundColor="#9BAEC8">
+             BackgroundColor="#8CC5D7">
     <ContentPage.Resources>
         <ResourceDictionary>
-
             <Style x:Key="name" TargetType="Label">
                 <Setter Property="FontFamily" Value="Chalkduster" />
                 <Setter Property="TextColor" Value="Black" />
@@ -50,6 +49,7 @@
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="TextColor" Value="Black" />
             </Style>
+           
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -114,9 +114,7 @@
                         </StackLayout>
                     </StackLayout>
                 </Frame>
-                <Frame BackgroundColor="Black" Opacity="0.5">
-                <Label Text="No Internet Connection" HorizontalOptions="Center" Margin="0,35,0,0" FontAttributes="Bold" BackgroundColor="#66B9BF" ></Label>
-         </Frame>
+               
             </StackLayout>
 
         </Grid>

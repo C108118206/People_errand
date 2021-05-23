@@ -16,10 +16,17 @@
     <item name="windowActionBar">false</item>
     <item name="windowActionModeOverlay">true</item>  
    <item name="android:actionMenuTextColor">#166BA2</item>
+   
+   <!-- <item name="android:textColorSecondary">#166BA2</item>  全部底線的顏色-->
+
+    <item name="android:statusBarColor">#263959</item>
+    <item name="colorAccent">@color/my_color</item>
+    
    <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
    <item name="android:timePickerDialogTheme">@style/TimePickerDialogTheme</item>
   </style>
-
+  
+  
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
     <item name="colorAccent">#8CA9D3</item>
   </style>

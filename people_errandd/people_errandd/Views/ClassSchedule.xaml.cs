@@ -19,7 +19,7 @@ namespace people_errandd.Views
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
 
             DateTime fromDate = StartDate.Date;
-            DateTime toDate = fromDate.AddDays(7);
+            DateTime toDate = fromDate.AddDays(6);
             EndDate.Date = toDate;
         }
         private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)

@@ -30,7 +30,7 @@ namespace people_errandd.Views
         }
         async void choose(object sender, EventArgs e)
         {
-            string action = await DisplayActionSheet("請選擇:", "Cancel", null, "上下班", "請假", "公出");
+            string action = await DisplayActionSheet("請選擇:", "取消", null, "上下班", "請假", "公出");
             Debug.WriteLine("Action: " + action);
         }
 

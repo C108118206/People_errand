@@ -253,4 +253,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\schedule2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hours24.png" />
+  </ItemGroup>
 </Project>
