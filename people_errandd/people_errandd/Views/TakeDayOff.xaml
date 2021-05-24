@@ -187,10 +187,10 @@
                     <Entry  Style="{StaticResource entry}"></Entry>
                     <Button Style="{StaticResource button}"></Button>
                     -->
-                  <StackLayout Margin="50,10,0,0"  Orientation="Horizontal">
-                            <Image  Source="hours24" HeightRequest="25"/>
-                            <Label  HorizontalOptions="Start"  Text="ALL-DAY"  Style="{StaticResource titletext}"></Label>
-                            <Switch HorizontalOptions="End" Margin="120,0,0,0"/>
+                  <StackLayout HorizontalOptions="Center"  Orientation="Horizontal">
+                    <Image  Source="hours24"  Margin="0,10,0,0" HeightRequest="25"/>
+                    <Label  HorizontalOptions="Start"  Margin="0,10,0,0"  Text="ALL-DAY"  Style="{StaticResource titletext}"></Label>
+                            <Switch HorizontalOptions="End" Margin="125,0,0,0"/>
                         </StackLayout>
                 <Frame Grid.Row="0"  Style="{StaticResource frame}">
                     <StackLayout>

@@ -211,7 +211,6 @@
     <AndroidResource Include="Resources\drawable\schedule2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="allday.png" />
     <AndroidResource Include="Resources\drawable\hours24.png" />
     <AndroidResource Include="Resources\drawable\loginpage.png" />
   </ItemGroup>
