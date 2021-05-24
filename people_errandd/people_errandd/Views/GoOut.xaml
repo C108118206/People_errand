@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local1="clr-namespace:people_errandd.Views"
              x:Class="people_errandd.Views.GoOut">
     
     <NavigationPage.TitleView>
@@ -82,7 +82,7 @@
                 <Setter Property="TextColor" Value="#CA2D2D" />
                 <Setter Property="FontSize" Value="28" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="Margin" Value="10,-5,0,0" />
+                <Setter Property="Margin" Value="0,-5,0,0" />
                 <Setter Property="Text" Value="*" />
             </Style>
             <Style x:Key="titletext" TargetType="Label">
@@ -110,11 +110,11 @@
                 <Setter Property="Format" Value="t" />
             </Style>
             <Style x:Key="entry" TargetType="Entry">
-                <Setter Property="Margin" Value="15,-10,0,0" />
+                <Setter Property="Margin" Value="0,-10,0,0" />
                 <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
                 <Setter Property="HeightRequest" Value="50" />
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="WidthRequest" Value="250" />
+                <Setter Property="WidthRequest" Value="280" />
                 <Setter Property="FontSize" Value="18" />
                 <Setter Property="TextColor" Value="#696969" />
                 <Setter Property="FontAttributes" Value="Bold" />
@@ -194,7 +194,7 @@
                     <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                         <Image  Source="hours24"  Margin="0,10,0,0" HeightRequest="25"/>
                         <Label  HorizontalOptions="Start" Margin="0,10,0,0"  Text="ALL-DAY"  Style="{StaticResource titletext}"></Label>
-                        <Switch HorizontalOptions="End" Margin="135,10,0,0"/>
+                        <Switch HorizontalOptions="End" Margin="150,10,0,0"/>
                     </StackLayout>
                     <Frame Grid.Row="0"  Style="{StaticResource frame}">
                         <StackLayout>
@@ -202,8 +202,9 @@
                                 <Label Style="{StaticResource title*}"></Label>
                                 <Label Text="開始" Style="{StaticResource titletext}"></Label>
                             </StackLayout>
-                            <DatePicker Grid.Row="1" x:Name="startDatePicker" Style="{StaticResource date}"/>
-                            <TimePicker Grid.Row="2" Style="{StaticResource time}" />
+                            <StackLayout WidthRequest="280" HorizontalOptions="Center">
+                                <local1:DateTimePicker2 ></local1:DateTimePicker2>
+                            </StackLayout>
                         </StackLayout>
                     </Frame>
                     <Frame Grid.Row="1"  Style="{StaticResource frame}">
@@ -212,11 +213,9 @@
                                 <Label Style="{StaticResource title*}"></Label>
                                 <Label Text="結束" Style="{StaticResource titletext}"></Label>
                             </StackLayout>
-                            <DatePicker Grid.Row="1" x:Name="endDatePicker"
-                            Style="{StaticResource date}"
-                            MinimumDate="{Binding Source={x:Reference startDatePicker},Path=Date}"
-                            />
-                            <TimePicker Grid.Row="2" Style="{StaticResource time}" />
+                            <StackLayout WidthRequest="280" HorizontalOptions="Center">
+                                <local1:DateTimePicker2 ></local1:DateTimePicker2>
+                            </StackLayout>
                         </StackLayout>
                     </Frame>
                     <Frame Grid.Row="2" Style="{StaticResource frame}">
