@@ -44,6 +44,8 @@ namespace people_errandd.Views
                         case 2:
                             await Work.PostWork(2, location.Latitude, location.Longitude, false);
                             break;
+                        default:
+                            break;
                     }
                 }
             }
@@ -55,12 +57,12 @@ namespace people_errandd.Views
         {
             base.OnAppearing();
             status.Text = Preferences.Get("statusNow", "");
-            workOn.IsEnabled = Preferences.Get("WorkOnButtonStauts", workOn.IsEnabled = false);
-            workOff.IsEnabled = Preferences.Get("WorkOffButtonStauts", workOff.IsEnabled = true);
-            workOn.Opacity = Preferences.Get("WorkOnButtonView", workOn.Opacity = 0.2);
-            workOff.Opacity = Preferences.Get("WorkOffButtonView", workOff.Opacity = 1);
-            workOnText.Opacity = Preferences.Get("WorkOnText", workOnText.Opacity = 0.2);
-            workOffText.Opacity = Preferences.Get("WorkOffText", workOffText.Opacity = 1);
+            workOn.IsEnabled = Preferences.Get("WorkOnButtonStauts", workOn.IsEnabled = true);
+            workOff.IsEnabled = Preferences.Get("WorkOffButtonStauts", workOff.IsEnabled = false);
+            workOn.Opacity = Preferences.Get("WorkOnButtonView", workOn.Opacity = 1);
+            workOff.Opacity = Preferences.Get("WorkOffButtonView", workOff.Opacity = 0.2);
+            workOnText.Opacity = Preferences.Get("WorkOnText", workOnText.Opacity = 1);
+            workOffText.Opacity = Preferences.Get("WorkOffText", workOffText.Opacity = 0.2);
             Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
         }
         protected override void OnDisappearing()

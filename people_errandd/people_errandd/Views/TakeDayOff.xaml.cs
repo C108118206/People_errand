@@ -32,7 +32,9 @@ namespace people_errandd.Views
 
         private async void EnterButton(object sender, EventArgs e)
         {
-            switch (leaveType.SelectedItem.ToString())
+            try
+            {
+                switch (leaveType.SelectedItem.ToString())
             {
                 case "事假":
                     typeId = 1;
@@ -55,7 +57,11 @@ namespace people_errandd.Views
                 case "陪產假":
                     typeId = 7;
                     break;
-            }
+                default:
+                    typeId = 0;
+                    break;
+            } 
+           
             if(await takeDayOff.PostDayOffRecord(startDatePicker.Date, endDatePicker.Date, typeId, reason.Text))
             {
              await DisplayAlert("", "申請成功", "OK");
@@ -64,14 +70,22 @@ namespace people_errandd.Views
             {
                 await DisplayAlert("Error", "錯誤", "OK");
             }
-            await App.DataBase.SaveRecordAsync(new DayOffRecordModels
+           
+                await App.DataBase.SaveRecordAsync(new DayOffRecordModels
+                {
+                    DayOffType = leaveType.SelectedItem.ToString(),
+                    StartTime = startDatePicker.Date,
+                    EndTime = endDatePicker.Date,
+                    Reason = reason.Text,
+
+                });
+            }
+            catch (Exception)
             {
-                DayOffType = leaveType.SelectedItem.ToString(),
-                StartTime = startDatePicker.Date,
-                EndTime = endDatePicker.Date,
-                Reason = reason.Text,
-                
-            });
+                await DisplayAlert("", "格式錯誤", "OK");
+                throw;
+            }
+           
         }
     }
 }

@@ -24,18 +24,22 @@ namespace people_errandd.ViewModels
                 EndDate = _EndTime,
             };
             dayOffs.Add(dayOff);
-            var WorkRecord = JsonConvert.SerializeObject(dayOffs);
-            HttpContent content = new StringContent(WorkRecord);
-            content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-            response = await client.PostAsync(basic_url + ControllerNameLeaveRecord + "add_leaveRecord", content);
-            if (response.StatusCode.ToString() == "OK")
+            try
             {
-                return true;
+                var WorkRecord = JsonConvert.SerializeObject(dayOffs);
+                HttpContent content = new StringContent(WorkRecord);
+                content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                response = await client.PostAsync(basic_url + ControllerNameLeaveRecord + "add_leaveRecord", content);
+                if (response.StatusCode.ToString() == "OK")
+                {
+                    return true;
+                }
             }
-            //else
-            //{
-            //    我就去死;
-            //}
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
             return false;
         }
     }
