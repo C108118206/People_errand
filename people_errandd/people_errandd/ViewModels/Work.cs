@@ -34,7 +34,7 @@ namespace people_errandd.ViewModels
                 hashAccount = _HashAccount,
                 coordinateX = _coordinateX,
                 coordinateY = _coordinateY,
-                enabler = _enable
+                enabled = _enable
             };
             works.Add(work);
             var WorkRecord= JsonConvert.SerializeObject(works);

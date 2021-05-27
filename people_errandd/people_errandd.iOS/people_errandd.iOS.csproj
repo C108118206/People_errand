@@ -253,4 +253,16 @@
   <ItemGroup>
     <BundleResource Include="Resources\schedule2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\schedule3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\note4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hours24.png" />
+  </ItemGroup>
 </Project>

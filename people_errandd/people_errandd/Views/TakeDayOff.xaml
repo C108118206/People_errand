@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="people_errandd.Views.TakeDayOff">
+             x:Class="people_errandd.Views.TakeDayOff"
+             BackgroundColor="#B4D3EA">
 
     <NavigationPage.TitleView>
         <Label Text="請假申請" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
@@ -119,7 +120,7 @@
 
             <Style x:Key="button" TargetType="Button">
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="BackgroundColor" Value="#7F9EB2"/>
+                <Setter Property="BackgroundColor" Value="#5BA6D8"/>
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="FontSize" Value="18"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
@@ -134,7 +135,7 @@
 
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Grid BackgroundColor="#D9E1E8">
+    <Grid BackgroundColor="#B4D3EA">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />

@@ -34,5 +34,7 @@
     <string>people_errandd</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+  <key>NsLocationWhenInUseUsageDescription</key>
+  <string>This app wants to use tour location</string>
 </dict>
 </plist>

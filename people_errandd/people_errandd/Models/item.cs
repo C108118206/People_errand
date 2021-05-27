@@ -15,7 +15,7 @@ namespace people_errandd.Models
         public double coordinateX { get; set; }
         public double coordinateY { get; set; }
         
-        public bool enabler { get; set; }
+        public bool enabled { get; set; }
         public DateTime Date { get; set; }
 
     }

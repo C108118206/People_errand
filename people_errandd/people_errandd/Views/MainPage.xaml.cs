@@ -30,11 +30,11 @@ namespace people_errandd.Views
             {
                 if (location == null)
                 {
-                    GPSText.Text = "GPS 定位未開啟";
+                    GPSText.Text = "定位未開啟";
                 }
                 else
                 {
-                    GPSText.Text = "GPS 定位已開啟";
+                    GPSText.Text = "定位已開啟";
                     switch (await Work.GetWorkType())
                     {
                         case 0:
@@ -56,6 +56,7 @@ namespace people_errandd.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack",""));
             status.Text = Preferences.Get("statusNow", "");
             workOn.IsEnabled = Preferences.Get("WorkOnButtonStauts", workOn.IsEnabled = true);
             workOff.IsEnabled = Preferences.Get("WorkOffButtonStauts", workOff.IsEnabled = false);
@@ -201,6 +202,9 @@ namespace people_errandd.Views
             Preferences.Set("WorkOffButtonView", workOff.Opacity = 0.2);
             Preferences.Set("WorkOnText", workOnText.Opacity = 1);
             Preferences.Set("WorkOffText", workOffText.Opacity = 0.2);
+            Preferences.Set("statusBack", "F86954");
+            statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
+            base.OnAppearing();
         }
         private void WorkOnSet()
         {
@@ -213,6 +217,9 @@ namespace people_errandd.Views
             Preferences.Set("WorkOffButtonView", workOff.Opacity = 1);
             Preferences.Set("WorkOnText", workOnText.Opacity = 0.2);
             Preferences.Set("WorkOffText", workOffText.Opacity = 1);
+            Preferences.Set("statusBack", "98E4AA");
+            statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
+            base.OnAppearing();
         }
         private async void DetailButton(object sender, EventArgs e)
         {

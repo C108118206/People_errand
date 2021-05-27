@@ -24,8 +24,8 @@ namespace people_errandd.Views
         public Record()
         {
             InitializeComponent();
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#263959");
-            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#B4D3EA");
+            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
         }
         private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         {
