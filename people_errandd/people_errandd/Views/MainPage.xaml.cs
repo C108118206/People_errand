@@ -30,11 +30,11 @@ namespace people_errandd.Views
             {
                 if (location == null)
                 {
-                    GPSText.Text = "GPS 定位未開啟";
+                    GPSText.Text = "定位未開啟";
                 }
                 else
                 {
-                    GPSText.Text = "GPS 定位已開啟";
+                    GPSText.Text = "定位已開啟";
                     switch (await Work.GetWorkType())
                     {
                         case 0:

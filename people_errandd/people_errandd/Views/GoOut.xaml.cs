@@ -15,7 +15,7 @@ namespace people_errandd.Views
         public GoOut()
         {
             InitializeComponent();
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#D9E1E8");
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#B4D3EA");
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
         }
         private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
