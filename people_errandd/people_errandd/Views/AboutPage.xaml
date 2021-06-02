@@ -4,13 +4,16 @@
              x:Class="people_errandd.Views.AboutPage"
              BackgroundColor="White">
 
+    <!--最上面Navigation標題-->
     <NavigationPage.TitleView>
         <Label Text="個人資料" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" Margin="-15,0,0,0"></Label>
     </NavigationPage.TitleView>
 
+    <!--最上面Navigation右邊完成-->
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="完成   "  Activated="RefButtonClicked"></ToolbarItem>
     </ContentPage.ToolbarItems>
+    <!--內容樣式設定-->
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="name" TargetType="Label">
@@ -33,7 +36,7 @@
             <Style x:Key="contententry" TargetType="Entry">
                 <Setter Property="FontSize" Value="15" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="WidthRequest" Value="280" />
+                <Setter Property="WidthRequest" Value="300" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="HorizontalTextAlignment" Value="End" />
                 <Setter Property="HorizontalOptions" Value="Center" />
@@ -41,6 +44,7 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
+    <!--內容樣式設定結束-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -49,53 +53,57 @@
 
 
         <ScrollView>
-            <StackLayout Orientation="Vertical" >
-                <StackLayout BackgroundColor="#8CC5D7" HeightRequest="200" >
-
+            <StackLayout Orientation="Vertical" x:Name="transition"> 
+                <StackLayout Grid.Row="0" BackgroundColor="#8CC5D7" HeightRequest="200" > <!--頭貼.姓名背景高度與顏色-->
                     <StackLayout  >
-                        <Frame 
+                        <!--圓形頭貼外框-->
+                        <Frame Grid.Row="0"
+                       BackgroundColor="White"
                        BorderColor="Black"
                        CornerRadius="50"
-                       HeightRequest="50"
-                       WidthRequest="50"
+                       HeightRequest="60"
+                       WidthRequest="60"
                             Margin="0,30,0,0"
                        IsClippedToBounds="True"
                        HorizontalOptions="Center"
                        VerticalOptions="Center"
                        >
-                            <ImageButton 
+                            <!--頭貼照片-->
+                            <ImageButton
+                          BackgroundColor="White"
+                          Clicked="Image_clicked"
+                         x:Name="resultImage"
                          Aspect="AspectFill"
                          Margin="-20"
-                                Source="p2"
-                         HeightRequest="10"
-                         WidthRequest="10" />
+                         Source="p2"
+                         HeightRequest="30"
+                         WidthRequest="30" />
                         </Frame>
-                        <Label Text="Marry" Style="{StaticResource name}"></Label>
+                        <Label Text="Marry" Style="{StaticResource name}" Grid.Row="1"></Label> <!--使用者姓名-->
                     </StackLayout>
                 </StackLayout>
 
-                <StackLayout Orientation="Vertical" >
-                    <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical" Grid.Row="1" > <!--底部框架-->
+                    <StackLayout Orientation="Horizontal" Grid.Row="0"> <!--部門標題與圖片-->
                         <Image Source="group.png"  Margin="30,35,0,0" Style="{StaticResource contentimage}"></Image>
                         <Label Text="部門" Margin="0,35,0,0" Style="{StaticResource contenttitle}" ></Label>
                     </StackLayout>
-                    <Entry Placeholder="行銷部" PlaceholderColor="Gray" IsReadOnly="True" Style="{StaticResource contententry}"></Entry>
-                    <StackLayout Orientation="Horizontal"  >
+                    <Entry Placeholder="行銷部" PlaceholderColor="Gray" IsReadOnly="True" Style="{StaticResource contententry}" Grid.Row="1"></Entry> <!--部門名稱(設置唯讀)-->
+                    <StackLayout Orientation="Horizontal"  Grid.Row="2"> <!--職稱標題與圖片-->
                         <Image Source="person.png" Style="{StaticResource contentimage}"></Image>
                         <Label Text="職稱" Style="{StaticResource contenttitle}" ></Label>
                     </StackLayout>
-                    <Entry Placeholder="職員"  IsReadOnly="True" PlaceholderColor="Gray" Style="{StaticResource contententry}"></Entry>
-                    <StackLayout Orientation="Horizontal"  >
+                    <Entry Placeholder="職員"  IsReadOnly="True" PlaceholderColor="Gray" Style="{StaticResource contententry}" Grid.Row="3"></Entry> <!--職稱名稱(設置唯讀)-->
+                    <StackLayout Orientation="Horizontal"  Grid.Row="4"> <!--電話標題與圖片-->
                         <Image Source="phone.png" Style="{StaticResource contentimage}"></Image>
                         <Label Text="電話" Style="{StaticResource contenttitle}" ></Label>
                     </StackLayout>
-                    <Entry   Keyboard="Telephone" MaxLength="10" Style="{StaticResource contententry}"></Entry>
-                    <StackLayout Orientation="Horizontal">
+                    <Entry   Keyboard="Telephone" MaxLength="10" Style="{StaticResource contententry}" Grid.Row="5"></Entry> <!--電話輸入-->
+                    <StackLayout Orientation="Horizontal" Grid.Row="6"> <!--Email標題與圖片-->
                         <Image Source="mail.png" Style="{StaticResource contentimage}"></Image>
                         <Label Text="Email" Style="{StaticResource contenttitle}" ></Label>
                     </StackLayout>
-                    <Entry  Keyboard="Email" Style="{StaticResource contententry}"></Entry>
-
+                    <Entry  Keyboard="Email" Style="{StaticResource contententry}" Grid.Row="7"></Entry> <!--Email輸入-->
                 </StackLayout>
             </StackLayout>
         </ScrollView>

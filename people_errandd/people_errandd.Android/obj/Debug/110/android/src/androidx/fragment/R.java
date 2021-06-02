@@ -8,13 +8,13 @@ package androidx.fragment;
 
 public final class R {
 	public static final class anim {
-		public static final int fragment_close_enter = 0x7f010020;
-		public static final int fragment_close_exit = 0x7f010021;
-		public static final int fragment_fade_enter = 0x7f010022;
-		public static final int fragment_fade_exit = 0x7f010023;
-		public static final int fragment_fast_out_extra_slow_in = 0x7f010024;
-		public static final int fragment_open_enter = 0x7f010025;
-		public static final int fragment_open_exit = 0x7f010026;
+		public static final int fragment_close_enter = 0x7f01002c;
+		public static final int fragment_close_exit = 0x7f01002d;
+		public static final int fragment_fade_enter = 0x7f01002e;
+		public static final int fragment_fade_exit = 0x7f01002f;
+		public static final int fragment_fast_out_extra_slow_in = 0x7f010030;
+		public static final int fragment_open_enter = 0x7f010031;
+		public static final int fragment_open_exit = 0x7f010032;
 	}
 	public static final class attr {
 		public static final int alpha = 0x7f030028;
@@ -61,18 +61,18 @@ public final class R {
 		public static final int notification_top_pad_large_text = 0x7f060151;
 	}
 	public static final class drawable {
-		public static final int notification_action_background = 0x7f07009c;
-		public static final int notification_bg = 0x7f07009d;
-		public static final int notification_bg_low = 0x7f07009e;
-		public static final int notification_bg_low_normal = 0x7f07009f;
-		public static final int notification_bg_low_pressed = 0x7f0700a0;
-		public static final int notification_bg_normal = 0x7f0700a1;
-		public static final int notification_bg_normal_pressed = 0x7f0700a2;
-		public static final int notification_icon_background = 0x7f0700a3;
-		public static final int notification_template_icon_bg = 0x7f0700a4;
-		public static final int notification_template_icon_low_bg = 0x7f0700a5;
-		public static final int notification_tile_bg = 0x7f0700a6;
-		public static final int notify_panel_notification_icon_bg = 0x7f0700a7;
+		public static final int notification_action_background = 0x7f07009f;
+		public static final int notification_bg = 0x7f0700a0;
+		public static final int notification_bg_low = 0x7f0700a1;
+		public static final int notification_bg_low_normal = 0x7f0700a2;
+		public static final int notification_bg_low_pressed = 0x7f0700a3;
+		public static final int notification_bg_normal = 0x7f0700a4;
+		public static final int notification_bg_normal_pressed = 0x7f0700a5;
+		public static final int notification_icon_background = 0x7f0700a6;
+		public static final int notification_template_icon_bg = 0x7f0700a7;
+		public static final int notification_template_icon_low_bg = 0x7f0700a8;
+		public static final int notification_tile_bg = 0x7f0700a9;
+		public static final int notify_panel_notification_icon_bg = 0x7f0700aa;
 	}
 	public static final class id {
 		public static final int accessibility_action_clickable_span = 0x7f08000a;

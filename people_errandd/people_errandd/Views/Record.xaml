@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:people_errandd.Views"         
              x:Class="people_errandd.Views.Record"
              BackgroundColor="White">
+    <!--最上面Navigation標題-->
     <NavigationPage.TitleView>
         <Label Text="查看紀錄" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
     </NavigationPage.TitleView>
@@ -13,11 +14,13 @@
     <!--<ContentPage.BindingContext>
         <viewmodels:RecordViewModels  />
     </ContentPage.BindingContext>-->
+
+    <!--內容樣式設定-->
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="date" TargetType="DatePicker">
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="WidthRequest" Value="210" />
                 <Setter Property="HeightRequest" Value="30" />
                 <Setter Property="FontSize" Value="17" />
                 <Setter Property="TextColor" Value="Black" />
@@ -26,13 +29,13 @@
             </Style>
             <Style x:Key="select" TargetType="ImageButton">
                 <Setter Property="BackgroundColor" Value="White"/>
-                <Setter Property="Margin" Value="18,0,0,0"/>
+                <Setter Property="Margin" Value="25,0,0,0"/>
                 <Setter Property="Source" Value="a14"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="HeightRequest" Value="50"/>
             </Style>
             <Style x:Key="Collection" TargetType="CollectionView">
-                <Setter Property="Margin" Value="40,0,0,0"/>
+                <Setter Property="Margin" Value="25,0,0,0"/>
                 <Setter Property="SelectionMode" Value="None"/>
                 <Setter Property="VerticalScrollBarVisibility" Value="Never"/>
             </Style>
@@ -49,7 +52,7 @@
                 <Setter Property="FontFamily" Value="PoppinsMedium"/>
             </Style>
             <Style x:Key="line" TargetType="BoxView">
-                <Setter Property="Margin" Value="0,0,45,0"/>
+                <Setter Property="Margin" Value="0,0,25,0"/>
                 <Setter Property="BackgroundColor" Value="#807D7D"/>
                 <Setter Property="HeightRequest" Value="5"/>
                 <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
@@ -69,7 +72,7 @@
                 <Setter Property="FontSize" Value="15"/>
             </Style>
             <Style x:Key="gooutanddayoffcontent" TargetType="Label">
-                <Setter Property="Margin" Value="0,10,0,0"/>
+                <Setter Property="Margin" Value="0,0,0,0"/>
                 <Setter Property="HorizontalOptions" Value="End"/>
                 <Setter Property="TextColor" Value="#807D7D"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
@@ -206,8 +209,8 @@
                                              WorkRecords="{StaticResource WorkRecord}"
                                              DayOffRecords="{StaticResource DayOffRecord}" />
         </ResourceDictionary>
-        
     </ContentPage.Resources>
+    <!--內容樣式設定結束-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -232,7 +235,7 @@
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                    
-                    <Label Style="{StaticResource gooutanddayoff}" CharacterSpacing="5" Text="打卡紀錄"/>
+                    <Label Style="{StaticResource gooutanddayoff}" CharacterSpacing="12" Text="打卡紀錄"/>
 
                     <CollectionView
                         x:Name="Worklist"
@@ -260,7 +263,7 @@
                                     <StackLayout
                                         Grid.Row="0"
                                         Grid.Column="0"
-                                        Margin="10,0,0,0"
+                                        Margin="20,0,0,0"
                                         Spacing="0"
                                         VerticalOptions="Center">
                                         <Label 
@@ -276,7 +279,7 @@
                                     <StackLayout
                                         Grid.Row="0"
                                         Grid.Column="1"
-                                        Margin="0,0,60,0"
+                                        Margin="0,0,45,0"
                                         Spacing="0"
                                         HorizontalOptions="End"
                                         VerticalOptions="End">

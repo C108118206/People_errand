@@ -17,7 +17,13 @@ namespace people_errandd.Views
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this,false);
         }
+        protected async override void OnAppearing()
+        {
 
+            base.OnAppearing();
+            await transition.TranslateTo(0, -740, 500, Easing.CubicIn);
+
+        }
         private async void GoToWork(object sender, EventArgs e)
         {
             await DisplayAlert("", "上班打卡成功 ! ", "確定");
@@ -48,6 +54,7 @@ namespace people_errandd.Views
         {
             await Navigation.PushAsync(new ClassSchedule());
         }
+
 
     }
 }

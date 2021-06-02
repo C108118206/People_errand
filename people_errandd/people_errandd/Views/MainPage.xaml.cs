@@ -53,7 +53,7 @@ namespace people_errandd.Views
             {
             }
         }
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
             statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack",""));
@@ -65,6 +65,10 @@ namespace people_errandd.Views
             workOnText.Opacity = Preferences.Get("WorkOnText", workOnText.Opacity = 1);
             workOffText.Opacity = Preferences.Get("WorkOffText", workOffText.Opacity = 0.2);
             Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+
+            await transition.TranslateTo(0, 15, 2000, Easing.BounceIn);
+            await transition.TranslateTo(0, 0, 2000, Easing.BounceOut);
+
         }
         protected override void OnDisappearing()
         {
@@ -234,7 +238,7 @@ namespace people_errandd.Views
             finally
             {
                 allowTap = true;
-            }
+            }          
         }
         private async void AboutPageButton(object sender, EventArgs e)
         {

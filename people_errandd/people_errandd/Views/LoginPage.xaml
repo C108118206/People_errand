@@ -2,95 +2,93 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="people_errandd.Views.LoginPage"
-             BackgroundColor="White"
-             >
+             xmlns:st="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+             BackgroundColor="White">
+    <!--內容樣式設定-->
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="title" TargetType="Label">
-                <Setter Property="TextColor" Value="#263959" />
-                <Setter Property="FontSize" Value="40" />
+                <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="Margin" Value="40,160,0,0"/>
+                <Setter Property="FontSize" Value="40" />
+                <Setter Property="Margin" Value="40,120,0,0" />
             </Style>
             <Style x:Key="image" TargetType="Image">
-                <Setter Property="Margin" Value="30,150,0,0" />
-                <Setter Property="HeightRequest" Value="60" />
-                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="80" />
+                <Setter Property="Margin" Value="20,90,0,0" />
             </Style>
-            <Style x:Key="entrytitle" TargetType="Label">
-                <Setter Property="TextColor" Value="#263959" />
-                <Setter Property="FontSize" Value="20" />
+            <Style x:Key="content" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="Margin" Value="50,60,0,-20"/>
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="Margin" Value="50,50,-40,0" />
             </Style>
             <Style x:Key="entry" TargetType="Entry">
-                <Setter Property="WidthRequest" Value="280" />
-                <Setter Property="Margin" Value="50,0,50,0"/>
-                <Setter Property="HeightRequest" Value="80" />
-                <Setter Property="HorizontalOptions" Value="Start" />
-                <Setter Property="TextColor" Value="#7F7B7B" />
-                <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
-            </Style>
-            <Style x:Key="Sign in" TargetType="Label">
-                <Setter Property="TextColor" Value="#263959" />
-                <Setter Property="FontSize" Value="40" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+
+                <Setter Property="WidthRequest" Value="260" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="Margin" Value="40,50,0,0"/>
             </Style>
             <Style x:Key="Button" TargetType="Button">
-                <Setter Property="Margin" Value="90,40,0,0" />
-                <Setter Property="BackgroundColor" Value="#263959"/>
-                <Setter Property="VerticalOptions" Value="End"/>
-                <Setter Property="HorizontalOptions" Value="End"/>
-                <Setter Property="HeightRequest" Value="80"/>
-                <Setter Property="WidthRequest" Value="80"/>
-                <Setter Property="CornerRadius" Value="80"/>
+                <Setter Property="WidthRequest" Value="240" />
+                <Setter Property="CornerRadius" Value="40" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0,60,0,20" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="BackgroundColor" Value="#DAE9F4" />
+                <Setter Property="Opacity" Value="0.8" />
             </Style>
             <Style x:Key="Question" TargetType="Button">
                 <Setter Property="FontSize" Value="18" />
-                <Setter Property="HorizontalOptions" Value="Start" />
-                <Setter Property="BackgroundColor" Value="White" />
-                <Setter Property="TextColor" Value="#263959" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="BackgroundColor" Value="#263959" />
+                <Setter Property="TextColor" Value="White" />
                 <Setter Property="CornerRadius" Value="10" />
-                <Setter Property="Margin" Value="30,-5,0,0" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
+    <!--內容樣式設定結束-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <!-- origin 
+
         <StackLayout
             x:Name="RootContainer"
             Margin="0,0,0,-800"
             BackgroundColor="White"
             Spacing="0">
+            <!--設置背景深藍色-->
             <Frame
                 WidthRequest="10000"
                 Margin="0,-40,0,0"
                 Padding="0,40,0,24"
                 BackgroundColor="#263959"
-                CornerRadius="48">
+                CornerRadius="40">
 
                 <ScrollView HeightRequest="550">
                     <StackLayout Orientation="Vertical">
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Punch." Style="{StaticResource title}"></Label>
-                            <Image x:Name="image" Source="teamworker" Style="{StaticResource image}"></Image>
+                        <StackLayout Orientation="Horizontal" Grid.Row="0">
+                            <Label Text="Punch." Style="{StaticResource title}"></Label>  <!--Punch標題-->
+                            <Image x:Name="image" Source="teamworker" Style="{StaticResource image}"></Image> <!--Punch右邊圖片-->
                         </StackLayout>
-                        <StackLayout Orientation="Vertical">
-                            <Entry x:Name="company"  Margin="0,45,0,0"  Placeholder="組織ID" Style="{StaticResource entry}"></Entry>
-                            <Button x:Name="button" Text="登入" Style="{StaticResource Button}" Clicked="LogInButton" ></Button>
+                        <StackLayout Orientation="Vertical" Grid.Row="1"> 
+                            <Label Text="組織ID" Style="{StaticResource content}" Grid.Row="0"/> <!--組織ID標題-->
+                            <Entry x:Name="company"  Style="{StaticResource entry}" Grid.Row="1" /> <!--輸入組織ID-->
+                            <Button x:Name="button" Text="登入" Style="{StaticResource Button}" Clicked="LogInButton" Grid.Row="2" /> <!--登入按鈕-->
+                            <Button  Text="如何使用" x:Name="question" Style="{StaticResource Question}" Clicked="QuestionButton" Grid.Row="3" /> <!--如何使用之快顯示窗-->
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>
 
             </Frame>
         </StackLayout>
--->
+
         <!-- 111111
         <StackLayout>
             <StackLayout Orientation="Horizontal">
@@ -105,7 +103,7 @@
             <Button  Text="如何使用" Style="{StaticResource Question}" Clicked="QuestionButton" ></Button>
         </StackLayout>
         -->
-
+        <!-- 2222
         <StackLayout>
             <StackLayout Grid.Row="0" Orientation="Horizontal">
                 <Label  Grid.Column="0" Text="差勤打卡" Style="{StaticResource title}"></Label>
@@ -119,7 +117,7 @@
             </StackLayout>
             <Button Grid.Row="4" Text="如何使用" Style="{StaticResource Question}" Clicked="QuestionButton" ></Button>
         </StackLayout>
-
+-->
         <!-- 3333333
             <StackLayout>
             <Image x:Name="image" Source="loginpage2" Style="{StaticResource image}"></Image>

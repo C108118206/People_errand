@@ -8,6 +8,7 @@ using System.Collections;
 using System.Globalization;
 using System.IO;
 using Xamarin.Essentials;
+using Plugin.SharedTransitions;
 
 namespace people_errandd
 {
@@ -30,8 +31,8 @@ namespace people_errandd
             InitializeComponent();
             CultureInfo ChineseCulture = new CultureInfo("zh-TW");
             CultureInfo.DefaultThreadCurrentCulture = ChineseCulture; 
-                MainPage = new NavigationPage(new LoginPage());
-            
+                MainPage = new SharedTransitionNavigationPage(new LoginPage());
+            //NavigationPage
         }
 
         protected override void OnStart()
@@ -39,7 +40,8 @@ namespace people_errandd
             bool hasKey = Preferences.ContainsKey("Login");
             if (hasKey)
             {
-                MainPage = new NavigationPage(new MainPage());
+                MainPage = new SharedTransitionNavigationPage(new MainPage());
+                //NavigationPage
             }
         }
 

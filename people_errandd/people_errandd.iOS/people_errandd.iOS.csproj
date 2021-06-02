@@ -123,8 +123,14 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>5.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Plugin.SharedTransitions">
+      <Version>2.4.0</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -264,5 +270,14 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\hours24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LessDay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AddDay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\goout2.png" />
   </ItemGroup>
 </Project>

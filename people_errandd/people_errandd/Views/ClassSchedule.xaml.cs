@@ -10,27 +10,31 @@ using Xamarin.Forms.Xaml;
 namespace people_errandd.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ClassSchedule : TabbedPage
+    public partial class ClassSchedule : ContentPage
     {
-        void OnDateSelected(object sender, DateChangedEventArgs args)
-        {
-            DateTime fromDate = StartDate.Date;
-            DateTime toDate = fromDate.AddDays(6);
-            EndDate.Date = toDate.Date;
-            EndDate.MaximumDate = toDate.Date;
-        }
         public ClassSchedule()
         {
             InitializeComponent();
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#88BBD6");
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#B4D3EA");
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
 
-
         }
+        private async void LessDay(object sender, EventArgs e)
+        {
+            DateTime dateTime = SelectDate.Date;
+            SelectDate.Date = dateTime.AddDays(-1);
+        }
+        private async void AddDay(object sender, EventArgs e)
+        {
+            DateTime dateTime = SelectDate.Date;
+            SelectDate.Date = dateTime.AddDays(1);
+        }
+
         private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         {
             Navigation.PopAsync();
         }
+        
 
     }
 }
