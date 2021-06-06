@@ -1,6 +1,10 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d1846192fd996a8bf9ddfcf034b06b6b513d8c63
     "D:\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj": {}
   },
   "projects": {
@@ -12,6 +16,22 @@
         "projectPath": "D:\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
         "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
         "outputPath": "D:\\people_errand\\people_errandd\\people_errandd.Android\\obj\\",
+<<<<<<< HEAD
+=======
+=======
+    "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+        "projectName": "people_errandd.Android",
+        "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+        "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\obj\\",
+>>>>>>> f64ca4771f2d481f70dd74849551ce54add05767
+>>>>>>> d1846192fd996a8bf9ddfcf034b06b6b513d8c63
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -29,14 +49,34 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+<<<<<<< HEAD
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.telerik.com/nuget": {}
+=======
+<<<<<<< HEAD
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/nuget": {}
+=======
+          "C:\\Users\\Public\\Documents\\Infragistics\\NuGet\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+>>>>>>> f64ca4771f2d481f70dd74849551ce54add05767
+>>>>>>> d1846192fd996a8bf9ddfcf034b06b6b513d8c63
         },
         "frameworks": {
           "monoandroid11.0": {
             "projectReferences": {
+<<<<<<< HEAD
               "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
                 "projectPath": "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+=======
+<<<<<<< HEAD
+              "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+                "projectPath": "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+=======
+              "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+                "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+>>>>>>> f64ca4771f2d481f70dd74849551ce54add05767
+>>>>>>> d1846192fd996a8bf9ddfcf034b06b6b513d8c63
               }
             }
           }
@@ -65,6 +105,10 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d1846192fd996a8bf9ddfcf034b06b6b513d8c63
     "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -73,6 +117,19 @@
         "projectPath": "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
         "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
         "outputPath": "D:\\people_errand\\people_errandd\\people_errandd\\obj\\",
+<<<<<<< HEAD
+=======
+=======
+    "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
+        "projectName": "people_errandd",
+        "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
+        "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\obj\\",
+>>>>>>> f64ca4771f2d481f70dd74849551ce54add05767
+>>>>>>> d1846192fd996a8bf9ddfcf034b06b6b513d8c63
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -89,8 +146,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+<<<<<<< HEAD
           "https://api.nuget.org/v3/index.json": {},
           "https://nuget.telerik.com/nuget": {}
+=======
+<<<<<<< HEAD
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/nuget": {}
+=======
+          "C:\\Users\\Public\\Documents\\Infragistics\\NuGet\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+>>>>>>> f64ca4771f2d481f70dd74849551ce54add05767
+>>>>>>> d1846192fd996a8bf9ddfcf034b06b6b513d8c63
         },
         "frameworks": {
           "netstandard2.0": {
