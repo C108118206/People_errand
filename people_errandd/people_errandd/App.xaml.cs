@@ -15,6 +15,10 @@ namespace people_errandd
     public partial class App : Application
     {
         static Database dataBase;
+        Work work = new Work();
+        public static double Latitude { get; set; }
+        public static double Longitude { get; set; }
+
         public static Database DataBase
         {
             get
@@ -30,8 +34,8 @@ namespace people_errandd
         {
             InitializeComponent();
             CultureInfo ChineseCulture = new CultureInfo("zh-TW");
-            CultureInfo.DefaultThreadCurrentCulture = ChineseCulture; 
-                MainPage = new SharedTransitionNavigationPage(new LoginPage());
+            CultureInfo.DefaultThreadCurrentCulture = ChineseCulture;
+            MainPage = new SharedTransitionNavigationPage(new LoginPage());
             //NavigationPage
         }
 
@@ -43,14 +47,65 @@ namespace people_errandd
                 MainPage = new SharedTransitionNavigationPage(new MainPage());
                 //NavigationPage
             }
+            GetLocation();
+            GetConnectivity("start");
         }
-
         protected override void OnSleep()
         {
         }
-
         protected override void OnResume()
         {
+            GetLocation();
+            GetConnectivity("resume");
+            MessagingCenter.Send<App>(this, "Hi");
+        }
+        private async void GetLocation()
+        {
+            Preferences.Set("gpsText", "定位已開啟");
+            Page page = MainPage;
+            try
+            {
+                var request = new GeolocationRequest(GeolocationAccuracy.Medium);
+                var location = await Geolocation.GetLocationAsync(request);
+                Latitude = location.Latitude;
+                Longitude = location.Longitude;
+            }
+            catch (Exception)
+            {
+                Preferences.Set("gpsText", "定位未開啟");
+            }
+
+        }
+        private async void GetConnectivity(string status)
+        {
+            Page page = MainPage;
+            try
+            {
+                if (status == "start")
+                {
+                    switch (await work.GetWorkType())
+                    {
+                        case 0:
+                        case 1:
+                            await work.PostWork(1, Latitude, Longitude, false);
+                            break;
+                        case 2:
+                            await work.PostWork(2, Latitude, Longitude, false);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    await work.GetWorkType();
+                }
+            }
+            catch (Exception)
+            {
+                await page.DisplayAlert("", "請檢查網路狀態", "確定");
+                return;
+            }
         }
     }
 }

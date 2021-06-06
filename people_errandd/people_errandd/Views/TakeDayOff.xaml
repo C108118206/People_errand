@@ -198,7 +198,7 @@
                             <Label Text="開始" Style="{StaticResource titletext}"></Label> <!--開始-->
                         </StackLayout>
                         <DatePicker Grid.Row="1" x:Name="startDatePicker" Style="{StaticResource date}"/> <!--開始日期選擇-->
-                        <TimePicker Grid.Row="2" Style="{StaticResource time}" /> <!--開始時間選擇-->
+                        <TimePicker Grid.Row="2" x:Name="startTimePicker" Style="{StaticResource time}" /> <!--開始時間選擇-->
                     </StackLayout>
                 </Frame>
                 <Frame Grid.Row="1"  Style="{StaticResource frame}"> <!--結束框架-->
@@ -211,7 +211,7 @@
                             Style="{StaticResource date}"
                             MinimumDate="{Binding Source={x:Reference startDatePicker},Path=Date}"
                             /> <!--結束日期選擇(需小於開始日期)-->
-                        <TimePicker Grid.Row="2" Style="{StaticResource time}" />  <!--結束時間選擇-->
+                        <TimePicker Grid.Row="2" x:Name="endTimePicker" Style="{StaticResource time}" />  <!--結束時間選擇-->
                     </StackLayout>
                 </Frame>
                 <Frame Grid.Row="2" Style="{StaticResource frame}">
@@ -229,17 +229,17 @@
                                 <Picker x:Name="leaveType" Grid.Row="1" TextColor="#696969" Title="事假" Margin="15,0,0,0" WidthRequest="240" HorizontalOptions="Center" FontAttributes="Bold" FontSize="16">
                                 <!--假別選擇-->
                                 <Picker.ItemsSource>
-                                    <x:Array  Type="{x:Type x:String}">
-                                        <x:String>事假</x:String>
-                                        <x:String>病假</x:String>
-                                        <x:String>喪假</x:String>
-                                        <x:String>產假</x:String>
-                                        <x:String>生理假</x:String>
-                                        <x:String>流產假</x:String>
-                                        <x:String>產前假</x:String>
-                                        <x:String>陪產假</x:String>
-                                    </x:Array>
-                                </Picker.ItemsSource>
+                                        <x:Array  Type="{x:Type x:String}">
+                                            <x:String>事假</x:String>
+                                            <x:String>病假</x:String>
+                                            <x:String>喪假</x:String>
+                                            <x:String>產假</x:String>
+                                            <x:String>生理假</x:String>
+                                            <x:String>流產假</x:String>
+                                            <x:String>產前假</x:String>
+                                            <x:String>陪產假</x:String>
+                                        </x:Array>
+                                    </Picker.ItemsSource>
                             </Picker>
                                 <Image Source="pickerdown" Margin="-50,0,20,0"/>
                             </StackLayout>

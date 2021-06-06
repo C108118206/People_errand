@@ -25,7 +25,7 @@ namespace people_errandd.ViewModels
         {
             try
             {
-                Location locationCompany = new Location(22.7522, 120.3287);
+                Location locationCompany = new Location(24.8078583, 121.1843923);
                 Location locationNow = new Location(X, Y);
                 double distance = Location.CalculateDistance(locationNow, locationCompany, DistanceUnits.Kilometers);
                 if (distance < 0.05)

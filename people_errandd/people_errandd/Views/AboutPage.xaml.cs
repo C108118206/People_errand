@@ -53,25 +53,36 @@ namespace people_errandd.Views
         async void Image_clicked(Object sender, System.EventArgs e)
         {
             await CrossMedia.Current.Initialize();
-
-            if (!CrossMedia.Current.IsPickPhotoSupported)
+            try
             {
-                await DisplayAlert("無法使用", "現在無法使用", "OK");
-                return;
+                if (allowTap)
+                {
+                    allowTap = false;
+                    if (!CrossMedia.Current.IsPickPhotoSupported)
+                    {
+                        await DisplayAlert("無法使用", "現在無法使用", "OK");
+                        return;
+                    }
+
+                    var mediaOptions = new PickMediaOptions()
+                    {
+                        PhotoSize = PhotoSize.Full
+                    };
+                    var selectedImageFile = await CrossMedia.Current.PickPhotoAsync(mediaOptions);
+
+                    if (resultImage == null)
+                    {
+                        await DisplayAlert("無法使用", "現在無法使用", "OK");
+                        return;
+                    }
+                    resultImage.Source = ImageSource.FromStream(() => selectedImageFile.GetStream());
+                }
             }
-
-            var mediaOptions = new PickMediaOptions()
+            finally
             {
-                PhotoSize = PhotoSize.Full
-            };
-            var selectedImageFile = await CrossMedia.Current.PickPhotoAsync(mediaOptions);
-
-            if(resultImage == null)
-            {
-                await DisplayAlert("無法使用", "現在無法使用", "OK");
-                return;
+                allowTap = true;
             }
-            resultImage.Source = ImageSource.FromStream(() => selectedImageFile.GetStream());
+            
         }
     }
 }

@@ -21,17 +21,12 @@ namespace people_errandd.Models
         public string   Reason { get; set; }
         public string DayOffType { get; set; }
     }
-    public class GoOutRecordModels {
-        public string leavegoouttime { get; set; }
-        public string backgoouttime { get; set; }
-        public string location { get; set; }
-        public string messagegoout { get; set; }
-        public string statusgoout { get; set; }
-        public string leavedayoff { get; set; }
-        public string backdayoff { get; set; }
-        public string selection { get; set; }
-        public string messagedayoff { get; set; }
-        public string statusdayoff { get; set; }
+    public class GoOutRecordModels
+    {
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+        public string Reason { get; set; }
+        public string Location { get; set; }
     }
 
 

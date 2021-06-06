@@ -12,6 +12,7 @@ namespace people_errandd.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ClassSchedule : ContentPage
     {
+        bool allowTap = true;
         public ClassSchedule()
         {
             InitializeComponent();
@@ -21,18 +22,54 @@ namespace people_errandd.Views
         }
         private  void LessDay(object sender, EventArgs e)
         {
-            DateTime dateTime = SelectDate.Date;
-            SelectDate.Date = dateTime.AddDays(-1);
+            try
+            {
+                if (allowTap)
+                {
+                    allowTap = false;
+                    DateTime dateTime = SelectDate.Date;
+                    SelectDate.Date = dateTime.AddDays(-1);
+                }
+            }
+            finally
+            {
+                allowTap = true;
+            }
+           
         }
         private  void AddDay(object sender, EventArgs e)
         {
-            DateTime dateTime = SelectDate.Date;
-            SelectDate.Date = dateTime.AddDays(1);
+            try
+            {
+                if (allowTap)
+                {
+                    allowTap = false;
+                    DateTime dateTime = SelectDate.Date;
+                    SelectDate.Date = dateTime.AddDays(1);
+                }
+            }
+            finally
+            {
+                allowTap = true;
+            }
+            
         }
 
         private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         {
-            Navigation.PopAsync();
+            try
+            {
+                if (allowTap)
+                {
+                    allowTap = false;
+                    Navigation.PopAsync();
+                }
+            }
+            finally
+            {
+                allowTap = true;
+            }
+           
         }
         
 

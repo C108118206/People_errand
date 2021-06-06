@@ -46,4 +46,12 @@ namespace people_errandd.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
     }
+    public class GoOut
+    {
+        public string hashaccount { get; set; }
+        public string Location { get; set; }
+        public string reason { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+    }
 }

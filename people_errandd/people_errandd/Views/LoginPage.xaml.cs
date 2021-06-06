@@ -15,6 +15,7 @@ namespace people_errandd.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
+        private bool allowTap = true;
         private readonly Login Login = new Login();
         private string deviceId;
         public LoginPage()
@@ -34,32 +35,55 @@ namespace people_errandd.Views
 
         private async void LogInButton(object sender, EventArgs e)
         {
-            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            try
             {
-                await DisplayAlert("Error", "No Intenet", "OK");
-                return;
-            }
-            if (await Login.ConfirmCompanyHash(company.Text.Trim()))
-            {
-                if (!await Login.ConfirmUUID(deviceId))
+                if (allowTap)
                 {
-                    await Login.SetUUID();
+                    allowTap = false;
+                    if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+                    {
+                        await DisplayAlert("Error", "No Intenet", "OK");
+                        return;
+                    }
+                    if (await Login.ConfirmCompanyHash(company.Text.Trim()))
+                    {
+                        if (!await Login.ConfirmUUID(deviceId))
+                        {
+                            await Login.SetUUID();
+                        }
+                        if (string.IsNullOrEmpty(Preferences.Get("Login", string.Empty)))
+                        {
+                            Preferences.Set("Login", await Login.GetHashAccount(deviceId));
+                        }
+                        Navigation.InsertPageBefore(new MainPage(), this);
+                        await Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert("錯誤", "輸入錯誤", "請重新輸入");
+                    }
                 }
-                if (string.IsNullOrEmpty(Preferences.Get("Login", string.Empty)))
-                {
-                    Preferences.Set("Login", await Login.GetHashAccount(deviceId));
-                }
-                Navigation.InsertPageBefore(new MainPage(), this);
-                await Navigation.PopAsync();
             }
-            else
+            finally
             {
-                await DisplayAlert("錯誤", "輸入錯誤", "請重新輸入");
+                allowTap = true;
             }
+
         }
         private async void QuestionButton(object sender, EventArgs e)
         {
-            await DisplayAlert("", "有任何問題，請與我們聯繫", "確定");
+            try
+            {
+                if (allowTap)
+                {
+                    allowTap = false;
+                    await DisplayAlert("", "有任何問題，請與我們聯繫", "確定");
+                }
+            }
+            finally
+            {
+                allowTap = true;
+            }
         }
         protected async override void OnAppearing()
         {

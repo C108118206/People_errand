@@ -20,9 +20,9 @@ namespace people_errandd.Models
         public static readonly string ControllerNameEmployee = "employees/";//Employee api
         public static readonly string ControllerNameWorkRecord = "EmployeeWorkRecords/";//workRecord api
         public static readonly string ControllerNameLeaveRecord = "EmployeeLeaveRecords/";//LeaveRecord api
+        public static readonly string ControllerNameTripRecord = "EmployeeTripRecords/";//TripRecord api
         public static string _HashAccount { get; set; }
         public static string companyHash { get; set; }
-
         public static string GetResponse { get; set; }
         //public static string uuid { get; set; }
         //static string company_hash = "67103E3E43ED266D8FC2F37CEB11E6";        

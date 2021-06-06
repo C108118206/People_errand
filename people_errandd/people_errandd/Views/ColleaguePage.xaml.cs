@@ -12,6 +12,7 @@ namespace people_errandd.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ColleaguePage : ContentPage
     {
+        bool allowTap = true;
         public ColleaguePage()
         {
             InitializeComponent();
@@ -21,7 +22,19 @@ namespace people_errandd.Views
         }
         private async void OnCollectionViewSelectionChanged(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ChatRoom());
+            try
+            {
+                if (allowTap)
+                {
+                    allowTap = false;
+                    await Navigation.PushAsync(new ChatRoom());
+                }
+            }
+            finally
+            {
+                allowTap = true;
+            }
+           
            
         }
     }
