@@ -2516,11 +2516,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\people_errand - 複製\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
       "projectName": "people_errandd.Android",
-      "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand - 複製\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+      "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
       "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand - 複製\\people_errandd\\people_errandd.Android\\obj\\",
+      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2537,14 +2537,13 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Users\\Public\\Documents\\Infragistics\\NuGet\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.telerik.com/nuget": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "C:\\Users\\lmh_flower\\source\\repos\\people_errand - 複製\\people_errandd\\people_errandd\\people_errandd.csproj": {
-              "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand - 複製\\people_errandd\\people_errandd\\people_errandd.csproj"
+            "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
             }
           }
         }

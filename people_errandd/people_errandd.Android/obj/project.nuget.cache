@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pDAFRW6kYaY0rmNTzyyLtauYeyrGfjoTgnavSWlNthBPIN+fR5ETEbPLQLHzpmxU8/2kF615CQfjRvGiNJW9Uw==",
+  "dgSpecHash": "Vqjkwv61LoBibOi8Mf0Wx7G14Laq32wrN5y1YmzmOUurwF223X1JqOIM6WO79IN8+JEH6/kL+Rba3Ii6ktd3OA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand - 複製\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lmh_flower\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\lmh_flower\\.nuget\\packages\\sqlite-net-pcl\\1.7.335\\sqlite-net-pcl.1.7.335.nupkg.sha512",
