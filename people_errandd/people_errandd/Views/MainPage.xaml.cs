@@ -63,7 +63,6 @@ namespace people_errandd.Views
                 if (allowTap)
                 {
                     allowTap = false;
-
                     if (await Work.GetWorkType() == 2 || await Work.GetWorkType() == 0)
                     {
                         (double x, double y) = await geoLocation.GetLocation();

@@ -41,14 +41,15 @@ namespace people_errandd
 
         protected override void OnStart()
         {
+            GetLocation();
+            GetConnectivity("start");
             bool hasKey = Preferences.ContainsKey("Login");
             if (hasKey)
             {
                 MainPage = new SharedTransitionNavigationPage(new MainPage());
                 //NavigationPage
             }
-            GetLocation();
-            GetConnectivity("start");
+            
         }
         protected override void OnSleep()
         {
@@ -74,7 +75,6 @@ namespace people_errandd
             {
                 Preferences.Set("gpsText", "定位未開啟");
             }
-
         }
         private async void GetConnectivity(string status)
         {
