@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="people_errandd.Views.MainpageeDetail"
+             xmlns:st="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+             BackgroundColor="#9BAEC8">
+
+    <!--內容樣式設定-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonDown" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#353866" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="HeightRequest" Value="110" />
+                <Setter Property="WidthRequest" Value="50" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="Margin" Value="0,-50,10,0"/>
+            </Style>
+            <Style x:Key="buttonframe" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="HeightRequest" Value="140" />
+                <Setter Property="WidthRequest" Value="140" />
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="Padding" Value="-10" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+            <Style x:Key="Button" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="HeightRequest" Value="120" />
+                <Setter Property="WidthRequest" Value="120" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="Margin" Value="10,10" />
+                <Setter Property="BorderColor" Value="#E6E6E6" />
+            </Style>
+            <Style x:Key="ButtonText" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <!--內容樣式設定結束-->
+
+    <ContentPage.Content st:Transition.Name="transitionMore">
+        <Grid BackgroundColor="#8CC5D7" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!-- <ScrollView>  -->
+            <StackLayout Orientation="Vertical"  >
+                <Frame BackgroundColor="#F1F1F1" x:Name="transition" WidthRequest="900" HeightRequest="1500" CornerRadius="30" Margin="0,800,0,-800">
+                    <!--50-->
+                    <!--白色背景-->
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="0,20,0,0">
+                        <Button Grid.Row="0" Text="↓" FontSize="45" Style="{StaticResource ButtonDown}"   Clicked="GoBackButton"></Button>
+                        <!--深藍色下拉按鈕-->
+                        <StackLayout Margin="0,8,0,0">
+                            <StackLayout Grid.Row="1" Orientation="Horizontal">
+                                <!--上班.下班水平-->
+                                <StackLayout Grid.Row="0"  Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Frame Style="{StaticResource buttonframe}">
+                                        <!--上班陰影-->
+                                        <Button ImageSource="worker.png"  x:Name="workOn" Opacity="0.2"  Style="{StaticResource Button}" Clicked="GoToWork" ></Button>
+                                        <!--上班按鈕-->
+                                    </Frame>
+                                    <Label Text="上班"  x:Name="workOnText" Opacity="0.2" Style="{StaticResource ButtonText}"></Label>
+                                    <!--上班文字-->
+                                </StackLayout>
+                                <StackLayout  Grid.Row="0" Grid.Column="1" HorizontalOptions="Center">
+                                    <Frame Style="{StaticResource buttonframe}">
+                                        <!--下班陰影-->
+                                        <Button ImageSource="workeroff.png"  x:Name="workOff" Style="{StaticResource Button}" Clicked="OffWork" ></Button>
+                                        <!--下班按鈕-->
+                                    </Frame>
+                                    <Label  Text="下班" x:Name="workOffText"  Style="{StaticResource ButtonText}"></Label>
+                                    <!--下班文字-->
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Grid.Row="2" Orientation="Horizontal">
+                            <!--公出.請假水平-->
+                            <StackLayout  Grid.Row="0" Grid.Column="0" HorizontalOptions="Center">
+                                <Frame Style="{StaticResource buttonframe}">
+                                    <!--公出陰影-->
+                                    <Button ImageSource="goout2.png"  Style="{StaticResource Button}" Clicked="GoOutButton"></Button>
+                                    <!--公出按鈕-->
+                                </Frame>
+                                <Label Text="公出"  Style="{StaticResource ButtonText}" ></Label>
+                                <!--公出文字-->
+                            </StackLayout>
+                            <StackLayout  Grid.Row="0" Grid.Column="1" HorizontalOptions="Center">
+                                <Frame Style="{StaticResource buttonframe}">
+                                    <!--請假陰影-->
+                                    <Button ImageSource="nerd.png"  Style="{StaticResource Button}" Clicked="GoTakeDayOffButton"></Button>
+                                    <!--請假按鈕-->
+                                </Frame>
+                                <Label Text="請假"  Style="{StaticResource ButtonText}"></Label>
+                                <!--請假文字-->
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Grid.Row="3" Orientation="Horizontal">
+                            <!--班表.紀錄水平-->
+                            <StackLayout Grid.Row="0" Grid.Column="0"  HorizontalOptions="Center">
+                                <Frame Style="{StaticResource buttonframe}">
+                                    <!--班表陰影-->
+                                    <Button ImageSource="schedule3.png"  Style="{StaticResource Button}" Clicked="GoClassScheduleButton"></Button>
+                                    <!--班表按鈕-->
+                                </Frame>
+                                <Label Text="班表" Style="{StaticResource ButtonText}"></Label>
+                                <!--班表文字-->
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="Center">
+                                <Frame Style="{StaticResource buttonframe}">
+                                    <!--紀錄陰影-->
+                                    <Button ImageSource="note4.png"  Style="{StaticResource Button}" Clicked="GoRecordButton"></Button>
+                                    <!--紀錄按鈕-->
+                                </Frame>
+                                <Label Text="紀錄"  Style="{StaticResource ButtonText}"></Label>
+                                <!--紀錄文字-->
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

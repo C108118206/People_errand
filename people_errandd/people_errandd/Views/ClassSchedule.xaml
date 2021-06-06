@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="people_errandd.Views.ClassSchedule"
+             xmlns:st="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"   
+             xmlns:viewmodels="clr-namespace:people_errandd.ViewModels"
+             BackgroundColor="White">
+    <!--
+     xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.IsSmoothScrollEnabled="false"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+    -->
+    <!--最上面Navigation標題-->
+    <NavigationPage.TitleView>
+        <Label Text="查看班表" HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem ></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <!--
+    <TabbedPage.BarBackgroundColor>
+        <Color x:Uid="colorPrimary">#88BBD6</Color>
+    </TabbedPage.BarBackgroundColor>
+
+    <TabbedPage.BarTextColor>
+        <Color x:Uid="colorPrimary">#000000</Color>
+    </TabbedPage.BarTextColor>
+
+    <TabbedPage.SelectedTabColor>
+        <Color x:Uid="colorPrimary">#ffffff</Color>
+    </TabbedPage.SelectedTabColor>
+-->
+
+    <!--內容樣式設定-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="date" TargetType="DatePicker">
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="WidthRequest" Value="130" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Format" Value="MM-dd (dddd)" />
+                <Setter Property="Margin" Value="0,0,0,0" />
+            </Style>
+            <Style x:Key="titletext" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="Margin" Value="0,25,0,0" />
+            </Style>
+            <Style x:Key="content" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+            <Style x:Key="circlebackground" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="CornerRadius" Value="16" />
+            </Style>
+            <Style x:Key="circle" TargetType="Frame">
+                <Setter Property="Margin" Value="7" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="WidthRequest" Value="16" />
+                <Setter Property="HeightRequest" Value="16" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style x:Key="line" TargetType="BoxView">
+                <Setter Property="Margin" Value="0,-5,0,0" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="WidthRequest" Value="2" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <!--內容樣式設定結束-->
+
+    <!--使用外部資料-->
+    <ContentPage.BindingContext>
+        <viewmodels:ItemPreviewViewModel  />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <StackLayout >
+            <Label Text="Today" Margin="30,10,0,0" FontSize="35" FontAttributes="Bold" TextColor="Black"/>
+            <StackLayout HeightRequest="50" HorizontalOptions="Center"  Orientation="Horizontal">
+                <!--日期背景高度.設為水平-->
+                <Button ImageSource="LessDay" Clicked="LessDay"  WidthRequest="40" CornerRadius="50" BackgroundColor="White"/>
+                <!--減一天-->
+                <DatePicker x:Name="SelectDate"  Style="{StaticResource date}"></DatePicker>
+                <!--日期選擇器-->
+                <Button ImageSource="AddDay" Clicked="AddDay" WidthRequest="40" CornerRadius="50" BackgroundColor="White"/>
+                <!--加一天-->
+            </StackLayout>
+
+            <!--直線開始-->
+            <StackLayout>
+                <CollectionView Margin="30,30,0,0" ItemsSource="{Binding delList}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <!--每條線的寬度-->
+                            <StackLayout
+                                Margin="30"
+                                Orientation="Horizontal"
+                                Spacing="0">
+                                <Label
+                                            Margin="0,2,0,0"
+                                        Style="{StaticResource content}"
+                                        Text="{Binding tim}">
+                                </Label>
+                                <!--線.圓圈-->
+                                <StackLayout Margin="20,0,20,0">
+                                    <Frame Style="{StaticResource circlebackground}">
+                                        <Frame
+                                          Style="{StaticResource circle}"
+                                            BackgroundColor="{Binding colorFrame}"/>
+                                    </Frame>
+                                    <BoxView
+                                        x:Name="line1"
+                                        Style="{StaticResource line}"
+                                        BackgroundColor="{Binding colorLine}"/>
+                                </StackLayout>
+                                <!--TASK.CONTENT-->
+                                <Frame BackgroundColor="{Binding colorTask}" HorizontalOptions="Center" CornerRadius="10" Margin="0,5,0,15"  WidthRequest="150" Padding="10,10,0,0" >
+                                    <StackLayout Margin="0,0,50,0">
+                                        <Label
+                                        Style="{StaticResource content}"
+                                        TextDecorations="Underline"
+                                        TextColor="{Binding textcolorName}"
+                                        Text="{Binding Name}">
+                                        </Label>
+                                        <Label
+                                        FontAttributes="Bold"
+                                        FontSize="16"
+                                        Text="{Binding Location}"
+                                        TextColor="{Binding textcolorLocation}">
+                                        </Label>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>
+   
