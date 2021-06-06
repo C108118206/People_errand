@@ -270,6 +270,20 @@ namespace people_errandd.Views
                 allowTap = true;
             }
         }
-
+        private async void ColleagueButton(object sender, EventArgs e)
+        {
+            try
+            {
+                if (allowTap)
+                {
+                    allowTap = false;
+                    await Navigation.PushAsync(new ColleaguePage());
+                }
+            }
+            finally
+            {
+                allowTap = true;
+            }
+        }
     }
 }

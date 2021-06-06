@@ -23,22 +23,22 @@ namespace people_errandd.Views
             //隱藏navigationpage導航欄。
             NavigationPage.SetHasNavigationBar(this, false);
             Animation ani = new Animation();
-            
+
             if (string.IsNullOrEmpty(Preferences.Get("uuid", string.Empty)))
-            { 
-                Preferences.Set("uuid", Guid.NewGuid().ToString());          
+            {
+                Preferences.Set("uuid", Guid.NewGuid().ToString());
             }
             deviceId = Preferences.Get("uuid", "");
-          
+
         }
 
         private async void LogInButton(object sender, EventArgs e)
         {
-            if(Connectivity.NetworkAccess != NetworkAccess.Internet)
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
-               await  DisplayAlert("Error", "No Intenet", "OK");
+                await DisplayAlert("Error", "No Intenet", "OK");
                 return;
-            }           
+            }
             if (await Login.ConfirmCompanyHash(company.Text.Trim()))
             {
                 if (!await Login.ConfirmUUID(deviceId))
@@ -50,7 +50,7 @@ namespace people_errandd.Views
                     Preferences.Set("Login", await Login.GetHashAccount(deviceId));
                 }
                 Navigation.InsertPageBefore(new MainPage(), this);
-                await Navigation.PopAsync();             
+                await Navigation.PopAsync();
             }
             else
             {
@@ -60,6 +60,16 @@ namespace people_errandd.Views
         private async void QuestionButton(object sender, EventArgs e)
         {
             await DisplayAlert("", "有任何問題，請與我們聯繫", "確定");
+        }
+        protected async override void OnAppearing()
+        {
+
+            base.OnAppearing();
+            transition.Opacity = 0;
+            await transition.FadeTo(1, 2500);
+            await image.ScaleTo(1.5, 1000, Easing.CubicIn);
+            await image.ScaleTo(1, 1000, Easing.CubicOut);
+
         }
 
     }

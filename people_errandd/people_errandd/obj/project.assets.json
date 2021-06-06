@@ -962,11 +962,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\people_errand_2\\people_errandd\\people_errandd\\people_errandd.csproj",
+      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\people_errand - 複製\\people_errandd\\people_errandd\\people_errandd.csproj",
       "projectName": "people_errandd",
-      "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand_2\\people_errandd\\people_errandd\\people_errandd.csproj",
+      "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand - 複製\\people_errandd\\people_errandd\\people_errandd.csproj",
       "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand_2\\people_errandd\\people_errandd\\obj\\",
+      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand - 複製\\people_errandd\\people_errandd\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

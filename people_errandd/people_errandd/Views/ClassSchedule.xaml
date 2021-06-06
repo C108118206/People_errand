@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="people_errandd.Views.ClassSchedule"
              xmlns:st="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"   
-             xmlns:viewmodels="clr-namespace:people_errandd.ViewModels">
+             xmlns:viewmodels="clr-namespace:people_errandd.ViewModels"
+             BackgroundColor="White">
     <!--
      xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              android:TabbedPage.IsSmoothScrollEnabled="false"
@@ -82,7 +83,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <!--內容樣式設定結束-->
-    
+
     <!--使用外部資料-->
     <ContentPage.BindingContext>
         <viewmodels:ItemPreviewViewModel  />
@@ -90,31 +91,34 @@
 
     <Grid>
         <StackLayout >
-            <Frame  BackgroundColor="#B4D3EA" >  <!--日期背景色-->
-                <StackLayout HeightRequest="50" HorizontalOptions="Center"  Orientation="Horizontal"> <!--日期背景高度.設為水平-->
-                    <Button ImageSource="LessDay" Clicked="LessDay"  WidthRequest="40" CornerRadius="50" BackgroundColor="#B4D3EA"/> <!--減一天-->
-                    <DatePicker x:Name="SelectDate"  Style="{StaticResource date}"></DatePicker> <!--日期選擇器-->
-                    <Button ImageSource="AddDay" Clicked="AddDay" WidthRequest="40" CornerRadius="50" BackgroundColor="#B4D3EA"/> <!--加一天-->
-                </StackLayout>
-            </Frame>
+            <Label Text="Today" Margin="30,10,0,0" FontSize="35" FontAttributes="Bold" TextColor="Black"/>
+            <StackLayout HeightRequest="50" HorizontalOptions="Center"  Orientation="Horizontal">
+                <!--日期背景高度.設為水平-->
+                <Button ImageSource="LessDay" Clicked="LessDay"  WidthRequest="40" CornerRadius="50" BackgroundColor="White"/>
+                <!--減一天-->
+                <DatePicker x:Name="SelectDate"  Style="{StaticResource date}"></DatePicker>
+                <!--日期選擇器-->
+                <Button ImageSource="AddDay" Clicked="AddDay" WidthRequest="40" CornerRadius="50" BackgroundColor="White"/>
+                <!--加一天-->
+            </StackLayout>
+
             <!--直線開始-->
             <StackLayout>
-                <CollectionView Margin="70,40,0,0" ItemsSource="{Binding delList}">
+                <CollectionView Margin="30,30,0,0" ItemsSource="{Binding delList}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <!--每條線的寬度-->
                             <StackLayout
-                                Margin="20"
+                                Margin="30"
                                 Orientation="Horizontal"
                                 Spacing="0">
-                                <StackLayout>
-                                    <Label
+                                <Label
+                                            Margin="0,2,0,0"
                                         Style="{StaticResource content}"
                                         Text="{Binding tim}">
-                                    </Label>
-                                </StackLayout>
+                                </Label>
                                 <!--線.圓圈-->
-                                <StackLayout Margin="30,0,20,0">
+                                <StackLayout Margin="20,0,20,0">
                                     <Frame Style="{StaticResource circlebackground}">
                                         <Frame
                                           Style="{StaticResource circle}"
@@ -126,19 +130,22 @@
                                         BackgroundColor="{Binding colorLine}"/>
                                 </StackLayout>
                                 <!--TASK.CONTENT-->
-                                <StackLayout Margin="20,0,20,0">
-                                    <Label
+                                <Frame BackgroundColor="{Binding colorTask}" HorizontalOptions="Center" CornerRadius="10" Margin="0,5,0,15"  WidthRequest="150" Padding="10,10,0,0" >
+                                    <StackLayout Margin="0,0,50,0">
+                                        <Label
                                         Style="{StaticResource content}"
                                         TextDecorations="Underline"
+                                        TextColor="{Binding textcolorName}"
                                         Text="{Binding Name}">
-                                    </Label>
-                                    <Label
+                                        </Label>
+                                        <Label
                                         FontAttributes="Bold"
                                         FontSize="16"
                                         Text="{Binding Location}"
-                                        TextColor="#353866">
-                                    </Label>
-                                </StackLayout>
+                                        TextColor="{Binding textcolorLocation}">
+                                        </Label>
+                                    </StackLayout>
+                                </Frame>
                             </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>

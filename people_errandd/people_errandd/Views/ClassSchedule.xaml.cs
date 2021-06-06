@@ -19,12 +19,12 @@ namespace people_errandd.Views
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
 
         }
-        private async void LessDay(object sender, EventArgs e)
+        private  void LessDay(object sender, EventArgs e)
         {
             DateTime dateTime = SelectDate.Date;
             SelectDate.Date = dateTime.AddDays(-1);
         }
-        private async void AddDay(object sender, EventArgs e)
+        private  void AddDay(object sender, EventArgs e)
         {
             DateTime dateTime = SelectDate.Date;
             SelectDate.Date = dateTime.AddDays(1);

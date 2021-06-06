@@ -63,6 +63,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CustomPickerRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -279,5 +280,26 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\goout2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\messenger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pencil2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\search2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pickerdown.png" />
   </ItemGroup>
 </Project>

@@ -30,37 +30,36 @@ namespace people_errandd.ViewModels
                 Name="TASK 1",
                 Location="開會",
                 dateMon="20/18",
-                tim="09:00 AM"
+                tim="上午 09:00"
             },
             new tempData
             {
                 Name="TASK 2",
                 Location="開會",
                 dateMon="20/18",
-                tim="10:00 AM"
+                tim="上午 10:00"
             },
             new tempData
             {
                 Name="TASK 3",
                 Location="開會",
                 dateMon="20/18",
-                tim="11:00 AM"
+                tim="上午 11:00"
             },
             new tempData
             {
                 Name="TASK 4",
                 Location="開會",
                 dateMon="20/18",
-                tim="15:00 AM"
+                tim="下午 03:00"
             },
             new tempData
             {
                 Name="TASK 5",
                 Location="開會",
                 dateMon="20/18",
-                tim="17:00 AM"
+                tim="下午 05:00"
             }
-
         };
 
 
@@ -78,8 +77,11 @@ namespace people_errandd.ViewModels
         void CreateCollection()
         {
 
-            Xamarin.Forms.Color frColor = Xamarin.Forms.Color.FromHex("#67AEC6");
-            Xamarin.Forms.Color linColor = Xamarin.Forms.Color.FromHex("#67AEC6");
+            Xamarin.Forms.Color frColor = Xamarin.Forms.Color.FromHex("#6184C6");
+            Xamarin.Forms.Color linColor = Xamarin.Forms.Color.FromHex("#6184C6");
+            Xamarin.Forms.Color TaskColor = Xamarin.Forms.Color.FromHex("#6184C6");
+            Xamarin.Forms.Color textcolorNM = Xamarin.Forms.Color.FromHex("#000000");
+            Xamarin.Forms.Color textcolorLo = Xamarin.Forms.Color.FromHex("#353866");
 
             for (int i = 0; i < tempData.Count; i++)
             {
@@ -91,13 +93,18 @@ namespace people_errandd.ViewModels
                 {
                     if (i < currentFlag)
                     {
-                        frColor = Xamarin.Forms.Color.FromHex("#67AEC6");
-                        linColor = Xamarin.Forms.Color.FromHex("#67AEC6");
+                        frColor = Xamarin.Forms.Color.FromHex("#6184C6");
+                        linColor = Xamarin.Forms.Color.FromHex("#6184C6");
+                        textcolorNM = Xamarin.Forms.Color.FromHex("#FFFFFF");
+                        textcolorLo = Xamarin.Forms.Color.FromHex("#FFFFFF");
                     }
                     else
                     {
                         frColor = Xamarin.Forms.Color.Transparent;
+                        TaskColor = Xamarin.Forms.Color.FromHex("#E6E6E6");
                         linColor = Xamarin.Forms.Color.FromHex("#DDDDDD");
+                        textcolorNM = Xamarin.Forms.Color.FromHex("#000000");
+                        textcolorLo = Xamarin.Forms.Color.FromHex("#353866");
                     }
                 }
                 source.Add(new DeliverySteps
@@ -106,7 +113,10 @@ namespace people_errandd.ViewModels
                     Location = tempData[i].Location,
                     dateMon = tempData[i].dateMon,
                     tim = tempData[i].tim,
+                    colorTask = TaskColor,
                     colorFrame = frColor,
+                    textcolorName = textcolorNM,
+                    textcolorLocation = textcolorLo,
                     colorLine = linColor
                 });
 
@@ -115,9 +125,9 @@ namespace people_errandd.ViewModels
         }
 
 
-        
-        
-        
+
+
+
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;

@@ -13,6 +13,10 @@ namespace people_errandd.Models
         public string dateMon { get; set; }
         public string tim { get; set; }
         public Color colorFrame { get; set; }
+        public Color colorTask { get; set; }
+
+        public Color textcolorName { get; set; }
+        public Color textcolorLocation { get; set; }
         public Color colorLine { get; set; }
     }
 }

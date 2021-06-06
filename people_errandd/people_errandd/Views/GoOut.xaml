@@ -112,9 +112,9 @@
                 <Setter Property="Format" Value="t" />
             </Style>
             <Style x:Key="entry" TargetType="Entry">
-                <Setter Property="Margin" Value="15,-10,0,0" />
                 <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
                 <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="Margin" Value="15,0,0,0" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="WidthRequest" Value="250" />
                 <Setter Property="FontSize" Value="18" />
@@ -228,7 +228,9 @@
                                 <Label Style="{StaticResource title*}"></Label> <!--*-->
                                 <Label Text="地點" Style="{StaticResource titletext}"></Label>  <!--地點-->
                             </StackLayout>
-                            <Entry Grid.Row="1" Style="{StaticResource entry}"></Entry> <!--地點輸入-->
+                            <Frame CornerRadius="30" Padding="0" Margin="15,0,0,0" HeightRequest="45" HorizontalOptions="Center" BorderColor="Gray" HasShadow="False">
+                                <Entry Grid.Row="1" Style="{StaticResource entry}" Margin="10,0,0,0"></Entry><!--地點輸入-->
+                            </Frame>
                         </StackLayout>
                     </Frame>
                     <Frame Grid.Row="3" Style="{StaticResource frame}"> <!--事由框架-->
@@ -237,7 +239,10 @@
                                 <Label Style="{StaticResource title*}"></Label> <!--*-->
                                 <Label Text="事由" Style="{StaticResource titletext}"></Label>  <!--事由-->
                             </StackLayout>
-                            <Entry Grid.Row="1" Style="{StaticResource entry}"></Entry> <!--事由輸入-->
+                            <Frame CornerRadius="30" Padding="0" Margin="15,0,0,0" HeightRequest="45" HorizontalOptions="Center" BorderColor="Gray" HasShadow="False">
+                                <Entry Grid.Row="1" Style="{StaticResource entry}" Margin="10,0,0,0"></Entry>
+                                <!--事由輸入-->
+                            </Frame>
                         </StackLayout>
                     </Frame>
                     <Button  Grid.Row="4" Style="{StaticResource button}"></Button> <!--提出申請按鈕-->
