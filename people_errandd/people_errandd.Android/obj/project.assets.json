@@ -2517,11 +2517,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\New folder (3)\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+      "projectUniqueName": "D:\\New folder (2)\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
       "projectName": "people_errandd.Android",
-      "projectPath": "D:\\New folder (3)\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+      "projectPath": "D:\\New folder (2)\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
       "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
-      "outputPath": "D:\\New folder (3)\\people_errandd\\people_errandd.Android\\obj\\",
+      "outputPath": "D:\\New folder (2)\\people_errandd\\people_errandd.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2545,8 +2545,8 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "D:\\New folder (3)\\people_errandd\\people_errandd\\people_errandd.csproj": {
-              "projectPath": "D:\\New folder (3)\\people_errandd\\people_errandd\\people_errandd.csproj"
+            "D:\\New folder (2)\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "D:\\New folder (2)\\people_errandd\\people_errandd\\people_errandd.csproj"
             }
           }
         }

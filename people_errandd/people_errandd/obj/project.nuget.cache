@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6UP7rhNnmHfpc4j3lyCYX2t1UtZwoPwRrgFYZMq4mWjWQRN8rpC0C15HPHwJ1o/2SBRY4wkiJsrqj54tbctenA==",
+  "dgSpecHash": "nfNZ2LUwFoPpog2XfSwcFAyWuMSXt+d5BcKkORi7IM3Jn6Blkr0OohFimod8DrZQMbuFmYwEXqj+ZMOUTnaZOw==",
   "success": true,
-  "projectFilePath": "D:\\New folder (3)\\people_errandd\\people_errandd\\people_errandd.csproj",
+  "projectFilePath": "D:\\New folder (2)\\people_errandd\\people_errandd\\people_errandd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lonel\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\lonel\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
