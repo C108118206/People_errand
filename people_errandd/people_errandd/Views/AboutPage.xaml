@@ -12,7 +12,7 @@
 
     <!--最上面Navigation右邊完成-->
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="完成   "  Activated="RefButtonClicked"></ToolbarItem>
+        <ToolbarItem Text="完成   "  Activated="RefButtonClicked" Clicked="ConfrimButton"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <!--內容樣式設定-->
     <ContentPage.Resources>
@@ -99,7 +99,7 @@
                         <Label Text="部門"  Style="{StaticResource contenttitle}" ></Label>
 
                             <Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">
-                            <Entry Placeholder="行銷部" PlaceholderColor="Gray" IsReadOnly="True" Style="{StaticResource contententry}" Grid.Row="1"></Entry>
+                            <Entry Placeholder="行銷部" x:Name="department" PlaceholderColor="Gray" IsReadOnly="True" Style="{StaticResource contententry}" Grid.Row="1"></Entry>
                             <!--部門名稱(設置唯讀)-->
                         </Frame>
                         </StackLayout>
@@ -109,7 +109,7 @@
                         <Label Text="職稱" Style="{StaticResource contenttitle}" ></Label>
 
                             <Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">
-                            <Entry Placeholder="職員"  IsReadOnly="True" PlaceholderColor="Gray" Style="{StaticResource contententry}" Grid.Row="3"></Entry>
+                            <Entry Placeholder="職員" x:Name="jobTitle" IsReadOnly="True" PlaceholderColor="Gray" Style="{StaticResource contententry}" Grid.Row="3"></Entry>
                             <!--職稱名稱(設置唯讀)-->
                         </Frame>
                         </StackLayout>
@@ -119,17 +119,17 @@
                         <Label Text="電話" Style="{StaticResource contenttitle}" ></Label>
 
                             <Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">
-                            <Entry   Keyboard="Telephone" MaxLength="10" Style="{StaticResource contententry}" Grid.Row="5"></Entry>
+                            <Entry   Keyboard="Telephone" x:Name="phone" MaxLength="10" Style="{StaticResource contententry}" Grid.Row="5"></Entry>
                             <!--電話輸入-->
                         </Frame>
                         </StackLayout>
                     <StackLayout Orientation="Horizontal" Grid.Row="3" Margin="0,25,0,25" HorizontalOptions="Center">
                             <!--Email標題與圖片-->
                         <Image Style="{StaticResource contentimage}" Source="mail"/>
-                        <Label Text="郵件" Style="{StaticResource contenttitle}" ></Label>
+                        <Label Text="郵件"  Style="{StaticResource contenttitle}" ></Label>
 
                             <Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">
-                            <Entry  Keyboard="Email" Style="{StaticResource contententry}" Grid.Row="7"></Entry>
+                            <Entry  Keyboard="Email" x:Name="email" Style="{StaticResource contententry}" Grid.Row="7"></Entry>
                             <!--Email輸入-->
                         </Frame>
                       </StackLayout>

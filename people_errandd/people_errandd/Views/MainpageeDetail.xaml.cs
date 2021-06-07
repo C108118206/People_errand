@@ -10,18 +10,16 @@ namespace people_errandd.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainpageeDetail : ContentPage
     {
-        private MainPage main = new MainPage();
         private readonly geoLocation geoLocation = new geoLocation();
         private readonly Work Work = new Work();
         private bool allowTap = true;
         public MainpageeDetail()
-        {
+        {   
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this,false);
         }
         protected async override void OnAppearing()
         {
-
             base.OnAppearing();
             await transition.TranslateTo(0, -740, 500, Easing.CubicIn);
             workOn.IsEnabled = Preferences.Get("WorkOnButtonStauts", workOn.IsEnabled = true);
@@ -53,7 +51,7 @@ namespace people_errandd.Views
                                     status = "上班",
                                     time = DateTime.Now.ToString()
                                 });
-                                main.WorkOnSet();
+                                WorkOnSet();
                             }
                             else
                             {
@@ -106,7 +104,7 @@ namespace people_errandd.Views
                                     status = "下班",
                                     time = DateTime.Now.ToString()
                                 });
-                                main.WorkOffSet();
+                                WorkOffSet();
                             }
                             else
                             {
@@ -221,6 +219,27 @@ namespace people_errandd.Views
 
         }
 
-
+        public void WorkOffSet()
+        {
+            Preferences.Set("statusNow", "已下班");
+            Preferences.Set("WorkOffButtonStauts", workOff.IsEnabled = false);
+            Preferences.Set("WorkOnButtonStauts", workOn.IsEnabled = true);
+            Preferences.Set("WorkOnButtonView", workOn.Opacity = 1);
+            Preferences.Set("WorkOffButtonView", workOff.Opacity = 0.2);
+            Preferences.Set("WorkOnText", workOnText.Opacity = 1);
+            Preferences.Set("WorkOffText", workOffText.Opacity = 0.2);
+            Preferences.Set("statusBack", "F86954");
+        }
+        public void WorkOnSet()
+        {
+            Preferences.Set("statusNow", "上班中");
+            Preferences.Set("WorkOnButtonStauts", workOn.IsEnabled = false);
+            Preferences.Set("WorkOffButtonStauts", workOff.IsEnabled = true);
+            Preferences.Set("WorkOnButtonView", workOn.Opacity = 0.2);
+            Preferences.Set("WorkOffButtonView", workOff.Opacity = 1);
+            Preferences.Set("WorkOnText", workOnText.Opacity = 0.2);
+            Preferences.Set("WorkOffText", workOffText.Opacity = 1);
+            Preferences.Set("statusBack", "98E4AA");
+        }
     }
 }

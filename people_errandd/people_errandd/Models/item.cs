@@ -14,7 +14,7 @@ namespace people_errandd.Models
         public int workTypeId { get; set; }
         public double coordinateX { get; set; }
         public double coordinateY { get; set; }
-        
+
         public bool enabled { get; set; }
         public DateTime Date { get; set; }
 
@@ -53,5 +53,16 @@ namespace people_errandd.Models
         public string reason { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+    }
+    public class information
+    {
+        public string department { get; set; }
+        public string jobtitle { get; set; }
+        public string phone { get; set; }
+        public string email { get; set; }
+        public string img { get; set; }
+
+
+
     }
 }

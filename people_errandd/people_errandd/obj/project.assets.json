@@ -963,25 +963,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d1846192fd996a8bf9ddfcf034b06b6b513d8c63
       "projectUniqueName": "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
       "projectName": "people_errandd",
       "projectPath": "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
       "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
       "outputPath": "D:\\people_errand\\people_errandd\\people_errandd\\obj\\",
-<<<<<<< HEAD
-=======
-=======
-      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
-      "projectName": "people_errandd",
-      "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
-      "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\obj\\",
->>>>>>> f64ca4771f2d481f70dd74849551ce54add05767
->>>>>>> d1846192fd996a8bf9ddfcf034b06b6b513d8c63
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -998,18 +984,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-<<<<<<< HEAD
         "https://api.nuget.org/v3/index.json": {},
         "https://nuget.telerik.com/nuget": {}
-=======
-<<<<<<< HEAD
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.telerik.com/nuget": {}
-=======
-        "C:\\Users\\Public\\Documents\\Infragistics\\NuGet\\": {},
-        "https://api.nuget.org/v3/index.json": {}
->>>>>>> f64ca4771f2d481f70dd74849551ce54add05767
->>>>>>> d1846192fd996a8bf9ddfcf034b06b6b513d8c63
       },
       "frameworks": {
         "netstandard2.0": {
@@ -1071,13 +1047,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "讀取快取檔案 D:\\people_errand\\people_errandd\\people_errandd\\obj\\project.nuget.cache 時發生問題: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

@@ -6,6 +6,7 @@ public class MonoPackageManager_Resources {
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
 		"people_errandd.dll",
+		"Plugin.CurrentActivity.dll",
 		"Plugin.Media.dll",
 		"Plugin.SharedTransitions.dll",
 		"SQLite-net.dll",

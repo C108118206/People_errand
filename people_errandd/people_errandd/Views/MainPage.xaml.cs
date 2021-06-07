@@ -237,7 +237,7 @@ namespace people_errandd.Views
             {
                 if (allowTap)
                 {
-                    allowTap = false;
+                    allowTap = false; 
                     await Navigation.PushAsync(new ColleaguePage());
                 }
             }
@@ -246,5 +246,11 @@ namespace people_errandd.Views
                 allowTap = true;
             }
         }
+        private  void GpsButton(object sender, EventArgs e)
+        {
+            DependencyService.Get<IAppSettingsHelper>().OpenAppSetting();
+        }
+
+
     }
 }
