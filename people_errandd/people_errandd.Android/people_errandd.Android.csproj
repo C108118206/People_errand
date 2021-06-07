@@ -55,6 +55,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Plugin.CurrentActivity">
+      <Version>2.1.0.4</Version>
+    </PackageReference>
     <PackageReference Include="Xam.Plugin.Media">
       <Version>5.0.1</Version>
     </PackageReference>
@@ -65,6 +68,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppSettingInterface.cs" />
     <Compile Include="CustomEntryRenderer.cs" />
     <Compile Include="CustomPickerRenderer.cs" />
     <Compile Include="MainActivity.cs" />

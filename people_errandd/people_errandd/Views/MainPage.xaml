@@ -131,7 +131,8 @@
                             Margin="30,0,0,0"
                             x:Name="GPSText"
                             Text="定位已開啟"
-                            Style="{StaticResource text}">
+                            Style="{StaticResource text}"
+                            >
                         </Label>
                     </StackLayout>
                 </Frame>

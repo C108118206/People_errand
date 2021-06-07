@@ -1,4 +1,5 @@
 FormsViewGroup.dll
+Plugin.CurrentActivity.dll
 Plugin.Media.dll
 Plugin.SharedTransitions.dll
 SQLitePCLRaw.lib.e_sqlite3.android.dll

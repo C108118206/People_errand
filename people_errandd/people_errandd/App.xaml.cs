@@ -11,14 +11,17 @@ using Xamarin.Essentials;
 using Plugin.SharedTransitions;
 
 namespace people_errandd
-{
+{public interface IAppSettingsHelper
+        {
+            void OpenAppSetting();
+        }
     public partial class App : Application
     {
+        
         static Database dataBase;
         Work work = new Work();
         public static double Latitude { get; set; }
         public static double Longitude { get; set; }
-
         public static Database DataBase
         {
             get
