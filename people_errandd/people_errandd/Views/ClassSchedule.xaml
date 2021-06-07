@@ -91,8 +91,8 @@
 
     <Grid>
         <StackLayout >
-            <Label Text="Today" Margin="30,10,0,0" FontSize="35" FontAttributes="Bold" TextColor="Black"/>
-            <StackLayout HeightRequest="50" HorizontalOptions="Center"  Orientation="Horizontal">
+           
+            <StackLayout HeightRequest="50" Margin="0,20,0,-20" HorizontalOptions="Center"  Orientation="Horizontal">
                 <!--日期背景高度.設為水平-->
                 <Button ImageSource="LessDay" Clicked="LessDay"  WidthRequest="40" CornerRadius="50" BackgroundColor="White"/>
                 <!--減一天-->
@@ -104,7 +104,7 @@
 
             <!--直線開始-->
             <StackLayout>
-                <CollectionView Margin="30,30,0,0" ItemsSource="{Binding delList}">
+                <CollectionView Margin="30,50,0,0" ItemsSource="{Binding delList}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <!--每條線的寬度-->

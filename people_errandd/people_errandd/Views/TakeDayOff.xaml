@@ -240,7 +240,7 @@
                             <Label Text="假別" Style="{StaticResource titletext}"></Label>
                             <!--假別-->
                         </StackLayout>
-                        <Frame CornerRadius="10" Padding="0" HeightRequest="45" Margin="10,0,10,0"  HorizontalOptions="Center" BorderColor="Gray" HasShadow="False">
+                        <Frame CornerRadius="10" Padding="0" HeightRequest="45" Margin="20,0,20,0"  HorizontalOptions="Center" BorderColor="Gray" HasShadow="False">
                             <StackLayout Orientation="Horizontal">
                                 <Picker x:Name="leaveType" Grid.Row="1" TextColor="#696969" Title="事假" Margin="15,0,0,0" WidthRequest="250" HorizontalOptions="Center" FontAttributes="Bold" FontSize="16">
                                     <!--假別選擇-->
@@ -257,7 +257,7 @@
                                         </x:Array>
                                     </Picker.ItemsSource>
                                 </Picker>
-                                <Image Source="pickerdown" Margin="-50,0,20,0"  WidthRequest="15" HeightRequest="15"/>
+                                <Image Source="pickerdown" Margin="-60,0,40,0"  WidthRequest="15" HeightRequest="15"/>
                             </StackLayout>
                         </Frame>
                     </StackLayout>
@@ -272,7 +272,7 @@
                             <Label  Text="原因" Style="{StaticResource titletext}"></Label>
                             <!--原因-->
                         </StackLayout>
-                        <Frame CornerRadius="10" Padding="0" Margin="10,0,10,0" HeightRequest="105" HorizontalOptions="Center" BorderColor="Gray" HasShadow="False">
+                        <Frame CornerRadius="10" Padding="0" Margin="20,0,20,0" HeightRequest="105" HorizontalOptions="Center" BorderColor="Gray" HasShadow="False">
                             <Editor x:Name="reason" Grid.Row="1" Style="{StaticResource editor}"></Editor>
                             <!--原因輸入-->
                         </Frame>

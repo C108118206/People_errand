@@ -53,7 +53,7 @@
             </Grid.RowDefinitions>
             <!-- <ScrollView>  -->
             <StackLayout Orientation="Vertical"  >
-                <Frame BackgroundColor="#F1F1F1" x:Name="transition" WidthRequest="900" HeightRequest="1500" CornerRadius="30" Margin="0,800,0,-800">
+                <Frame BackgroundColor="#EFF1F8" x:Name="transition" WidthRequest="900" HeightRequest="1500" CornerRadius="30" Margin="0,800,0,-800">
                     <!--50-->
                     <!--白色背景-->
                     <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="0,20,0,0">
@@ -65,10 +65,10 @@
                                 <StackLayout Grid.Row="0"  Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
                                     <Frame Style="{StaticResource buttonframe}">
                                         <!--上班陰影-->
-                                        <Button ImageSource="worker.png"  x:Name="workOn" Opacity="0.2"  Style="{StaticResource Button}" Clicked="GoToWork" ></Button>
+                                        <Button ImageSource="worker.png"  x:Name="workOn"   Style="{StaticResource Button}" Clicked="GoToWork" ></Button>
                                         <!--上班按鈕-->
                                     </Frame>
-                                    <Label Text="上班"  x:Name="workOnText" Opacity="0.2" Style="{StaticResource ButtonText}"></Label>
+                                    <Label Text="上班"  x:Name="workOnText"  Style="{StaticResource ButtonText}"></Label>
                                     <!--上班文字-->
                                 </StackLayout>
                                 <StackLayout  Grid.Row="0" Grid.Column="1" HorizontalOptions="Center">
@@ -77,7 +77,7 @@
                                         <Button ImageSource="workeroff.png"  x:Name="workOff" Style="{StaticResource Button}" Clicked="OffWork" ></Button>
                                         <!--下班按鈕-->
                                     </Frame>
-                                    <Label  Text="下班" x:Name="workOffText"  Style="{StaticResource ButtonText}"></Label>
+                                    <Label  Text="下班" x:Name="workOffText" Style="{StaticResource ButtonText}"></Label>
                                     <!--下班文字-->
                                 </StackLayout>
                             </StackLayout>

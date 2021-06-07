@@ -171,7 +171,7 @@ namespace people_errandd.Views
             Preferences.Set("WorkOffButtonView", workOff.Opacity = 0.2);
             Preferences.Set("WorkOnText", workOnText.Opacity = 1);
             Preferences.Set("WorkOffText", workOffText.Opacity = 0.2);
-            Preferences.Set("statusBack", "F86954");
+            Preferences.Set("statusBack", "#F86954");
             statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
         }
         public void WorkOnSet()
@@ -183,7 +183,7 @@ namespace people_errandd.Views
             Preferences.Set("WorkOffButtonView", workOff.Opacity = 1);
             Preferences.Set("WorkOnText", workOnText.Opacity = 0.2);
             Preferences.Set("WorkOffText", workOffText.Opacity = 1);
-            Preferences.Set("statusBack", "98E4AA");
+            Preferences.Set("statusBack", "#98E4AA");
             statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
         }
         private async void DetailButton(object sender, EventArgs e)

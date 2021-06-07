@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KzbRXxRxkAIoirqeysIUD5g7x8/wJ+QDDXBQnGrXeE5suUBiW32ztMrqjxEBu/d89YMBznwgwGhfwasQhtUSVA==",
+  "dgSpecHash": "wZuTtAJBQTZNr5VxtgumGOmcjkY2KwWJhZA4nb2+Hf5wpYFXnBZJYf2P0JVObMWPmCYDL/8026kAzpCPH8PvaA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand_final\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lmh_flower\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\lmh_flower\\.nuget\\packages\\sqlite-net-pcl\\1.7.335\\sqlite-net-pcl.1.7.335.nupkg.sha512",
