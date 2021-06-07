@@ -17,7 +17,19 @@ namespace people_errandd.Views
         {
             InitializeComponent();
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#B4D3EA");
-            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;       
+            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
+            var dayoffList = new List<string>();
+            dayoffList.Add("事假");
+            dayoffList.Add("病假");
+            dayoffList.Add("喪假");
+            dayoffList.Add("產假");
+            dayoffList.Add("生理假");
+            dayoffList.Add("流產假");
+            dayoffList.Add("產前假");
+            dayoffList.Add("陪產假");
+
+            var picker = new Picker { Title = "請選擇:", TitleColor = Color.FromHex("#696969") };
+            leaveType.ItemsSource = dayoffList;
         }
         private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         {

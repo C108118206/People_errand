@@ -303,4 +303,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\pickerdown.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gps1.png" />
+  </ItemGroup>
 </Project>
