@@ -29,8 +29,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.telerik.com/nuget": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "monoandroid11.0": {
@@ -45,10 +44,6 @@
       "frameworks": {
         "monoandroid11.0": {
           "dependencies": {
-            "Plugin.CurrentActivity": {
-              "target": "Package",
-              "version": "[2.1.0.4, )"
-            },
             "Xam.Plugin.Media": {
               "target": "Package",
               "version": "[5.0.1, )"
@@ -93,8 +88,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.telerik.com/nuget": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
@@ -112,6 +106,10 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.2.3, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

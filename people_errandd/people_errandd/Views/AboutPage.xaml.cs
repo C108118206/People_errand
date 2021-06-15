@@ -4,6 +4,9 @@ using System;
 using people_errandd.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using people_errandd.Models;
+using Xamarin.Essentials;
+using System.Text.RegularExpressions;
 
 namespace people_errandd.Views
 {
@@ -12,11 +15,23 @@ namespace people_errandd.Views
     {
         readonly InformationViewModel informationViewModel = new InformationViewModel();
         bool allowTap = true;
+        Regex regexemail = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+        
+        Regex regexphone = new Regex("^09");
+        
         public AboutPage()
         {
+            //this.BindingContext = new InformationViewModel();
             InitializeComponent();
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#8CC5D7");
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
+            
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            phone.Text=Preferences.Get("phone", phone.Text);
+            email.Text=Preferences.Get("email", email.Text);
         }
         void RefButtonClicked(object sender, EventArgs e)
         {         
@@ -76,31 +91,64 @@ namespace people_errandd.Views
             finally
             {
                 allowTap = true;
-            }
-            
+            }         
         }
-
-        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        private async void ConfirmButton(object sender, EventArgs e)
         {
             try
             {
-                if(allowTap)
+                if (allowTap)
                 {
                     allowTap = false;
-                    if (await informationViewModel.PostInformationRecord(department.Text,jobTitle.Text,phone.Text,email.Text))
+                    //email regular expression
+                    Match matchemail = regexemail.Match(email.Text);
+                    //phone regular expression
+                    Match matchphone = regexphone.Match(phone.Text);
+                    if (matchemail.Success && matchphone.Success)
                     {
-                        await Navigation.PopAsync();
-                    }
+                        if (await informationViewModel.UpdateInformationRecord(name.Text, phone.Text, email.Text))
+                        {
+                            Preferences.Set("phone", phone.Text);
+                            Preferences.Set("email", email.Text);
+                            await DisplayAlert("", "修改完成", "確認");
+                            await Navigation.PopAsync();
+                        }                        
+                    }                
                     else
                     {
-                        await DisplayAlert("", "輸入錯誤,請重新輸入", "確認");
+                        await DisplayAlert("", "格式錯誤", "確認");                    
                     }
                 }
             }
-           finally
+            finally
             {
-
                 allowTap = true;
+            }
+        }
+
+        private void email_Unfocused(object sender, FocusEventArgs e)
+        {
+            Match matchemail = regexemail.Match(email.Text);
+            if (!matchemail.Success)
+            {
+                emailValidator.Text = "格式錯誤";
+            }
+            else
+            {
+                emailValidator.Text = "";
+            }
+        }
+
+        private void phone_Unfocused(object sender, FocusEventArgs e)
+        {
+            Match matchphone = regexphone.Match(phone.Text);
+            if (!matchphone.Success)
+            {
+                phoneValidator.Text = "格式錯誤";
+            }
+            else
+            {
+                phoneValidator.Text = "";
             }
         }
     }

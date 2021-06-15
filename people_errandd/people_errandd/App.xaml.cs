@@ -9,17 +9,19 @@ using System.Globalization;
 using System.IO;
 using Xamarin.Essentials;
 using Plugin.SharedTransitions;
+using System.Threading.Tasks;
 
 namespace people_errandd
-{public interface IAppSettingsHelper
-        {
-            void OpenAppSetting();
-        }
-    public partial class App : Application
+{
+    public interface IAppSettingsHelper
     {
-        
+        void OpenAppSetting();
+    }
+    public partial class App : Application
+    {      
         static Database dataBase;
         Work work = new Work();
+        geoLocation location = new geoLocation();
         public static double Latitude { get; set; }
         public static double Longitude { get; set; }
         public static Database DataBase
@@ -42,37 +44,37 @@ namespace people_errandd
             //NavigationPage
         }
 
-        protected override void OnStart()
-        {
-            GetLocation();
-            GetConnectivity("start");
-            bool hasKey = Preferences.ContainsKey("Login");
+        protected async override void OnStart()
+        {           
+            bool hasKey = Preferences.ContainsKey("HashAccount");
             if (hasKey)
             {
                 MainPage = new SharedTransitionNavigationPage(new MainPage());
                 //NavigationPage
             }
-            
+            await GetLocation();
+            GetConnectivity("start");
+            var Seconds = TimeSpan.FromSeconds(20);
+            Device.StartTimer(Seconds, () => {
+                GetLocation();
+                return true;
+            });
         }
         protected override void OnSleep()
         {
+            
         }
         protected override void OnResume()
-        {
-            GetLocation();
+        {          
             GetConnectivity("resume");
             MessagingCenter.Send<App>(this, "Hi");
         }
-        private async void GetLocation()
+        private async Task GetLocation()
         {
             Preferences.Set("gpsText", "定位已開啟");
-            Page page = MainPage;
             try
             {
-                var request = new GeolocationRequest(GeolocationAccuracy.Medium);
-                var location = await Geolocation.GetLocationAsync(request);
-                Latitude = location.Latitude;
-                Longitude = location.Longitude;
+                (Latitude, Longitude) =await location.GetLocation("Back");
             }
             catch (Exception)
             {
@@ -80,8 +82,9 @@ namespace people_errandd
             }
         }
         private async void GetConnectivity(string status)
-        {
+        {        
             Page page = MainPage;
+            var _page = new MainPage();
             try
             {
                 if (status == "start")
@@ -107,6 +110,7 @@ namespace people_errandd
             catch (Exception)
             {
                 await page.DisplayAlert("", "請檢查網路狀態", "確定");
+                Connectivity.ConnectivityChanged += _page.Connectivity_ConnectivityChanged;
                 return;
             }
         }

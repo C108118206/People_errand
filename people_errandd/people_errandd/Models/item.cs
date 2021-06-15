@@ -56,8 +56,8 @@ namespace people_errandd.Models
     }
     public class information
     {
-        public string department { get; set; }
-        public string jobtitle { get; set; }
+        public string name { get; set; }
+        public string hashaccount { get; set; }
         public string phone { get; set; }
         public string email { get; set; }
         public string img { get; set; }

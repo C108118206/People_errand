@@ -18,13 +18,11 @@ namespace people_errandd.Views
             InitializeComponent();
             //隱藏navigationpage導航欄
             NavigationPage.SetHasNavigationBar(this, false);
-            var _hashAccount = Preferences.Get("Login", "");
-            HttpResponse._HashAccount = _hashAccount;
         }
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            GPSText.Text = Preferences.Get("gpsText", "");
+            GPSText.Text = Preferences.Get("gpsText", "定位已開啟");
             statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
             status.Text = Preferences.Get("statusNow", "無狀態");
             workOn.IsEnabled = Preferences.Get("WorkOnButtonStauts", workOn.IsEnabled = true);
@@ -36,13 +34,16 @@ namespace people_errandd.Views
             Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
             await transition.TranslateTo(0, 15, 2000, Easing.BounceIn);
             await transition.TranslateTo(0, 0, 2000, Easing.BounceOut);
+            await geoLocation.GetLocation("Back");
         }
         protected override void OnDisappearing()
         {
+            if (geoLocation.cts != null && !geoLocation.cts.IsCancellationRequested)
+                geoLocation.cts.Cancel();
             base.OnDisappearing();
-            Connectivity.ConnectivityChanged -= Connectivity_ConnectivityChanged;
+            //Connectivity.ConnectivityChanged -= Connectivity_ConnectivityChanged;
         }
-        private void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+        public void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
         {
             if (e.NetworkAccess == NetworkAccess.Internet)
             {
@@ -65,7 +66,7 @@ namespace people_errandd.Views
                     allowTap = false;
                     if (await Work.GetWorkType() == 2 || await Work.GetWorkType() == 0)
                     {
-                        (double x, double y) = await geoLocation.GetLocation();
+                        (double x, double y) = await geoLocation.GetLocation("WorkOn");
                         if (geoLocation.GetCurrentLocation(x, y) == true)
                         {
                             if (await Work.PostWork(1, x, y, true))
@@ -75,22 +76,22 @@ namespace people_errandd.Views
                                 {
                                     status = "上班",
                                     time = DateTime.Now.ToString()
-                                });
+                                }) ;
                                 WorkOnSet();
                             }
                             else
                             {
-                                await DisplayAlert("Error", "發生錯誤" + HttpResponse._HashAccount, "確定");
+                                await DisplayAlert("Error", "發生錯誤"  , "確定");
                             }
                         }
                         else
                         {
-                            await DisplayAlert("", "位置錯誤\n" + x + "\n" + y, "確定");
+                            await DisplayAlert("", "位置錯誤", "確定");
                         }
                     }
                     else if (await Work.GetWorkType() == 500)
                     {
-                        await DisplayAlert("Error", "錯誤" + HttpResponse._HashAccount, "確定");
+                        await DisplayAlert("Error", "錯誤" , "確定");
                     }
                     else
                     {
@@ -118,7 +119,7 @@ namespace people_errandd.Views
                     allowTap = false;
                     if (await Work.GetWorkType() == 1)
                     {
-                        (double x, double y) = await geoLocation.GetLocation();
+                        (double x, double y) = await geoLocation.GetLocation("WorkOff");
                         if (geoLocation.GetCurrentLocation(x, y) == true)
                         {
                             if (await Work.PostWork(2, x, y, true))
@@ -247,8 +248,9 @@ namespace people_errandd.Views
             }
         }
         private  void GpsButton(object sender, EventArgs e)
-        {
-            DependencyService.Get<IAppSettingsHelper>().OpenAppSetting();
+        {  
+            if(GPSText.Text=="定位未開啟")
+                DependencyService.Get<IAppSettingsHelper>().OpenAppSetting();          
         }
 
 

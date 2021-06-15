@@ -3,10 +3,10 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "people_errandd.Android.dll" comes first in this list. */
 		"people_errandd.Android.dll",
+		"FluentValidation.dll",
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
 		"people_errandd.dll",
-		"Plugin.CurrentActivity.dll",
 		"Plugin.Media.dll",
 		"Plugin.SharedTransitions.dll",
 		"SQLite-net.dll",

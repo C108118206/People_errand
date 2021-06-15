@@ -2,9 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="people_errandd.Views.AboutPage" 
-             xmlns:st="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+             xmlns:local="clr-namespace:people_errandd.ViewModels"
              BackgroundColor="White">
-
     <!--最上面Navigation標題-->
     <NavigationPage.TitleView>
         <Label Text="個人資料"  HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" Margin="-15,0,0,0"></Label>
@@ -12,7 +11,7 @@
 
     <!--最上面Navigation右邊完成-->
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="完成   "  Activated="RefButtonClicked" Clicked="ConfrimButton"></ToolbarItem>
+        <ToolbarItem Text="完成   "  Activated="RefButtonClicked"  Clicked="ConfirmButton"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <!--內容樣式設定-->
     <ContentPage.Resources>
@@ -85,56 +84,56 @@
                         </Frame>
                         <ImageButton Source="pencil2" Margin="80,-40,0,0" HeightRequest="30"  Clicked="Image_clicked"  HorizontalOptions="Center" />
 
-                        <Label Text="Marry" Style="{StaticResource name}" Grid.Row="1"></Label>
+                        <Label Text="Marry" x:Name="name" Style="{StaticResource name}" Grid.Row="1"></Label>
                         <!--使用者姓名-->
                     </StackLayout>
                 </StackLayout>
 
-    
-                    <StackLayout Orientation="Vertical" Grid.Row="1" Margin="0,40,0,0">
-                        <!--底部框架-->
-                        <StackLayout Orientation="Horizontal" Grid.Row="0" Margin="0,25,0,0" HorizontalOptions="Center">
-                            <!--部門標題與圖片-->
+
+                <StackLayout Orientation="Vertical" Grid.Row="1" Margin="0,40,0,0">
+                    <!--底部框架-->
+                    <StackLayout Orientation="Horizontal" Grid.Row="0" Margin="0,25,0,0" HorizontalOptions="Center">
+                        <!--部門標題與圖片-->
                         <Image Style="{StaticResource contentimage}" Source="group"/>
                         <Label Text="部門"  Style="{StaticResource contenttitle}" ></Label>
 
-                            <Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">
+                        <Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">
                             <Entry Placeholder="行銷部" x:Name="department" PlaceholderColor="Gray" IsReadOnly="True" Style="{StaticResource contententry}" Grid.Row="1"></Entry>
                             <!--部門名稱(設置唯讀)-->
                         </Frame>
-                        </StackLayout>
+                    </StackLayout>
                     <StackLayout Orientation="Horizontal"  Grid.Row="1" Margin="0,25,0,0" HorizontalOptions="Center">
-                            <!--職稱標題與圖片-->
+                        <!--職稱標題與圖片-->
                         <Image Style="{StaticResource contentimage}" Source="person"/>
                         <Label Text="職稱" Style="{StaticResource contenttitle}" ></Label>
 
-                            <Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">
+                        <Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">
                             <Entry Placeholder="職員" x:Name="jobTitle" IsReadOnly="True" PlaceholderColor="Gray" Style="{StaticResource contententry}" Grid.Row="3"></Entry>
                             <!--職稱名稱(設置唯讀)-->
                         </Frame>
-                        </StackLayout>
+                    </StackLayout>
                     <StackLayout Orientation="Horizontal"  Grid.Row="2" Margin="0,25,0,0" HorizontalOptions="Center">
-                            <!--電話標題與圖片-->
+                        <!--電話標題與圖片-->
                         <Image Style="{StaticResource contentimage}" Source="phone"/>
                         <Label Text="電話" Style="{StaticResource contenttitle}" ></Label>
 
-                            <Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">
-                            <Entry   Keyboard="Telephone" x:Name="phone" MaxLength="10" Style="{StaticResource contententry}" Grid.Row="5"></Entry>
+                        <Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">
+                            <Entry   Keyboard="Telephone" x:Name="phone"  Unfocused="phone_Unfocused" MaxLength="10" Style="{StaticResource contententry}" Grid.Row="5"></Entry>
                             <!--電話輸入-->
                         </Frame>
-                        </StackLayout>
-                    <StackLayout Orientation="Horizontal" Grid.Row="3" Margin="0,25,0,25" HorizontalOptions="Center">
-                            <!--Email標題與圖片-->
+                    </StackLayout>
+                    <Label x:Name="phoneValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="Center" FontAttributes="Bold" Margin="250,5,0,-20"></Label>
+                    <StackLayout Orientation="Horizontal" Grid.Row="3" Margin="0,25,0,1" HorizontalOptions="Center">
+                        <!--Email標題與圖片-->
                         <Image Style="{StaticResource contentimage}" Source="mail"/>
                         <Label Text="郵件"  Style="{StaticResource contenttitle}" ></Label>
-
-                            <Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">
-                            <Entry  Keyboard="Email" x:Name="email" Style="{StaticResource contententry}" Grid.Row="7"></Entry>
+                        <Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">
+                            <Entry  Keyboard="Email" x:Name="email" Unfocused="email_Unfocused" Style="{StaticResource contententry}" Grid.Row="7"></Entry>
                             <!--Email輸入-->
                         </Frame>
-                      </StackLayout>
                     </StackLayout>
-     
+                    <Label x:Name="emailValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="Center" FontAttributes="Bold" Margin="250,5,0,0"></Label>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </Grid>

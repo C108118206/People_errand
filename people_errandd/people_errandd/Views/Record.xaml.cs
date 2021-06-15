@@ -7,6 +7,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Diagnostics;
+using people_errandd.Models;
 
 namespace people_errandd.Views
 {
@@ -15,6 +16,8 @@ namespace people_errandd.Views
     {
         private bool allowTap = true;
         public static int RecordTypeId;
+        public static DateTime Date = DateTime.Today;
+
         protected override async void OnAppearing()
         {
             base.OnAppearing();
@@ -37,6 +40,7 @@ namespace people_errandd.Views
                 {
                     allowTap = false;
                     Navigation.PopAsync();
+                    RecordTypeId = 0;
                 }
             }
             finally
@@ -51,9 +55,7 @@ namespace people_errandd.Views
                 if (allowTap)
                 {
                     allowTap = false;
-                    RecordsSelector rs = new RecordsSelector();
                     var ActionSheet = await DisplayActionSheet("請選擇:", "Cancel", null, "上下班", "請假", "公出");
-                    //Debug.WriteLine("Action: " + ActionSheet);
                     switch (ActionSheet)
                     {
                         case "Cancel":
@@ -71,7 +73,6 @@ namespace people_errandd.Views
                             break;
                         case "公出":
                             Worklist.ItemsSource = await App.DataBase.GetGoOutRecordsAsync();
-
                             RecordTitle.Text = "公出紀錄";
                             RecordTypeId = 3;
                             break;
@@ -83,6 +84,26 @@ namespace people_errandd.Views
                 allowTap = true;
             }
         }
+
+        private async void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            // DisplayAlert("", DatePicker.Date.ToString("yyyy-MM-dd-HH-mm-ss"), "fuck");
+            Date = DatePicker.Date;
+            switch (RecordTypeId)
+            {
+                case 0:
+                case 1:
+                    Worklist.ItemsSource = await App.DataBase.GetWorkRecordsAsync();
+                    break;
+                case 2:
+                    Worklist.ItemsSource = await App.DataBase.GetDayOffRecordsAsync();
+                    break;
+                case 3:
+                    Worklist.ItemsSource = await App.DataBase.GetGoOutRecordsAsync();
+                    break;
+            }
+
+        }
     }
     public class RecordsSelector : DataTemplateSelector
     {
@@ -91,19 +112,15 @@ namespace people_errandd.Views
         public DataTemplate GoOutRecords { get; set; }
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-
-            if (Record.RecordTypeId == 2)
+            switch (Record.RecordTypeId)
             {
-                return DayOffRecords;
-            }
-            else if (Record.RecordTypeId == 3)
-            {
-                return GoOutRecords;
-            }
-            else
-            {
-                return WorkRecords;
-            }
-        }
+                case 2:
+                    return  DayOffRecords;
+                case 3:
+                    return GoOutRecords;
+                default:
+                    return WorkRecords;
+            } 
+        } 
     }
 }

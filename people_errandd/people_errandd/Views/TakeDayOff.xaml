@@ -92,8 +92,8 @@
             </Style>
             <Style x:Key="date" TargetType="DatePicker">
                 <Setter Property="HorizontalOptions" Value="Start" />
-                <Setter Property="WidthRequest" Value="240" />
-                <Setter Property="Margin" Value="15,-10,0,0" />
+                <Setter Property="WidthRequest" Value="250" />
+                <Setter Property="Margin" Value="0,-10,0,0" />
                 <Setter Property="FontSize" Value="17" />
                 <Setter Property="TextColor" Value="#696969" />
                 <Setter Property="FontAttributes" Value="Bold" />
@@ -102,19 +102,18 @@
             </Style>
             <Style x:Key="time" TargetType="TimePicker">
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="WidthRequest" Value="240" />
-                <Setter Property="Margin" Value="15,-10,0,0" />
+                <Setter Property="WidthRequest" Value="250" />
+                <Setter Property="Margin" Value="0,-10,0,0" />
                 <Setter Property="FontSize" Value="17" />
                 <Setter Property="TextColor" Value="#696969" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="Format" Value="t" />
             </Style>
-            <Style x:Key="entry" TargetType="Entry">
-                <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
+            <Style x:Key="editor" TargetType="Editor">
                 <Setter Property="HeightRequest" Value="50" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="WidthRequest" Value="240" />
-                <Setter Property="Margin" Value="15,0,0,0" />
+                <Setter Property="Margin" Value="15,0,15,0" />
                 <Setter Property="FontSize" Value="17" />
                 <Setter Property="TextColor" Value="#696969" />
                 <Setter Property="FontAttributes" Value="Bold" />
@@ -136,7 +135,8 @@
     </ContentPage.Resources>
     <!--內容樣式設定結束-->
 
-    <Grid BackgroundColor="#B4D3EA">  <!--內容背景色-->
+    <Grid BackgroundColor="#B4D3EA">
+        <!--內容背景色-->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -186,49 +186,66 @@
                     <Entry  Style="{StaticResource entry}"></Entry>
                     <Button Style="{StaticResource button}"></Button>
                     -->
-                <StackLayout HorizontalOptions="Center"  Orientation="Horizontal">  <!--all day水平框架-->
-                    <Image  Source="hours24"  Margin="0,10,0,0" HeightRequest="25"/>  <!--all day圖片-->
-                    <Label  HorizontalOptions="Start"  Margin="0,10,0,0"  Text="ALL-DAY"  Style="{StaticResource titletext}"></Label>  <!--all day文字-->
-                    <Switch HorizontalOptions="End" Margin="125,0,0,0"/> <!--all day按鈕-->
+                <StackLayout HorizontalOptions="Center"  Orientation="Horizontal">
+                    <!--all day水平框架-->
+                    <Image  Source="hours24"  Margin="0,10,0,0" HeightRequest="25"/>
+                    <!--all day圖片-->
+                    <Label  HorizontalOptions="Start"  Margin="0,10,0,0"  Text="ALL-DAY"  Style="{StaticResource titletext}"></Label>
+                    <!--all day文字-->
+                    <Switch HorizontalOptions="End"  Toggled="AlldaySwitch_Toggled" x:Name="AlldaySwitch" Margin="125,0,0,0"/>
+                    <!--all day按鈕-->
                 </StackLayout>
-                <Frame Grid.Row="0"  Style="{StaticResource frame}"> <!--開始框架-->
+                <Frame Grid.Row="0"  Style="{StaticResource frame}">
+                    <!--開始框架-->
                     <StackLayout>
-                        <StackLayout Grid.Row="0" Orientation="Horizontal"> <!--*開始水平呈現-->
-                            <Label Style="{StaticResource title*}"></Label> <!--*-->
-                            <Label Text="開始" Style="{StaticResource titletext}"></Label> <!--開始-->
+                        <StackLayout Grid.Row="0" Orientation="Horizontal">
+                            <!--*開始水平呈現-->
+                            <Label Style="{StaticResource title*}"></Label>
+                            <!--*-->
+                            <Label Text="開始" Style="{StaticResource titletext}"></Label>
+                            <!--開始-->
                         </StackLayout>
-                        <DatePicker Grid.Row="1" x:Name="startDatePicker" Style="{StaticResource date}"/> <!--開始日期選擇-->
-                        <TimePicker Grid.Row="2" x:Name="startTimePicker" Style="{StaticResource time}" /> <!--開始時間選擇-->
+                        
+                        <DatePicker Grid.Row="1" x:Name="startDatePicker"  Style="{StaticResource date}"/>
+                        <!--開始日期選擇-->
+                        <TimePicker Grid.Row="2" x:Name="startTimePicker"  IsVisible="true"  Style="{StaticResource time}" />
+                        <!--開始時間選擇-->
                     </StackLayout>
                 </Frame>
-                <Frame Grid.Row="1"  Style="{StaticResource frame}"> <!--結束框架-->
+                <Frame Grid.Row="1"  Style="{StaticResource frame}">
+                    <!--結束框架-->
                     <StackLayout>
-                        <StackLayout Grid.Row="0" Orientation="Horizontal"> <!--*結束水平呈現-->
-                            <Label Style="{StaticResource title*}"></Label> <!--*-->
-                            <Label Text="結束" Style="{StaticResource titletext}"></Label> <!--結束-->
+                        <StackLayout Grid.Row="0" Orientation="Horizontal">
+                            <!--*結束水平呈現-->
+                            <Label Style="{StaticResource title*}"></Label>
+                            <!--*-->
+                            <Label Text="結束" Style="{StaticResource titletext}"></Label>
+                            <!--結束-->
                         </StackLayout>
                         <DatePicker Grid.Row="1" x:Name="endDatePicker"
                             Style="{StaticResource date}"
                             MinimumDate="{Binding Source={x:Reference startDatePicker},Path=Date}"
-                            /> <!--結束日期選擇(需小於開始日期)-->
-                        <TimePicker Grid.Row="2" x:Name="endTimePicker" Style="{StaticResource time}" />  <!--結束時間選擇-->
+                            />
+                        <!--結束日期選擇(需小於開始日期)-->
+                        <TimePicker Grid.Row="2" x:Name="endTimePicker" Style="{StaticResource time}" />
+                        <!--結束時間選擇-->
                     </StackLayout>
                 </Frame>
                 <Frame Grid.Row="2" Style="{StaticResource frame}">
                     <!--假別框架-->
                     <StackLayout>
-                    <StackLayout Grid.Row="0" Orientation="Horizontal">
-                        <!--*假別水平呈現-->
-                        <Label Style="{StaticResource title*}"></Label>
-                        <!--*-->
-                        <Label Text="假別" Style="{StaticResource titletext}"></Label>
-                        <!--假別-->
-                    </StackLayout>
-                        <Frame CornerRadius="30" Padding="0" HeightRequest="45" Margin="15,0,0,0" HorizontalOptions="Center" BorderColor="Gray" HasShadow="False">
+                        <StackLayout Grid.Row="0" Orientation="Horizontal">
+                            <!--*假別水平呈現-->
+                            <Label Style="{StaticResource title*}"></Label>
+                            <!--*-->
+                            <Label Text="假別" Style="{StaticResource titletext}"></Label>
+                            <!--假別-->
+                        </StackLayout>
+                        <Frame CornerRadius="10" Padding="0" HeightRequest="45" Margin="10,0,10,0"  HorizontalOptions="Center" BorderColor="Gray" HasShadow="False">
                             <StackLayout Orientation="Horizontal">
-                                <Picker x:Name="leaveType" Grid.Row="1" TextColor="#696969" Title="事假" Margin="15,0,0,0" WidthRequest="240" HorizontalOptions="Center" FontAttributes="Bold" FontSize="16">
-                                <!--假別選擇-->
-                                <Picker.ItemsSource>
+                                <Picker x:Name="leaveType" Grid.Row="1" TextColor="#696969" Title="事假" Margin="15,0,0,0" WidthRequest="250" HorizontalOptions="Center" FontAttributes="Bold" FontSize="16">
+                                    <!--假別選擇-->
+                                    <Picker.ItemsSource>
                                         <x:Array  Type="{x:Type x:String}">
                                             <x:String>事假</x:String>
                                             <x:String>病假</x:String>
@@ -240,27 +257,32 @@
                                             <x:String>陪產假</x:String>
                                         </x:Array>
                                     </Picker.ItemsSource>
-                            </Picker>
-                                <Image Source="pickerdown" Margin="-50,0,20,0"/>
+                                </Picker>
+                                <Image Source="pickerdown" Margin="-50,0,20,0"  WidthRequest="15" HeightRequest="15"/>
                             </StackLayout>
                         </Frame>
                     </StackLayout>
                 </Frame>
-                <Frame Grid.Row="4" Style="{StaticResource frame}"> <!--原因框架-->
+                <Frame Grid.Row="4" Style="{StaticResource frame}">
+                    <!--原因框架-->
                     <StackLayout>
-                        <StackLayout Grid.Row="0" Orientation="Horizontal"> <!--*原因水平呈現-->
-                            <Label Style="{StaticResource title*}"></Label>   <!--*-->
-                            <Label  Text="原因" Style="{StaticResource titletext}"></Label>  <!--原因-->
+                        <StackLayout Grid.Row="0" Orientation="Horizontal">
+                            <!--*原因水平呈現-->
+                            <Label Style="{StaticResource title*}"></Label>
+                            <!--*-->
+                            <Label  Text="原因" Style="{StaticResource titletext}"></Label>
+                            <!--原因-->
                         </StackLayout>
-                        <Frame CornerRadius="30" Padding="0" Margin="15,0,0,0" HeightRequest="45" HorizontalOptions="Center" BorderColor="Gray" HasShadow="False">
-                            <Entry x:Name="reason" Grid.Row="1" Style="{StaticResource entry}"></Entry>
+                        <Frame CornerRadius="10" Padding="0" Margin="10,0,10,0" HeightRequest="105" HorizontalOptions="Center" BorderColor="Gray" HasShadow="False">
+                            <Editor x:Name="reason" Grid.Row="1" Style="{StaticResource editor}"></Editor>
                             <!--原因輸入-->
                         </Frame>
                     </StackLayout>
-                     </Frame>
-                <Button  Grid.Row="5" Style="{StaticResource button}" Clicked="EnterButton"></Button>  <!--提出申請按鈕-->
+                </Frame>
+                <Button  Grid.Row="5" Style="{StaticResource button}" Clicked="EnterButton"></Button>
+                <!--提出申請按鈕-->
 
-               
+
             </StackLayout>
 
         </ScrollView>

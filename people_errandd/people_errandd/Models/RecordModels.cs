@@ -20,6 +20,7 @@ namespace people_errandd.Models
         public DateTime EndTime { get; set; }
         public string   Reason { get; set; }
         public string DayOffType { get; set; }
+        public string Date { get; set; }
     }
     public class GoOutRecordModels
     {
@@ -27,6 +28,7 @@ namespace people_errandd.Models
         public DateTime EndTime { get; set; }
         public string Reason { get; set; }
         public string Location { get; set; }
+        public string Date { get; set; }
     }
 
 

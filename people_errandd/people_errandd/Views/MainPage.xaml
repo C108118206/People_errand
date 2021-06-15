@@ -22,16 +22,16 @@
                 <Setter Property="Padding" Value="10,8,10,8" />
                 <Setter Property="HasShadow" Value="True" />
             </Style>
-            <Style x:Key="gpsframe" TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="#98E4AA" />
-                <Setter Property="HasShadow" Value="True" />
-                <Setter Property="Opacity" Value="0.8" />
-                <Setter Property="CornerRadius" Value="8" />
-                <Setter Property="WidthRequest" Value="200" />
-                <Setter Property="HeightRequest" Value="25" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="Margin" Value="0,20,0,20" />
-                <Setter Property="Padding" Value="20,10,20,10" />
+            <Style x:Key="gpsbutton" TargetType="Button">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BackgroundColor" Value="#98E4AA"/>
+                <Setter Property="Margin" Value="0,20,0,20"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Padding" Value="30,10,30,10"/>
+                <Setter Property="WidthRequest" Value="250"/>
+                <Setter Property="HeightRequest" Value="50"/>
             </Style>
             <Style x:Key="buttonframe" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="White" />
@@ -116,17 +116,17 @@
                              Clicked="AboutPageButton" 
                              Aspect="AspectFill"
                              Margin="-20"
-                             WidthRequest="20" />
+                             WidthRequest="20"
+                            />
                     </Frame>
                 </StackLayout>
                 <Label x:Name="username" Text="Marry" Grid.Row="2" Style="{StaticResource name}" ></Label>
                 <!--使用者姓名-->
                 <!--gps定位狀態-->
-                <Frame Grid.Row="3" Style="{StaticResource gpsframe}">
+                <!--
+                <Frame  Style="{StaticResource gpsframe}">
                     <StackLayout Orientation="Horizontal">
                         <Image Source="gps.png" />
-                        <!--gps圖片-->
-                        <!--gps狀態文字-->
                         <Label
                             Margin="30,0,0,0"
                             x:Name="GPSText"
@@ -136,6 +136,8 @@
                         </Label>
                     </StackLayout>
                 </Frame>
+            -->
+                <Button ImageSource="gps1" Grid.Row="3" Text="定位已開啟" Style="{StaticResource gpsbutton}"  x:Name="GPSText" Clicked="GpsButton"/>
                 <Frame   BackgroundColor="#F1F1F1" WidthRequest="1000" HeightRequest="500" CornerRadius="30"  Margin="0,0,0,-200">
                     <!--底部白色背景開始-->
                     <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="0,10,0,0">

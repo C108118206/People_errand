@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using people_errandd.Models;
 using people_errandd.Views;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace people_errandd.ViewModels
@@ -17,7 +18,7 @@ namespace people_errandd.ViewModels
             List<DayOff> dayOffs = new List<DayOff>();
             DayOff dayOff = new DayOff()
             {
-                hashaccount = _HashAccount,
+                hashaccount = Preferences.Get("HashAccount", ""),
                 Leavetypeid = _leave_type_id,
                 reason = _reason,
                 StartDate = _StartTime,

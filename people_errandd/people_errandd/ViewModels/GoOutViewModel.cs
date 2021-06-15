@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using people_errandd.Models;
+using Xamarin.Essentials;
 
 namespace people_errandd.ViewModels
 {
@@ -14,7 +15,7 @@ namespace people_errandd.ViewModels
             List<GoOut> goOuts = new List<GoOut>();
             GoOut goOut= new GoOut()
             {
-                hashaccount = _HashAccount,
+                hashaccount = Preferences.Get("HashAccount", ""),
                 Location=_location,
                 reason = _reason,
                 StartDate = _StartTime,

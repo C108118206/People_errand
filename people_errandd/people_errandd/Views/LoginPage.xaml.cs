@@ -30,7 +30,7 @@ namespace people_errandd.Views
                 Preferences.Set("uuid", Guid.NewGuid().ToString());
             }
             deviceId = Preferences.Get("uuid", "");
-
+            
         }
 
         private async void LogInButton(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace people_errandd.Views
                         }
                         if (string.IsNullOrEmpty(Preferences.Get("Login", string.Empty)))
                         {
-                            Preferences.Set("Login", await Login.GetHashAccount(deviceId));
+                            Preferences.Set("HashAccount", await Login.GetHashAccount(deviceId));
                         }
                         Navigation.InsertPageBefore(new MainPage(), this);
                         await Navigation.PopAsync();

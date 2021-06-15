@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using people_errandd.Models;
+using Xamarin.Essentials;
 
 namespace people_errandd.ViewModels
 {
@@ -12,10 +13,12 @@ namespace people_errandd.ViewModels
     {
         public  async Task<int> GetWorkType()
         {
-            response = await client.GetAsync(basic_url + ControllerNameWorkRecord + _HashAccount);
+            response = await client.GetAsync(basic_url + ControllerNameWorkRecord + Preferences.Get("HashAccount", ""));
+            //Console.WriteLine(response.StatusCode);
             if (response.StatusCode.ToString() == "NoContent")
             {
                 return 0;
+                
             }
             else if (response.StatusCode.ToString() == "OK")
             {
@@ -31,7 +34,7 @@ namespace people_errandd.ViewModels
             work work = new work()
             {
                 workTypeId = _WorkTypeId,
-                hashAccount = _HashAccount,
+                hashAccount = Preferences.Get("HashAccount", ""),
                 coordinateX = _coordinateX,
                 coordinateY = _coordinateY,
                 enabled = _enable
@@ -57,7 +60,7 @@ namespace people_errandd.ViewModels
             work work = new work()
             {
                 workTypeId =0,
-                hashAccount = _HashAccount,
+                hashAccount = Preferences.Get("HashAccount", ""),
                 coordinateX = _coordinateX,
                 coordinateY = _coordinateY
             };

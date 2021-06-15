@@ -50,7 +50,9 @@ namespace people_errandd.Views
                             EndTime = EndDateTime,
                             Location = locationEntry.Text,
                             Reason = reasonEntry.Text,
-                        });
+                            Date = DateTime.Now.ToString("d")
+                        }) ;
+                        await Navigation.PopAsync();
                     }
                     else
                     {
@@ -62,11 +64,23 @@ namespace people_errandd.Views
             catch (Exception)
             {
                 await DisplayAlert("", "格式錯誤,請重新輸入", "OK");
-                throw;
             }
             finally
             {
                 allowTap = true;
+            }
+        }
+        private void AlldaySwitch_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (AlldaySwitch.IsToggled == true)
+            {
+                startTimePicker.IsVisible = false;
+                endTimePicker.IsVisible = false;
+            }
+            else
+            {
+                startTimePicker.IsVisible = true;
+                endTimePicker.IsVisible = true;
             }
         }
     }

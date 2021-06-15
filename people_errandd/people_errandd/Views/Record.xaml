@@ -20,7 +20,7 @@
         <ResourceDictionary>
             <Style x:Key="date" TargetType="DatePicker">
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="WidthRequest" Value="210" />
+                <Setter Property="WidthRequest" Value="220" />
                 <Setter Property="HeightRequest" Value="30" />
                 <Setter Property="FontSize" Value="17" />
                 <Setter Property="TextColor" Value="Black" />
@@ -29,7 +29,7 @@
             </Style>
             <Style x:Key="select" TargetType="ImageButton">
                 <Setter Property="BackgroundColor" Value="White"/>
-                <Setter Property="Margin" Value="25,0,0,0"/>
+                <Setter Property="Margin" Value="35,0,0,0"/>
                 <Setter Property="Source" Value="a14"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="HeightRequest" Value="50"/>
@@ -109,7 +109,7 @@
                     <StackLayout
                                         Grid.Row="0"
                                         Grid.Column="1"
-                                        Margin="0,0,60,0"
+                                        Margin="0,0,35,0"
                                         Spacing="0"
                                         HorizontalOptions="End"
                                         VerticalOptions="End">
@@ -169,6 +169,11 @@
                                            Style="{StaticResource gooutanddayofftitle}"
                                             Text="理由 :"
                                             />
+                        <Label 
+                                             Margin="0,10,0,10"
+                                           Style="{StaticResource gooutanddayofftitle}"
+                                            Text="申請日期 :"
+                                            />
                     </StackLayout>
                     <StackLayout
                                         Grid.Row="0"
@@ -197,6 +202,11 @@
                                              Margin="0,10,0,10"
                                              Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding Reason}"
+                                             />
+                        <Label
+                                             Margin="0,10,0,10"
+                                             Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding Date}"
                                              />
                     </StackLayout>
                     <BoxView
@@ -242,6 +252,11 @@
                                            Style="{StaticResource gooutanddayofftitle}"
                                             Text="理由 :"
                                             />
+                        <Label 
+                                             Margin="0,10,0,10"
+                                           Style="{StaticResource gooutanddayofftitle}"
+                                            Text="申請日期 :"
+                                            />
                     </StackLayout>
                     <StackLayout
                                         Grid.Row="0"
@@ -271,6 +286,11 @@
                                              Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding Reason}"
                                              />
+                        <Label
+                                             Margin="0,10,0,10"
+                                             Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding Date}"
+                                             />
                     </StackLayout>
                     <BoxView
                                         Grid.Row="1"
@@ -297,7 +317,7 @@
                 <Label></Label>
                 <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Center">
                     <Image  Grid.Row="0" Grid.Column="0" Source="date" HorizontalOptions="Center"  HeightRequest="30"></Image>
-                    <DatePicker  Grid.Row="0" Grid.Column="1" x:Name="startDatePicker" Style="{StaticResource date}" />
+                    <DatePicker  Grid.Row="0" Grid.Column="1" x:Name="DatePicker" DateSelected="DatePicker_DateSelected" Style="{StaticResource date}" />
                     <ImageButton Clicked="RecordChooseButton"  Grid.Row="0" Grid.Column="2"  Style="{StaticResource select}"></ImageButton>
                 </StackLayout>
 

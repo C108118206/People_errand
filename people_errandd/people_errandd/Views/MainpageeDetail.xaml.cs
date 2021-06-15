@@ -39,7 +39,7 @@ namespace people_errandd.Views
 
                     if (await Work.GetWorkType() == 2 || await Work.GetWorkType() == 0)
                     {
-                        (double x, double y) = await geoLocation.GetLocation();
+                        (double x, double y) = await geoLocation.GetLocation("WorkOn");
                         if (geoLocation.GetCurrentLocation(x, y) == true)
                         {
                             if (await Work.PostWork(1, x, y, true))
@@ -55,7 +55,7 @@ namespace people_errandd.Views
                             }
                             else
                             {
-                                await DisplayAlert("Error", "發生錯誤" + HttpResponse._HashAccount, "確定");
+                                await DisplayAlert("Error", "發生錯誤" , "確定");
                             }
                         }
                         else
@@ -65,7 +65,7 @@ namespace people_errandd.Views
                     }
                     else if (await Work.GetWorkType() == 500)
                     {
-                        await DisplayAlert("Error", "錯誤" + HttpResponse._HashAccount, "確定");
+                        await DisplayAlert("Error", "錯誤" , "確定");
                     }
                     else
                     {
@@ -93,7 +93,7 @@ namespace people_errandd.Views
                     allowTap = false;
                     if (await Work.GetWorkType() == 1)
                     {
-                        (double x, double y) = await geoLocation.GetLocation();
+                        (double x, double y) = await geoLocation.GetLocation("WorkOff");
                         if (geoLocation.GetCurrentLocation(x, y) == true)
                         {
                             if (await Work.PostWork(2, x, y, true))

@@ -24,6 +24,8 @@ namespace people_errandd.ViewModels
                 GetResponse= await response.Content.ReadAsStringAsync();//將JSON轉成string
                 string[] _CompanyInformation= GetResponse.Split('\n');//分割字串
                 companyHash = _CompanyInformation[0];
+                Preferences.Set("companyX", _CompanyInformation[1]);
+                Preferences.Set("companyY", _CompanyInformation[2]);
                 return true;
             }
             return false;
