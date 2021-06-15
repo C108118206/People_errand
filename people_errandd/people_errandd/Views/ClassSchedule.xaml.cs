@@ -16,8 +16,9 @@ namespace people_errandd.Views
         public ClassSchedule()
         {
             InitializeComponent();
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#B4D3EA");
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#EDEEEF");
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
+
 
         }
         private  void LessDay(object sender, EventArgs e)

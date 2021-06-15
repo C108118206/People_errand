@@ -4,11 +4,16 @@ using people_errandd.Models;
 using people_errandd.ViewModels;
 using Xamarin.Essentials;
 using System.Threading.Tasks;
+using System.Text;
+using System.Linq;
+using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace people_errandd.Views
 {
     public partial class MainPage : ContentPage
     {
+        Stopwatch stopwatch;
         private readonly Work Work = new Work();
         bool allowTap = true;
         private readonly geoLocation geoLocation = new geoLocation();
@@ -17,12 +22,18 @@ namespace people_errandd.Views
         {
             InitializeComponent();
             //隱藏navigationpage導航欄
+            DateTime thisDay = DateTime.Now;
+            datetime.Text = thisDay.ToString();
             NavigationPage.SetHasNavigationBar(this, false);
+
+            stopwatch = new Stopwatch();
+            time.Text = "00:00";
         }
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            GPSText.Text = Preferences.Get("gpsText", "定位已開啟");
+            GPSText.Text = Preferences.Get("gpsText", "定位未開啟");
+            Preferences.Set("statusBack", "#EDEEEF");
             statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
             status.Text = Preferences.Get("statusNow", "無狀態");
             workOn.IsEnabled = Preferences.Get("WorkOnButtonStauts", workOn.IsEnabled = true);
@@ -32,8 +43,7 @@ namespace people_errandd.Views
             workOnText.Opacity = Preferences.Get("WorkOnText", workOnText.Opacity = 1);
             workOffText.Opacity = Preferences.Get("WorkOffText", workOffText.Opacity = 0.2);
             Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
-            await transition.TranslateTo(0, 15, 2000, Easing.BounceIn);
-            await transition.TranslateTo(0, 0, 2000, Easing.BounceOut);
+
             await geoLocation.GetLocation("Back");
         }
         protected override void OnDisappearing()
@@ -59,6 +69,29 @@ namespace people_errandd.Views
 
         private async void GoToWork(object sender, EventArgs e)
         {
+            workstatus.Text = "已經上班";
+            if (!stopwatch.IsRunning)
+            {
+            stopwatch.Start();
+            Device.StartTimer(TimeSpan.FromMilliseconds(1), () =>
+             {
+                 TimeSpan ts = stopwatch.Elapsed;
+                 time.Text = String.Format("{0:00}:{1:00}",
+            ts.Hours, ts.Minutes);
+                 //time.Text = stopwatch.Elapsed.ToString();
+                 if (!stopwatch.IsRunning)
+                 {
+                    return false;
+                 }
+                 else
+                 {
+                     return true;
+                 }
+                    
+             });
+            }
+           
+                
             try
             {
                 if (allowTap)
@@ -111,7 +144,9 @@ namespace people_errandd.Views
         }
         private async void OffWork(object sender, EventArgs e)
         {
-
+            stopwatch.Reset();
+            time.Text = "00:00";
+            workstatus.Text = "已經下班";
             try
             {
                 if (allowTap)
@@ -172,7 +207,7 @@ namespace people_errandd.Views
             Preferences.Set("WorkOffButtonView", workOff.Opacity = 0.2);
             Preferences.Set("WorkOnText", workOnText.Opacity = 1);
             Preferences.Set("WorkOffText", workOffText.Opacity = 0.2);
-            Preferences.Set("statusBack", "F86954");
+            Preferences.Set("statusBack", "#CB2E2E");
             statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
         }
         public void WorkOnSet()
@@ -181,10 +216,10 @@ namespace people_errandd.Views
             Preferences.Set("WorkOnButtonStauts", workOn.IsEnabled = false);
             Preferences.Set("WorkOffButtonStauts", workOff.IsEnabled = true);
             Preferences.Set("WorkOnButtonView", workOn.Opacity = 0.2);
-            Preferences.Set("WorkOffButtonView", workOff.Opacity = 1);
+            Preferences.Set("WorkOffButtonView", workOff.Opacity = 0.8);
             Preferences.Set("WorkOnText", workOnText.Opacity = 0.2);
-            Preferences.Set("WorkOffText", workOffText.Opacity = 1);
-            Preferences.Set("statusBack", "98E4AA");
+            Preferences.Set("WorkOffText", workOffText.Opacity = 0.8);
+            Preferences.Set("statusBack", "#4AD395");
             statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
         }
         private async void DetailButton(object sender, EventArgs e)

@@ -45,7 +45,7 @@ namespace people_errandd
         }
 
         protected async override void OnStart()
-        {           
+        {       
             bool hasKey = Preferences.ContainsKey("HashAccount");
             if (hasKey)
             {
@@ -65,7 +65,8 @@ namespace people_errandd
             
         }
         protected override void OnResume()
-        {          
+        {
+            GetLocation();      
             GetConnectivity("resume");
             MessagingCenter.Send<App>(this, "Hi");
         }
@@ -78,7 +79,7 @@ namespace people_errandd
             }
             catch (Exception)
             {
-                Preferences.Set("gpsText", "定位未開啟");
+                Console.WriteLine("Error");
             }
         }
         private async void GetConnectivity(string status)

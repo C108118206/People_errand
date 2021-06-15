@@ -77,9 +77,9 @@ namespace people_errandd.ViewModels
         void CreateCollection()
         {
 
-            Xamarin.Forms.Color frColor = Xamarin.Forms.Color.FromHex("#6184C6");
-            Xamarin.Forms.Color linColor = Xamarin.Forms.Color.FromHex("#6184C6");
-            Xamarin.Forms.Color TaskColor = Xamarin.Forms.Color.FromHex("#6184C6");
+            Xamarin.Forms.Color frColor = Xamarin.Forms.Color.FromHex("#263959");
+            Xamarin.Forms.Color linColor = Xamarin.Forms.Color.FromHex("#263959");
+            Xamarin.Forms.Color TaskColor = Xamarin.Forms.Color.FromHex("#263959");
             Xamarin.Forms.Color textcolorNM = Xamarin.Forms.Color.FromHex("#000000");
             Xamarin.Forms.Color textcolorLo = Xamarin.Forms.Color.FromHex("#353866");
 
@@ -93,15 +93,15 @@ namespace people_errandd.ViewModels
                 {
                     if (i < currentFlag)
                     {
-                        frColor = Xamarin.Forms.Color.FromHex("#6184C6");
-                        linColor = Xamarin.Forms.Color.FromHex("#6184C6");
+                        frColor = Xamarin.Forms.Color.FromHex("#263959");
+                        linColor = Xamarin.Forms.Color.FromHex("#263959");
                         textcolorNM = Xamarin.Forms.Color.FromHex("#FFFFFF");
                         textcolorLo = Xamarin.Forms.Color.FromHex("#FFFFFF");
                     }
                     else
                     {
                         frColor = Xamarin.Forms.Color.Transparent;
-                        TaskColor = Xamarin.Forms.Color.FromHex("#E6E6E6");
+                        TaskColor = Xamarin.Forms.Color.FromHex("#FFFFFF");
                         linColor = Xamarin.Forms.Color.FromHex("#DDDDDD");
                         textcolorNM = Xamarin.Forms.Color.FromHex("#000000");
                         textcolorLo = Xamarin.Forms.Color.FromHex("#353866");

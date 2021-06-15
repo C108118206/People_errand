@@ -10,30 +10,31 @@
             <Style x:Key="title" TargetType="Label">
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="40" />
-                <Setter Property="Margin" Value="40,120,0,0" />
+                <Setter Property="FontSize" Value="45" />
+                <Setter Property="Margin" Value="-40,120,0,0" />
             </Style>
             <Style x:Key="image" TargetType="Image">
-                <Setter Property="HeightRequest" Value="80" />
-                <Setter Property="Margin" Value="20,90,0,0" />
+                <Setter Property="HeightRequest" Value="55" />
+                <Setter Property="Margin" Value="10,105,0,0" />
             </Style>
             <Style x:Key="content" TargetType="Label">
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="20" />
-                <Setter Property="Margin" Value="50,50,-40,0" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Margin" Value="-200,50,0,0" />
             </Style>
             <Style x:Key="entry" TargetType="Entry">
                 <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="Margin" Value="15,0,0,0" />
+                <Setter Property="Margin" Value="10,0,0,0" />
                 <Setter Property="WidthRequest" Value="280" />
                 <Setter Property="FontSize" Value="15" />
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>
             <Style x:Key="Button" TargetType="Button">
-                <Setter Property="WidthRequest" Value="280" />
+                <Setter Property="WidthRequest" Value="265" />
                 <Setter Property="CornerRadius" Value="40" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="HorizontalOptions" Value="Center" />
@@ -74,16 +75,16 @@
 
                 <ScrollView HeightRequest="550">
                     <StackLayout Orientation="Vertical">
-                        <StackLayout Orientation="Horizontal" Grid.Row="0">
+                        <StackLayout Orientation="Horizontal" Grid.Row="0" HorizontalOptions="Center">
                             <Label Text="Punch." Style="{StaticResource title}"></Label>
                             <!--Punch標題-->
-                            <Image x:Name="image" Source="teamworker" Style="{StaticResource image}"></Image>
+                            <Image x:Name="image" Source="teamworker" Style="{StaticResource image}" Opacity="0.8"></Image>
                             <!--Punch右邊圖片-->
                         </StackLayout>
                         <StackLayout Orientation="Vertical" Grid.Row="1">
                             <Label Text="組織ID" Style="{StaticResource content}" Grid.Row="0"/>
                             <!--組織ID標題-->
-                            <Frame CornerRadius="10" Padding="0" Margin="5" HorizontalOptions="Center" >
+                            <Frame CornerRadius="10" Padding="0" Margin="0,5,0,0" HorizontalOptions="Center" WidthRequest="260" >
                                 <Entry x:Name="company" Placeholder=" 請輸入組織ID" Style="{StaticResource entry}" Grid.Row="1" TextColor="Black" />
                             </Frame>
                             <!--輸入組織ID-->
