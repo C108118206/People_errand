@@ -17,26 +17,21 @@ namespace people_errandd.ViewModels
                     var request = new GeolocationRequest(GeolocationAccuracy.High, TimeSpan.FromSeconds(10));
                     cts = new CancellationTokenSource();
                     var location = await Geolocation.GetLocationAsync(request, cts.Token);
-                    
                     return (location.Latitude, location.Longitude);
                 }
                 else
                 {
-                    var location = await Geolocation.GetLastKnownLocationAsync();
-                    if (location == null)
-                    {
-                        var request = new GeolocationRequest(GeolocationAccuracy.High, TimeSpan.FromSeconds(10));
-                        cts = new CancellationTokenSource();
-                        location = await Geolocation.GetLocationAsync(request, cts.Token);
-                        
-                    }
+                    var location = await Geolocation.GetLastKnownLocationAsync();                   
                     return (location.Latitude, location.Longitude);
                 }
+                
             }
             catch (Exception)
             {
+                Preferences.Set("gpsText", "定位未開啟");
+                Console.WriteLine("ERROR");
             }
-            return (1,1);
+            return (0,0);
         }
         public bool GetCurrentLocation(double X, double Y)
         {

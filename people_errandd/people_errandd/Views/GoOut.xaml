@@ -258,7 +258,7 @@
                                 <Label Text="地點" Style="{StaticResource titletext}"></Label>
                                 <!--地點-->
                             </StackLayout>
-                            <Frame CornerRadius="10" Padding="0" Margin="10,0,10,0" HeightRequest="45" HorizontalOptions="Center" BorderColor="Gray" HasShadow="False">
+                            <Frame CornerRadius="10" Padding="0" Margin="20,0,20,0" HeightRequest="45" HorizontalOptions="Center" BorderColor="Gray" HasShadow="False">
                                 <Entry Grid.Row="1" x:Name="locationEntry" Style="{StaticResource entry}" Margin="10,0,0,0"></Entry>
                                 <!--地點輸入-->
                             </Frame>
@@ -274,7 +274,7 @@
                                 <Label Text="事由" Style="{StaticResource titletext}"></Label>
                                 <!--事由-->
                             </StackLayout>
-                            <Frame CornerRadius="10" Margin="10,0,10,0" Padding="0"  HeightRequest="105" HorizontalOptions="Center" BorderColor="Gray" HasShadow="False">
+                            <Frame CornerRadius="10" Margin="20,0,20,0" Padding="0"  HeightRequest="105" HorizontalOptions="Center" BorderColor="Gray" HasShadow="False">
                                 <Editor Grid.Row="1" Style="{StaticResource editor}" Margin="10,0,10,0" x:Name="reasonEntry"></Editor>
                                 <!--事由輸入-->
                             </Frame>

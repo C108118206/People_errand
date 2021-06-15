@@ -22,7 +22,7 @@ namespace people_errandd.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            GPSText.Text = Preferences.Get("gpsText", "定位已開啟");
+            GPSText.Text = Preferences.Get("gpsText", "定位未開啟");
             statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
             status.Text = Preferences.Get("statusNow", "無狀態");
             workOn.IsEnabled = Preferences.Get("WorkOnButtonStauts", workOn.IsEnabled = true);
@@ -172,7 +172,7 @@ namespace people_errandd.Views
             Preferences.Set("WorkOffButtonView", workOff.Opacity = 0.2);
             Preferences.Set("WorkOnText", workOnText.Opacity = 1);
             Preferences.Set("WorkOffText", workOffText.Opacity = 0.2);
-            Preferences.Set("statusBack", "F86954");
+            Preferences.Set("statusBack", "#F86954");
             statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
         }
         public void WorkOnSet()
@@ -184,7 +184,7 @@ namespace people_errandd.Views
             Preferences.Set("WorkOffButtonView", workOff.Opacity = 1);
             Preferences.Set("WorkOnText", workOnText.Opacity = 0.2);
             Preferences.Set("WorkOffText", workOffText.Opacity = 1);
-            Preferences.Set("statusBack", "98E4AA");
+            Preferences.Set("statusBack", "#98E4AA");
             statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
         }
         private async void DetailButton(object sender, EventArgs e)
