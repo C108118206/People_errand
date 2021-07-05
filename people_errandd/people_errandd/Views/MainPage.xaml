@@ -121,7 +121,7 @@
                             />
                     </Frame>
                 </StackLayout>
-                <Label x:Name="username" Text="Marry" Grid.Row="2" Style="{StaticResource name}" ></Label>
+                <Label x:Name="username" Text="" Grid.Row="2" Style="{StaticResource name}" ></Label>
                 <!--使用者姓名-->
                 <!--gps定位狀態-->
                 <!--

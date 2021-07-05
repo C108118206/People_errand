@@ -172,6 +172,7 @@ namespace people_errandd.ViewModels
                 email = _email,
                 img = ""
             };
+          
             informations.Add(information);
             try
             {

@@ -22,6 +22,7 @@ namespace people_errandd.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+            username.Text = Preferences.Get("UserName", "");
             GPSText.Text = Preferences.Get("gpsText", "定位未開啟");
             statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
             status.Text = Preferences.Get("statusNow", "無狀態");
@@ -41,7 +42,6 @@ namespace people_errandd.Views
             if (geoLocation.cts != null && !geoLocation.cts.IsCancellationRequested)
                 geoLocation.cts.Cancel();
             base.OnDisappearing();
-            //Connectivity.ConnectivityChanged -= Connectivity_ConnectivityChanged;
         }
         public void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
         {

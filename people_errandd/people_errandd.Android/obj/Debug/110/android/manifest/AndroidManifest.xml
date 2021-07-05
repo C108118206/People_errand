@@ -6,7 +6,7 @@
     the contents are regenerated.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.companyname.people_errandd" android:installLocation="preferExternal" android:versionCode="1" android:versionName="1.0">
-  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
+  <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="30" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -19,7 +19,7 @@
   <uses-feature android:name="android.hardware.camera" android:required="false" />
   <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/icon" android:label="people_errandd.Android" android:theme="@style/MainTheme" android:usesCleartextTraffic="true">
+  <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@drawable/gps" android:label="people_errandd.Android" android:theme="@style/MainTheme" android:usesCleartextTraffic="true">
     <activity android:name="crc643c61ea2ced9767ab.MainActivity" android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="people_errandd" android:theme="@style/MainTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

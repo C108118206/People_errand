@@ -62,7 +62,9 @@ namespace people_errandd.Models
         public string email { get; set; }
         public string img { get; set; }
 
+        public string department { get; set; }
 
+        public string jobtitle { get; set; }
 
     }
 }

@@ -30,6 +30,7 @@ namespace people_errandd.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            name.Text = Preferences.Get("UserName", name.Text);
             phone.Text=Preferences.Get("phone", phone.Text);
             email.Text=Preferences.Get("email", email.Text);
         }
@@ -136,6 +137,7 @@ namespace people_errandd.Views
             else
             {
                 emailValidator.Text = "";
+
             }
         }
 

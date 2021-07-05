@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CgdLSLHoh68n1iLJdrx38LKIHgzpVPdnJyf6HG7w+62Gc6TRaaw4hDb8dntSQJq0rq3ie8mROdTP/pNGLSFEhA==",
+  "dgSpecHash": "UNFjktiu2YgOWA9rKjfoNzcEOxw1afwZZwyWWvzTsiJeiUwSCn25J/NsLEgYDzz4UdFHWC5TFfX2vFWo39JWZQ==",
   "success": true,
   "projectFilePath": "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\lonel\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\lonel\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\lonel\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\lonel\\.nuget\\packages\\rg.plugins.popup\\2.0.0.12\\rg.plugins.popup.2.0.0.12.nupkg.sha512",
     "C:\\Users\\lonel\\.nuget\\packages\\sqlite-net-pcl\\1.7.335\\sqlite-net-pcl.1.7.335.nupkg.sha512",
     "C:\\Users\\lonel\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.3\\sqlitepclraw.bundle_green.2.0.3.nupkg.sha512",
     "C:\\Users\\lonel\\.nuget\\packages\\sqlitepclraw.core\\2.0.3\\sqlitepclraw.core.2.0.3.nupkg.sha512",

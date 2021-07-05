@@ -17,12 +17,11 @@ namespace people_errandd.ViewModels
             //Console.WriteLine(response.StatusCode);
             if (response.StatusCode.ToString() == "NoContent")
             {
-                return 0;
-                
+                return 0;                
             }
             else if (response.StatusCode.ToString() == "OK")
             {
-                GetResponse = await response.Content.ReadAsStringAsync();
+                GetResponse = await response.Content.ReadAsStringAsync();               
                 work workStatus = JsonConvert.DeserializeObject<work>(GetResponse);
                 return workStatus.workTypeId;
             }
@@ -48,36 +47,7 @@ namespace people_errandd.ViewModels
             {
                 return true;
             }
-            //else
-            //{
-            //    我就去死;
-            //}
             return false;
-        }
-        public bool PostWork(double _coordinateX, double _coordinateY)
-        {
-            List<work> works = new List<work>();
-            work work = new work()
-            {
-                workTypeId =0,
-                hashAccount = Preferences.Get("HashAccount", ""),
-                coordinateX = _coordinateX,
-                coordinateY = _coordinateY
-            };
-            works.Add(work);
-            var WorkRecord = JsonConvert.SerializeObject(works);
-            HttpContent content = new StringContent(WorkRecord);
-            content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-            response = client.PostAsync(basic_url + ControllerNameWorkRecord + "add_workRecord", content).Result;
-            if (response.StatusCode.ToString() == "OK")
-            {
-                return true;
-            }
-            //else
-            //{
-            //    我就去死;
-            //}
-            return false;
-        }
+        }     
     }
 }

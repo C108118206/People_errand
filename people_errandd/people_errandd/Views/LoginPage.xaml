@@ -90,6 +90,7 @@
                             <Button x:Name="button" Text="登入" Style="{StaticResource Button}" Clicked="LogInButton" Grid.Row="2" />
                             <!--登入按鈕-->
                             <Button  Text="如何使用" x:Name="question" Style="{StaticResource Question}" Clicked="QuestionButton" Grid.Row="3" />
+                            <Button  Text="繼承資料" x:Name="Test"  Style="{StaticResource Question}" Clicked="Test_Clicked"  Grid.Row="4" />
                             <!--如何使用之快顯示窗-->
                         </StackLayout>
                     </StackLayout>

@@ -9,6 +9,7 @@ using Xamarin.Forms.Xaml;
 using people_errandd.ViewModels;
 using people_errandd.Models;
 using Xamarin.Essentials;
+using Rg.Plugins.Popup.Services;
 
 namespace people_errandd.Views
 {
@@ -24,15 +25,12 @@ namespace people_errandd.Views
             //隱藏navigationpage導航欄。
             NavigationPage.SetHasNavigationBar(this, false);
             Animation ani = new Animation();
-
             if (string.IsNullOrEmpty(Preferences.Get("uuid", string.Empty)))
             {
                 Preferences.Set("uuid", Guid.NewGuid().ToString());
             }
             deviceId = Preferences.Get("uuid", "");
-            
         }
-
         private async void LogInButton(object sender, EventArgs e)
         {
             try
@@ -47,16 +45,21 @@ namespace people_errandd.Views
                     }
                     if (await Login.ConfirmCompanyHash(company.Text.Trim()))
                     {
-                        if (!await Login.ConfirmUUID(deviceId))
+                        if (await Login.ConfirmUUID(deviceId))
                         {
-                            await Login.SetUUID();
-                        }
-                        if (string.IsNullOrEmpty(Preferences.Get("Login", string.Empty)))
-                        {
+                            if (!await Login.Reviewed())
+                            {
+                                await DisplayAlert("審核中", "尚未審核完畢,請稍後再試", "確認");
+                                return;
+                            }
+                            Navigation.InsertPageBefore(new MainPage(), this);
+                            await Navigation.PopAsync();
                             Preferences.Set("HashAccount", await Login.GetHashAccount(deviceId));
                         }
-                        Navigation.InsertPageBefore(new MainPage(), this);
-                        await Navigation.PopAsync();
+                        else
+                        {
+                            await PopupNavigation.Instance.PushAsync(new VerificationPage("首次登入"));
+                        }                        
                     }
                     else
                     {
@@ -87,14 +90,16 @@ namespace people_errandd.Views
         }
         protected async override void OnAppearing()
         {
-
             base.OnAppearing();
             transition.Opacity = 0;
             await transition.FadeTo(1, 2500);
             await image.ScaleTo(1.5, 1000, Easing.CubicIn);
             await image.ScaleTo(1, 1000, Easing.CubicOut);
-
         }
 
+        private async void Test_Clicked(object sender, EventArgs e)
+        {
+            await PopupNavigation.Instance.PushAsync(new VerificationPage("繼承資料"));
+        }
     }
 }
