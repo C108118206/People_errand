@@ -11,12 +11,12 @@ namespace people_errandd.Views
     public partial class TakeDayOff : ContentPage
     {
         private bool allowTap = true;
-        private static int typeId;
+        //private static int typeId;
         readonly TakeDayOffViewModel takeDayOff = new TakeDayOffViewModel();
         public TakeDayOff()
         {
             InitializeComponent();
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#B4D3EA");
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#EDEEEF");
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
             //var dayoffList = new List<string>();
             //dayoffList.Add("事假");
@@ -47,71 +47,7 @@ namespace people_errandd.Views
                 allowTap = true;
             }
         }
-        private async void EnterButton(object sender, EventArgs e)
-        {
-            try
-            {
-                if (allowTap)
-                {
-                    allowTap = false;
-                    switch (leaveType.SelectedItem.ToString())
-                    {
-                        case "事假":
-                            typeId = 1;
-                            break;
-                        case "病假":
-                            typeId = 2;
-                            break;
-                        case "喪假":
-                            typeId = 3;
-                            break;
-                        case "生理假":
-                            typeId = 4;
-                            break;
-                        case "流產假":
-                            typeId = 5;
-                            break;
-                        case "產前假":
-                            typeId = 6;
-                            break;
-                        case "陪產假":
-                            typeId = 7;
-                            break;
-                        default:
-                            typeId = 0;
-                            break;
-                    }
-                    DateTime StartDateTime = startDatePicker.Date + startTimePicker.Time;
-                    DateTime EndDateTime = endDatePicker.Date + endTimePicker.Time;
-                    if (await takeDayOff.PostDayOffRecord(StartDateTime, EndDateTime, typeId, reason.Text))
-                    {
-                        await DisplayAlert("", "申請成功", "OK");
-                    }
-                    else
-                    {
-                        await DisplayAlert("Error", "錯誤", "OK");
-                    }
 
-                    await App.DataBase.SaveRecordAsync(new DayOffRecordModels
-                    {
-                        DayOffType = leaveType.SelectedItem.ToString(),
-                        StartTime = StartDateTime,
-                        EndTime = EndDateTime,
-                        Reason = reason.Text,
-                        Date = DateTime.Now.ToString()
-                    }) ;
-                }
-            }
-            catch (Exception)
-            {
-                await DisplayAlert("", "格式錯誤", "OK");               
-            }
-            finally
-            {
-                allowTap = true;
-            }
-
-        }
 
         private void AlldaySwitch_Toggled(object sender, ToggledEventArgs e)
         {
@@ -126,6 +62,40 @@ namespace people_errandd.Views
                 endTimePicker.IsVisible = true;              
             }
         }
+
+       private void Personal(object sender, CheckedChangedEventArgs e)
+        {
+            leavetype.Text = "事假";
+        }
+        private void Sick(object sender, CheckedChangedEventArgs e)
+        {
+            leavetype.Text = "病假";
+        }
+        private void Bereavement(object sender, CheckedChangedEventArgs e)
+        {
+            leavetype.Text = "喪假";
+        }
+        private void Maternity(object sender, CheckedChangedEventArgs e)
+        {
+            leavetype.Text = "產假";
+        }
+        private void Physiological(object sender, CheckedChangedEventArgs e)
+        {
+            leavetype.Text = "生理假";
+        }
+        private void Abortion(object sender, CheckedChangedEventArgs e)
+        {
+            leavetype.Text = "流產假";
+        }
+        private void Prenatal(object sender, CheckedChangedEventArgs e)
+        {
+            leavetype.Text = "產前假";
+        }
+        private void Paternity(object sender, CheckedChangedEventArgs e)
+        {
+            leavetype.Text = "陪產假";
+        }
+
     }
 
 }
