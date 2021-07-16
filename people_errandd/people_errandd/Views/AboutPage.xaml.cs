@@ -23,7 +23,7 @@ namespace people_errandd.Views
         {
             //this.BindingContext = new InformationViewModel();
             InitializeComponent();
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#8CC5D7");
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#EDEEEF");
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
             
         }

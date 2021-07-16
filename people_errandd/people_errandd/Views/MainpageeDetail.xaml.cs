@@ -21,7 +21,7 @@ namespace people_errandd.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            await transition.TranslateTo(0, -740, 500, Easing.CubicIn);
+            await transition.TranslateTo(0, -750, 250, Easing.CubicIn);
             workOn.IsEnabled = Preferences.Get("WorkOnButtonStauts", workOn.IsEnabled = true);
             workOff.IsEnabled = Preferences.Get("WorkOffButtonStauts", workOff.IsEnabled = false);
             workOn.Opacity = Preferences.Get("WorkOnButtonView", workOn.Opacity = 1);

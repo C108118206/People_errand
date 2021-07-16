@@ -151,12 +151,6 @@
     <BundleResource Include="Resources\p1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\goouttt.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\notes.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\nerd.png" />
   </ItemGroup>
   <ItemGroup>
@@ -172,67 +166,10 @@
     <BundleResource Include="Resources\mail.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\lock.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\date.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\audit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\audit2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\meeting.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\businessmen.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\work.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\strategy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\a18.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\in2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\message.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\select.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\back2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\sun.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\mon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\thu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\wed.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\tue.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\fri.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\sat.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\more1.png" />
@@ -241,28 +178,10 @@
     <BundleResource Include="Resources\p2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\schedule.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\worker.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\a14.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\logintitle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\loginpage2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\schedule2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\gps.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\schedule3.png" />
@@ -292,18 +211,51 @@
     <BundleResource Include="Resources\send.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\search1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\search2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\pickerdown.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\gps1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gps2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\adoption.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\angel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\blood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dizziness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fever.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\finish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\abortion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\propaganda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\megaphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Maternity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Prenatal.png" />
   </ItemGroup>
 </Project>
