@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.deps.json
 D:\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.dll
 D:\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\ref\people_errandd.dll
@@ -21,7 +22,6 @@ D:\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\XamlC.st
 D:\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.dll
 D:\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\ref\people_errandd.dll
 D:\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.pdb
-<<<<<<< HEAD
 D:\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\VerificationPage.xaml.g.cs
 =======
 C:\Users\lmh_flower\source\repos\people_errand_final\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.deps.json
@@ -149,3 +149,4 @@ C:\Users\lmh_flower\source\repos\people_errand_v\People_errand\people_errandd\pe
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\VerificationPage.xaml.g.cs
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\AnnouncementDetail.xaml.g.cs
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\Onboarding.xaml.g.cs
+>>>>>>> 8cca4347cbd1a959e46930fc8c9d815680d31e52
