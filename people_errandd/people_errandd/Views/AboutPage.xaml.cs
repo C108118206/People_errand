@@ -24,7 +24,7 @@ namespace people_errandd.Views
             //this.BindingContext = new InformationViewModel();
             InitializeComponent();
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#EDEEEF");
-            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
+            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex("#555555");
             
         }
         protected override void OnAppearing()

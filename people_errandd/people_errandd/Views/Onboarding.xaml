@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             BackgroundColor="White"
+             x:Class="people_errandd.Views.Onboarding">
+    
+    <ContentPage.Content>
+        <Grid  RowDefinitions="1.5*, 1*">
+            <CarouselView Grid.Row="0" Grid.RowSpan="2" ItemsSource="{Binding MyEvents}" IndicatorView="indicatorView">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Image Source="{Binding Image}" HeightRequest="250" HorizontalOptions="Center" Margin="0,100,0,0"/>
+                            <StackLayout Grid.Row="1" HorizontalOptions="Center" Margin="0,40,0,0">
+                                <Label Text="{Binding Title}" TextColor="#555555" FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                <Label Text="{Binding Content}" TextColor="#8D8D8D" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,5,0,0"/>
+                            </StackLayout>
+                           
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <Grid Grid.Row="1">
+
+                <IndicatorView
+                    Margin="0,-100,0,0"
+                    x:Name="indicatorView"
+                    HorizontalOptions="Center"
+                    IndicatorColor="#DFDFDF"
+                    SelectedIndicatorColor="#555555">
+                </IndicatorView>
+
+                
+                        <Button
+                        
+                        Margin="0,20,0,0"
+                            Clicked="Button_Clicked"
+                            CornerRadius="5"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="White"
+                            Text="開始使用"
+                            BackgroundColor="#5C76B1"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            WidthRequest="220" />
+                   
+
+            </Grid>
+            <BoxView
+                x:Name="FadeBox"
+                Grid.RowSpan="2"
+                InputTransparent="True"
+                Opacity="0"
+                Color="White" />
+           
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

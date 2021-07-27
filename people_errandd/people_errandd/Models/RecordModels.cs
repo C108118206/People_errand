@@ -12,7 +12,9 @@ namespace people_errandd.Models
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public string status { get; set; }
+        public string statuscolor { get; set; }
         public string time { get; set; }
+        public string image { get; set; }
     }
     public class DayOffRecordModels
     {

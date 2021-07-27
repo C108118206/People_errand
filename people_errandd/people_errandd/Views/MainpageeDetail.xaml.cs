@@ -47,9 +47,11 @@ namespace people_errandd.Views
 
                                 await DisplayAlert("", "上班打卡成功", "確定");
                                 await App.DataBase.SaveRecordAsync(new WorkRecordModels
-                                {
+                                {         
                                     status = "上班",
-                                    time = DateTime.Now.ToString()
+                                    statuscolor = "#5C76B1",
+                                    time = DateTime.Now.ToString("t"),
+                                    image = "worker.png"
                                 });
                                 WorkOnSet();
                             }
@@ -101,8 +103,11 @@ namespace people_errandd.Views
                                 await DisplayAlert("", "下班打卡成功", "確定");
                                 await App.DataBase.SaveRecordAsync(new WorkRecordModels
                                 {
+                                   
                                     status = "下班",
-                                    time = DateTime.Now.ToString()
+                                    statuscolor = "#CA4848",
+                                    time = DateTime.Now.ToString("t"),
+                                    image = "workeroff.png"
                                 });
                                 WorkOffSet();
                             }

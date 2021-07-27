@@ -17,7 +17,7 @@ namespace people_errandd.Views
         {
             InitializeComponent();
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#EDEEEF");
-            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
+            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex("#555555");
             //var dayoffList = new List<string>();
             //dayoffList.Add("事假");
             //dayoffList.Add("病假");
@@ -66,30 +66,37 @@ namespace people_errandd.Views
        private void Personal(object sender, CheckedChangedEventArgs e)
         {
             leavetype.Text = "事假";
+
         }
         private void Sick(object sender, CheckedChangedEventArgs e)
         {
             leavetype.Text = "病假";
+      
         }
         private void Bereavement(object sender, CheckedChangedEventArgs e)
         {
             leavetype.Text = "喪假";
+
         }
         private void Maternity(object sender, CheckedChangedEventArgs e)
         {
             leavetype.Text = "產假";
+
         }
         private void Physiological(object sender, CheckedChangedEventArgs e)
         {
             leavetype.Text = "生理假";
+   
         }
         private void Abortion(object sender, CheckedChangedEventArgs e)
         {
             leavetype.Text = "流產假";
+
         }
         private void Prenatal(object sender, CheckedChangedEventArgs e)
         {
             leavetype.Text = "產前假";
+
         }
         private void Paternity(object sender, CheckedChangedEventArgs e)
         {

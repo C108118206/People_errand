@@ -15,11 +15,11 @@
     <!--<item name="colorAccent">#FF4081</item>-->
     <item name="windowActionBar">false</item>
     <item name="windowActionModeOverlay">true</item>
-    <item name="android:actionMenuTextColor">#166BA2</item>
+    <item name="android:actionMenuTextColor">#5C76B1</item>
 
     <!-- <item name="android:textColorSecondary">#166BA2</item>  全部底線的顏色-->
 
-    <item name="android:statusBarColor">#263959</item>
+    <item name="android:statusBarColor">#5C76B1</item>
     <item name="colorAccent">@color/my_color</item>
 
     <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
@@ -28,23 +28,23 @@
 
 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
-    <item name="colorAccent">#7CBFE7</item>
+    <item name="colorAccent">#5C76B1</item>
   </style>
   <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
-    <item name="android:headerBackground">#7CBFE7</item>
+    <item name="android:headerBackground">#5C76B1</item>
   </style>
   <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
     <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
   </style>
 
   <style name="TimePickerDialogTheme" parent="@style/Theme.AppCompat.Light.Dialog">
-    <item name="colorAccent">#7CBFE7</item>
+    <item name="colorAccent">#5C76B1</item>
     <item name="android:timePickerStyle">@style/TimePickerDialogStyle</item>
   </style>
   <style name="TimePickerDialogStyle" parent="@android:style/Widget.Material.Light.TimePicker">
-    <item name="colorAccent">#7CBFE7</item>
+    <item name="colorAccent">#5C76B1</item>
     <item name="android:timePickerMode">clock</item>
-    <item name="android:headerBackground">#7CBFE7</item>
+    <item name="android:headerBackground">#5C76B1</item>
   </style>
 
 </resources>

@@ -37,7 +37,7 @@ namespace people_errandd.Views
                     fri.Text = dt.AddDays(5).ToString("dd");
                     sat.Text = dt.AddDays(6).ToString("dd");
 
-                    sun.BackgroundColor = Color.FromHex("#7CBFE7");
+                    sun.BackgroundColor = Color.FromHex("#5C76B1");
                     sun.TextColor = Color.FromHex("#FFFFFF");
                     break;
                 case "星期一":
@@ -49,7 +49,7 @@ namespace people_errandd.Views
                     fri.Text = dt.AddDays(4).ToString("dd");
                     sat.Text = dt.AddDays(5).ToString("dd");
 
-                    mon.BackgroundColor = Color.FromHex("#7CBFE7");
+                    mon.BackgroundColor = Color.FromHex("#5C76B1");
                     mon.TextColor = Color.FromHex("#FFFFFF");
                     break;
                 case "星期二":
@@ -61,7 +61,7 @@ namespace people_errandd.Views
                     fri.Text = dt.AddDays(3).ToString("dd");
                     sat.Text = dt.AddDays(4).ToString("dd");
                     
-                    tue.BackgroundColor = Color.FromHex("#7CBFE7");
+                    tue.BackgroundColor = Color.FromHex("#5C76B1");
                     tue.TextColor = Color.FromHex("#FFFFFF");
                     
                     break;
@@ -74,7 +74,7 @@ namespace people_errandd.Views
                     fri.Text = dt.AddDays(2).ToString("dd");
                     sat.Text = dt.AddDays(3).ToString("dd");
                    
-                    wed.BackgroundColor = Color.FromHex("#7CBFE7");
+                    wed.BackgroundColor = Color.FromHex("#5C76B1");
                     wed.TextColor = Color.FromHex("#FFFFFF");
                    
                     break;
@@ -87,7 +87,7 @@ namespace people_errandd.Views
                     fri.Text = dt.AddDays(1).ToString("dd");
                     sat.Text = dt.AddDays(2).ToString("dd");
                     
-                        thu.BackgroundColor = Color.FromHex("#7CBFE7");
+                        thu.BackgroundColor = Color.FromHex("#5C76B1");
                         thu.TextColor = Color.FromHex("#FFFFFF");
                    
                     break;
@@ -100,7 +100,7 @@ namespace people_errandd.Views
                     fri.Text = dt.AddDays(0).ToString("dd");
                     sat.Text = dt.AddDays(1).ToString("dd");
                    
-                    fri.BackgroundColor = Color.FromHex("#7CBFE7");
+                    fri.BackgroundColor = Color.FromHex("#5C76B1");
                     fri.TextColor = Color.FromHex("#FFFFFF");
                     
                     break;
@@ -113,7 +113,7 @@ namespace people_errandd.Views
                     fri.Text = dt.AddDays(-1).ToString("dd");
                     sat.Text = dt.AddDays(0).ToString("dd");
                    
-                    sat.BackgroundColor = Color.FromHex("#7CBFE7");
+                    sat.BackgroundColor = Color.FromHex("#5C76B1");
                     sat.TextColor = Color.FromHex("#FFFFFF");
                     
                     break;
@@ -124,7 +124,7 @@ namespace people_errandd.Views
             
             InitializeComponent();
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#EDEEEF");
-            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
+            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex("#555555");
            
            
         }
@@ -184,20 +184,22 @@ namespace people_errandd.Views
 
         private async void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
         {
-            sun.BackgroundColor = Color.FromHex("#EDEEEF");
-            mon.BackgroundColor = Color.FromHex("#EDEEEF");
-            tue.BackgroundColor = Color.FromHex("#EDEEEF");
-            wed.BackgroundColor = Color.FromHex("#EDEEEF");
-            thu.BackgroundColor = Color.FromHex("#EDEEEF");
-            fri.BackgroundColor = Color.FromHex("#EDEEEF");
-            sat.BackgroundColor = Color.FromHex("#EDEEEF");
-            sun.TextColor = Color.FromHex("#000000");
-            mon.TextColor = Color.FromHex("#000000");
-            tue.TextColor = Color.FromHex("#000000");
-            wed.TextColor = Color.FromHex("#000000");
-            thu.TextColor = Color.FromHex("#000000");
-            fri.TextColor = Color.FromHex("#000000");
-            sat.TextColor = Color.FromHex("#000000");
+
+
+            sun.BackgroundColor = Color.FromHex("#FFFFFF");
+            mon.BackgroundColor = Color.FromHex("#FFFFFF");
+            tue.BackgroundColor = Color.FromHex("#FFFFFF");
+            wed.BackgroundColor = Color.FromHex("#FFFFFF");
+            thu.BackgroundColor = Color.FromHex("#FFFFFF");
+            fri.BackgroundColor = Color.FromHex("#FFFFFF");
+            sat.BackgroundColor = Color.FromHex("#FFFFFF");
+            sun.TextColor = Color.FromHex("#555555");
+            mon.TextColor = Color.FromHex("#555555");
+            tue.TextColor = Color.FromHex("#555555");
+            wed.TextColor = Color.FromHex("#555555");
+            thu.TextColor = Color.FromHex("#555555");
+            fri.TextColor = Color.FromHex("#555555");
+            sat.TextColor = Color.FromHex("#555555");
 
             // DisplayAlert("", DatePicker.Date.ToString("yyyy-MM-dd-HH-mm-ss"), "fuck");
             Date = DatePicker.Date;
@@ -226,7 +228,7 @@ namespace people_errandd.Views
                     fri.Text = dt.AddDays(5).ToString("dd");
                     sat.Text = dt.AddDays(6).ToString("dd");
                    
-                     sun.BackgroundColor = Color.FromHex("#7CBFE7");
+                     sun.BackgroundColor = Color.FromHex("#5C76B1");
                      sun.TextColor = Color.FromHex("#FFFFFF");
                    
                     break;
@@ -239,7 +241,7 @@ namespace people_errandd.Views
                     fri.Text = dt.AddDays(4).ToString("dd");
                     sat.Text = dt.AddDays(5).ToString("dd");
                     
-                     mon.BackgroundColor = Color.FromHex("#7CBFE7");
+                     mon.BackgroundColor = Color.FromHex("#5C76B1");
                      mon.TextColor = Color.FromHex("#FFFFFF");
                     
                      break;
@@ -253,7 +255,7 @@ namespace people_errandd.Views
                     sat.Text = dt.AddDays(4).ToString("dd");
                     
                     
-                     tue.BackgroundColor = Color.FromHex("#7CBFE7");
+                     tue.BackgroundColor = Color.FromHex("#5C76B1");
                      tue.TextColor = Color.FromHex("#FFFFFF");
                     
                      break;
@@ -266,7 +268,7 @@ namespace people_errandd.Views
                     fri.Text = dt.AddDays(2).ToString("dd");
                     sat.Text = dt.AddDays(3).ToString("dd");
                     
-                    wed.BackgroundColor = Color.FromHex("#7CBFE7");
+                    wed.BackgroundColor = Color.FromHex("#5C76B1");
                     wed.TextColor = Color.FromHex("#FFFFFF");
                     
                     break;
@@ -279,7 +281,7 @@ namespace people_errandd.Views
                     fri.Text = dt.AddDays(1).ToString("dd");
                     sat.Text = dt.AddDays(2).ToString("dd");
                     
-                     thu.BackgroundColor = Color.FromHex("#7CBFE7");
+                     thu.BackgroundColor = Color.FromHex("#5C76B1");
                      thu.TextColor = Color.FromHex("#FFFFFF");
                    
                     break;
@@ -292,7 +294,7 @@ namespace people_errandd.Views
                     fri.Text = dt.AddDays(0).ToString("dd");
                     sat.Text = dt.AddDays(1).ToString("dd");
                    
-                    fri.BackgroundColor = Color.FromHex("#7CBFE7");
+                    fri.BackgroundColor = Color.FromHex("#5C76B1");
                     fri.TextColor = Color.FromHex("#FFFFFF");
                     
                     break;
@@ -306,7 +308,7 @@ namespace people_errandd.Views
                     sat.Text = dt.AddDays(0).ToString("dd");
                    
                    
-                    sat.BackgroundColor = Color.FromHex("#7CBFE7");
+                    sat.BackgroundColor = Color.FromHex("#5C76B1");
                     sat.TextColor = Color.FromHex("#FFFFFF");
                     
                     break;
@@ -314,129 +316,129 @@ namespace people_errandd.Views
             }
         private void SunButton(object sender, EventArgs e)
         {
-            sun.BackgroundColor = Color.FromHex("#7CBFE7");
+            sun.BackgroundColor = Color.FromHex("#5C76B1");
             sun.TextColor = Color.FromHex("#FFFFFF");
-            mon.BackgroundColor = Color.FromHex("#EDEEEF");
-            mon.TextColor = Color.FromHex("#000000");
-            tue.BackgroundColor = Color.FromHex("#EDEEEF");
-            tue.TextColor = Color.FromHex("#000000");
-            wed.BackgroundColor = Color.FromHex("#EDEEEF");
-            wed.TextColor = Color.FromHex("#000000");
-            thu.BackgroundColor = Color.FromHex("#EDEEEF");
-            thu.TextColor = Color.FromHex("#000000");
-            fri.BackgroundColor = Color.FromHex("#EDEEEF");
-            fri.TextColor = Color.FromHex("#000000");
-            sat.BackgroundColor = Color.FromHex("#EDEEEF");
-            sat.TextColor = Color.FromHex("#000000");
+            mon.BackgroundColor = Color.FromHex("#FFFFFF");
+            mon.TextColor = Color.FromHex("#555555");
+            tue.BackgroundColor = Color.FromHex("#FFFFFF");
+            tue.TextColor = Color.FromHex("#555555");
+            wed.BackgroundColor = Color.FromHex("#FFFFFF");
+            wed.TextColor = Color.FromHex("#555555");
+            thu.BackgroundColor = Color.FromHex("#FFFFFF");
+            thu.TextColor = Color.FromHex("#555555");
+            fri.BackgroundColor = Color.FromHex("#FFFFFF");
+            fri.TextColor = Color.FromHex("#555555");
+            sat.BackgroundColor = Color.FromHex("#FFFFFF");
+            sat.TextColor = Color.FromHex("#555555");
 
 
 
         }
         private void MonButton(object sender, EventArgs e)
         {
-            mon.BackgroundColor = Color.FromHex("#7CBFE7");
+            mon.BackgroundColor = Color.FromHex("#5C76B1");
             mon.TextColor = Color.FromHex("#FFFFFF");
-            sun.BackgroundColor = Color.FromHex("#EDEEEF");
-            sun.TextColor = Color.FromHex("#000000");
-            tue.BackgroundColor = Color.FromHex("#EDEEEF");
-            tue.TextColor = Color.FromHex("#000000");
-            wed.BackgroundColor = Color.FromHex("#EDEEEF");
-            wed.TextColor = Color.FromHex("#000000");
-            thu.BackgroundColor = Color.FromHex("#EDEEEF");
-            thu.TextColor = Color.FromHex("#000000");
-            fri.BackgroundColor = Color.FromHex("#EDEEEF");
-            fri.TextColor = Color.FromHex("#000000");
-            sat.BackgroundColor = Color.FromHex("#EDEEEF");
-            sat.TextColor = Color.FromHex("#000000");
+            sun.BackgroundColor = Color.FromHex("#FFFFFF");
+            sun.TextColor = Color.FromHex("#555555");
+            tue.BackgroundColor = Color.FromHex("#FFFFFF");
+            tue.TextColor = Color.FromHex("#555555");
+            wed.BackgroundColor = Color.FromHex("#FFFFFF");
+            wed.TextColor = Color.FromHex("#555555");
+            thu.BackgroundColor = Color.FromHex("#FFFFFF");
+            thu.TextColor = Color.FromHex("#555555");
+            fri.BackgroundColor = Color.FromHex("#FFFFFF");
+            fri.TextColor = Color.FromHex("#555555");
+            sat.BackgroundColor = Color.FromHex("#FFFFFF");
+            sat.TextColor = Color.FromHex("#555555");
 
         }
         private void TueButton(object sender, EventArgs e)
         {
-            tue.BackgroundColor = Color.FromHex("#7CBFE7");
+            tue.BackgroundColor = Color.FromHex("#5C76B1");
             tue.TextColor = Color.FromHex("#FFFFFF");
-            sun.BackgroundColor = Color.FromHex("#EDEEEF");
-            sun.TextColor = Color.FromHex("#000000");
-            mon.BackgroundColor = Color.FromHex("#EDEEEF");
-            mon.TextColor = Color.FromHex("#000000");
-            wed.BackgroundColor = Color.FromHex("#EDEEEF");
-            wed.TextColor = Color.FromHex("#000000");
-            thu.BackgroundColor = Color.FromHex("#EDEEEF");
-            thu.TextColor = Color.FromHex("#000000");
-            fri.BackgroundColor = Color.FromHex("#EDEEEF");
-            fri.TextColor = Color.FromHex("#000000");
-            sat.BackgroundColor = Color.FromHex("#EDEEEF");
-            sat.TextColor = Color.FromHex("#000000");
+            sun.BackgroundColor = Color.FromHex("#FFFFFF");
+            sun.TextColor = Color.FromHex("#555555");
+            mon.BackgroundColor = Color.FromHex("#FFFFFF");
+            mon.TextColor = Color.FromHex("#555555");
+            wed.BackgroundColor = Color.FromHex("#FFFFFF");
+            wed.TextColor = Color.FromHex("#555555");
+            thu.BackgroundColor = Color.FromHex("#FFFFFF");
+            thu.TextColor = Color.FromHex("#555555");
+            fri.BackgroundColor = Color.FromHex("#FFFFFF");
+            fri.TextColor = Color.FromHex("#555555");
+            sat.BackgroundColor = Color.FromHex("#FFFFFF");
+            sat.TextColor = Color.FromHex("#555555");
 
         }
         private void WedButton(object sender, EventArgs e)
         {
-            wed.BackgroundColor = Color.FromHex("#7CBFE7");
+            wed.BackgroundColor = Color.FromHex("#5C76B1");
             wed.TextColor = Color.FromHex("#FFFFFF");
-            sun.BackgroundColor = Color.FromHex("#EDEEEF");
-            sun.TextColor = Color.FromHex("#000000");
-            mon.BackgroundColor = Color.FromHex("#EDEEEF");
-            mon.TextColor = Color.FromHex("#000000");
-            tue.BackgroundColor = Color.FromHex("#EDEEEF");
-            tue.TextColor = Color.FromHex("#000000");
-            thu.BackgroundColor = Color.FromHex("#EDEEEF");
-            thu.TextColor = Color.FromHex("#000000");
-            fri.BackgroundColor = Color.FromHex("#EDEEEF");
-            fri.TextColor = Color.FromHex("#000000");
-            sat.BackgroundColor = Color.FromHex("#EDEEEF");
-            sat.TextColor = Color.FromHex("#000000");
+            sun.BackgroundColor = Color.FromHex("#FFFFFF");
+            sun.TextColor = Color.FromHex("#555555");
+            mon.BackgroundColor = Color.FromHex("#FFFFFF");
+            mon.TextColor = Color.FromHex("#555555");
+            tue.BackgroundColor = Color.FromHex("#FFFFFF");
+            tue.TextColor = Color.FromHex("#555555");
+            thu.BackgroundColor = Color.FromHex("#FFFFFF");
+            thu.TextColor = Color.FromHex("#555555");
+            fri.BackgroundColor = Color.FromHex("#FFFFFF");
+            fri.TextColor = Color.FromHex("#555555");
+            sat.BackgroundColor = Color.FromHex("#FFFFFF");
+            sat.TextColor = Color.FromHex("#555555");
 
         }
         private void ThuButton(object sender, EventArgs e)
         {
-            thu.BackgroundColor = Color.FromHex("#7CBFE7");
+            thu.BackgroundColor = Color.FromHex("#5C76B1");
             thu.TextColor = Color.FromHex("#FFFFFF");
-            sun.BackgroundColor = Color.FromHex("#EDEEEF");
+            sun.BackgroundColor = Color.FromHex("#FFFFFF");
             sun.TextColor = Color.FromHex("#000000");
-            mon.BackgroundColor = Color.FromHex("#EDEEEF");
+            mon.BackgroundColor = Color.FromHex("#FFFFFF");
             mon.TextColor = Color.FromHex("#000000");
-            tue.BackgroundColor = Color.FromHex("#EDEEEF");
+            tue.BackgroundColor = Color.FromHex("#FFFFFF");
             tue.TextColor = Color.FromHex("#000000");
-            wed.BackgroundColor = Color.FromHex("#EDEEEF");
+            wed.BackgroundColor = Color.FromHex("#FFFFFF");
             wed.TextColor = Color.FromHex("#000000");
-            fri.BackgroundColor = Color.FromHex("#EDEEEF");
+            fri.BackgroundColor = Color.FromHex("#FFFFFF");
             fri.TextColor = Color.FromHex("#000000");
-            sat.BackgroundColor = Color.FromHex("#EDEEEF");
+            sat.BackgroundColor = Color.FromHex("#FFFFFF");
             sat.TextColor = Color.FromHex("#000000");
 
         }
         private void FriButton(object sender, EventArgs e)
         {
-            fri.BackgroundColor = Color.FromHex("#7CBFE7");
+            fri.BackgroundColor = Color.FromHex("#5C76B1");
             fri.TextColor = Color.FromHex("#FFFFFF");
-            sun.BackgroundColor = Color.FromHex("#EDEEEF");
+            sun.BackgroundColor = Color.FromHex("#FFFFFF");
             sun.TextColor = Color.FromHex("#000000");
-            mon.BackgroundColor = Color.FromHex("#EDEEEF");
+            mon.BackgroundColor = Color.FromHex("#FFFFFF");
             mon.TextColor = Color.FromHex("#000000");
-            tue.BackgroundColor = Color.FromHex("#EDEEEF");
+            tue.BackgroundColor = Color.FromHex("#FFFFFF");
             tue.TextColor = Color.FromHex("#000000");
-            wed.BackgroundColor = Color.FromHex("#EDEEEF");
+            wed.BackgroundColor = Color.FromHex("#FFFFFF");
             wed.TextColor = Color.FromHex("#000000");
-            thu.BackgroundColor = Color.FromHex("#EDEEEF");
+            thu.BackgroundColor = Color.FromHex("#FFFFFF");
             thu.TextColor = Color.FromHex("#000000");
-            sat.BackgroundColor = Color.FromHex("#EDEEEF");
+            sat.BackgroundColor = Color.FromHex("#FFFFFF");
             sat.TextColor = Color.FromHex("#000000");
 
         }
         private void SatButton(object sender, EventArgs e)
         {
-            sat.BackgroundColor = Color.FromHex("#7CBFE7");
+            sat.BackgroundColor = Color.FromHex("#5C76B1");
             sat.TextColor = Color.FromHex("#FFFFFF");
-            sun.BackgroundColor = Color.FromHex("#EDEEEF");
+            sun.BackgroundColor = Color.FromHex("#FFFFFF");
             sun.TextColor = Color.FromHex("#000000");
-            mon.BackgroundColor = Color.FromHex("#EDEEEF");
+            mon.BackgroundColor = Color.FromHex("#FFFFFF");
             mon.TextColor = Color.FromHex("#000000");
-            tue.BackgroundColor = Color.FromHex("#EDEEEF");
+            tue.BackgroundColor = Color.FromHex("#FFFFFF");
             tue.TextColor = Color.FromHex("#000000");
-            wed.BackgroundColor = Color.FromHex("#EDEEEF");
+            wed.BackgroundColor = Color.FromHex("#FFFFFF");
             wed.TextColor = Color.FromHex("#000000");
-            thu.BackgroundColor = Color.FromHex("#EDEEEF");
+            thu.BackgroundColor = Color.FromHex("#FFFFFF");
             thu.TextColor = Color.FromHex("#000000");
-            fri.BackgroundColor = Color.FromHex("#EDEEEF");
+            fri.BackgroundColor = Color.FromHex("#FFFFFF");
             fri.TextColor = Color.FromHex("#000000");
 
         }

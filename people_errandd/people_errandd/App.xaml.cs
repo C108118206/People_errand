@@ -40,6 +40,7 @@ namespace people_errandd
             InitializeComponent();
             CultureInfo ChineseCulture = new CultureInfo("zh-TW");
             CultureInfo.DefaultThreadCurrentCulture = ChineseCulture;
+            Device.SetFlags(new[] { "Expander_Experimental" });
             MainPage = new SharedTransitionNavigationPage(new LoginPage());
             //NavigationPage
         }

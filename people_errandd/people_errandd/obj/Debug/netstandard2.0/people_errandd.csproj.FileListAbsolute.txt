@@ -147,3 +147,5 @@ C:\Users\lmh_flower\source\repos\people_errand_v\People_errand\people_errandd\pe
 C:\Users\lmh_flower\source\repos\people_errand_v\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\XamlC.stamp
 >>>>>>> 13328dad02d61ae2e1b38c0ce0e4525a91c40fdc
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\VerificationPage.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\AnnouncementDetail.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\Onboarding.xaml.g.cs

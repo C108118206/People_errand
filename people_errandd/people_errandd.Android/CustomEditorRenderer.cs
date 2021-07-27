@@ -1,7 +1,9 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
+using Android.Text;
 using Android.Views;
 using Android.Widget;
 using people_errandd.Droid;
@@ -19,15 +21,19 @@ namespace people_errandd.Droid
     {
         public CustomEditorRenderer(Context context) : base(context)
         {
-
         }
 
         protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
         {
             base.OnElementChanged(e);
-            if (e.OldElement == null)
+
+            if (Control != null)
             {
-                Control.Background = null;
+                GradientDrawable gd = new GradientDrawable();
+                gd.SetColor(global::Android.Graphics.Color.Transparent);
+                this.Control.SetBackgroundDrawable(gd);
+                this.Control.SetRawInputType(InputTypes.TextFlagNoSuggestions);
+                //Control.SetHintTextColor(ColorStateList.ValueOf(global::Android.Graphics.Color.Black));
             }
         }
     }

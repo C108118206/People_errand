@@ -15,7 +15,7 @@ namespace people_errandd.Views
         {
             InitializeComponent();
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#EDEEEF");
-            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
+            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex("#555555");
         }
         private async void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         {
@@ -82,6 +82,41 @@ namespace people_errandd.Views
                 startTimePicker.IsVisible = true;
                 endTimePicker.IsVisible = true;
             }
+        }
+        private void VistitClient(object sender, CheckedChangedEventArgs e)
+        {
+            goouttype.Text = "拜訪客戶";
+           
+        }
+        private void VistitManuacturer(object sender, CheckedChangedEventArgs e)
+        {
+            goouttype.Text = "拜訪廠商";
+          
+        }
+        private void Demo(object sender, CheckedChangedEventArgs e)
+        {
+            goouttype.Text = "Demo";
+        
+        }
+        private void ParticipateActivity(object sender, CheckedChangedEventArgs e)
+        {
+            goouttype.Text = "參加活動";
+
+        }
+        private void Meeting(object sender, CheckedChangedEventArgs e)
+        {
+            goouttype.Text = "會議";
+           
+        }
+        private void CustomerService(object sender, CheckedChangedEventArgs e)
+        {
+            goouttype.Text = "客戶服務";
+         
+        }
+        private void Other(object sender, CheckedChangedEventArgs e)
+        {
+            goouttype.Text = "其他";
+           
         }
     }
 }
