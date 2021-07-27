@@ -25,5 +25,12 @@
     "C:\\Users\\lmh_flower\\.nuget\\packages\\xamarin.forms\\5.0.0.2083\\xamarin.forms.5.0.0.2083.nupkg.sha512",
     "C:\\Users\\lmh_flower\\.nuget\\packages\\xamarin.plugin.sharedtransitions\\2.4.0\\xamarin.plugin.sharedtransitions.2.4.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "讀取快取檔案 C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd.iOS\\obj\\project.nuget.cache 時發生問題: Unexpected character encountered while parsing value: <. Path '', line 0, position 0."
+    }
+  ]
 }

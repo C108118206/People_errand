@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Xamarin.Forms;
 using people_errandd.Models;
 using people_errandd.ViewModels;
@@ -771,3 +771,5 @@ namespace people_errandd.Views
 
 
 }
+
+﻿

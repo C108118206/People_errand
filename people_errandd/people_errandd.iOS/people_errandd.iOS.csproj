@@ -151,9 +151,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\teamworker.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\workeroff.png" />
   </ItemGroup>
   <ItemGroup>
@@ -163,22 +160,7 @@
     <BundleResource Include="Resources\nerd.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\group.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\person.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\phone.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\mail.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\date.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\message.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\more1.png" />
@@ -220,15 +202,6 @@
     <BundleResource Include="Resources\send.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\pickerdown.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\gps1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\gps2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\down.png" />
   </ItemGroup>
   <ItemGroup>
@@ -238,19 +211,7 @@
     <BundleResource Include="Resources\angel.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\blood.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\dizziness.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\fever.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\finish.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\start.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\abortion.png" />
@@ -284,9 +245,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\calendarpage.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\car2.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\plane.png" />
@@ -332,27 +290,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\detail.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\detail2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\worker2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\goout22.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\nerd2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\note42.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\workeroff2.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\loudspeaker.png" />
