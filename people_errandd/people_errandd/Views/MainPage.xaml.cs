@@ -22,18 +22,18 @@ namespace people_errandd.Views
         bool allowTap = true;
         private readonly geoLocation geoLocation = new geoLocation();
 
-        Page onboarding;
+       // Page onboarding;
         public MainPage()
         {
             BindingContext = new TimeDisplay();
             InitializeComponent();
 
-            if (ShouldShowOnboarding() == true)
-            {
-                App.Current.ModalPopping += Current_ModalPopping;
-                onboarding = new Onboarding();
-                Navigation.PushModalAsync(onboarding, false);
-            }
+           // if (ShouldShowOnboarding() == true)
+            //{
+               // App.Current.ModalPopping += Current_ModalPopping;
+                //onboarding = new Onboarding();
+               // Navigation.PushModalAsync(onboarding, false);
+           // }
             //隱藏navigationpage導航欄
             DateTime thisDay = DateTime.Now;
             NavigationPage.SetHasNavigationBar(this, false);
@@ -138,27 +138,27 @@ namespace people_errandd.Views
             }
         }
 
-        private void Current_ModalPopping(object sender, ModalPoppingEventArgs e)
-        {
-            if (e.Modal == onboarding)
-            {
-                FadeBox.FadeTo(0, 1000);
-                onboarding = null;
-                App.Current.ModalPopping -= Current_ModalPopping;
-            }
-        }
+        //private void Current_ModalPopping(object sender, ModalPoppingEventArgs e)
+       // {
+            //if (e.Modal == onboarding)
+            //{
+              //  FadeBox.FadeTo(0, 1000);
+               // onboarding = null;
+               // App.Current.ModalPopping -= Current_ModalPopping;
+           // }
+        //}
 
-        private bool ShouldShowOnboarding()
-        {
-            if (VersionTracking.IsFirstLaunchEver)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+       // private bool ShouldShowOnboarding()
+       // {
+        //    if (VersionTracking.IsFirstLaunchEver)
+          //  {
+           //     return true;
+           // }
+         //   else
+          //  {
+          //      return false;
+          //  }
+       // }
 
         public ObservableCollection<Event> MyEvents { get; set; }
         private ObservableCollection<Event> GetEvents()
