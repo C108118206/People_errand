@@ -16,29 +16,28 @@ namespace people_errandd.Views
 {
     public partial class MainPage : TabbedPage
     {
-        Stopwatch stopwatch;
 
         private readonly Work Work = new Work();
         bool allowTap = true;
         private readonly geoLocation geoLocation = new geoLocation();
 
-       // Page onboarding;
+        Page onboarding;
         public MainPage()
         {
             BindingContext = new TimeDisplay();
             InitializeComponent();
 
-           // if (ShouldShowOnboarding() == true)
-            //{
+           //if (ShouldShowOnboarding() == true)
+           // {
                // App.Current.ModalPopping += Current_ModalPopping;
-                //onboarding = new Onboarding();
-               // Navigation.PushModalAsync(onboarding, false);
-           // }
+              //  onboarding = new Onboarding();
+              //  Navigation.PushModalAsync(onboarding, false);
+          //  }
             //隱藏navigationpage導航欄
             DateTime thisDay = DateTime.Now;
             NavigationPage.SetHasNavigationBar(this, false);
 
-            stopwatch = new Stopwatch();
+      
 
             MyEvents = GetEvents();
             MyAnnouncements = GetAnnouncements();
@@ -138,38 +137,40 @@ namespace people_errandd.Views
             }
         }
 
-        //private void Current_ModalPopping(object sender, ModalPoppingEventArgs e)
-       // {
-            //if (e.Modal == onboarding)
-            //{
-              //  FadeBox.FadeTo(0, 1000);
-               // onboarding = null;
-               // App.Current.ModalPopping -= Current_ModalPopping;
-           // }
-        //}
+       // private void Current_ModalPopping(object sender, ModalPoppingEventArgs e)
+     //  {
+         //   if (e.Modal == onboarding)
+          //  {
+             //   FadeBox.FadeTo(0, 1000);
+             //   onboarding = null;
+            //    App.Current.ModalPopping -= Current_ModalPopping;
+          //  }
+     //   }
 
        // private bool ShouldShowOnboarding()
        // {
-        //    if (VersionTracking.IsFirstLaunchEver)
-          //  {
-           //     return true;
-           // }
-         //   else
-          //  {
-          //      return false;
+         //   if (VersionTracking.IsFirstLaunchEver)
+        //    {
+         //       return true;
           //  }
-       // }
+          //  else
+          //  {
+          //     return false;
+          //  }
+      //  }
 
         public ObservableCollection<Event> MyEvents { get; set; }
         private ObservableCollection<Event> GetEvents()
         {
             return new ObservableCollection<Event>
             {
-                new Event { Title = "John放假", Image = "p2.jpg", Duration = "07:30 am - 09:30 am", Date = new DateTime(2021, 6, 8), Description = "更多消息"},
-                new Event { Title = "今天有會議", Image = "p2.jpg", Duration = "07:30 am - 09:30 am", Date = new DateTime(2021, 6, 9), Description = "更多消息"},
-                new Event { Title = "Marry放假", Image = "p2.jpg", Duration = "07:30 am - 09:30 pm", Date = new DateTime(2021, 6, 10), Description = "更多消息"},
-                new Event { Title = "", Image = "p2.jpg", Duration = "07:30 am - 09:30 pm", Date = new DateTime(2021, 6, 11), Description = "更多消息"},
-                new Event { Title = "Amy放假", Image = "p2.jpg", Duration = "07:30 am - 09:30 pm", Date = new DateTime(2021, 6, 12), Description = "更多消息"}
+                new Event { Title = "", Image = "p1", Duration = "", Date = new DateTime(2021, 6, 6), Description = "更多消息"},
+                new Event { Title = "", Image = "p1", Duration = "", Date = new DateTime(2021, 6, 7), Description = "更多消息"},
+                new Event { Title = "John放假", Image = "p1", Duration = "07:30 am - 09:30 am", Date = new DateTime(2021, 6, 8), Description = "更多消息"},
+                new Event { Title = "今天有會議", Image = "p1", Duration = "07:30 am - 09:30 am", Date = new DateTime(2021, 6, 9), Description = "更多消息"},
+                new Event { Title = "Marry放假", Image = "p1", Duration = "07:30 am - 09:30 pm", Date = new DateTime(2021, 6, 10), Description = "更多消息"},
+                new Event { Title = "", Image = "p1", Duration = "07:30 am - 09:30 pm", Date = new DateTime(2021, 6, 11), Description = "更多消息"},
+                new Event { Title = "Amy放假", Image = "p1", Duration = "07:30 am - 09:30 pm", Date = new DateTime(2021, 6, 12), Description = "更多消息"}
             };
         }
         private async Task OpenAnimation(View view, uint length = 250)
@@ -220,9 +221,9 @@ namespace people_errandd.Views
         {
             return new ObservableCollection<Announcement>
             {
-                new Announcement { TitleAnnouncement = "有新同事加入喔!", Publisher = "p2.jpg", PublisherName = "Marry", Date = "2021-07-25"},
-                new Announcement { TitleAnnouncement = "員工旅遊消息", Publisher = "p2.jpg", PublisherName = "Marry", Date = "2021-07-25"},
-                new Announcement { TitleAnnouncement = "聚餐消息", Publisher = "p2.jpg",  PublisherName = "Marry", Date = "2021-07-25"}
+                new Announcement { TitleAnnouncement = "有新同事加入喔!", Publisher = "p1.png", PublisherName = "Marry", Date = "2021-07-25"},
+                new Announcement { TitleAnnouncement = "員工旅遊消息", Publisher = "p1.png", PublisherName = "Marry", Date = "2021-07-25"},
+                new Announcement { TitleAnnouncement = "聚餐消息", Publisher = "p1.png",  PublisherName = "Marry", Date = "2021-07-25"}
             };
         }
 
@@ -293,25 +294,7 @@ namespace people_errandd.Views
         private async void GoToWork(object sender, EventArgs e)
         {
 
-            if (!stopwatch.IsRunning)
-            {
-            stopwatch.Start();
-            Device.StartTimer(TimeSpan.FromMilliseconds(1), () =>
-             {
-                 TimeSpan ts = stopwatch.Elapsed;
-
-                 //time.Text = stopwatch.Elapsed.ToString();
-                 if (!stopwatch.IsRunning)
-                 {
-                    return false;
-                 }
-                 else
-                 {
-                     return true;
-                 }
-                    
-             });
-            }
+           
            
                 
             try
@@ -335,7 +318,7 @@ namespace people_errandd.Views
                                    
                                     status = "上班",
                                     statuscolor = "#5C76B1",
-                                    time = DateTime.Now.ToString("t"),
+                                    time = DateTime.Now.ToString(),
                                     image = "worker.png"
                                 }) ;
                                 WorkOnSet();
@@ -372,7 +355,7 @@ namespace people_errandd.Views
         }
         private async void OffWork(object sender, EventArgs e)
         {
-            stopwatch.Reset();
+           
 
             try
             {
@@ -394,7 +377,7 @@ namespace people_errandd.Views
                                 {
                                     status = "下班",
                                     statuscolor = "#CA4848",
-                                    time = DateTime.Now.ToString("t"),
+                                    time = DateTime.Now.ToString(),
                                     image = "workeroff.png"
                                 });
                                 WorkOffSet();

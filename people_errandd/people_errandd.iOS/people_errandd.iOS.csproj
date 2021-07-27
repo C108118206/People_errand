@@ -154,9 +154,6 @@
     <BundleResource Include="Resources\workeroff.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\p1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\nerd.png" />
   </ItemGroup>
   <ItemGroup>
@@ -164,9 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\more1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\p2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\worker.png" />
@@ -305,5 +299,11 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\goout2ob.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\p1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\p2.png" />
   </ItemGroup>
 </Project>

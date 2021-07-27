@@ -3087,13 +3087,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "讀取快取檔案 C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd.Android\\obj\\project.nuget.cache 時發生問題: Unexpected character encountered while parsing value: <. Path '', line 0, position 0."
-    }
-  ]
+  }
 }

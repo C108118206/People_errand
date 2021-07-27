@@ -62,11 +62,11 @@
                     <!--白色背景-->
                     <StackLayout >
                         <StackLayout Margin="0,0,0,5">
-                            <Label Text="更多功能" FontSize="30" TextColor="#555555" FontAttributes="Bold" Margin="10,20,0,0" HorizontalOptions="Start"/>
-                            <Button Text="返回" TextColor="#5C76B1" BackgroundColor="White" HorizontalOptions="End" Margin="0,-45,-15,0" FontAttributes="Bold" Clicked="GoBackButton"  FontSize="18" CornerRadius="50"/>
+                            <Label Text="更多功能" FontSize="30" TextColor="#555555" FontAttributes="Bold" Margin="8,20,0,0" HorizontalOptions="Start"/>
+                            <Button Text="返回" TextColor="#5C76B1" BackgroundColor="White" HorizontalOptions="End" Margin="0,-45,-19,0" FontAttributes="Bold" Clicked="GoBackButton"  FontSize="18" CornerRadius="50"/>
                         </StackLayout>
                         <ScrollView>
-                            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="0,0,0,70">
+                            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="5,0,5,70">
 
                                 <StackLayout Grid.Row="1" Orientation="Horizontal" Margin="0,40,0,0">
                                     <!--上班.下班水平-->

@@ -50,7 +50,7 @@ namespace people_errandd.Views
                                 {         
                                     status = "上班",
                                     statuscolor = "#5C76B1",
-                                    time = DateTime.Now.ToString("t"),
+                                    time = DateTime.Now.ToString(),
                                     image = "worker.png"
                                 });
                                 WorkOnSet();
@@ -106,7 +106,7 @@ namespace people_errandd.Views
                                    
                                     status = "下班",
                                     statuscolor = "#CA4848",
-                                    time = DateTime.Now.ToString("t"),
+                                    time = DateTime.Now.ToString(),
                                     image = "workeroff.png"
                                 });
                                 WorkOffSet();

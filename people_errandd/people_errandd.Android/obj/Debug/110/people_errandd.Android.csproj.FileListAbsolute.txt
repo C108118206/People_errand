@@ -3314,3 +3314,5 @@ C:\Users\lmh_flower\source\repos\people_errand\People_errand\people_errandd\peop
 C:\Users\lmh_flower\source\repos\people_errand\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\maternity.png
 C:\Users\lmh_flower\source\repos\people_errand\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\prenatal.png
 >>>>>>> 8cca4347cbd1a959e46930fc8c9d815680d31e52
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\p2.png
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\p1.png

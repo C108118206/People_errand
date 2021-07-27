@@ -85,13 +85,13 @@
                          x:Name="resultImage"
                          Aspect="AspectFill"
                          Margin="-20"
-                         Source="p2"
+                         Source="p1.png"
                          HeightRequest="30"
                          WidthRequest="30" />
                         </Frame>
                         <ImageButton Source="pencil2" Margin="80,-40,0,0" HeightRequest="30"  Clicked="Image_clicked"  HorizontalOptions="Center" />
 
-                        <Label Text="Marry" x:Name="name" Style="{StaticResource name}" Grid.Row="1"></Label>
+                        <Label x:Name="name" Style="{StaticResource name}" Grid.Row="1"></Label>
                         <!--使用者姓名-->
                     </StackLayout>
                 </StackLayout>
@@ -129,7 +129,7 @@
                         <BoxView Style="{StaticResource line}"/>
 
                     </StackLayout>
-                    <Label x:Name="phoneValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="Center" FontAttributes="Bold" Margin="250,5,0,-20"></Label>
+                    <Label x:Name="phoneValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="End" FontAttributes="Bold" Margin="0,5,20,-20"></Label>
                     <StackLayout  Grid.Row="3" Margin="20,0,0,1" HorizontalOptions="Start">
                         <!--Email標題與圖片-->
                         
@@ -139,7 +139,7 @@
                             <!--Email輸入-->
                         <BoxView Style="{StaticResource line}"/>
                     </StackLayout>
-                    <Label x:Name="emailValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="Center" FontAttributes="Bold" Margin="250,5,0,0"></Label>
+                    <Label x:Name="emailValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="End" FontAttributes="Bold" Margin="0,5,20,0"></Label>
                 </StackLayout>
             </StackLayout>
         </ScrollView>
