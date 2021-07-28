@@ -17,6 +17,7 @@ namespace people_errandd.ViewModels
                     var request = new GeolocationRequest(GeolocationAccuracy.High, TimeSpan.FromSeconds(10));
                     cts = new CancellationTokenSource();
                     var location = await Geolocation.GetLocationAsync(request, cts.Token);
+                    Console.WriteLine("getLocation");
                     return (location.Latitude, location.Longitude);
                 }
                 else

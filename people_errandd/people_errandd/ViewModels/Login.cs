@@ -69,34 +69,35 @@ namespace people_errandd.ViewModels
         }
         public async Task<bool> SetInformation(string _Name, string _Email)
         {
-            //try
-            //{
-            //    information information = new information()
-            //    {
-            //        hashaccount = await GetHashAccount(Preferences.Get("uuid", "")),
-            //        name = _Name,
-            //        email = _Email
-            //    };               
-            //    var str = JsonConvert.SerializeObject(information);
-            //    HttpContent content = new StringContent(str, Encoding.UTF8, "application/json");
-            //    response = await client.PostAsync(basic_url + ControllerNameInformation + "add_information", content);
+            try
+            {
+                List<information> informations = new List<information>();
+                information information = new information()
+                {
+                    hashaccount = await GetHashAccount(Preferences.Get("uuid", "")),
+                    name = _Name,
+                    email = _Email
+                };
+                informations.Add(information);
+                var str = JsonConvert.SerializeObject(informations);
+                HttpContent content = new StringContent(str, Encoding.UTF8, "application/json");
+                response = await client.PostAsync(basic_url + ControllerNameInformation + "add_information", content);
                 Preferences.Set("UserName", _Name);
-            //    if (response.StatusCode.ToString() == "OK")
-            //    {
-            //        return true;
-            //    }
-            //    else
-            //    {
-            //        return false;
-            //    }
-            //    //return true;
-            //}
-            //catch (Exception)
-            //{
-            //    Console.WriteLine("error");
-            //    return false;
-            //}
-            return true;
+                Preferences.Set("email", _Email);
+                if (response.StatusCode.ToString() == "OK")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("error");
+                return false;
+            }
         }
         public async Task<bool> Reviewed()
         {
@@ -111,7 +112,6 @@ namespace people_errandd.ViewModels
                 {
                     return true;
                 }
-
             }
             catch (Exception)
             {
