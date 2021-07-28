@@ -121,7 +121,7 @@
 
                                 <Label
                                             Style="{StaticResource gooutanddayoffcontent}"
-                                    TextColor="{Binding statuscolor}"
+                                             TextColor="{Binding statuscolor}"
                                             Text="{Binding status}"
                                            />
 
