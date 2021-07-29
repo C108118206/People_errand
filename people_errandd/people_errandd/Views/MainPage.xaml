@@ -125,7 +125,7 @@
                 
                 <StackLayout Grid.Row="1"  VerticalOptions="End" HorizontalOptions="End" Orientation="Horizontal" Margin="0,-20,0,0" >
                     <!--使用者姓名-->
-                    <Label x:Name="username" Text="Marry" Margin="0,20,0,0" Grid.Row="2" Style="{StaticResource name}"></Label>
+                    <Label x:Name="username" Text="" Margin="0,20,0,0" Grid.Row="2" Style="{StaticResource name}"></Label>
                     <!--頭貼框架-->
                     <!--圓形頭貼邊框-->
                     <Frame Margin="0,8,0,0"

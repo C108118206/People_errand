@@ -47,11 +47,11 @@ namespace people_errandd.Views
                     {
                         if (await Login.ConfirmUUID(deviceId))
                         {
-                            //if (!await Login.Reviewed())
-                            //{
-                            //    await DisplayAlert("審核中", "尚未審核完畢,請稍後再試", "確認");
-                            //    return;
-                            //}
+                            if (!await Login.Reviewed())
+                            {
+                                await DisplayAlert("審核中", "尚未審核完畢,請稍後再試", "確認");
+                                return;
+                            }
                             Navigation.InsertPageBefore(new MainPage(), this);
                             await Navigation.PopAsync();
                             Preferences.Set("HashAccount", await Login.GetHashAccount(deviceId));
