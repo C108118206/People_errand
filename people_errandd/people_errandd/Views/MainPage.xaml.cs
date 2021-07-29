@@ -221,6 +221,7 @@ namespace people_errandd.Views
         {
             return new ObservableCollection<Announcement>
             {
+               
                 new Announcement { TitleAnnouncement = "有新同事加入喔!", Publisher = "p1.png", PublisherName = "Marry", Date = "2021-07-25"},
                 new Announcement { TitleAnnouncement = "員工旅遊消息", Publisher = "p1.png", PublisherName = "Marry", Date = "2021-07-25"},
                 new Announcement { TitleAnnouncement = "聚餐消息", Publisher = "p1.png",  PublisherName = "Marry", Date = "2021-07-25"}
@@ -267,6 +268,7 @@ namespace people_errandd.Views
             workOff.Opacity = Preferences.Get("WorkOffButtonView", workOff.Opacity = 0.2);
             workOnText.Opacity = Preferences.Get("WorkOnText", workOnText.Opacity = 1);
             workOffText.Opacity = Preferences.Get("WorkOffText", workOffText.Opacity = 0.2);
+            username.Text = Preferences.Get("UserName","");
             Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
 
             await geoLocation.GetLocation("Back");
@@ -292,11 +294,7 @@ namespace people_errandd.Views
         }
 
         private async void GoToWork(object sender, EventArgs e)
-        {
-
-           
-           
-                
+        {           
             try
             {
                 if (allowTap)
@@ -355,8 +353,6 @@ namespace people_errandd.Views
         }
         private async void OffWork(object sender, EventArgs e)
         {
-           
-
             try
             {
                 if (allowTap)

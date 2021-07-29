@@ -76,9 +76,8 @@
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="Margin" Value="0,0,0,0" />
             </Style>
-            <Style x:Key="warningframe" TargetType="Frame">
-                <Setter Property="WidthRequest" Value="380" />
-                <Setter Property="CornerRadius" Value="8" />
+                <Style x:Key="warningframe" TargetType="Frame">
+                    <Setter Property="CornerRadius" Value="8" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="Margin" Value="0,0,0,0" />
                 <Setter Property="Padding" Value="0,0,0,0" />
@@ -96,16 +95,7 @@
     </ContentPage.Resources>
     <!--內容樣式設定結束-->
 
-    <ContentPage.Content >
-
-        <Grid>
-            <!--背景顏色-->
-            
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
+        <ContentPage.Content >
             <ScrollView>
             <StackLayout Orientation="Vertical" >
             <Frame HasShadow="False">
@@ -125,7 +115,7 @@
                 
                 <StackLayout Grid.Row="1"  VerticalOptions="End" HorizontalOptions="End" Orientation="Horizontal" Margin="0,-20,0,0" >
                     <!--使用者姓名-->
-                    <Label x:Name="username" Text="Marry" Margin="0,20,0,0" Grid.Row="2" Style="{StaticResource name}"></Label>
+                    <Label x:Name="username" Text="" Margin="0,20,0,0" Grid.Row="2" Style="{StaticResource name}"></Label>
                     <!--頭貼框架-->
                     <!--圓形頭貼邊框-->
                     <Frame Margin="0,8,0,0"
@@ -160,10 +150,11 @@
                 </StackLayout>
                 </StackLayout>
                         </Frame>
-
-                        <!--底部白色背景開始-->
-                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="5,35,5,40">
-                            <StackLayout Grid.Row="4" Orientation="Horizontal">
+                   
+                    <!--底部白色背景開始-->
+                        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="5,30,5,40">
+                      
+                        <StackLayout Grid.Row="4" Orientation="Horizontal">
                                 <!--上班.下班水平放置-->
                         <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Margin="0,0,30,0">
                             <!--上班-->
@@ -185,40 +176,39 @@
                             <!--下班文字-->
                         </StackLayout>
                     </StackLayout>
-                    <StackLayout Grid.Row="5"  Orientation="Horizontal">
-                        <!--公出.更多水平放置-->
-                        <StackLayout  Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"  Margin="0,0,30,0">
+                        <StackLayout Grid.Row="5"  Orientation="Horizontal">
+                            <!--公出.更多水平放置-->
+                            <StackLayout  Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"  Margin="0,0,30,0">
 
 
-                            <!--公出按鈕陰影-->
-                            <ImageButton x:Name="GoOut" Source="goout2.png" Style="{StaticResource ImageButton}"   Clicked="GoOutButton"></ImageButton>
-                            <!--公出按鈕-->
+                                <!--公出按鈕陰影-->
+                                <ImageButton x:Name="GoOut" Source="goout2.png" Style="{StaticResource ImageButton}"   Clicked="GoOutButton"></ImageButton>
+                                <!--公出按鈕-->
 
 
-                            <Label Text="公出"  Margin="0,10,0,10"  Style="{StaticResource text}" ></Label>
-                            <!--公出文字-->
-                        </StackLayout>
-                        <StackLayout Grid.Row="0" Grid.Column="1"  Margin="30,0,0,0">
+                                <Label Text="公出"  Margin="0,10,0,10"  Style="{StaticResource text}" ></Label>
+                                <!--公出文字-->
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" Grid.Column="1"  Margin="30,0,0,0">
 
-                            <!--更多按鈕陰影-->
-                            <ImageButton Source="more1" Padding="30" Style="{StaticResource ImageButton}" st:Transition.Name="transitionMore" Clicked="DetailButton" ></ImageButton>
-                            <!--更多按鈕-->
+                                <!--更多按鈕陰影-->
+                                <ImageButton Source="more1" Padding="30" Style="{StaticResource ImageButton}" st:Transition.Name="transitionMore" Clicked="DetailButton" ></ImageButton>
+                                <!--更多按鈕-->
 
-                            <Label Text="更多"  Margin="0,10,0,10"  Style="{StaticResource text}"></Label>
-                            <!--更多文字-->
+                                <Label Text="更多"  Margin="0,10,0,10"  Style="{StaticResource text}"></Label>
+                                <!--更多文字-->
+                            </StackLayout>
                         </StackLayout>
                     </StackLayout>
-                            
+                    <Frame x:Name="FrameConnection" Opacity="0" Style="{StaticResource warningframe}">
+                        <!--沒網路時顯示外框-->
+                        <Label x:Name="LabelConnection" Opacity="0" Text="No Internet Connection" Style="{StaticResource warning}"></Label>
+                        <!--沒網路時顯示文字-->
+                    </Frame>
+
                 </StackLayout>
-
-                        <Frame x:Name="FrameConnection" Opacity="0" Style="{StaticResource warningframe}">
-                            <!--沒網路時顯示外框-->
-                            <Label x:Name="LabelConnection" Opacity="0" Text="No Internet Connection" Style="{StaticResource warning}"></Label>
-                            <!--沒網路時顯示文字-->
-                        </Frame>
-                    </StackLayout>
             </ScrollView>
-        </Grid>
+
 
     </ContentPage.Content>
 </ContentPage>
@@ -245,8 +235,9 @@
         <ContentPage.Content>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <CollectionView Grid.Row="1" Margin="30" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" SelectionMode="None" ItemsSource="{Binding MyAnnouncements}">
                     <CollectionView.Header>
@@ -333,10 +324,11 @@
 
         <ContentPage.Content>
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+                 <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
                 <Frame HasShadow="False">
                     <StackLayout>
                         <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Start" Margin="0,10,0,0">
