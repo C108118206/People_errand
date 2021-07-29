@@ -224,7 +224,7 @@ namespace people_errandd.Views
                
                 new Announcement { TitleAnnouncement = "有新同事加入喔!", Publisher = "p1.png", PublisherName = "Marry", Date = "2021-07-25"},
                 new Announcement { TitleAnnouncement = "員工旅遊消息", Publisher = "p1.png", PublisherName = "Marry", Date = "2021-07-25"},
-                new Announcement { TitleAnnouncement = "聚餐消息", Publisher = "p1.png",  PublisherName = "Marry", Date = "2021-07-25"}
+                new Announcement { TitleAnnouncement = "聚餐消息", Publisher = "p1.png",  PublisherName = "Marry", Date = "2021-07-25" }
             };
         }
 
