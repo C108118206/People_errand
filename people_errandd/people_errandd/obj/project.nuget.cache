@@ -1,8 +1,20 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "bXbiPqeYfYVSYgkAX3t6ZnVPlNVJIshDhlm87beMc7aWAkGAiZpWxIUkn1bB2alI9OnJKLBbIQgCL5fgnc9ihg==",
   "success": true,
   "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
+=======
+<<<<<<< HEAD
+  "dgSpecHash": "bXbiPqeYfYVSYgkAX3t6ZnVPlNVJIshDhlm87beMc7aWAkGAiZpWxIUkn1bB2alI9OnJKLBbIQgCL5fgnc9ihg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
+=======
+  "dgSpecHash": "eBxxJtnzyq6xcDc6WwDqieUNUcXO8YUNZztfERu77gU1obuvxgKO0uiJZM0y584JfefVEqGa9tTwylHa/78jlw==",
+  "success": true,
+  "projectFilePath": "D:\\punch new\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
+>>>>>>> efdb1d65bafb3a85934a67267f22799b9f622aae
+>>>>>>> 82d637d842a7e9da7fad58b8a1ed4ed51e69b19c
   "expectedPackageFiles": [
     "C:\\Users\\lmh_flower\\.nuget\\packages\\fluentvalidation\\10.3.0\\fluentvalidation.10.3.0.nupkg.sha512",
     "C:\\Users\\lmh_flower\\.nuget\\packages\\magicgradients\\1.3.0\\magicgradients.1.3.0.nupkg.sha512",
