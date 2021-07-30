@@ -1,8 +1,26 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "3k2KM7KAn1ildRXQglU/Qfjt+vaQmogLFdv+pK86HizRECPtxIPGYmQONhTw25JbUrn8RMcEdkrbTMmkiaR1Hg==",
   "success": true,
   "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+=======
+<<<<<<< HEAD
+  "dgSpecHash": "3k2KM7KAn1ildRXQglU/Qfjt+vaQmogLFdv+pK86HizRECPtxIPGYmQONhTw25JbUrn8RMcEdkrbTMmkiaR1Hg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+=======
+<<<<<<< HEAD
+  "dgSpecHash": "3k2KM7KAn1ildRXQglU/Qfjt+vaQmogLFdv+pK86HizRECPtxIPGYmQONhTw25JbUrn8RMcEdkrbTMmkiaR1Hg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+=======
+  "dgSpecHash": "LPZQ5tdl4i3msm1vG7VA7n2jgdPyx7qV4BQaNKzu/uYhYiKYJjAZ2cMJSWfW4v12V/7e1228EdXPTp6giXjujw==",
+  "success": true,
+  "projectFilePath": "D:\\punch new\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+>>>>>>> efdb1d65bafb3a85934a67267f22799b9f622aae
+>>>>>>> 82d637d842a7e9da7fad58b8a1ed4ed51e69b19c
+>>>>>>> a5b82b804cc421fc6840d21a5cd32d6506289fa6
   "expectedPackageFiles": [
     "C:\\Users\\lmh_flower\\.nuget\\packages\\fluentvalidation\\10.3.0\\fluentvalidation.10.3.0.nupkg.sha512",
     "C:\\Users\\lmh_flower\\.nuget\\packages\\magicgradients\\1.3.0\\magicgradients.1.3.0.nupkg.sha512",
