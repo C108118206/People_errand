@@ -5,10 +5,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             x:Class="people_errandd.Views.MainPage"
+            x:Class="people_errandd.Views.MainPage"
             xmlns:st="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
-             android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.ToolbarPlacement="Bottom"
             android:TabbedPage.BarItemColor="#555555"
             android:TabbedPage.BarSelectedItemColor="#5C76B1">
     
@@ -77,14 +77,14 @@
                 <Setter Property="Margin" Value="0,0,0,0" />
             </Style>
                 <Style x:Key="warningframe" TargetType="Frame">
-                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-                <Setter Property="Margin" Value="-100,-70,-100,0" />
-                <Setter Property="Padding" Value="0,20,0,20" />
+                    <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                    <Setter Property="Margin" Value="-100,0,-100,0" />
+                <Setter Property="Padding" Value="0,0,0,0" />
                 <Setter Property="BackgroundColor" Value="Black" />
-                <Setter Property="Opacity" Value="0.2" />
+                <Setter Property="Opacity" Value="1" />
             </Style>
                 <Style x:Key="line" TargetType="BoxView">
-                    <Setter Property="Margin" Value="0,10,0,0"/>
+                    <Setter Property="Margin" Value="0,-10,0,0"/>
                     <Setter Property="BackgroundColor" Value="#707070"/>
                     <Setter Property="HeightRequest" Value="1"/>
                     <Setter Property="WidthRequest" Value="10000"/>
@@ -111,20 +111,20 @@
                     <!--
                 <Button ImageSource="messenger" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Margin="0,-40,20,0" BackgroundColor="#8CC5D7" Clicked="ColleagueButton" /> -->
 
-                    <StackLayout Grid.Row="1"  VerticalOptions="End" HorizontalOptions="End" Orientation="Horizontal" Margin="0,-15,0,0" >
+                            <StackLayout Grid.Row="1"  VerticalOptions="End" HorizontalOptions="End" Orientation="Horizontal" Margin="0,-15,0,0" >
 
                                 <!--使用者姓名-->
-                    <Label x:Name="username" Text="" Margin="0,20,0,0" Grid.Row="2" Style="{StaticResource name}"></Label>
-                    <!--頭貼框架-->
-                    <!--圓形頭貼邊框-->
-                    <Frame Margin="0,8,0,0"
+                                <Label x:Name="username" Text="" Margin="0,20,0,0" Grid.Row="2" Style="{StaticResource name}"></Label>
+                                <!--頭貼框架-->
+                                <!--圓形頭貼邊框-->
+                                <Frame Margin="0,8,0,0"
                            CornerRadius="50"
                            HeightRequest="10"
                            WidthRequest="10"
                            IsClippedToBounds="True"
                          >
-                        <!--圓形頭貼(點擊後換頁至aboutpage)-->
-                        <ImageButton 
+                                    <!--圓形頭貼(點擊後換頁至aboutpage)-->
+                                    <ImageButton 
                              st:Transition.Name="transitionAboutPage"
                             BackgroundColor="White"
                              Clicked="AboutPageButton" 
@@ -133,23 +133,25 @@
                              Margin="-20"
                              WidthRequest="20"
                             />
-                    </Frame>
-                </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                                
+
                             <Frame x:Name="FrameConnection" Opacity="0" Style="{StaticResource warningframe}">
                                 <!--沒網路時顯示外框-->
                                 <Label x:Name="LabelConnection" Opacity="0" Text="No Internet Connection" Style="{StaticResource warning}"></Label>
                                 <!--沒網路時顯示文字-->
                             </Frame>
-                            
+
 
                             <StackLayout >
                            <BoxView Style="{StaticResource line}" />
                           <Label Text="{Binding DateTime,StringFormat='{0:D}'}"  TextColor="#555555" FontSize="20" Margin="0,30,0,0" FontAttributes="Bold" HorizontalTextAlignment="Start"></Label>
                           <Label Text="{Binding DateTime,StringFormat='{0:HH:mm:ss}'}" TextColor="#555555" FontSize="50" Margin="-5,-10,0,0"  HorizontalTextAlignment="Start"></Label>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Margin="0,0,0,10">
+                          <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Margin="0,0,0,10">
                           <Label  x:Name="worktimetitle"  TextColor="#555555"  FontSize="16"  ></Label>
                           <Label  x:Name="worktime" TextColor="#555555"  FontSize="16" ></Label>
-                    </StackLayout>
+                          </StackLayout>
                     <Button  Grid.Row="3" ImageSource="gps" Text="定位已開啟"  Style="{StaticResource gpsbutton}"  x:Name="GPSText"/>
 
                 </StackLayout>

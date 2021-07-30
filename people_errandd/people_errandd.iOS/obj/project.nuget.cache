@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fQKtGTHxVHSEzHFdOa/+l2L6KfJ+vn+2lcNRe+TNRjoRLTXHLBWJ4hGmdEbEelEUtjIH4YQMPtoBHPv/qBwcwg==",
+  "dgSpecHash": "w0+cTphn1wENfVOEiprUmdUeb6NWGA9kZfZWUr6xkdmk0u0o7vaJesQuIKSkpRcAXQk2JfzcUZVYQe4UQne0Sw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lmh_flower\\.nuget\\packages\\fluentvalidation\\10.3.0\\fluentvalidation.10.3.0.nupkg.sha512",
     "C:\\Users\\lmh_flower\\.nuget\\packages\\magicgradients\\1.3.0\\magicgradients.1.3.0.nupkg.sha512",
@@ -25,12 +25,5 @@
     "C:\\Users\\lmh_flower\\.nuget\\packages\\xamarin.forms\\5.0.0.2083\\xamarin.forms.5.0.0.2083.nupkg.sha512",
     "C:\\Users\\lmh_flower\\.nuget\\packages\\xamarin.plugin.sharedtransitions\\2.4.0\\xamarin.plugin.sharedtransitions.2.4.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "讀取快取檔案 C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\project.nuget.cache 時發生問題: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
