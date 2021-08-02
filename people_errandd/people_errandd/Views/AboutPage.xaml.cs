@@ -61,6 +61,7 @@ namespace people_errandd.Views
             resultImage.Source = ImageSource.FromStream(() => stream);
         }
         */
+       /*
         async void Image_clicked(Object sender, System.EventArgs e)
         {
             await CrossMedia.Current.Initialize();
@@ -94,6 +95,7 @@ namespace people_errandd.Views
                 allowTap = true;
             }         
         }
+        */
         private async void ConfirmButton(object sender, EventArgs e)
         {
             try

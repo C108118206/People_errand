@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="people_errandd.Views.GoOut">
+             x:Class="people_errandd.Views.GoOut"
+             BackgroundColor="#EDEEEF">
     <!--最上面Navigation標題-->
     <NavigationPage.TitleView>
         <Label Text="公出申請" TextColor="#555555" FontSize="20" HorizontalTextAlignment="Center"  FontAttributes="Bold"  VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
@@ -73,18 +74,18 @@
             <Frame BorderColor="#F3F2F1"
                    BackgroundColor="#F3F2F1"
                    HasShadow="False"
-                    CornerRadius="10"
+                   CornerRadius="10"
                    HorizontalOptions="Start"
                    VerticalOptions="Start"
-                       Padding="0,0,0,10">
+                   Padding="0,0,0,10">
                 <VisualStateManager.VisualStateGroups>
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CheckedStates">
                             <VisualState x:Name="Checked">
                                 <VisualState.Setters>
                                      <Setter Property="BackgroundColor" Value="#FFCF80" />
-                                    <Setter TargetName="check" Property="Opacity" Value="1" />
-                                </VisualState.Setters>
+                                        <Setter TargetName="check" Property="Opacity" Value="1" />
+                                    </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Unchecked">
                                 <VisualState.Setters>
@@ -95,7 +96,7 @@
                         </VisualStateGroup>
                     </VisualStateGroupList>
                 </VisualStateManager.VisualStateGroups>
-                <Grid Margin="4"
+                    <Grid Margin="4"
                       WidthRequest="100">
                     <Grid WidthRequest="18"
                           HeightRequest="18"
@@ -125,11 +126,11 @@
             <Style x:Key="rdimage" TargetType="Image">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="HeightRequest" Value="70" />
-                <Setter Property="Margin" Value="0,10,0,0" />
+                <Setter Property="Margin" Value="0,20,0,0" />
             </Style>
             <Style x:Key="rdtitle" TargetType="Label">
                 <Setter Property="FontSize" Value="16" />
-                <Setter Property="Margin" Value="0,0,0,20" />
+                <Setter Property="Margin" Value="0,0,0,0" />
                 <Setter Property="TextColor" Value="#555555" />
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
@@ -149,14 +150,10 @@
     </ContentPage.Resources>
     <!--內容樣式設定結束-->
 
-    <Grid BackgroundColor="#EDEEEF" >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+
+        <ScrollView VerticalScrollBarVisibility="Never">
         <StackLayout>
-            <StackLayout Orientation="Horizontal" Margin="20,0,0,0">
+            <StackLayout Orientation="Horizontal" Margin="20,20,0,0">
                 <!--*-->
                 <Label Text="公出類型" Style="{StaticResource titletext}"></Label>
                 <Label Text="" x:Name="goouttype"  Style="{StaticResource titletext}" TextColor="#5E709B" FontSize="14" Margin="0,2,0,0"></Label>
@@ -165,7 +162,7 @@
             <ScrollView Orientation="Horizontal" Margin="20,10,0,10" HorizontalScrollBarVisibility="Never">
 
                     <StackLayout Orientation="Horizontal" >
-                    <RadioButton Value="拜訪客戶" CheckedChanged="VistitClient" HeightRequest="200" WidthRequest="150"  >
+                    <RadioButton Value="拜訪客戶" CheckedChanged="VistitClient" HeightRequest="200" WidthRequest="150"  Margin="0,0,-25,0">
                             <RadioButton.Content>
                                 <StackLayout>
                                     <Image Source="visit.png" Style="{StaticResource rdimage}"/>
@@ -174,7 +171,7 @@
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
-                    <RadioButton Value="拜訪廠商" CheckedChanged="VistitManuacturer" HeightRequest="200" WidthRequest="150" >
+                    <RadioButton Value="拜訪廠商" CheckedChanged="VistitManuacturer" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
                         <RadioButton.Content>
                             <StackLayout>
                                 <Image Source="visit.png" Style="{StaticResource rdimage}"/>
@@ -182,7 +179,7 @@
                             </StackLayout>
                         </RadioButton.Content>
                     </RadioButton>
-                    <RadioButton Value="Demo" CheckedChanged="Demo" HeightRequest="200" WidthRequest="150">
+                    <RadioButton Value="Demo" CheckedChanged="Demo" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
                             <RadioButton.Content>
                                 <StackLayout>
                                     <Image Source="demo.png" Style="{StaticResource rdimage}"/>
@@ -191,7 +188,7 @@
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
-                    <RadioButton Value="參加活動" CheckedChanged="ParticipateActivity" HeightRequest="200" WidthRequest="150">
+                    <RadioButton Value="參加活動" CheckedChanged="ParticipateActivity" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
                             <RadioButton.Content>
                                 <StackLayout>
                                     <Image Source="party.png" Style="{StaticResource rdimage}" />
@@ -200,7 +197,7 @@
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
-                    <RadioButton Value="會議" CheckedChanged="Meeting" HeightRequest="200" WidthRequest="150">
+                    <RadioButton Value="會議" CheckedChanged="Meeting" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
                             <RadioButton.Content>
                                 <StackLayout>
                                     <Image Source="meeting.png" Style="{StaticResource rdimage}"/>
@@ -209,16 +206,16 @@
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
-                    <RadioButton Value="客戶服務" CheckedChanged="CustomerService" HeightRequest="200" WidthRequest="150">
+                    <RadioButton Value="客戶服務" CheckedChanged="CustomerService" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
                             <RadioButton.Content>
                                 <StackLayout >
-                                    <Image Source="service.png" Style="{StaticResource rdimage}" HeightRequest="65" Margin="0,15,0,0"/>
+                                    <Image Source="service.png" Style="{StaticResource rdimage}" />
                                 <Label Text="客戶服務" x:Name="CustomerServiceText" Style="{StaticResource rdtitle}"/>
 
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
-                    <RadioButton Value="其他" CheckedChanged="Other" HeightRequest="200" WidthRequest="150">
+                    <RadioButton Value="其他" CheckedChanged="Other" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
                         <RadioButton.Content>
                             <StackLayout >
                                 <Image Source="more1.png" Style="{StaticResource rdimage}" />
@@ -230,11 +227,10 @@
 
                 </StackLayout>
             </ScrollView>
-            <Frame BackgroundColor="White" HasShadow="False"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" CornerRadius="30" Margin="0,0,0,-50">
-                <ScrollView VerticalScrollBarVisibility="Never">
-                    <StackLayout >
-
-                        <Label  HorizontalOptions="Start" Margin="0,10,0,0"  Text="整天"  Style="{StaticResource titletext}"></Label>
+                <Frame BackgroundColor="White" HasShadow="False"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" CornerRadius="30" Margin="0,0,0,-50">
+                    <ScrollView VerticalScrollBarVisibility="Never">
+                        <StackLayout >
+                            <Label  HorizontalOptions="Start" Margin="0,10,0,0"  Text="整天"  Style="{StaticResource titletext}"></Label>
                         <!--all day文字-->
                         <!--all day按鈕-->
                         <Switch HorizontalOptions="End" x:Name="AlldaySwitch" Toggled="AlldaySwitch_Toggled" Margin="0,-30,0,0"/>
@@ -316,13 +312,10 @@
                                 <!--事由輸入-->
                             </Frame>
                         </StackLayout>
+                     <!--
                         <StackLayout Margin="0,0,0,5">
                             <StackLayout Grid.Row="0" Orientation="Horizontal">
-                                <!--*地點水平呈現-->
-
-                                <!--*-->
                                 <Label Text="交通工具" Style="{StaticResource titletext}"></Label>
-                                <!--地點-->
                             </StackLayout>
                             <ScrollView Orientation="Horizontal" Margin="0,5,0,0" HorizontalScrollBarVisibility="Never">
                                 <StackLayout>
@@ -414,33 +407,16 @@
                             </ScrollView>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal"  Margin="0,0,0,5">
-                            <!--開始框架-->
                             <StackLayout Margin="0,0,0,0">
-
-                                <!--*開始水平呈現-->
-
-                                <!--*-->
                                 <Label Text="自用車號" Style="{StaticResource titletext}"></Label>
-
-                                <!--開始-->
                                 <Frame CornerRadius="5" Padding="0"  HeightRequest="45" WidthRequest="300" BorderColor="#A8A8A8" BackgroundColor="White"  HasShadow="False" Margin="0,0,0,0">
                                     <StackLayout Grid.Row="0" Orientation="Horizontal" >
                                         <Entry Grid.Row="1"  Style="{StaticResource entry}" WidthRequest="145" Margin="10,0,10,0"></Entry>
                                     </StackLayout>
                                 </Frame>
-                                <!--開始時間選擇-->
                             </StackLayout>
-
-                            <!--結束框架-->
                             <StackLayout>
-
-                                <!--*結束水平呈現-->
-
-                                <!--*-->
                                 <Label Text="公用車號" Style="{StaticResource titletext}" Margin="0,0,0,0"></Label>
-
-                                <!--結束-->
-
                                 <Frame CornerRadius="5" Padding="0"  HeightRequest="45"  WidthRequest="300" BorderColor="#A8A8A8" BackgroundColor="White"  HasShadow="False" >
                                     <StackLayout Grid.Row="0" Orientation="Horizontal" >
                                         <Entry Grid.Row="1" Style="{StaticResource entry}" WidthRequest="145" Margin="10,0,10,0"></Entry>
@@ -448,13 +424,14 @@
                                 </Frame>
                             </StackLayout>
                         </StackLayout>
-
+                        -->
                         <Button  Grid.Row="4" Style="{StaticResource button}"></Button>
                     </StackLayout>
                 </ScrollView>
             </Frame>
         </StackLayout>
-        </Grid>
+        </ScrollView>
+
 
 
 

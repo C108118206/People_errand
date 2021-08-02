@@ -81,15 +81,15 @@
                             <!--頭貼照片-->
                             <ImageButton
                           BackgroundColor="White"
-                         Clicked="Image_clicked"
+
                          x:Name="resultImage"
                          Aspect="AspectFill"
                          Margin="-20"
-                         Source="p1.png"
+                         Source="profile.png"
                          HeightRequest="30"
                          WidthRequest="30" />
                         </Frame>
-                        <ImageButton Source="pencil2" Margin="80,-40,0,0" HeightRequest="30"  Clicked="Image_clicked"  HorizontalOptions="Center" />
+                        <!--<ImageButton Source="pencil2" Margin="80,-40,0,0" HeightRequest="30"  Clicked="Image_clicked"  HorizontalOptions="Center" />-->
 
                         <Label x:Name="name" Style="{StaticResource name}" Grid.Row="1"></Label>
                         <!--使用者姓名-->

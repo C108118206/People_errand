@@ -76,3 +76,4 @@ C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.iOS
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\people_errandd.iOS.csproj.CopyComplete
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\people_errandd.iOS.exe
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\people_errandd.iOS.pdb
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.iOS\bin\iPhone\Debug\BottomBar.XamarinForms.dll

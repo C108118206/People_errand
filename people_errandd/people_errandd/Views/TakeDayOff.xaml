@@ -136,14 +136,10 @@
     </ContentPage.Resources>
     <!--內容樣式設定結束-->
 
-    <Grid BackgroundColor="#EDEEEF" >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+   
+        <ScrollView VerticalScrollBarVisibility="Never">
         <StackLayout>
-            <StackLayout Orientation="Horizontal" Margin="20,0,0,0">
+            <StackLayout Orientation="Horizontal" Margin="20,20,0,0">
                 <!--*-->
                 <Label Text="假別" Style="{StaticResource titletext}"></Label>
                 <Label Text="" x:Name="leavetype"  Style="{StaticResource titletext}" TextColor="#5E709B" FontSize="14" Margin="0,2,0,0"></Label>
@@ -152,7 +148,7 @@
             <ScrollView Orientation="Horizontal" Margin="20,10,0,0" HorizontalScrollBarVisibility="Never">
                 <StackLayout>
                     <StackLayout Orientation="Horizontal" >
-                        <RadioButton Value="事假" CheckedChanged="Personal" HeightRequest="200" WidthRequest="150" >
+                        <RadioButton Value="事假" CheckedChanged="Personal" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
                             <RadioButton.Content>
                                 <StackLayout>
                                     <Image Source="leave.png" Style="{StaticResource rdimage}"/>
@@ -161,7 +157,7 @@
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
-                        <RadioButton Value="病假" CheckedChanged="Sick" HeightRequest="200" WidthRequest="150" >
+                        <RadioButton Value="病假" CheckedChanged="Sick" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
                             <RadioButton.Content>
                                 <StackLayout>
                                     <Image Source="dizziness.png" Style="{StaticResource rdimage}"/>
@@ -170,7 +166,7 @@
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
-                        <RadioButton Value="喪假" CheckedChanged="Bereavement" HeightRequest="200" WidthRequest="150" >
+                        <RadioButton Value="喪假" CheckedChanged="Bereavement" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
                             <RadioButton.Content>
                                 <StackLayout>
                                     <Image Source="angel.png" Style="{StaticResource rdimage}" />
@@ -179,7 +175,7 @@
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
-                        <RadioButton Value="產假" CheckedChanged="Maternity" HeightRequest="200" WidthRequest="150" >
+                        <RadioButton Value="產假" CheckedChanged="Maternity" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
                             <RadioButton.Content>
                                 <StackLayout>
                                     <Image Source="Maternity.png" Style="{StaticResource rdimage}"/>
@@ -188,7 +184,7 @@
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
-                        <RadioButton Value="生理假" CheckedChanged="Physiological" HeightRequest="200" WidthRequest="150" >
+                        <RadioButton Value="生理假" CheckedChanged="Physiological" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
                             <RadioButton.Content>
                                 <StackLayout >
                                     <Image Source="stomach.png" Style="{StaticResource rdimage}"/>
@@ -197,7 +193,7 @@
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
-                        <RadioButton Value="流產假" CheckedChanged="Abortion" HeightRequest="200" WidthRequest="150" >
+                        <RadioButton Value="流產假" CheckedChanged="Abortion" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
                             <RadioButton.Content>
                                 <StackLayout>
                                     <Image Source="abortion.png" Style="{StaticResource rdimage}"/>
@@ -206,7 +202,7 @@
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
-                        <RadioButton Value="產前假" CheckedChanged="Prenatal" HeightRequest="200" WidthRequest="150" >
+                        <RadioButton Value="產前假" CheckedChanged="Prenatal" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
                             <RadioButton.Content>
                                 <StackLayout>
                                     <Image Source="Prenatal.png" Style="{StaticResource rdimage}"/>
@@ -215,7 +211,7 @@
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
-                        <RadioButton Value="陪產假" CheckedChanged="Paternity" HeightRequest="200" WidthRequest="150" >
+                        <RadioButton Value="陪產假" CheckedChanged="Paternity" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
                             <RadioButton.Content>
                                 <StackLayout>
                                     <Image Source="adoption.png" Style="{StaticResource rdimage}"/>
@@ -300,6 +296,6 @@
                 </ScrollView>
             </Frame>
         </StackLayout>
-    </Grid>
+        </ScrollView>
 
 </ContentPage>

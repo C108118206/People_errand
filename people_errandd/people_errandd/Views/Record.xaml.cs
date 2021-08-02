@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Diagnostics;
 using people_errandd.Models;
+using System.Collections.ObjectModel;
 
 namespace people_errandd.Views
 {
@@ -118,7 +119,11 @@ namespace people_errandd.Views
                     
                     break;
             }
+
         }
+        
+       
+
         public Record()
         {
             

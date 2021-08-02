@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="people_errandd.Views.Calender"
+             BackgroundColor="#EDEEEF">
+    <NavigationPage.TitleView>
+        <Label Text="行事曆" TextColor="#555555" FontSize="20" HorizontalTextAlignment="Center"  FontAttributes="Bold"  VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem ></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView VerticalScrollBarVisibility="Never">
+        <StackLayout Margin="0,250,0,0">
+            <Label Text="開發中"
+                   FontSize="28"
+                   TextColor="#555555"
+                   FontAttributes="Bold"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label Text="敬請期待 ! "
+                   FontSize="28"
+                   TextColor="#555555"
+                   FontAttributes="Bold"
+                    VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                 />
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
