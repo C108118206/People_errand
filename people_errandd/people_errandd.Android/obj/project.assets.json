@@ -3024,11 +3024,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
       "projectName": "people_errandd.Android",
-      "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+      "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
       "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd.Android\\obj\\",
+      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -3050,8 +3050,8 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
-              "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+            "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
             }
           }
         }

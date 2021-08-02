@@ -325,7 +325,7 @@
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
                 <StackLayout Orientation="Vertical" >
-                <Frame HasShadow="False">
+                <Frame HasShadow="False" BackgroundColor="White">
                     <StackLayout>
                         <Label></Label>
                 <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Start" Margin="10,0,0,0">

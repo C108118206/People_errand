@@ -25,14 +25,13 @@ namespace people_errandd.Views
         public MainPage()
         {
             BindingContext = new TimeDisplay();
-            InitializeComponent();
-
-           //if (ShouldShowOnboarding() == true)
-           // {
-               // App.Current.ModalPopping += Current_ModalPopping;
-              //  onboarding = new Onboarding();
-              //  Navigation.PushModalAsync(onboarding, false);
-          //  }
+            InitializeComponent(); 
+            //if (ShouldShowOnboarding() == true)
+            // {
+            // App.Current.ModalPopping += Current_ModalPopping;
+            //  onboarding = new Onboarding();
+            //  Navigation.PushModalAsync(onboarding, false);
+            //  }
             //隱藏navigationpage導航欄
             DateTime thisDay = DateTime.Now;
             NavigationPage.SetHasNavigationBar(this, false);

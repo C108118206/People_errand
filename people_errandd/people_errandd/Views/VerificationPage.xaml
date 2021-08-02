@@ -4,7 +4,6 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-        
     xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
     xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
     x:Class="people_errandd.Views.VerificationPage">
@@ -37,10 +36,10 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="1" Text="請輸入以下資訊進行驗證" TextColor="Black" FontSize="Body" VerticalOptions="Center"></Label>
-            <Entry Grid.Row="2" x:Name="UserNameResult" Placeholder="姓名"   PlaceholderColor="#bababa" FontSize="16"/>
-            <Entry Grid.Row="3" x:Name="UserEmailResult" Placeholder="Email"  PlaceholderColor="#bababa" FontSize="16"/>
-            <Button Grid.Row="4" Text="登入" BackgroundColor="#3897f0" Clicked="LoginButton" TextColor="White" HeightRequest="50" VerticalOptions="Start"/>
+            <Label Grid.Row="1" Text="請輸入以下資訊進行驗證" TextColor="#555555" FontSize="Body" VerticalOptions="Center"></Label>
+            <Entry Grid.Row="2" x:Name="UserNameResult" Placeholder="姓名"   PlaceholderColor="#bababa" TextColor="#555555" FontSize="16"/>
+            <Entry Grid.Row="3" x:Name="UserEmailResult" Placeholder="Email"  PlaceholderColor="#bababa" TextColor="#555555" FontSize="16"/>
+            <Button Grid.Row="4" Text="登入" BackgroundColor="#5C76B1" Clicked="LoginButton" TextColor="White" HeightRequest="50" CornerRadius="5" VerticalOptions="Start"/>
         </Grid>
     </Grid>
 
