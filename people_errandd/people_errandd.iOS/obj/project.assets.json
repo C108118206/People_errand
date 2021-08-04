@@ -2400,11 +2400,55 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 82d637d842a7e9da7fad58b8a1ed4ed51e69b19c
+>>>>>>> a5b82b804cc421fc6840d21a5cd32d6506289fa6
+      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+>>>>>>> 4e7e9a255d388776af74379c2431f224ee040d3d
+>>>>>>> cfaa815b470ba1c5024e32b0ecf807172137ee77
+>>>>>>> dc0b3226f03306cc52b19a0ff60ec4028e8490dd
       "projectName": "people_errandd.iOS",
       "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
       "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
+<<<<<<< HEAD
       "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd.iOS\\obj\\",
+=======
+<<<<<<< HEAD
+      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\",
+=======
+<<<<<<< HEAD
+      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd.iOS\\obj\\",
+=======
+      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+      "projectUniqueName": "D:\\punch new\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "projectName": "people_errandd.iOS",
+      "projectPath": "D:\\punch new\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
+      "outputPath": "D:\\punch new\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\",
+>>>>>>> efdb1d65bafb3a85934a67267f22799b9f622aae
+>>>>>>> 82d637d842a7e9da7fad58b8a1ed4ed51e69b19c
+>>>>>>> a5b82b804cc421fc6840d21a5cd32d6506289fa6
+>>>>>>> 4e7e9a255d388776af74379c2431f224ee040d3d
+>>>>>>> cfaa815b470ba1c5024e32b0ecf807172137ee77
+>>>>>>> dc0b3226f03306cc52b19a0ff60ec4028e8490dd
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2426,8 +2470,38 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
               "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+=======
+<<<<<<< HEAD
+            "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+=======
+<<<<<<< HEAD
+            "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+=======
+<<<<<<< HEAD
+            "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+=======
+<<<<<<< HEAD
+            "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+=======
+<<<<<<< HEAD
+            "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+=======
+            "D:\\punch new\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "D:\\punch new\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+>>>>>>> efdb1d65bafb3a85934a67267f22799b9f622aae
+>>>>>>> 82d637d842a7e9da7fad58b8a1ed4ed51e69b19c
+>>>>>>> a5b82b804cc421fc6840d21a5cd32d6506289fa6
+>>>>>>> 4e7e9a255d388776af74379c2431f224ee040d3d
+>>>>>>> cfaa815b470ba1c5024e32b0ecf807172137ee77
+>>>>>>> dc0b3226f03306cc52b19a0ff60ec4028e8490dd
             }
           }
         }
