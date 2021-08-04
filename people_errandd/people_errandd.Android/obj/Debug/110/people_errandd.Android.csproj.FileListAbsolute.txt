@@ -739,7 +739,6 @@ C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\build.props
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\adb.props
-C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\people_errandd.Android.csprojAssemblyReference.cache
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_BuildLibraryImportsCache.stamp
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\res.flag
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\57\jl\files.cache
@@ -2243,9 +2242,7 @@ C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Xamarin.Android.Support.v7.AppCompat.dll
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Xamarin.Android.Support.v7.RecyclerView.dll
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Xamarin.Android.Support.Vector.Drawable.dll
-C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\androidx\jl\6b43d499-57d3-4110-9cd5-6d4f0f6bc4fd.jar
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_AndroidXJetifyJavaLibraryRules.stamp
-C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\androidx\proguard\3ba69d84-4894-487c-be84-ed86ef1518ec.cfg
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_AndroidXJetifyProguardRules.stamp
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\androidx\_AndroidXJetifyProguardRules.jetify
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_AndroidXCecilfy.stamp
@@ -2268,3 +2265,6 @@ C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\androidx\_AndroidXJetifyManifest.jetify
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_CopyIntermediateAssemblies.stamp
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\profile.png
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\people_errandd.Android.csproj.AssemblyReference.cache
+C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\androidx\jl\8ec93d38-e723-4779-910b-598a6b213c40.jar
+C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\androidx\proguard\ff2cb89c-6aa6-4f60-ad68-64e051296b32.cfg

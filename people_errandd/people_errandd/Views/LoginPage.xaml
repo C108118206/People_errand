@@ -24,7 +24,7 @@
             <Style x:Key="entry" TargetType="Entry">
                 <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="Margin" Value="0,0,0,-10" />
+                <Setter Property="Margin" Value="0,0,0,-5" />
                 <Setter Property="WidthRequest" Value="260" />
                 <Setter Property="FontSize" Value="15" />
                 <Setter Property="TextColor" Value="#9E9E9E" />

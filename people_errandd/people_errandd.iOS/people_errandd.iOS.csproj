@@ -62,6 +62,16 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+    <LaunchForBackgroundFetch>false</LaunchForBackgroundFetch>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>a6td9-8wpgk-001.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="AppSettingsInterface.cs" />
     <Compile Include="BorderlessDatePickerRenderer.cs" />
@@ -70,6 +80,7 @@
     <Compile Include="CustomEntryRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="MyTabbedPageRenderer.cs" />
     <Compile Include="UnselectedTabColorEffect.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
@@ -324,5 +335,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="a6td9-8wpgk-001.ico" />
   </ItemGroup>
 </Project>

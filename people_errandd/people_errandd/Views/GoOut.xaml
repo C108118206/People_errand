@@ -67,7 +67,7 @@
                 <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="CornerRadius" Value="5" />
-                <Setter Property="Margin" Value="0,20,0,50"/>
+                <Setter Property="Margin" Value="0,20,0,280"/>
                 <Setter Property="Text" Value="提出申請"/>
             </Style>
             <ControlTemplate x:Key="RadioButtonTemplate">
@@ -109,6 +109,7 @@
                                  HorizontalOptions="Center"
                                  VerticalOptions="Center" />
                         <Ellipse x:Name="check"
+                                 Stroke="#FFCF80"
                                  Fill="#FFCF80"
                                  WidthRequest="8"
                                  HeightRequest="8"
@@ -227,7 +228,7 @@
 
                 </StackLayout>
             </ScrollView>
-                <Frame BackgroundColor="White" HasShadow="False"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" CornerRadius="30" Margin="0,0,0,-50">
+                <Frame BackgroundColor="White" HasShadow="False"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" CornerRadius="30" Margin="0,0,0,-250">
                     <ScrollView VerticalScrollBarVisibility="Never">
                         <StackLayout >
                             <Label  HorizontalOptions="Start" Margin="0,10,0,0"  Text="整天"  Style="{StaticResource titletext}"></Label>
