@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\punch new\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.deps.json
 D:\punch new\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.dll
 D:\punch new\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\ref\people_errandd.dll
@@ -81,3 +82,33 @@ C:\Users\lmh_flower\source\repos\People_errand_v2\people_errandd\people_errandd\
 C:\Users\lmh_flower\source\repos\People_errand_v2\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\Calender.xaml.g.cs
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\Calender.xaml.g.cs
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.csproj.AssemblyReference.cache
+=======
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\AnnouncementDetail.xaml.g.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\Calender.xaml.g.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\ChatRoom.xaml.g.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\ClassSchedule.xaml.g.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\ColleaguePage.xaml.g.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\GoOut.xaml.g.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\MainpageeDetail.xaml.g.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\Onboarding.xaml.g.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\Record.xaml.g.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\TakeDayOff.xaml.g.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\VerificationPage.xaml.g.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Stylesheet1.css.g.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.AssemblyInfoInputs.cache
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.AssemblyInfo.cs
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.csproj.CoreCompileInputs.cache
+D:\Punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.deps.json
+D:\Punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.dll
+D:\Punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\ref\people_errandd.dll
+D:\Punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.pdb
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\XamlC.stamp
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.dll
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\ref\people_errandd.dll
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.pdb
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.csprojAssemblyReference.cache
+>>>>>>> f9e35c91c698be8e5c5c214030cdfa72441c44a3

@@ -30,6 +30,7 @@ namespace people_errandd.ViewModels
             catch (Exception)
             {
                 Preferences.Set("gpsText", "定位未開啟");
+                Preferences.Set("GpsButtonColor", "#E56262");
                 Console.WriteLine("ERROR");
             }
             return (0,0);
@@ -41,7 +42,7 @@ namespace people_errandd.ViewModels
                 Location locationCompany = new Location(Convert.ToDouble(Preferences.Get("companyX","")),Convert.ToDouble(Preferences.Get("companyY","")));
                 Location locationNow = new Location(X, Y);
                 double distance = Location.CalculateDistance(locationNow, locationCompany, DistanceUnits.Kilometers);
-                if (distance < 0.05)
+                if (distance < 0.2)
                 {
                     return true;
                 }

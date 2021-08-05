@@ -3227,7 +3227,8 @@
       "Xamarin.Essentials >= 1.7.0",
       "Xamarin.Forms >= 5.0.0.2083",
       "Xamarin.Plugin.SharedTransitions >= 2.4.0",
-      "people_errandd >= 1.0.0"
+      "people_errandd >= 1.0.0",
+      "sqlite-net-pcl >= 1.8.0-beta"
     ]
   },
   "packageFolders": {
@@ -3300,6 +3301,10 @@
           "Xamarin.Plugin.SharedTransitions": {
             "target": "Package",
             "version": "[2.4.0, )"
+          },
+          "sqlite-net-pcl": {
+            "target": "Package",
+            "version": "[1.8.0-beta, )"
           }
         }
       }

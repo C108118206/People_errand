@@ -17,28 +17,21 @@ namespace people_errandd.Views
 {
     public partial class MainPage : TabbedPage
     {
-
         private readonly Work Work = new Work();
         bool allowTap = true;
         private readonly geoLocation geoLocation = new geoLocation();
-
         public MainPage()
         {
             BindingContext = new TimeDisplay();
             this.BindingContext = this;
             InitializeComponent(); 
             NavigationPage.SetHasNavigationBar(this, false);
-
-          
-
         }
-        
-
-  
         protected async override void OnAppearing()
         {
             base.OnAppearing();
             GPSText.Text = Preferences.Get("gpsText", "定位未開啟");
+            GPSText.BackgroundColor = Color.FromHex(Preferences.Get("GpsButtonColor", "#E56262"));
             //Preferences.Set("statusBack", "#EDEEEF");
             //statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
             //status.Text = Preferences.Get("statusNow", "無狀態");
@@ -49,8 +42,7 @@ namespace people_errandd.Views
             workOnText.Opacity = Preferences.Get("WorkOnText", workOnText.Opacity = 1);
             workOffText.Opacity = Preferences.Get("WorkOffText", workOffText.Opacity = 0.2);
             username.Text = Preferences.Get("UserName","");
-            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
-
+            //Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
             await geoLocation.GetLocation("Back");
         }
         protected override void OnDisappearing()
@@ -59,21 +51,21 @@ namespace people_errandd.Views
                 geoLocation.cts.Cancel();
             base.OnDisappearing();
         }
-        public void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
-        {
-            if (e.NetworkAccess == NetworkAccess.Internet)
-            {
-               // LabelConnection.FadeTo(0).ContinueWith((result) => { });
-               // FrameConnection.FadeTo(0).ContinueWith((result) => { });
-            }
-            else
-            {
-              //  LabelConnection.FadeTo(1).ContinueWith((result) => { });
-               // FrameConnection.FadeTo(0.845621).ContinueWith((result) => { });
-            }
-        }
+        //public void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+        //{
+        //    if (e.NetworkAccess == NetworkAccess.Internet)
+        //    {
+        //        LabelConnection.FadeTo(0).ContinueWith((result) => { });
+        //        FrameConnection.FadeTo(0).ContinueWith((result) => { }); 
+        //    }
+        //    else
+        //    {
+        //     LabelConnection.FadeTo(1).ContinueWith((result) => { });
+        //        FrameConnection.FadeTo(0.845621).ContinueWith((result) => { });
+        //    }
+        //}
 
-        private async void GoToWork(object sender, EventArgs e)
+        private async void GoToWork(object sender, EventArgs e)  
         {           
             try
             {
@@ -92,8 +84,7 @@ namespace people_errandd.Views
                                 worktimetitle.Text = "上班打卡 at ";
                                 worktime.Text = thisDay.ToString("t");
                                 await App.DataBase.SaveRecordAsync(new WorkRecordModels
-                                {
-                                   
+                                {                                   
                                     status = "上班",
                                     statuscolor = "#5C76B1",
                                     time = DateTime.Now.ToString(),

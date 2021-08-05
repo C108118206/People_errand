@@ -70,6 +70,10 @@
             "Xamarin.Plugin.SharedTransitions": {
               "target": "Package",
               "version": "[2.4.0, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.8.0-beta, )"
             }
           }
         }

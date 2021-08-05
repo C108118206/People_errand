@@ -104,7 +104,7 @@
                         <Label Text="部門"  Style="{StaticResource contenttitle}" ></Label>
                         
 
-                        <Entry Placeholder="行銷部" x:Name="department" PlaceholderColor="#555555" IsReadOnly="True" Style="{StaticResource contententry}" Grid.Row="1"></Entry>
+                        <Entry Placeholder="" x:Name="department" PlaceholderColor="#555555" IsReadOnly="True" Style="{StaticResource contententry}" Grid.Row="1"></Entry>
                             <!--部門名稱(設置唯讀)-->
                         <BoxView Style="{StaticResource line}"/>
                     </StackLayout>
@@ -114,7 +114,7 @@
                         <Label Text="職稱" Style="{StaticResource contenttitle}" ></Label>
 
 
-                        <Entry Placeholder="職員" x:Name="jobTitle" IsReadOnly="True" PlaceholderColor="#555555" Style="{StaticResource contententry}" Grid.Row="3"></Entry>
+                        <Entry Placeholder="" x:Name="jobTitle" IsReadOnly="True" PlaceholderColor="#555555" Style="{StaticResource contententry}" Grid.Row="3"></Entry>
                             <!--職稱名稱(設置唯讀)-->
                         <BoxView Style="{StaticResource line}"/>
                     </StackLayout>
