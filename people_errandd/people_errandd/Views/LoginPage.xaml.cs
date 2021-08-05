@@ -24,6 +24,7 @@ namespace people_errandd.Views
             InitializeComponent();
             //隱藏navigationpage導航欄。
             NavigationPage.SetHasNavigationBar(this, false);
+            Application.Current.UserAppTheme = OSAppTheme.Light;
             Animation ani = new Animation();
             if (string.IsNullOrEmpty(Preferences.Get("uuid", string.Empty)))
             {
@@ -96,10 +97,11 @@ namespace people_errandd.Views
             await image.ScaleTo(1.5, 1000, Easing.CubicIn);
             await image.ScaleTo(1, 1000, Easing.CubicOut);
         }
-
+        /*
         private async void Test_Clicked(object sender, EventArgs e)
         {
             await PopupNavigation.Instance.PushAsync(new VerificationPage("繼承資料"));
         }
+        */
     }
 }

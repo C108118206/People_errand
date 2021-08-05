@@ -4,7 +4,6 @@ using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using FluentValidation;
 using Newtonsoft.Json;
 using people_errandd.Models;
 using Xamarin.Essentials;

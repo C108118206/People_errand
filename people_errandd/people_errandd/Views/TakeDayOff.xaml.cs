@@ -117,6 +117,7 @@ namespace people_errandd.Views
                             EndTime = EndDateTime,
                             Reason = reason.Text,
                             DayOffType = leavetype.Text,
+                            DayOffimage = "nerd.png",
                             Date = DateTime.Now.ToString("")
                         });
                         reason.Text="";

@@ -1,6 +1,8 @@
 ﻿using people_errandd.iOS;
 using Foundation;
 using UIKit;
+using UserNotifications;
+using UserNotificationsUI;
 using Xamarin.Forms;
 [assembly: Dependency(typeof(AppSettingsInterface))]
 namespace people_errandd.iOS
@@ -9,8 +11,12 @@ namespace people_errandd.iOS
     {
         public void OpenAppSetting()
         {
-            var url = new NSUrl($"app-settings:root=LOCATION_SERVICES");
+            NSString SettingString = UIApplication.OpenSettingsUrlString;
+            var url = new NSUrl(SettingString);
             UIApplication.SharedApplication.OpenUrl(url);
+            //Application.Current.UserAppTheme = OSAppTheme.Light;
+
         }
+
     }
 }

@@ -1,12 +1,7 @@
-BottomBar.Droid.dll
-BottomNavigationBar.dll
 FormsViewGroup.dll
 Plugin.Media.dll
 Plugin.SharedTransitions.dll
 Rg.Plugins.Popup.dll
-SkiaSharp.dll
-SkiaSharp.Views.Android.dll
-SkiaSharp.Views.Forms.dll
 SQLitePCLRaw.lib.e_sqlite3.android.dll
 Xamarin.AndroidX.Activity.dll
 Xamarin.AndroidX.Annotation.dll

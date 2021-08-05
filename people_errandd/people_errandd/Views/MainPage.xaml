@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage   xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage     xmlns="http://xamarin.com/schemas/2014/forms"
                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                  xmlns:d="http://xamarin.com/schemas/2014/forms/design"
                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -7,6 +7,8 @@
                  xmlns:local="clr-namespace:people_errandd;assembly=people_errandd"
                  x:Class="people_errandd.Views.MainPage"
                  xmlns:st="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+                 xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+                 ios:Page.UseSafeArea="true" 
                  BarBackgroundColor="White"
                  android:TabbedPage.ToolbarPlacement="Bottom"
                  android:TabbedPage.BarItemColor="#555555"
@@ -15,7 +17,10 @@
                  SelectedTabColor="#5C76B1"
                  xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" xmlns:local1="clr-namespace:people_errandd.Views">
 
-    <ContentPage xmlns:viewmodels="clr-namespace:people_errandd.ViewModels" Title="首頁" IconImageSource="homepage.png" >
+    <ContentPage xmlns:viewmodels="clr-namespace:people_errandd.ViewModels"
+                 xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+                 ios:Page.UseSafeArea="true" 
+                 Title="首頁" IconImageSource="homepage.png" >
     <ContentPage.BindingContext>
         <viewmodels:TimeDisplay  />
     </ContentPage.BindingContext>
@@ -99,9 +104,15 @@
 
 
     <ScrollView VerticalScrollBarVisibility="Never">
-        <StackLayout Orientation="Vertical" BackgroundColor="#EDEEEF">
-                <Frame HasShadow="True" BackgroundColor="White" CornerRadius="30"  Margin="0,-100,0,0" >
-                <StackLayout>
+        <StackLayout Orientation="Vertical" BackgroundColor="#EDEEEF" >
+                <Frame BackgroundColor="White" CornerRadius="30"  Margin="0,-50,0,0" HasShadow="False">
+                    <Frame.HasShadow>
+                        <OnPlatform x:TypeArguments="x:Boolean">
+                            <On Platform="iOS" Value="False" />
+                            <On Platform="Android" Value="True" />
+                        </OnPlatform>
+                    </Frame.HasShadow>
+                    <StackLayout>
 
                     <!--<StackLayout  Margin="0,0,0,0" Grid.Row="0"  Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Start" >
                         
@@ -113,7 +124,7 @@
                     </StackLayout>-->
                     <!--
                 <Button ImageSource="messenger" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Margin="0,-40,20,0" BackgroundColor="#8CC5D7" Clicked="ColleagueButton" /> -->
-                    <StackLayout Margin="0,90,0,0">
+                    <StackLayout Margin="0,40,0,0">
                         <Image Source="logo"  HeightRequest="45" HorizontalOptions="Start"/>
                         <StackLayout Grid.Row="1" Margin="0,-62,0,0" VerticalOptions="End" HorizontalOptions="End" Orientation="Horizontal" >
                             <!--使用者姓名-->
@@ -129,7 +140,7 @@
                                      >
                                 <!--圓形頭貼(點擊後換頁至aboutpage)-->
                                 <ImageButton 
-                                     st:Transition.Name="transitionAboutPage"
+                      
                                     BackgroundColor="White"
                                      Clicked="AboutPageButton" 
                                     Source="profile.png"
@@ -163,8 +174,13 @@
             </Frame>
 
             <!--底部白色背景開始-->
-                <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="5,30,5,40">
-
+                <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                    <StackLayout.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="iOS" Value="5,50,5,40" />
+                            <On Platform="Android" Value="5,30,5,40" />
+                        </OnPlatform>
+                    </StackLayout.Margin>
                     <StackLayout Grid.Row="4" Orientation="Horizontal">
                         <!--上班.下班水平放置-->
                         <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Margin="0,0,30,0">
@@ -203,13 +219,14 @@
                         <StackLayout Grid.Row="0" Grid.Column="1"  Margin="30,0,0,0">
 
                             <!--更多按鈕陰影-->
-                            <ImageButton Source="calender2"  Style="{StaticResource ImageButton}" st:Transition.Name="transitionMore" Clicked="CalebderButton"  ></ImageButton>
+                            <ImageButton Source="calender2"  Style="{StaticResource ImageButton}" Clicked="CalebderButton"  ></ImageButton>
                             <!--更多按鈕-->
 
                             <Label Text="行事曆"  Margin="0,10,0,10"  Style="{StaticResource text}"></Label>
                             <!--更多文字-->
                         </StackLayout>
                     </StackLayout>
+                    
                 </StackLayout>
             </StackLayout>
     </ScrollView>

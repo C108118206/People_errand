@@ -9,6 +9,8 @@ namespace people_errandd.iOS
 {
     public class Application
     {
+        public static object Current { get; internal set; }
+
         // This is the main entry point of the application.
         static void Main(string[] args)
         {
@@ -16,5 +18,7 @@ namespace people_errandd.iOS
             // you can specify it here.
             UIApplication.Main(args, null, "AppDelegate");
         }
+
+
     }
 }

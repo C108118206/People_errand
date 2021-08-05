@@ -2,49 +2,6 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v11.0": {
-      "BottomNavigationBar/1.1.2": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "8.0.3",
-          "Xamarin.Android.Support.Animated.Vector.Drawable": "23.3.0",
-          "Xamarin.Android.Support.Design": "23.3.0",
-          "Xamarin.Android.Support.Vector.Drawable": "23.3.0",
-          "Xamarin.Android.Support.v4": "23.3.0",
-          "Xamarin.Android.Support.v7.AppCompat": "23.3.0",
-          "Xamarin.Android.Support.v7.RecyclerView": "23.3.0"
-        },
-        "compile": {
-          "lib/MonoAndroid403/BottomNavigationBar.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid403/BottomNavigationBar.dll": {}
-        }
-      },
-      "FluentValidation/10.3.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.1/FluentValidation.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/FluentValidation.dll": {}
-        }
-      },
-      "MagicGradients/1.3.0": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp.Views.Forms": "1.68.1.1",
-          "Xamarin.Forms": "4.4.0.991265"
-        },
-        "compile": {
-          "lib/netstandard2.0/MagicGradients.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MagicGradients.dll": {}
-        },
-        "build": {
-          "build/MagicGradients.targets": {}
-        }
-      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -67,66 +24,6 @@
         },
         "runtime": {
           "lib/monoandroid10.0/Rg.Plugins.Popup.dll": {}
-        }
-      },
-      "SkiaSharp/1.68.1.1": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.3"
-        },
-        "compile": {
-          "lib/MonoAndroid/SkiaSharp.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid/SkiaSharp.dll": {}
-        },
-        "runtimeTargets": {
-          "runtimes/osx/native/libSkiaSharp.dylib": {
-            "assetType": "native",
-            "rid": "osx"
-          },
-          "runtimes/tizen-armel/native/libSkiaSharp.so": {
-            "assetType": "native",
-            "rid": "tizen-armel"
-          },
-          "runtimes/tizen-x86/native/libSkiaSharp.so": {
-            "assetType": "native",
-            "rid": "tizen-x86"
-          },
-          "runtimes/win-x64/native/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x86/native/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          }
-        }
-      },
-      "SkiaSharp.Views/1.68.1.1": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "1.68.1.1"
-        },
-        "compile": {
-          "lib/MonoAndroid/SkiaSharp.Views.Android.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid/SkiaSharp.Views.Android.dll": {}
-        }
-      },
-      "SkiaSharp.Views.Forms/1.68.1.1": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "1.68.1.1",
-          "SkiaSharp.Views": "1.68.1.1",
-          "Xamarin.Forms": "4.0.0.540366"
-        },
-        "compile": {
-          "ref/MonoAndroid/SkiaSharp.Views.Forms.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid/SkiaSharp.Views.Forms.dll": {}
         }
       },
       "sqlite-net-pcl/1.8.0-beta": {
@@ -231,20 +128,6 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
-      "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
-        "type": "package",
-        "dependencies": {
-          "BottomNavigationBar": "1.1.2"
-        },
-        "compile": {
-          "lib/MonoAndroid10/BottomBar.Droid.dll": {},
-          "lib/MonoAndroid10/BottomBar.XamarinForms.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/BottomBar.Droid.dll": {},
-          "lib/MonoAndroid10/BottomBar.XamarinForms.dll": {}
-        }
-      },
       "Xam.Plugin.Media/5.0.1": {
         "type": "package",
         "dependencies": {
@@ -259,83 +142,6 @@
         },
         "runtime": {
           "lib/monoandroid10.0/Plugin.Media.dll": {}
-        }
-      },
-      "Xamarin.Android.Support.Animated.Vector.Drawable/23.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Android.Support.Vector.Drawable": "[23.3.0]",
-          "Xamarin.Android.Support.v4": "[23.3.0]"
-        },
-        "compile": {
-          "lib/MonoAndroid403/Xamarin.Android.Support.Animated.Vector.Drawable.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid403/Xamarin.Android.Support.Animated.Vector.Drawable.dll": {}
-        }
-      },
-      "Xamarin.Android.Support.Design/23.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Android.Support.v4": "[23.3.0]",
-          "Xamarin.Android.Support.v7.AppCompat": "[23.3.0]",
-          "Xamarin.Android.Support.v7.RecyclerView": "[23.3.0]"
-        },
-        "compile": {
-          "lib/MonoAndroid43/Xamarin.Android.Support.Design.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid43/Xamarin.Android.Support.Design.dll": {}
-        }
-      },
-      "Xamarin.Android.Support.v4/23.3.0": {
-        "type": "package",
-        "compile": {
-          "lib/MonoAndroid403/Xamarin.Android.Support.v4.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid403/Xamarin.Android.Support.v4.dll": {}
-        }
-      },
-      "Xamarin.Android.Support.v7.AppCompat/23.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Android.Support.Animated.Vector.Drawable": "[23.3.0]",
-          "Xamarin.Android.Support.Vector.Drawable": "[23.3.0]",
-          "Xamarin.Android.Support.v4": "[23.3.0]"
-        },
-        "compile": {
-          "lib/MonoAndroid403/Xamarin.Android.Support.v7.AppCompat.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid403/Xamarin.Android.Support.v7.AppCompat.dll": {}
-        }
-      },
-      "Xamarin.Android.Support.v7.RecyclerView/23.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Android.Support.v4": "[23.3.0]"
-        },
-        "compile": {
-          "lib/MonoAndroid403/Xamarin.Android.Support.v7.RecyclerView.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid403/Xamarin.Android.Support.v7.RecyclerView.dll": {}
-        }
-      },
-      "Xamarin.Android.Support.Vector.Drawable/23.3.0": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Android.Support.v4": "[23.3.0]"
-        },
-        "compile": {
-          "lib/MonoAndroid403/Xamarin.Android.Support.Vector.Drawable.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid403/Xamarin.Android.Support.Vector.Drawable.dll": {}
-        },
-        "build": {
-          "build/Xamarin.Android.Support.Vector.Drawable.targets": {}
         }
       },
       "Xamarin.AndroidX.Activity/1.2.0.1": {
@@ -1426,11 +1232,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "FluentValidation": "10.3.0",
-          "MagicGradients": "1.3.0",
           "Newtonsoft.Json": "13.0.1",
           "Rg.Plugins.Popup": "2.0.0.12",
-          "ThriveGmbH.BottomNavigationBar.XF": "1.0.2",
           "Xam.Plugin.Media": "5.0.1",
           "Xamarin.CommunityToolkit": "1.3.0-pre1",
           "Xamarin.Essentials": "1.7.0",
@@ -1448,53 +1251,6 @@
     }
   },
   "libraries": {
-    "BottomNavigationBar/1.1.2": {
-      "sha512": "HV5iFmTSMZo8UI98l82gQJ4zmtQ9GHhRqiczjc580byZWQpiBY9H3r5PtAPF8JFmYs0/jSImKbh8DXd8ncWcRg==",
-      "type": "package",
-      "path": "bottomnavigationbar/1.1.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "bottomnavigationbar.1.1.2.nupkg.sha512",
-        "bottomnavigationbar.nuspec",
-        "lib/MonoAndroid403/BottomNavigationBar.dll",
-        "lib/MonoAndroid403/BottomNavigationBar.xml"
-      ]
-    },
-    "FluentValidation/10.3.0": {
-      "sha512": "ujEB9UMBPDLib6dyhSRhl93IE6ko4ZU6Nz9MFqohaKcvyf06Hk0yDQUFJGF6RgAOsm27O7ZZHVDpXx7oU5vBcg==",
-      "type": "package",
-      "path": "fluentvalidation/10.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "fluent-validation-icon.png",
-        "fluentvalidation.10.3.0.nupkg.sha512",
-        "fluentvalidation.nuspec",
-        "lib/net5.0/FluentValidation.dll",
-        "lib/net5.0/FluentValidation.xml",
-        "lib/netstandard2.0/FluentValidation.dll",
-        "lib/netstandard2.0/FluentValidation.xml",
-        "lib/netstandard2.1/FluentValidation.dll",
-        "lib/netstandard2.1/FluentValidation.xml"
-      ]
-    },
-    "MagicGradients/1.3.0": {
-      "sha512": "8L+qSU1dCIbKzMkGI1PQ5PXnoi8NACk3lp6qvDv5r5BMfpLTVkP0MU3x2xT0QIaz5sKFRinjkNPA7Ke6+w55PQ==",
-      "type": "package",
-      "path": "magicgradients/1.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "build/MagicGradients.targets",
-        "build/PreserveMagicGradients.cs",
-        "icon.png",
-        "lib/netstandard2.0/MagicGradients.dll",
-        "magicgradients.1.3.0.nupkg.sha512",
-        "magicgradients.nuspec"
-      ]
-    },
     "Newtonsoft.Json/13.0.1": {
       "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "type": "package",
@@ -1568,116 +1324,6 @@
         "readme.txt",
         "rg.plugins.popup.2.0.0.12.nupkg.sha512",
         "rg.plugins.popup.nuspec"
-      ]
-    },
-    "SkiaSharp/1.68.1.1": {
-      "sha512": "fJteGIKAMmLD9tSQgdvZqLqECub6B55pK1MH5QyanLOr8JQ8uUMKKcrAcpocNnmIS/YsUJOL4AD7dO6mAwP7mQ==",
-      "type": "package",
-      "path": "skiasharp/1.68.1.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/net45/SkiaSharp.targets",
-        "build/tizen40/SkiaSharp.targets",
-        "buildTransitive/net45/SkiaSharp.targets",
-        "lib/MonoAndroid/SkiaSharp.dll",
-        "lib/MonoAndroid/SkiaSharp.xml",
-        "lib/Xamarin.Mac20/SkiaSharp.dll",
-        "lib/Xamarin.Mac20/SkiaSharp.xml",
-        "lib/Xamarin.TVOS/SkiaSharp.dll",
-        "lib/Xamarin.TVOS/SkiaSharp.xml",
-        "lib/Xamarin.WatchOS/SkiaSharp.dll",
-        "lib/Xamarin.WatchOS/SkiaSharp.xml",
-        "lib/Xamarin.iOS/SkiaSharp.dll",
-        "lib/Xamarin.iOS/SkiaSharp.xml",
-        "lib/net45/SkiaSharp.dll",
-        "lib/net45/SkiaSharp.xml",
-        "lib/netstandard1.3/SkiaSharp.dll",
-        "lib/netstandard1.3/SkiaSharp.xml",
-        "lib/tizen40/SkiaSharp.dll",
-        "lib/tizen40/SkiaSharp.xml",
-        "lib/uap10.0/SkiaSharp.dll",
-        "lib/uap10.0/SkiaSharp.xml",
-        "runtimes/osx/native/libSkiaSharp.dylib",
-        "runtimes/tizen-armel/native/libSkiaSharp.so",
-        "runtimes/tizen-x86/native/libSkiaSharp.so",
-        "runtimes/win-x64/native/libSkiaSharp.dll",
-        "runtimes/win-x86/native/libSkiaSharp.dll",
-        "runtimes/win10-arm/nativeassets/uap10.0/libEGL.dll",
-        "runtimes/win10-arm/nativeassets/uap10.0/libGLESv2.dll",
-        "runtimes/win10-arm/nativeassets/uap10.0/libSkiaSharp.dll",
-        "runtimes/win10-x64/nativeassets/uap10.0/libEGL.dll",
-        "runtimes/win10-x64/nativeassets/uap10.0/libGLESv2.dll",
-        "runtimes/win10-x64/nativeassets/uap10.0/libSkiaSharp.dll",
-        "runtimes/win10-x86/nativeassets/uap10.0/libEGL.dll",
-        "runtimes/win10-x86/nativeassets/uap10.0/libGLESv2.dll",
-        "runtimes/win10-x86/nativeassets/uap10.0/libSkiaSharp.dll",
-        "skiasharp.1.68.1.1.nupkg.sha512",
-        "skiasharp.nuspec",
-        "xamarin.interactive/SkiaSharp.Workbooks.dll"
-      ]
-    },
-    "SkiaSharp.Views/1.68.1.1": {
-      "sha512": "qpRPbhLFwR6DjxUwzdqWw8BMgKFQ7MMdQdxUt2K0DvsFBiklK6vBBjIkOh58yPLYix1LPXgfD7M6KFO/G4T7OA==",
-      "type": "package",
-      "path": "skiasharp.views/1.68.1.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "lib/MonoAndroid/SkiaSharp.Views.Android.dll",
-        "lib/MonoAndroid/SkiaSharp.Views.Android.xml",
-        "lib/Xamarin.Mac20/SkiaSharp.Views.Mac.dll",
-        "lib/Xamarin.Mac20/SkiaSharp.Views.Mac.xml",
-        "lib/Xamarin.TVOS/SkiaSharp.Views.tvOS.dll",
-        "lib/Xamarin.TVOS/SkiaSharp.Views.tvOS.xml",
-        "lib/Xamarin.WatchOS/SkiaSharp.Views.watchOS.dll",
-        "lib/Xamarin.WatchOS/SkiaSharp.Views.watchOS.xml",
-        "lib/Xamarin.iOS/SkiaSharp.Views.iOS.dll",
-        "lib/Xamarin.iOS/SkiaSharp.Views.iOS.xml",
-        "lib/net45/SkiaSharp.Views.Desktop.dll",
-        "lib/net45/SkiaSharp.Views.Desktop.xml",
-        "lib/tizen40/SkiaSharp.Views.Tizen.dll",
-        "lib/tizen40/SkiaSharp.Views.Tizen.xml",
-        "lib/uap10.0/SkiaSharp.Views.UWP.dll",
-        "lib/uap10.0/SkiaSharp.Views.UWP.xml",
-        "runtimes/win10-arm/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll",
-        "runtimes/win10-x64/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll",
-        "runtimes/win10-x86/nativeassets/uap10.0/SkiaSharp.Views.Interop.UWP.dll",
-        "skiasharp.views.1.68.1.1.nupkg.sha512",
-        "skiasharp.views.nuspec"
-      ]
-    },
-    "SkiaSharp.Views.Forms/1.68.1.1": {
-      "sha512": "ahwhImos0hRa4iGQY2M0HZLcvJZNFVe3KFaod2tn1/hPevGOplPReWykfodMLksRzfm1SmxU7hxd121XupPCHw==",
-      "type": "package",
-      "path": "skiasharp.views.forms/1.68.1.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "build/net45/SkiaSharp.Views.Forms.targets",
-        "lib/MonoAndroid/SkiaSharp.Views.Forms.dll",
-        "lib/Xamarin.Mac20/SkiaSharp.Views.Forms.dll",
-        "lib/Xamarin.iOS/SkiaSharp.Views.Forms.dll",
-        "lib/tizen40/SkiaSharp.Views.Forms.dll",
-        "lib/uap10.0/SkiaSharp.Views.Forms.dll",
-        "ref/MonoAndroid/SkiaSharp.Views.Forms.dll",
-        "ref/MonoAndroid/SkiaSharp.Views.Forms.xml",
-        "ref/Xamarin.Mac20/SkiaSharp.Views.Forms.dll",
-        "ref/Xamarin.Mac20/SkiaSharp.Views.Forms.xml",
-        "ref/Xamarin.iOS/SkiaSharp.Views.Forms.dll",
-        "ref/Xamarin.iOS/SkiaSharp.Views.Forms.xml",
-        "ref/netstandard1.3/SkiaSharp.Views.Forms.dll",
-        "ref/netstandard1.3/SkiaSharp.Views.Forms.xml",
-        "ref/tizen40/SkiaSharp.Views.Forms.dll",
-        "ref/tizen40/SkiaSharp.Views.Forms.xml",
-        "ref/uap10.0/SkiaSharp.Views.Forms.dll",
-        "ref/uap10.0/SkiaSharp.Views.Forms.xml",
-        "skiasharp.views.forms.1.68.1.1.nupkg.sha512",
-        "skiasharp.views.forms.nuspec"
       ]
     },
     "sqlite-net-pcl/1.8.0-beta": {
@@ -1868,21 +1514,6 @@
         "version.txt"
       ]
     },
-    "ThriveGmbH.BottomNavigationBar.XF/1.0.2": {
-      "sha512": "CAxjraz7v27mWxrChvLLggDRq5Icf3OA0IL3lpGY+rfUGH488kZzBB3WJmfbgh7q5yfBbva51Iuv4tFleepV2A==",
-      "type": "package",
-      "path": "thrivegmbh.bottomnavigationbar.xf/1.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid10/BottomBar.Droid.dll",
-        "lib/MonoAndroid10/BottomBar.XamarinForms.dll",
-        "lib/Xamarin.iOS10/BottomBar.XamarinForms.dll",
-        "lib/portable-net45+win8+wpa81/BottomBar.XamarinForms.dll",
-        "thrivegmbh.bottomnavigationbar.xf.1.0.2.nupkg.sha512",
-        "thrivegmbh.bottomnavigationbar.xf.nuspec"
-      ]
-    },
     "Xam.Plugin.Media/5.0.1": {
       "sha512": "UUR31EEnhDVa4IXgVfQIAL3u9v6YAyppsb5UlO9MNJ4quGGkfcWX++JexjB1nMGqvCzsjAT2t32drKDIXoW4SQ==",
       "type": "package",
@@ -1921,80 +1552,6 @@
         "readme.txt",
         "xam.plugin.media.5.0.1.nupkg.sha512",
         "xam.plugin.media.nuspec"
-      ]
-    },
-    "Xamarin.Android.Support.Animated.Vector.Drawable/23.3.0": {
-      "sha512": "qCN7bgA3BpzVybYV5jJa0wQDDYqdomZ7va4gdeyXNAtjEVFPDdKdS8wrD1HuGsQfxShLPcsDFIKd1Z4birTq8g==",
-      "type": "package",
-      "path": "xamarin.android.support.animated.vector.drawable/23.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid403/Xamarin.Android.Support.Animated.Vector.Drawable.dll",
-        "xamarin.android.support.animated.vector.drawable.23.3.0.nupkg.sha512",
-        "xamarin.android.support.animated.vector.drawable.nuspec"
-      ]
-    },
-    "Xamarin.Android.Support.Design/23.3.0": {
-      "sha512": "aTf8CqR0Ktzgoa9DD6YOR/BvfBcvvmUsQ3O2TtJxas0QQ1wb2raneICKyeZd89oFa3VAQbQzzXUP5NtSurF15w==",
-      "type": "package",
-      "path": "xamarin.android.support.design/23.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid43/Xamarin.Android.Support.Design.dll",
-        "xamarin.android.support.design.23.3.0.nupkg.sha512",
-        "xamarin.android.support.design.nuspec"
-      ]
-    },
-    "Xamarin.Android.Support.v4/23.3.0": {
-      "sha512": "14gFJCJF0ZDBVEHIuXefBaGKaVxWMw11yb41dcupnDPtIyQCUEz2BQGmMna2aIWquwAHrhJ8sxdmhmTdGyno+Q==",
-      "type": "package",
-      "path": "xamarin.android.support.v4/23.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid403/Xamarin.Android.Support.v4.dll",
-        "xamarin.android.support.v4.23.3.0.nupkg.sha512",
-        "xamarin.android.support.v4.nuspec"
-      ]
-    },
-    "Xamarin.Android.Support.v7.AppCompat/23.3.0": {
-      "sha512": "n5x/PwzhM9ShoESvckqI82cdWn2L3ccdfwdp0LrstcGBlIJMN9mXbntsjyKrfHXU0+RF04Iq5w0begvaAmTxcQ==",
-      "type": "package",
-      "path": "xamarin.android.support.v7.appcompat/23.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid403/Xamarin.Android.Support.v7.AppCompat.dll",
-        "xamarin.android.support.v7.appcompat.23.3.0.nupkg.sha512",
-        "xamarin.android.support.v7.appcompat.nuspec"
-      ]
-    },
-    "Xamarin.Android.Support.v7.RecyclerView/23.3.0": {
-      "sha512": "LRzIX3UHTAElbVGlXrNOL3SjsNcftfGDN9M1jhkGz5+uKxyhCFoXkvLMUvmNd5iZLdnFixAgXR+Ctm4tsRQxPQ==",
-      "type": "package",
-      "path": "xamarin.android.support.v7.recyclerview/23.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid403/Xamarin.Android.Support.v7.RecyclerView.dll",
-        "xamarin.android.support.v7.recyclerview.23.3.0.nupkg.sha512",
-        "xamarin.android.support.v7.recyclerview.nuspec"
-      ]
-    },
-    "Xamarin.Android.Support.Vector.Drawable/23.3.0": {
-      "sha512": "A2yyRZp7QsRdPKIjTCQ2Ic84nNToPY5lVa8vJPLV0gJ0XBeKijQQi8biFZZdnXy+tzrUmfX6fJnlbYFSdIMhiQ==",
-      "type": "package",
-      "path": "xamarin.android.support.vector.drawable/23.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/Xamarin.Android.Support.Tasks.VectorDrawable.dll",
-        "build/Xamarin.Android.Support.Vector.Drawable.targets",
-        "lib/MonoAndroid403/Xamarin.Android.Support.Vector.Drawable.dll",
-        "xamarin.android.support.vector.drawable.23.3.0.nupkg.sha512",
-        "xamarin.android.support.vector.drawable.nuspec"
       ]
     },
     "Xamarin.AndroidX.Activity/1.2.0.1": {
@@ -3220,8 +2777,6 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v11.0": [
-      "MagicGradients >= 1.3.0",
-      "ThriveGmbH.BottomNavigationBar.XF >= 1.0.2",
       "Xam.Plugin.Media >= 5.0.1",
       "Xamarin.CommunityToolkit >= 1.3.0-pre1",
       "Xamarin.Essentials >= 1.7.0",
@@ -3238,11 +2793,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
       "projectName": "people_errandd.Android",
-      "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+      "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
       "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd.Android\\obj\\",
+      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -3264,8 +2819,8 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
-              "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+            "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
             }
           }
         }
@@ -3274,14 +2829,6 @@
     "frameworks": {
       "monoandroid11.0": {
         "dependencies": {
-          "MagicGradients": {
-            "target": "Package",
-            "version": "[1.3.0, )"
-          },
-          "ThriveGmbH.BottomNavigationBar.XF": {
-            "target": "Package",
-            "version": "[1.0.2, )"
-          },
           "Xam.Plugin.Media": {
             "target": "Package",
             "version": "[5.0.1, )"

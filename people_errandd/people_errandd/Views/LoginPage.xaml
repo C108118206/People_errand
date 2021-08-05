@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="people_errandd.Views.LoginPage"
              xmlns:st="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true" 
               BackgroundColor="#EDEEEF">
     <!--內容樣式設定-->
     <ContentPage.Resources>
@@ -12,7 +14,7 @@
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="40" />
                 <Setter Property="Padding" Value="0" />
-                <Setter Property="Margin" Value="0,60,0,30" />
+                <Setter Property="Margin" Value="0,70,0,30" />
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
             <Style x:Key="content" TargetType="Label">
@@ -24,7 +26,6 @@
             <Style x:Key="entry" TargetType="Entry">
                 <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="Margin" Value="0,0,0,-5" />
                 <Setter Property="WidthRequest" Value="260" />
                 <Setter Property="FontSize" Value="15" />
                 <Setter Property="TextColor" Value="#9E9E9E" />
@@ -74,7 +75,7 @@
             Spacing="0">
             <!--設置背景深藍色-->
             <Frame
-                Margin="0,-36,0,168"
+                Margin="0,-50,0,168"
                 x:Name="transition"
                 WidthRequest="1000"
                 HasShadow="False"
@@ -94,13 +95,20 @@
 
                             <!--組織ID標題-->
 
-                            <Entry x:Name="company" Placeholder=" 請輸入組織ID" Style="{StaticResource entry}" Grid.Row="1"  />
+                            <Entry x:Name="company" Placeholder=" 請輸入組織ID" Style="{StaticResource entry}" Grid.Row="1">
+                                <Entry.Margin>
+                                    <OnPlatform x:TypeArguments="Thickness">
+                                        <On Platform="iOS" Value="0,0,0,-5" />
+                                        <On Platform="Android" Value="0,0,0,-10" />
+                                    </OnPlatform>
+                                </Entry.Margin>
+                            </Entry>
                             <BoxView Style="{StaticResource line}"/>
                         </StackLayout>
                         <!--輸入組織ID-->
                             <Button x:Name="button" Text="登入" Style="{StaticResource Button}" Clicked="LogInButton" Grid.Row="2" Margin="0,0,0,15"/>
                             <!--登入按鈕-->
-                        <Button  Text="繼承資料" x:Name="Test" Style="{StaticResource Button}" Clicked="Test_Clicked"  Grid.Row="3" Margin="0,0,0,15" />
+                        <!-- <Button  Text="繼承資料" x:Name="Test" Style="{StaticResource Button}" Clicked="Test_Clicked"  Grid.Row="3" Margin="0,0,0,15" />-->
                             <Button  Text="如何使用" x:Name="question" Style="{StaticResource Question}" Clicked="QuestionButton" Grid.Row="4" />
                             <!--如何使用之快顯示窗-->
                     </StackLayout>

@@ -2,6 +2,7 @@
 using Android.OS;
 using people_errandd.Droid;
 using System;
+
 using Xamarin.Forms;
 using static Android.Provider.Settings;
 using Application = Android.App.Application;
@@ -10,10 +11,12 @@ namespace people_errandd.Droid
 {
     public class AppSettingsInterface : MainActivity,IAppSettingsHelper
     {
+
         public void OpenAppSetting()
         {
             var intent = new Intent(Android.Provider.Settings.ActionLocationSourceSettings);
-            Application.Context.StartActivity(intent);         
+            Application.Context.StartActivity(intent);
+           
         }
         string id = string.Empty;
 

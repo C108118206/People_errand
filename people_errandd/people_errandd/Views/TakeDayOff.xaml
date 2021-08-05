@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="people_errandd.Views.TakeDayOff"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true" 
              BackgroundColor="#EDEEEF">
 
     <!--最上面Navigation標題-->
@@ -44,8 +46,9 @@
             <Setter Property="Format" Value="t" />
         </Style>
         <Style x:Key="editor" TargetType="Editor">
-            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="BackgroundColor" Value="White" />
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="VerticalOptions" Value="FillAndExpand" />
             <Setter Property="FontSize" Value="17" />
             <Setter Property="TextColor" Value="#5E709B" />
             <Setter Property="FontAttributes" Value="Bold" />
@@ -287,7 +290,7 @@
                             <Label Text="原因" Style="{StaticResource titletext}"></Label>
                             <!--原因-->
 
-                            <Frame CornerRadius="5"  Padding="0"  HeightRequest="105" HorizontalOptions="FillAndExpand" BorderColor="#A8A8A8" BackgroundColor="White" HasShadow="False" >
+                            <Frame CornerRadius="5"  Padding="0,5,0,5"  HeightRequest="105" HorizontalOptions="FillAndExpand" BorderColor="#A8A8A8" BackgroundColor="White" HasShadow="False" >
                                 <Editor Grid.Row="1" Style="{StaticResource editor}" Margin="10,0,10,0" x:Name="reason"></Editor>
                                 <!--原因輸入-->
                             </Frame>

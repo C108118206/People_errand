@@ -30,7 +30,7 @@ namespace people_errandd.ViewModels
             catch (Exception)
             {
                 Preferences.Set("gpsText", "定位未開啟");
-                Preferences.Set("GpsButtonColor", "#E56262");
+                Preferences.Set("GpsButtonColor", "#CA4848");
                 Console.WriteLine("ERROR");
             }
             return (0,0);

@@ -20,7 +20,7 @@
   <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <application android:label="Punch" android:theme="@style/MainTheme" android:icon="@mipmap/icon" android:usesCleartextTraffic="true" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true" android:extractNativeLibs="true">
-    <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="people_errandd" android:theme="@style/MainTheme" android:name="crc643c61ea2ced9767ab.MainActivity">
+    <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="people_errandd" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:name="crc643c61ea2ced9767ab.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

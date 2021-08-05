@@ -11,7 +11,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.CommunityToolkit.UI.Views;
-using BottomBar.XamarinForms;
+
 
 namespace people_errandd.Views
 {
@@ -22,8 +22,9 @@ namespace people_errandd.Views
         private readonly geoLocation geoLocation = new geoLocation();
         public MainPage()
         {
-            BindingContext = new TimeDisplay();
+            //BindingContext = new TimeDisplay();
             this.BindingContext = this;
+            Application.Current.UserAppTheme = OSAppTheme.Light;
             InitializeComponent(); 
             NavigationPage.SetHasNavigationBar(this, false);
         }
@@ -31,7 +32,7 @@ namespace people_errandd.Views
         {
             base.OnAppearing();
             GPSText.Text = Preferences.Get("gpsText", "定位未開啟");
-            GPSText.BackgroundColor = Color.FromHex(Preferences.Get("GpsButtonColor", "#E56262"));
+            GPSText.BackgroundColor = Color.FromHex(Preferences.Get("GpsButtonColor", "#CA4848"));
             //Preferences.Set("statusBack", "#EDEEEF");
             //statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
             //status.Text = Preferences.Get("statusNow", "無狀態");
@@ -88,7 +89,7 @@ namespace people_errandd.Views
                                     status = "上班",
                                     statuscolor = "#5C76B1",
                                     time = DateTime.Now.ToString(),
-                                    image = "worker.png"
+                                    Workimage = "worker.png"
                                 }) ;
                                 WorkOnSet();
                             }
@@ -145,7 +146,7 @@ namespace people_errandd.Views
                                     status = "下班",
                                     statuscolor = "#CA4848",
                                     time = DateTime.Now.ToString(),
-                                    image = "workeroff.png"
+                                    Workimage = "workeroff.png"
                                 });
                                 WorkOffSet();
                             }

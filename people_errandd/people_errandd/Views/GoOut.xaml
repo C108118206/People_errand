@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="people_errandd.Views.GoOut"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true" 
              BackgroundColor="#EDEEEF">
     <!--最上面Navigation標題-->
     <NavigationPage.TitleView>
@@ -43,19 +45,20 @@
                 <Setter Property="Format" Value="t" />
             </Style>
             <Style x:Key="editor" TargetType="Editor">
-                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="BackgroundColor" Value="White" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
                 <Setter Property="FontSize" Value="17" />
                 <Setter Property="TextColor" Value="#5E709B" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="Keyboard" Value="Chat" />
             </Style>
             <Style x:Key="entry" TargetType="Entry">
-                <Setter Property="HeightRequest" Value="50" />
                 <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="Margin" Value="0,0,15,0" />
                 <Setter Property="FontSize" Value="17" />
+                <Setter Property="BackgroundColor" Value="White" />
                 <Setter Property="TextColor" Value="#5E709B" />
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>
@@ -292,7 +295,7 @@
                                 <Label Text="地點" Style="{StaticResource titletext}"></Label>
                                 <!--地點-->
                             </StackLayout>
-                            <Frame CornerRadius="5" Padding="0"  HeightRequest="45" HorizontalOptions="FillAndExpand" BorderColor="#A8A8A8" BackgroundColor="White" HasShadow="False" Margin="0,0,0,0">
+                            <Frame CornerRadius="5" Padding="0,5,5,5"  HeightRequest="45" HorizontalOptions="FillAndExpand" BorderColor="#A8A8A8" BackgroundColor="White" HasShadow="False" Margin="0,0,0,0">
                                 <StackLayout Orientation="Horizontal">
                                 <Image Source="location" Margin="10,0,0,0" HeightRequest="25"/>
                                 <Entry Grid.Row="1" x:Name="locationEntry" Style="{StaticResource entry}" Margin="10,0,0,0"></Entry>
@@ -310,7 +313,7 @@
                             <Label Text="事由" Style="{StaticResource titletext}"></Label>
                             <!--事由-->
 
-                            <Frame CornerRadius="5"  Padding="0"  HeightRequest="105" HorizontalOptions="FillAndExpand" BorderColor="#A8A8A8" BackgroundColor="White" HasShadow="False" >
+                            <Frame CornerRadius="5" Padding="0,5,0,5"  HeightRequest="105" HorizontalOptions="FillAndExpand" BorderColor="#A8A8A8" BackgroundColor="White" HasShadow="False" >
                                 <Editor Grid.Row="1" Style="{StaticResource editor}" Margin="10,0,10,0" x:Name="reasonEntry"></Editor>
                                 <!--事由輸入-->
                             </Frame>

@@ -50,6 +50,7 @@ namespace people_errandd.Views
                             EndTime = EndDateTime,
                             Location = locationEntry.Text,
                             Reason = reasonEntry.Text,
+                            GoOutimage = "goout2.png",
                             Date = DateTime.Now.ToString("d")
                         }) ;
                         locationEntry.Text = "";

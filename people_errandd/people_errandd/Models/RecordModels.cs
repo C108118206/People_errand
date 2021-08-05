@@ -19,7 +19,7 @@ namespace people_errandd.Models
         public string status { get; set; }
         public string statuscolor { get; set; }
         public string time { get; set; }
-        public string image { get; set; }
+        public string Workimage { get; set; }
     }
     public class DayOffRecordModels
     {
@@ -27,6 +27,7 @@ namespace people_errandd.Models
         public DateTime EndTime { get; set; }
         public string   Reason { get; set; }
         public string DayOffType { get; set; }
+        public string DayOffimage { get; set; }
         public string Date { get; set; }
     }
     public class GoOutRecordModels
@@ -35,6 +36,7 @@ namespace people_errandd.Models
         public DateTime EndTime { get; set; }
         public string Reason { get; set; }
         public string Location { get; set; }
+        public string GoOutimage { get; set; }
         public string Date { get; set; }
     }
     public class Records: HttpResponse

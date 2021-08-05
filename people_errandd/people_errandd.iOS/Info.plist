@@ -10,9 +10,8 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -35,6 +34,12 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NsLocationWhenInUseUsageDescription</key>
+	<string>This app wants to use tour location</string>
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>This app wants to use tour location</string>
+  <key>NSLocationAlwaysUsageDescription</key>
+  <string>This app wants to use tour location</string>
+	<key>NSLocationUsageDescription</key>
 	<string>This app wants to use tour location</string>
 </dict>
 </plist>
