@@ -16,7 +16,11 @@ namespace people_errandd.Models
         public double coordinateY { get; set; }
 
         public bool enabled { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime createdTime { get; set; }
+        public string status { get; set; }
+        public string statuscolor { get; set; }
+        public string time { get; set; }
+        public string image { get; set; }
 
     }
     public class company

@@ -21,6 +21,7 @@ namespace people_errandd
     {      
         static Database dataBase;
         Work work = new Work();
+        InformationViewModel information = new InformationViewModel();
         geoLocation location = new geoLocation();
         public static double Latitude { get; set; }
         public static double Longitude { get; set; }
@@ -50,7 +51,9 @@ namespace people_errandd
             bool hasKey = Preferences.ContainsKey("HashAccount");
             if (hasKey)
             {
+                Console.WriteLine(Preferences.Get("HashAccount", ""));
                 MainPage = new SharedTransitionNavigationPage(new MainPage());
+                await information.GetUserName(Preferences.Get("HashAccount", ""));
                 //NavigationPage
             }
             await GetLocation();
@@ -74,6 +77,7 @@ namespace people_errandd
         private async Task GetLocation()
         {
             Preferences.Set("gpsText", "定位已開啟");
+            Preferences.Set("GpsButtonColor", "#5C76B1");
             try
             {
                 (Latitude, Longitude) =await location.GetLocation("Back");
@@ -111,8 +115,7 @@ namespace people_errandd
             }
             catch (Exception)
             {
-                await page.DisplayAlert("", "請檢查網路狀態", "確定");
-                Connectivity.ConnectivityChanged += _page.Connectivity_ConnectivityChanged;
+                await page.DisplayAlert("", "請檢查網路狀態", "確定");               
                 return;
             }
         }

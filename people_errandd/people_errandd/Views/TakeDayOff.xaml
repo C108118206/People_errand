@@ -139,13 +139,15 @@
    
         <ScrollView VerticalScrollBarVisibility="Never">
         <StackLayout>
+            <Label Text="請假申請" Style="{StaticResource titletext}" Margin="10,20,10,10" HorizontalOptions="Center" ></Label>
+            <BoxView BackgroundColor="Gray" HeightRequest="1"  VerticalOptions="Center" Margin="10,0,10,0"  ></BoxView>
             <StackLayout Orientation="Horizontal" Margin="20,20,0,0">
                 <!--*-->
                 <Label Text="假別" Style="{StaticResource titletext}"></Label>
                 <Label Text="" x:Name="leavetype"  Style="{StaticResource titletext}" TextColor="#5E709B" FontSize="14" Margin="0,2,0,0"></Label>
                 <!--假別-->
             </StackLayout>
-            <ScrollView Orientation="Horizontal" Margin="20,10,0,0" HorizontalScrollBarVisibility="Never">
+            <ScrollView Orientation="Horizontal" Margin="20,10,0,-40" HorizontalScrollBarVisibility="Never">
                 <StackLayout>
                     <StackLayout Orientation="Horizontal" >
                         <RadioButton Value="事假" CheckedChanged="Personal" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
@@ -290,7 +292,7 @@
                             </Frame>
                         </StackLayout>
 
-                        <Button  Grid.Row="4" Style="{StaticResource button}" ></Button>
+                        <Button  Grid.Row="4" Style="{StaticResource button}"  Clicked="EnterButton"></Button>
                 <!--提出申請按鈕-->
                     </StackLayout>
                 </ScrollView>

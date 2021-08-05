@@ -11,7 +11,7 @@ namespace people_errandd.Views
     public partial class TakeDayOff : ContentPage
     {
         private bool allowTap = true;
-        //private static int typeId;
+        private static int LeaveTypeId;
         readonly TakeDayOffViewModel takeDayOff = new TakeDayOffViewModel();
         public TakeDayOff()
         {
@@ -47,8 +47,6 @@ namespace people_errandd.Views
                 allowTap = true;
             }
         }
-
-
         private void AlldaySwitch_Toggled(object sender, ToggledEventArgs e)
         {
             if (AlldaySwitch.IsToggled == true)
@@ -62,47 +60,83 @@ namespace people_errandd.Views
                 endTimePicker.IsVisible = true;              
             }
         }
-
        private void Personal(object sender, CheckedChangedEventArgs e)
         {
             leavetype.Text = "事假";
-
+            LeaveTypeId = 1;
         }
         private void Sick(object sender, CheckedChangedEventArgs e)
         {
             leavetype.Text = "病假";
-      
+            LeaveTypeId = 2;
         }
         private void Bereavement(object sender, CheckedChangedEventArgs e)
         {
             leavetype.Text = "喪假";
-
+            LeaveTypeId = 3;
         }
         private void Maternity(object sender, CheckedChangedEventArgs e)
         {
             leavetype.Text = "產假";
-
+            LeaveTypeId = 4;
         }
         private void Physiological(object sender, CheckedChangedEventArgs e)
         {
             leavetype.Text = "生理假";
-   
+            LeaveTypeId = 5;
         }
         private void Abortion(object sender, CheckedChangedEventArgs e)
         {
             leavetype.Text = "流產假";
-
+            LeaveTypeId = 6;
         }
         private void Prenatal(object sender, CheckedChangedEventArgs e)
         {
             leavetype.Text = "產前假";
-
+            LeaveTypeId = 7;
         }
         private void Paternity(object sender, CheckedChangedEventArgs e)
         {
             leavetype.Text = "陪產假";
+            LeaveTypeId = 8;
         }
-
+        private async void EnterButton(object sender, EventArgs e)
+        {
+            try
+            {
+                if (allowTap)
+                {
+                    DateTime StartDateTime = startDatePicker.Date + startTimePicker.Time;
+                    DateTime EndDateTime = endDatePicker.Date + endTimePicker.Time;
+                    if (await takeDayOff.PostDayOff(StartDateTime, EndDateTime, LeaveTypeId, reason.Text))
+                    {
+                        await DisplayAlert("", "申請成功", "OK");
+                        await App.DataBase.SaveRecordAsync(new DayOffRecordModels
+                        {
+                            StartTime = StartDateTime,
+                            EndTime = EndDateTime,
+                            Reason = reason.Text,
+                            DayOffType = leavetype.Text,
+                            Date = DateTime.Now.ToString("")
+                        });
+                        reason.Text="";
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "請選擇假別" , "OK");
+                        allowTap = false;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                await DisplayAlert("", "格式錯誤,請重新輸入", "OK");
+            }
+            finally
+            {
+                allowTap = true;
+            }
+        }
     }
-
 }
+

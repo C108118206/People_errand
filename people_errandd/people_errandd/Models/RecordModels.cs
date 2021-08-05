@@ -2,8 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Net.Http;
+using Newtonsoft.Json;
+using people_errandd.Models;
+using Xamarin.Essentials;
+
 
 namespace people_errandd.Models
 {
@@ -32,6 +37,46 @@ namespace people_errandd.Models
         public string Location { get; set; }
         public string Date { get; set; }
     }
+    public class Records: HttpResponse
+    {
+        public async Task<List<work>> GetWorkRecord(string _HashAccount)
+        {
+            try
+            {
+                response = await client.GetAsync(basic_url + ControllerNameWorkRecord + "GetEmployeeAllWorkRecords" + _HashAccount);
+                var result = await response.Content.ReadAsStringAsync();
+                List<work> workRecord = JsonConvert.DeserializeObject<List<work>>(result);
+                int i = 0;
+                foreach (var work in workRecord)
+                {                       
+                    switch (work.workTypeId)
+                    {
+                        case 1:
+                            workRecord[i].status = "上班";
+                            workRecord[i].statuscolor = "#5C76B1";
+                            workRecord[i].image = "worker.png";
+                            break;
+                        case 2:
+                            workRecord[i].status = "下班";
+                            workRecord[i].statuscolor = "#CA4848";
+                            workRecord[i].image = "workeroff.png";
+                            break;
+                        default:
+                            break;
+                    }
+                    workRecord[i].time = workRecord[i].createdTime.ToString();
+                    Console.WriteLine(workRecord[i].status);
+                    i++;
+                }              
+                return workRecord;
+            }
+            catch (Exception)
+            {
+            }
+            return null;
+        }
 
+    }
+    
 
 }
