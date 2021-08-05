@@ -3,7 +3,7 @@
   <ItemGroup>
     <_AppExtensionDebugSymbolProperties Include="people_errandd.iOS.app">
       <NativeExecutable>people_errandd.iOS</NativeExecutable>
-      <CompiledArchitectures></CompiledArchitectures>
+      <CompiledArchitectures>ARM64</CompiledArchitectures>
       <NoDSymUtil>false</NoDSymUtil>
       <NoSymbolStrip>false</NoSymbolStrip>
       <SymbolsList>\Users\linmenghua\Library\Caches\Xamarin\mtbs\builds\people_errandd.iOS\622069a5e004ec75844c704604606431b4ce095a7c08373a36372dafa3415bd2\obj\iPhone\Debug\mtouch-symbols.list</SymbolsList>

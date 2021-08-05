@@ -22,17 +22,21 @@ namespace people_errandd.Views
         public AboutPage()
         {
             //this.BindingContext = new InformationViewModel();
-            InitializeComponent();
+            InitializeComponent();            
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#EDEEEF");
-            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex("#555555");
-            
+            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex("#555555");           
         }
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
-            name.Text = Preferences.Get("UserName", name.Text);
-            phone.Text=Preferences.Get("phone", phone.Text);
-            email.Text=Preferences.Get("email", email.Text);
+            name.Text = Preferences.Get("UserName", "");    
+            Console.WriteLine(Preferences.Get("HashAccount", ""));
+            information inf = await informationViewModel.GetInformation(Preferences.Get("HashAccount", ""));
+            //Console.WriteLine(" "+inf.name + inf.department + inf.email);
+                jobTitle.Text = inf.jobtitle;
+                department.Text = inf.department;
+                phone.Text = inf.phone;
+                email.Text = inf.email;                    
         }
         void RefButtonClicked(object sender, EventArgs e)
         {         
@@ -103,23 +107,26 @@ namespace people_errandd.Views
                 if (allowTap)
                 {
                     allowTap = false;
-                    //email regular expression
-                    Match matchemail = regexemail.Match(email.Text);
-                    //phone regular expression
-                    Match matchphone = regexphone.Match(phone.Text);
-                    if (matchemail.Success && matchphone.Success)
+                    if(!string.IsNullOrEmpty(email.Text) && !string.IsNullOrEmpty(phone.Text))
                     {
-                        if (await informationViewModel.UpdateInformationRecord(name.Text, phone.Text, email.Text))
+                        //email regular expression
+                        Match matchemail = regexemail.Match(email.Text);
+                        //phone regular expression
+                        Match matchphone = regexphone.Match(phone.Text);
+                        if (matchemail.Success && matchphone.Success)
                         {
-                            Preferences.Set("phone", phone.Text);
-                            Preferences.Set("email", email.Text);
-                            await DisplayAlert("", "修改完成", "確認");
-                            await Navigation.PopAsync();
-                        }                        
-                    }                
-                    else
-                    {
-                        await DisplayAlert("", "格式錯誤", "確認");                    
+                            if (await informationViewModel.UpdateInformationRecord(name.Text, phone.Text, email.Text))
+                            {
+                                Preferences.Set("phone", phone.Text);
+                                Preferences.Set("email", email.Text);
+                                await DisplayAlert("", "修改完成", "確認");
+                                await Navigation.PopAsync();
+                            }
+                        }
+                        else
+                        {
+                            await DisplayAlert("", "格式錯誤", "確認");
+                        }
                     }
                 }
             }
@@ -131,29 +138,35 @@ namespace people_errandd.Views
 
         private void email_Unfocused(object sender, FocusEventArgs e)
         {
-            Match matchemail = regexemail.Match(email.Text);
-            if (!matchemail.Success)
+            if (!string.IsNullOrEmpty(email.Text))
             {
-                emailValidator.Text = "格式錯誤";
-            }
-            else
-            {
-                emailValidator.Text = "";
+                Match matchemail = regexemail.Match(email.Text);
+                if (!matchemail.Success)
+                {
+                    emailValidator.Text = "格式錯誤";
+                }
+                else
+                {
+                    emailValidator.Text = "";
 
-            }
+                }
+            }       
         }
 
         private void phone_Unfocused(object sender, FocusEventArgs e)
         {
-            Match matchphone = regexphone.Match(phone.Text);
-            if (!matchphone.Success)
+            if (string.IsNullOrEmpty(phone.Text))
             {
-                phoneValidator.Text = "格式錯誤";
-            }
-            else
-            {
-                phoneValidator.Text = "";
-            }
+                Match matchphone = regexphone.Match(phone.Text);
+                if (!matchphone.Success)
+                {
+                    phoneValidator.Text = "格式錯誤";
+                }
+                else
+                {
+                    phoneValidator.Text = "";
+                }
+            }           
         }
     }
 }

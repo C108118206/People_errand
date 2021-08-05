@@ -52,7 +52,8 @@ namespace people_errandd.Views
                             Reason = reasonEntry.Text,
                             Date = DateTime.Now.ToString("d")
                         }) ;
-                        await Navigation.PopAsync();
+                        locationEntry.Text = "";
+                        reasonEntry.Text = "";
                     }
                     else
                     {

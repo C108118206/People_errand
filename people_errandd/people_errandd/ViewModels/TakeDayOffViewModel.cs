@@ -13,7 +13,7 @@ namespace people_errandd.ViewModels
 {
     class TakeDayOffViewModel : HttpResponse
     {
-        public async Task<bool> PostDayOffRecord(DateTime _StartTime, DateTime _EndTime, int _leave_type_id, string _reason)
+        public async Task<bool> PostDayOff(DateTime _StartTime, DateTime _EndTime, int _leave_type_id, string _reason)
         {
             List<DayOff> dayOffs = new List<DayOff>();
             DayOff dayOff = new DayOff()
