@@ -13,10 +13,27 @@ C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\people_errandd.Android.csproj.AssemblyReference.cache
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_BuildLibraryImportsCache.stamp
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\res.flag
+<<<<<<< HEAD
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\files.cache
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\52\jl\files.cache
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\53\jl\files.cache
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\54\jl\files.cache
+=======
+<<<<<<< HEAD
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\65\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\81\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\82\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\84\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\89\jl\files.cache
+=======
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_AndroidXJetifyEmbeddedFiles.stamp
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\androidx\_AndroidXJetifyEmbeddedFiles.jetify
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\0\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\1\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\4\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\57\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\58\jl\files.cache
+>>>>>>> 08f243578a9385e41adbd9ebb29fae725061bf46
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\59\jl\files.cache
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\60\jl\files.cache
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\63\jl\files.cache
@@ -35,9 +52,19 @@ C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\87\jl\files.cache
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\88\jl\files.cache
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\89\jl\files.cache
+<<<<<<< HEAD
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\90\jl\files.cache
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\91\jl\files.cache
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\100\jl\files.cache
+=======
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\92\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\93\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\94\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\95\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\96\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\105\jl\files.cache
+>>>>>>> 6e659bd3e878e070217835dd16309655b07ba694
+>>>>>>> 08f243578a9385e41adbd9ebb29fae725061bf46
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\R.txt
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\R.cs.flag
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\people_errandd.Android.csproj.CoreCompileInputs.cache
@@ -121,9 +148,26 @@ C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\profile.png
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\uploadflags.txt
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\resolvedassemblies.hash
+<<<<<<< HEAD
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\FormsViewGroup.dll
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\FormsViewGroup.pdb
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Java.Interop.dll
+=======
+<<<<<<< HEAD
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\FormsViewGroup.dll
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\FormsViewGroup.pdb
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Java.Interop.dll
+=======
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\BottomBar.Droid.dll
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\BottomBar.XamarinForms.dll
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\BottomNavigationBar.dll
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\FluentValidation.dll
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\FormsViewGroup.dll
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\FormsViewGroup.pdb
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Java.Interop.dll
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\MagicGradients.dll
+>>>>>>> 6e659bd3e878e070217835dd16309655b07ba694
+>>>>>>> 08f243578a9385e41adbd9ebb29fae725061bf46
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Mono.Android.dll
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Mono.Android.pdb
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Mono.Security.dll
@@ -141,6 +185,15 @@ C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Plugin.SharedTransitions.dll
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Rg.Plugins.Popup.dll
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Rg.Plugins.Popup.pdb
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\SkiaSharp.dll
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\SkiaSharp.Views.Android.dll
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\SkiaSharp.Views.Forms.dll
+>>>>>>> 6e659bd3e878e070217835dd16309655b07ba694
+>>>>>>> 08f243578a9385e41adbd9ebb29fae725061bf46
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\SQLite-net.dll
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\SQLitePCLRaw.batteries_v2.dll
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\SQLitePCLRaw.core.dll
@@ -184,6 +237,18 @@ C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\System.Xml.Linq.dll
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\System.Xml.Linq.pdb
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\System.Xml.pdb
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Xamarin.Android.Support.Animated.Vector.Drawable.dll
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Xamarin.Android.Support.Design.dll
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Xamarin.Android.Support.v4.dll
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Xamarin.Android.Support.v7.AppCompat.dll
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Xamarin.Android.Support.v7.RecyclerView.dll
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Xamarin.Android.Support.Vector.Drawable.dll
+>>>>>>> 6e659bd3e878e070217835dd16309655b07ba694
+>>>>>>> 08f243578a9385e41adbd9ebb29fae725061bf46
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Xamarin.AndroidX.Activity.dll
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Xamarin.AndroidX.Activity.pdb
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Xamarin.AndroidX.Annotation.dll
@@ -291,6 +356,18 @@ C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Xamarin.Google.Android.Material.dll
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Xamarin.Google.Android.Material.pdb
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\Xamarin.Google.Guava.ListenableFuture.dll
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\androidx\jl\b9ee1d08-dfb1-4fb3-9f9c-f23b9ad49513.jar
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_AndroidXJetifyJavaLibraryRules.stamp
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\androidx\proguard\d32af2b3-6314-411a-8638-c42845bbcb38.cfg
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_AndroidXJetifyProguardRules.stamp
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\androidx\_AndroidXJetifyProguardRules.jetify
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_AndroidXCecilfy.stamp
+>>>>>>> 6e659bd3e878e070217835dd16309655b07ba694
+>>>>>>> 08f243578a9385e41adbd9ebb29fae725061bf46
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\typemaps.arm64-v8a.s
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\typemaps.armeabi-v7a.s
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\typemaps.x86.s
@@ -336,6 +413,13 @@ C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\androidx\viewpager2\R.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\com\google\android\material\R.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\com\google\android\material\snackbar\Snackbar_SnackbarActionClickImplementor.java
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64041cdbad00273af7\RunnableHelper.java
+>>>>>>> 6e659bd3e878e070217835dd16309655b07ba694
+>>>>>>> 08f243578a9385e41adbd9ebb29fae725061bf46
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc6414252951f3f66c67\CarouselViewAdapter_2.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc6414252951f3f66c67\RecyclerViewScrollListener_2.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc642e1c7a98bdb5c44a\AutoFitTextureView.java
@@ -581,6 +665,26 @@ C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc6479820c45fd9c6153\SharedTransitionNavigationPageRenderer.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc6479820c45fd9c6153\SharedTransitionPageRenderer.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc6479820c45fd9c6153\SharedTransitionShellItemRenderer.java
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc648170574f428fcc31\BottomNavigationBehavior_1.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc648170574f428fcc31\VerticalScrollingBehavior_1.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc648e35430423bd4943\GLTextureView.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc648e35430423bd4943\GLTextureView_LogWriter.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc648e35430423bd4943\SKCanvasView.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc648e35430423bd4943\SKGLSurfaceView.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc648e35430423bd4943\SKGLSurfaceViewRenderer.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc648e35430423bd4943\SKGLSurfaceView_InternalRenderer.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc648e35430423bd4943\SKGLTextureView.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc648e35430423bd4943\SKGLTextureViewRenderer.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc648e35430423bd4943\SKGLTextureView_InternalRenderer.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc648e35430423bd4943\SKSurfaceView.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64949d522a3c2cb8a0\BottomBar.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64949d522a3c2cb8a0\BottomBarBadge.java
+>>>>>>> 6e659bd3e878e070217835dd16309655b07ba694
+>>>>>>> 08f243578a9385e41adbd9ebb29fae725061bf46
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64a0e0a82d0db9a07d\AccelerometerListener.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64a0e0a82d0db9a07d\ActivityLifecycleContextListener.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64a0e0a82d0db9a07d\BarometerListener.java
@@ -602,10 +706,36 @@ C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64a25b61d9f8ee364f\RectEvaluator.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64a25b61d9f8ee364f\TransitionUtils.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64a25b61d9f8ee364f\TransitionUtils_MatrixEvaluator.java
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64bb223c2be3a01e03\SKCanvasViewRenderer.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64bb223c2be3a01e03\SKCanvasViewRendererBase_2.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64bb223c2be3a01e03\SKGLViewRenderer.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64bb223c2be3a01e03\SKGLViewRendererBase_2.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64c24f44e46c13f9f8\CustomAnimatorListenerAdapter.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64c24f44e46c13f9f8\CustomViewPropertyAnimatorListenerAdapter.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64daffefb522cf98c6\BottomBarPageRenderer.java
+>>>>>>> 6e659bd3e878e070217835dd16309655b07ba694
+>>>>>>> 08f243578a9385e41adbd9ebb29fae725061bf46
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64ee486da937c010f4\ButtonRenderer.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64ee486da937c010f4\FrameRenderer.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64ee486da937c010f4\ImageRenderer.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64ee486da937c010f4\LabelRenderer.java
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64f8f085afb9a48114\BarSizeOnGlobalLayoutListener.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64f8f085afb9a48114\InitializeViewsOnGlobalLayoutListener.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64f8f085afb9a48114\NavBarMagicOnGlobalLayoutListener.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64f8f085afb9a48114\OnTabClickListener.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64f8f085afb9a48114\OnTabLongClickListener.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64f8f085afb9a48114\ResizePaddingTopAnimatorUpdateListener.java
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64f8f085afb9a48114\ResizeTabAnimatorUpdateListener.java
+>>>>>>> 6e659bd3e878e070217835dd16309655b07ba694
+>>>>>>> 08f243578a9385e41adbd9ebb29fae725061bf46
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\crc64fdbeeba101bd56dc\RgGestureDetectorListener.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\mono\androidx\activity\contextaware\OnContextAvailableListenerImplementor.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\mono\androidx\appcompat\app\ActionBar_OnMenuVisibilityListenerImplementor.java
@@ -683,6 +813,14 @@ C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\mono\com\google\android\material\textfield\TextInputLayout_OnEndIconChangedListenerImplementor.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\mono\MonoPackageManager_Resources.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\xamarin\essentials\fileProvider.java
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_AndroidXJetifyManifest.stamp
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\androidx\_AndroidXJetifyManifest.jetify
+>>>>>>> 6e659bd3e878e070217835dd16309655b07ba694
+>>>>>>> 08f243578a9385e41adbd9ebb29fae725061bf46
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\bin\packaged_resources
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\src\com\companyname\people_errandd\R.java
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\compressed_assemblies.arm64-v8a.s
@@ -710,6 +848,39 @@ C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_CompileToDalvik.stamp
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_ConvertCustomView.stamp
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_ConvertResourcesCases.stamp
+<<<<<<< HEAD
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
+=======
+<<<<<<< HEAD
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\54\jl\files.cache
+C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\79\jl\files.cache
+C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\83\jl\files.cache
+C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\90\jl\files.cache
+C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\91\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\52\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\53\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\59\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\60\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\63\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\64\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\71\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\72\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\76\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\77\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\80\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\87\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\88\jl\files.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\100\jl\files.cache
+=======
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_CopyIntermediateAssemblies.stamp
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
+>>>>>>> 6e659bd3e878e070217835dd16309655b07ba694
+>>>>>>> 08f243578a9385e41adbd9ebb29fae725061bf46
