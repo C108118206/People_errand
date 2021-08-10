@@ -11,7 +11,6 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -31,15 +30,15 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>people_errandd</string>
-	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NsLocationWhenInUseUsageDescription</key>
 	<string>This app wants to use tour location</string>
-  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-  <string>This app wants to use tour location</string>
-  <key>NSLocationAlwaysUsageDescription</key>
-  <string>This app wants to use tour location</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app wants to use tour location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app wants to use tour location</string>
 	<key>NSLocationUsageDescription</key>
 	<string>This app wants to use tour location</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcons.appiconset</string>
 </dict>
 </plist>

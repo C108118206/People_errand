@@ -160,7 +160,7 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
-                    <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="2000" Margin="-5,10,-20,0"  Padding="0,15,0,15">
+                    <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="2000" Margin="-5,10,-20,0"  Padding="10,15,10,15">
                         <Frame.HasShadow>
                             <OnPlatform x:TypeArguments="x:Boolean">
                                 <On Platform="iOS" Value="False" />
@@ -242,7 +242,7 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
-                    <Frame HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="2000" Margin="-5,10,-20,0"  Padding="0,15,0,15" >
+                    <Frame HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="2000" Margin="-5,10,-20,0"  Padding="10,15,10,15" >
                         <Frame.HasShadow>
                             <OnPlatform x:TypeArguments="x:Boolean">
                                 <On Platform="iOS" Value="False" />

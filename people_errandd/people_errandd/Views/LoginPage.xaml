@@ -14,7 +14,7 @@
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="40" />
                 <Setter Property="Padding" Value="0" />
-                <Setter Property="Margin" Value="0,70,0,30" />
+                <Setter Property="Margin" Value="0,80,0,30" />
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
             <Style x:Key="content" TargetType="Label">

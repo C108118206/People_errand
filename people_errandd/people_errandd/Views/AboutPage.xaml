@@ -46,7 +46,6 @@
             <Style x:Key="contententry" TargetType="Entry">
                 <Setter Property="FontSize" Value="17" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="Margin" Value="0,5,20,0" />
                 <Setter Property="TextColor" Value="#555555" />
                 <Setter Property="HorizontalTextAlignment" Value="Start" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
@@ -123,8 +122,8 @@
                         <Entry Placeholder="" x:Name="department" PlaceholderColor="#555555" IsReadOnly="True" Style="{StaticResource contententry}" Grid.Row="1">
                             <Entry.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
-                                    <On Platform="iOS" Value="0,0,0,5" />
-                                    <On Platform="Android" Value="-5,0,0,0" />
+                                    <On Platform="iOS" Value="0,0,10,5" />
+                                    <On Platform="Android" Value="-5,0,10,0" />
                                 </OnPlatform>
                             </Entry.Margin>
                         </Entry>
@@ -147,8 +146,8 @@
                         <Entry Placeholder="" x:Name="jobTitle" IsReadOnly="True" PlaceholderColor="#555555" Style="{StaticResource contententry}" Grid.Row="3">
                             <Entry.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
-                                    <On Platform="iOS" Value="0,0,0,5" />
-                                    <On Platform="Android" Value="-5,0,0,0" />
+                                    <On Platform="iOS" Value="0,0,10,5" />
+                                    <On Platform="Android" Value="-5,0,10,0" />
                                 </OnPlatform>
                             </Entry.Margin>
                         </Entry>
@@ -161,7 +160,7 @@
                         <Label Text="電話" Style="{StaticResource contenttitle}" >
                             <Label.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
-                                    <On Platform="iOS" Value="0,0,0,0" />
+                                    <On Platform="iOS" Value="0,0,20,0" />
                                     <On Platform="Android" Value="-2,0,0,0" />
                                 </OnPlatform>
                             </Label.Margin>
@@ -171,8 +170,8 @@
                             <Entry   Keyboard="Telephone" x:Name="phone"  Unfocused="phone_Unfocused" MaxLength="10" Style="{StaticResource contententry}" Grid.Row="5">
                             <Entry.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
-                                    <On Platform="iOS" Value="0,0,0,5" />
-                                    <On Platform="Android" Value="-5,0,0,0" />
+                                    <On Platform="iOS" Value="0,0,10,5" />
+                                    <On Platform="Android" Value="-5,0,10,0" />
                                 </OnPlatform>
                             </Entry.Margin>
                             </Entry>
@@ -195,8 +194,8 @@
                             <Entry  Keyboard="Email" x:Name="email" Unfocused="email_Unfocused" Style="{StaticResource contententry}" Grid.Row="7">
                             <Entry.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
-                                    <On Platform="iOS" Value="0,0,0,5" />
-                                    <On Platform="Android" Value="-5,0,0,0" />
+                                    <On Platform="iOS" Value="0,0,10,5" />
+                                    <On Platform="Android" Value="-5,0,10,0" />
                                 </OnPlatform>
                             </Entry.Margin>
                         </Entry>
