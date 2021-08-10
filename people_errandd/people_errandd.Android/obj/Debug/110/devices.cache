@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <Devices><Device id="JAAZB760D081WD8"><ResultingAbi>arm64-v8a</ResultingAbi><SdkVersion>26</SdkVersion></Device><Device id="emulator-5554"><ResultingAbi>x86</ResultingAbi><SdkVersion>28</SdkVersion></Device></Devices>
+=======
+<Devices><Device id="JAAZB760D081WD8"><ResultingAbi>arm64-v8a</ResultingAbi><SdkVersion>26</SdkVersion></Device></Devices>
+>>>>>>> 6e659bd3e878e070217835dd16309655b07ba694
