@@ -239,7 +239,7 @@
                             <Label  HorizontalOptions="Start" Margin="0,10,0,0"  Text="整天"  Style="{StaticResource titletext}"></Label>
                         <!--all day文字-->
                         <!--all day按鈕-->
-                        <Switch HorizontalOptions="End" x:Name="AlldaySwitch" Toggled="AlldaySwitch_Toggled" Margin="0,-30,0,0"/>
+                        <Switch HorizontalOptions="End" x:Name="AlldaySwitch" Toggled="AlldaySwitch_Toggled" Margin="0,-30,0,0" OnColor="#A3B3DB" ThumbColor="#5E709B"/>
 
                         <StackLayout Orientation="Horizontal"  Margin="0,0,0,5">
                             <!--開始框架-->
