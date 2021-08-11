@@ -182,7 +182,7 @@ namespace people_errandd.Views
                 if (allowTap)
                 {
                     allowTap = false;
-                    await Navigation.PushAsync(new GoOut());
+                     await Navigation.PushAsync(new GoOut());
                 }
             }
             finally
