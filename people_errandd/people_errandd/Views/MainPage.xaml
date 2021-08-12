@@ -9,14 +9,13 @@
                  xmlns:st="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
                  xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
                  ios:Page.UseSafeArea="true" 
-                 BarBackgroundColor="White"
+                 BarBackgroundColor="#FFFFFF"
                  android:TabbedPage.ToolbarPlacement="Bottom"
                  android:TabbedPage.BarItemColor="#555555"
                  android:TabbedPage.BarSelectedItemColor="#5C76B1"
                  UnselectedTabColor="#555555"
                  SelectedTabColor="#5C76B1"
                  xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" xmlns:local1="clr-namespace:people_errandd.Views">
-
     <ContentPage xmlns:viewmodels="clr-namespace:people_errandd.ViewModels"
                  xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
                  ios:Page.UseSafeArea="true" 

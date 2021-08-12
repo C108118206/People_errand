@@ -39,6 +39,7 @@ namespace people_errandd
         public App()
         {
             InitializeComponent();
+            Application.Current.UserAppTheme = OSAppTheme.Light;
             CultureInfo ChineseCulture = new CultureInfo("zh-TW");
             CultureInfo.DefaultThreadCurrentCulture = ChineseCulture;
             Device.SetFlags(new[] { "Expander_Experimental" });
