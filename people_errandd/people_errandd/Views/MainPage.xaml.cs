@@ -22,12 +22,15 @@ namespace people_errandd.Views
         private readonly geoLocation geoLocation = new geoLocation();
         public MainPage()
         {
-            //BindingContext = new TimeDisplay();
-            this.BindingContext = this;
+            BindingContext = new TimeDisplay();
             Application.Current.UserAppTheme = OSAppTheme.Light;
             InitializeComponent(); 
             NavigationPage.SetHasNavigationBar(this, false);
+          
+
         }
+       
+
         protected async override void OnAppearing()
         {
             base.OnAppearing();
@@ -204,6 +207,22 @@ namespace people_errandd.Views
             Preferences.Set("WorkOffText", workOffText.Opacity = 0.8);
             //Preferences.Set("statusBack", "#4AD395");
             //statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
+        }
+        private async void OnTapped(object sender, EventArgs e)
+        {
+            try
+            {
+                if (allowTap)
+                {
+                    allowTap = false;
+                    await Navigation.PushAsync(new ImportantAudit());
+                }
+            }
+            finally
+            {
+                allowTap = true;
+            }
+
         }
         private async void CalebderButton(object sender, EventArgs e)
         {

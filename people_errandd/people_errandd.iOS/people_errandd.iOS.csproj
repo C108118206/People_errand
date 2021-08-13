@@ -184,9 +184,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets1.xcassets\AppIcons.appiconset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -392,5 +389,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="a6td9-8wpgk-001.ico" />
+    <BundleResource Include="Resources\stop.png" />
+    <BundleResource Include="Resources\finishgoout.png" />
+    <BundleResource Include="Resources\startgoout.png" />
   </ItemGroup>
 </Project>
