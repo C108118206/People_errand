@@ -26,7 +26,7 @@ namespace people_errandd.Views
         {
             public string GoOutimage { get; set; }
             public string StartTime { get; set; }
-
+            public string Applicant { get; set; }
             public string EndTime { get; set; }
             public string Location { get; set; }
             public string Reason { get; set; }
@@ -40,8 +40,10 @@ namespace people_errandd.Views
             return new ObservableCollection<Announcement>
             {
 
-                new Announcement { GoOutimage="goout2.png",StartTime="2021/05/18 上午09:10", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy"},
-                new Announcement { GoOutimage="goout2.png",StartTime="2021/05/18 上午09:10", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy" }
+                new Announcement { GoOutimage="goout2.png",StartTime="2021/05/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy"},
+                new Announcement { GoOutimage="goout2.png",StartTime="2021/05/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy"},
+                new Announcement { GoOutimage="goout2.png",StartTime="2021/05/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy"},
+                new Announcement { GoOutimage="goout2.png",StartTime="2021/05/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy" }
             };
         }
         

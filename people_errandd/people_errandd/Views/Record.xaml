@@ -97,7 +97,7 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
-                    <Frame HorizontalOptions="FillAndExpand" WidthRequest="2000" Margin="-5,10,-20,0" BackgroundColor="White" >
+                    <Frame HorizontalOptions="FillAndExpand" WidthRequest="2000" Margin="-5,0,-20,10" BackgroundColor="White" >
                         <Frame.HasShadow>
                             <OnPlatform x:TypeArguments="x:Boolean">
                                 <On Platform="iOS" Value="False" />
@@ -160,14 +160,14 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
-                    <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="2000" Margin="-5,10,-20,10"  Padding="10,15,10,15" BackgroundColor="White">
+                    <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" WidthRequest="2000" Margin="-5,0,-20,20"  BackgroundColor="White">
                         <Frame.HasShadow>
                             <OnPlatform x:TypeArguments="x:Boolean">
                                 <On Platform="iOS" Value="False" />
                                 <On Platform="Android" Value="True" />
                             </OnPlatform>
                         </Frame.HasShadow>
-                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal"  Padding="10,15,10,15">
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Padding="10,0,10,0">
                             <Image HeightRequest="55" Source="{Binding DayOffimage}" Margin="-18,-105,0,0"  Grid.Row="0"  Grid.Column="0"/>
                             <StackLayout>
                                 <StackLayout Orientation="Horizontal"  Margin="0,10,0,10">
@@ -246,14 +246,14 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
-                    <Frame HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="2000" Margin="-5,10,-20,0"   BackgroundColor="White">
+                    <Frame HorizontalOptions="FillAndExpand"  WidthRequest="2000" Margin="-5,0,-20,20"   BackgroundColor="White">
                         <Frame.HasShadow>
                             <OnPlatform x:TypeArguments="x:Boolean">
                                 <On Platform="iOS" Value="False" />
                                 <On Platform="Android" Value="True" />
                             </OnPlatform>
                         </Frame.HasShadow>
-                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Padding="10,40,10,24">
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Padding="10,0,10,0">
                             <Image HeightRequest="55" Source="{Binding GoOutimage}"   Margin="-18,-105,0,0"  Grid.Row="0"  Grid.Column="0"/>
                             <StackLayout  Grid.Row="0"  Grid.Column="1">
                                 <StackLayout Orientation="Horizontal"   Margin="0,10,0,10">
@@ -325,23 +325,11 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <!--內容樣式設定結束-->
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
 
 
-        <ScrollView VerticalScrollBarVisibility="Never">
-            <Grid  HorizontalOptions="Center">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
+
                 <StackLayout Orientation="Vertical" >
-                <Frame BackgroundColor="White" HorizontalOptions="FillAndExpand" Margin="10,10,10,0">
+                <Frame BackgroundColor="White" HorizontalOptions="FillAndExpand" Margin="10,10,10,0" >
                         <Frame.HasShadow>
                             <OnPlatform x:TypeArguments="x:Boolean">
                                 <On Platform="iOS" Value="False" />
@@ -393,7 +381,7 @@
                 </Frame>
 
 
-
+          
                     <CollectionView
                         x:Name="Worklist"
                         Grid.Row="1"
@@ -406,9 +394,7 @@
                         </CollectionView.ItemsLayout>
                     </CollectionView>
 
-                </StackLayout>
-          </Grid>
-        </ScrollView>
-    </Grid>
+            </StackLayout>
+
 
 </ContentPage>

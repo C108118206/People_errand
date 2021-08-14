@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> c9101fcf04cb3d3d71c2efa0da1caf45966eb4d6
     <_BundleResourceWithLogicalName Include="obj\iPhone\Debug\device-builds\iphone13.2-14.7.1\ibtool\LaunchScreen.storyboardc\01J-lp-oVM-view-Ze5-6b-2t3.nib">
       <Optimize>false</Optimize>
       <InterfaceDefinition>Resources/LaunchScreen.storyboard</InterfaceDefinition>
@@ -12,12 +16,56 @@
       <InterfaceDefinition>Resources/LaunchScreen.storyboard</InterfaceDefinition>
       <LogicalName>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</LogicalName>
       <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone13.2-14.7.1/ibtool/LaunchScreen.storyboardc</OriginalItemSpec>
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD:people_errandd/people_errandd.iOS/obj/iPhone/Debug/device-builds/iphone13.2-14.7.1/ibtool/_BundleResourceWithLogicalName.items
+    <_BundleResourceWithLogicalName Include="obj\iPhone\Debug\device-builds\iphone13.2-14.7.1\ibtool\LaunchScreen.storyboardc\X5k-f2-b5h-view-yd7-JS-zBw.nib">
+      <Optimize>false</Optimize>
+      <InterfaceDefinition>Resources/LaunchScreen.storyboard</InterfaceDefinition>
+      <LogicalName>LaunchScreen.storyboardc/X5k-f2-b5h-view-yd7-JS-zBw.nib</LogicalName>
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone13.2-14.7.1/ibtool/LaunchScreen.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhone\Debug\device-builds\iphone13.2-14.7.1\ibtool\LaunchScreen.storyboardc\UIViewController-X5k-f2-b5h.nib">
+      <Optimize>false</Optimize>
+      <InterfaceDefinition>Resources/LaunchScreen.storyboard</InterfaceDefinition>
+      <LogicalName>LaunchScreen.storyboardc/UIViewController-X5k-f2-b5h.nib</LogicalName>
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone13.2-14.7.1/ibtool/LaunchScreen.storyboardc</OriginalItemSpec>
     </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj\iPhone\Debug\device-builds\iphone13.2-14.7.1\ibtool\LaunchScreen.storyboardc\Info.plist">
       <Optimize>false</Optimize>
       <InterfaceDefinition>Resources/LaunchScreen.storyboard</InterfaceDefinition>
       <LogicalName>LaunchScreen.storyboardc/Info.plist</LogicalName>
       <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone13.2-14.7.1/ibtool/LaunchScreen.storyboardc</OriginalItemSpec>
+=======
+    <_BundleResourceWithLogicalName Include="obj\iPhone\Debug\ibtool\LaunchScreen.storyboardc\X5k-f2-b5h-view-yd7-JS-zBw.nib">
+      <Optimize>false</Optimize>
+      <InterfaceDefinition>Resources/LaunchScreen.storyboard</InterfaceDefinition>
+      <LogicalName>LaunchScreen.storyboardc/X5k-f2-b5h-view-yd7-JS-zBw.nib</LogicalName>
+      <OriginalItemSpec>obj/iPhone/Debug/ibtool/LaunchScreen.storyboardc</OriginalItemSpec>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhone\Debug\ibtool\LaunchScreen.storyboardc\UIViewController-X5k-f2-b5h.nib">
+      <Optimize>false</Optimize>
+      <InterfaceDefinition>Resources/LaunchScreen.storyboard</InterfaceDefinition>
+      <LogicalName>LaunchScreen.storyboardc/UIViewController-X5k-f2-b5h.nib</LogicalName>
+      <OriginalItemSpec>obj/iPhone/Debug/ibtool/LaunchScreen.storyboardc</OriginalItemSpec>
+>>>>>>> 9486455fc314cb008327503110fb9571eb570368
+>>>>>>> c9101fcf04cb3d3d71c2efa0da1caf45966eb4d6
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj\iPhone\Debug\device-builds\iphone13.2-14.7.1\ibtool\LaunchScreen.storyboardc\Info.plist">
+      <Optimize>false</Optimize>
+      <InterfaceDefinition>Resources/LaunchScreen.storyboard</InterfaceDefinition>
+      <LogicalName>LaunchScreen.storyboardc/Info.plist</LogicalName>
+<<<<<<< HEAD
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone13.2-14.7.1/ibtool/LaunchScreen.storyboardc</OriginalItemSpec>
+=======
+<<<<<<< HEAD
+      <OriginalItemSpec>obj/iPhone/Debug/device-builds/iphone13.2-14.7.1/ibtool/LaunchScreen.storyboardc</OriginalItemSpec>
+=======
+      <OriginalItemSpec>obj/iPhone/Debug/ibtool/LaunchScreen.storyboardc</OriginalItemSpec>
+>>>>>>> 6e659bd3e878e070217835dd16309655b07ba694:people_errandd/people_errandd.iOS/obj/iPhone/Debug/ibtool/_BundleResourceWithLogicalName.items
+>>>>>>> 9486455fc314cb008327503110fb9571eb570368
+>>>>>>> c9101fcf04cb3d3d71c2efa0da1caf45966eb4d6
     </_BundleResourceWithLogicalName>
   </ItemGroup>
 </Project>

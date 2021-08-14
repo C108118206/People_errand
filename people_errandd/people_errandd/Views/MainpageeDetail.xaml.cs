@@ -207,22 +207,7 @@ namespace people_errandd.Views
             }
 
         }
-        private async void GoClassScheduleButton(object sender, EventArgs e)
-        {
-            try
-            {
-                if (allowTap)
-                {
-                    allowTap = false;
-                    await Navigation.PushAsync(new ClassSchedule());
-                }
-            }
-            finally
-            {
-                allowTap = true;
-            }
 
-        }
 
         public void WorkOffSet()
         {

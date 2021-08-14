@@ -26,10 +26,12 @@ namespace people_errandd.Views
             Application.Current.UserAppTheme = OSAppTheme.Light;
             InitializeComponent(); 
             NavigationPage.SetHasNavigationBar(this, false);
-          
+
+
 
         }
        
+
 
         protected async override void OnAppearing()
         {
@@ -269,21 +271,7 @@ namespace people_errandd.Views
                 allowTap = true;
             }
         }
-        private async void ColleagueButton(object sender, EventArgs e)
-        {
-            try
-            {
-                if (allowTap)
-                {
-                    allowTap = false; 
-                    await Navigation.PushAsync(new ColleaguePage());
-                }
-            }
-            finally
-            {
-                allowTap = true;
-            }
-        }
+
         private  void GpsButton(object sender, EventArgs e)
         {  
             if(GPSText.Text=="定位未開啟")
