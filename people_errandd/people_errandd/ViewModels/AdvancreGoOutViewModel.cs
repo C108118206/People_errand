@@ -163,8 +163,6 @@ namespace people_errandd.ViewModels
                 await App.Current.MainPage.DisplayAlert("", "錯誤", "確認");
             }
         }
-
-
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChangedEventHandler handler = PropertyChanged;

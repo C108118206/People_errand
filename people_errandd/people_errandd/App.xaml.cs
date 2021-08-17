@@ -75,7 +75,6 @@ namespace people_errandd
         }
         protected override void OnResume()
         {
-            GetLocation();
             GetConnectivity("resume");
             MessagingCenter.Send<App>(this, "Hi");
         }
@@ -94,8 +93,7 @@ namespace people_errandd
         }
         private async void GetConnectivity(string status)
         {
-            Page page = MainPage;
-            var _page = new MainPage();
+            Page page = MainPage;            
             try
             {
                 if (status == "start")
