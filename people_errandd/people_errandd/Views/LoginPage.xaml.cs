@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -18,19 +14,15 @@ namespace people_errandd.Views
     {
         private bool allowTap = true;
         private readonly Login Login = new Login();
-        private string deviceId;
         public LoginPage()
         {
             InitializeComponent();
             //隱藏navigationpage導航欄。
             NavigationPage.SetHasNavigationBar(this, false);
             Application.Current.UserAppTheme = OSAppTheme.Light;
-            Animation ani = new Animation();
-            if (string.IsNullOrEmpty(Preferences.Get("uuid", string.Empty)))
-            {
-                Preferences.Set("uuid", Guid.NewGuid().ToString());
-            }
-            deviceId = Preferences.Get("uuid", "");
+            //Animation ani = new Animation();           
+            Preferences.Set("uuid", Guid.NewGuid().ToString());
+
         }
         private async void LogInButton(object sender, EventArgs e)
         {
@@ -46,7 +38,7 @@ namespace people_errandd.Views
                     }
                     if (await Login.ConfirmCompanyHash(company.Text.Trim()))
                     {
-                        if (await Login.ConfirmUUID(deviceId))
+                        if (await Login.ConfirmUUID(Preferences.Get("uuid", "")))
                         {
                             if (!await Login.Reviewed())
                             {
@@ -55,7 +47,7 @@ namespace people_errandd.Views
                             }
                             Navigation.InsertPageBefore(new MainPage(), this);
                             await Navigation.PopAsync();
-                            Preferences.Set("HashAccount", await Login.GetHashAccount(deviceId));
+                            Preferences.Set("HashAccount", await Login.GetHashAccount(Preferences.Get("uuid", "")));
                         }
                         else
                         {

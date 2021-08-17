@@ -11,7 +11,8 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.CommunityToolkit.UI.Views;
-
+using Rg.Plugins.Popup.Services;
+using Xamarin.Forms.Maps;
 
 namespace people_errandd.Views
 {
@@ -20,35 +21,36 @@ namespace people_errandd.Views
         private readonly Work Work = new Work();
         bool allowTap = true;
         private readonly geoLocation geoLocation = new geoLocation();
+
+
         public MainPage()
         {
-            BindingContext = new TimeDisplay();
+            //BindingContext = new TimeDisplay();
+            this.BindingContext = this;
             Application.Current.UserAppTheme = OSAppTheme.Light;
-            InitializeComponent(); 
+            InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
 
-
-
         }
-       
-
-
         protected async override void OnAppearing()
         {
             base.OnAppearing();
             GPSText.Text = Preferences.Get("gpsText", "定位未開啟");
             GPSText.BackgroundColor = Color.FromHex(Preferences.Get("GpsButtonColor", "#CA4848"));
-            //Preferences.Set("statusBack", "#EDEEEF");
-            //statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
-            //status.Text = Preferences.Get("statusNow", "無狀態");
+            //try
+            //{ 
+            //    LocationNoWText.Text = "現在位置 : " + Preferences.Get("LocationNowText","").Substring(5);
+            //}
+            //catch (Exception) 
+            //{
+            //}          
             workOn.IsEnabled = Preferences.Get("WorkOnButtonStauts", workOn.IsEnabled = true);
             workOff.IsEnabled = Preferences.Get("WorkOffButtonStauts", workOff.IsEnabled = false);
             workOn.Opacity = Preferences.Get("WorkOnButtonView", workOn.Opacity = 1);
             workOff.Opacity = Preferences.Get("WorkOffButtonView", workOff.Opacity = 0.2);
             workOnText.Opacity = Preferences.Get("WorkOnText", workOnText.Opacity = 1);
             workOffText.Opacity = Preferences.Get("WorkOffText", workOffText.Opacity = 0.2);
-            username.Text = Preferences.Get("UserName","");
-            //Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+            username.Text = Preferences.Get("UserName", "");
             await geoLocation.GetLocation("Back");
         }
         protected override void OnDisappearing()
@@ -57,22 +59,9 @@ namespace people_errandd.Views
                 geoLocation.cts.Cancel();
             base.OnDisappearing();
         }
-        //public void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
-        //{
-        //    if (e.NetworkAccess == NetworkAccess.Internet)
-        //    {
-        //        LabelConnection.FadeTo(0).ContinueWith((result) => { });
-        //        FrameConnection.FadeTo(0).ContinueWith((result) => { }); 
-        //    }
-        //    else
-        //    {
-        //     LabelConnection.FadeTo(1).ContinueWith((result) => { });
-        //        FrameConnection.FadeTo(0.845621).ContinueWith((result) => { });
-        //    }
-        //}
 
-        private async void GoToWork(object sender, EventArgs e)  
-        {           
+        private async void GoToWork(object sender, EventArgs e)
+        {
             try
             {
                 if (allowTap)
@@ -89,18 +78,11 @@ namespace people_errandd.Views
                                 DateTime thisDay = DateTime.Now;
                                 worktimetitle.Text = "上班打卡 at ";
                                 worktime.Text = thisDay.ToString("t");
-                                await App.DataBase.SaveRecordAsync(new WorkRecordModels
-                                {                                   
-                                    status = "上班",
-                                    statuscolor = "#5C76B1",
-                                    time = DateTime.Now.ToString(),
-                                    Workimage = "worker.png"
-                                }) ;
                                 WorkOnSet();
                             }
                             else
                             {
-                                await DisplayAlert("Error", "發生錯誤"  , "確定");
+                                await DisplayAlert("Error", "發生錯誤", "確定");
                             }
                         }
                         else
@@ -110,7 +92,7 @@ namespace people_errandd.Views
                     }
                     else if (await Work.GetWorkType() == 500)
                     {
-                        await DisplayAlert("Error", "錯誤" , "確定");
+                        await DisplayAlert("Error", "錯誤", "確定");
                     }
                     else
                     {
@@ -146,13 +128,6 @@ namespace people_errandd.Views
                                 DateTime thisDay = DateTime.Now;
                                 worktimetitle.Text = "下班打卡 at ";
                                 worktime.Text = thisDay.ToString("t");
-                                await App.DataBase.SaveRecordAsync(new WorkRecordModels
-                                {
-                                    status = "下班",
-                                    statuscolor = "#CA4848",
-                                    time = DateTime.Now.ToString(),
-                                    Workimage = "workeroff.png"
-                                });
                                 WorkOffSet();
                             }
                             else
@@ -210,22 +185,6 @@ namespace people_errandd.Views
             //Preferences.Set("statusBack", "#4AD395");
             //statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
         }
-        private async void OnTapped(object sender, EventArgs e)
-        {
-            try
-            {
-                if (allowTap)
-                {
-                    allowTap = false;
-                    await Navigation.PushAsync(new ImportantAudit());
-                }
-            }
-            finally
-            {
-                allowTap = true;
-            }
-
-        }
         private async void CalebderButton(object sender, EventArgs e)
         {
             try
@@ -239,7 +198,7 @@ namespace people_errandd.Views
             finally
             {
                 allowTap = true;
-            }          
+            }
         }
         private async void AboutPageButton(object sender, EventArgs e)
         {
@@ -271,17 +230,19 @@ namespace people_errandd.Views
                 allowTap = true;
             }
         }
-
-        private  void GpsButton(object sender, EventArgs e)
-        {  
-            if(GPSText.Text=="定位未開啟")
-                DependencyService.Get<IAppSettingsHelper>().OpenAppSetting();          
+        private async void GpsButton(object sender, EventArgs e)
+        {
+            if (GPSText.Text == "定位未開啟")
+                DependencyService.Get<IAppSettingsHelper>().OpenAppSetting();
+            else
+            {
+                await PopupNavigation.Instance.PushAsync(new MapPage());
+            }
         }
-       
+
 
     }
 
 
 }
 
-﻿

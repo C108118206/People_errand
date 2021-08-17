@@ -110,16 +110,7 @@ namespace people_errandd.Views
                     DateTime EndDateTime = endDatePicker.Date + endTimePicker.Time;
                     if (await takeDayOff.PostDayOff(StartDateTime, EndDateTime, LeaveTypeId, reason.Text))
                     {
-                        await DisplayAlert("", "申請成功", "OK");
-                        await App.DataBase.SaveRecordAsync(new DayOffRecordModels
-                        {
-                            StartTime = StartDateTime,
-                            EndTime = EndDateTime,
-                            Reason = reason.Text,
-                            DayOffType = leavetype.Text,
-                            DayOffimage = "nerd.png",
-                            Date = DateTime.Now.ToString("")
-                        });
+                        await DisplayAlert("", "申請成功", "OK");                        
                         reason.Text="";
                     }
                     else

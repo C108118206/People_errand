@@ -17,19 +17,17 @@
                  SelectedTabColor="#5C76B1"
                  xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" xmlns:local1="clr-namespace:people_errandd.Views">
 
-    <ContentPage xmlns:viewmodels="clr-namespace:people_errandd.ViewModels"
+    <ContentPage xmlns:Viewmodels="clr-namespace:people_errandd.ViewModels"
                  xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
                  ios:Page.UseSafeArea="true" 
                  Title="首頁" IconImageSource="homepage.png" >
 
-        <ContentPage.BindingContext>
-            <viewmodels:TimeDisplay  />
-        </ContentPage.BindingContext>
 
 
         <!--內容樣式設定-->
         <ContentPage.Resources>
             <ResourceDictionary>
+                <Viewmodels:MainPageViewModel x:Key="MainPageViewModel"/>
                 <Style x:Key="name" TargetType="Label" >
                     <Setter Property="FontFamily" Value="Chalkduster" />
                     <Setter Property="TextColor" Value="#555555" />
@@ -162,16 +160,18 @@
                                 <Label x:Name="LabelConnection" Opacity="0" Text="No Internet Connection" Style="{StaticResource warning}"></Label>
                                 沒網路時顯示文字
                             </Frame>-->
-                    <StackLayout >
+                    <StackLayout BindingContext="{StaticResource MainPageViewModel}" >
                         <BoxView Style="{StaticResource line}" />
                         <Label Text="{Binding DateTime,StringFormat='{0:D}'}"  TextColor="#555555" FontSize="20" Margin="0,30,0,0" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
                         <Label Text="{Binding DateTime,StringFormat='{0:HH:mm:ss}'}" TextColor="#555555" FontSize="50" Margin="-5,-10,0,0"  HorizontalTextAlignment="Center"></Label>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,0,0,10">
+                        <StackLayout  Orientation="Horizontal" HorizontalOptions="Center" Margin="0,0,0,10">
                             <Label  x:Name="worktimetitle"  TextColor="#555555"  FontSize="16"  ></Label>
                             <Label  x:Name="worktime" TextColor="#555555"  FontSize="16" ></Label>
+                        </StackLayout  >
+                        <StackLayout>
+                            <Button  Grid.Row="3" ImageSource="gps"  Text="定位已開啟"  Margin="0,0,0,20"  Style="{StaticResource gpsbutton}"  x:Name="GPSText" Clicked="GpsButton"/>
+                            <Label x:Name="LocationNoWText" Text="{Binding LocationText }" HorizontalOptions="Center" FontSize="16"  TextColor="#CA4848" ></Label>
                         </StackLayout>
-                        <Button  Grid.Row="3" ImageSource="gps"  Text="定位已開啟"  Margin="0,0,0,0"  Style="{StaticResource gpsbutton}"  x:Name="GPSText" Clicked="GpsButton"/>
-
                     </StackLayout>
                 </StackLayout>
             </Frame>

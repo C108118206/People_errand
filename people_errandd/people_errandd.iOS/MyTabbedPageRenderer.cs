@@ -1,7 +1,6 @@
 ﻿using CoreGraphics;
 using Foundation;
 using people_errandd.iOS;
-using people_errandd.iOS;
 using System;
 using System.Collections.Generic;
 using System.Linq;

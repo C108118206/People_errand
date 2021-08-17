@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IOGJ2IDbceCNcnDatlUk/loR2dmAwZ6FZvRHFFmsRfgRIp/D3ZsRzrpGC2l9EmsseesAOOpeeulRTmXfRrddSA==",
+  "dgSpecHash": "Ey5XvK4j7v1WbIEk84xQKojjN0fHkLVIsnewSASFeECOx7Kk2iVpPIzlzgfPCOx1PXsNdjIS6ARRsN2nc7X1Xw==",
   "success": true,
   "projectFilePath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
   "expectedPackageFiles": [
@@ -18,6 +18,7 @@
     "C:\\Users\\lonel\\.nuget\\packages\\xamarin.communitytoolkit\\1.3.0-pre1\\xamarin.communitytoolkit.1.3.0-pre1.nupkg.sha512",
     "C:\\Users\\lonel\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
     "C:\\Users\\lonel\\.nuget\\packages\\xamarin.forms\\5.0.0.2083\\xamarin.forms.5.0.0.2083.nupkg.sha512",
+    "C:\\Users\\lonel\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2083\\xamarin.forms.maps.5.0.0.2083.nupkg.sha512",
     "C:\\Users\\lonel\\.nuget\\packages\\xamarin.plugin.sharedtransitions\\2.4.0\\xamarin.plugin.sharedtransitions.2.4.0.nupkg.sha512"
   ],
   "logs": []

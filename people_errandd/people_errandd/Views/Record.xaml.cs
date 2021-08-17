@@ -17,15 +17,16 @@ namespace people_errandd.Views
     public partial class Record : ContentPage
     {
         private bool allowTap = true;
-        public static int RecordTypeId=1;
+        public static int RecordTypeId = 1;
         public static DateTime dt;
         Records Records = new Records();
         private int Date;
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            //Worklist.ItemsSource = await Records.GetWorkRecord(Preferences.Get("HashAccount",""));
-            Worklist.ItemsSource = await App.DataBase.GetWorkRecordsAsync();
+            Worklist.ItemsSource = await Records.GetWorkRecord();
+            RecordTypeId = 1;
+            //Worklist.ItemsSource = await App.DataBase.GetWorkRecordsAsync();
             //Preferences.Get("Record", "await App.DataBase.GetWorkRecordsAsync()");
             // Worklist.ItemsSource =(Preferences.Get("Record", "await App.DataBase.GetWorkRecordsAsync()"));
             dt = DatePicker.Date;
@@ -122,17 +123,11 @@ namespace people_errandd.Views
             }
 
         }
-
-
-
         public Record()
         {
-
             InitializeComponent();
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#EDEEEF");
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex("#555555");
-
-
         }
         private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         {
@@ -164,17 +159,17 @@ namespace people_errandd.Views
                         case "Cancel":
                             break;
                         case "上下班":
-                            Worklist.ItemsSource = await App.DataBase.GetWorkRecordsAsync();
+                            Worklist.ItemsSource = await Records.GetWorkRecord();
                             RecordTypeId = 1;
                             RecordTitle.Text = "打卡紀錄";
                             break;
                         case "請假":
-                            Worklist.ItemsSource = await App.DataBase.GetDayOffRecordsAsync();
+                            Worklist.ItemsSource = await Records.GetLeaveRecord();
                             RecordTypeId = 2;
                             RecordTitle.Text = "請假紀錄";
                             break;
                         case "公出":
-                            Worklist.ItemsSource = await App.DataBase.GetGoOutRecordsAsync();
+                            Worklist.ItemsSource = await Records.GetGoOutsRecord();
                             RecordTitle.Text = "公出紀錄";
                             RecordTypeId = 3;
                             break;
@@ -193,13 +188,13 @@ namespace people_errandd.Views
             {
                 case 0:
                 case 1:
-                    Worklist.ItemsSource = await App.DataBase.GetWorkRecordsAsync();
+                    Worklist.ItemsSource = await Records.GetWorkRecord();
                     break;
                 case 2:
-                    Worklist.ItemsSource = await App.DataBase.GetDayOffRecordsAsync();
+                    Worklist.ItemsSource = await Records.GetLeaveRecord();
                     break;
                 case 3:
-                    Worklist.ItemsSource = await App.DataBase.GetGoOutRecordsAsync();
+                    Worklist.ItemsSource = await Records.GetGoOutsRecord();
                     break;
             }
         }
@@ -223,7 +218,7 @@ namespace people_errandd.Views
             // DisplayAlert("", DatePicker.Date.ToString("yyyy-MM-dd-HH-mm-ss"), "fuck");
             dt = DatePicker.Date;
             await Switch();
-            
+
             switch (dt.ToString("dddd"))
             {
                 case "星期日":
@@ -233,9 +228,9 @@ namespace people_errandd.Views
                     wed.Text = dt.AddDays(3).ToString("dd");
                     thu.Text = dt.AddDays(4).ToString("dd");
                     fri.Text = dt.AddDays(5).ToString("dd");
-                    sat.Text = dt.AddDays(6).ToString("dd");                 
-                     sun.BackgroundColor = Color.FromHex("#5C76B1");
-                     sun.TextColor = Color.FromHex("#FFFFFF");
+                    sat.Text = dt.AddDays(6).ToString("dd");
+                    sun.BackgroundColor = Color.FromHex("#5C76B1");
+                    sun.TextColor = Color.FromHex("#FFFFFF");
                     Date = 0;
                     break;
                 case "星期一":
@@ -245,11 +240,11 @@ namespace people_errandd.Views
                     wed.Text = dt.AddDays(2).ToString("dd");
                     thu.Text = dt.AddDays(3).ToString("dd");
                     fri.Text = dt.AddDays(4).ToString("dd");
-                    sat.Text = dt.AddDays(5).ToString("dd");                  
-                     mon.BackgroundColor = Color.FromHex("#5C76B1");
-                     mon.TextColor = Color.FromHex("#FFFFFF");
+                    sat.Text = dt.AddDays(5).ToString("dd");
+                    mon.BackgroundColor = Color.FromHex("#5C76B1");
+                    mon.TextColor = Color.FromHex("#FFFFFF");
                     Date = 1;
-                     break;
+                    break;
                 case "星期二":
                     sun.Text = dt.AddDays(-2).ToString("dd");
                     mon.Text = dt.AddDays(-1).ToString("dd");
@@ -257,11 +252,11 @@ namespace people_errandd.Views
                     wed.Text = dt.AddDays(1).ToString("dd");
                     thu.Text = dt.AddDays(2).ToString("dd");
                     fri.Text = dt.AddDays(3).ToString("dd");
-                    sat.Text = dt.AddDays(4).ToString("dd");                                      
-                     tue.BackgroundColor = Color.FromHex("#5C76B1");
-                     tue.TextColor = Color.FromHex("#FFFFFF");
+                    sat.Text = dt.AddDays(4).ToString("dd");
+                    tue.BackgroundColor = Color.FromHex("#5C76B1");
+                    tue.TextColor = Color.FromHex("#FFFFFF");
                     Date = 2;
-                     break;
+                    break;
                 case "星期三":
                     sun.Text = dt.AddDays(-3).ToString("dd");
                     mon.Text = dt.AddDays(-2).ToString("dd");
@@ -269,7 +264,7 @@ namespace people_errandd.Views
                     wed.Text = dt.AddDays(0).ToString("dd");
                     thu.Text = dt.AddDays(1).ToString("dd");
                     fri.Text = dt.AddDays(2).ToString("dd");
-                    sat.Text = dt.AddDays(3).ToString("dd");                 
+                    sat.Text = dt.AddDays(3).ToString("dd");
                     wed.BackgroundColor = Color.FromHex("#5C76B1");
                     wed.TextColor = Color.FromHex("#FFFFFF");
                     Date = 3;
@@ -281,9 +276,9 @@ namespace people_errandd.Views
                     wed.Text = dt.AddDays(-1).ToString("dd");
                     thu.Text = dt.AddDays(0).ToString("dd");
                     fri.Text = dt.AddDays(1).ToString("dd");
-                    sat.Text = dt.AddDays(2).ToString("dd");                   
-                     thu.BackgroundColor = Color.FromHex("#5C76B1");
-                     thu.TextColor = Color.FromHex("#FFFFFF");
+                    sat.Text = dt.AddDays(2).ToString("dd");
+                    thu.BackgroundColor = Color.FromHex("#5C76B1");
+                    thu.TextColor = Color.FromHex("#FFFFFF");
                     Date = 4;
                     break;
                 case "星期五":
@@ -293,7 +288,7 @@ namespace people_errandd.Views
                     wed.Text = dt.AddDays(-2).ToString("dd");
                     thu.Text = dt.AddDays(-1).ToString("dd");
                     fri.Text = dt.AddDays(0).ToString("dd");
-                    sat.Text = dt.AddDays(1).ToString("dd");                   
+                    sat.Text = dt.AddDays(1).ToString("dd");
                     fri.BackgroundColor = Color.FromHex("#5C76B1");
                     fri.TextColor = Color.FromHex("#FFFFFF");
                     Date = 5;
@@ -305,14 +300,14 @@ namespace people_errandd.Views
                     wed.Text = dt.AddDays(-3).ToString("dd");
                     thu.Text = dt.AddDays(-2).ToString("dd");
                     fri.Text = dt.AddDays(-1).ToString("dd");
-                    sat.Text = dt.AddDays(0).ToString("dd");                  
+                    sat.Text = dt.AddDays(0).ToString("dd");
                     sat.BackgroundColor = Color.FromHex("#5C76B1");
                     sat.TextColor = Color.FromHex("#FFFFFF");
                     Date = 6;
                     break;
-                   
+
             }
-            }
+        }
         private async void SunButton(object sender, EventArgs e)
         {
             dt = DateTime.Parse(DatePicker.Date.ToString("yyyy-MM-dd"));
@@ -420,9 +415,9 @@ namespace people_errandd.Views
         private async void FriButton(object sender, EventArgs e)
         {
             dt = DateTime.Parse(DatePicker.Date.ToString("yyyy-MM-dd"));
-            dt=dt.AddDays(-Date);
-            dt=dt.AddDays(5);
-            Console.WriteLine(dt+"fuck");
+            dt = dt.AddDays(-Date);
+            dt = dt.AddDays(5);
+            Console.WriteLine(dt + "fuck");
             fri.BackgroundColor = Color.FromHex("#5C76B1");
             fri.TextColor = Color.FromHex("#FFFFFF");
             sun.BackgroundColor = Color.FromHex("#FFFFFF");
@@ -471,14 +466,14 @@ namespace people_errandd.Views
             switch (Record.RecordTypeId)
             {
                 case 2:
-                    return  DayOffRecords;
+                    return DayOffRecords;
                 case 3:
                     return GoOutRecords;
                 default:
                     return WorkRecords;
-            } 
-        } 
+            }
+        }
     }
 
-    
+
 }

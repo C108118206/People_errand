@@ -21,7 +21,6 @@ namespace people_errandd.Views
         {
             InitializeComponent();
         }
-
-
+        
     }
 }

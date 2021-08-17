@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using people_errandd.ViewModels;
 using Rg.Plugins.Popup.Extensions;
+using people_errandd.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
@@ -25,7 +26,7 @@ namespace people_errandd.Views
 
         private async void LoginButton(object sender, EventArgs e)
         {
-            
+
             if (string.IsNullOrEmpty(UserNameResult.Text) && string.IsNullOrEmpty(UserEmailResult.Text))
             {
                 await DisplayAlert("錯誤", "請勿輸入空白", "確認");
@@ -36,11 +37,11 @@ namespace people_errandd.Views
                 if (matchemail.Success)
                 {
                     if (await Login.SetUUID() && await Login.SetInformation(UserNameResult.Text, UserEmailResult.Text))
-                    {                     
+                    {
 
-                            await DisplayAlert("已送出成功", "待管理者審核成功後，將發送通知信至郵件即可進行登入", "確認");
-                            await Navigation.PopPopupAsync();
-                            Preferences.Set("審核中","");                       
+                        await DisplayAlert("已送出成功", "待管理者審核成功後，將發送通知信至郵件即可進行登入", "確認");
+                        await Navigation.PopPopupAsync();
+                        Preferences.Set("審核中", "");
                     }
                     else
                     {

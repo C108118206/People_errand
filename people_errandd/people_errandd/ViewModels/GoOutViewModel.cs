@@ -13,19 +13,19 @@ namespace people_errandd.ViewModels
         public async Task<bool> PostGoOut(DateTime _StartTime, DateTime _EndTime, string _location, string _reason)
         {
             List<GoOut> goOuts = new List<GoOut>();
-            GoOut goOut= new GoOut()
+            GoOut goOut = new GoOut()
             {
-                hashaccount = Preferences.Get("HashAccount", ""),
-                Location=_location,
-                reason = _reason,
+                hashAccount = Preferences.Get("HashAccount", ""),
+                Location = _location,
+                Reason = _reason,
                 StartDate = _StartTime,
                 EndDate = _EndTime,
             };
             goOuts.Add(goOut);
             try
             {
-                var WorkRecord = JsonConvert.SerializeObject(goOuts);
-                HttpContent content = new StringContent(WorkRecord);
+                var GoOutRecord = JsonConvert.SerializeObject(goOuts);
+                HttpContent content = new StringContent(GoOutRecord);
                 content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
                 response = await client.PostAsync(basic_url + ControllerNameTripRecord + "add_TripRecord", content);
                 if (response.StatusCode.ToString() == "OK")
@@ -36,7 +36,35 @@ namespace people_errandd.ViewModels
             catch (Exception)
             {
                 return false;
-                throw;
+            }
+            return false;
+        }
+
+        public async Task<bool> PostGoOut(int TripType)
+        {
+            List<GoOut> goOuts = new List<GoOut>();
+            GoOut goOut = new GoOut()
+            {
+                trip2TypeId = TripType,
+                hashAccount = Preferences.Get("HashAccount", ""),
+                coordinateX = App.Latitude,
+                coordinateY = App.Longitude,
+            };
+            goOuts.Add(goOut);
+            try
+            {
+                var GoOutRecord = JsonConvert.SerializeObject(goOuts);
+                HttpContent content = new StringContent(GoOutRecord);
+                content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                response = await client.PostAsync(basic_url + ControllerNameTrip2Record + "add_trip2Record", content);
+                if (response.StatusCode.ToString() == "OK")
+                {
+                    return true;
+                }
+            }            
+            catch (Exception)
+            {
+                return false;
             }
             return false;
         }
