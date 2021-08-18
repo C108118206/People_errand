@@ -170,7 +170,7 @@
                         </StackLayout  >
                         <StackLayout>
                             <Button  Grid.Row="3" ImageSource="gps"  Text="定位已開啟"  Margin="0,0,0,20"  Style="{StaticResource gpsbutton}"  x:Name="GPSText" Clicked="GpsButton"/>
-                            <Label x:Name="LocationNoWText" Text="{Binding LocationText }" HorizontalOptions="Center" FontSize="16"  TextColor="#CA4848" ></Label>
+                            <Label x:Name="LocationNowText" Text="{Binding LocationText, StringFormat='現在位置:{0}'}"  HorizontalOptions="Center" FontSize="16"  TextColor="#CA4848" ></Label>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>

@@ -31,7 +31,6 @@ namespace people_errandd.ViewModels
                     var location = await Geolocation.GetLastKnownLocationAsync();
                     return (location.Latitude, location.Longitude);
                 }
-
             }
             catch (Exception)
             {
@@ -63,8 +62,7 @@ namespace people_errandd.ViewModels
         {            
             Position position = new Position(X,Y);
             IEnumerable<string> possibleAddresses = await geoCoder.GetAddressesForPositionAsync(position);
-            LocationNowText=possibleAddresses.FirstOrDefault();
-          
+            LocationNowText=possibleAddresses.FirstOrDefault().Substring(5);          
             //Preferences.Set("LocationNowText", possibleAddresses.FirstOrDefault());
         }
     }
