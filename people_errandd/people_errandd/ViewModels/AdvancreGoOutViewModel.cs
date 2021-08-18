@@ -19,16 +19,17 @@ namespace people_errandd.ViewModels
         public ICommand ArrivalCommand { private set; get; }
         public ICommand BackCommand { private set; get; }
 
-        bool canTrip=!Preferences.ContainsKey("Traveling");
-        bool canBack = Preferences.ContainsKey("Traveling");
-        double tripOpacity =Opacity("trip");
-        double backOpacity = Opacity("back");
+        bool canTrip;
+        bool canBack;
+        double tripOpacity;
+        double backOpacity;
         public event PropertyChangedEventHandler PropertyChanged;
         public static double Opacity(string _Type)
         {
-           if(_Type == "trip")
+            if (_Type == "trip")
             {
-                if (Preferences.ContainsKey("TripNoW")) {
+                if (Preferences.ContainsKey("TripNow"))
+                {
                     return 0.2;
                 }
                 else
@@ -38,12 +39,13 @@ namespace people_errandd.ViewModels
             }
             else
             {
-                if (Preferences.ContainsKey("TripNow")) {
+                if (Preferences.ContainsKey("TripNow"))
+                {
                     return 1;
                 }
                 else
                 {
-                    return 0.2; 
+                    return 0.2;
                 }
 
             }
@@ -51,7 +53,11 @@ namespace people_errandd.ViewModels
 
         public AdvancreGoOutViewModel()
         {
-            StartTripCommand = new Command(StartTrip);                
+            CanTrip = !Preferences.ContainsKey("TripNow");
+            CanBack = Preferences.ContainsKey("TripNow");
+            TripOpacity= Opacity("trip");
+            backOpacity = Opacity("back"); 
+            StartTripCommand = new Command(StartTrip);
             ArrivalCommand = new Command(Arrival);
             BackCommand = new Command(Back);
         }
@@ -89,11 +95,11 @@ namespace people_errandd.ViewModels
         {
             set
             {
-                if (canTrip !=value)
+                if (canTrip != value)
                 {
                     canTrip = value;
                     OnPropertyChanged();
-                }            
+                }
             }
             get
             {
@@ -104,7 +110,7 @@ namespace people_errandd.ViewModels
         {
             set
             {
-                if(canBack !=value)
+                if (canBack != value)
                 {
                     canBack = value;
                     OnPropertyChanged();
@@ -114,14 +120,13 @@ namespace people_errandd.ViewModels
             {
                 return canBack;
             }
-        }        
+        }
         async void StartTrip()
         {
             if (await GoOut.PostGoOut(1))
             {
                 await App.Current.MainPage.DisplayAlert("", "公出成功", "確認");
-                Preferences.Set("Traveling", "");
-                Preferences.Set("TripNow", "");
+                Preferences.Set("TripNow", "1");
                 CanTrip = false;
                 CanBack = true;
                 TripOpacity = 0.2;
@@ -151,9 +156,8 @@ namespace people_errandd.ViewModels
             if (await GoOut.PostGoOut(3))
             {
                 await App.Current.MainPage.DisplayAlert("", "返回成功", "確認");
-                Preferences.Remove("Traveling");
                 Preferences.Remove("TripNow");
-                CanTrip =true;
+                CanTrip = true;
                 CanBack = false;
                 TripOpacity = 1;
                 BackOpacity = 0.2;
@@ -163,7 +167,7 @@ namespace people_errandd.ViewModels
                 await App.Current.MainPage.DisplayAlert("", "錯誤", "確認");
             }
         }
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)  
         {
             PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null)

@@ -25,8 +25,8 @@ namespace people_errandd.Views
                 IsShowingUser = true,
                 HeightRequest = 50,
                 WidthRequest = 250,
-                HasScrollEnabled = false,
-                HasZoomEnabled = false
+                HasScrollEnabled = true,
+                HasZoomEnabled = true
                
             };
             Label L=new Label

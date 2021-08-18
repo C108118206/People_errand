@@ -15,12 +15,11 @@ namespace people_errandd.Models
 {
     public class Records : HttpResponse
     {
-        public async Task<List<work>> GetWorkRecord()
+        public async Task<List<work>> GetWorkRecord(string date)
         {
             try
             {
-                response = await client.GetAsync(basic_url + ControllerNameWorkRecord + "GetEmployeeAllWorkRecords/" + Preferences.Get("HashAccount", ""));
-                Console.WriteLine(basic_url + ControllerNameWorkRecord + "GetEmployeeAllWorkRecords" + Preferences.Get("HashAccount", ""));
+                response = await client.GetAsync(basic_url + ControllerNameWorkRecord + "GetEmployeeAllWorkRecords/" + Preferences.Get("HashAccount", ""));                
                 var result = await response.Content.ReadAsStringAsync();
                 List<work> workRecords = JsonConvert.DeserializeObject<List<work>>(result);
                 int i = 0;
@@ -42,10 +41,20 @@ namespace people_errandd.Models
                             break;
                     }
                     workRecords[i].time = workRecords[i].createdTime.ToString();
-                    Console.WriteLine(workRecords[i].status);
-                    i++;
+                    Console.WriteLine(workRecords[i].time);
+                    i++;                   
                 }
-                Console.WriteLine("OK");
+                Console.WriteLine(date);
+                foreach (var work in workRecords)
+                {
+                    
+                    Console.WriteLine(work.time);
+                }
+                workRecords = workRecords.Where(work => work.time.Contains(date)).ToList();
+                foreach (var work in workRecords)
+                {
+                    Console.WriteLine(work.time);
+                }
                 //List<work> workRecord;
 
                 return workRecords;
@@ -57,7 +66,7 @@ namespace people_errandd.Models
             }
             return null;
         }
-        public async Task<List<GoOut>> GetGoOutsRecord()
+        public async Task<List<GoOut>> GetGoOutsRecord(string date)
         {
             try
             {
@@ -74,7 +83,7 @@ namespace people_errandd.Models
             }
             return null;
         }
-        public async Task<List<DayOff>> GetLeaveRecord()
+        public async Task<List<DayOff>> GetLeaveRecord(string date)
         {
             try
             {

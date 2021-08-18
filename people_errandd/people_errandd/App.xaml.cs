@@ -1,18 +1,12 @@
 ﻿using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using people_errandd.Views;
 using people_errandd.ViewModels;
-using people_errandd.Models;
-using System.Collections;
 using System.Globalization;
-using System.IO;
 using Xamarin.Essentials;
 using Plugin.SharedTransitions;
 using System.Threading.Tasks;
-using Xamarin.Forms.Maps;
-using System.Collections.Generic;
-using System.Linq;
+
 
 namespace people_errandd
 {
@@ -53,6 +47,7 @@ namespace people_errandd
 
         protected async override void OnStart()
         {
+            Preferences.Remove("Traveling");
             bool hasKey = Preferences.ContainsKey("HashAccount");
             if (hasKey)
             {
@@ -65,6 +60,7 @@ namespace people_errandd
             GetConnectivity("start");
             var Seconds = TimeSpan.FromSeconds(20);
             Device.StartTimer(Seconds, () => {
+                Console.WriteLine(Preferences.ContainsKey("Traveling").ToString());
                 GetLocation();
                 return true;
             });

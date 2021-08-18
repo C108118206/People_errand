@@ -36,14 +36,7 @@ namespace people_errandd.Views
         {
             base.OnAppearing();
             GPSText.Text = Preferences.Get("gpsText", "定位未開啟");
-            GPSText.BackgroundColor = Color.FromHex(Preferences.Get("GpsButtonColor", "#CA4848"));
-            //try
-            //{ 
-            //    LocationNoWText.Text = "現在位置 : " + Preferences.Get("LocationNowText","").Substring(5);
-            //}
-            //catch (Exception) 
-            //{
-            //}          
+            GPSText.BackgroundColor = Color.FromHex(Preferences.Get("GpsButtonColor", "#CA4848"));       
             workOn.IsEnabled = Preferences.Get("WorkOnButtonStauts", workOn.IsEnabled = true);
             workOff.IsEnabled = Preferences.Get("WorkOffButtonStauts", workOff.IsEnabled = false);
             workOn.Opacity = Preferences.Get("WorkOnButtonView", workOn.Opacity = 1);
