@@ -110,7 +110,7 @@
                             </OnPlatform>
                         </Frame.HasShadow>
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal" >
-                            <Image HeightRequest="45" Source="{Binding Workimage}"  Grid.Row="0" Grid.Column="0"/>
+                            <Image HeightRequest="45" Source="{Binding image}"  Grid.Row="0" Grid.Column="0"/>
 
                             <StackLayout
                                         Grid.Row="0"
@@ -173,7 +173,7 @@
                             </OnPlatform>
                         </Frame.HasShadow>
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Padding="10,0,10,0">
-                            <Image HeightRequest="55" Source="{Binding DayOffimage}" Margin="-18,-105,0,0"  Grid.Row="0"  Grid.Column="0"/>
+                            <Image HeightRequest="55" Source="{Binding image}" Margin="-18,-155,0,0"  Grid.Row="0"  Grid.Column="0"/>
                             <StackLayout>
                                 <StackLayout Orientation="Horizontal"  Margin="0,10,0,10">
                                     <Label 
@@ -184,7 +184,7 @@
                                     <Label
                                             
                                              Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding StartTime}"
+                                            Text="{Binding StartDate}"
                                             TextColor="#5C76B1"
                                              />
                                 </StackLayout>
@@ -197,10 +197,24 @@
                                     <Label
                                             
                                              Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding EndTime}"
+                                            Text="{Binding EndDate}"
                                             TextColor="#5C76B1"
                                              />
 
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal"  Margin="0,10,0,10">
+                                    <StackLayout>
+                                        <Label 
+                                           Style="{StaticResource gooutanddayofftitle}"
+                                            Text="申請日期 :"
+                                            />
+                                    </StackLayout>
+                                    <StackLayout >
+                                        <Label
+                                             Style="{StaticResource gooutanddayoffcontent}"
+                                             Text="{Binding createdTime, StringFormat='{0:yyyy/MM/dd}'}"                                                                                                                                    
+                                             />
+                                    </StackLayout>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal"  Margin="0,10,0,10">
                                 
@@ -234,7 +248,8 @@
                                              />
                                     </StackLayout>
                                 </StackLayout>
-                              
+                               
+
                             </StackLayout>
                         </StackLayout>
                     </Frame>
@@ -259,7 +274,7 @@
                             </OnPlatform>
                         </Frame.HasShadow>
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Padding="10,0,10,0">
-                            <Image HeightRequest="55" Source="{Binding GoOutimage}"   Margin="-18,-105,0,0"  Grid.Row="0"  Grid.Column="0"/>
+                            <Image HeightRequest="55" Source="{Binding image}"   Margin="-18,-155,0,0"  Grid.Row="0"  Grid.Column="0"/>
                             <StackLayout  Grid.Row="0"  Grid.Column="1">
                                 <StackLayout Orientation="Horizontal"   Margin="0,10,0,10">
                                     <Label 
@@ -269,7 +284,7 @@
                                             />
                                     <Label
                                              Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding StartTime}"
+                                            Text="{Binding StartDate}"
                                             TextColor="#5C76B1"
                                              />
                                 </StackLayout>
@@ -282,9 +297,23 @@
 
                                     <Label
                                              Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding EndTime}"
+                                            Text="{Binding EndDate}"
                                             TextColor="#5C76B1"
                                              />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal"  Margin="0,10,0,10">
+                                    <StackLayout>
+                                        <Label 
+                                           Style="{StaticResource gooutanddayofftitle}"
+                                            Text="申請日期 :"
+                                            />
+                                    </StackLayout>
+                                    <StackLayout >
+                                        <Label
+                                             Style="{StaticResource gooutanddayoffcontent}"
+                                             Text="{Binding createdTime, StringFormat='{0:yyyy/MM/dd}'}"                                                                                                                                    
+                                             />
+                                    </StackLayout>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal"  Margin="0,10,0,10">
                                     <StackLayout >
@@ -318,6 +347,7 @@
                                              />
                                     </StackLayout>
                                 </StackLayout>
+                               
                             </StackLayout>
                         </StackLayout>
                     </Frame>
@@ -465,79 +495,7 @@
                             <LinearItemsLayout Orientation="Vertical" />
                         </CollectionView.ItemsLayout>
                     </CollectionView>
-        <CollectionView Style="{StaticResource Collection}" ItemsSource="{Binding MyAnnouncements}" HeightRequest="220" Margin="20,0,20,0">
-            <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical" />
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate >
-
-                    <Grid RowSpacing="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="0.8" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="auto" />
-                        </Grid.ColumnDefinitions>
-                        <Frame HorizontalOptions="FillAndExpand" WidthRequest="2000" Margin="-5,0,-20,10" BackgroundColor="White" >
-                            <Frame.HasShadow>
-                                <OnPlatform x:TypeArguments="x:Boolean">
-                                    <On Platform="iOS" Value="False" />
-                                    <On Platform="Android" Value="True" />
-                                </OnPlatform>
-                            </Frame.HasShadow>
-                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal" >
-                                <Image HeightRequest="45" Source="{Binding advanceimage}"  Grid.Row="0" Grid.Column="0"/>
-                                <StackLayout Grid.Row="0"  Grid.Column="1" Margin="10,0,0,0">
-                                    <StackLayout Margin="0,5,0,5"  Orientation="Horizontal" >
-                                        <Label  
-                                             Style="{StaticResource gooutanddayofftitle}"
-                                            Text="狀態 :"
-                                           />
-                                        <Label
-                                            Style="{StaticResource gooutanddayoffcontent}"
-                                             TextColor="{Binding statuscolor}"
-                                            Text="{Binding status}"
-                                           />
-
-                                    </StackLayout>
-                                    <StackLayout Margin="0,5,0,5"  Orientation="Horizontal" >
-                                        <Label 
-                                           Style="{StaticResource gooutanddayofftitle}"
-                                            Text="時間 :"
-                                            />
-                                        <Label
-                                             Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding time}"
-                                             />
-                                    </StackLayout>
-                                    <StackLayout Margin="0,5,0,5"  Orientation="Horizontal" >
-                                        <StackLayout>
-                                            <Label 
-                                           Style="{StaticResource gooutanddayofftitle}"
-                                            Text="地點 :"
-                                            />
-                                        </StackLayout>
-                                        <StackLayout>
-                                            <Label
-                                             Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding location}"
-                                             />
-                                        </StackLayout>
-                                    </StackLayout>
-                                </StackLayout>
-
-                            </StackLayout>
-                        </Frame>
-
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-
+      
     </StackLayout>
 
 

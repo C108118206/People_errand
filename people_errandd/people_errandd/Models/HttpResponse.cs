@@ -22,6 +22,7 @@ namespace people_errandd.Models
         public static readonly string ControllerNameLeaveRecord = "EmployeeLeaveRecords/";//LeaveRecord api
         public static readonly string ControllerNameTripRecord = "EmployeeTripRecords/";//TripRecord api
         public static readonly string ControllerNameInformation = "EmployeeInformations/";//EmployeeInformations api
+        public static readonly string ControllerNameTrip2Record = "EmployeeTrip2Record/";//TripRecord api
        // public static string _HashAccount { get; set; }
         public static string companyHash { get; set; }
         public static string GetResponse { get; set; }

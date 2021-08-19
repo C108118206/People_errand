@@ -18,9 +18,9 @@ namespace people_errandd.ViewModels
             List<DayOff> dayOffs = new List<DayOff>();
             DayOff dayOff = new DayOff()
             {
-                hashaccount = Preferences.Get("HashAccount", ""),
+                hashAccount = Preferences.Get("HashAccount", ""),
                 Leavetypeid = _leave_type_id,
-                reason = _reason,
+                Reason = _reason,
                 StartDate = _StartTime,
                 EndDate = _EndTime,
             };
@@ -44,5 +44,5 @@ namespace people_errandd.ViewModels
             return false;
         }
     }
-    
+
 }

@@ -43,16 +43,7 @@ namespace people_errandd.Views
                     DateTime EndDateTime = endDatePicker.Date + endTimePicker.Time;
                     if (await goOut.PostGoOut(StartDateTime, EndDateTime, locationEntry.Text, reasonEntry.Text))
                     {
-                        await DisplayAlert("", "申請成功", "OK");
-                        await App.DataBase.SaveRecordAsync(new GoOutRecordModels
-                        {
-                            StartTime = StartDateTime,
-                            EndTime = EndDateTime,
-                            Location = locationEntry.Text,
-                            Reason = reasonEntry.Text,
-                            GoOutimage = "goout2.png",
-                            Date = DateTime.Now.ToString("d")
-                        }) ;
+                        await DisplayAlert("", "申請成功", "OK");                       
                         locationEntry.Text = "";
                         reasonEntry.Text = "";
                     }

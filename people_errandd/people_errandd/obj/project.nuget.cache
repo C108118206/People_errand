@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uyShQl0SZ4aHYop/C6YAxOBdTdB9WmX7Pi5EEBn8vtM8NLpNFqxh0B34CcyBAc69zrzwhKpqagZQuXY3/zpTWA==",
+  "dgSpecHash": "IhGTpjFdo2MsrjRESCJdOwYKqaD3zECcZgBaXe5Hc+qIA4qDdsi48deRT8OIvn9cDt8vNDSuSkJDDljMZJfBpw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - 複製\\people_errandd\\people_errandd\\people_errandd.csproj",
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd\\people_errandd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lmh_flower\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\lmh_flower\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
@@ -24,6 +24,7 @@
     "C:\\Users\\lmh_flower\\.nuget\\packages\\xamarin.communitytoolkit\\1.3.0-pre1\\xamarin.communitytoolkit.1.3.0-pre1.nupkg.sha512",
     "C:\\Users\\lmh_flower\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
     "C:\\Users\\lmh_flower\\.nuget\\packages\\xamarin.forms\\5.0.0.2083\\xamarin.forms.5.0.0.2083.nupkg.sha512",
+    "C:\\Users\\lmh_flower\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2083\\xamarin.forms.maps.5.0.0.2083.nupkg.sha512",
     "C:\\Users\\lmh_flower\\.nuget\\packages\\xamarin.plugin.sharedtransitions\\2.4.0\\xamarin.plugin.sharedtransitions.2.4.0.nupkg.sha512"
   ],
   "logs": []
