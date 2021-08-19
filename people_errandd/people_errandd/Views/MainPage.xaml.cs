@@ -11,7 +11,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.CommunityToolkit.UI.Views;
-
+using Rg.Plugins.Popup.Services;
 
 namespace people_errandd.Views
 {
@@ -22,16 +22,39 @@ namespace people_errandd.Views
         private readonly geoLocation geoLocation = new geoLocation();
         public MainPage()
         {
-            BindingContext = new TimeDisplay();
+           // BindingContext = new TimeDisplay();
             Application.Current.UserAppTheme = OSAppTheme.Light;
             InitializeComponent(); 
             NavigationPage.SetHasNavigationBar(this, false);
 
 
+            MyAnnouncements = GetAnnouncements();
+            this.BindingContext = this;
+        }
+        public class Announcement
+        {
+            public string leavetypecolorOne { get; set; }
+            public string leavetypeOne { get; set; }
+            public string ApplicantOne { get; set; }
+            public string DateOne { get; set; }
+            public string leavetypecolorTwo { get; set; }
+            public string leavetypeTwo { get; set; }
+            public string ApplicantTwo { get; set; }
+            public string DateTwo { get; set; }
 
         }
-       
 
+
+        public ObservableCollection<Announcement> MyAnnouncements { get; set; }
+        private ObservableCollection<Announcement> GetAnnouncements()
+        {
+            return new ObservableCollection<Announcement>
+            {
+
+                new Announcement { leavetypecolorOne="#62AFEA",leavetypeOne="病假",ApplicantOne="SDD", DateOne = "2021/08/18 上午09:10-2021/08/18 上午09:10", leavetypecolorTwo = "#FFCF80",  leavetypeTwo = "事假",
+                ApplicantTwo="SDD",DateTwo="2021/08/18 上午09:10-2021/08/18 上午09:10"}
+            };
+        }
 
         protected async override void OnAppearing()
         {
@@ -226,14 +249,15 @@ namespace people_errandd.Views
             }
 
         }
-        private async void CalebderButton(object sender, EventArgs e)
+        private async void GoOutButton(object sender, EventArgs e)
         {
             try
             {
                 if (allowTap)
                 {
                     allowTap = false;
-                    await Navigation.PushAsync(new Calender());
+                    await PopupNavigation.Instance.PushAsync(new AdvanceGoOut("請選擇"));
+                    //await Navigation.PushAsync(new GoOut());
                 }
             }
             finally
@@ -256,14 +280,14 @@ namespace people_errandd.Views
                 allowTap = true;
             }
         }
-        private async void GoRecordButton(object sender, EventArgs e)
+        private async void DayOffButton(object sender, EventArgs e)
         {
             try
             {
                 if (allowTap)
                 {
                     allowTap = false;
-                    await Navigation.PushAsync(new Record());
+                    await Navigation.PushAsync(new TakeDayOff());
                 }
             }
             finally

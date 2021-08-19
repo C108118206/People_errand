@@ -7,7 +7,7 @@
              BackgroundColor="#EDEEEF">
     <!--最上面Navigation標題-->
     <NavigationPage.TitleView>
-        <Label Text="公出申請" TextColor="#555555" FontSize="20" HorizontalTextAlignment="Center"  FontAttributes="Bold"  VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
+        <Label Text="公出申請" TextColor="#555555" FontSize="18" HorizontalTextAlignment="Center"  FontAttributes="Bold"  VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
     </NavigationPage.TitleView>
 
     <ContentPage.ToolbarItems>
@@ -21,7 +21,6 @@
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             </Style>
             <Style x:Key="titletext" TargetType="Label">
-                <Setter Property="Margin" Value="0,0,0,0" />
                 <Setter Property="TextColor" Value="#555555" />
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="16" />
@@ -157,8 +156,7 @@
 
         <ScrollView VerticalScrollBarVisibility="Never">
         <StackLayout>
-            <Label Text="公出申請" Style="{StaticResource titletext}" Margin="10,20,10,10" HorizontalOptions="Center" ></Label>
-            <BoxView BackgroundColor="Gray" HeightRequest="1"  VerticalOptions="Center" Margin="10,0,10,0"  ></BoxView>
+         
             <StackLayout Orientation="Horizontal" Margin="20,20,0,0">
                 <!--*-->               
                 <Label Text="公出類型" Style="{StaticResource titletext}"  Margin="0,0,0,10"></Label>

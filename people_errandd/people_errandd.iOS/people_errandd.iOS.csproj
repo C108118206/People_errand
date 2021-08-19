@@ -97,7 +97,7 @@
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon120.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon1201.png">
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon1202.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon152.png">
@@ -118,16 +118,16 @@
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon40.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon401.png">
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon403.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon402.png">
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon404.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon58.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon581.png">
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon582.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon60.png">
@@ -139,7 +139,7 @@
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon80.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon801.png">
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon802.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon87.png">
@@ -304,9 +304,6 @@
     <BundleResource Include="Resources\notice.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\calendarpage.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\plane.png" />
   </ItemGroup>
   <ItemGroup>
@@ -392,5 +389,7 @@
     <BundleResource Include="Resources\stop.png" />
     <BundleResource Include="Resources\finishgoout.png" />
     <BundleResource Include="Resources\startgoout.png" />
+    <BundleResource Include="Resources\recordpage.png" />
+    <BundleResource Include="Resources\calenderpage.png" />
   </ItemGroup>
 </Project>

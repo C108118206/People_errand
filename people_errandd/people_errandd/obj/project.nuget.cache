@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BhACYP8JTb8L4yDNvx8ytCGyxAkq/o9kIzV3qquoGKpxoCwI3aaE4EEEkMYv7vdIQ5lcDZWjsKpjFak8vEdzQg==",
+  "dgSpecHash": "uyShQl0SZ4aHYop/C6YAxOBdTdB9WmX7Pi5EEBn8vtM8NLpNFqxh0B34CcyBAc69zrzwhKpqagZQuXY3/zpTWA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - 複製\\people_errandd\\people_errandd\\people_errandd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lmh_flower\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\lmh_flower\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

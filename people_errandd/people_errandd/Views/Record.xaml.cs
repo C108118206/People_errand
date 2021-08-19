@@ -120,8 +120,34 @@ namespace people_errandd.Views
                     sat.TextColor = Color.FromHex("#FFFFFF");
                     break;
             }
+            MyAnnouncements = GetAnnouncements();
+            this.BindingContext = this;
 
         }
+        public class Announcement
+        {
+            public string advanceimage { get; set; }
+            public string statuscolor { get; set; }
+            public string status { get; set; }
+            public string time { get; set; }
+            public string location { get; set; }
+
+
+        }
+
+
+        public ObservableCollection<Announcement> MyAnnouncements { get; set; }
+        private ObservableCollection<Announcement> GetAnnouncements()
+        {
+            return new ObservableCollection<Announcement>
+            {
+
+                new Announcement { advanceimage="startgoout.png",statuscolor="#5C76B1",status="公出", time = "2021/08/18 上午09:10", location = "高雄市楠梓區清豐一路217號"},
+                new Announcement { advanceimage="stop.png",statuscolor="#CA4848",status="到站", time = "2021/08/18 上午09:10", location = "高雄市楠梓區清豐一路217號"},
+                new Announcement { advanceimage="finishgoout.png",statuscolor="#FFCF80",status="公出結束", time = "2021/08/18 上午09:10", location = "高雄市楠梓區清豐一路217號"}
+            };
+        }
+
 
 
 

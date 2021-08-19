@@ -10,7 +10,6 @@ C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\build.props
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\adb.props
-C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\people_errandd.Android.csproj.AssemblyReference.cache
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_BuildLibraryImportsCache.stamp
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\res.flag
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\files.cache
@@ -119,6 +118,9 @@ C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\gooutpage.png
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\takedayoffpage.png
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\profile.png
+C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\stop.png
+C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\finishgoout.png
+C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\startgoout.png
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\uploadflags.txt
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\resolvedassemblies.hash
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\android\assets\FormsViewGroup.dll
@@ -713,6 +715,5 @@ C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.And
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\stop.png
-C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\finishgoout.png
-C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\startgoout.png
+C:\Users\lmh_flower\source\repos\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\people_errandd.Android.csproj.AssemblyReference.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\recordpage.png

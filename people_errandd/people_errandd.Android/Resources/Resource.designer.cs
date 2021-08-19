@@ -21860,61 +21860,64 @@ namespace people_errandd.Droid
 			public const int railroad = 2131165370;
 			
 			// aapt resource value: 0x7F0700BB
-			public const int schedule3 = 2131165371;
+			public const int recordpage = 2131165371;
 			
 			// aapt resource value: 0x7F0700BC
-			public const int scooter = 2131165372;
+			public const int schedule3 = 2131165372;
 			
 			// aapt resource value: 0x7F0700BD
-			public const int send = 2131165373;
+			public const int scooter = 2131165373;
 			
 			// aapt resource value: 0x7F0700BE
-			public const int service = 2131165374;
+			public const int send = 2131165374;
 			
 			// aapt resource value: 0x7F0700BF
-			public const int startgoout = 2131165375;
+			public const int service = 2131165375;
 			
 			// aapt resource value: 0x7F0700C0
-			public const int stomach = 2131165376;
+			public const int startgoout = 2131165376;
 			
 			// aapt resource value: 0x7F0700C1
-			public const int stop = 2131165377;
+			public const int stomach = 2131165377;
 			
 			// aapt resource value: 0x7F0700C2
-			public const int takedayoffpage = 2131165378;
+			public const int stop = 2131165378;
 			
 			// aapt resource value: 0x7F0700C3
-			public const int taxi = 2131165379;
+			public const int takedayoffpage = 2131165379;
 			
 			// aapt resource value: 0x7F0700C4
-			public const int test_custom_background = 2131165380;
+			public const int taxi = 2131165380;
 			
 			// aapt resource value: 0x7F0700C5
-			public const int tooltip_frame_dark = 2131165381;
+			public const int test_custom_background = 2131165381;
 			
 			// aapt resource value: 0x7F0700C6
-			public const int tooltip_frame_light = 2131165382;
+			public const int tooltip_frame_dark = 2131165382;
 			
 			// aapt resource value: 0x7F0700C7
-			public const int train = 2131165383;
+			public const int tooltip_frame_light = 2131165383;
 			
 			// aapt resource value: 0x7F0700C8
-			public const int u = 2131165384;
+			public const int train = 2131165384;
 			
 			// aapt resource value: 0x7F0700C9
-			public const int visit = 2131165385;
+			public const int u = 2131165385;
 			
 			// aapt resource value: 0x7F0700CA
-			public const int worker = 2131165386;
+			public const int visit = 2131165386;
 			
 			// aapt resource value: 0x7F0700CB
-			public const int workerob = 2131165387;
+			public const int worker = 2131165387;
 			
 			// aapt resource value: 0x7F0700CC
-			public const int workeroff = 2131165388;
+			public const int workerob = 2131165388;
 			
 			// aapt resource value: 0x7F0700CD
-			public const int workeroffob = 2131165389;
+			public const int workeroff = 2131165389;
+			
+			// aapt resource value: 0x7F0700CE
+			public const int workeroffob = 2131165390;
 			
 			static Drawable()
 			{

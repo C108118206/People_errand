@@ -23,12 +23,12 @@
     </pages:PopupPage.Animation>
 
     <Grid BackgroundColor="White" VerticalOptions="Center" Margin="30" HeightRequest="350">
-        <Label Grid.Row="0" Text="請選擇" TextColor="#555555" FontSize="Large" HorizontalTextAlignment="Center" Margin="0,30,0,0"/>
+        <Label Grid.Row="0"  x:Name="PageTitle" Text="請選擇" TextColor="#555555" FontSize="Large" HorizontalTextAlignment="Center" Margin="0,30,0,0"/>
         <ScrollView Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" HorizontalScrollBarVisibility="Never">
         <StackLayout Orientation="Horizontal" Grid.Row="1" HorizontalOptions="Center" Margin="10" >
                 <Frame HorizontalOptions="Center" BackgroundColor="#FBDDAA" HasShadow="False" CornerRadius="10" Margin="10,0,10,0" WidthRequest="65">
                     <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped=""/>
+                        <TapGestureRecognizer/>
                     </Frame.GestureRecognizers>
                     <StackLayout Margin="0,20,0,0">
                     <Image Source="startgoout.png" HeightRequest="50"/>

@@ -40,10 +40,10 @@ namespace people_errandd.Views
             return new ObservableCollection<Announcement>
             {
 
-                new Announcement { GoOutimage="goout2.png",StartTime="2021/05/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy"},
-                new Announcement { GoOutimage="goout2.png",StartTime="2021/05/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy"},
-                new Announcement { GoOutimage="goout2.png",StartTime="2021/05/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy"},
-                new Announcement { GoOutimage="goout2.png",StartTime="2021/05/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy" }
+                new Announcement { GoOutimage="goout2.png",StartTime="2021/08/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy"},
+                new Announcement { GoOutimage="goout2.png",StartTime="2021/08/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy"},
+                new Announcement { GoOutimage="goout2.png",StartTime="2021/08/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy"},
+                new Announcement { GoOutimage="goout2.png",StartTime="2021/08/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy" }
             };
         }
         

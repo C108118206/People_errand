@@ -44,6 +44,11 @@
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="Format" Value="yyyy-MM-dd (dddd)" />
             </Style>
+            <Style x:Key="titletext" TargetType="Label">
+                <Setter Property="TextColor" Value="#555555" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
             <Style x:Key="select" TargetType="ImageButton">
                 <Setter Property="BackgroundColor" Value="White"/>
                 <Setter Property="Margin" Value="10,-44,-15,0"/>
@@ -318,6 +323,71 @@
                     </Frame>
                 </Grid>
             </DataTemplate>
+            <DataTemplate x:Key="AdvanceGoOutRecord">
+
+                <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="0.8" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+                    <Frame HorizontalOptions="FillAndExpand" WidthRequest="2000" Margin="-5,0,-20,10" BackgroundColor="White" >
+                        <Frame.HasShadow>
+                            <OnPlatform x:TypeArguments="x:Boolean">
+                                <On Platform="iOS" Value="False" />
+                                <On Platform="Android" Value="True" />
+                            </OnPlatform>
+                        </Frame.HasShadow>
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal" >
+                            <Image HeightRequest="45" Source="{Binding advanceimage}"  Grid.Row="0" Grid.Column="0"/>
+                            <StackLayout Grid.Row="0"  Grid.Column="1" Margin="10,0,0,0">
+                                <StackLayout Margin="0,5,0,5"  Orientation="Horizontal" >
+                                    <Label  
+                                             Style="{StaticResource gooutanddayofftitle}"
+                                            Text="狀態 :"
+                                           />
+                                    <Label
+                                            Style="{StaticResource gooutanddayoffcontent}"
+                                             TextColor="{Binding statuscolor}"
+                                            Text="{Binding status}"
+                                           />
+
+                                </StackLayout>
+                                <StackLayout Margin="0,5,0,5"  Orientation="Horizontal" >
+                                    <Label 
+                                           Style="{StaticResource gooutanddayofftitle}"
+                                            Text="時間 :"
+                                            />
+                                    <Label
+                                             Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding time}"
+                                             />
+                                </StackLayout>
+                                <StackLayout Margin="0,5,0,5"  Orientation="Horizontal" >
+                                    <StackLayout>
+                                        <Label 
+                                           Style="{StaticResource gooutanddayofftitle}"
+                                            Text="地點 :"
+                                            />
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <Label
+                                             Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding location}"
+                                             />
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </Frame>
+
+                </Grid>
+            </DataTemplate>
             <local:RecordsSelector x:Key="RecordSelector"
                                              WorkRecords="{StaticResource WorkRecord}"
                                              DayOffRecords="{StaticResource DayOffRecord}"
@@ -329,7 +399,9 @@
 
 
                 <StackLayout Orientation="Vertical" >
-                <Frame BackgroundColor="White" HorizontalOptions="FillAndExpand" Margin="10,10,10,0" >
+        <Label Text="查看紀錄" Style="{StaticResource titletext}" Margin="10,20,10,10" HorizontalOptions="Center" ></Label>
+        <BoxView BackgroundColor="Gray" HeightRequest="1"  VerticalOptions="Center" Margin="10,0,10,0"  ></BoxView>
+        <Frame BackgroundColor="White" HorizontalOptions="FillAndExpand" Margin="10,10,10,0" >
                         <Frame.HasShadow>
                             <OnPlatform x:TypeArguments="x:Boolean">
                                 <On Platform="iOS" Value="False" />
@@ -341,7 +413,7 @@
                 <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Start" Margin="10,0,0,0">
                     <Image  Grid.Row="0" Margin="-10,0,0,0" Grid.Column="0" Source="date" HorizontalOptions="Center"  HeightRequest="30"></Image>
                     <StackLayout>
-                        <DatePicker  Grid.Row="0" Grid.Column="1" x:Name="DatePicker" DateSelected="DatePicker_DateSelected" Style="{StaticResource date}" Margin="0,-4,0,0"/>
+                        <DatePicker  Grid.Row="0" Grid.Column="1" x:Name="DatePicker" DateSelected="DatePicker_DateSelected" Style="{StaticResource date}" Margin="0,-4,0,0" />
                         <BoxView BackgroundColor="#807D7D" x:Name="dateline" HeightRequest="1" Margin="0,-5,0,0" />
                     </StackLayout>
                 </StackLayout >
@@ -349,31 +421,31 @@
                         <StackLayout Orientation="Horizontal" Margin="-8,10,0,0" HorizontalOptions="Center">
                             <StackLayout>
                                     <Label Text="日" Style="{StaticResource datetitle}"></Label>
-                                <Button x:Name="sun" Style="{StaticResource datebutton}" Clicked="SunButton"></Button>
+                        <Button x:Name="sun" Style="{StaticResource datebutton}" Clicked="SunButton" Command="{Binding SunButton}"></Button>
                             </StackLayout>
                             <StackLayout>
                                     <Label Text="一" Style="{StaticResource datetitle}"></Label>
-                                <Button x:Name="mon"  Style="{StaticResource datebutton}" Clicked="MonButton" ></Button>
+                        <Button x:Name="mon"  Style="{StaticResource datebutton}" Clicked="MonButton"  Command="{Binding MonButton}"></Button>
                             </StackLayout>
                             <StackLayout>
                                     <Label Text="二"  Style="{StaticResource datetitle}"></Label>
-                                <Button x:Name="tue" Style="{StaticResource datebutton}"  Clicked="TueButton"></Button>
+                        <Button x:Name="tue" Style="{StaticResource datebutton}"  Clicked="TueButton" Command="{Binding TueButton}"></Button>
                             </StackLayout>
                             <StackLayout>
                                     <Label Text="三"  Style="{StaticResource datetitle}"></Label>
-                                <Button x:Name="wed" Style="{StaticResource datebutton}"  Clicked="WedButton"></Button>
+                        <Button x:Name="wed" Style="{StaticResource datebutton}"  Clicked="WedButton" Command="{Binding WedButton}"></Button>
                             </StackLayout>
                             <StackLayout>
                                     <Label Text="四"  Style="{StaticResource datetitle}"></Label>
-                                <Button x:Name="thu"  Style="{StaticResource datebutton}"  Clicked="ThuButton"></Button>
+                        <Button x:Name="thu"  Style="{StaticResource datebutton}"  Clicked="ThuButton" Command="{Binding ThuButton}"></Button>
                             </StackLayout>
                             <StackLayout>
                                     <Label Text="五"  Style="{StaticResource datetitle}"></Label>
-                                <Button x:Name="fri" Style="{StaticResource datebutton}"  Clicked="FriButton"></Button>
-                            </StackLayout>
+                        <Button x:Name="fri" Style="{StaticResource datebutton}"  Clicked="FriButton" Command="{Binding FriButton}"></Button>
+                            </StackLayout> 
                             <StackLayout>
                                     <Label Text="六"  Style="{StaticResource datetitle}"></Label>
-                                <Button x:Name="sat" Style="{StaticResource datebutton}"  Clicked="SatButton"></Button>
+                        <Button x:Name="sat" Style="{StaticResource datebutton}"  Clicked="SatButton" Command="{Binding SatButton}"></Button>
                             </StackLayout>
                         </StackLayout>
                         <Label x:Name="RecordTitle" Style="{StaticResource gooutanddayoff}" CharacterSpacing="12" Text="打卡紀錄"/>
@@ -393,8 +465,80 @@
                             <LinearItemsLayout Orientation="Vertical" />
                         </CollectionView.ItemsLayout>
                     </CollectionView>
+        <CollectionView Style="{StaticResource Collection}" ItemsSource="{Binding MyAnnouncements}" HeightRequest="220" Margin="20,0,20,0">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate >
 
-            </StackLayout>
+                    <Grid RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="0.8" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Frame HorizontalOptions="FillAndExpand" WidthRequest="2000" Margin="-5,0,-20,10" BackgroundColor="White" >
+                            <Frame.HasShadow>
+                                <OnPlatform x:TypeArguments="x:Boolean">
+                                    <On Platform="iOS" Value="False" />
+                                    <On Platform="Android" Value="True" />
+                                </OnPlatform>
+                            </Frame.HasShadow>
+                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal" >
+                                <Image HeightRequest="45" Source="{Binding advanceimage}"  Grid.Row="0" Grid.Column="0"/>
+                                <StackLayout Grid.Row="0"  Grid.Column="1" Margin="10,0,0,0">
+                                    <StackLayout Margin="0,5,0,5"  Orientation="Horizontal" >
+                                        <Label  
+                                             Style="{StaticResource gooutanddayofftitle}"
+                                            Text="狀態 :"
+                                           />
+                                        <Label
+                                            Style="{StaticResource gooutanddayoffcontent}"
+                                             TextColor="{Binding statuscolor}"
+                                            Text="{Binding status}"
+                                           />
+
+                                    </StackLayout>
+                                    <StackLayout Margin="0,5,0,5"  Orientation="Horizontal" >
+                                        <Label 
+                                           Style="{StaticResource gooutanddayofftitle}"
+                                            Text="時間 :"
+                                            />
+                                        <Label
+                                             Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding time}"
+                                             />
+                                    </StackLayout>
+                                    <StackLayout Margin="0,5,0,5"  Orientation="Horizontal" >
+                                        <StackLayout>
+                                            <Label 
+                                           Style="{StaticResource gooutanddayofftitle}"
+                                            Text="地點 :"
+                                            />
+                                        </StackLayout>
+                                        <StackLayout>
+                                            <Label
+                                             Style="{StaticResource gooutanddayoffcontent}"
+                                            Text="{Binding location}"
+                                             />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </Frame>
+
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </StackLayout>
 
 
 </ContentPage>
