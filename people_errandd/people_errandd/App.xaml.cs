@@ -10,6 +10,9 @@ using System.IO;
 using Xamarin.Essentials;
 using Plugin.SharedTransitions;
 using System.Threading.Tasks;
+using Xamarin.Forms.Maps;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace people_errandd
 {
@@ -18,24 +21,25 @@ namespace people_errandd
         void OpenAppSetting();
     }
     public partial class App : Application
-    {      
-        static Database dataBase;
+    {
+        //static Database dataBase;
         Work work = new Work();
         InformationViewModel information = new InformationViewModel();
         geoLocation location = new geoLocation();
         public static double Latitude { get; set; }
         public static double Longitude { get; set; }
-        public static Database DataBase
-        {
-            get
-            {
-                if (dataBase == null)
-                {
-                    dataBase = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"));
-                }
-                return dataBase;
-            }
-        }
+
+        //public static Database DataBase
+        //{
+        //    get
+        //    {
+        //        if (dataBase == null)
+        //        {
+        //            dataBase = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"));
+        //        }
+        //        return dataBase;
+        //    }
+        //}
         public App()
         {
             InitializeComponent();
@@ -43,14 +47,12 @@ namespace people_errandd
             CultureInfo.DefaultThreadCurrentCulture = ChineseCulture;
             Device.SetFlags(new[] { "Expander_Experimental" });
             MainPage = new SharedTransitionNavigationPage(new LoginPage());
+
             //NavigationPage
         }
-       
-
-   
 
         protected async override void OnStart()
-        {       
+        {
             bool hasKey = Preferences.ContainsKey("HashAccount");
             if (hasKey)
             {
@@ -69,11 +71,10 @@ namespace people_errandd
         }
         protected override void OnSleep()
         {
-            
+
         }
         protected override void OnResume()
         {
-            GetLocation();      
             GetConnectivity("resume");
             MessagingCenter.Send<App>(this, "Hi");
         }
@@ -83,7 +84,7 @@ namespace people_errandd
             Preferences.Set("GpsButtonColor", "#5C76B1");
             try
             {
-                (Latitude, Longitude) =await location.GetLocation("Back");
+                (Latitude, Longitude) = await location.GetLocation("Back");
             }
             catch (Exception)
             {
@@ -91,9 +92,8 @@ namespace people_errandd
             }
         }
         private async void GetConnectivity(string status)
-        {        
-            Page page = MainPage;
-            var _page = new MainPage();
+        {
+            Page page = MainPage;            
             try
             {
                 if (status == "start")
@@ -118,7 +118,7 @@ namespace people_errandd
             }
             catch (Exception)
             {
-                await page.DisplayAlert("", "請檢查網路狀態", "確定");               
+                await page.DisplayAlert("", "請檢查網路狀態", "確定");
                 return;
             }
         }

@@ -22,7 +22,6 @@ namespace people_errandd.Views
             InitializeComponent();
             PageTitle.Text = _Title;
         }
-
-
+        
     }
 }

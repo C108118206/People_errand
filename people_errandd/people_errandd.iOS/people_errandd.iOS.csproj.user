@@ -3,8 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>本機裝置</SelectedDevice>
     <ActiveDebugProfile>本機裝置</ActiveDebugProfile>
-    <DeveloperId>bigtw178%40gmail.com</DeveloperId>
-    <DevelopmentTeamId>769XWU8586</DevelopmentTeamId>
     <TargetiOSDevice>&lt;%3fxml version="1.0" encoding="UTF-8"%3f&gt;
 &lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
 &lt;plist version="1.0"&gt;
@@ -23,6 +21,8 @@
 &lt;/dict&gt;
 &lt;/plist&gt;
 </TargetiOSDevice>
-    <DefaultDevice>iPhone 12 iOS 14.5</DefaultDevice>
+    <DeveloperId>bigtw178%40gmail.com</DeveloperId>
+    <DevelopmentTeamId>769XWU8586</DevelopmentTeamId>
+    <DefaultDevice>iPhone 8 Plus iOS 14.5</DefaultDevice>
   </PropertyGroup>
 </Project>

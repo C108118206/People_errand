@@ -17,7 +17,7 @@
                  SelectedTabColor="#5C76B1"
                  xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" xmlns:local1="clr-namespace:people_errandd.Views">
 
-    <ContentPage xmlns:viewmodels="clr-namespace:people_errandd.ViewModels"
+    <ContentPage xmlns:Viewmodels="clr-namespace:people_errandd.ViewModels"
                  xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
                  ios:Page.UseSafeArea="true" 
                  Title="首頁" IconImageSource="homepage.png" >
@@ -26,6 +26,7 @@
         <!--內容樣式設定-->
         <ContentPage.Resources>
             <ResourceDictionary>
+                <Viewmodels:MainPageViewModel x:Key="MainPageViewModel"/>
                 <Style x:Key="name" TargetType="Label" >
                     <Setter Property="FontFamily" Value="Chalkduster" />
                     <Setter Property="TextColor" Value="#555555" />
@@ -105,15 +106,15 @@
 
             </ResourceDictionary>
         </ContentPage.Resources>
-        <StackLayout Orientation="Vertical" BackgroundColor="#EDEEEF" >
-            <Frame BackgroundColor="White" CornerRadius="30"  Margin="0,-50,0,0">
+        <StackLayout BackgroundColor="#EDEEEF">
+            <Frame BackgroundColor="White" CornerRadius="30" Grid.Row="0" Margin="0,-50,0,0">
                 <Frame.HasShadow>
                     <OnPlatform x:TypeArguments="x:Boolean">
                         <On Platform="iOS" Value="False" />
                         <On Platform="Android" Value="True" />
                     </OnPlatform>
                 </Frame.HasShadow>
-                <StackLayout>
+                <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
 
                     <!--<StackLayout  Margin="0,0,0,0" Grid.Row="0"  Orientation="Horizontal" HorizontalOptions="Start" VerticalOptions="Start" >
                         
@@ -125,11 +126,11 @@
                     </StackLayout>-->
                     <!--
                 <Button ImageSource="messenger" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Margin="0,-40,20,0" BackgroundColor="#8CC5D7" Clicked="ColleagueButton" /> -->
-                    <StackLayout Margin="0,40,0,0">
-                        <Image Source="logo"  HeightRequest="45" HorizontalOptions="Start"/>
-                        <StackLayout Grid.Row="1" Margin="0,-62,0,0" VerticalOptions="End" HorizontalOptions="End" Orientation="Horizontal" >
+                    <StackLayout Grid.Row="0" Margin="0,40,0,0">
+                        <Image Source="logo" Grid.Row="0" Grid.Column="0"  HeightRequest="45" HorizontalOptions="Start"/>
+                        <StackLayout  Grid.Row="0" Grid.Column="1"  Margin="0,-62,0,0" VerticalOptions="End" HorizontalOptions="End" Orientation="Horizontal" >
                             <!--使用者姓名-->
-                            <Label x:Name="username" Text="" Margin="0,20,0,0" Grid.Row="2" Style="{StaticResource name}"></Label>
+                            <Label x:Name="username" Text="" Margin="0,20,0,0"   Style="{StaticResource name}"></Label>
                             <!--頭貼框架-->
                             <Frame Margin="0,8,0,0"
                                    CornerRadius="25"
@@ -155,31 +156,39 @@
                     <!--
                             <Frame x:Name="FrameConnection" Opacity="0" Style="{StaticResource warningframe}">
                                 沒網路時顯示外框
-                                <Label x:Name="LabelConnection" Opacity="0" Text="No Internet Connection" Style="{StaticResource warning}"></Label>
+                                <Label x:Name="LabelConnection" Opacity="0" Text="No Internet Congnection" Style="{StaticResource warning}"></Label>
                                 沒網路時顯示文字
                             </Frame>-->
-                    <StackLayout >
-                        <BoxView Style="{StaticResource line}" />
-                        <Label Text="{Binding DateTime,StringFormat='{0:D}'}"  TextColor="#555555" FontSize="20" Margin="0,30,0,0" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
-                        <Label Text="{Binding DateTime,StringFormat='{0:HH:mm:ss}'}" TextColor="#555555" FontSize="50" Margin="-5,-10,0,0"  HorizontalTextAlignment="Center"></Label>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,0,0,10">
-                            <Label  x:Name="worktimetitle"  TextColor="#555555"  FontSize="16"  ></Label>
-                            <Label  x:Name="worktime" TextColor="#555555"  FontSize="16" ></Label>
+                    <BoxView Style="{StaticResource line}" Grid.Row="1"/>
+                    <StackLayout BindingContext="{StaticResource MainPageViewModel}"  Grid.Row="2">
+                        <StackLayout.Margin>
+                            <OnIdiom x:TypeArguments="Thickness">
+                                <OnIdiom.Phone>0,10,0,0</OnIdiom.Phone>
+                                <OnIdiom.Tablet>0,80,0,0</OnIdiom.Tablet>
+                            </OnIdiom>
+                        </StackLayout.Margin>
+                        <Label Text="{Binding DateTime,StringFormat='{0:D}'}" Grid.Row="1"  TextColor="#555555" FontSize="20"  FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+                        <Label Text="{Binding DateTime,StringFormat='{0:HH:mm:ss}'}" Grid.Row="2" TextColor="#555555" FontSize="50"  HorizontalTextAlignment="Center"></Label>
+                        <Grid  ColumnDefinitions="*,Auto" RowDefinitions="*,*"  HorizontalOptions="Center"  Grid.Row="3" >
+                            <Label  x:Name="worktimetitle"  Grid.Row="0" Grid.Column="0" TextColor="#555555"  FontSize="16"  ></Label>
+                            <Label  x:Name="worktime"  Grid.Row="0" Grid.Column="1" TextColor="#555555"  FontSize="16" ></Label>
+                        </Grid  >
+                        <Button  Grid.Row="4" ImageSource="gps"  Text="定位已開啟" Style="{StaticResource gpsbutton}"  x:Name="GPSText" Clicked="GpsButton" Margin="0,10,0,0"/>
+                        <Label Grid.Row="5" x:Name="LocationNowText" Text="{Binding LocationText, StringFormat='現在位置:{0}'}"   HorizontalOptions="Center"  Margin="0,10,0,10" FontSize="14" TextColor="#CA4848" ></Label>
                         </StackLayout>
-                        <Button  Grid.Row="3" ImageSource="gps"  Text="定位已開啟"  Margin="0,0,0,0"  Style="{StaticResource gpsbutton}"  x:Name="GPSText" Clicked="GpsButton"/>
-
-                    </StackLayout>
-                </StackLayout>
+                </Grid>
             </Frame>
-            <ScrollView VerticalScrollBarVisibility="Never">
+            
+            
+            <ScrollView VerticalScrollBarVisibility="Never" Grid.Row="2">
                 <StackLayout HorizontalOptions="Center">
                     <StackLayout.Margin>
-                        <OnPlatform x:TypeArguments="Thickness">
-                            <On Platform="iOS" Value="0,50,0,40" />
-                            <On Platform="Android" Value="0,30,0,40" />
-                        </OnPlatform>
+                        <OnIdiom x:TypeArguments="Thickness">
+                            <OnIdiom.Phone>0,40,0,0</OnIdiom.Phone>
+                            <OnIdiom.Tablet>0,100,0,0</OnIdiom.Tablet>
+                        </OnIdiom>
                     </StackLayout.Margin>
-                  
+                    <!--
                     <CollectionView Style="{StaticResource Collection}" ItemsSource="{Binding MyAnnouncements}" HeightRequest="220" Margin="20,0,20,0">
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Vertical" />
@@ -240,49 +249,127 @@
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-              
-                    <StackLayout Grid.Row="4" Orientation="Horizontal" HorizontalOptions="Center">
+              -->
+                    <StackLayout Grid.Row="4"   HorizontalOptions="Center"  Orientation="Horizontal" >
                         <!--上班.下班水平放置-->
-                        <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Margin="0,0,30,0">
+                        <StackLayout Grid.Row="0" Grid.Column="0"  HorizontalOptions="Center"  Margin="0,0,25,0">
                             <!--上班-->
                             <!--上班按鈕陰影-->
-                            <ImageButton x:Name="workOn"   Source="worker.png"  Style="{StaticResource ImageButton}" Clicked="GoToWork"></ImageButton>
+                            <ImageButton x:Name="workOn" Grid.Row="0"  Source="worker.png"  Style="{StaticResource ImageButton}" Clicked="GoToWork">
+                                <ImageButton.HeightRequest>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>100</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>120</OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </ImageButton.HeightRequest>
+                                <ImageButton.WidthRequest>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>140</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>168</OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </ImageButton.WidthRequest>
+                            </ImageButton>
                             <!--上班按鈕-->
 
-                            <Label x:Name="workOnText"  Margin="0,10,0,10"  Text="上班" Style="{StaticResource text}"></Label>
+                            <Label x:Name="workOnText"  Margin="0,10,0,10" Grid.Row="1"    Text="上班" Style="{StaticResource text}">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>18</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>22</OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </Label.FontSize>
+                            </Label>
                             <!--上班文字-->
                         </StackLayout>
-                        <StackLayout Grid.Row="0" Grid.Column="1" Margin="30,0,0,0">
+                        <StackLayout Grid.Row="0" HorizontalOptions="Center"    Grid.Column="1" Margin="25,0,0,0">
                             <!--下班-->
 
                             <!--下班按鈕陰影-->
-                            <ImageButton x:Name="workOff"  Source="workeroff.png" Style="{StaticResource ImageButton}" Clicked="OffWork"></ImageButton>
+                            <ImageButton x:Name="workOff" Grid.Row="0"   Source="workeroff.png" Style="{StaticResource ImageButton}" Clicked="OffWork">
+                                <ImageButton.HeightRequest>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>100</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>120</OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </ImageButton.HeightRequest>
+                                <ImageButton.WidthRequest>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>140</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>168</OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </ImageButton.WidthRequest>
+                            </ImageButton>
                             <!--下班按鈕-->
 
-                            <Label  x:Name="workOffText"  Margin="0,10,0,10"   Text="下班" Style="{StaticResource text}"></Label>
+                            <Label  x:Name="workOffText" Grid.Row="1"   Margin="0,10,0,10"   Text="下班" Style="{StaticResource text}">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>18</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>22</OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </Label.FontSize>
+                            </Label>
                             <!--下班文字-->
                         </StackLayout>
                     </StackLayout>
-                    <StackLayout Grid.Row="5"  Orientation="Horizontal" HorizontalOptions="Center">
+                    <StackLayout Grid.Row="5"  HorizontalOptions="Center" Orientation="Horizontal">
                         <!--公出.更多水平放置-->
-                        <StackLayout  Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"  Margin="0,0,30,0">
+                        <StackLayout  Grid.Row="0" Grid.Column="0"  HorizontalOptions="Center"  Margin="0,0,25,0">
 
 
                             <!--公出按鈕陰影-->
-                            <ImageButton x:Name="GoOut" Source="goout2.png" Style="{StaticResource ImageButton}"   Clicked="GoOutButton"></ImageButton>
+                            <ImageButton x:Name="GoOut" Grid.Row="0" Source="goout2.png" Style="{StaticResource ImageButton}"   Clicked="GoOutButton">
+                                <ImageButton.HeightRequest>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>100</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>120</OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </ImageButton.HeightRequest>
+                                <ImageButton.WidthRequest>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>140</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>168</OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </ImageButton.WidthRequest>
+                            </ImageButton>
                             <!--公出按鈕-->
-
-
-                            <Label Text="公出"  Margin="0,10,0,10"  Style="{StaticResource text}" ></Label>
+                            <Label Text="公出" Grid.Row="1" Margin="0,10,0,10"  Style="{StaticResource text}" >
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>18</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>22</OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </Label.FontSize>
+                            </Label>
                             <!--公出文字-->
                         </StackLayout>
-                        <StackLayout Grid.Row="0" Grid.Column="1"  Margin="30,0,0,0">
+                        <StackLayout Grid.Row="0" Grid.Column="1"   HorizontalOptions="Center"  Margin="25,0,0,0">
 
                             <!--更多按鈕陰影-->
-                            <ImageButton Source="nerd"  Style="{StaticResource ImageButton}" Clicked="DayOffButton"  ></ImageButton>
+                            <ImageButton Source="nerd" Grid.Row="0"  Style="{StaticResource ImageButton}" Clicked="DayOffButton"  >
+                                <ImageButton.HeightRequest>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>100</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>120</OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </ImageButton.HeightRequest>
+                                <ImageButton.WidthRequest>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>140</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>168</OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </ImageButton.WidthRequest>
+                            </ImageButton>
                             <!--更多按鈕-->
 
-                            <Label Text="請假"  Margin="0,10,0,10"  Style="{StaticResource text}"></Label>
+                            <Label Text="請假" Grid.Row="1" Margin="0,10,0,10"  Style="{StaticResource text}">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double">
+                                        <OnIdiom.Phone>18</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>22</OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </Label.FontSize>
+                            </Label>
                             <!--更多文字-->
                         </StackLayout>
                     </StackLayout>

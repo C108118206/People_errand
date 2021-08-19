@@ -1,31 +1,36 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
+using Xamarin.Forms.Maps;
 
 namespace people_errandd.ViewModels
 {
     class geoLocation
     {
         public CancellationTokenSource cts;
-        public  async Task<(double, double)> GetLocation(string status)
+        Geocoder geoCoder = new Geocoder();
+        public static string LocationNowText { get; set; }
+        public async Task<(double, double)> GetLocation(string status)
         {
             try
             {
-                if(status== "Back")
+                if (status == "Back")
                 {
                     var request = new GeolocationRequest(GeolocationAccuracy.High, TimeSpan.FromSeconds(10));
                     cts = new CancellationTokenSource();
                     var location = await Geolocation.GetLocationAsync(request, cts.Token);
-                    Console.WriteLine("getLocation");
+                    Console.WriteLine(location.Latitude + "and" + location.Longitude);
+                    await GetLocationText(location.Latitude, location.Longitude);
                     return (location.Latitude, location.Longitude);
                 }
                 else
                 {
-                    var location = await Geolocation.GetLastKnownLocationAsync();                   
+                    var location = await Geolocation.GetLastKnownLocationAsync();
                     return (location.Latitude, location.Longitude);
                 }
-                
             }
             catch (Exception)
             {
@@ -33,13 +38,13 @@ namespace people_errandd.ViewModels
                 Preferences.Set("GpsButtonColor", "#CA4848");
                 Console.WriteLine("ERROR");
             }
-            return (0,0);
+            return (0, 0);
         }
         public bool GetCurrentLocation(double X, double Y)
         {
             try
             {
-                Location locationCompany = new Location(Convert.ToDouble(Preferences.Get("companyX","")),Convert.ToDouble(Preferences.Get("companyY","")));
+                Location locationCompany = new Location(Convert.ToDouble(Preferences.Get("companyX", "")), Convert.ToDouble(Preferences.Get("companyY", "")));
                 Location locationNow = new Location(X, Y);
                 double distance = Location.CalculateDistance(locationNow, locationCompany, DistanceUnits.Kilometers);
                 if (distance < 0.2)
@@ -49,9 +54,16 @@ namespace people_errandd.ViewModels
                 return false;
             }
             catch (Exception)
-            {          
-            }         
+            {
+            }
             return false;
+        }
+        public async Task GetLocationText(double X , double Y)
+        {            
+            Position position = new Position(X,Y);
+            IEnumerable<string> possibleAddresses = await geoCoder.GetAddressesForPositionAsync(position);
+            LocationNowText=possibleAddresses.FirstOrDefault().Substring(5);          
+            //Preferences.Set("LocationNowText", possibleAddresses.FirstOrDefault());
         }
     }
 }
