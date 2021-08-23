@@ -3015,11 +3015,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
       "projectName": "people_errandd.Android",
       "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
       "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.Android\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+      "projectName": "people_errandd.Android",
+      "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+      "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd.Android\\obj\\",
+>>>>>>> eb4a7606b380d0c50122399963a41a76060e8a88
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -3041,8 +3049,13 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
               "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+=======
+            "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd\\people_errandd.csproj"
+>>>>>>> eb4a7606b380d0c50122399963a41a76060e8a88
             }
           }
         }
