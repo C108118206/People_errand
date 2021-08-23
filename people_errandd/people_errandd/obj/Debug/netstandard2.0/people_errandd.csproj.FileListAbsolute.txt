@@ -1,3 +1,4 @@
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.csproj.AssemblyReference.cache
 C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.deps.json
 C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.dll
 C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\ref\people_errandd.dll
@@ -23,4 +24,3 @@ C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\peop
 C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.dll
 C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\ref\people_errandd.dll
 C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.pdb
-C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.csproj.AssemblyReference.cache

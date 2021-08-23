@@ -166,6 +166,7 @@ namespace people_errandd.Views
             Preferences.Set("WorkOffButtonView", workOff.Opacity = 0.2);
             Preferences.Set("WorkOnText", workOnText.Opacity = 1);
             Preferences.Set("WorkOffText", workOffText.Opacity = 0.2);
+            Preferences.Set("WorkOffButtonStauts", worktimetitle.Text="下班打卡 at ");
             //Preferences.Set("statusBack", "#CB2E2E");
             //statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
         }
@@ -178,6 +179,7 @@ namespace people_errandd.Views
             Preferences.Set("WorkOffButtonView", workOff.Opacity = 0.8);
             Preferences.Set("WorkOnText", workOnText.Opacity = 0.2);
             Preferences.Set("WorkOffText", workOffText.Opacity = 0.8);
+            Preferences.Set("WorkOffButtonStauts", worktimetitle.Text = "上班打卡 at ");
             //Preferences.Set("statusBack", "#4AD395");
             //statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
         }
