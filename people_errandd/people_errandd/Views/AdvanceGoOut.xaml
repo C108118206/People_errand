@@ -29,19 +29,19 @@
     
 
 <Grid BackgroundColor="White" VerticalOptions="Center" Margin="30" HeightRequest="350">
-        <Label Grid.Row="0" Text="請選擇" TextColor="#555555" FontSize="Large" HorizontalTextAlignment="Center" Margin="0,30,0,0"/>
+        <Label Grid.Row="0" x:Name="PageTitle"  Text="請選擇" TextColor="#555555" FontSize="Large" HorizontalTextAlignment="Center" Margin="0,30,0,0"/>
         <ScrollView Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" HorizontalScrollBarVisibility="Never">
         <StackLayout  Orientation="Horizontal" Grid.Row="1" HorizontalOptions="Center" Margin="10" >
-                <Frame HorizontalOptions="Center" BackgroundColor="#FBDDAA" HasShadow="False" CornerRadius="10" Margin="10,0,10,0" WidthRequest="65" IsEnabled="{Binding CanTrip }" Opacity="{Binding TripOpacity}">
+                <Frame HorizontalOptions="Center" BackgroundColor="#FBDDAA" HasShadow="False" CornerRadius="10" Margin="10,0,10,0" WidthRequest="75" IsEnabled="{Binding CanTrip }" Opacity="{Binding TripOpacity}">
                     <Frame.GestureRecognizers >
                         <TapGestureRecognizer  Command="{Binding StartTripCommand}"   />
                     </Frame.GestureRecognizers>
                     <StackLayout Margin="0,20,0,0">
                     <Image Source="startgoout.png" HeightRequest="50"/>
-                        <Label Text="公出" HorizontalOptions="Center" TextColor="#555555"  FontSize="16"/>
+                        <Label Text="公出開始" HorizontalOptions="Center" TextColor="#555555"  FontSize="16"/>
                 </StackLayout>
             </Frame>
-                <Frame HorizontalOptions="Center" BackgroundColor="#F5B3B3" HasShadow="False" CornerRadius="10" Margin="10,0,10,0" WidthRequest="65" IsEnabled="{Binding CanBack}" Opacity="{Binding BackOpacity}">
+                <Frame HorizontalOptions="Center" BackgroundColor="#F5B3B3" HasShadow="False" CornerRadius="10" Margin="10,0,10,0" WidthRequest="75" IsEnabled="{Binding CanBack}" Opacity="{Binding BackOpacity}">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding ArrivalCommand}" />
                     </Frame.GestureRecognizers>
@@ -50,7 +50,7 @@
                         <Label Text="到站" HorizontalOptions="Center" TextColor="#555555"  FontSize="16"/>
                 </StackLayout>
             </Frame>
-                <Frame HorizontalOptions="Center" BackgroundColor="#C2D2F6" HasShadow="False" CornerRadius="10" Margin="10,0,10,0" WidthRequest="65" IsEnabled="{Binding CanBack}" Opacity="{Binding BackOpacity}" >
+                <Frame HorizontalOptions="Center" BackgroundColor="#C2D2F6" HasShadow="False" CornerRadius="10" Margin="10,0,10,0" WidthRequest="75" IsEnabled="{Binding CanBack}" Opacity="{Binding BackOpacity}" >
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding BackCommand}" />
                     </Frame.GestureRecognizers>

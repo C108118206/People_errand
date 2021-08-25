@@ -25,13 +25,16 @@ namespace people_errandd.Views
 
         public MainPage()
         {
-            //BindingContext = new TimeDisplay();
-            this.BindingContext = this;
+           // BindingContext = new TimeDisplay();
             Application.Current.UserAppTheme = OSAppTheme.Light;
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
 
+
+
         }
+       
+
         protected async override void OnAppearing()
         {
             base.OnAppearing();
@@ -178,14 +181,31 @@ namespace people_errandd.Views
             //Preferences.Set("statusBack", "#4AD395");
             //statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
         }
-        private async void CalebderButton(object sender, EventArgs e)
+        private async void OnTapped(object sender, EventArgs e)
         {
             try
             {
                 if (allowTap)
                 {
                     allowTap = false;
-                    await Navigation.PushAsync(new Calender());
+                    await Navigation.PushAsync(new ImportantAudit());
+                }
+            }
+            finally
+            {
+                allowTap = true;
+            }
+
+        }
+        private async void GoOutButton(object sender, EventArgs e)
+        {
+            try
+            {
+                if (allowTap)
+                {
+                    allowTap = false;
+                    await PopupNavigation.Instance.PushAsync(new AdvanceGoOut("請選擇"));
+                   // await Navigation.PushAsync(new GoOut());
                 }
             }
             finally
@@ -208,14 +228,14 @@ namespace people_errandd.Views
                 allowTap = true;
             }
         }
-        private async void GoRecordButton(object sender, EventArgs e)
+        private async void DayOffButton(object sender, EventArgs e)
         {
             try
             {
                 if (allowTap)
                 {
                     allowTap = false;
-                    await Navigation.PushAsync(new Record());
+                    await Navigation.PushAsync(new TakeDayOff());
                 }
             }
             finally

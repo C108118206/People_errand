@@ -38,13 +38,13 @@
 	<string>This app wants to use tour location</string>
 	<key>NSLocationUsageDescription</key>
 	<string>This app wants to use tour location</string>
-	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcons.appiconset</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
-  <key>UIUserInterfaceStyle</key>
-  <string>Light</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
 </dict>
 </plist>
