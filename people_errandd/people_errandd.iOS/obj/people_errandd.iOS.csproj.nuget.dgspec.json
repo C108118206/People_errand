@@ -1,6 +1,13 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj": {}
+=======
+<<<<<<< HEAD
+>>>>>>> c4e6d6ae122c8a2b7a89009720c4de44efebfe3d
     "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj": {}
   },
   "projects": {
@@ -12,6 +19,27 @@
         "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
         "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.iOS\\obj\\",
+<<<<<<< HEAD
+=======
+=======
+    "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj": {}
+>>>>>>> d85b889ed1a76e38c0e058d58d9f3b4a7f37fe17
+  },
+  "projects": {
+    "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+        "projectName": "people_errandd.iOS",
+        "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+        "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
+<<<<<<< HEAD
+        "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.iOS\\obj\\",
+=======
+        "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd.iOS\\obj\\",
+>>>>>>> eb4a7606b380d0c50122399963a41a76060e8a88
+>>>>>>> d85b889ed1a76e38c0e058d58d9f3b4a7f37fe17
+>>>>>>> c4e6d6ae122c8a2b7a89009720c4de44efebfe3d
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -33,8 +61,23 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
                 "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+=======
+<<<<<<< HEAD
+              "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+                "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+=======
+<<<<<<< HEAD
+              "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+                "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+=======
+              "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd\\people_errandd.csproj": {
+                "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd\\people_errandd.csproj"
+>>>>>>> eb4a7606b380d0c50122399963a41a76060e8a88
+>>>>>>> d85b889ed1a76e38c0e058d58d9f3b4a7f37fe17
+>>>>>>> c4e6d6ae122c8a2b7a89009720c4de44efebfe3d
               }
             }
           }
@@ -82,6 +125,13 @@
         }
       }
     },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d85b889ed1a76e38c0e058d58d9f3b4a7f37fe17
+>>>>>>> c4e6d6ae122c8a2b7a89009720c4de44efebfe3d
     "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -90,6 +140,22 @@
         "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
         "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\obj\\",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+    "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd\\people_errandd.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd\\people_errandd.csproj",
+        "projectName": "people_errandd",
+        "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd\\people_errandd.csproj",
+        "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd\\obj\\",
+>>>>>>> eb4a7606b380d0c50122399963a41a76060e8a88
+>>>>>>> d85b889ed1a76e38c0e058d58d9f3b4a7f37fe17
+>>>>>>> c4e6d6ae122c8a2b7a89009720c4de44efebfe3d
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
