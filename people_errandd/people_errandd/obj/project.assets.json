@@ -1317,11 +1317,25 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d85b889ed1a76e38c0e058d58d9f3b4a7f37fe17
       "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
       "projectName": "people_errandd",
       "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
       "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\obj\\",
+<<<<<<< HEAD
+=======
+=======
+      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd\\people_errandd.csproj",
+      "projectName": "people_errandd",
+      "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd\\people_errandd.csproj",
+      "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd\\obj\\",
+>>>>>>> eb4a7606b380d0c50122399963a41a76060e8a88
+>>>>>>> d85b889ed1a76e38c0e058d58d9f3b4a7f37fe17
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

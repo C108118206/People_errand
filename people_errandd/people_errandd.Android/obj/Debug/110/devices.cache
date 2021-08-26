@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 <Devices><Device id="JAAZB760D081WD8"><ResultingAbi>arm64-v8a</ResultingAbi><SdkVersion>26</SdkVersion></Device></Devices>
+=======
+<<<<<<< HEAD
+<Devices><Device id="JAAZB760D081WD8"><ResultingAbi>arm64-v8a</ResultingAbi><SdkVersion>26</SdkVersion></Device><Device id="emulator-5554"><ResultingAbi>x86</ResultingAbi><SdkVersion>28</SdkVersion></Device><Device id="emulator-5556"><ResultingAbi>x86</ResultingAbi><SdkVersion>28</SdkVersion></Device></Devices>
+=======
+<Devices><Device id="JAAZB760D081WD8"><ResultingAbi>arm64-v8a</ResultingAbi><SdkVersion>26</SdkVersion></Device></Devices>
+>>>>>>> eb4a7606b380d0c50122399963a41a76060e8a88
+>>>>>>> d85b889ed1a76e38c0e058d58d9f3b4a7f37fe17
