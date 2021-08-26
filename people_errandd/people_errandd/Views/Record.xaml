@@ -443,48 +443,46 @@
             <StackLayout>
                 <StackLayout Margin="40,-35,0,0">
 
-                        <Label></Label>
-                <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Start" Margin="10,0,0,0">
+                    <Label></Label>
                     <Image  Grid.Row="0" Margin="-10,0,0,0" Grid.Column="0" Source="date" HorizontalOptions="Center"  HeightRequest="30"></Image>
                     <StackLayout>
 
                         <DatePicker  Grid.Row="0" Grid.Column="1" x:Name="DatePicker" DateSelected="DatePicker_DateSelected" Style="{StaticResource date}" Margin="0,-4,0,0" />
                         <BoxView BackgroundColor="#807D7D" x:Name="dateline" HeightRequest="1" Margin="0,-5,0,0" />
-             </StackLayout>
-                <ImageButton Clicked="RecordChooseButton"  Grid.Row="0" Grid.Column="2"  Style="{StaticResource select}" ></ImageButton>
-
-                        <StackLayout Orientation="Horizontal" Margin="-8,10,0,0" HorizontalOptions="Center">
-                            <StackLayout>
-                                <Label Text="日" Style="{StaticResource datetitle}"></Label>
-                                <Button x:Name="sun" Style="{StaticResource datebutton}" Clicked="SunButton" Command="{Binding SunButton}"></Button>
-                            </StackLayout>
-                            <StackLayout>
-                                <Label Text="一" Style="{StaticResource datetitle}"></Label>
-                                <Button x:Name="mon"  Style="{StaticResource datebutton}" Clicked="MonButton"  Command="{Binding MonButton}"></Button>
-                            </StackLayout>
-                            <StackLayout>
-                                <Label Text="二"  Style="{StaticResource datetitle}"></Label>
-                                <Button x:Name="tue" Style="{StaticResource datebutton}"  Clicked="TueButton" Command="{Binding TueButton}"></Button>
-                            </StackLayout>
-                            <StackLayout>
-                                <Label Text="三"  Style="{StaticResource datetitle}"></Label>
-                                <Button x:Name="wed" Style="{StaticResource datebutton}"  Clicked="WedButton" Command="{Binding WedButton}"></Button>
-                            </StackLayout>
-                            <StackLayout>
-                                <Label Text="四"  Style="{StaticResource datetitle}"></Label>
-                                <Button x:Name="thu"  Style="{StaticResource datebutton}"  Clicked="ThuButton" Command="{Binding ThuButton}"></Button>
-                            </StackLayout>
-                            <StackLayout>
-                                <Label Text="五"  Style="{StaticResource datetitle}"></Label>
-                                <Button x:Name="fri" Style="{StaticResource datebutton}"  Clicked="FriButton" Command="{Binding FriButton}"></Button>
-                            </StackLayout>
-                            <StackLayout>
-                                <Label Text="六"  Style="{StaticResource datetitle}"></Label>
-                                <Button x:Name="sat" Style="{StaticResource datebutton}"  Clicked="SatButton" Command="{Binding SatButton}"></Button>
-                            </StackLayout>
-                        </StackLayout>
-                        <Label x:Name="RecordTitle" Style="{StaticResource gooutanddayoff}" CharacterSpacing="12" Text="打卡紀錄"/>
                     </StackLayout>
+                    <ImageButton Clicked="RecordChooseButton"  Grid.Row="0" Grid.Column="2"  Style="{StaticResource select}" ></ImageButton>
+
+                    <StackLayout Orientation="Horizontal" Margin="-8,10,0,0" HorizontalOptions="Center">
+                        <StackLayout>
+                            <Label Text="日" Style="{StaticResource datetitle}"></Label>
+                            <Button x:Name="sun" Style="{StaticResource datebutton}" Clicked="SunButton" Command="{Binding SunButton}"></Button>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="一" Style="{StaticResource datetitle}"></Label>
+                            <Button x:Name="mon"  Style="{StaticResource datebutton}" Clicked="MonButton"  Command="{Binding MonButton}"></Button>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="二"  Style="{StaticResource datetitle}"></Label>
+                            <Button x:Name="tue" Style="{StaticResource datebutton}"  Clicked="TueButton" Command="{Binding TueButton}"></Button>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="三"  Style="{StaticResource datetitle}"></Label>
+                            <Button x:Name="wed" Style="{StaticResource datebutton}"  Clicked="WedButton" Command="{Binding WedButton}"></Button>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="四"  Style="{StaticResource datetitle}"></Label>
+                            <Button x:Name="thu"  Style="{StaticResource datebutton}"  Clicked="ThuButton" Command="{Binding ThuButton}"></Button>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="五"  Style="{StaticResource datetitle}"></Label>
+                            <Button x:Name="fri" Style="{StaticResource datebutton}"  Clicked="FriButton" Command="{Binding FriButton}"></Button>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="六"  Style="{StaticResource datetitle}"></Label>
+                            <Button x:Name="sat" Style="{StaticResource datebutton}"  Clicked="SatButton" Command="{Binding SatButton}"></Button>
+                        </StackLayout>
+                    </StackLayout>
+                    <Label x:Name="RecordTitle" Style="{StaticResource gooutanddayoff}" CharacterSpacing="12" Text="打卡紀錄"/>
                 </StackLayout>
             </StackLayout>
         </Frame>
