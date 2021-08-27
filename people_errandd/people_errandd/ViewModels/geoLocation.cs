@@ -6,10 +6,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms.Maps;
+using people_errandd.Models;
+using Newtonsoft.Json;
+using System.Net.Http;
+using System.Text;
 
 namespace people_errandd.ViewModels
 {
-    class geoLocation
+    class geoLocation:HttpResponse
     {
         public CancellationTokenSource cts;
         Geocoder geoCoder = new Geocoder();
@@ -26,37 +30,35 @@ namespace people_errandd.ViewModels
                 }
                 else
                 {
-                    var location = await Geolocation.GetLastKnownLocationAsync();
 
-                    location = await Geolocation.GetLocationAsync(new GeolocationRequest()
+                    var location = await Geolocation.GetLocationAsync(new GeolocationRequest()
                     {
                         DesiredAccuracy = GeolocationAccuracy.High,
                         Timeout = TimeSpan.FromSeconds(30)
                     });
                     await GetLocationText(location.Latitude, location.Longitude);
                     return (location.Latitude, location.Longitude);
-                }               
+                }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);                
+                Debug.WriteLine(ex.Message);
                 Preferences.Set("gpsText", "定位未開啟");
                 Preferences.Set("GpsButtonColor", "#CA4848");
-                Console.WriteLine("ERROR");
             }
             //try
             //{
-            //    if(status== "Back")
+            //    if (status == "Back")
             //    {
             //        var request = new GeolocationRequest(GeolocationAccuracy.High, TimeSpan.FromSeconds(10));
-            //        cts = new CancellationTokenSource();
+            
             //        var location = await Geolocation.GetLocationAsync(request, cts.Token);
             //        Console.WriteLine("getLocation");
             //        return (location.Latitude, location.Longitude);
             //    }
             //    else
             //    {
-            //        var location = await Geolocation.GetLastKnownLocationAsync();                   
+            //        var location = await Geolocation.GetLastKnownLocationAsync();
             //        return (location.Latitude, location.Longitude);
             //    }
 
@@ -69,21 +71,29 @@ namespace people_errandd.ViewModels
             //}
             return (0, 0);
         }        
-        public bool GetCurrentLocation(double X, double Y)
+        public async Task<bool> GetCurrentLocation(double X,double Y)
         {
             try
             {
-                Location locationCompany = new Location(Convert.ToDouble(Preferences.Get("companyX", "")), Convert.ToDouble(Preferences.Get("companyY", "")));
-                Location locationNow = new Location(X, Y);
-                double distance = Location.CalculateDistance(locationNow, locationCompany, DistanceUnits.Kilometers);
-                if (distance < 0.2)
+                response = await client.GetAsync(basic_url + ControllerNameCompany + "Get_CompanyAddress?company_hash=" + Preferences.Get("CompanyHash",""));
+                Console.WriteLine(response.StatusCode.ToString());
+                if (response.StatusCode.ToString() == "OK")
                 {
-                    return true;
+                    GetResponse = await response.Content.ReadAsStringAsync();//將JSON轉成string
+                    List<Address> addresses = JsonConvert.DeserializeObject<List<Address>>(GetResponse);
+                    Location locationCompany = new Location(addresses[0].coordinateX, addresses[0].coordinateY);
+                    Location locationNow = new Location(X,Y);
+                    double distance = Location.CalculateDistance(locationNow, locationCompany, DistanceUnits.Kilometers);
+                    if (distance < 0.2)
+                    {
+                        return true;
+                    }
+                    return false;
                 }
-                return false;
             }
             catch (Exception)
             {
+                throw;
             }
             return false;
         }
@@ -91,8 +101,31 @@ namespace people_errandd.ViewModels
         {            
             Position position = new Position(X,Y);
             IEnumerable<string> possibleAddresses = await geoCoder.GetAddressesForPositionAsync(position);
-            LocationNowText=possibleAddresses.FirstOrDefault().Substring(5);          
-            //Preferences.Set("LocationNowText", possibleAddresses.FirstOrDefault());
+            LocationNowText = await GetTraslateText(possibleAddresses.FirstOrDefault()) ?
+            possibleAddresses.FirstOrDefault().Substring(5):
+            possibleAddresses.FirstOrDefault();                    
         }
+        public async Task<bool> GetTraslateText(string _Text)
+        {
+            string _language;
+            object[] body = new object[] { new { Text = _Text } };
+            var requestBody = JsonConvert.SerializeObject(body);
+            // client.DefaultRequestHeaders.Add();
+            using (var request = new HttpRequestMessage())
+            {
+                request.Method = HttpMethod.Post;
+                request.RequestUri = new Uri(endpoint + LanguageRoute);//uuuuuurl
+                request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");//格式
+                request.Headers.Add("Ocp-Apim-Subscription-Key", subscriptionKey);//add 金鑰
+                request.Headers.Add("Ocp-Apim-Subscription-Region", "global");//add 區域
+                HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);//api
+                string result = await response.Content.ReadAsStringAsync();
+               List<Language> language= JsonConvert.DeserializeObject<List<Language>>(result);
+                _language = language[0].language;
+            }
+            return _language == "zh-Hant";
+        }
+
     }
+
 }

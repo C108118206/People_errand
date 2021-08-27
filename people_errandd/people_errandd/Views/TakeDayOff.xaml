@@ -210,7 +210,6 @@
                                 <StackLayout>
                                     <Image Source="Prenatal.png" Style="{StaticResource rdimage}"/>
                                     <Label Text="產前假" x:Name="PrenatalText" Style="{StaticResource rdtitle}"/>
-                                   
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>

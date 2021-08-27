@@ -174,7 +174,7 @@
                             </OnIdiom>
                         </StackLayout.Margin>
                         <!--電話標題與圖片-->
-                       
+
                         <Label Text="電話" Style="{StaticResource contenttitle}" >
                             <Label.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
@@ -183,20 +183,18 @@
                                 </OnPlatform>
                             </Label.Margin>
                         </Label>
-
-                         <!--<Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">-->
-                            <Entry  Keyboard="Telephone" x:Name="phone"  Unfocused="phone_Unfocused" MaxLength="10" Style="{StaticResource contententry}">
+                        <!--<Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">-->
+                        <Entry  Keyboard="Telephone" x:Name="phone"  Unfocused="Phone_Unfocused" MaxLength="10" Style="{StaticResource contententry}">
                             <Entry.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
                                     <On Platform="iOS" Value="0,0,10,5" />
                                     <On Platform="Android" Value="-5,0,10,-10" />
                                 </OnPlatform>
                             </Entry.Margin>
-                            </Entry>
+                        </Entry>
                         <BoxView Style="{StaticResource line}"/>
-
                     </StackLayout>
-                    <Label x:Name="phoneValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="End" FontAttributes="Bold" Margin="0,6,20,-20">
+                    <Label x:Name="phoneValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="End" FontAttributes="Bold">
                         <Label.Margin>
                             <OnPlatform x:TypeArguments="Thickness">
                                 <On Platform="iOS" Value="0,6,20,0" />
@@ -212,7 +210,7 @@
                             </OnIdiom>
                         </StackLayout.Margin>
                         <!--Email標題與圖片-->
-                        
+
                         <Label Text="郵件"  Style="{StaticResource contenttitle}" >
                             <Label.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
@@ -221,8 +219,7 @@
                                 </OnPlatform>
                             </Label.Margin>
                         </Label>
-                      
-                            <Entry  Keyboard="Email" x:Name="email" Unfocused="email_Unfocused" Style="{StaticResource contententry}" >
+                        <Entry  Keyboard="Email" x:Name="email" Unfocused="Email_Unfocused" Style="{StaticResource contententry}">
                             <Entry.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
                                     <On Platform="iOS" Value="0,0,10,5" />

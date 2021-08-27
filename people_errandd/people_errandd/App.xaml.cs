@@ -47,11 +47,10 @@ namespace people_errandd
 
         protected async override void OnStart()
         {
-            Preferences.Remove("Traveling");
+            Console.WriteLine(Preferences.Get("companyHash", ""));
             bool hasKey = Preferences.ContainsKey("HashAccount");
             if (hasKey)
             {
-                Console.WriteLine(Preferences.Get("HashAccount", ""));
                 MainPage = new SharedTransitionNavigationPage(new MainPage());
                 await information.GetUserName(Preferences.Get("HashAccount", ""));
                 //NavigationPage
@@ -59,8 +58,7 @@ namespace people_errandd
             await GetLocation();
             GetConnectivity("start");
             var Seconds = TimeSpan.FromSeconds(20);
-            Device.StartTimer(Seconds, () => {
-                Console.WriteLine(Preferences.ContainsKey("Traveling").ToString());
+            Device.StartTimer(Seconds, () => {               
                 GetLocation();
                 return true;
             });

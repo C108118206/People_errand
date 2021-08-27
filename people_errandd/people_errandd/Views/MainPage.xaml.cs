@@ -25,7 +25,7 @@ namespace people_errandd.Views
 
         public MainPage()
         {
-           // BindingContext = new TimeDisplay();
+            // BindingContext = new TimeDisplay();
             Application.Current.UserAppTheme = OSAppTheme.Light;
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
@@ -33,13 +33,13 @@ namespace people_errandd.Views
 
 
         }
-       
+
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
             GPSText.Text = Preferences.Get("gpsText", "定位未開啟");
-            GPSText.BackgroundColor = Color.FromHex(Preferences.Get("GpsButtonColor", "#CA4848"));       
+            GPSText.BackgroundColor = Color.FromHex(Preferences.Get("GpsButtonColor", "#CA4848"));
             workOn.IsEnabled = Preferences.Get("WorkOnButtonStauts", workOn.IsEnabled = true);
             workOff.IsEnabled = Preferences.Get("WorkOffButtonStauts", workOff.IsEnabled = false);
             workOn.Opacity = Preferences.Get("WorkOnButtonView", workOn.Opacity = 1);
@@ -66,7 +66,8 @@ namespace people_errandd.Views
                     if (await Work.GetWorkType() == 2 || await Work.GetWorkType() == 0)
                     {
                         (double x, double y) = await geoLocation.GetLocation("WorkOn");
-                        if (geoLocation.GetCurrentLocation(x, y) == true)
+                        Console.WriteLine(x + "\n" + y);
+                        if (await geoLocation.GetCurrentLocation(x, y) == true)
                         {
                             if (await Work.PostWork(1, x, y, true))
                             {
@@ -116,7 +117,7 @@ namespace people_errandd.Views
                     if (await Work.GetWorkType() == 1)
                     {
                         (double x, double y) = await geoLocation.GetLocation("WorkOff");
-                        if (geoLocation.GetCurrentLocation(x, y) == true)
+                        if (await geoLocation.GetCurrentLocation(x, y) == true)
                         {
                             if (await Work.PostWork(2, x, y, true))
                             {
@@ -205,7 +206,7 @@ namespace people_errandd.Views
                 {
                     allowTap = false;
                     await PopupNavigation.Instance.PushAsync(new AdvanceGoOut("請選擇"));
-                   // await Navigation.PushAsync(new GoOut());
+                    // await Navigation.PushAsync(new GoOut());
                 }
             }
             finally
@@ -245,11 +246,22 @@ namespace people_errandd.Views
         }
         private async void GpsButton(object sender, EventArgs e)
         {
-            if (GPSText.Text == "定位未開啟")
-                DependencyService.Get<IAppSettingsHelper>().OpenAppSetting();
-            else
+            try
             {
-                await PopupNavigation.Instance.PushAsync(new MapPage());
+                if (allowTap)
+                {
+                    allowTap = false;
+                    if (GPSText.Text == "定位未開啟")
+                        DependencyService.Get<IAppSettingsHelper>().OpenAppSetting();
+                    else
+                    {
+                        await PopupNavigation.Instance.PushAsync(new MapPage());
+                    }
+                }
+            }
+            finally
+            {
+                allowTap = true;
             }
         }
 

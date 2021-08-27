@@ -15,6 +15,7 @@ namespace people_errandd.ViewModels
     class AdvancreGoOutViewModel : INotifyPropertyChanged
     {
         GoOutViewModel GoOut = new GoOutViewModel();
+        private bool allowTap = true;
         public ICommand StartTripCommand { private set; get; }
         public ICommand ArrivalCommand { private set; get; }
         public ICommand BackCommand { private set; get; }
@@ -56,10 +57,10 @@ namespace people_errandd.ViewModels
             CanTrip = !Preferences.ContainsKey("TripNow");
             CanBack = Preferences.ContainsKey("TripNow");
             TripOpacity= Opacity("trip");
-            backOpacity = Opacity("back"); 
+            backOpacity = Opacity("back");
             StartTripCommand = new Command(StartTrip);
             ArrivalCommand = new Command(Arrival);
-            BackCommand = new Command(Back);
+            BackCommand = new Command(Back);                       
         }
         public double TripOpacity
         {
@@ -123,49 +124,83 @@ namespace people_errandd.ViewModels
         }
         async void StartTrip()
         {
-            if (await GoOut.PostGoOut(1))
+            try
             {
-                await App.Current.MainPage.DisplayAlert("", "公出成功", "確認");
-                Preferences.Set("TripNow", "1");
-                CanTrip = false;
-                CanBack = true;
-                TripOpacity = 0.2;
-                BackOpacity = 1;
+                if (allowTap)
+                {
+                    allowTap = false;
+                    if (await GoOut.PostGoOut(1))
+                    {
+                        await App.Current.MainPage.DisplayAlert("", "公出成功", "確認");
+                        Preferences.Set("TripNow", "1");
+                        CanTrip = false;
+                        CanBack = true;
+                        TripOpacity = 0.2;
+                        BackOpacity = 1;
+                    }
+                    else
+                    {
+                        await App.Current.MainPage.DisplayAlert("", "錯誤", "確認");
+                    }
+                }
             }
-            else
+            finally
             {
-                await App.Current.MainPage.DisplayAlert("", "錯誤", "確認");
+                allowTap = true;
             }
+            
 
         }
 
         async void Arrival()
         {
-
-            if (await GoOut.PostGoOut(2))
+            try
             {
-                await App.Current.MainPage.DisplayAlert("", "到站成功", "確認");
+                if (allowTap)
+                {
+                    allowTap = false;
+                    if (await GoOut.PostGoOut(2))
+                    {
+                        await App.Current.MainPage.DisplayAlert("", "到站成功", "確認");
+                    }
+                    else
+                    {
+                        await App.Current.MainPage.DisplayAlert("", "錯誤", "確認");
+                    }
+                }
             }
-            else
+            finally
             {
-                await App.Current.MainPage.DisplayAlert("", "錯誤", "確認");
+                allowTap = true;
             }
+            
         }
         async void Back()
         {
-            if (await GoOut.PostGoOut(3))
+            try
             {
-                await App.Current.MainPage.DisplayAlert("", "返回成功", "確認");
-                Preferences.Remove("TripNow");
-                CanTrip = true;
-                CanBack = false;
-                TripOpacity = 1;
-                BackOpacity = 0.2;
+                if (allowTap)
+                {
+                    allowTap = false;
+                    if (await GoOut.PostGoOut(3))
+                    {
+                        await App.Current.MainPage.DisplayAlert("", "返回成功", "確認");
+                        Preferences.Remove("TripNow");
+                        CanTrip = true;
+                        CanBack = false;
+                        TripOpacity = 1;
+                        BackOpacity = 0.2;
+                    }
+                    else
+                    {
+                        await App.Current.MainPage.DisplayAlert("", "錯誤", "確認");
+                    }
+                }
             }
-            else
+            finally
             {
-                await App.Current.MainPage.DisplayAlert("", "錯誤", "確認");
-            }
+                allowTap = true;
+            }           
         }
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)  
         {

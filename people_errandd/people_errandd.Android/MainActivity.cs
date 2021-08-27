@@ -48,7 +48,7 @@ namespace people_errandd.Droid
             if (requestCode == RequestLocationId)
             {
                 if ((grantResults.Length == 1) && (grantResults[0] == (int)Permission.Granted))
-                {
+                { 
                 }
                 else
                 {
@@ -59,7 +59,7 @@ namespace people_errandd.Droid
             {
                 Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             }
-
+        
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 

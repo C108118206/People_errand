@@ -77,6 +77,19 @@ namespace people_errandd.ViewModels
             }
             return Preferences.Get("UserName", "User");
         }
+        public async Task<bool> ConfirmEmail(string _Email)
+        {
+            try
+            {
+                response = await client.GetAsync(basic_url + ControllerNameInformation + "BoolEmployeeInformationEmail?hash_company="+ Preferences.Get("CompanyHash","")+"&email="+_Email);
+                var result = await response.Content.ReadAsStringAsync();
+                return Convert.ToBoolean(result);
+            }
+            catch (Exception)
+            {
+            }
+            return true;
+        }
     }
 }
 

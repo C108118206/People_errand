@@ -14,6 +14,7 @@ namespace people_errandd.Models
     {
         //static company c = new company();
         public static HttpClient client = new HttpClient();
+        
         public static HttpResponseMessage response = new HttpResponseMessage();
         public static readonly string basic_url = "http://163.18.110.100/api/";//主機ㄉURL  
         public static readonly string ControllerNameCompany = "Companies/";//Company api
@@ -23,18 +24,9 @@ namespace people_errandd.Models
         public static readonly string ControllerNameTripRecord = "EmployeeTripRecords/";//TripRecord api
         public static readonly string ControllerNameInformation = "EmployeeInformations/";//EmployeeInformations api
         public static readonly string ControllerNameTrip2Record = "EmployeeTrip2Record/";//TripRecord api
-       // public static string _HashAccount { get; set; }
-        public static string companyHash { get; set; }
+        public static readonly string subscriptionKey = "2f553f597a914324882f8f0f3db42a41";//azure translate api key
+        public static readonly string endpoint = "https://api.cognitive.microsofttranslator.com/";//azure translate url
+        public static readonly string LanguageRoute = "/detect?api-version=3.0";//language route             
         public static string GetResponse { get; set; }
-        //public static string uuid { get; set; }
-        //static string company_hash = "67103E3E43ED266D8FC2F37CEB11E6";        
-        //public static async Task workPost(int workTypeId)
-        //{
-
-        //   
-        //}
-
-
-
     }
 }

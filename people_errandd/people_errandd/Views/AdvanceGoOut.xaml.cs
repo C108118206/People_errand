@@ -15,8 +15,6 @@ namespace people_errandd.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AdvanceGoOut : Rg.Plugins.Popup.Pages.PopupPage
     {
-
-
         public AdvanceGoOut(string _Title)
         {
             InitializeComponent();

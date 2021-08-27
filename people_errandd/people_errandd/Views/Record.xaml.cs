@@ -20,15 +20,15 @@ namespace people_errandd.Views
         public static int RecordTypeId;
         public static DateTime dt;
         readonly Records Records = new Records();
+        public static double Dt;
         protected override async void OnAppearing()
         {
-            base.OnAppearing();
-            dt = DatePicker.Date;
-            Worklist.ItemsSource = await Records.GetWorkRecord(dt.ToString("yyyy/M/d"));
-            RecordTypeId = 1;          
+            base.OnAppearing();            
+            RecordTypeId = 1;
             SetDateButton();
             DateButtonSwitch();
-        }        
+            Worklist.ItemsSource = await Records.GetWorkRecord(dt.ToString("yyyy/M/d"));
+        }
         public Record()
         {
             InitializeComponent();
@@ -71,11 +71,12 @@ namespace people_errandd.Views
                             break;
                         case "請假":
                             Worklist.ItemsSource = await Records.GetLeaveRecord(dt.ToString("yyyy/M/d"));
+                            Console.WriteLine(dt.ToString("yyyy/M/d"));
                             RecordTypeId = 2;
                             RecordTitle.Text = "請假紀錄";
                             break;
                         case "公出":
-                            Worklist.ItemsSource = await Records.GetGoOutsRecord(dt.ToString("yyyy/M/d"));
+                            Worklist.ItemsSource = await Records.GetAdvanceGoOutsRecord(dt.ToString("yyyy/M/d"));
                             RecordTitle.Text = "公出紀錄";
                             RecordTypeId = 3;
                             break;
@@ -99,73 +100,77 @@ namespace people_errandd.Views
                     Worklist.ItemsSource = await Records.GetLeaveRecord(dt.ToString("yyyy/M/d"));
                     break;
                 case 3:
-                    Worklist.ItemsSource = await Records.GetGoOutsRecord(dt.ToString("yyyy/M/d"));
+                    Worklist.ItemsSource = await Records.GetAdvanceGoOutsRecord(dt.ToString("yyyy/M/d"));
                     break;
             }
-        }        
+        }
         private async void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
         {
-            dt = DatePicker.Date;
-            SetDateButton();  
-            await Switch();
+            SetDateButton();            
             DateButtonSwitch();
-            
+            await Switch();
         }
         private async void SunButton(object sender, EventArgs e)
         {
-            SetDateButton();                       
+            SetDateButton();
+            setDate(0);
             sun.BackgroundColor = Color.FromHex("#5C76B1");
             sun.TextColor = Color.FromHex("#FFFFFF");
             await Switch();
         }
         private async void MonButton(object sender, EventArgs e)
         {
-            SetDateButton();           
-            dt = dt.AddDays(1);
+            SetDateButton();
+            setDate(1);
             mon.BackgroundColor = Color.FromHex("#5C76B1");
             mon.TextColor = Color.FromHex("#FFFFFF");
             await Switch();
         }
         private async void TueButton(object sender, EventArgs e)
         {
-            SetDateButton();          
-            dt = dt.AddDays(2);
+            SetDateButton();
+            setDate(2);
             tue.BackgroundColor = Color.FromHex("#5C76B1");
             tue.TextColor = Color.FromHex("#FFFFFF");
-          
+
             await Switch();
         }
         private async void WedButton(object sender, EventArgs e)
         {
-            SetDateButton();           
-            dt = dt.AddDays(3);
+            SetDateButton();
+            setDate(3);
             wed.BackgroundColor = Color.FromHex("#5C76B1");
             wed.TextColor = Color.FromHex("#FFFFFF");
             await Switch();
         }
         private async void ThuButton(object sender, EventArgs e)
         {
-            SetDateButton();            
-            dt = dt.AddDays(4);
+            SetDateButton();
+            setDate(4);
             thu.BackgroundColor = Color.FromHex("#5C76B1");
-            thu.TextColor = Color.FromHex("#FFFFFF");           
+            thu.TextColor = Color.FromHex("#FFFFFF");
             await Switch();
         }
         private async void FriButton(object sender, EventArgs e)
         {
             SetDateButton();
-            dt = dt.AddDays(5);
+            setDate(5);
             fri.BackgroundColor = Color.FromHex("#5C76B1");
-            fri.TextColor = Color.FromHex("#FFFFFF");           
+            fri.TextColor = Color.FromHex("#FFFFFF");
             await Switch();
         }
         private async void SatButton(object sender, EventArgs e)
-        {         
+        {
             SetDateButton();
-            dt = dt.AddDays(6);
+            setDate(6);
             sat.BackgroundColor = Color.FromHex("#5C76B1");
-            sat.TextColor = Color.FromHex("#FFFFFF");            
+            sat.TextColor = Color.FromHex("#FFFFFF");
             await Switch();
+        }
+        private void setDate(double Date)
+        {
+            dt = DatePicker.Date.AddDays(-Dt);
+            dt = dt.AddDays(Date);
         }
         private void SetDateButton()
         {
@@ -185,58 +190,69 @@ namespace people_errandd.Views
             sat.TextColor = Color.FromHex("#000000");
         }
         private void DateButtonText(double _dt)
-        {
+        {          
             dt = dt.AddDays(-_dt);
-            sun.Text = dt.AddDays(0).ToString("dd");
+            sun.Text = dt.ToString("dd");
             mon.Text = dt.AddDays(1).ToString("dd");
             tue.Text = dt.AddDays(2).ToString("dd");
             wed.Text = dt.AddDays(3).ToString("dd");
             thu.Text = dt.AddDays(4).ToString("dd");
             fri.Text = dt.AddDays(5).ToString("dd");
             sat.Text = dt.AddDays(6).ToString("dd");
+            dt = DatePicker.Date;
         }
         private void DateButtonSwitch()
         {
+            dt = DatePicker.Date;
+            Console.WriteLine(dt.ToString());
             switch (dt.ToString("dddd"))
             {
                 case "星期日":
                     DateButtonText(0);
                     sun.BackgroundColor = Color.FromHex("#5C76B1");
                     sun.TextColor = Color.FromHex("#FFFFFF");
+                    Dt = 0;
+                    Console.WriteLine(dt.ToString());
                     break;
                 case "星期一":
                     DateButtonText(1);
                     mon.BackgroundColor = Color.FromHex("#5C76B1");
                     mon.TextColor = Color.FromHex("#FFFFFF");
+                    Dt = 1;
                     break;
                 case "星期二":
                     DateButtonText(2);
                     tue.BackgroundColor = Color.FromHex("#5C76B1");
                     tue.TextColor = Color.FromHex("#FFFFFF");
+                    Dt = 2;
                     break;
                 case "星期三":
                     DateButtonText(3);
                     wed.BackgroundColor = Color.FromHex("#5C76B1");
                     wed.TextColor = Color.FromHex("#FFFFFF");
+                    Dt = 3;
                     break;
                 case "星期四":
                     DateButtonText(4);
                     thu.BackgroundColor = Color.FromHex("#5C76B1");
                     thu.TextColor = Color.FromHex("#FFFFFF");
+                    Dt = 4;
                     break;
                 case "星期五":
                     DateButtonText(5);
                     fri.BackgroundColor = Color.FromHex("#5C76B1");
                     fri.TextColor = Color.FromHex("#FFFFFF");
+                    Dt = 5;
                     break;
                 case "星期六":
                     DateButtonText(6);
                     sat.BackgroundColor = Color.FromHex("#5C76B1");
                     sat.TextColor = Color.FromHex("#FFFFFF");
+                    Dt = 6;
                     break;
             }
         }
-    }    
+    }
     public class RecordsSelector : DataTemplateSelector
     {
         public DataTemplate WorkRecords { get; set; }

@@ -30,7 +30,7 @@ namespace people_errandd.Views
         {
             base.OnAppearing();
             name.Text = Preferences.Get("UserName", "");    
-            Console.WriteLine(Preferences.Get("HashAccount", ""));
+           // Console.WriteLine(Preferences.Get("HashAccount", ""));
             information inf = await informationViewModel.GetInformation(Preferences.Get("HashAccount", ""));
             //Console.WriteLine(" "+inf.name + inf.department + inf.email);
                 jobTitle.Text = inf.jobtitle;
@@ -119,15 +119,16 @@ namespace people_errandd.Views
                             {
                                 Preferences.Set("phone", phone.Text);
                                 Preferences.Set("email", email.Text);
-                                await DisplayAlert("", "修改完成", "確認");
-                                await Navigation.PopAsync();
-                            }
+                                await DisplayAlert("", "修改完成", "確認");                                
+                            }                            
                         }
                         else
                         {
                             await DisplayAlert("", "格式錯誤", "確認");
-                        }
+                            return;
+                        }                       
                     }
+                    await Navigation.PopAsync();
                 }
             }
             finally
@@ -136,7 +137,7 @@ namespace people_errandd.Views
             }
         }
 
-        private void email_Unfocused(object sender, FocusEventArgs e)
+        private void Email_Unfocused(object sender, FocusEventArgs e)
         {
             if (!string.IsNullOrEmpty(email.Text))
             {
@@ -153,7 +154,7 @@ namespace people_errandd.Views
             }       
         }
 
-        private void phone_Unfocused(object sender, FocusEventArgs e)
+        private void Phone_Unfocused(object sender, FocusEventArgs e)
         {
             if (string.IsNullOrEmpty(phone.Text))
             {

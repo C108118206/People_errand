@@ -5,10 +5,10 @@ using SQLite;
 
 namespace people_errandd.Models
 {
-
     public class work
     {
         //  public int ID { get; set; }
+       
         public string hashAccount { get; set; }
         public int workTypeId { get; set; }
         public double coordinateX { get; set; }
@@ -20,6 +20,15 @@ namespace people_errandd.Models
         public string statuscolor { get; set; }
         public string time { get; set; }
         public string image { get; set; }
+        
+    }
+    public class Address
+    {
+        public string address { get; set; }
+        public string CompanyHash { get; set; }
+        public double coordinateX { get; set; }
+        public double coordinateY { get; set; }
+
     }
     public class employee
     {
@@ -52,6 +61,9 @@ namespace people_errandd.Models
         public double coordinateX { get; set; }
         public double coordinateY { get; set; }
         public int trip2TypeId { get; set; }
+        public string status { get; set; }
+        public string statuscolor { get; set; }
+        public string advanceimage { get; set; }
     }
     public class information
     {
@@ -66,4 +78,9 @@ namespace people_errandd.Models
         public string jobtitle { get; set; }
 
     }
+    public class Language
+    {
+          public string language { get; set; }  
+     }
+
 }

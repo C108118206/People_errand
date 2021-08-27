@@ -20,9 +20,12 @@ namespace people_errandd.Views
             //隱藏navigationpage導航欄。
             NavigationPage.SetHasNavigationBar(this, false);
             Application.Current.UserAppTheme = OSAppTheme.Light;
-            //Animation ani = new Animation();           
-            Preferences.Set("uuid", Guid.NewGuid().ToString());
-
+            Animation ani = new Animation();
+            if (string.IsNullOrEmpty(Preferences.Get("uuid", string.Empty)))
+            {
+                Preferences.Set("uuid", Guid.NewGuid().ToString());
+            }
+            Console.WriteLine(Preferences.Get("uuid", ""));
         }
         private async void LogInButton(object sender, EventArgs e)
         {

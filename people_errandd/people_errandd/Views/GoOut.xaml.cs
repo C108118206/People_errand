@@ -39,6 +39,7 @@ namespace people_errandd.Views
             {
                 if (allowTap)
                 {
+                    allowTap = false;
                     DateTime StartDateTime = startDatePicker.Date + startTimePicker.Time;
                     DateTime EndDateTime = endDatePicker.Date + endTimePicker.Time;
                     if (await goOut.PostGoOut(StartDateTime, EndDateTime, locationEntry.Text, reasonEntry.Text))
@@ -49,8 +50,7 @@ namespace people_errandd.Views
                     }
                     else
                     {
-                        await DisplayAlert("Error", "錯誤" + StartDateTime, "OK");
-                        allowTap = false;
+                        await DisplayAlert("Error", "錯誤" + StartDateTime, "OK");                        
                     }
                 }
             }

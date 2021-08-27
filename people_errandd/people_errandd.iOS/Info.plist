@@ -31,13 +31,13 @@
 	<key>CFBundleName</key>
 	<string>people_errandd</string>
 	<key>NsLocationWhenInUseUsageDescription</key>
-	<string>This app wants to use tour location</string>
+	<string>This app wants to use your location</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>This app wants to use tour location</string>
+	<string>This app wants to use your location</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This app wants to use tour location</string>
+	<string>This app wants to use your location</string>
 	<key>NSLocationUsageDescription</key>
-	<string>This app wants to use tour location</string>
+	<string>This app wants to use your location</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIMainStoryboardFile</key>
@@ -46,5 +46,7 @@
 	<string>Light</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSLocationWhenInUseUsageDescirption</key>
+	<string>This app wants to use your location</string>
 </dict>
 </plist>

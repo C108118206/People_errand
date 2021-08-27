@@ -23,9 +23,7 @@ namespace people_errandd.Models
             {
                 GetResponse = await response.Content.ReadAsStringAsync();//將JSON轉成string
                 string[] _CompanyInformation = GetResponse.Split('\n');//分割字串
-                companyHash = _CompanyInformation[0];
-                Preferences.Set("companyX", _CompanyInformation[1]);
-                Preferences.Set("companyY", _CompanyInformation[2]);
+                Preferences.Set("CompanyHash",_CompanyInformation[0]);
                 return true;
             }
             return false;
@@ -45,7 +43,7 @@ namespace people_errandd.Models
             List<employee> employees = new List<employee>();
             employee employee = new employee()
             {
-                companyhash = companyHash,
+                companyhash =Preferences.Get("CompanyHash",""),
                 phonecode = _UUID
             };
             employees.Add(employee);

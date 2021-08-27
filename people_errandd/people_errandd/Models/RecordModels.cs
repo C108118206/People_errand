@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 using people_errandd.Models;
 using Xamarin.Essentials;
 using System.Linq;
-
+using Xamarin.Forms.Maps;
 
 namespace people_errandd.Models
 {
@@ -19,7 +19,7 @@ namespace people_errandd.Models
         {
             try
             {
-                response = await client.GetAsync(basic_url + ControllerNameWorkRecord + "GetEmployeeAllWorkRecords/" + Preferences.Get("HashAccount", ""));                
+                response = await client.GetAsync(basic_url + ControllerNameWorkRecord + "GetEmployeeAllWorkRecords/" + Preferences.Get("HashAccount", ""));
                 var result = await response.Content.ReadAsStringAsync();
                 List<work> workRecords = JsonConvert.DeserializeObject<List<work>>(result);
                 int i = 0;
@@ -42,19 +42,10 @@ namespace people_errandd.Models
                     }
                     workRecords[i].time = workRecords[i].createdTime.ToString();
                     Console.WriteLine(workRecords[i].time);
-                    i++;                   
+                    i++;
                 }
-                Console.WriteLine(date);
-                foreach (var work in workRecords)
-                {
-                    
-                    Console.WriteLine(work.time);
-                }
+
                 workRecords = workRecords.Where(work => work.time.Contains(date)).ToList();
-                foreach (var work in workRecords)
-                {
-                    Console.WriteLine(work.time);
-                }
                 //List<work> workRecord;
 
                 return workRecords;
@@ -70,11 +61,11 @@ namespace people_errandd.Models
         {
             try
             {
-                response = await client.GetAsync(basic_url + ControllerNameTripRecord + Preferences.Get("HashAccount", ""));
+                response = await client.GetAsync(basic_url + ControllerNameTripRecord + Preferences.Get("HashAccount", ""));                   
                 var result = await response.Content.ReadAsStringAsync();
-                List<GoOut> GoOutRecord = JsonConvert.DeserializeObject<List<GoOut>>(result);
-                Console.WriteLine("OK");
-                return GoOutRecord;
+                List<GoOut> GoOutRecords = JsonConvert.DeserializeObject<List<GoOut>>(result);
+                GoOutRecords = GoOutRecords.Where(GoOut => GoOut.createdTime.ToString().Contains(date)).ToList();
+                return GoOutRecords;
             }
             catch (Exception)
             {
@@ -89,13 +80,63 @@ namespace people_errandd.Models
             {
                 response = await client.GetAsync(basic_url + ControllerNameLeaveRecord + "GetEmployeeAllLeaveRecords/" + Preferences.Get("HashAccount", ""));
                 var result = await response.Content.ReadAsStringAsync();
-                List<DayOff> DayOffRecord = JsonConvert.DeserializeObject<List<DayOff>>(result);
-                Console.WriteLine("OK");
-                return DayOffRecord;
+                List<DayOff> DayOffRecords = JsonConvert.DeserializeObject<List<DayOff>>(result);                
+                DayOffRecords = DayOffRecords.Where(DayOff => DayOff.createdTime.ToString().Contains(date)).ToList();
+                return DayOffRecords;
             }
             catch (Exception)
             {
                 Console.WriteLine("Get DayOff fail");
+                //throw;
+            }
+            return null;
+        }
+        public async Task<List<GoOut>> GetAdvanceGoOutsRecord(string date)
+        {
+            Geocoder geoCoder = new Geocoder();
+            try
+            {
+                response = await client.GetAsync(basic_url + ControllerNameTrip2Record + "GetEmployeeTrip2Records/" + Preferences.Get("HashAccount", ""));
+                var result = await response.Content.ReadAsStringAsync();
+                List<GoOut> GoOutRecords = JsonConvert.DeserializeObject<List<GoOut>>(result);
+                int i = 0;
+                
+                foreach (var goOut in GoOutRecords)
+                {
+                    Position position = new Position(goOut.coordinateX, goOut.coordinateY);
+                    IEnumerable<string> possibleAddresses = await geoCoder.GetAddressesForPositionAsync(position);
+                    GoOutRecords[i].Location=possibleAddresses.FirstOrDefault();
+                    switch (goOut.trip2TypeId)
+                    {
+                        case 1:
+                            GoOutRecords[i].status = "公出開始";
+                            GoOutRecords[i].statuscolor = "#FBB800";
+                            GoOutRecords[i].advanceimage = "startgoout.png";
+                            break;
+                        case 2:
+                            GoOutRecords[i].status = "到站";
+                            GoOutRecords[i].statuscolor = "#E22E2E";
+                            GoOutRecords[i].advanceimage = "stop.png";
+                            break;
+                        case 3:
+                            GoOutRecords[i].status = "公出結束";
+                            GoOutRecords[i].statuscolor = "#2E88E2";
+                            GoOutRecords[i].advanceimage = "finishgoout.png";
+                            break;
+                        default:
+                            break;
+                    }
+                    Console.WriteLine(GoOutRecords[i].createdTime);
+                    i++;
+                    
+                }
+                GoOutRecords = GoOutRecords.Where(GoOut => GoOut.createdTime.ToString().Contains(date)).ToList();
+                return GoOutRecords;
+
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Get GoOut fail");
                 //throw;
             }
             return null;
