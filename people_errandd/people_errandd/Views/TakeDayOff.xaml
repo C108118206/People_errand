@@ -156,7 +156,7 @@
                                 <StackLayout>
                                     <Image Source="leave.png" Style="{StaticResource rdimage}"/>
                                     <Label Text="事假" x:Name="PersonalText" Style="{StaticResource rdtitle}" />
-                                  
+
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
@@ -165,7 +165,7 @@
                                 <StackLayout>
                                     <Image Source="dizziness.png" Style="{StaticResource rdimage}"/>
                                     <Label Text="病假" x:Name="SickText"  Style="{StaticResource rdtitle}"/>
-                                  
+
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
@@ -174,7 +174,7 @@
                                 <StackLayout>
                                     <Image Source="angel.png" Style="{StaticResource rdimage}" />
                                     <Label Text="喪假" x:Name="BereavementText" Style="{StaticResource rdtitle}"/>
-                                   
+
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
@@ -183,7 +183,7 @@
                                 <StackLayout>
                                     <Image Source="Maternity.png" Style="{StaticResource rdimage}"/>
                                     <Label Text="產假"  x:Name="MaternityText" Style="{StaticResource rdtitle}"/>
-                                   
+
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
@@ -192,7 +192,7 @@
                                 <StackLayout >
                                     <Image Source="stomach.png" Style="{StaticResource rdimage}"/>
                                     <Label Text="生理假" x:Name="PhysiologicalText" Style="{StaticResource rdtitle}"/>
-                                 
+
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
@@ -201,7 +201,6 @@
                                 <StackLayout>
                                     <Image Source="abortion.png" Style="{StaticResource rdimage}"/>
                                     <Label Text="流產假"  x:Name="AbortionText" Style="{StaticResource rdtitle}"/>
-                                  
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
@@ -210,7 +209,7 @@
                                 <StackLayout>
                                     <Image Source="Prenatal.png" Style="{StaticResource rdimage}"/>
                                     <Label Text="產前假" x:Name="PrenatalText" Style="{StaticResource rdtitle}"/>
-                                   
+
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
@@ -224,102 +223,100 @@
                         </RadioButton>
                     </StackLayout>
                 </StackLayout>
-
             </ScrollView>
             <Frame BackgroundColor="White" HasShadow="False"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" CornerRadius="30" Margin="0,0,0,-250">
-                <ScrollView VerticalScrollBarVisibility="Never">
-                    <StackLayout >
-                        <StackLayout>
-                            <StackLayout.Margin>
-                                <OnIdiom x:TypeArguments="Thickness">
-                                    <OnIdiom.Phone>0,0,0,0</OnIdiom.Phone>
-                                    <OnIdiom.Tablet>0,10,0,10</OnIdiom.Tablet>
-                                </OnIdiom>
-                            </StackLayout.Margin>
-                            <Label  HorizontalOptions="Start" Margin="0,10,0,0"  Text="整天"  Style="{StaticResource titletext}"></Label>
-                            <Switch HorizontalOptions="End" x:Name="AlldaySwitch" Toggled="AlldaySwitch_Toggled" Margin="0,-30,5,0" OnColor="#A3B3DB" ThumbColor="#5E709B"/>
-                        </StackLayout>
+
+                <StackLayout >
+                    <StackLayout>
+                        <StackLayout.Margin>
+                            <OnIdiom x:TypeArguments="Thickness">
+                                <OnIdiom.Phone>0,0,0,0</OnIdiom.Phone>
+                                <OnIdiom.Tablet>0,10,0,10</OnIdiom.Tablet>
+                            </OnIdiom>
+                        </StackLayout.Margin>
+                        <Label  HorizontalOptions="Start" Margin="0,10,0,0"  Text="整天"  Style="{StaticResource titletext}"></Label>
+                        <Switch HorizontalOptions="End" x:Name="AlldaySwitch" Toggled="AlldaySwitch_Toggled" Margin="0,-30,5,0" OnColor="#A3B3DB" ThumbColor="#5E709B"/>
+                    </StackLayout>
+                    <!--開始框架-->
+                    <StackLayout Orientation="Horizontal" >
+                        <StackLayout.Margin>
+                            <OnIdiom x:TypeArguments="Thickness">
+                                <OnIdiom.Phone>0,0,0,5</OnIdiom.Phone>
+                                <OnIdiom.Tablet>0,10,0,10</OnIdiom.Tablet>
+                            </OnIdiom>
+                        </StackLayout.Margin>
                         <!--開始框架-->
-                        <StackLayout Orientation="Horizontal" >
-                            <StackLayout.Margin>
-                                <OnIdiom x:TypeArguments="Thickness">
-                                    <OnIdiom.Phone>0,0,0,5</OnIdiom.Phone>
-                                    <OnIdiom.Tablet>0,10,0,10</OnIdiom.Tablet>
-                                </OnIdiom>
-                            </StackLayout.Margin>
-                            <!--開始框架-->
-                            <StackLayout Margin="0,0,0,0">
+                        <StackLayout Margin="0,0,0,0">
 
-                                <!--*開始水平呈現-->
+                            <!--*開始水平呈現-->
 
-                                <!--*-->
-                                <Label Text="開始" Style="{StaticResource titletext}"></Label>
+                            <!--*-->
+                            <Label Text="開始" Style="{StaticResource titletext}"></Label>
 
-                                <!--開始-->
-                                <Frame CornerRadius="5" Padding="0"  HeightRequest="45" WidthRequest="600" HorizontalOptions="Start" BorderColor="#A8A8A8" BackgroundColor="White"  HasShadow="False" Margin="0,0,0,0">
-                                    <StackLayout Grid.Row="0" Orientation="Horizontal" >
-                                        <DatePicker Grid.Row="1" x:Name="startDatePicker" Style="{StaticResource date}"/>
-                                        <!--開始日期選擇-->
+                            <!--開始-->
+                            <Frame CornerRadius="5" Padding="0"  HeightRequest="45" WidthRequest="600" HorizontalOptions="Start" BorderColor="#A8A8A8" BackgroundColor="White"  HasShadow="False" Margin="0,0,0,0">
+                                <StackLayout Grid.Row="0" Orientation="Horizontal" >
+                                    <DatePicker Grid.Row="1" x:Name="startDatePicker" Style="{StaticResource date}"/>
+                                    <!--開始日期選擇-->
 
-                                        <TimePicker Grid.Row="2" x:Name="startTimePicker" Style="{StaticResource time}" />
-                                    </StackLayout>
-                                </Frame>
-                                <!--開始時間選擇-->
-                            </StackLayout>
+                                    <TimePicker Grid.Row="2" x:Name="startTimePicker" Style="{StaticResource time}" />
+                                </StackLayout>
+                            </Frame>
+                            <!--開始時間選擇-->
+                        </StackLayout>
 
-                            <!--結束框架-->
-                            <StackLayout>
+                        <!--結束框架-->
+                        <StackLayout>
 
-                                <!--*結束水平呈現-->
+                            <!--*結束水平呈現-->
 
-                                <!--*-->
-                                <Label Text="結束" Style="{StaticResource titletext}" Margin="0,0,0,0"></Label>
+                            <!--*-->
+                            <Label Text="結束" Style="{StaticResource titletext}" Margin="0,0,0,0"></Label>
 
-                                <!--結束-->
+                            <!--結束-->
 
-                                <Frame CornerRadius="5" Padding="0"  HeightRequest="45" WidthRequest="600" HorizontalOptions="Start" BorderColor="#A8A8A8" BackgroundColor="White"  HasShadow="False" >
-                                    <StackLayout Grid.Row="0" Orientation="Horizontal" >
-                                        <DatePicker Grid.Row="1" x:Name="endDatePicker"
+                            <Frame CornerRadius="5" Padding="0"  HeightRequest="45" WidthRequest="600" HorizontalOptions="Start" BorderColor="#A8A8A8" BackgroundColor="White"  HasShadow="False" >
+                                <StackLayout Grid.Row="0" Orientation="Horizontal" >
+                                    <DatePicker Grid.Row="1" x:Name="endDatePicker"
                             Style="{StaticResource date}"
                             MinimumDate="{Binding Source={x:Reference startDatePicker},Path=Date}"
                             />
-                                        <!--結束日期選擇(需小於開始日期)-->
-                                        <TimePicker Grid.Row="2" x:Name="endTimePicker" Style="{StaticResource time}" />
-                                        <!--結束時間選擇-->
-                                    </StackLayout>
-                                </Frame>
-                            </StackLayout>
-                        </StackLayout>
-                        <!--原因框架-->
-                        <StackLayout>
-                            <StackLayout.Margin>
-                                <OnIdiom x:TypeArguments="Thickness">
-                                    <OnIdiom.Phone>0,0,0,5</OnIdiom.Phone>
-                                    <OnIdiom.Tablet>0,10,0,10</OnIdiom.Tablet>
-                                </OnIdiom>
-                            </StackLayout.Margin>
-                            <!--*原因水平呈現-->
-                            <!--*-->
-                            <Label Text="原因" Style="{StaticResource titletext}"></Label>
-                            <!--原因-->
-
-                            <Frame CornerRadius="5"  Padding="0,5,0,5"  HeightRequest="105" HorizontalOptions="FillAndExpand" BorderColor="#A8A8A8" BackgroundColor="White" HasShadow="False" >
-                                <Editor Grid.Row="1" Style="{StaticResource editor}" Margin="10,0,10,0" x:Name="reason"></Editor>
-                                <!--原因輸入-->
+                                    <!--結束日期選擇(需小於開始日期)-->
+                                    <TimePicker Grid.Row="2" x:Name="endTimePicker" Style="{StaticResource time}" />
+                                    <!--結束時間選擇-->
+                                </StackLayout>
                             </Frame>
                         </StackLayout>
-
-                        <Button  Grid.Row="4" Style="{StaticResource button}"  Clicked="EnterButton">
-                            <Button.Margin>
-                                <OnIdiom x:TypeArguments="Thickness">
-                                    <OnIdiom.Phone>0,10,0,5</OnIdiom.Phone>
-                                    <OnIdiom.Tablet>0,20,0,20</OnIdiom.Tablet>
-                                </OnIdiom>
-                            </Button.Margin>
-                        </Button>
-                <!--提出申請按鈕-->
                     </StackLayout>
-                </ScrollView>
+                    <!--原因框架-->
+                    <StackLayout>
+                        <StackLayout.Margin>
+                            <OnIdiom x:TypeArguments="Thickness">
+                                <OnIdiom.Phone>0,0,0,5</OnIdiom.Phone>
+                                <OnIdiom.Tablet>0,10,0,10</OnIdiom.Tablet>
+                            </OnIdiom>
+                        </StackLayout.Margin>
+                        <!--*原因水平呈現-->
+                        <!--*-->
+                        <Label Text="原因" Style="{StaticResource titletext}"></Label>
+                        <!--原因-->
+
+                        <Frame CornerRadius="5"  Padding="0,5,0,5"  HeightRequest="105" HorizontalOptions="FillAndExpand" BorderColor="#A8A8A8" BackgroundColor="White" HasShadow="False" >
+                            <Editor Grid.Row="1" Style="{StaticResource editor}" Margin="10,0,10,0" x:Name="reason"></Editor>
+                            <!--原因輸入-->
+                        </Frame>
+                    </StackLayout>
+
+                    <Button  Grid.Row="4" Style="{StaticResource button}"  Clicked="EnterButton">
+                        <Button.Margin>
+                            <OnIdiom x:TypeArguments="Thickness">
+                                <OnIdiom.Phone>0,10,0,5</OnIdiom.Phone>
+                                <OnIdiom.Tablet>0,20,0,20</OnIdiom.Tablet>
+                            </OnIdiom>
+                        </Button.Margin>
+                    </Button>
+                    <!--提出申請按鈕-->
+                </StackLayout>
             </Frame>
         </StackLayout>
         </ScrollView>

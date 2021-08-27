@@ -23,6 +23,6 @@
 </TargetiOSDevice>
     <DeveloperId>bigtw178%40gmail.com</DeveloperId>
     <DevelopmentTeamId>769XWU8586</DevelopmentTeamId>
-    <DefaultDevice>iPhone 8 Plus iOS 14.5</DefaultDevice>
+    <DefaultDevice>iPhone 12 iOS 14.5</DefaultDevice>
   </PropertyGroup>
 </Project>

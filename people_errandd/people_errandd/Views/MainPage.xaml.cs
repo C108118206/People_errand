@@ -206,8 +206,8 @@ namespace people_errandd.Views
                 if (allowTap)
                 {
                     allowTap = false;
-                    await PopupNavigation.Instance.PushAsync(new AdvanceGoOut("請選擇"));
-                   // await Navigation.PushAsync(new GoOut());
+                   await PopupNavigation.Instance.PushAsync(new AdvanceGoOut("請選擇"));
+                   //await Navigation.PushAsync(new GoOut());
                 }
             }
             finally

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,27 +17,29 @@ namespace people_errandd.ViewModels
         public async Task<(double, double)> GetLocation(string status)
         {
             try
-            {
-                if (status == "Back")
-                {
-                    var request = new GeolocationRequest(GeolocationAccuracy.High, TimeSpan.FromSeconds(10));
-                    cts = new CancellationTokenSource();
-                    var location = await Geolocation.GetLocationAsync(request, cts.Token);
-                    Console.WriteLine(location.Latitude + "and" + location.Longitude);
-                    await GetLocationText(location.Latitude, location.Longitude);
-                    return (location.Latitude, location.Longitude);
-                }
-                else
+            { 
+                if (status != "Back")
                 {
                     var location = await Geolocation.GetLastKnownLocationAsync();
                     return (location.Latitude, location.Longitude);
                 }
+                else
+                {
+
+                    var location = await Geolocation.GetLocationAsync(new GeolocationRequest()
+                    {
+                        DesiredAccuracy = GeolocationAccuracy.High,
+                        Timeout = TimeSpan.FromSeconds(30)
+                    });
+                    await GetLocationText(location.Latitude, location.Longitude);
+                    return (location.Latitude, location.Longitude);
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Debug.WriteLine(ex.Message);
                 Preferences.Set("gpsText", "定位未開啟");
                 Preferences.Set("GpsButtonColor", "#CA4848");
-                Console.WriteLine("ERROR");
             }
             return (0, 0);
         }

@@ -30,14 +30,10 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>people_errandd</string>
-	<key>NsLocationWhenInUseUsageDescription</key>
-	<string>This app wants to use tour location</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>This app wants to use tour location</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This app wants to use tour location</string>
-	<key>NSLocationUsageDescription</key>
-	<string>This app wants to use tour location</string>
+  <key>NSLocationAlwaysUsageDescription</key>
+  <string>Your message goes here</string>
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>Your message goes here</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIMainStoryboardFile</key>

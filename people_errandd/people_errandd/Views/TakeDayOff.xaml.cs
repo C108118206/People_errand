@@ -32,14 +32,14 @@ namespace people_errandd.Views
             //leaveType.ItemsSource = dayoffList;
             startTimePicker.IsVisible =true? !AlldaySwitch.IsToggled : AlldaySwitch.IsToggled;
         }
-        private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+         void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         {
             try
             {
                 if (allowTap)
                 {
                     allowTap = false;
-                    Navigation.PopAsync();
+                    Navigation.PopModalAsync(true);
                 }
             }
             finally
