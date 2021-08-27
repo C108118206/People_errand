@@ -10,6 +10,7 @@ D:\Punch\people_errand\people_errandd\people_errandd.Android\bin\Debug\people_er
 D:\Punch\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
 D:\Punch\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\build.props
 D:\Punch\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\adb.props
+D:\Punch\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\people_errandd.Android.csprojAssemblyReference.cache
 D:\Punch\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_BuildLibraryImportsCache.stamp
 D:\Punch\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\res.flag
 D:\Punch\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\files.cache
@@ -776,4 +777,3 @@ D:\Punch\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp
 D:\Punch\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 D:\Punch\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 D:\Punch\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
-D:\Punch\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\people_errandd.Android.csprojAssemblyReference.cache

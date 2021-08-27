@@ -90,7 +90,7 @@
                         <Entry x:Name="company" Placeholder=" 請輸入組織ID" Style="{StaticResource entry}" Grid.Row="0">
                             <Entry.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
-                                    <On Platform="iOS" Value="45,0,45,-5" />
+                                    <On Platform="iOS" Value="48,0,48,-5" />
                                     <On Platform="Android" Value="45,0,45,-10" />
                                 </OnPlatform>
                             </Entry.Margin>

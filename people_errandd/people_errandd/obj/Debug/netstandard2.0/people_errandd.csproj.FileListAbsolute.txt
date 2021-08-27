@@ -2,7 +2,6 @@ D:\Punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\pe
 D:\Punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.dll
 D:\Punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\ref\people_errandd.dll
 D:\Punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.pdb
-D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.csprojAssemblyReference.cache
 D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\App.xaml.g.cs
 D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
 D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\AdvanceGoOut.xaml.g.cs
@@ -24,3 +23,4 @@ D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Xa
 D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.dll
 D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\ref\people_errandd.dll
 D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.pdb
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.csprojAssemblyReference.cache

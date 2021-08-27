@@ -126,7 +126,6 @@ namespace people_errandd.Models
                         default:
                             break;
                     }
-                    Console.WriteLine(GoOutRecords[i].createdTime);
                     i++;
                     
                 }
