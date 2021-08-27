@@ -1,5 +1,9 @@
 IsIncrementalBuild=false
+<<<<<<< HEAD
 IsLocal=True
+=======
+IsLocal=
+>>>>>>> 5945396d6629dc70faa692af6f32a394705aac46
 EnableLLVM=False
 UseConcurrentGC=true
 LinkerBehavior=None

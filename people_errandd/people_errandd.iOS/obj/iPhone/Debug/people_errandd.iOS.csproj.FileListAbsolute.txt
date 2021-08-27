@@ -148,6 +148,7 @@ C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_erra
 C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd.iOS\obj\iPhone\Debug\people_errandd.iOS.csproj.CopyComplete
 C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd.iOS\obj\iPhone\Debug\people_errandd.iOS.exe
 C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd.iOS\obj\iPhone\Debug\people_errandd.iOS.pdb
+<<<<<<< HEAD
 C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.iOS\bin\iPhone\Debug\people_errandd.iOS.exe
 C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.iOS\bin\iPhone\Debug\people_errandd.iOS.pdb
 C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.iOS\bin\iPhone\Debug\Newtonsoft.Json.dll
@@ -223,3 +224,5 @@ C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\peop
 C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\coremlc\_PartialAppManifest.items
 C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\coremlc\_BundleResourceWithLogicalName.items
 C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\optimized\
+=======
+>>>>>>> 5945396d6629dc70faa692af6f32a394705aac46

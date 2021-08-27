@@ -1,8 +1,32 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "jGDbSatZ9hcP5VM3DosfTOydCJ2l3hAxUAIOIEvNTTgpomn2FakVlhdrCeq7KlRpqvxB+pi+57p7MeNHJLJLZw==",
   "success": true,
   "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+=======
+<<<<<<< HEAD
+  "dgSpecHash": "AO3LXOw6X3nGBaO4QG4a+xRLA0J+Udyw1BTmtpwvbMgAXCc9xvvUGqIrrjHMRSfWjiV0XYnRoPTmrCCbNLO23A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+=======
+<<<<<<< HEAD
+  "dgSpecHash": "AO3LXOw6X3nGBaO4QG4a+xRLA0J+Udyw1BTmtpwvbMgAXCc9xvvUGqIrrjHMRSfWjiV0XYnRoPTmrCCbNLO23A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+=======
+<<<<<<< HEAD
+  "dgSpecHash": "AO3LXOw6X3nGBaO4QG4a+xRLA0J+Udyw1BTmtpwvbMgAXCc9xvvUGqIrrjHMRSfWjiV0XYnRoPTmrCCbNLO23A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+=======
+  "dgSpecHash": "S1rBQiwGkzfHNCpdt8EbREfuXnuXCtYEFqTgsAnP2svmkvQFDB42BvfQdP7ajxkno9ADzQ7xlqF7CN7SAZc+3g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand - copy\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+>>>>>>> eb4a7606b380d0c50122399963a41a76060e8a88
+>>>>>>> d85b889ed1a76e38c0e058d58d9f3b4a7f37fe17
+>>>>>>> c4e6d6ae122c8a2b7a89009720c4de44efebfe3d
+>>>>>>> 5945396d6629dc70faa692af6f32a394705aac46
   "expectedPackageFiles": [
     "C:\\Users\\lmh_flower\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\lmh_flower\\.nuget\\packages\\rg.plugins.popup\\2.0.0.12\\rg.plugins.popup.2.0.0.12.nupkg.sha512",

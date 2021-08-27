@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.deps.json
 C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.dll
 C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\ref\people_errandd.dll
@@ -24,3 +25,73 @@ C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\peop
 C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\ref\people_errandd.dll
 C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.pdb
 C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.csproj.AssemblyReference.cache
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.csproj.AssemblyReference.cache
+=======
+<<<<<<< HEAD
+>>>>>>> d85b889ed1a76e38c0e058d58d9f3b4a7f37fe17
+>>>>>>> c4e6d6ae122c8a2b7a89009720c4de44efebfe3d
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.deps.json
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.dll
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\ref\people_errandd.dll
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.pdb
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\AdvanceGoOut.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\AnnouncementDetail.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\Calender.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\GoOut.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\ImportantAudit.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\MapPage.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\Record.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\TakeDayOff.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\VerificationPage.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Stylesheet1.css.g.cs
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.AssemblyInfoInputs.cache
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.AssemblyInfo.cs
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.csproj.CoreCompileInputs.cache
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.dll
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\ref\people_errandd.dll
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.pdb
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.csproj.AssemblyReference.cache
+=======
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.deps.json
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.dll
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\bin\Debug\netstandard2.0\ref\people_errandd.dll
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.pdb
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.csproj.AssemblyReference.cache
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\AdvanceGoOut.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\AnnouncementDetail.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\Calender.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\GoOut.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\ImportantAudit.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\MapPage.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\Record.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\TakeDayOff.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\Views\VerificationPage.xaml.g.cs
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\Stylesheet1.css.g.cs
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.AssemblyInfoInputs.cache
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.AssemblyInfo.cs
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.csproj.CoreCompileInputs.cache
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.dll
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\ref\people_errandd.dll
+C:\Users\lmh_flower\source\repos\People_errand - copy\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.pdb
+>>>>>>> eb4a7606b380d0c50122399963a41a76060e8a88
+>>>>>>> d85b889ed1a76e38c0e058d58d9f3b4a7f37fe17
+>>>>>>> c4e6d6ae122c8a2b7a89009720c4de44efebfe3d
+>>>>>>> 5945396d6629dc70faa692af6f32a394705aac46
