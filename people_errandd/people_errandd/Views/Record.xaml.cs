@@ -252,7 +252,7 @@ namespace people_errandd.Views
                     break;
             }
         }
-    }
+    }    
     public class RecordsSelector : DataTemplateSelector
     {
         public DataTemplate WorkRecords { get; set; }
