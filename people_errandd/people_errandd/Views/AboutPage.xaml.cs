@@ -115,16 +115,20 @@ namespace people_errandd.Views
                         Match matchphone = regexphone.Match(phone.Text);
                         if (matchemail.Success && matchphone.Success)
                         {
-                            if (await informationViewModel.UpdateInformationRecord(name.Text, phone.Text, email.Text))
+                            if (!await informationViewModel.ConfirmEmail(email.Text) && await informationViewModel.UpdateInformationRecord(name.Text, phone.Text, email.Text))
                             {
                                 Preferences.Set("phone", phone.Text);
                                 Preferences.Set("email", email.Text);
                                 await DisplayAlert("", "修改完成", "確認");                                
-                            }                            
+                            }
+                            else
+                            {
+                                await DisplayAlert("錯誤", "信箱重複或是網路錯誤","確認");
+                            }
                         }
                         else
                         {
-                            await DisplayAlert("", "格式錯誤", "確認");
+                            await DisplayAlert("", "信箱或電話格式錯誤", "確認");
                             return;
                         }                       
                     }
