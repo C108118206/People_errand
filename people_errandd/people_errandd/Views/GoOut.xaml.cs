@@ -17,14 +17,14 @@ namespace people_errandd.Views
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#EDEEEF");
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex("#555555");
         }
-        private async void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+          void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         {
             try
             {
                 if (allowTap)
                 {
                     allowTap = false;
-                    await Navigation.PopAsync();
+                    Navigation.PopModalAsync(true);
                 }
             }
             finally

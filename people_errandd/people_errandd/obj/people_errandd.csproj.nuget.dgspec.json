@@ -1,7 +1,24 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
+        "projectName": "people_errandd",
+        "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
+        "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\obj\\",
+=======
+    "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {}
+>>>>>>> 2b22f8a3b8ccb6c42719169b634f06e2574f75c5
   },
   "projects": {
     "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
@@ -9,9 +26,16 @@
       "restore": {
         "projectUniqueName": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
         "projectName": "people_errandd",
+<<<<<<< HEAD
         "projectPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
         "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
         "outputPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\obj\\",
+=======
+        "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
+        "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd\\obj\\",
+>>>>>>> 324b8098fffdc6b4788d7808a3be5a5cbd9159ad
+>>>>>>> 2b22f8a3b8ccb6c42719169b634f06e2574f75c5
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -1,8 +1,20 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "SoAyRmEJbTjBNVaxmCGhs3FVJcSDCUvZG7bSk8pfTbZgU82cP+4mmjeQieo1yEnVEgmK6jdHPrnchs7p00GvYQ==",
   "success": true,
   "projectFilePath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
+=======
+<<<<<<< HEAD
+  "dgSpecHash": "skeR4CntW2hPeEcHED+OH5CuACv+RjBu/EiM2aGLV7eNfmGnoZvIkyPdlZM5I2UfAjMHshVN4srmJSFgXG9Iqg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
+=======
+  "dgSpecHash": "8rpwRfRh2IjuFoC5a2fByYSXt53nHR3kywuMzYxq2GeweQ24dB6dQbJVB3CNywH48u2Bao5QaULKXYbNZsTP3Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
+>>>>>>> 324b8098fffdc6b4788d7808a3be5a5cbd9159ad
+>>>>>>> 2b22f8a3b8ccb6c42719169b634f06e2574f75c5
   "expectedPackageFiles": [
     "C:\\Users\\lonel\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\lonel\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

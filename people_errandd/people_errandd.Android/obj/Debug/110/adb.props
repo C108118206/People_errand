@@ -1,2 +1,10 @@
+<<<<<<< HEAD
 AdbTarget=-s JAAZB760C891W99
+=======
+<<<<<<< HEAD
+AdbTarget=-s JAAZB760D081WD8
+=======
+AdbTarget=-s emulator-5554
+>>>>>>> 324b8098fffdc6b4788d7808a3be5a5cbd9159ad
+>>>>>>> 2b22f8a3b8ccb6c42719169b634f06e2574f75c5
 AdbOptions=
