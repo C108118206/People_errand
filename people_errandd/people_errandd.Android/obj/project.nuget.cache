@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "AO3LXOw6X3nGBaO4QG4a+xRLA0J+Udyw1BTmtpwvbMgAXCc9xvvUGqIrrjHMRSfWjiV0XYnRoPTmrCCbNLO23A==",
   "success": true,
   "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+=======
+  "dgSpecHash": "jGDbSatZ9hcP5VM3DosfTOydCJ2l3hAxUAIOIEvNTTgpomn2FakVlhdrCeq7KlRpqvxB+pi+57p7MeNHJLJLZw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+>>>>>>> 324b8098fffdc6b4788d7808a3be5a5cbd9159ad
   "expectedPackageFiles": [
     "C:\\Users\\lmh_flower\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\lmh_flower\\.nuget\\packages\\rg.plugins.popup\\2.0.0.12\\rg.plugins.popup.2.0.0.12.nupkg.sha512",

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @string/appbar_scrolling_view_behavior;C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\55\jl\res\layout\rootlayout.xml
+=======
+@string/appbar_scrolling_view_behavior;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\55\jl\res\layout\rootlayout.xml
+>>>>>>> 324b8098fffdc6b4788d7808a3be5a5cbd9159ad
 adaptive-icon;obj\Debug\110\res\mipmap-anydpi-v26\icon.xml
 adaptive-icon;obj\Debug\110\res\mipmap-anydpi-v26\icon_round.xml
 alpha;C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\res\anim\fade_in.xml
@@ -64,6 +68,7 @@ set;C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\
 string;C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\55\jl\res\values\strings.xml
 style;C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\55\jl\res\values\styles.xml
 style;obj\Debug\110\res\values\styles.xml
+<<<<<<< HEAD
 transitionSet;C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\res\transition\navigation_transition.xml
 translate;C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\res\anim\enter_bottom.xml
 translate;C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\res\anim\enter_left.xml
@@ -82,3 +87,23 @@ translate;C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_er
 xamarin.communitytoolkit.ui.views.AutoFitTextureView;C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\52\jl\res\layout\camerafragment.xml
 xamarin.forms.platform.android.appcompat.FormsViewPager;C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\55\jl\res\layout\rootlayout.xml
 xamarin.forms.platform.android.ShellFlyoutLayout;C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\55\jl\res\layout\flyoutcontent.xml
+=======
+transitionSet;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\res\transition\navigation_transition.xml
+translate;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\res\anim\enter_bottom.xml
+translate;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\res\anim\enter_left.xml
+translate;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\res\anim\enter_right.xml
+translate;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\res\anim\enter_top.xml
+translate;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\res\anim\exit_bottom.xml
+translate;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\res\anim\exit_left.xml
+translate;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\res\anim\exit_right.xml
+translate;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\res\anim\exit_top.xml
+translate;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\res\anim\flip_in.xml
+translate;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\2\jl\res\anim\flip_out.xml
+translate;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\55\jl\res\anim\enterfromleft.xml
+translate;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\55\jl\res\anim\enterfromright.xml
+translate;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\55\jl\res\anim\exittoleft.xml
+translate;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\55\jl\res\anim\exittoright.xml
+xamarin.communitytoolkit.ui.views.AutoFitTextureView;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\52\jl\res\layout\camerafragment.xml
+xamarin.forms.platform.android.appcompat.FormsViewPager;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\55\jl\res\layout\rootlayout.xml
+xamarin.forms.platform.android.ShellFlyoutLayout;C:\Users\lmh_flower\source\repos\people_errand\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\lp\55\jl\res\layout\flyoutcontent.xml
+>>>>>>> 324b8098fffdc6b4788d7808a3be5a5cbd9159ad

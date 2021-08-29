@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "Nye6A6CE2kE7rgFtWsxSP7F3FH1FDqikdsy8CjNqnDaKJMSKY+gjKMZCRLKiyMF+WhG7zhZN9IZyNnSXomkyag==",
   "success": true,
   "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+=======
+  "dgSpecHash": "6DisBu6u3OhowPACvFnl740IBdFd6SBjRltbcrbLPXGWN77oB/4cKwzwVYzvKP7159k6FoQVPRjCfGjdBGGX5Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+>>>>>>> 324b8098fffdc6b4788d7808a3be5a5cbd9159ad
   "expectedPackageFiles": [
     "C:\\Users\\lmh_flower\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\lmh_flower\\.nuget\\packages\\rg.plugins.popup\\2.0.0.12\\rg.plugins.popup.2.0.0.12.nupkg.sha512",
