@@ -32,21 +32,21 @@ namespace people_errandd.Views
             //leaveType.ItemsSource = dayoffList;
             startTimePicker.IsVisible =true? !AlldaySwitch.IsToggled : AlldaySwitch.IsToggled;
         }
-        private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
-        {
-            try
-            {
-                if (allowTap)
-                {
-                    allowTap = false;
-                    Navigation.PopAsync();
-                }
-            }
-            finally
-            {
-                allowTap = true;
-            }
-        }
+        //private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (allowTap)
+        //        {
+        //            allowTap = false;
+        //            Navigation.PopAsync();
+        //        }
+        //    }
+        //    finally
+        //    {
+        //        allowTap = true;
+        //    }
+        //}
         private void AlldaySwitch_Toggled(object sender, ToggledEventArgs e)
         {
             if (AlldaySwitch.IsToggled == true)
@@ -128,6 +128,32 @@ namespace people_errandd.Views
             {
                 allowTap = true;
             }
+        }
+        public void minTime()
+        {
+            if (startDatePicker.Date == endDatePicker.Date)
+            {
+                endTimePicker.Time = startTimePicker.Time;
+            }
+        }
+        private void startDatePicker_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            minTime();
+        }
+
+        private void endDatePicker_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            minTime();
+        }
+
+        private void endTimePicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            minTime();
+        }
+
+        private void startTimePicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            minTime();
         }
     }
 }

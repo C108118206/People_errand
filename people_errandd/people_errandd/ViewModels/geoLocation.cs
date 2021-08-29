@@ -84,7 +84,7 @@ namespace people_errandd.ViewModels
                     Location locationCompany = new Location(addresses[0].coordinateX, addresses[0].coordinateY);
                     Location locationNow = new Location(X,Y);
                     double distance = Location.CalculateDistance(locationNow, locationCompany, DistanceUnits.Kilometers);
-                    if (distance < 0.2)
+                    if (distance < 0.5)
                     {
                         return true;
                     }

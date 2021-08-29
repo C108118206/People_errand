@@ -20,7 +20,7 @@
 
     <!--最上面Navigation右邊完成-->
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="完成"  Activated="RefButtonClicked"  Clicked="ConfirmButton"></ToolbarItem>
+        <ToolbarItem Text="完成"    Clicked="ConfirmButton"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <!--內容樣式設定-->
     <ContentPage.Resources>

@@ -25,17 +25,13 @@ namespace people_errandd.Views
 
         public MainPage()
         {
-            // BindingContext = new TimeDisplay();
             Application.Current.UserAppTheme = OSAppTheme.Light;
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-
-
-
         }
 
 
-        protected async override void OnAppearing()
+        protected  override void OnAppearing()
         {
             base.OnAppearing();
             GPSText.Text = Preferences.Get("gpsText", "定位未開啟");
@@ -47,7 +43,6 @@ namespace people_errandd.Views
             workOnText.Opacity = Preferences.Get("WorkOnText", workOnText.Opacity = 1);
             workOffText.Opacity = Preferences.Get("WorkOffText", workOffText.Opacity = 0.2);
             username.Text = Preferences.Get("UserName", "");
-            await geoLocation.GetLocation("Back");
         }
         protected override void OnDisappearing()
         {

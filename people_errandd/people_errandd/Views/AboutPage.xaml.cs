@@ -160,7 +160,7 @@ namespace people_errandd.Views
 
         private void Phone_Unfocused(object sender, FocusEventArgs e)
         {
-            if (string.IsNullOrEmpty(phone.Text))
+            if (!string.IsNullOrEmpty(phone.Text))
             {
                 Match matchphone = regexphone.Match(phone.Text);
                 if (!matchphone.Success)
