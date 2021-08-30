@@ -2,17 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="people_errandd.Views.AboutPage" 
-             xmlns:st="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true" 
+             xmlns:local="clr-namespace:people_errandd.ViewModels"
              BackgroundColor="White">
-
     <!--最上面Navigation標題-->
     <NavigationPage.TitleView>
-        <Label Text="個人資料"  HorizontalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" Margin="-15,0,0,0"></Label>
+        <Label Text="個人資料"  HorizontalTextAlignment="Center" TextColor="#555555" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center">
+            <Label.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS" Value="8,10,0,0" />
+                    <On Platform="Android" Value="-25,0,0,0" />
+                </OnPlatform>
+            </Label.Margin>
+        </Label>
     </NavigationPage.TitleView>
 
     <!--最上面Navigation右邊完成-->
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="完成   "  Activated="RefButtonClicked"></ToolbarItem>
+        <ToolbarItem Text="完成"    Clicked="ConfirmButton"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <!--內容樣式設定-->
     <ContentPage.Resources>
@@ -21,29 +29,34 @@
                 <Setter Property="FontSize" Value="30" />
                 <Setter Property="Margin" Value="10" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="TextColor" Value="#424242" />
+                <Setter Property="TextColor" Value="#555555" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
             <Style x:Key="contentimage" TargetType="Image">
                 <Setter Property="HeightRequest" Value="25" />
- 
+
             </Style>
             <Style x:Key="contenttitle" TargetType="Label">
-                <Setter Property="FontSize" Value="18" />
-                <Setter Property="Margin" Value="0,10,0,0" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="Margin" Value="0,10,0,-10" /><!--4,10,0,-10-->
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="TextColor" Value="#B9B9B9" />
             </Style>
             <Style x:Key="contententry" TargetType="Entry">
-                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontSize" Value="17" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="Margin" Value="0,0,10,0" />
-                <Setter Property="WidthRequest" Value="220" />
-                <Setter Property="TextColor" Value="Black" />
-                <Setter Property="HorizontalTextAlignment" Value="End" />
-                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="#555555" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="WidthRequest" Value="2000" />
                 <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
+            </Style>
+            <Style x:Key="line" TargetType="BoxView">
+                <Setter Property="Margin" Value="0,0,20,0" />
+                <Setter Property="WidthRequest" Value="600" />
+                <Setter Property="BackgroundColor" Value="#807D7D"/>
+                <Setter Property="HeightRequest" Value="1"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -57,17 +70,17 @@
 
         <ScrollView>
             <StackLayout Orientation="Vertical">
-                <StackLayout Grid.Row="0" BackgroundColor="#8CC5D7" HeightRequest="200" >
+                <StackLayout Grid.Row="0" BackgroundColor="#EDEEEF" HeightRequest="200" >
                     <!--頭貼.姓名背景高度與顏色-->
                     <StackLayout  >
                         <!--圓形頭貼外框-->
                         <Frame Grid.Row="0"
                        BackgroundColor="White"
-                       BorderColor="Black"
                        CornerRadius="50"
                        HeightRequest="60"
                        WidthRequest="60"
-                            Margin="0,30,0,0"
+                       HasShadow="False"
+                       Margin="0,30,0,0"
                        IsClippedToBounds="True"
                        HorizontalOptions="Center"
                        VerticalOptions="Center"
@@ -75,66 +88,150 @@
                             <!--頭貼照片-->
                             <ImageButton
                           BackgroundColor="White"
-                         Clicked="Image_clicked"
+
                          x:Name="resultImage"
                          Aspect="AspectFill"
                          Margin="-20"
-                         Source="p2"
+                         Source="profile.png"
                          HeightRequest="30"
                          WidthRequest="30" />
                         </Frame>
-                        <ImageButton Source="pencil2" Margin="80,-40,0,0" HeightRequest="30"  Clicked="Image_clicked"  HorizontalOptions="Center" />
+                        <!--<ImageButton Source="pencil2" Margin="80,-40,0,0" HeightRequest="30"  Clicked="Image_clicked"  HorizontalOptions="Center" />-->
 
-                        <Label Text="Marry" Style="{StaticResource name}" Grid.Row="1"></Label>
+                        <Label x:Name="name" Style="{StaticResource name}" Grid.Row="1"></Label>
                         <!--使用者姓名-->
                     </StackLayout>
                 </StackLayout>
 
-    
-                    <StackLayout Orientation="Vertical" Grid.Row="1" Margin="0,40,0,0">
-                        <!--底部框架-->
-                        <StackLayout Orientation="Horizontal" Grid.Row="0" Margin="0,25,0,0" HorizontalOptions="Center">
-                            <!--部門標題與圖片-->
-                        <Image Style="{StaticResource contentimage}" Source="group"/>
-                        <Label Text="部門"  Style="{StaticResource contenttitle}" ></Label>
 
-                            <Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">
-                            <Entry Placeholder="行銷部" PlaceholderColor="Gray" IsReadOnly="True" Style="{StaticResource contententry}" Grid.Row="1"></Entry>
+                <StackLayout Orientation="Vertical" Grid.Row="1" Margin="0,10,0,0">
+                    <!--底部框架-->
+                    <StackLayout  Grid.Row="0"  HorizontalOptions="Start">
+                        <StackLayout.Margin>
+                            <OnIdiom x:TypeArguments="Thickness">
+                                <OnIdiom.Phone>20,25,0,10</OnIdiom.Phone>
+                                <OnIdiom.Tablet>20,65,0,40</OnIdiom.Tablet>
+                            </OnIdiom>
+                        </StackLayout.Margin>
+                        <!--部門標題與圖片-->
+                       
+                        <Label Text="部門"  Style="{StaticResource contenttitle}" >
+                            <Label.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="iOS" Value="0,0,0,0" />
+                                    <On Platform="Android" Value="-2,0,0,0" />
+                                </OnPlatform>
+                            </Label.Margin>
+                        </Label>
+                        
+
+                        <Entry Placeholder="" x:Name="department" PlaceholderColor="#555555" IsReadOnly="True" Style="{StaticResource contententry}" Grid.Row="1">
+                            <Entry.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="iOS" Value="0,0,10,5" />
+                                    <On Platform="Android" Value="-5,0,10,-10" />
+                                </OnPlatform>
+                            </Entry.Margin>
+                        </Entry>
                             <!--部門名稱(設置唯讀)-->
-                        </Frame>
-                        </StackLayout>
-                    <StackLayout Orientation="Horizontal"  Grid.Row="1" Margin="0,25,0,0" HorizontalOptions="Center">
-                            <!--職稱標題與圖片-->
-                        <Image Style="{StaticResource contentimage}" Source="person"/>
-                        <Label Text="職稱" Style="{StaticResource contenttitle}" ></Label>
-
-                            <Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">
-                            <Entry Placeholder="職員"  IsReadOnly="True" PlaceholderColor="Gray" Style="{StaticResource contententry}" Grid.Row="3"></Entry>
-                            <!--職稱名稱(設置唯讀)-->
-                        </Frame>
-                        </StackLayout>
-                    <StackLayout Orientation="Horizontal"  Grid.Row="2" Margin="0,25,0,0" HorizontalOptions="Center">
-                            <!--電話標題與圖片-->
-                        <Image Style="{StaticResource contentimage}" Source="phone"/>
-                        <Label Text="電話" Style="{StaticResource contenttitle}" ></Label>
-
-                            <Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">
-                            <Entry   Keyboard="Telephone" MaxLength="10" Style="{StaticResource contententry}" Grid.Row="5"></Entry>
-                            <!--電話輸入-->
-                        </Frame>
-                        </StackLayout>
-                    <StackLayout Orientation="Horizontal" Grid.Row="3" Margin="0,25,0,25" HorizontalOptions="Center">
-                            <!--Email標題與圖片-->
-                        <Image Style="{StaticResource contentimage}" Source="mail"/>
-                        <Label Text="郵件" Style="{StaticResource contenttitle}" ></Label>
-
-                            <Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">
-                            <Entry  Keyboard="Email" Style="{StaticResource contententry}" Grid.Row="7"></Entry>
-                            <!--Email輸入-->
-                        </Frame>
-                      </StackLayout>
+                        <BoxView Style="{StaticResource line}"/>
                     </StackLayout>
-     
+                    <StackLayout  Grid.Row="1"  HorizontalOptions="Start">
+                        <StackLayout.Margin>
+                            <OnIdiom x:TypeArguments="Thickness">
+                                <OnIdiom.Phone>20,0,0,10</OnIdiom.Phone>
+                                <OnIdiom.Tablet>20,0,0,40</OnIdiom.Tablet>
+                            </OnIdiom>
+                        </StackLayout.Margin>
+                        <!--職稱標題與圖片-->
+                       
+                        <Label Text="職稱" Style="{StaticResource contenttitle}" >
+                            <Label.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="iOS" Value="0,0,0,0" />
+                                    <On Platform="Android" Value="-2,0,0,0" />
+                                </OnPlatform>
+                            </Label.Margin>
+                        </Label>
+
+
+                        <Entry Placeholder="" x:Name="jobTitle" IsReadOnly="True" PlaceholderColor="#555555" Style="{StaticResource contententry}">
+                            <Entry.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="iOS" Value="0,0,10,5" />
+                                    <On Platform="Android" Value="-5,0,0,-10" />
+                                </OnPlatform>
+                            </Entry.Margin>
+                        </Entry>
+                            <!--職稱名稱(設置唯讀)-->
+                        <BoxView Style="{StaticResource line}"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="2"  HorizontalOptions="Start">
+                        <StackLayout.Margin>
+                            <OnIdiom x:TypeArguments="Thickness">
+                                <OnIdiom.Phone>20,0,0,1</OnIdiom.Phone>
+                                <OnIdiom.Tablet>20,0,0,30</OnIdiom.Tablet>
+                            </OnIdiom>
+                        </StackLayout.Margin>
+                        <!--電話標題與圖片-->
+
+                        <Label Text="電話" Style="{StaticResource contenttitle}" >
+                            <Label.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="iOS" Value="0,0,20,0" />
+                                    <On Platform="Android" Value="-2,0,0,0" />
+                                </OnPlatform>
+                            </Label.Margin>
+                        </Label>
+                        <!--<Frame CornerRadius="10" Padding="0" Margin="15,0,0,0" HorizontalOptions="Center" BackgroundColor="#F2F2F2" HasShadow="True">-->
+                        <Entry  Keyboard="Telephone" x:Name="phone"  Unfocused="Phone_Unfocused" MaxLength="10" Style="{StaticResource contententry}">
+                            <Entry.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="iOS" Value="0,0,10,5" />
+                                    <On Platform="Android" Value="-5,0,10,-10" />
+                                </OnPlatform>
+                            </Entry.Margin>
+                        </Entry>
+                        <BoxView Style="{StaticResource line}"/>
+                    </StackLayout>
+                    <Label x:Name="phoneValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="End" FontAttributes="Bold">
+                        <Label.Margin>
+                            <OnPlatform x:TypeArguments="Thickness">
+                                <On Platform="iOS" Value="0,6,20,0" />
+                                <On Platform="Android" Value="0,6,20,-20" />
+                            </OnPlatform>
+                        </Label.Margin>
+                    </Label>
+                    <StackLayout  Grid.Row="3"  HorizontalOptions="Start">
+                        <StackLayout.Margin>
+                            <OnIdiom x:TypeArguments="Thickness">
+                                <OnIdiom.Phone>20,0,0,1</OnIdiom.Phone>
+                                <OnIdiom.Tablet>20,0,0,40</OnIdiom.Tablet>
+                            </OnIdiom>
+                        </StackLayout.Margin>
+                        <!--Email標題與圖片-->
+
+                        <Label Text="郵件"  Style="{StaticResource contenttitle}" >
+                            <Label.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="iOS" Value="0,0,0,0" />
+                                    <On Platform="Android" Value="-2,0,0,0" />
+                                </OnPlatform>
+                            </Label.Margin>
+                        </Label>
+                        <Entry  Keyboard="Email" x:Name="email" Unfocused="Email_Unfocused" Style="{StaticResource contententry}">
+                            <Entry.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="iOS" Value="0,0,10,5" />
+                                    <On Platform="Android" Value="-5,0,10,-10" />
+                                </OnPlatform>
+                            </Entry.Margin>
+                        </Entry>
+                            <!--Email輸入-->
+                        <BoxView Style="{StaticResource line}" HeightRequest="1"/>
+                    </StackLayout>
+                    <Label x:Name="emailValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="End" FontAttributes="Bold" Margin="0,5,20,0"></Label>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </Grid>

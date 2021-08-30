@@ -14,17 +14,17 @@ namespace people_errandd.Views
         public GoOut()
         {
             InitializeComponent();
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#B4D3EA");
-            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.Black;
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#EDEEEF");
+            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex("#555555");
         }
-        private async void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+          void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         {
             try
             {
                 if (allowTap)
                 {
                     allowTap = false;
-                    await Navigation.PopAsync();
+                    Navigation.PopModalAsync(true);
                 }
             }
             finally
@@ -39,35 +39,77 @@ namespace people_errandd.Views
             {
                 if (allowTap)
                 {
+                    allowTap = false;
                     DateTime StartDateTime = startDatePicker.Date + startTimePicker.Time;
                     DateTime EndDateTime = endDatePicker.Date + endTimePicker.Time;
                     if (await goOut.PostGoOut(StartDateTime, EndDateTime, locationEntry.Text, reasonEntry.Text))
                     {
-                        await DisplayAlert("", "申請成功", "OK");
-                        await App.DataBase.SaveRecordAsync(new GoOutRecordModels
-                        {
-                            StartTime = StartDateTime,
-                            EndTime = EndDateTime,
-                            Location = locationEntry.Text,
-                            Reason = reasonEntry.Text,
-                        });
+                        await DisplayAlert("", "申請成功", "OK");                       
+                        locationEntry.Text = "";
+                        reasonEntry.Text = "";
                     }
                     else
                     {
-                        await DisplayAlert("Error", "錯誤" + StartDateTime, "OK");
-                        allowTap = false;
+                        await DisplayAlert("Error", "錯誤" + StartDateTime, "OK");                        
                     }
                 }
             }
             catch (Exception)
             {
                 await DisplayAlert("", "格式錯誤,請重新輸入", "OK");
-                throw;
             }
             finally
             {
                 allowTap = true;
             }
+        }
+        private void AlldaySwitch_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (AlldaySwitch.IsToggled == true)
+            {
+                startTimePicker.IsVisible = false;
+                endTimePicker.IsVisible = false;
+            }
+            else
+            {
+                startTimePicker.IsVisible = true;
+                endTimePicker.IsVisible = true;
+            }
+        }
+        private void VistitClient(object sender, CheckedChangedEventArgs e)
+        {
+            goouttype.Text = "拜訪客戶";
+           
+        }
+        private void VistitManuacturer(object sender, CheckedChangedEventArgs e)
+        {
+            goouttype.Text = "拜訪廠商";
+          
+        }
+        private void Demo(object sender, CheckedChangedEventArgs e)
+        {
+            goouttype.Text = "Demo";
+        
+        }
+        private void ParticipateActivity(object sender, CheckedChangedEventArgs e)
+        {
+            goouttype.Text = "參加活動";
+
+        }
+        private void Meeting(object sender, CheckedChangedEventArgs e)
+        {
+            goouttype.Text = "會議";
+           
+        }
+        private void CustomerService(object sender, CheckedChangedEventArgs e)
+        {
+            goouttype.Text = "客戶服務";
+         
+        }
+        private void Other(object sender, CheckedChangedEventArgs e)
+        {
+            goouttype.Text = "其他";
+           
         }
     }
 }

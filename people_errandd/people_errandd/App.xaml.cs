@@ -1,84 +1,93 @@
 ﻿using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using people_errandd.Views;
 using people_errandd.ViewModels;
-using people_errandd.Models;
-using System.Collections;
 using System.Globalization;
-using System.IO;
 using Xamarin.Essentials;
 using Plugin.SharedTransitions;
+using System.Threading.Tasks;
+
 
 namespace people_errandd
 {
+    public interface IAppSettingsHelper
+    {
+        void OpenAppSetting();
+    }
     public partial class App : Application
     {
-        static Database dataBase;
+        //static Database dataBase;
         Work work = new Work();
+        InformationViewModel information = new InformationViewModel();
+        geoLocation location = new geoLocation();
         public static double Latitude { get; set; }
         public static double Longitude { get; set; }
 
-        public static Database DataBase
-        {
-            get
-            {
-                if (dataBase == null)
-                {
-                    dataBase = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"));
-                }
-                return dataBase;
-            }
-        }
+        //public static Database DataBase
+        //{
+        //    get
+        //    {
+        //        if (dataBase == null)
+        //        {
+        //            dataBase = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Data.db3"));
+        //        }
+        //        return dataBase;
+        //    }
+        //}
         public App()
         {
             InitializeComponent();
             CultureInfo ChineseCulture = new CultureInfo("zh-TW");
             CultureInfo.DefaultThreadCurrentCulture = ChineseCulture;
+            Device.SetFlags(new[] { "Expander_Experimental" });
             MainPage = new SharedTransitionNavigationPage(new LoginPage());
+
             //NavigationPage
         }
 
-        protected override void OnStart()
+        protected async override void OnStart()
         {
-            GetLocation();
-            GetConnectivity("start");
-            bool hasKey = Preferences.ContainsKey("Login");
+            Console.WriteLine(Preferences.Get("companyHash", ""));
+            bool hasKey = Preferences.ContainsKey("HashAccount");
             if (hasKey)
             {
                 MainPage = new SharedTransitionNavigationPage(new MainPage());
+                await information.GetUserName(Preferences.Get("HashAccount", ""));
                 //NavigationPage
             }
-            
+            await GetLocation();
+            GetConnectivity("start");
+            var Seconds = TimeSpan.FromSeconds(20);
+            Device.StartTimer(Seconds, () => {               
+                GetLocation();
+                return true;
+            });
         }
         protected override void OnSleep()
         {
+
         }
         protected override void OnResume()
         {
-            GetLocation();
             GetConnectivity("resume");
             MessagingCenter.Send<App>(this, "Hi");
         }
-        private async void GetLocation()
+        private async Task GetLocation()
         {
             Preferences.Set("gpsText", "定位已開啟");
-            Page page = MainPage;
+            Preferences.Set("GpsButtonColor", "#5C76B1");
             try
             {
-                var request = new GeolocationRequest(GeolocationAccuracy.Medium);
-                var location = await Geolocation.GetLocationAsync(request);
-                Latitude = location.Latitude;
-                Longitude = location.Longitude;
+                (Latitude, Longitude) = await location.GetLocation("Back");
             }
             catch (Exception)
             {
-                Preferences.Set("gpsText", "定位未開啟");
+                Console.WriteLine("Error");
             }
         }
         private async void GetConnectivity(string status)
         {
-            Page page = MainPage;
+            Page page = MainPage;            
             try
             {
                 if (status == "start")
