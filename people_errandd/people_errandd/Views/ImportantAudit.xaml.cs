@@ -46,7 +46,7 @@ namespace people_errandd.Views
                 new Announcement { GoOutimage="goout2.png",StartTime="2021/08/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy" }
             };
         }
-
+        
         private void Button_Clicked(object sender, EventArgs e)
         {
 
