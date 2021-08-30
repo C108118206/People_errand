@@ -79,9 +79,9 @@ namespace people_errandd.Models
             try
             {
 
-                response = string.IsNullOrEmpty(employee_HashAccount) ?
-                    await client.GetAsync(basic_url + ControllerNameLeaveRecord + "GetEmployeeAllLeaveRecords/" + Preferences.Get("HashAccount", ""))
-                   : await client.GetAsync(basic_url + ControllerNameLeaveRecord + "GetEmployeeAllLeaveRecords/" + employee_HashAccount);
+                response = /*string.IsNullOrEmpty(employee_HashAccount) ?*/
+                    await client.GetAsync(basic_url + ControllerNameLeaveRecord + "GetEmployeeAllLeaveRecords/" + Preferences.Get("HashAccount", ""));
+                  // : await client.GetAsync(basic_url + ControllerNameLeaveRecord + "GetEmployeeAllLeaveRecords/" + employee_HashAccount);
                 var result = await response.Content.ReadAsStringAsync();
                 List<DayOff> DayOffRecords = JsonConvert.DeserializeObject<List<DayOff>>(result);                
                 DayOffRecords = DayOffRecords.Where(DayOff => DayOff.createdTime.ToString().Contains(date)).ToList();

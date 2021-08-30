@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SoAyRmEJbTjBNVaxmCGhs3FVJcSDCUvZG7bSk8pfTbZgU82cP+4mmjeQieo1yEnVEgmK6jdHPrnchs7p00GvYQ==",
+  "dgSpecHash": "lNx4CQrJZQDsSsTwHaIUwkb7GRYxLhWn6JTrINBy2+L7Y4N2pRmgp3iY5alYwalUwM7wkPplWFNrOILda+2+7Q==",
   "success": true,
-  "projectFilePath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
+  "projectFilePath": "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lonel\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\lonel\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

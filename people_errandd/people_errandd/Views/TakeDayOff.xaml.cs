@@ -155,7 +155,6 @@ namespace people_errandd.Views
 
         private void startTimePicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            minTime();
         }
     }
 }
