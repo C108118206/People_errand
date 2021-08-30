@@ -11,10 +11,25 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "sqlite-net-pcl/1.7.335": {
+      "Rg.Plugins.Popup/2.0.0.12": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.bundle_green": "2.0.3"
+          "Xamarin.Forms": "4.5.0.657"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
+        }
+      },
+      "sqlite-net-pcl/1.8.0-beta": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.bundle_green": "2.0.4"
         },
         "compile": {
           "lib/netstandard2.0/SQLite-net.dll": {}
@@ -23,11 +38,11 @@
           "lib/netstandard2.0/SQLite-net.dll": {}
         }
       },
-      "SQLitePCLRaw.bundle_green/2.0.3": {
+      "SQLitePCLRaw.bundle_green/2.0.4": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.0.3",
-          "SQLitePCLRaw.provider.dynamic_cdecl": "2.0.3"
+          "SQLitePCLRaw.core": "2.0.4",
+          "SQLitePCLRaw.provider.dynamic_cdecl": "2.0.4"
         },
         "compile": {
           "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {},
@@ -38,7 +53,7 @@
           "lib/Xamarin.iOS10/SQLitePCLRaw.nativelibrary.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.0.3": {
+      "SQLitePCLRaw.core/2.0.4": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -50,10 +65,10 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.provider.dynamic_cdecl/2.0.3": {
+      "SQLitePCLRaw.provider.dynamic_cdecl/2.0.4": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.0.3"
+          "SQLitePCLRaw.core": "2.0.4"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.provider.dynamic_cdecl.dll": {}
@@ -117,7 +132,25 @@
           "lib/xamarinios10/Plugin.Media.dll": {}
         }
       },
-      "Xamarin.Essentials/1.6.1": {
+      "Xamarin.CommunityToolkit/1.3.0-pre1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2083"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "build": {
+          "build/Xamarin.CommunityToolkit.targets": {}
+        }
+      },
+      "Xamarin.Essentials/1.7.0": {
         "type": "package",
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
@@ -134,7 +167,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/5.0.0.2012": {
+      "Xamarin.Forms/5.0.0.2083": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -257,6 +290,20 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Maps/5.0.0.2083": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2083"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll": {}
+        }
+      },
       "Xamarin.Plugin.SharedTransitions/2.4.0": {
         "type": "package",
         "dependencies": {
@@ -274,11 +321,14 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
+          "Rg.Plugins.Popup": "2.0.0.12",
           "Xam.Plugin.Media": "5.0.1",
-          "Xamarin.Essentials": "1.6.1",
-          "Xamarin.Forms": "5.0.0.2012",
+          "Xamarin.CommunityToolkit": "1.3.0-pre1",
+          "Xamarin.Essentials": "1.7.0",
+          "Xamarin.Forms": "5.0.0.2083",
+          "Xamarin.Forms.Maps": "5.0.0.2083",
           "Xamarin.Plugin.SharedTransitions": "2.4.0",
-          "sqlite-net-pcl": "1.7.335"
+          "sqlite-net-pcl": "1.8.0-beta"
         },
         "compile": {
           "bin/placeholder/people_errandd.dll": {}
@@ -298,10 +348,25 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "sqlite-net-pcl/1.7.335": {
+      "Rg.Plugins.Popup/2.0.0.12": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.bundle_green": "2.0.3"
+          "Xamarin.Forms": "4.5.0.657"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
+        }
+      },
+      "sqlite-net-pcl/1.8.0-beta": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.bundle_green": "2.0.4"
         },
         "compile": {
           "lib/netstandard2.0/SQLite-net.dll": {}
@@ -310,11 +375,11 @@
           "lib/netstandard2.0/SQLite-net.dll": {}
         }
       },
-      "SQLitePCLRaw.bundle_green/2.0.3": {
+      "SQLitePCLRaw.bundle_green/2.0.4": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.0.3",
-          "SQLitePCLRaw.provider.dynamic_cdecl": "2.0.3"
+          "SQLitePCLRaw.core": "2.0.4",
+          "SQLitePCLRaw.provider.dynamic_cdecl": "2.0.4"
         },
         "compile": {
           "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {},
@@ -325,7 +390,7 @@
           "lib/Xamarin.iOS10/SQLitePCLRaw.nativelibrary.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.0.3": {
+      "SQLitePCLRaw.core/2.0.4": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -337,10 +402,10 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.provider.dynamic_cdecl/2.0.3": {
+      "SQLitePCLRaw.provider.dynamic_cdecl/2.0.4": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.0.3"
+          "SQLitePCLRaw.core": "2.0.4"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.provider.dynamic_cdecl.dll": {}
@@ -404,7 +469,25 @@
           "lib/xamarinios10/Plugin.Media.dll": {}
         }
       },
-      "Xamarin.Essentials/1.6.1": {
+      "Xamarin.CommunityToolkit/1.3.0-pre1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2083"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "build": {
+          "build/Xamarin.CommunityToolkit.targets": {}
+        }
+      },
+      "Xamarin.Essentials/1.7.0": {
         "type": "package",
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
@@ -421,7 +504,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/5.0.0.2012": {
+      "Xamarin.Forms/5.0.0.2083": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -544,6 +627,20 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Maps/5.0.0.2083": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2083"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll": {}
+        }
+      },
       "Xamarin.Plugin.SharedTransitions/2.4.0": {
         "type": "package",
         "dependencies": {
@@ -561,11 +658,14 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
+          "Rg.Plugins.Popup": "2.0.0.12",
           "Xam.Plugin.Media": "5.0.1",
-          "Xamarin.Essentials": "1.6.1",
-          "Xamarin.Forms": "5.0.0.2012",
+          "Xamarin.CommunityToolkit": "1.3.0-pre1",
+          "Xamarin.Essentials": "1.7.0",
+          "Xamarin.Forms": "5.0.0.2083",
+          "Xamarin.Forms.Maps": "5.0.0.2083",
           "Xamarin.Plugin.SharedTransitions": "2.4.0",
-          "sqlite-net-pcl": "1.7.335"
+          "sqlite-net-pcl": "1.8.0-beta"
         },
         "compile": {
           "bin/placeholder/people_errandd.dll": {}
@@ -585,10 +685,25 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "sqlite-net-pcl/1.7.335": {
+      "Rg.Plugins.Popup/2.0.0.12": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.bundle_green": "2.0.3"
+          "Xamarin.Forms": "4.5.0.657"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
+        }
+      },
+      "sqlite-net-pcl/1.8.0-beta": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.bundle_green": "2.0.4"
         },
         "compile": {
           "lib/netstandard2.0/SQLite-net.dll": {}
@@ -597,11 +712,11 @@
           "lib/netstandard2.0/SQLite-net.dll": {}
         }
       },
-      "SQLitePCLRaw.bundle_green/2.0.3": {
+      "SQLitePCLRaw.bundle_green/2.0.4": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.0.3",
-          "SQLitePCLRaw.provider.dynamic_cdecl": "2.0.3"
+          "SQLitePCLRaw.core": "2.0.4",
+          "SQLitePCLRaw.provider.dynamic_cdecl": "2.0.4"
         },
         "compile": {
           "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {},
@@ -612,7 +727,7 @@
           "lib/Xamarin.iOS10/SQLitePCLRaw.nativelibrary.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.0.3": {
+      "SQLitePCLRaw.core/2.0.4": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -624,10 +739,10 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.provider.dynamic_cdecl/2.0.3": {
+      "SQLitePCLRaw.provider.dynamic_cdecl/2.0.4": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.0.3"
+          "SQLitePCLRaw.core": "2.0.4"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.provider.dynamic_cdecl.dll": {}
@@ -691,7 +806,25 @@
           "lib/xamarinios10/Plugin.Media.dll": {}
         }
       },
-      "Xamarin.Essentials/1.6.1": {
+      "Xamarin.CommunityToolkit/1.3.0-pre1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2083"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "build": {
+          "build/Xamarin.CommunityToolkit.targets": {}
+        }
+      },
+      "Xamarin.Essentials/1.7.0": {
         "type": "package",
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
@@ -708,7 +841,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/5.0.0.2012": {
+      "Xamarin.Forms/5.0.0.2083": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -831,6 +964,20 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Maps/5.0.0.2083": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2083"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll": {}
+        }
+      },
       "Xamarin.Plugin.SharedTransitions/2.4.0": {
         "type": "package",
         "dependencies": {
@@ -848,11 +995,14 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
+          "Rg.Plugins.Popup": "2.0.0.12",
           "Xam.Plugin.Media": "5.0.1",
-          "Xamarin.Essentials": "1.6.1",
-          "Xamarin.Forms": "5.0.0.2012",
+          "Xamarin.CommunityToolkit": "1.3.0-pre1",
+          "Xamarin.Essentials": "1.7.0",
+          "Xamarin.Forms": "5.0.0.2083",
+          "Xamarin.Forms.Maps": "5.0.0.2083",
           "Xamarin.Plugin.SharedTransitions": "2.4.0",
-          "sqlite-net-pcl": "1.7.335"
+          "sqlite-net-pcl": "1.8.0-beta"
         },
         "compile": {
           "bin/placeholder/people_errandd.dll": {}
@@ -872,10 +1022,25 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "sqlite-net-pcl/1.7.335": {
+      "Rg.Plugins.Popup/2.0.0.12": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.bundle_green": "2.0.3"
+          "Xamarin.Forms": "4.5.0.657"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
+        }
+      },
+      "sqlite-net-pcl/1.8.0-beta": {
+        "type": "package",
+        "dependencies": {
+          "SQLitePCLRaw.bundle_green": "2.0.4"
         },
         "compile": {
           "lib/netstandard2.0/SQLite-net.dll": {}
@@ -884,11 +1049,11 @@
           "lib/netstandard2.0/SQLite-net.dll": {}
         }
       },
-      "SQLitePCLRaw.bundle_green/2.0.3": {
+      "SQLitePCLRaw.bundle_green/2.0.4": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.0.3",
-          "SQLitePCLRaw.provider.dynamic_cdecl": "2.0.3"
+          "SQLitePCLRaw.core": "2.0.4",
+          "SQLitePCLRaw.provider.dynamic_cdecl": "2.0.4"
         },
         "compile": {
           "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {},
@@ -899,7 +1064,7 @@
           "lib/Xamarin.iOS10/SQLitePCLRaw.nativelibrary.dll": {}
         }
       },
-      "SQLitePCLRaw.core/2.0.3": {
+      "SQLitePCLRaw.core/2.0.4": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3"
@@ -911,10 +1076,10 @@
           "lib/netstandard2.0/SQLitePCLRaw.core.dll": {}
         }
       },
-      "SQLitePCLRaw.provider.dynamic_cdecl/2.0.3": {
+      "SQLitePCLRaw.provider.dynamic_cdecl/2.0.4": {
         "type": "package",
         "dependencies": {
-          "SQLitePCLRaw.core": "2.0.3"
+          "SQLitePCLRaw.core": "2.0.4"
         },
         "compile": {
           "lib/netstandard2.0/SQLitePCLRaw.provider.dynamic_cdecl.dll": {}
@@ -978,7 +1143,25 @@
           "lib/xamarinios10/Plugin.Media.dll": {}
         }
       },
-      "Xamarin.Essentials/1.6.1": {
+      "Xamarin.CommunityToolkit/1.3.0-pre1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2083"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
+        },
+        "build": {
+          "build/Xamarin.CommunityToolkit.targets": {}
+        }
+      },
+      "Xamarin.Essentials/1.7.0": {
         "type": "package",
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
@@ -995,7 +1178,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/5.0.0.2012": {
+      "Xamarin.Forms/5.0.0.2083": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1118,6 +1301,20 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "Xamarin.Forms.Maps/5.0.0.2083": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2083"
+        },
+        "compile": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
+          "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll": {}
+        }
+      },
       "Xamarin.Plugin.SharedTransitions/2.4.0": {
         "type": "package",
         "dependencies": {
@@ -1135,11 +1332,14 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
+          "Rg.Plugins.Popup": "2.0.0.12",
           "Xam.Plugin.Media": "5.0.1",
-          "Xamarin.Essentials": "1.6.1",
-          "Xamarin.Forms": "5.0.0.2012",
+          "Xamarin.CommunityToolkit": "1.3.0-pre1",
+          "Xamarin.Essentials": "1.7.0",
+          "Xamarin.Forms": "5.0.0.2083",
+          "Xamarin.Forms.Maps": "5.0.0.2083",
           "Xamarin.Plugin.SharedTransitions": "2.4.0",
-          "sqlite-net-pcl": "1.7.335"
+          "sqlite-net-pcl": "1.8.0-beta"
         },
         "compile": {
           "bin/placeholder/people_errandd.dll": {}
@@ -1178,24 +1378,73 @@
         "packageIcon.png"
       ]
     },
-    "sqlite-net-pcl/1.7.335": {
-      "sha512": "0A9YNPbp66aB+Sitxmh9lq1KDtD4+EBPfdtnYN8WenvQqh5dNgMxUV7kaEG6EXYTi4zBxcsDKpyYJzbViWJXtw==",
+    "Rg.Plugins.Popup/2.0.0.12": {
+      "sha512": "6Eb4bjZlIwJC39/8ae82G0BM3rC1FS7WwSU2eExRnXg1X0GIJ8yFmz89mYWrxRa7eCzsxI12cdG1/UqNQ3sYBA==",
       "type": "package",
-      "path": "sqlite-net-pcl/1.7.335",
+      "path": "rg.plugins.popup/2.0.0.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "icon.png",
+        "lib/monoandroid10.0/Rg.Plugins.Popup.dll",
+        "lib/monoandroid10.0/Rg.Plugins.Popup.pdb",
+        "lib/monoandroid10.0/Rg.Plugins.Popup.xml",
+        "lib/monoandroid90/Rg.Plugins.Popup.dll",
+        "lib/monoandroid90/Rg.Plugins.Popup.pdb",
+        "lib/monoandroid90/Rg.Plugins.Popup.xml",
+        "lib/net472/Rg.Plugins.Popup.dll",
+        "lib/net472/Rg.Plugins.Popup.pdb",
+        "lib/net472/Rg.Plugins.Popup.xml",
+        "lib/netcoreapp3.1/Rg.Plugins.Popup.dll",
+        "lib/netcoreapp3.1/Rg.Plugins.Popup.pdb",
+        "lib/netcoreapp3.1/Rg.Plugins.Popup.xml",
+        "lib/netstandard2.0/Rg.Plugins.Popup.dll",
+        "lib/netstandard2.0/Rg.Plugins.Popup.pdb",
+        "lib/netstandard2.0/Rg.Plugins.Popup.xml",
+        "lib/tizen80/Rg.Plugins.Popup.dll",
+        "lib/tizen80/Rg.Plugins.Popup.pdb",
+        "lib/tizen80/Rg.Plugins.Popup.xml",
+        "lib/uap10.0.17763/Rg.Plugins.Popup.dll",
+        "lib/uap10.0.17763/Rg.Plugins.Popup.pdb",
+        "lib/uap10.0.17763/Rg.Plugins.Popup.pri",
+        "lib/uap10.0.17763/Rg.Plugins.Popup.xml",
+        "lib/xamarinios10/Rg.Plugins.Popup.dll",
+        "lib/xamarinios10/Rg.Plugins.Popup.pdb",
+        "lib/xamarinios10/Rg.Plugins.Popup.xml",
+        "lib/xamarinmac20/Rg.Plugins.Popup.dll",
+        "lib/xamarinmac20/Rg.Plugins.Popup.pdb",
+        "lib/xamarinmac20/Rg.Plugins.Popup.xml",
+        "lib/xamarintvos10/Rg.Plugins.Popup.dll",
+        "lib/xamarintvos10/Rg.Plugins.Popup.pdb",
+        "lib/xamarintvos10/Rg.Plugins.Popup.xml",
+        "lib/xamarinwatchos10/Rg.Plugins.Popup.dll",
+        "lib/xamarinwatchos10/Rg.Plugins.Popup.pdb",
+        "lib/xamarinwatchos10/Rg.Plugins.Popup.xml",
+        "readme.txt",
+        "rg.plugins.popup.2.0.0.12.nupkg.sha512",
+        "rg.plugins.popup.nuspec"
+      ]
+    },
+    "sqlite-net-pcl/1.8.0-beta": {
+      "sha512": "fTkgcNJCrYCp8DRqYpq/WhPES0MrFPgxOirbGH1169JFNwxDJxpD0gM1QIwj7fFdv/tNp+jGKcqFX4pl5oGq6A==",
+      "type": "package",
+      "path": "sqlite-net-pcl/1.8.0-beta",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
+        "Logo-low.png",
         "lib/netstandard2.0/SQLite-net.dll",
         "lib/netstandard2.0/SQLite-net.xml",
-        "sqlite-net-pcl.1.7.335.nupkg.sha512",
+        "sqlite-net-pcl.1.8.0-beta.nupkg.sha512",
         "sqlite-net-pcl.nuspec"
       ]
     },
-    "SQLitePCLRaw.bundle_green/2.0.3": {
-      "sha512": "QgevRdYSy/MtL1TDdWuhoCH5cpBPZYUZd8h/WqgiLGXDa8e93Fv4/SE812SDCdjTb2+6s8SIwSLRq0z2bUeieg==",
+    "SQLitePCLRaw.bundle_green/2.0.4": {
+      "sha512": "ubFgOHDmtTcq2LU7Ss10yHnFVMm2rFVr65Ggi+Mh514KjGx4pal98P2zSvZtWf3wbtJw6G1InBgeozBtnpEfKQ==",
       "type": "package",
-      "path": "sqlitepclraw.bundle_green/2.0.3",
+      "path": "sqlitepclraw.bundle_green/2.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1203,34 +1452,34 @@
         "lib/Xamarin.iOS10/SQLitePCLRaw.nativelibrary.dll",
         "lib/net461/SQLitePCLRaw.batteries_v2.dll",
         "lib/net461/SQLitePCLRaw.nativelibrary.dll",
-        "lib/netcoreapp3.0/SQLitePCLRaw.batteries_v2.dll",
-        "lib/netcoreapp3.0/SQLitePCLRaw.nativelibrary.dll",
+        "lib/netcoreapp3.1/SQLitePCLRaw.batteries_v2.dll",
+        "lib/netcoreapp3.1/SQLitePCLRaw.nativelibrary.dll",
         "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll",
-        "sqlitepclraw.bundle_green.2.0.3.nupkg.sha512",
+        "sqlitepclraw.bundle_green.2.0.4.nupkg.sha512",
         "sqlitepclraw.bundle_green.nuspec"
       ]
     },
-    "SQLitePCLRaw.core/2.0.3": {
-      "sha512": "9LO3qT7tP+0qBAQxg/PGLHPcsKri4H2zIiiMEg+7EGrnBbuUnJg1tcfKiiqFtRp74kZSAV6N0ZeSGYiodqYnoQ==",
+    "SQLitePCLRaw.core/2.0.4": {
+      "sha512": "4XlDZpDAsboMD6qZQcz9AaKblKDUTVHF+8f3lvbP7QjoqSRr2Xc0Lm34IK2pjRIYnyFLhI3yOJ5YWfOiCid2yg==",
       "type": "package",
-      "path": "sqlitepclraw.core/2.0.3",
+      "path": "sqlitepclraw.core/2.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/SQLitePCLRaw.core.dll",
-        "sqlitepclraw.core.2.0.3.nupkg.sha512",
+        "sqlitepclraw.core.2.0.4.nupkg.sha512",
         "sqlitepclraw.core.nuspec"
       ]
     },
-    "SQLitePCLRaw.provider.dynamic_cdecl/2.0.3": {
-      "sha512": "RybfknbgdhjD+g38vyLA8Ram3CbivpZEUa+ZthtULROrEp81V8hxK30mIsAM9YFb3cOmnF/3hOIjhpVo9h72Lg==",
+    "SQLitePCLRaw.provider.dynamic_cdecl/2.0.4": {
+      "sha512": "AY6+vv/4ji1mCkLrS6HP/88rHT9YFKRyg3LUj8RyIk6imJMUFdQDiP8rK8gq0a/0FbqspLjK1t7rtKcr7FXRYA==",
       "type": "package",
-      "path": "sqlitepclraw.provider.dynamic_cdecl/2.0.3",
+      "path": "sqlitepclraw.provider.dynamic_cdecl/2.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/SQLitePCLRaw.provider.dynamic_cdecl.dll",
-        "sqlitepclraw.provider.dynamic_cdecl.2.0.3.nupkg.sha512",
+        "sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
         "sqlitepclraw.provider.dynamic_cdecl.nuspec"
       ]
     },
@@ -1392,10 +1641,52 @@
         "xam.plugin.media.nuspec"
       ]
     },
-    "Xamarin.Essentials/1.6.1": {
-      "sha512": "gG1Bp4j4bpJQ0dp9MeBJQJ9c8xULauIlhc7Cx5Qw4J2K1c+4Glq5n+gkb9Pm0UA/CevXVqLK5ZXmZkuYI52FgA==",
+    "Xamarin.CommunityToolkit/1.3.0-pre1": {
+      "sha512": "UdUiVXKm81mOKVyyY9vbGD6CFDMV2/fRhfj/VquqHsfCQOfdiS+VA7qFsnroNIbpe2XH8IGpnXbP5BXfE0w9lQ==",
       "type": "package",
-      "path": "xamarin.essentials/1.6.1",
+      "path": "xamarin.communitytoolkit/1.3.0-pre1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "build/PreserveXamarinCommunityToolkit.cs",
+        "build/Xamarin.CommunityToolkit.targets",
+        "icon.png",
+        "lib/monoandroid10.0/Xamarin.CommunityToolkit.dll",
+        "lib/monoandroid10.0/Xamarin.CommunityToolkit.xml",
+        "lib/net471/Xamarin.CommunityToolkit.dll",
+        "lib/net471/Xamarin.CommunityToolkit.xml",
+        "lib/net472/Xamarin.CommunityToolkit.dll",
+        "lib/net472/Xamarin.CommunityToolkit.xml",
+        "lib/netcoreapp3.1/Xamarin.CommunityToolkit.dll",
+        "lib/netcoreapp3.1/Xamarin.CommunityToolkit.xml",
+        "lib/netstandard1.0/Xamarin.CommunityToolkit.dll",
+        "lib/netstandard1.0/Xamarin.CommunityToolkit.xml",
+        "lib/netstandard2.0/Xamarin.CommunityToolkit.dll",
+        "lib/netstandard2.0/Xamarin.CommunityToolkit.xml",
+        "lib/netstandard2.1/Xamarin.CommunityToolkit.dll",
+        "lib/netstandard2.1/Xamarin.CommunityToolkit.xml",
+        "lib/tizen40/Xamarin.CommunityToolkit.dll",
+        "lib/tizen40/Xamarin.CommunityToolkit.xml",
+        "lib/uap10.0.19041/Xamarin.CommunityToolkit.dll",
+        "lib/uap10.0.19041/Xamarin.CommunityToolkit.pri",
+        "lib/uap10.0.19041/Xamarin.CommunityToolkit.xml",
+        "lib/xamarinios10/Xamarin.CommunityToolkit.dll",
+        "lib/xamarinios10/Xamarin.CommunityToolkit.xml",
+        "lib/xamarinmac20/Xamarin.CommunityToolkit.dll",
+        "lib/xamarinmac20/Xamarin.CommunityToolkit.xml",
+        "lib/xamarintvos10/Xamarin.CommunityToolkit.dll",
+        "lib/xamarintvos10/Xamarin.CommunityToolkit.xml",
+        "lib/xamarinwatchos10/Xamarin.CommunityToolkit.dll",
+        "lib/xamarinwatchos10/Xamarin.CommunityToolkit.xml",
+        "xamarin.communitytoolkit.1.3.0-pre1.nupkg.sha512",
+        "xamarin.communitytoolkit.nuspec"
+      ]
+    },
+    "Xamarin.Essentials/1.7.0": {
+      "sha512": "xfUJNxtfMC05VBej7fVUg6Zd9VwM2kqW9LH0tcrSA6IsBTl0EsIGkYUOz1BoKT2rseWW8o3kTi5WH/yZV4GgJw==",
+      "type": "package",
+      "path": "xamarin.essentials/1.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1404,15 +1695,6 @@
         "lib/monoandroid10.0/Xamarin.Essentials.dll",
         "lib/monoandroid10.0/Xamarin.Essentials.pdb",
         "lib/monoandroid10.0/Xamarin.Essentials.xml",
-        "lib/monoandroid80/Xamarin.Essentials.dll",
-        "lib/monoandroid80/Xamarin.Essentials.pdb",
-        "lib/monoandroid80/Xamarin.Essentials.xml",
-        "lib/monoandroid81/Xamarin.Essentials.dll",
-        "lib/monoandroid81/Xamarin.Essentials.pdb",
-        "lib/monoandroid81/Xamarin.Essentials.xml",
-        "lib/monoandroid90/Xamarin.Essentials.dll",
-        "lib/monoandroid90/Xamarin.Essentials.pdb",
-        "lib/monoandroid90/Xamarin.Essentials.xml",
         "lib/netstandard1.0/Xamarin.Essentials.dll",
         "lib/netstandard1.0/Xamarin.Essentials.pdb",
         "lib/netstandard1.0/Xamarin.Essentials.xml",
@@ -1439,14 +1721,14 @@
         "lib/xamarinwatchos10/Xamarin.Essentials.pdb",
         "lib/xamarinwatchos10/Xamarin.Essentials.xml",
         "readme.txt",
-        "xamarin.essentials.1.6.1.nupkg.sha512",
+        "xamarin.essentials.1.7.0.nupkg.sha512",
         "xamarin.essentials.nuspec"
       ]
     },
-    "Xamarin.Forms/5.0.0.2012": {
-      "sha512": "Rqc6xvWR/sf+Db5+qRCFmuYTWVp04QWRfwPto2/JHbShSy4Ed53Q2jpoFzsoloXkJA6saD236PlaWAhT6vI4gw==",
+    "Xamarin.Forms/5.0.0.2083": {
+      "sha512": "KDKdEIq8SA3zP8/qyJZ9isIsP1KRLvhxUohTM4GS4HOQkkK3FARvi/FJv91O4IJ/30ByJg88mBdKuiLMyL9Q+w==",
       "type": "package",
-      "path": "xamarin.forms/5.0.0.2012",
+      "path": "xamarin.forms/5.0.0.2083",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1655,8 +1937,42 @@
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.5.0.0.2012.nupkg.sha512",
+        "xamarin.forms.5.0.0.2083.nupkg.sha512",
         "xamarin.forms.nuspec"
+      ]
+    },
+    "Xamarin.Forms.Maps/5.0.0.2083": {
+      "sha512": "fCrJIl7t5NDJ9sOfV0Hu7nX4b9dHvaPiyJzZRwVVFMIbb3JarmS+GVDSx/oqeAom/HywV+UOFdenQNCqJ8x5CA==",
+      "type": "package",
+      "path": "xamarin.forms.maps/5.0.0.2083",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Assets/xamarin_128x128.png",
+        "lib/MonoAndroid10.0/Xamarin.Forms.Maps.Android.dll",
+        "lib/MonoAndroid10.0/Xamarin.Forms.Maps.dll",
+        "lib/MonoAndroid10.0/Xamarin.Forms.Maps.xml",
+        "lib/Xamarin.Mac/Xamarin.Forms.Maps.dll",
+        "lib/Xamarin.Mac/Xamarin.Forms.Maps.macOS.dll",
+        "lib/Xamarin.Mac/Xamarin.Forms.Maps.xml",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Maps.iOS.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Maps.xml",
+        "lib/netstandard1.0/Xamarin.Forms.Maps.dll",
+        "lib/netstandard1.0/Xamarin.Forms.Maps.xml",
+        "lib/netstandard2.0/Xamarin.Forms.Maps.dll",
+        "lib/netstandard2.0/Xamarin.Forms.Maps.xml",
+        "lib/tizen40/Xamarin.Forms.Maps.Tizen.dll",
+        "lib/tizen40/Xamarin.Forms.Maps.dll",
+        "lib/tizen40/Xamarin.Forms.Maps.xml",
+        "lib/uap10.0.14393/Xamarin.Forms.Maps.UWP.dll",
+        "lib/uap10.0.14393/Xamarin.Forms.Maps.UWP.pri",
+        "lib/uap10.0.14393/Xamarin.Forms.Maps.dll",
+        "lib/uap10.0.16299/Xamarin.Forms.Maps.UWP.dll",
+        "lib/uap10.0.16299/Xamarin.Forms.Maps.UWP.pri",
+        "lib/uap10.0.16299/Xamarin.Forms.Maps.dll",
+        "xamarin.forms.maps.5.0.0.2083.nupkg.sha512",
+        "xamarin.forms.maps.nuspec"
       ]
     },
     "Xamarin.Plugin.SharedTransitions/2.4.0": {
@@ -1687,10 +2003,12 @@
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
       "Xam.Plugin.Media >= 5.0.1",
-      "Xamarin.Essentials >= 1.6.1",
-      "Xamarin.Forms >= 5.0.0.2012",
+      "Xamarin.CommunityToolkit >= 1.3.0-pre1",
+      "Xamarin.Essentials >= 1.7.0",
+      "Xamarin.Forms >= 5.0.0.2083",
       "Xamarin.Plugin.SharedTransitions >= 2.4.0",
-      "people_errandd >= 1.0.0"
+      "people_errandd >= 1.0.0",
+      "sqlite-net-pcl >= 1.8.0-beta"
     ]
   },
   "packageFolders": {
@@ -1701,11 +2019,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\New folder (2)\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "projectUniqueName": "D:\\Punch\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
       "projectName": "people_errandd.iOS",
-      "projectPath": "D:\\New folder (2)\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "projectPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
       "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
-      "outputPath": "D:\\New folder (2)\\people_errandd\\people_errandd.iOS\\obj\\",
+      "outputPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1723,14 +2041,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.telerik.com/nuget": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\New folder (2)\\people_errandd\\people_errandd\\people_errandd.csproj": {
-              "projectPath": "D:\\New folder (2)\\people_errandd\\people_errandd\\people_errandd.csproj"
+            "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
             }
           }
         }
@@ -1743,17 +2060,25 @@
             "target": "Package",
             "version": "[5.0.1, )"
           },
+          "Xamarin.CommunityToolkit": {
+            "target": "Package",
+            "version": "[1.3.0-pre1, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
-            "version": "[1.6.1, )"
+            "version": "[1.7.0, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[5.0.0.2012, )"
+            "version": "[5.0.0.2083, )"
           },
           "Xamarin.Plugin.SharedTransitions": {
             "target": "Package",
             "version": "[2.4.0, )"
+          },
+          "sqlite-net-pcl": {
+            "target": "Package",
+            "version": "[1.8.0-beta, )"
           }
         }
       }

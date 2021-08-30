@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using people_errandd.Models;
 using people_errandd.Views;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace people_errandd.ViewModels
 {
     class TakeDayOffViewModel : HttpResponse
     {
-        public async Task<bool> PostDayOffRecord(DateTime _StartTime, DateTime _EndTime, int _leave_type_id, string _reason)
+        public async Task<bool> PostDayOff(DateTime _StartTime, DateTime _EndTime, int _leave_type_id, string _reason)
         {
             List<DayOff> dayOffs = new List<DayOff>();
             DayOff dayOff = new DayOff()
             {
-                hashaccount = _HashAccount,
+                hashAccount = Preferences.Get("HashAccount", ""),
                 Leavetypeid = _leave_type_id,
-                reason = _reason,
+                Reason = _reason,
                 StartDate = _StartTime,
                 EndDate = _EndTime,
             };
@@ -43,5 +44,5 @@ namespace people_errandd.ViewModels
             return false;
         }
     }
-    
+
 }
