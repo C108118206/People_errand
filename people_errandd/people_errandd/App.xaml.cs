@@ -53,10 +53,9 @@ namespace people_errandd
             {
                 MainPage = new SharedTransitionNavigationPage(new MainPage());
                 await information.GetUserName(Preferences.Get("HashAccount", ""));
-                (Latitude, Longitude) = await location.GetLocation("Back");
+                await GetLocation();
+                GetConnectivity("start");
             }
-            await GetLocation();
-            GetConnectivity("start");
             var Seconds = TimeSpan.FromSeconds(8);
             Device.StartTimer(Seconds, () => {               
                 GetLocation();

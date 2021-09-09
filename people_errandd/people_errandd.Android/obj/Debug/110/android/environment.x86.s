@@ -2,8 +2,8 @@
 	.section	.rodata.env.str.1,"aMS",@progbits,1
 	.type	.L.env.str.1, @object
 .L.env.str.1:
-	.asciz	"com.companyname.people_errandd"
-	.size	.L.env.str.1, 31
+	.asciz	"com.esst.PeopleErrand"
+	.size	.L.env.str.1, 22
 	.section	.data.application_config,"aw",@progbits
 	.type	application_config, @object
 	.p2align	2
@@ -71,7 +71,7 @@ mono_aot_mode_name:
 	.section	.rodata.env.str.8,"aMS",@progbits,1
 	.type	.L.env.str.8, @object
 .L.env.str.8:
-	.asciz	"0c08a90c-dad9-40ee-bd89-7af23844fc86"
+	.asciz	"4fd30a47-5f32-4032-accb-3c7f83fe9070"
 	.size	.L.env.str.8, 37
 	.section	.rodata.env.str.9,"aMS",@progbits,1
 	.type	.L.env.str.9, @object

@@ -27,6 +27,7 @@ namespace people_errandd.Views
             RecordTypeId = 1;
             SetDateButton();
             DateButtonSwitch();
+            RecordTitle.Text = "打卡紀錄";
             Worklist.ItemsSource = await Records.GetWorkRecord(dt.ToString("yyyy/M/d"));
         }
         public Record()

@@ -1,3 +1,11 @@
+D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
+D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
+D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
+D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\coremlc\_PartialAppManifest.items
+D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\coremlc\_BundleResourceWithLogicalName.items
+D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\optimized\
+D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\people_errandd.iOS.csprojAssemblyReference.cache
+D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\people_errandd.iOS.csproj.CoreCompileInputs.cache
 D:\Punch\people_errand\people_errandd\people_errandd.iOS\bin\iPhone\Debug\people_errandd.iOS.exe
 D:\Punch\people_errand\people_errandd\people_errandd.iOS\bin\iPhone\Debug\people_errandd.iOS.pdb
 D:\Punch\people_errand\people_errandd\people_errandd.iOS\bin\iPhone\Debug\Newtonsoft.Json.dll
@@ -62,14 +70,6 @@ D:\Punch\people_errand\people_errandd\people_errandd.iOS\bin\iPhone\Debug\Xamari
 D:\Punch\people_errand\people_errandd\people_errandd.iOS\bin\iPhone\Debug\Plugin.SharedTransitions.dll
 D:\Punch\people_errand\people_errandd\people_errandd.iOS\bin\iPhone\Debug\people_errandd.dll
 D:\Punch\people_errand\people_errandd\people_errandd.iOS\bin\iPhone\Debug\people_errandd.pdb
-D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
-D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
-D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
-D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\coremlc\_PartialAppManifest.items
-D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\coremlc\_BundleResourceWithLogicalName.items
-D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\optimized\
-D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\people_errandd.iOS.csprojAssemblyReference.cache
-D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\people_errandd.iOS.csproj.CoreCompileInputs.cache
 D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\people_errandd.iOS.csproj.CopyComplete
 D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\people_errandd.iOS.exe
 D:\Punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhone\Debug\people_errandd.iOS.pdb

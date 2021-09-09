@@ -82,6 +82,7 @@ namespace people_errandd.Models
                 response = await client.PostAsync(basic_url + ControllerNameInformation + "add_information", content);
                 Preferences.Set("UserName", _Name);
                 Preferences.Set("email", _Email);
+                
                 if (response.StatusCode.ToString() == "OK")
                 {
                     return true;

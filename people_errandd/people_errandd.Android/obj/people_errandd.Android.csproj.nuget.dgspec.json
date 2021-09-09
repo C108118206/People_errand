@@ -10,7 +10,7 @@
         "projectUniqueName": "D:\\Punch\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
         "projectName": "people_errandd.Android",
         "projectPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
-        "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\likem\\.nuget\\packages\\",
         "outputPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
@@ -19,7 +19,7 @@
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\lonel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\likem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -78,7 +78,7 @@
         "projectUniqueName": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
         "projectName": "people_errandd",
         "projectPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
-        "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\likem\\.nuget\\packages\\",
         "outputPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
@@ -86,7 +86,7 @@
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\lonel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\likem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -167,7 +167,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.206\\RuntimeIdentifierGraph.json"
         }
       }
     }
