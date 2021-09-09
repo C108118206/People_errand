@@ -39,7 +39,6 @@ namespace people_errandd.ViewModels
             catch (Exception)
             {
                 return false;
-                throw;
             }
             return false;
         }

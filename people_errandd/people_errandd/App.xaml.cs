@@ -57,7 +57,7 @@ namespace people_errandd
             }
             await GetLocation();
             GetConnectivity("start");
-            var Seconds = TimeSpan.FromSeconds(15);
+            var Seconds = TimeSpan.FromSeconds(8);
             Device.StartTimer(Seconds, () => {               
                 GetLocation();
                 return true;
@@ -74,8 +74,6 @@ namespace people_errandd
         }
         private async Task GetLocation()
         {
-            Preferences.Set("gpsText", "定位已開啟");
-            Preferences.Set("GpsButtonColor", "#5C76B1");
             try
             {
                 (Latitude, Longitude) = await location.GetLocation("Back");

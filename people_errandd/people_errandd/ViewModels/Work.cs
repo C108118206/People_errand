@@ -48,7 +48,7 @@ namespace people_errandd.ViewModels
                 return true;
             }
             return false;
-        }     
+        }    
         
     }
 }

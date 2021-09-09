@@ -17,12 +17,12 @@ namespace people_errandd.ViewModels
     {
         public CancellationTokenSource cts;
         Geocoder geoCoder = new Geocoder();
+       // MainPageViewModel main = new MainPageViewModel();
         public static string LocationNowText { get; set; }       
         public async Task<(double, double)> GetLocation(string status)
         {
             try
             {
-
                 if (status != "Back")
                 {
                     var location = await Geolocation.GetLastKnownLocationAsync();
@@ -30,21 +30,24 @@ namespace people_errandd.ViewModels
                 }
                 else
                 {
-
                     var location = await Geolocation.GetLocationAsync(new GeolocationRequest()
                     {
                         DesiredAccuracy = GeolocationAccuracy.High,
                         Timeout = TimeSpan.FromSeconds(30)
                     });
                     await GetLocationText(location.Latitude, location.Longitude);
+                    Preferences.Set("GpsText", "定位已開啟");
+                    Preferences.Set("GpsButtonColor", "#5C76B1");
+                    
                     return (location.Latitude, location.Longitude);
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
-                Preferences.Set("gpsText", "定位未開啟");
+                Preferences.Set("GpsText", "定位未開啟");
                 Preferences.Set("GpsButtonColor", "#CA4848");
+                LocationNowText = "";
             }
             //try
             //{
@@ -101,9 +104,14 @@ namespace people_errandd.ViewModels
         {            
             Position position = new Position(X,Y);
             IEnumerable<string> possibleAddresses = await geoCoder.GetAddressesForPositionAsync(position);
-            LocationNowText = await GetTraslateText(possibleAddresses.FirstOrDefault()) ?
-            possibleAddresses.FirstOrDefault().Substring(5):
-            possibleAddresses.FirstOrDefault();                    
+            if(DeviceInfo.Platform == DevicePlatform.Android && await GetTraslateText(possibleAddresses.FirstOrDefault()))
+            {
+                LocationNowText = possibleAddresses.FirstOrDefault().Substring(5);
+            }
+            else
+            {
+                LocationNowText = possibleAddresses.FirstOrDefault();
+            }
         }
         public async Task<bool> GetTraslateText(string _Text)
         {

@@ -2019,19 +2019,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "D:\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
-      "projectName": "people_errandd.iOS",
-      "projectPath": "D:\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
-      "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
-      "outputPath": "D:\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\",
-=======
       "projectUniqueName": "D:\\Punch\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
       "projectName": "people_errandd.iOS",
       "projectPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
       "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
       "outputPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\",
->>>>>>> 7199a8856a655de44f6677afb38782d14c650947
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2054,13 +2046,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-<<<<<<< HEAD
-            "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
-              "projectPath": "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
-=======
             "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
               "projectPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
->>>>>>> 7199a8856a655de44f6677afb38782d14c650947
             }
           }
         }
@@ -2107,5 +2094,13 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "讀取快取檔案 D:\\Punch\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\project.nuget.cache 時發生問題: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

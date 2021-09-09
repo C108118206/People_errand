@@ -1,19 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {}
-  },
-  "projects": {
-    "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
-        "projectName": "people_errandd",
-        "projectPath": "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
-        "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
-        "outputPath": "D:\\people_errand\\people_errandd\\people_errandd\\obj\\",
-=======
     "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {}
   },
   "projects": {
@@ -25,7 +12,6 @@
         "projectPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
         "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
         "outputPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\obj\\",
->>>>>>> 7199a8856a655de44f6677afb38782d14c650947
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -34,8 +34,6 @@ namespace people_errandd.Views
         protected  override void OnAppearing()
         {
             base.OnAppearing();
-            GPSText.Text = Preferences.Get("gpsText", "定位未開啟");
-            GPSText.BackgroundColor = Color.FromHex(Preferences.Get("GpsButtonColor", "#CA4848"));
             workOn.IsEnabled = Preferences.Get("WorkOnButtonStauts", workOn.IsEnabled = true);
             workOff.IsEnabled = Preferences.Get("WorkOffButtonStauts", workOff.IsEnabled = false);
             workOn.Opacity = Preferences.Get("WorkOnButtonView", workOn.Opacity = 1);
@@ -43,8 +41,8 @@ namespace people_errandd.Views
             workOnText.Opacity = Preferences.Get("WorkOnText", workOnText.Opacity = 1);
             workOffText.Opacity = Preferences.Get("WorkOffText", workOffText.Opacity = 0.2);
             username.Text = Preferences.Get("UserName", "");
-            Preferences.Get("WorkTimeTitle","");
-            Preferences.Get("WorkTime","");
+            worktimetitle.Text = Preferences.Get("WorkTimeTitle","");
+            worktime.Text = Preferences.Get("WorkTime","");
         }
         protected override void OnDisappearing()
         {
@@ -63,19 +61,12 @@ namespace people_errandd.Views
                     if (await Work.GetWorkType() == 2 || await Work.GetWorkType() == 0)
                     {
                         (double x, double y) = await geoLocation.GetLocation("WorkOn");
-                        Console.WriteLine(x + "\n" + y);
                         if (await geoLocation.GetCurrentLocation(x, y) == true)
                         {
                             if (await Work.PostWork(1, x, y, true))
                             {
-                                await DisplayAlert("", "上班打卡成功", "確定");
-                                DateTime thisDay = DateTime.Now;
-                                 
+                                await DisplayAlert("", "上班打卡成功", "確定");                           
                                 WorkOnSet();
-                            }
-                            else
-                            {
-                                await DisplayAlert("Error", "發生錯誤", "確定");
                             }
                         }
                         else
@@ -85,7 +76,7 @@ namespace people_errandd.Views
                     }
                     else if (await Work.GetWorkType() == 500)
                     {
-                        await DisplayAlert("Error", "錯誤", "確定");
+                        await DisplayAlert("Error", "網路錯誤", "確定");
                     }
                     else
                     {
@@ -96,7 +87,6 @@ namespace people_errandd.Views
             catch (Exception)
             {
                 await DisplayAlert("", "錯誤", "確定");
-                throw;
             }
             finally
             {
@@ -142,8 +132,7 @@ namespace people_errandd.Views
             }
             catch (Exception)
             {
-                await DisplayAlert("", "錯誤", "");
-                throw;
+                await DisplayAlert("", "錯誤", "確定");
             }
             finally
             {
@@ -193,7 +182,6 @@ namespace people_errandd.Views
             {
                 allowTap = true;
             }
-
         }
         private async void GoOutButton(object sender, EventArgs e)
         {
@@ -261,10 +249,6 @@ namespace people_errandd.Views
                 allowTap = true;
             }
         }
-
-
     }
-
-
 }
 

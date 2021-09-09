@@ -13,7 +13,7 @@ namespace people_errandd.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         DateTime dateTime;
-        string LocationNowText;        
+        string LocationNowText,_GpsText,_GpsTextColor;        
 
         public MainPageViewModel()
         {
@@ -22,6 +22,8 @@ namespace people_errandd.ViewModels
             {
                 LocationText = geoLocation.LocationNowText;
                 DateTime = DateTime.Now;
+                GpsText = Preferences.Get("GpsText", "");
+                GpsTextColor = Preferences.Get("GpsButtonColor", "");
                 return true;
             });            
             Console.WriteLine(LocationText);           
@@ -37,10 +39,41 @@ namespace people_errandd.ViewModels
                 if (dateTime != value)
                 {
                     dateTime = value;                   
-                        OnPropertyChanged();                 
+                    OnPropertyChanged();                 
                 }
             }
         }
+        public  string GpsText
+        {
+            get
+            {
+                return _GpsText;
+            }
+            set
+            {
+                if (_GpsText != value)
+                {
+                    _GpsText = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+            public string GpsTextColor
+        {
+            get
+            {
+                return _GpsTextColor;
+            }
+            set
+            {
+                if (_GpsTextColor != value)
+                {
+                    _GpsTextColor = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
         public string LocationText
         {
             private set
@@ -48,8 +81,6 @@ namespace people_errandd.ViewModels
                 if(LocationNowText != value)
                 {
                     LocationNowText = value;
-
-
                     OnPropertyChanged();
                 }
 

@@ -107,6 +107,7 @@ namespace people_errandd.Views
             {
                 if (allowTap)
                 {
+                    allowTap = false;
                     DateTime StartDateTime = startDatePicker.Date + startTimePicker.Time;
                     DateTime EndDateTime = endDatePicker.Date + endTimePicker.Time;
                     if (await takeDayOff.PostDayOff(StartDateTime, EndDateTime, LeaveTypeId, reason.Text))
@@ -117,14 +118,10 @@ namespace people_errandd.Views
                     }
                     else
                     {
-                        await DisplayAlert("Error", "請選擇假別" , "OK");
-                        allowTap = false;
+                        await DisplayAlert("", "格式錯誤,請重新輸入", "OK");
+                        
                     }
                 }
-            }
-            catch (Exception)
-            {
-                await DisplayAlert("", "格式錯誤,請重新輸入", "OK");
             }
             finally
             {
