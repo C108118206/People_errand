@@ -218,14 +218,12 @@
                                     </StackLayout>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal"  Margin="0,10,0,10">
-                                
-                                        <Label 
+
+                                    <Label 
                                              
                                              Style="{StaticResource gooutanddayofftitle}"
                                             Text="請假假別 :"
                                            />
-                                    
-                                    
                                     <Label
                                              
                                             Style="{StaticResource gooutanddayoffcontent}"

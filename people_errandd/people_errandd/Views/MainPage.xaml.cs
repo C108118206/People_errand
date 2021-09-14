@@ -21,8 +21,6 @@ namespace people_errandd.Views
         private readonly Work Work = new Work();
         bool allowTap = true;
         private readonly geoLocation geoLocation = new geoLocation();
-
-
         public MainPage()
         {
             Application.Current.UserAppTheme = OSAppTheme.Light;
@@ -31,9 +29,11 @@ namespace people_errandd.Views
         }
 
 
-        protected  override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
+            MainPageViewModel mp = new MainPageViewModel();
+            await mp.GetAudit();
             workOn.IsEnabled = Preferences.Get("WorkOnButtonStauts", workOn.IsEnabled = true);
             workOff.IsEnabled = Preferences.Get("WorkOffButtonStauts", workOff.IsEnabled = false);
             workOn.Opacity = Preferences.Get("WorkOnButtonView", workOn.Opacity = 1);

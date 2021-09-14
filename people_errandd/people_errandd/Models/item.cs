@@ -87,7 +87,9 @@ namespace people_errandd.Models
         public string Name { get; set; }
         public string RecordType { get; set; }
         public string Time { get; set; }
-
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
     }
+    
 
 }
