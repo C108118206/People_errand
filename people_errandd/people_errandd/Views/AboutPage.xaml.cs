@@ -153,7 +153,6 @@ namespace people_errandd.Views
                 else
                 {
                     emailValidator.Text = "";
-
                 }
             }       
         }

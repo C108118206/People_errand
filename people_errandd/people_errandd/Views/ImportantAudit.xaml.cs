@@ -4,7 +4,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using people_errandd.ViewModels;
+using people_errandd.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,43 +19,47 @@ namespace people_errandd.Views
             InitializeComponent();
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#EDEEEF");
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex("#555555");
-            MyAnnouncements = GetAnnouncements();
-            this.BindingContext = this;
 
         }
-          public class Announcement
+        protected async override void OnAppearing()
         {
-            public string GoOutimage { get; set; }
-            public string StartTime { get; set; }
-            public string Applicant { get; set; }
-            public string EndTime { get; set; }
-            public string Location { get; set; }
-            public string Reason { get; set; }
-
+            base.OnAppearing();
+            Audits.ItemsSource = await MainPageViewModel.GetAudit();
         }
 
-
-        public ObservableCollection<Announcement> MyAnnouncements { get; set; }
-        private ObservableCollection<Announcement> GetAnnouncements()
+        private async void Review(object sender, EventArgs e)
         {
-            return new ObservableCollection<Announcement>
+            Console.WriteLine(((Button)sender).CommandParameter);
+            int id = Convert.ToInt32(((Button)sender).CommandParameter);
+            if (await Records.ReviewLeaveRecord(id, true))
             {
-
-                new Announcement { GoOutimage="goout2.png",StartTime="2021/08/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy"},
-                new Announcement { GoOutimage="goout2.png",StartTime="2021/08/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy"},
-                new Announcement { GoOutimage="goout2.png",StartTime="2021/08/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy"},
-                new Announcement { GoOutimage="goout2.png",StartTime="2021/08/18 上午09:10",Applicant="SDD", EndTime = "2021/05/18 上午09:10", Location = "school",  Reason = "busy" }
-            };
-        }
-        
-        private void Button_Clicked(object sender, EventArgs e)
-        {
+                await DisplayAlert("", "核准審核成功", "確認");
+                Audits.ItemsSource = await MainPageViewModel.GetAudit();
+            }
+            else
+            {
+                await Error();
+            }
 
         }
-
-        private void Button_Clicked_1(object sender, EventArgs e)
+        private async void Reject(object sender, EventArgs e)
         {
-
+            Console.WriteLine(((Button)sender).CommandParameter);
+            int id = Convert.ToInt32(((Button)sender).CommandParameter);
+            if (await Records.ReviewLeaveRecord(id, false))
+            {
+                await DisplayAlert("", "拒絕審核成功", "確認");
+                Audits.ItemsSource = await MainPageViewModel.GetAudit();
+            }
+            else
+            {
+                await Error();
+            }
+        }
+        async Task Error()
+        {
+            await DisplayAlert("", "錯誤，請重新瀏覽此頁面", "確認");
+            Audits.ItemsSource = await MainPageViewModel.GetAudit();
         }
     }
 }

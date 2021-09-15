@@ -43,6 +43,7 @@ namespace people_errandd.Models
     {
         public string hashAccount { get; set; }
         public int Leavetypeid { get; set; }
+        public string LeaveType { get; set; }
         public string Reason { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
@@ -84,11 +85,15 @@ namespace people_errandd.Models
      }
     public class Audit
     {
+        public int LeaveRecordId { get; set; }
+        public int LeaveRecordsId { get; set; }
         public string Name { get; set; }
-        public string RecordType { get; set; }
+        public string LeaveType { get; set; }
         public string Time { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public string Reason { get; set; }
+        public  bool? Review { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
     }
     
 

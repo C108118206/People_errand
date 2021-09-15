@@ -15,6 +15,31 @@ namespace people_errandd.Models
 {
     public class Records : HttpResponse
     {
+        public static async Task<bool> ReviewLeaveRecord(int id, bool review)
+        {
+            List<Audit> reviewLeaveRecords = new List<Audit>();
+            Audit reviewLeave = new Audit()
+            {
+                LeaveRecordsId = id,
+                Review = review
+            };
+            reviewLeaveRecords.Add(reviewLeave);
+            
+            string jsonData = JsonConvert.SerializeObject(reviewLeaveRecords);
+            try
+            {
+                HttpContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                response = await client.PutAsync(basic_url + ControllerNameLeaveRecord + "review_leaveRecord", content);
+                if (response.StatusCode.ToString().Equals("OK"))
+                {
+                    return true;
+                }
+            }
+            catch (Exception)
+            {              
+            }
+            return false;
+        }
         public async Task<List<work>> GetWorkRecord(string date )
         {
             try
@@ -83,7 +108,39 @@ namespace people_errandd.Models
                     await client.GetAsync(basic_url + ControllerNameLeaveRecord + "GetEmployeeAllLeaveRecords/" + Preferences.Get("HashAccount", ""));
                   // : await client.GetAsync(basic_url + ControllerNameLeaveRecord + "GetEmployeeAllLeaveRecords/" + employee_HashAccount);
                 var result = await response.Content.ReadAsStringAsync();
-                List<DayOff> DayOffRecords = JsonConvert.DeserializeObject<List<DayOff>>(result);                
+                List<DayOff> DayOffRecords = JsonConvert.DeserializeObject<List<DayOff>>(result);
+                int i = 0;
+                foreach(var rs in DayOffRecords)
+                {
+                    switch (rs.Leavetypeid)
+                    {
+                        case 1:
+                            DayOffRecords[i].LeaveType = "事假";
+                            break;
+                        case 2:
+                            DayOffRecords[i].LeaveType = "病假";
+                            break;
+                        case 3:
+                            DayOffRecords[i].LeaveType = "喪假";
+                            break;
+                        case 4:
+                            DayOffRecords[i].LeaveType = "產假";
+                            break;
+                        case 5:
+                            DayOffRecords[i].LeaveType = "生理假";
+                            break;
+                        case 6:
+                            DayOffRecords[i].LeaveType = "流產假";
+                            break;
+                        case 7:
+                            DayOffRecords[i].LeaveType = "產前假";
+                            break;
+                        case 8:
+                            DayOffRecords[i].LeaveType = "陪產假";
+                            break;
+                    }
+                    i++;
+                }              
                 DayOffRecords = DayOffRecords.Where(DayOff => DayOff.createdTime.ToString().Contains(date)).ToList();
                 return DayOffRecords;
             }

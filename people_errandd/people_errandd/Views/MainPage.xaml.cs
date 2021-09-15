@@ -31,9 +31,10 @@ namespace people_errandd.Views
 
         protected async override void OnAppearing()
         {
-            base.OnAppearing();
-            MainPageViewModel mp = new MainPageViewModel();
-            await mp.GetAudit();
+            base.OnAppearing();          
+            Audits.ItemsSource=await MainPageViewModel.GetAudit();
+            Audits.IsVisible = Audits.ItemsSource != null;
+            AuditText.IsVisible = Audits.IsVisible;
             workOn.IsEnabled = Preferences.Get("WorkOnButtonStauts", workOn.IsEnabled = true);
             workOff.IsEnabled = Preferences.Get("WorkOffButtonStauts", workOff.IsEnabled = false);
             workOn.Opacity = Preferences.Get("WorkOnButtonView", workOn.Opacity = 1);
@@ -42,7 +43,7 @@ namespace people_errandd.Views
             workOffText.Opacity = Preferences.Get("WorkOffText", workOffText.Opacity = 0.2);
             username.Text = Preferences.Get("UserName", "");
             worktimetitle.Text = Preferences.Get("WorkTimeTitle","");
-            worktime.Text = Preferences.Get("WorkTime","");
+            worktime.Text = Preferences.Get("WorkTime","");         
         }
         protected override void OnDisappearing()
         {

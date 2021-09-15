@@ -3,9 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:people_errandd.ViewModels"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:Viewmodels="clr-namespace:people_errandd.ViewModels"
              ios:Page.UseSafeArea="true" 
              BackgroundColor="#EDEEEF"
              x:Class="people_errandd.Views.ImportantAudit">
+
     <NavigationPage.TitleView>
         <Label Text="重要審核" TextColor="#555555" FontSize="20" HorizontalTextAlignment="Center"  FontAttributes="Bold"  VerticalTextAlignment="Center" Margin="-15,0,0,0"></Label>
     </NavigationPage.TitleView>
@@ -15,6 +17,7 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
+            
             <Style x:Key="datetitle" TargetType="Label">
                 <Setter Property="FontSize" Value="15" />
                 <Setter Property="Margin" Value="12,0,0,0" />
@@ -83,12 +86,14 @@
     </ContentPage.Resources>
     <StackLayout>
         <Label Text="請假申請" FontSize="20" TextColor="#555555" Margin="20" FontAttributes="Bold"></Label>
+
         <ImageButton   Grid.Row="0" Grid.Column="2"  Style="{StaticResource select}" Margin="0,-60,15,0"></ImageButton>
-        <CollectionView Grid.Row="1" Style="{StaticResource Collection}" ItemsSource="{Binding MyAnnouncements}">
+        <CollectionView Grid.Row="1" Style="{StaticResource Collection}" x:Name="Audits" >
+
             <CollectionView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
                 <DataTemplate  >
                     <Grid RowSpacing="0">
                         <Grid.RowDefinitions>
@@ -108,9 +113,10 @@
                                 </OnPlatform>
                             </Frame.HasShadow>
                             <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Padding="10,10,10,0">
-                                <Image HeightRequest="50" Source="{Binding GoOutimage}"   Margin="-18,-145,0,0"  Grid.Row="0"  Grid.Column="0"/>
-                                <StackLayout  Grid.Row="0"  Grid.Column="1">
+                                <Image HeightRequest="50" Source="goout2.png"   Margin="-20,-50,30,0"  Grid.Row="0"  Grid.Column="0"/>
+                                <StackLayout  Grid.Row="0"  Grid.Column="1" >
                                     <StackLayout Orientation="Horizontal"   Margin="0,5,0,5">
+                                        <Label x:Name="RecordId" Text="{Binding LeaveRecordId}" IsVisible="false"/>
                                         <Label 
                                            
                                            Style="{StaticResource gooutanddayofftitle}"
@@ -118,7 +124,7 @@
                                             />
                                         <Label
                                              Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding StartTime}"
+                                            Text="{Binding StartDate}"
                                             TextColor="#5C76B1"
                                              />
                                     </StackLayout>
@@ -131,7 +137,7 @@
 
                                         <Label
                                              Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding EndTime}"
+                                            Text="{Binding EndDate}"
                                             TextColor="#5C76B1"
                                              />
                                     </StackLayout>
@@ -146,23 +152,7 @@
                                         <StackLayout>
                                             <Label
                                             Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding Applicant}"
-                                           
-                                           />
-                                        </StackLayout>
-                                    </StackLayout>
-                                    <StackLayout Orientation="Horizontal"  Margin="0,5,0,5">
-                                        <StackLayout >
-                                            <Label 
-                                           
-                                             Style="{StaticResource gooutanddayofftitle}"
-                                            Text="公出地點 :"
-                                           />
-                                        </StackLayout>
-                                        <StackLayout>
-                                            <Label
-                                            Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding Location}"
+                                            Text="{Binding Name}"
                                            
                                            />
                                         </StackLayout>
@@ -170,30 +160,29 @@
                                     <StackLayout Orientation="Horizontal" Margin="0,5,0,5">
                                         <StackLayout >
                                             <Label 
-                                            
+                             
                                            Style="{StaticResource gooutanddayofftitle}"
-                                            Text="公出事由 :"
+                                            Text="請假事由 :"
                                             />
                                         </StackLayout>
-                                        <StackLayout >
+                                        <StackLayout>
                                             <Label
                                             Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding Reason}"
-                                            
+                                            Text="{Binding Reason}"                                  
                                              />
                                         </StackLayout>
                                     </StackLayout>
-                                    <StackLayout Orientation="Horizontal"  Margin="0,5,0,5" HorizontalOptions="End">
-                                        <Button Text="核准" Clicked="Button_Clicked" TextColor="#5C76B1" BackgroundColor="#D5DEF3" WidthRequest="60" HeightRequest="30" Padding="5"/>
-                                        <Button Text="拒絕" Clicked="Button_Clicked_1" TextColor="#CA4848" BackgroundColor="#FFBDBD" WidthRequest="60" HeightRequest="25" Padding="5"/>
-                                    </StackLayout> 
+                                    <StackLayout Orientation="Horizontal"  Margin="0,5,-40,5" HorizontalOptions="End" >
+                                        <Button  Text="核准" Clicked="Review" CommandParameter="{Binding LeaveRecordId}" TextColor="#5C76B1" BackgroundColor="#D5DEF3" WidthRequest="60" HeightRequest="30" Padding="5"/>
+                                        <Button Text="拒絕"  Clicked="Reject"  CommandParameter="{Binding LeaveRecordId}" TextColor="#CA4848" BackgroundColor="#FFBDBD" WidthRequest="60" HeightRequest="25" Padding="5"/>
+                                    </StackLayout>
                                 </StackLayout>
                             </StackLayout>
                         </Frame>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-            </CollectionView>
-        </StackLayout>
- 
+        </CollectionView>
+    </StackLayout>
+
 </ContentPage>

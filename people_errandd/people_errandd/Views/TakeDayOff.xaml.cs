@@ -31,7 +31,7 @@ namespace people_errandd.Views
 
             //var picker = new Picker { Title = "請選擇:", TitleColor = Color.FromHex("#696969") };
             //leaveType.ItemsSource = dayoffList;
-            startTimePicker.IsVisible =true? !AlldaySwitch.IsToggled : AlldaySwitch.IsToggled;
+            startTimePicker.IsVisible =!AlldaySwitch.IsToggled;
         }
         //private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         //{
@@ -63,6 +63,7 @@ namespace people_errandd.Views
         }
        private void Personal(object sender, CheckedChangedEventArgs e)
         {
+            
             leavetype.Text = "事假";
             LeaveTypeId = 1;
         }
@@ -108,13 +109,28 @@ namespace people_errandd.Views
                 if (allowTap)
                 {
                     allowTap = false;
-                    DateTime StartDateTime = startDatePicker.Date + startTimePicker.Time;
-                    DateTime EndDateTime = endDatePicker.Date + endTimePicker.Time;
+
+                    DateTime StartDateTime,EndDateTime;
+                    
+                    if (startTimePicker.IsVisible)
+                    {
+                       StartDateTime = startDatePicker.Date + startTimePicker.Time;
+                       EndDateTime = endDatePicker.Date + endTimePicker.Time;
+                    }
+                    else
+                    {
+                        string TimeFormat = endDatePicker.Date.ToString("d")+" 23:59:59";
+                        Console.WriteLine(TimeFormat);
+                        StartDateTime = startDatePicker.Date;
+                        EndDateTime= DateTime.ParseExact(TimeFormat, "yyyy/M/d HH:mm:ss", null);
+                        Console.WriteLine(EndDateTime.ToString());
+                    }
+                     
                     if (await takeDayOff.PostDayOff(StartDateTime, EndDateTime, LeaveTypeId, reason.Text))
                     {                      
                         await DisplayAlert("", "申請成功", "OK");
-                        //HttpResponse.sendEmail(Preferences.Get("DirectSupervisorEmail", ""), "差勤打卡員工請假申請通知", "您的員工已進行請假申請，請至APP上進行確認!");
-                        reason.Text="";
+                        
+                        await Navigation.PopAsync();
                     }
                     else
                     {
@@ -130,7 +146,7 @@ namespace people_errandd.Views
         }
         public void minTime()
         {
-            if (startDatePicker.Date == endDatePicker.Date)
+            if (startDatePicker.Date == endDatePicker.Date && endTimePicker.Time < startTimePicker.Time)
             {
                 endTimePicker.Time = startTimePicker.Time;
             }
@@ -152,6 +168,7 @@ namespace people_errandd.Views
 
         private void startTimePicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
+            minTime();
         }
     }
 }

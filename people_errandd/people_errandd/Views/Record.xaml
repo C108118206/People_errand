@@ -227,7 +227,7 @@
                                     <Label
                                              
                                             Style="{StaticResource gooutanddayoffcontent}"
-                                            Text="{Binding DayOffType}"
+                                            Text="{Binding LeaveType}"
                                             
                                            />
                                     

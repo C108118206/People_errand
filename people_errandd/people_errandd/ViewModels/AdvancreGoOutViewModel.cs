@@ -10,8 +10,6 @@ using Xamarin.Essentials;
 
 namespace people_errandd.ViewModels
 {
-
-
     class AdvancreGoOutViewModel : INotifyPropertyChanged
     {
         GoOutViewModel GoOut = new GoOutViewModel();
@@ -147,9 +145,7 @@ namespace people_errandd.ViewModels
             finally
             {
                 allowTap = true;
-            }
-            
-
+            }          
         }
 
         async void Arrival()
