@@ -2,6 +2,26 @@
   "version": 3,
   "targets": {
     "Xamarin.iOS,Version=v1.0": {
+      "MaterialFormControls/2018.2.22-pre1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.4.247"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "System.Xml",
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/SuaveControls.MaterialForms.dll": {},
+          "lib/xamarinios10/SuaveControls.MaterialForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/SuaveControls.MaterialForms.dll": {},
+          "lib/xamarinios10/SuaveControls.MaterialForms.iOS.dll": {}
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -339,6 +359,26 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win": {
+      "MaterialFormControls/2018.2.22-pre1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.4.247"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "System.Xml",
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/SuaveControls.MaterialForms.dll": {},
+          "lib/xamarinios10/SuaveControls.MaterialForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/SuaveControls.MaterialForms.dll": {},
+          "lib/xamarinios10/SuaveControls.MaterialForms.iOS.dll": {}
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -676,6 +716,26 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x64": {
+      "MaterialFormControls/2018.2.22-pre1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.4.247"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "System.Xml",
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/SuaveControls.MaterialForms.dll": {},
+          "lib/xamarinios10/SuaveControls.MaterialForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/SuaveControls.MaterialForms.dll": {},
+          "lib/xamarinios10/SuaveControls.MaterialForms.iOS.dll": {}
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -1013,6 +1073,26 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x86": {
+      "MaterialFormControls/2018.2.22-pre1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.4.247"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "System.Xml",
+          "Xamarin.iOS"
+        ],
+        "compile": {
+          "lib/xamarinios10/SuaveControls.MaterialForms.dll": {},
+          "lib/xamarinios10/SuaveControls.MaterialForms.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/SuaveControls.MaterialForms.dll": {},
+          "lib/xamarinios10/SuaveControls.MaterialForms.iOS.dll": {}
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -1351,6 +1431,22 @@
     }
   },
   "libraries": {
+    "MaterialFormControls/2018.2.22-pre1": {
+      "sha512": "eddGZv+7Q/xqnPv0RWrm1FopGhC8KqNm5vudpBtksmUFzrfZaTdWbp74XvduR/oOG3JOH2p0QVLzfZJ9/m7DaA==",
+      "type": "package",
+      "path": "materialformcontrols/2018.2.22-pre1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid80/SuaveControls.MaterialForms.Android.dll",
+        "lib/monoandroid80/SuaveControls.MaterialForms.dll",
+        "lib/portable45-net45+win8+wpa81/SuaveControls.MaterialForms.dll",
+        "lib/xamarinios10/SuaveControls.MaterialForms.dll",
+        "lib/xamarinios10/SuaveControls.MaterialForms.iOS.dll",
+        "materialformcontrols.2018.2.22-pre1.nupkg.sha512",
+        "materialformcontrols.nuspec"
+      ]
+    },
     "Newtonsoft.Json/13.0.1": {
       "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "type": "package",
@@ -2002,6 +2098,7 @@
   },
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
+      "MaterialFormControls >= 2018.2.22-pre1",
       "Xam.Plugin.Media >= 5.0.1",
       "Xamarin.CommunityToolkit >= 1.3.0-pre1",
       "Xamarin.Essentials >= 1.7.0",
@@ -2012,27 +2109,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lonel\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Users\\lmh_flower\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Punch(new)\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
       "projectName": "people_errandd.iOS",
-      "projectPath": "D:\\Punch(new)\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
-      "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
-      "outputPath": "D:\\Punch(new)\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\",
+      "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\lonel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\lmh_flower\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2041,13 +2135,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\Public\\Documents\\Infragistics\\NuGet\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\Punch(new)\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
-              "projectPath": "D:\\Punch(new)\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+            "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
             }
           }
         }
@@ -2056,6 +2151,10 @@
     "frameworks": {
       "xamarinios10": {
         "dependencies": {
+          "MaterialFormControls": {
+            "target": "Package",
+            "version": "[2018.2.22-pre1, )"
+          },
           "Xam.Plugin.Media": {
             "target": "Package",
             "version": "[5.0.1, )"

@@ -104,6 +104,7 @@ namespace people_errandd.Views
         }
         private async void EnterButton(object sender, EventArgs e)
         {
+            
             try
             {
                 if (allowTap)
@@ -119,7 +120,7 @@ namespace people_errandd.Views
                     }
                     else
                     {
-                        string TimeFormat = endDatePicker.Date.ToString("d")+" 23:59:59";
+                        string TimeFormat = endDatePicker.Date.ToString("d") + " 23:59:59";
                         Console.WriteLine(TimeFormat);
                         StartDateTime = startDatePicker.Date;
                         EndDateTime= DateTime.ParseExact(TimeFormat, "yyyy/M/d HH:mm:ss", null);
@@ -143,6 +144,7 @@ namespace people_errandd.Views
             {
                 allowTap = true;
             }
+            
         }
         public void minTime()
         {

@@ -50,7 +50,6 @@
                     <Setter Property="HorizontalOptions" Value="Center"/>
                     <Setter Property="CornerRadius" Value="5"/>
                     <Setter Property="FontSize" Value="16"/>
-                    <Setter Property="Padding" Value="20,0,20,0"/>
                     <Setter Property="WidthRequest" Value="220"/>
                     <Setter Property="HeightRequest" Value="35"/>
                 </Style>
@@ -70,6 +69,7 @@
                     <Setter Property="WidthRequest" Value="130" />
                     <Setter Property="Padding" Value="20" />
                 </Style>
+                
                 <Style x:Key="text" TargetType="Label">
                     <Setter Property="FontSize" Value="18" />
                     <Setter Property="HorizontalOptions" Value="Center" />
@@ -172,8 +172,8 @@
                             <Label  x:Name="worktimetitle"  Grid.Row="0" Grid.Column="0" TextColor="#555555"  FontSize="16"  ></Label>
                             <Label  x:Name="worktime"  Grid.Row="0" Grid.Column="1" TextColor="#555555"  FontSize="16" ></Label>
                         </StackLayout  >
-                        <Button  Grid.Row="4" ImageSource="gps"  Text="{Binding GpsText}" BackgroundColor="{Binding GpsTextColor}" Style="{StaticResource gpsbutton}"  x:Name="GPSText" Clicked="GpsButton" Margin="0,5,0,0"/>
-                        <Label Grid.Row="5" x:Name="LocationNowText" Text="{Binding LocationText, StringFormat='現在位置:{0}'}"   HorizontalOptions="Center"  Margin="5,10,5,10" FontSize="13" TextColor="#CA4848" ></Label>
+                        <Button  Grid.Row="4" ImageSource="gps"  Text="{Binding GpsText}" BackgroundColor="{Binding GpsTextColor}" Style="{StaticResource gpsbutton}"  x:Name="GPSText" Clicked="GpsButton" Margin="0,5,0,0" Padding="20,0,20,0"></Button>
+                        <Label IsVisible="false" Grid.Row="5" x:Name="LocationNowText" Text="{Binding LocationText, StringFormat='現在位置:{0}'}"   HorizontalOptions="Center"  Margin="5,10,5,10" FontSize="13" TextColor="#CA4848" ></Label>
                     </StackLayout>
                 </StackLayout>
             </Frame>
@@ -184,12 +184,12 @@
                     <StackLayout.Margin>
                         <OnIdiom x:TypeArguments="Thickness">
                             <OnIdiom.Phone>0,40,0,0</OnIdiom.Phone>
-                            <OnIdiom.Tablet>0,100,0,0</OnIdiom.Tablet>  
+                            <OnIdiom.Tablet>170,100,170,0</OnIdiom.Tablet>  
                         </OnIdiom>
                     </StackLayout.Margin>
-                    
-                    <Label x:Name="AuditText" Text="審核通知" Grid.Row="0" FontSize="30" TextColor="#555555" Margin="15,0,0,15"/>
-                    <CollectionView Style="{StaticResource Collection}" x:Name="Audits" HeightRequest="150"  Margin="20,0,20,20"  >
+                    <StackLayout>
+                    <Label x:Name="AuditText" Text="審核通知" Grid.Row="0" FontSize="30" TextColor="#555555" Margin="20,0,0,10"/>
+                    <CollectionView Style="{StaticResource Collection}" x:Name="Audits" HeightRequest="150"  Margin="20,0,20,20" >
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Vertical" />
                         </CollectionView.ItemsLayout>
@@ -204,28 +204,46 @@
                                         <ColumnDefinition Width="auto" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  WidthRequest="2000"  BackgroundColor="White" HasShadow="True"   >
-                                        <Frame.GestureRecognizers>
-                                            <TapGestureRecognizer Tapped="OnTapped"/>
-                                        </Frame.GestureRecognizers>
+                                        <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  WidthRequest="2000"  BackgroundColor="White" >
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="OnTapped"  />
+                                            </Frame.GestureRecognizers>
+                                            <Frame.HasShadow>
+                                            <OnPlatform x:TypeArguments="x:Boolean">
+                                                <On Platform="iOS" Value="False" />
+                                                <On Platform="Android" Value="True" />
+                                            </OnPlatform>
+                                        </Frame.HasShadow>
+                                       
                                         <StackLayout>
 
-                                            <StackLayout Orientation="Horizontal" Grid.Row="1">
-                                                <Frame WidthRequest="40" BackgroundColor="#C1D8F5"  HorizontalOptions="Center" Padding="8,0,8,0" Margin="0,5,0,5" CornerRadius="5" HasShadow="false" Grid.Column="0"  >
-                                                    <Label Text="{Binding LeaveType}" HorizontalOptions="Center" VerticalTextAlignment="Center" FontSize="13" FontAttributes="Bold" TextColor="#6280FF" />
+                                            <StackLayout Orientation="Horizontal" Grid.Row="1" >
+                                                    <Frame WidthRequest="45" BackgroundColor="#C1D8F5"   HorizontalOptions="Center" Padding="8,0,8,0" Margin="0,0,0,0" CornerRadius="5" HasShadow="false" Grid.Column="0"  >
+                                                        <Label Text="{Binding LeaveType}" HorizontalOptions="Center" VerticalTextAlignment="Center" FontSize="13" FontAttributes="Bold" TextColor="#6280FF" />
                                                 </Frame>
-                                                <StackLayout Grid.Column="2" Margin="5,0,0,0">
+
+                                                    <StackLayout Grid.Column="2" Margin="0,5,0,5">
                                                     <StackLayout Orientation="Horizontal">
                                                         <Label Text="申請人 :" FontSize="13" TextColor="#585858"/>
                                                         <Label Text="{Binding Name}" FontSize="13" TextColor="#585858"/>
                                                     </StackLayout>
-                                                    <StackLayout Orientation="Horizontal">
-                                                        <Label Text="時間 :" FontSize="13" TextColor="#585858"/>
-                                                        <Label Text="{Binding Time}" FontSize="13" TextColor="#585858"/>
-                                                    </StackLayout>
+                                                 
                                                 </StackLayout>
-                                            </StackLayout>
-                                            <!--<StackLayout Orientation="Horizontal" Grid.Row="3">
+                                                  
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                                                    <Label Text="時間 :" FontSize="13" TextColor="#585858"/>
+                                                    <Label Text="{Binding Time}" FontSize="13" TextColor="#585858"/>
+                                                </StackLayout>
+                                                <BoxView Style="{StaticResource line}" Grid.Row="1" Margin="-18,0,0,-20">
+                                                <BoxView.BackgroundColor>
+                                                    <OnPlatform x:TypeArguments="Color">
+                                                        <On Platform="Android" Value="#FFFFFF" />
+                                                        <On Platform="iOS" Value="#E0E0E0" />
+                                                    </OnPlatform>
+                                                </BoxView.BackgroundColor>
+                                            </BoxView>
+                                                <!--<StackLayout Orientation="Horizontal" Grid.Row="3">
                                                 <Frame BackgroundColor="{Binding leavetypecolorTwo}" Padding="8,0,8,0"  Margin="0,5"  CornerRadius="5" HasShadow="False" >
                                                     <Label Text="{Binding leavetypeTwo}" HorizontalOptions="Center" VerticalTextAlignment="Center" FontSize="10"  TextColor="White" />
                                                 </Frame>
@@ -242,15 +260,23 @@
                                             </StackLayout>-->
                                         </StackLayout>
                                     </Frame>
+                                   
                                 </Grid>
 
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
+                    </StackLayout>
                     <StackLayout Grid.Row="4" Orientation="Horizontal" HorizontalOptions="Center">
                         <!--上班.下班水平放置-->
-                                <StackLayout Grid.Row="0" Grid.Column="0"  HorizontalOptions="Center"  Margin="0,0,25,0">
-                                    <!--上班-->
+                                <StackLayout Grid.Row="0" Grid.Column="0"  HorizontalOptions="Center">
+                            <StackLayout.Margin>
+                                <OnIdiom x:TypeArguments="Thickness">
+                                    <OnIdiom.Phone>0,0,25,0</OnIdiom.Phone>
+                                    <OnIdiom.Tablet>0,0,85,0</OnIdiom.Tablet>
+                                </OnIdiom>
+                            </StackLayout.Margin>
+                            <!--上班-->
                                     <!--上班按鈕陰影-->
                                     <ImageButton x:Name="workOn" Grid.Row="0"  Source="worker.png"  Style="{StaticResource ImageButton}" Clicked="GoToWork">
                                         <ImageButton.HeightRequest>
@@ -278,8 +304,14 @@
                                     </Label>
                                     <!--上班文字-->
                                 </StackLayout>
-                                <StackLayout Grid.Row="0" HorizontalOptions="Center"    Grid.Column="1" Margin="25,0,0,0">
-                                    <!--下班-->
+                                <StackLayout Grid.Row="0" HorizontalOptions="Center"    Grid.Column="1" >
+                            <StackLayout.Margin>
+                                <OnIdiom x:TypeArguments="Thickness">
+                                    <OnIdiom.Phone>25,0,0,0</OnIdiom.Phone>
+                                    <OnIdiom.Tablet>85,0,0,0</OnIdiom.Tablet>
+                                </OnIdiom>
+                            </StackLayout.Margin>
+                            <!--下班-->
 
                                     <!--下班按鈕陰影-->
                                     <ImageButton x:Name="workOff" Grid.Row="0"   Source="workeroff.png" Style="{StaticResource ImageButton}" Clicked="OffWork">
@@ -311,7 +343,13 @@
                             </StackLayout>
                             <StackLayout Grid.Row="5"  HorizontalOptions="Center" Orientation="Horizontal">
                                 <!--公出.更多水平放置-->
-                        <StackLayout  Grid.Row="0" Grid.Column="0"  HorizontalOptions="Center"  Margin="0,0,25,0">
+                        <StackLayout  Grid.Row="0" Grid.Column="0"  HorizontalOptions="Center" >
+                            <StackLayout.Margin>
+                                <OnIdiom x:TypeArguments="Thickness">
+                                    <OnIdiom.Phone>0,0,25,0</OnIdiom.Phone>
+                                    <OnIdiom.Tablet>0,0,85,0</OnIdiom.Tablet>
+                                </OnIdiom>
+                            </StackLayout.Margin>
                             <!--公出按鈕陰影-->
                                     <ImageButton x:Name="GoOut" Grid.Row="0" Source="goout2.png" Style="{StaticResource ImageButton}"   Clicked="GoOutButton">
                                         <ImageButton.HeightRequest>
@@ -338,9 +376,15 @@
                                     </Label>
                                     <!--公出文字-->
                                 </StackLayout>
-                        <StackLayout Grid.Row="0" Grid.Column="1"   HorizontalOptions="Center"  Margin="25,0,0,0">
+                        <StackLayout Grid.Row="0" Grid.Column="1"   HorizontalOptions="Center" >
+                            <StackLayout.Margin>
+                                <OnIdiom x:TypeArguments="Thickness">
+                                    <OnIdiom.Phone>25,0,0,0</OnIdiom.Phone>
+                                    <OnIdiom.Tablet>85,0,0,0</OnIdiom.Tablet>
+                                </OnIdiom>
+                            </StackLayout.Margin>
                             <!--請假按鈕陰影-->
-                            <ImageButton Source="nerd" Grid.Row="0"  Style="{StaticResource ImageButton}" Clicked="DayOffButton"  >
+                            <ImageButton Source="nerd" Grid.Row="0"  Style="{StaticResource ImageButton}" Clicked="DayOffButton" >
                                 <ImageButton.HeightRequest>
                                     <OnIdiom x:TypeArguments="x:Double">
                                         <OnIdiom.Phone>100</OnIdiom.Phone>
@@ -354,6 +398,7 @@
                                     </OnIdiom>
                                 </ImageButton.WidthRequest>
                             </ImageButton>
+                           
                             <Label Text="請假" Grid.Row="1" Margin="0,10,0,10"  Style="{StaticResource text}">
                                 <Label.FontSize>
                                     <OnIdiom x:TypeArguments="x:Double">

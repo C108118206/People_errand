@@ -79,7 +79,6 @@
     <Compile Include="AppSettingsInterface.cs" />
     <Compile Include="BorderlessDatePickerRenderer.cs" />
     <Compile Include="BorderlessTimePickerRenderer.cs" />
-    <Compile Include="CustomEditorRenderer.cs" />
     <Compile Include="CustomEntryRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -254,6 +253,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MaterialFormControls">
+      <Version>2018.2.22-pre1</Version>
+    </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.8.0-beta</Version>
     </PackageReference>

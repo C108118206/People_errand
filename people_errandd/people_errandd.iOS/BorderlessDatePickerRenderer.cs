@@ -8,19 +8,25 @@ using System.Text;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
+using DatePicker = Xamarin.Forms.DatePicker;
 
 [assembly: ExportRenderer(typeof(DatePicker), typeof(BorderlessDatePickerRenderer))]
 namespace people_errandd.iOS
 {
     public class BorderlessDatePickerRenderer : DatePickerRenderer
     {
-        public static void Init() { }
-        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            base.OnElementPropertyChanged(sender, e);
 
-            Control.Layer.BorderWidth = 0;
-            Control.BorderStyle = UITextBorderStyle.None;
+        protected override void OnElementChanged(ElementChangedEventArgs<DatePicker> e)
+        {
+            base.OnElementChanged(e);
+
+            if (Control != null)
+            {
+                Control.BorderStyle = UITextBorderStyle.None;
+                Control.Layer.CornerRadius = 5;
+                //Control.TextColor = UIColor.Black;
+            }
         }
+
     }
 }

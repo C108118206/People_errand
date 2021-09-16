@@ -231,6 +231,7 @@
                         <BoxView Style="{StaticResource line}" HeightRequest="1"/>
                     </StackLayout>
                     <Label x:Name="emailValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="End" FontAttributes="Bold" Margin="0,5,20,0"></Label>
+                   
                 </StackLayout>
             </StackLayout>
         </ScrollView>

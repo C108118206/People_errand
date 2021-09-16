@@ -170,17 +170,17 @@ namespace people_errandd.Models
                     {
                         case 1:
                             GoOutRecords[i].status = "公出開始";
-                            GoOutRecords[i].statuscolor = "#FBB800";
+                            GoOutRecords[i].statuscolor = "#FCCE82";
                             GoOutRecords[i].advanceimage = "startgoout.png";
                             break;
                         case 2:
                             GoOutRecords[i].status = "到站";
-                            GoOutRecords[i].statuscolor = "#E22E2E";
+                            GoOutRecords[i].statuscolor = "#DE5D5D";
                             GoOutRecords[i].advanceimage = "stop.png";
                             break;
                         case 3:
                             GoOutRecords[i].status = "公出結束";
-                            GoOutRecords[i].statuscolor = "#2E88E2";
+                            GoOutRecords[i].statuscolor = "#83A6F2";
                             GoOutRecords[i].advanceimage = "finishgoout.png";
                             break;
                         default:

@@ -230,6 +230,7 @@ namespace people_errandd.Views
                 allowTap = true;
             }
         }
+
         private async void GpsButton(object sender, EventArgs e)
         {
             try
