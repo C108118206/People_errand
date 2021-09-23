@@ -172,7 +172,11 @@
                             <Label  x:Name="worktimetitle"  Grid.Row="0" Grid.Column="0" TextColor="#555555"  FontSize="16"  ></Label>
                             <Label  x:Name="worktime"  Grid.Row="0" Grid.Column="1" TextColor="#555555"  FontSize="16" ></Label>
                         </StackLayout  >
+<<<<<<< HEAD
                         <Button  Grid.Row="4" ImageSource="gps"  Text="{Binding GpsText}" BackgroundColor="{Binding GpsTextColor}" Style="{StaticResource gpsbutton}"  x:Name="GPSText" Clicked="GpsButton" Margin="0,5,0,0" Padding="20,0,20,0"></Button>
+=======
+                        <Button  Grid.Row="4" ImageSource="gps"  Text="{Binding GpsText}" BackgroundColor="{Binding GpsTextColor}" Style="{StaticResource gpsbutton}"  x:Name="GPSText" Clicked="GpsButton" Margin="0,5,0,0"/>
+>>>>>>> 9f472fecb1af1f9d9d7922cb88d0518729360526
                         <Label IsVisible="false" Grid.Row="5" x:Name="LocationNowText" Text="{Binding LocationText, StringFormat='現在位置:{0}'}"   HorizontalOptions="Center"  Margin="5,10,5,10" FontSize="13" TextColor="#CA4848" ></Label>
                     </StackLayout>
                 </StackLayout>
