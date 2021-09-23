@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W8/HFJDNEJjFuqRTB8FkzM9ElpTo+9qQ1VRPOZ7U+ExbO5Cw74KIcoVtSPt7Ku4InwvSt00cMi2Z3GULf4KBHA==",
+  "dgSpecHash": "VNb+quTpuBrbshcO0URGBQp3ruIy9aG0h5zbOC8v5znXJxI4krv+tyjuKZ11HjUfW7uxmK6X12Edb4eijIixdg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+  "projectFilePath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lmh_flower\\.nuget\\packages\\materialformcontrols\\2018.2.22-pre1\\materialformcontrols.2018.2.22-pre1.nupkg.sha512",
     "C:\\Users\\lmh_flower\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
