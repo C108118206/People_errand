@@ -2109,24 +2109,58 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\lmh_flower\\.nuget\\packages\\": {},
+=======
+<<<<<<< HEAD
+    "C:\\Users\\lmh_flower\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\likem\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+>>>>>>> 9f472fecb1af1f9d9d7922cb88d0518729360526
+>>>>>>> 1fd273606076593e1964a6707b8837f7f6de194c
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
       "projectName": "people_errandd.iOS",
       "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
       "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.iOS\\obj\\",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "projectName": "people_errandd.iOS",
+      "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\",
+=======
+      "projectUniqueName": "D:\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "projectName": "people_errandd.iOS",
+      "projectPath": "D:\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "packagesPath": "C:\\Users\\likem\\.nuget\\packages\\",
+      "outputPath": "D:\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\",
+>>>>>>> 9f472fecb1af1f9d9d7922cb88d0518729360526
+>>>>>>> 1fd273606076593e1964a6707b8837f7f6de194c
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\lmh_flower\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+        "C:\\Users\\lmh_flower\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\likem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> 9f472fecb1af1f9d9d7922cb88d0518729360526
+>>>>>>> 1fd273606076593e1964a6707b8837f7f6de194c
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2141,8 +2175,18 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
               "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+=======
+<<<<<<< HEAD
+            "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\people_errand\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+=======
+            "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "D:\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+>>>>>>> 9f472fecb1af1f9d9d7922cb88d0518729360526
+>>>>>>> 1fd273606076593e1964a6707b8837f7f6de194c
             }
           }
         }
