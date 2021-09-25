@@ -108,10 +108,17 @@
                                 </OnPlatform>
                             </Frame.HasShadow>
                             <StackLayout>
-                                <Grid Grid.Row="0" ColumnSpacing="1" ColumnDefinitions="1*, 4*">
-                                    <Image HeightRequest="50" Source="goout2.png" HorizontalOptions="Start" VerticalOptions="Start"  Grid.Row="0"  Grid.Column="0" />
+                                <Grid Grid.Row="0" ColumnSpacing="1" ColumnDefinitions="1*, 4*" >
+                                    <Grid.Margin>
+                                        <OnIdiom x:TypeArguments="Thickness">
+                                            <OnIdiom.Phone>0,0,0,0</OnIdiom.Phone>
+                                            <OnIdiom.Tablet>210,0,0,0</OnIdiom.Tablet>
+                                        </OnIdiom>
+                                    </Grid.Margin>
+                                    <Image HeightRequest="50" Source="nerd.png" HorizontalOptions="Start" VerticalOptions="Start"  Grid.Row="0"  Grid.Column="0" />
 
-                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="30, 30, 30, Auto" ColumnDefinitions="2*, 5*">
+                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="30, 30, 30, Auto" ColumnDefinitions="2*, 5*" >
+                                        
                                         <Label x:Name="RecordId" Text="{Binding LeaveRecordId}" IsVisible="false"  Grid.Row="0" Grid.Column="0"></Label>
                                         <Label Style="{StaticResource gooutanddayofftitle}" Text="開始時間 :" Grid.Row="0" Grid.Column="0"></Label>
                                         <Label  Style="{StaticResource gooutanddayoffcontent}"

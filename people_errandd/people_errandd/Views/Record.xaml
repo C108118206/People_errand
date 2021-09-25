@@ -112,6 +112,12 @@
                         </Frame.HasShadow>
                         <StackLayout>
                             <Grid Grid.Row="0" ColumnSpacing="1" ColumnDefinitions="1*, 4*">
+                                <Grid.Margin>
+                                    <OnIdiom x:TypeArguments="Thickness">
+                                        <OnIdiom.Phone>0,0,0,0</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>220,0,0,0</OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </Grid.Margin>
                                 <Image HeightRequest="50" Source="{Binding image}" HorizontalOptions="Start" VerticalOptions="Start"  Grid.Row="0"  Grid.Column="0" />
 
                                 <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="30, 30" ColumnDefinitions="2*, 9*">
@@ -160,11 +166,17 @@
                                     <On Platform="Android" Value="True" />
                                 </OnPlatform>
                             </Frame.HasShadow>
-                            <StackLayout>
+                            <StackLayout >
                                 <Grid Grid.Row="0" ColumnSpacing="1" ColumnDefinitions="1*, 4*">
+                                    <Grid.Margin>
+                                        <OnIdiom x:TypeArguments="Thickness">
+                                            <OnIdiom.Phone>0,0,0,0</OnIdiom.Phone>
+                                            <OnIdiom.Tablet>210,0,0,0</OnIdiom.Tablet>
+                                        </OnIdiom>
+                                    </Grid.Margin>
                                     <Image HeightRequest="55" Source="{Binding image}" HorizontalOptions="Start" VerticalOptions="Start"  Grid.Row="0"  Grid.Column="0" />
 
-                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="30, 30, 30, 30,Auto" ColumnDefinitions="2*, 5*">
+                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="30, 30, 30, 30,Auto" ColumnDefinitions="2*, 5*" >
                                         <Label Style="{StaticResource gooutanddayofftitle}" Text="開始時間 :" Grid.Row="0" Grid.Column="0"></Label>
                                         <Label  Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding StartDate}"
@@ -192,6 +204,7 @@
                                                HorizontalOptions="Start"
                                             Text="{Binding Reason}"  Grid.Row="4" Grid.Column="1"></Label>
                                     </Grid>
+                                    
                                 </Grid>
                                 
                             </StackLayout>
@@ -220,6 +233,12 @@
                         </Frame.HasShadow>
                         <StackLayout>
                             <Grid Grid.Row="0" ColumnSpacing="1" ColumnDefinitions="1*, 4*">
+                                <Grid.Margin>
+                                    <OnIdiom x:TypeArguments="Thickness">
+                                        <OnIdiom.Phone>0,0,0,0</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>210,0,0,0</OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </Grid.Margin>
                                 <Image HeightRequest="55" Source="{Binding image}" HorizontalOptions="Start" VerticalOptions="Start"  Grid.Row="0"  Grid.Column="0" />
 
                                 <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="30, 30, 30, 30,Auto" ColumnDefinitions="2*, 5*">
@@ -280,6 +299,12 @@
                         </Frame.HasShadow>
                         <StackLayout>
                             <Grid Grid.Row="0" ColumnSpacing="1" ColumnDefinitions="1*, 4*">
+                                <Grid.Margin>
+                                    <OnIdiom x:TypeArguments="Thickness">
+                                        <OnIdiom.Phone>0,0,0,0</OnIdiom.Phone>
+                                        <OnIdiom.Tablet>220,0,0,0</OnIdiom.Tablet>
+                                    </OnIdiom>
+                                </Grid.Margin>
                                 <Image HeightRequest="45" Source="{Binding advanceimage}" HorizontalOptions="Start" VerticalOptions="Start" Margin="10,0,0,0" Grid.Row="0"  Grid.Column="0" />
 
                                 <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="5*,5*,10*" ColumnDefinitions="2*, 9*">
