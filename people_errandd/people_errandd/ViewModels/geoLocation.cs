@@ -35,7 +35,7 @@ namespace people_errandd.ViewModels
                         DesiredAccuracy = GeolocationAccuracy.High,
                         Timeout = TimeSpan.FromSeconds(30)
                     });
-                    await GetLocationText(location.Latitude, location.Longitude);
+                   // await GetLocationText(location.Latitude, location.Longitude);
                     Preferences.Set("GpsText", "定位已開啟");
                     Preferences.Set("GpsButtonColor", "#5C76B1");
                     

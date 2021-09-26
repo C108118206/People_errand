@@ -17,7 +17,7 @@ namespace people_errandd.Views
         bool allowTap = true;
         Regex regexemail = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
         
-        Regex regexphone = new Regex("^09");
+        Regex regexphone = new Regex( @"^09[0-9]{8}$");
         
         public AboutPage()
         {
@@ -115,7 +115,7 @@ namespace people_errandd.Views
                         Match matchphone = regexphone.Match(phone.Text);
                         if (matchemail.Success && matchphone.Success)
                         {
-                            if (!await informationViewModel.ConfirmEmail(email.Text) && await informationViewModel.UpdateInformationRecord(name.Text, phone.Text, email.Text))
+                            if (await informationViewModel.UpdateInformationRecord(name.Text, phone.Text, email.Text))
                             {
                                 Preferences.Set("phone", phone.Text);
                                 Preferences.Set("email", email.Text);

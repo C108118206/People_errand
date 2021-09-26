@@ -30,7 +30,7 @@ namespace people_errandd.Models
         public static readonly string LanguageRoute = "/detect?api-version=3.0";//language route             
         public static string GetResponse { get; set; }
 
-        public static void sendEmail(string to_email, string email_subject, string email_body)//寄EMAIL
+        public static async Task sendEmail(List<string> to_email, string email_subject, string email_body)//寄EMAIL
         {
             try
             {
@@ -39,7 +39,13 @@ namespace people_errandd.Models
                 mail.From = new MailAddress("C108118242@nkust.edu.tw", "差勤打卡");
 
                 //收信者email
-                mail.To.Add(to_email);
+                if (to_email != null && to_email.Count > 0)//防呆
+                {
+                    foreach (string mailAddress in to_email)
+                    {
+                        mail.To.Add(new MailAddress(mailAddress));
+                    }
+                }
 
                 //設定優先權
                 mail.Priority = MailPriority.Normal;
@@ -63,7 +69,7 @@ namespace people_errandd.Models
                 MySmtp.EnableSsl = true;
 
                 //發送郵件
-                MySmtp.Send(mail);
+                await MySmtp.SendMailAsync(mail);
 
                 //放掉宣告出來的MySmtp
                 MySmtp = null;

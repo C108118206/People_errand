@@ -49,11 +49,8 @@ namespace people_errandd.ViewModels
                 if (response.StatusCode.ToString() == "OK")
                 {
                     try
-                    {
-                        foreach (var Emails in await GetEmail())
-                        {
-                            sendEmail(Emails, "差勤打卡員工請假申請通知", "<h2>您的員工已進行請假申請，請至APP或後臺上進行確認！</h2>");
-                        }
+                    {                       
+                            await sendEmail(await GetEmail(), "差勤打卡員工請假申請通知", "<h2>您的員工已進行請假申請，請至APP或後臺上進行確認！</h2>");                        
                     }
                     catch (Exception)
                     {
