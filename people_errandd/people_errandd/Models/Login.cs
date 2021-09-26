@@ -106,15 +106,24 @@ namespace people_errandd.Models
                 response = await client.GetAsync(basic_url + ControllerNameInformation + _Ha);
                 GetResponse = await response.Content.ReadAsStringAsync();
                 //information UserInf = JsonConvert.DeserializeObject<information>(GetResponse);
-                string[] _UserInf = GetResponse.Split(',');
-                if (_UserInf[1] != null)
-                {
-                    return true;
-                }
+                string[] _UserInf = GetResponse.Split(',');                
+                return _UserInf[1] != null;                
             }
             catch (Exception)
             {
-                Console.WriteLine("error");
+            }
+            return false;
+        }
+        public static async Task<bool> AccountEnabled()
+        {
+            try
+            {
+                response = await client.GetAsync(basic_url + ControllerNameEmployee + "get_employee_enabled/"+Preferences.Get("uuid", ""));
+                var result = await response.Content.ReadAsStringAsync();
+                return Convert.ToBoolean(result);
+            }
+            catch(Exception)
+            {
             }
             return false;
         }

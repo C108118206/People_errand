@@ -75,7 +75,7 @@ namespace people_errandd.ViewModels
             catch (Exception)
             {
             }
-            return Preferences.Get("UserName", "User");
+            return null;
         }
         public async Task<bool> ConfirmEmail(string _Email)
         {

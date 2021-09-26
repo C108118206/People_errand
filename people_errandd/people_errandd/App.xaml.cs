@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using people_errandd.Views;
 using people_errandd.ViewModels;
+using people_errandd.Models;
 using System.Globalization;
 using Xamarin.Essentials;
 using Plugin.SharedTransitions;
@@ -51,10 +52,20 @@ namespace people_errandd
             bool hasKey = Preferences.ContainsKey("HashAccount");
             if (hasKey)
             {
-                MainPage = new SharedTransitionNavigationPage(new MainPage());
-                await information.GetUserName(Preferences.Get("HashAccount", ""));
-                await GetLocation();
-                GetConnectivity("start");
+                if(await Login.AccountEnabled())
+                {
+                    MainPage = new SharedTransitionNavigationPage(new MainPage());
+                    await information.GetUserName(Preferences.Get("HashAccount", ""));
+                    await GetLocation();
+                    GetConnectivity("start");
+                }
+                else
+                {
+                    MainPage = new SharedTransitionNavigationPage(new LoginPage());
+                    await App.Current.MainPage.DisplayAlert("","帳號已停用","確認");
+                    Preferences.Remove("HashAccount");
+                }
+                
             }
             var Seconds = TimeSpan.FromSeconds(8);
             Device.StartTimer(Seconds, () => {               

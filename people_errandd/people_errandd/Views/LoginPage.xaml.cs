@@ -43,9 +43,16 @@ namespace people_errandd.Views
                     {
                         if (await Login.ConfirmUUID(Preferences.Get("uuid", "")))
                         {
+
                             if (!await Login.Reviewed())
                             {
+                                
                                 await DisplayAlert("審核中", "尚未審核完畢,請稍後再試", "確認");
+                                return;
+                            }
+                            if (!await Login.AccountEnabled())
+                            {
+                                await DisplayAlert("", "帳號已停用", "確認");
                                 return;
                             }
                             Navigation.InsertPageBefore(new MainPage(), this);

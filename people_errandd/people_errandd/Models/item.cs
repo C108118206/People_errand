@@ -38,6 +38,8 @@ namespace people_errandd.Models
         public string phonecode { get; set; }
         public DateTime createdTime { get; set; }
         public string companyhash { get; set; }
+
+        public bool enabled { get; set; }
     }
     public class DayOff
     {
