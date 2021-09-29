@@ -167,7 +167,7 @@
                                 </OnPlatform>
                             </Frame.HasShadow>
                             <StackLayout >
-                                <Grid Grid.Row="0" ColumnSpacing="1" ColumnDefinitions="1*, 4*">
+                                <Grid Grid.Row="0" ColumnSpacing="1" ColumnDefinitions="1*, 5*">
                                     <Grid.Margin>
                                         <OnIdiom x:TypeArguments="Thickness">
                                             <OnIdiom.Phone>0,0,0,0</OnIdiom.Phone>
@@ -176,7 +176,7 @@
                                     </Grid.Margin>
                                     <Image HeightRequest="55" Source="{Binding image}" HorizontalOptions="Start" VerticalOptions="Start"  Grid.Row="0"  Grid.Column="0" />
 
-                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="30, 30, 30, 30,Auto" ColumnDefinitions="2*, 5*" >
+                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="30, 30, 30, 30,30,Auto" ColumnDefinitions="2*, 5*" >
                                         <Label Style="{StaticResource gooutanddayofftitle}" Text="開始時間 :" Grid.Row="0" Grid.Column="0"></Label>
                                         <Label  Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding StartDate}"
@@ -199,10 +199,16 @@
                                                HorizontalOptions="Start"
                                             Text="{Binding LeaveType}"  Grid.Row="3" Grid.Column="1"></Label>
                                         <Label Style="{StaticResource gooutanddayofftitle}"
-                                            Text="請假原因 :" Grid.Row="4" Grid.Column="0"></Label>
+                                            Text="審核狀態 :" Grid.Row="4" Grid.Column="0"></Label>
                                         <Label Style="{StaticResource gooutanddayoffcontent}"
                                                HorizontalOptions="Start"
-                                            Text="{Binding Reason}"  Grid.Row="4" Grid.Column="1"></Label>
+                                            Text="{Binding status}"  Grid.Row="4" Grid.Column="1"></Label>
+                                        <Label Style="{StaticResource gooutanddayofftitle}"
+                                            Text="請假原因 :" Grid.Row="5" Grid.Column="0"></Label>
+                                        <Label Style="{StaticResource gooutanddayoffcontent}"
+                                               HorizontalOptions="Start"
+                                            Text="{Binding Reason}"  Grid.Row="5" Grid.Column="1"></Label>
+                                        
                                     </Grid>
                                     
                                 </Grid>

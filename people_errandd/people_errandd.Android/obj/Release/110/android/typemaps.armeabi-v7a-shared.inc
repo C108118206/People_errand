@@ -79,56 +79,56 @@
 	.section	.rodata.map_aname.13,"aMS",%progbits,1
 	.type	.L.map_aname.13, %object
 .L.map_aname.13:
-	.asciz	"Xamarin.AndroidX.CardView"
-	.size	.L.map_aname.13, 26
+	.asciz	"people_errandd.Android"
+	.size	.L.map_aname.13, 23
 
 	.section	.rodata.map_aname.14,"aMS",%progbits,1
 	.type	.L.map_aname.14, %object
 .L.map_aname.14:
-	.asciz	"Xamarin.GooglePlayServices.Basement"
-	.size	.L.map_aname.14, 36
+	.asciz	"Xamarin.AndroidX.CardView"
+	.size	.L.map_aname.14, 26
 
 	.section	.rodata.map_aname.15,"aMS",%progbits,1
 	.type	.L.map_aname.15, %object
 .L.map_aname.15:
-	.asciz	"Xamarin.AndroidX.Core"
-	.size	.L.map_aname.15, 22
+	.asciz	"Xamarin.GooglePlayServices.Basement"
+	.size	.L.map_aname.15, 36
 
 	.section	.rodata.map_aname.16,"aMS",%progbits,1
 	.type	.L.map_aname.16, %object
 .L.map_aname.16:
-	.asciz	"Xamarin.GooglePlayServices.Tasks"
-	.size	.L.map_aname.16, 33
+	.asciz	"Xamarin.AndroidX.Core"
+	.size	.L.map_aname.16, 22
 
 	.section	.rodata.map_aname.17,"aMS",%progbits,1
 	.type	.L.map_aname.17, %object
 .L.map_aname.17:
-	.asciz	"Xamarin.Forms.Platform.Android"
-	.size	.L.map_aname.17, 31
+	.asciz	"Xamarin.GooglePlayServices.Tasks"
+	.size	.L.map_aname.17, 33
 
 	.section	.rodata.map_aname.18,"aMS",%progbits,1
 	.type	.L.map_aname.18, %object
 .L.map_aname.18:
-	.asciz	"Xamarin.AndroidX.Lifecycle.ViewModel"
-	.size	.L.map_aname.18, 37
+	.asciz	"Xamarin.Forms.Platform.Android"
+	.size	.L.map_aname.18, 31
 
 	.section	.rodata.map_aname.19,"aMS",%progbits,1
 	.type	.L.map_aname.19, %object
 .L.map_aname.19:
-	.asciz	"Xamarin.AndroidX.AppCompat.AppCompatResources"
-	.size	.L.map_aname.19, 46
+	.asciz	"Xamarin.AndroidX.Lifecycle.ViewModel"
+	.size	.L.map_aname.19, 37
 
 	.section	.rodata.map_aname.20,"aMS",%progbits,1
 	.type	.L.map_aname.20, %object
 .L.map_aname.20:
-	.asciz	"Xamarin.CommunityToolkit"
-	.size	.L.map_aname.20, 25
+	.asciz	"Xamarin.AndroidX.AppCompat.AppCompatResources"
+	.size	.L.map_aname.20, 46
 
 	.section	.rodata.map_aname.21,"aMS",%progbits,1
 	.type	.L.map_aname.21, %object
 .L.map_aname.21:
-	.asciz	"people_errandd.Android"
-	.size	.L.map_aname.21, 23
+	.asciz	"Xamarin.CommunityToolkit"
+	.size	.L.map_aname.21, 25
 
 	.section	.rodata.map_aname.22,"aMS",%progbits,1
 	.type	.L.map_aname.22, %object

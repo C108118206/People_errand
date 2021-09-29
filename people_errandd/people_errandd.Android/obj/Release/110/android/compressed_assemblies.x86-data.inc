@@ -344,5 +344,5 @@
 
 	.type	compressed_assembly_data_86, @object
 	.local	compressed_assembly_data_86
-	.comm	compressed_assembly_data_86,321536,16
+	.comm	compressed_assembly_data_86,323072,16
 

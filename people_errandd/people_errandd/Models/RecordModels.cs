@@ -138,7 +138,8 @@ namespace people_errandd.Models
                         case 8:
                             DayOffRecords[i].LeaveType = "陪產假";
                             break;
-                    }
+                    }                    
+                    rs.status = rs.Review!=null? (bool)rs.Review ? "已審核" : "已拒絕":"待審核";                    
                     i++;
                 }              
                 DayOffRecords = DayOffRecords.Where(DayOff => DayOff.createdTime.ToString().Contains(date)).ToList();

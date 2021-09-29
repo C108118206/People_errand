@@ -52,7 +52,7 @@ namespace people_errandd
             bool hasKey = Preferences.ContainsKey("HashAccount");
             if (hasKey)
             {
-                if(await Login.AccountEnabled())
+                if (await Login.AccountEnabled())
                 {
                     MainPage = new SharedTransitionNavigationPage(new MainPage());
                     await information.GetUserName(Preferences.Get("HashAccount", ""));
@@ -62,10 +62,10 @@ namespace people_errandd
                 else
                 {
                     MainPage = new SharedTransitionNavigationPage(new LoginPage());
-                    await App.Current.MainPage.DisplayAlert("","帳號已停用","確認");
+                    await App.Current.MainPage.DisplayAlert("", "帳號已停用", "確認");
                     Preferences.Remove("HashAccount");
                 }
-                
+
             }
             var Seconds = TimeSpan.FromSeconds(8);
             Device.StartTimer(Seconds, () => {               
