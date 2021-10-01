@@ -39,7 +39,11 @@ namespace people_errandd.Views
                         await DisplayAlert("Error", "No Intenet", "OK");
                         return;
                     }
-                    if (await Login.ConfirmCompanyHash(company.Text.Trim()))
+                    if (string.IsNullOrEmpty(company.Text.Trim()))
+                    {
+                        await DisplayAlert("", "請勿輸入空白", "確認");
+                    }
+                    else if (await Login.ConfirmCompanyHash(company.Text.Trim()))
                     {
                         if (await Login.ConfirmUUID(Preferences.Get("uuid", "")))
                         {

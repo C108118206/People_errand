@@ -782,7 +782,7 @@
 
 	/* 86: people_errandd.dll */
 	/* uncompressed_file_size */
-	.word	323072
+	.word	323584
 	/* loaded */
 	.byte	0
 	/* data */
