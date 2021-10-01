@@ -14,6 +14,7 @@ namespace people_errandd.Views
     {
         private bool allowTap = true;
         private readonly Login Login = new Login();
+        public static string CompanyId;
         public LoginPage()
         {
             InitializeComponent();
@@ -39,14 +40,16 @@ namespace people_errandd.Views
                         await DisplayAlert("Error", "No Intenet", "OK");
                         return;
                     }
-                    if (await Login.ConfirmCompanyHash(company.Text.Trim()))
+                    if (string.IsNullOrWhiteSpace(company.Text))
                     {
-                        if (await Login.ConfirmUUID(Preferences.Get("uuid", "")))
+                        await DisplayAlert("", "請勿輸入空白", "確認");
+                    }
+                    else if (await Login.ConfirmCompanyHash(company.Text.Trim()))
+                    {
+                        if (await Login.ConfirmUUID(Preferences.Get("uuid", "")) && company.Text.Trim()==Preferences.Get("CompanyId",""))
                         {
-
                             if (!await Login.Reviewed())
-                            {
-                                
+                            {                           
                                 await DisplayAlert("審核中", "尚未審核完畢,請稍後再試", "確認");
                                 return;
                             }
@@ -61,6 +64,7 @@ namespace people_errandd.Views
                         }
                         else
                         {
+                            CompanyId = company.Text.Trim();
                             await PopupNavigation.Instance.PushAsync(new VerificationPage("首次登入"));
                         }
                     }

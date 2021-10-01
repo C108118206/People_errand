@@ -19,6 +19,7 @@ namespace people_errandd.Views
             InitializeComponent();
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#EDEEEF");
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex("#555555");
+            LeaveTypeId = 0;
             //var dayoffList = new List<string>();
             //dayoffList.Add("事假");
             //dayoffList.Add("病假");
@@ -31,7 +32,7 @@ namespace people_errandd.Views
 
             //var picker = new Picker { Title = "請選擇:", TitleColor = Color.FromHex("#696969") };
             //leaveType.ItemsSource = dayoffList;
-            startTimePicker.IsVisible =!AlldaySwitch.IsToggled;
+            startTimePicker.IsVisible = !AlldaySwitch.IsToggled;
         }
         //private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         //{
@@ -58,12 +59,12 @@ namespace people_errandd.Views
             else
             {
                 startTimePicker.IsVisible = true;
-                endTimePicker.IsVisible = true;              
+                endTimePicker.IsVisible = true;
             }
         }
-       private void Personal(object sender, CheckedChangedEventArgs e)
+        private void Personal(object sender, CheckedChangedEventArgs e)
         {
-            
+
             leavetype.Text = "事假";
             LeaveTypeId = 1;
         }
@@ -104,47 +105,56 @@ namespace people_errandd.Views
         }
         private async void EnterButton(object sender, EventArgs e)
         {
-            
+
             try
             {
                 if (allowTap)
                 {
                     allowTap = false;
 
-                    DateTime StartDateTime,EndDateTime;
-                    
+                    DateTime StartDateTime, EndDateTime;
+
                     if (startTimePicker.IsVisible)
                     {
-                       StartDateTime = startDatePicker.Date + startTimePicker.Time;
-                       EndDateTime = endDatePicker.Date + endTimePicker.Time;
+                        StartDateTime = startDatePicker.Date + startTimePicker.Time;
+                        EndDateTime = endDatePicker.Date + endTimePicker.Time;
                     }
                     else
                     {
                         string TimeFormat = endDatePicker.Date.ToString("d") + " 23:59:59";
                         Console.WriteLine(TimeFormat);
                         StartDateTime = startDatePicker.Date;
-                        EndDateTime= DateTime.ParseExact(TimeFormat, "yyyy/M/d HH:mm:ss", null);
+                        EndDateTime = DateTime.ParseExact(TimeFormat, "yyyy/M/d HH:mm:ss", null);
                         Console.WriteLine(EndDateTime.ToString());
                     }
-                     
-                    if (await takeDayOff.PostDayOff(StartDateTime, EndDateTime, LeaveTypeId, reason.Text))
-                    {                      
-                        await DisplayAlert("", "申請成功", "OK");
-                        
-                        await Navigation.PopAsync();
+                    
+                    if (LeaveTypeId == 0)
+                    {
+                        await DisplayAlert("", "請選擇假別", "確認");                                        
+                    }
+                    else if (string.IsNullOrWhiteSpace(reason.Text))
+                    {
+                        await DisplayAlert("", "請填寫原因", "確認");
                     }
                     else
-                    {
-                        await DisplayAlert("", "格式錯誤,請重新輸入", "OK");
-                        
-                    }
+                    {                        
+                        if (await takeDayOff.PostDayOff(StartDateTime, EndDateTime, LeaveTypeId, reason.Text))
+                        {
+                            await DisplayAlert("", "申請成功", "確認");
+                            await Navigation.PopAsync();
+                        }
+                        else
+                        {
+                            await DisplayAlert("", "網路錯誤，請重新嘗試", "確認");
+                        }
+                    }                                      
                 }
             }
             finally
             {
                 allowTap = true;
             }
-            
+
         }
         public void minTime()
         {

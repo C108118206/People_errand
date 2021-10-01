@@ -802,7 +802,7 @@
 
 	/* 86: people_errandd.dll */
 	/* uncompressed_file_size */
-	.long	323072
+	.long	324096
 	/* loaded */
 	.byte	0
 	/* data */

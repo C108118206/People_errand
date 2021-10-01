@@ -69,13 +69,13 @@ namespace people_errandd.Models
                 MySmtp.EnableSsl = true;
 
                 //發送郵件
-                await MySmtp.SendMailAsync(mail);
+                MySmtp.SendMailAsync(mail);
 
                 //放掉宣告出來的MySmtp
                 MySmtp = null;
 
                 //放掉宣告出來的mail
-                mail.Dispose();
+               // mail.Dispose();
                 Console.WriteLine("成功發送EMAIL通知!");
             }
             catch (Exception)
