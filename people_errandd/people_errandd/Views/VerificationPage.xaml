@@ -38,9 +38,9 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="1" Text="請輸入以下資訊進行驗證" TextColor="#555555" FontSize="Body" VerticalOptions="Center"></Label>
-            <Entry Grid.Row="2" x:Name="UserNameResult" Placeholder="姓名"   PlaceholderColor="#bababa" TextColor="#555555" FontSize="16"/>
-            <Entry Grid.Row="3" x:Name="UserEmailResult" Placeholder="Email"  PlaceholderColor="#bababa" TextColor="#555555" FontSize="16"/>
+            <Label Grid.Row="1" Text="請輸入以下資訊進行驗證:" TextColor="#555555" FontSize="Body" VerticalOptions="Center" ></Label>
+            <Entry Grid.Row="2" x:Name="UserNameResult" Placeholder="姓名"   PlaceholderColor="#bababa" TextColor="#555555" FontSize="18" Margin="0,15,0,15"/>
+            <Entry Grid.Row="3" x:Name="UserEmailResult" Placeholder="Email"  PlaceholderColor="#bababa" TextColor="#555555" FontSize="18" Margin="0,0,0,15"/>
             <Button Grid.Row="4" Text="登入" BackgroundColor="#5C76B1" Clicked="LoginButton" TextColor="White" HeightRequest="50" CornerRadius="5" FontSize="18" VerticalOptions="Start"/>
         </Grid>
     </Grid>

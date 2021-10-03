@@ -43,6 +43,10 @@
       "frameworks": {
         "monoandroid11.0": {
           "dependencies": {
+            "Karamunting.Android.Akexorcist.SnapTimePicker": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Xam.Plugin.Media": {
               "target": "Package",
               "version": "[5.0.1, )"
@@ -57,7 +61,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[5.0.0.2083, )"
+              "version": "[5.0.0.2125, )"
             },
             "Xamarin.Plugin.SharedTransitions": {
               "target": "Package",
@@ -65,7 +69,7 @@
             },
             "sqlite-net-pcl": {
               "target": "Package",
-              "version": "[1.8.0-beta, )"
+              "version": "[1.8.116, )"
             }
           }
         }
@@ -124,7 +128,7 @@
             },
             "Rg.Plugins.Popup": {
               "target": "Package",
-              "version": "[2.0.0.12, )"
+              "version": "[2.0.0.13, )"
             },
             "Xam.Plugin.Media": {
               "target": "Package",
@@ -140,11 +144,11 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[5.0.0.2083, )"
+              "version": "[5.0.0.2125, )"
             },
             "Xamarin.Forms.Maps": {
               "target": "Package",
-              "version": "[5.0.0.2083, )"
+              "version": "[5.0.0.2125, )"
             },
             "Xamarin.Plugin.SharedTransitions": {
               "target": "Package",
@@ -152,7 +156,7 @@
             },
             "sqlite-net-pcl": {
               "target": "Package",
-              "version": "[1.8.0-beta, )"
+              "version": "[1.8.116, )"
             }
           },
           "imports": [

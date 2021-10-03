@@ -20,10 +20,12 @@
     <!-- <item name="android:textColorSecondary">#166BA2</item>  全部底線的顏色-->
 
     <item name="android:statusBarColor">#5C76B1</item>
-    <item name="colorAccent">@color/my_color</item>
+    <item name="colorAccent">#5C76B1</item>
 
     <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
     <item name="android:timePickerDialogTheme">@style/TimePickerDialogTheme</item>
+
+
   </style>
 
 
@@ -39,12 +41,14 @@
 
   <style name="TimePickerDialogTheme" parent="@style/Theme.AppCompat.Light.Dialog">
     <item name="colorAccent">#5C76B1</item>
+    <item name="android:textColorPrimary">#555555</item>
     <item name="android:timePickerStyle">@style/TimePickerDialogStyle</item>
   </style>
   <style name="TimePickerDialogStyle" parent="@android:style/Widget.Material.Light.TimePicker">
     <item name="colorAccent">#5C76B1</item>
-    <item name="android:timePickerMode">clock</item>
-    <item name="android:headerBackground">#5C76B1</item>
+    <item name="android:timePickerMode">spinner</item>
+
   </style>
 
+  
 </resources>

@@ -111,16 +111,29 @@
                             </OnPlatform>
                         </Frame.HasShadow>
                         <StackLayout>
-                            <Grid Grid.Row="0" ColumnSpacing="1" ColumnDefinitions="1*, 4*">
-                                <Grid.Margin>
-                                    <OnIdiom x:TypeArguments="Thickness">
-                                        <OnIdiom.Phone>0,0,0,0</OnIdiom.Phone>
-                                        <OnIdiom.Tablet>220,0,0,0</OnIdiom.Tablet>
+                            <Grid  ColumnDefinitions="*,Auto" HorizontalOptions="Center">
+                                <Grid Grid.Row="0" ColumnSpacing="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition>
+                                            <ColumnDefinition.Width>
+                                                <OnIdiom x:TypeArguments="GridLength" Tablet="4*" Phone="1*" />
+                                            </ColumnDefinition.Width>
+                                        </ColumnDefinition>
+                                        <ColumnDefinition>
+                                            <ColumnDefinition.Width>
+                                                <OnIdiom x:TypeArguments="GridLength" Tablet="5.8*" Phone="4*" />
+                                            </ColumnDefinition.Width>
+                                        </ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <OnIdiom x:TypeArguments="View">
+                                        <OnIdiom.Phone >
+                                            <Image HeightRequest="50" Source="{Binding image}" HorizontalOptions="Start" VerticalOptions="Start"  Grid.Row="0"  Grid.Column="0" />
+                                        </OnIdiom.Phone>
+                                        <OnIdiom.Tablet >
+                                            <Image HeightRequest="50" Source="{Binding image}" HorizontalOptions="End" VerticalOptions="Start" Margin="0,0,50,0"  Grid.Row="0"  Grid.Column="0" />
+                                        </OnIdiom.Tablet>
                                     </OnIdiom>
-                                </Grid.Margin>
-                                <Image HeightRequest="50" Source="{Binding image}" HorizontalOptions="Start" VerticalOptions="Start"  Grid.Row="0"  Grid.Column="0" />
-
-                                <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="30, 30" ColumnDefinitions="2*, 9*">
+                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="30, 30" ColumnDefinitions="2*, 9*">
                                     <Label Style="{StaticResource gooutanddayofftitle}" Text="狀態 :" Grid.Row="0" Grid.Column="0"></Label>
                                     <Label   TextColor="{Binding statuscolor}"
                                              Style="{StaticResource gooutanddayoffcontent}"
@@ -137,7 +150,7 @@
                                  
                                 </Grid>
                             </Grid>
-
+                            </Grid>
                         </StackLayout>
 
                     </Frame>
@@ -167,16 +180,30 @@
                                 </OnPlatform>
                             </Frame.HasShadow>
                             <StackLayout >
-                                <Grid Grid.Row="0" ColumnSpacing="1" ColumnDefinitions="1*, 5*">
-                                    <Grid.Margin>
-                                        <OnIdiom x:TypeArguments="Thickness">
-                                            <OnIdiom.Phone>0,0,0,0</OnIdiom.Phone>
-                                            <OnIdiom.Tablet>210,0,0,0</OnIdiom.Tablet>
+                                <Grid ColumnDefinitions="*,Auto" HorizontalOptions="Center">
+                                    <Grid Grid.Row="0" ColumnSpacing="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition>
+                                                <ColumnDefinition.Width>
+                                                    <OnIdiom x:TypeArguments="GridLength" Tablet="3.6*" Phone="1*" />
+                                                </ColumnDefinition.Width>
+                                            </ColumnDefinition>
+                                            <ColumnDefinition>
+                                                <ColumnDefinition.Width>
+                                                    <OnIdiom x:TypeArguments="GridLength" Tablet="6.2*" Phone="5*" />
+                                                </ColumnDefinition.Width>
+                                            </ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <OnIdiom x:TypeArguments="View">
+                                            <OnIdiom.Phone >
+                                                <Image HeightRequest="50" Source="{Binding image}" HorizontalOptions="Start" VerticalOptions="Start"  Grid.Row="0"  Grid.Column="0" />
+                                            </OnIdiom.Phone>
+                                            <OnIdiom.Tablet >
+                                                <Image HeightRequest="50" Source="{Binding image}" HorizontalOptions="End" VerticalOptions="Start" Margin="0,0,50,0"  Grid.Row="0"  Grid.Column="0" />
+                                            </OnIdiom.Tablet>
                                         </OnIdiom>
-                                    </Grid.Margin>
-                                    <Image HeightRequest="55" Source="{Binding image}" HorizontalOptions="Start" VerticalOptions="Start"  Grid.Row="0"  Grid.Column="0" />
 
-                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="30, 30, 30, 30,30,Auto" ColumnDefinitions="2*, 5*" >
+                                        <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="30, 30, 30, 30,30,Auto" ColumnDefinitions="2*, 5*" >
                                         <Label Style="{StaticResource gooutanddayofftitle}" Text="開始時間 :" Grid.Row="0" Grid.Column="0"></Label>
                                         <Label  Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding StartDate}"
@@ -210,7 +237,7 @@
                                             Text="{Binding Reason}"  Grid.Row="5" Grid.Column="1"></Label>
                                         
                                     </Grid>
-                                    
+                                    </Grid>
                                 </Grid>
                                 
                             </StackLayout>
@@ -238,44 +265,60 @@
                             </OnPlatform>
                         </Frame.HasShadow>
                         <StackLayout>
-                            <Grid Grid.Row="0" ColumnSpacing="1" ColumnDefinitions="1*, 4*">
-                                <Grid.Margin>
-                                    <OnIdiom x:TypeArguments="Thickness">
-                                        <OnIdiom.Phone>0,0,0,0</OnIdiom.Phone>
-                                        <OnIdiom.Tablet>210,0,0,0</OnIdiom.Tablet>
-                                    </OnIdiom>
-                                </Grid.Margin>
-                                <Image HeightRequest="55" Source="{Binding image}" HorizontalOptions="Start" VerticalOptions="Start"  Grid.Row="0"  Grid.Column="0" />
+                            <Grid  ColumnDefinitions="*,Auto" HorizontalOptions="Center">
+                                <Grid Grid.Row="0" ColumnSpacing="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition>
+                                            <ColumnDefinition.Width>
+                                                <OnIdiom x:TypeArguments="GridLength" Tablet="3.6*" Phone="1*" />
+                                            </ColumnDefinition.Width>
+                                        </ColumnDefinition>
+                                        <ColumnDefinition>
+                                            <ColumnDefinition.Width>
+                                                <OnIdiom x:TypeArguments="GridLength" Tablet="6.2*" Phone="5*" />
+                                            </ColumnDefinition.Width>
+                                        </ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
 
-                                <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="30, 30, 30, 30,Auto" ColumnDefinitions="2*, 5*">
-                                    <Label Style="{StaticResource gooutanddayofftitle}"
+                                    <OnIdiom x:TypeArguments="View">
+                                        <OnIdiom.Phone >
+                                            <Image HeightRequest="50" Source="{Binding image}" HorizontalOptions="Start" VerticalOptions="Start"  Grid.Row="0"  Grid.Column="0" />
+                                        </OnIdiom.Phone>
+                                        <OnIdiom.Tablet >
+                                            <Image HeightRequest="50" Source="{Binding image}" HorizontalOptions="End" VerticalOptions="Start" Margin="0,0,50,0" Grid.Row="0"  Grid.Column="0" />
+                                        </OnIdiom.Tablet>
+                                    </OnIdiom>
+
+                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="30, 30, 30, 30,Auto" ColumnDefinitions="2*, 5*">
+                                        <Label Style="{StaticResource gooutanddayofftitle}"
                                             Text="開始時間 :" Grid.Row="0" Grid.Column="0"></Label>
-                                    <Label 
+                                        <Label 
                                              Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding StartDate}"
                                                 HorizontalOptions="Start"
                                             TextColor="#5C76B1" Grid.Row="0" Grid.Column="1"></Label>
-                                    <Label  Style="{StaticResource gooutanddayofftitle}"
+                                        <Label  Style="{StaticResource gooutanddayofftitle}"
                                             Text="結束時間 :" Grid.Row="1" Grid.Column="0"></Label>
-                                    <Label Style="{StaticResource gooutanddayoffcontent}"
+                                        <Label Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding EndDate}"
                                                HorizontalOptions="Start"
                                             TextColor="#5C76B1" Grid.Row="1" Grid.Column="1"></Label>
-                                    <Label  Style="{StaticResource gooutanddayofftitle}"
+                                        <Label  Style="{StaticResource gooutanddayofftitle}"
                                             Text="申請日期 :" Grid.Row="2" Grid.Column="0"></Label>
-                                    <Label  Style="{StaticResource gooutanddayoffcontent}"
+                                        <Label  Style="{StaticResource gooutanddayoffcontent}"
                                                 HorizontalOptions="Start"
                                               Text="{Binding createdTime, StringFormat='{0:yyyy/MM/dd}'}"    Grid.Row="2" Grid.Column="1"></Label>
-                                    <Label Style="{StaticResource gooutanddayofftitle}"
+                                        <Label Style="{StaticResource gooutanddayofftitle}"
                                            Text="公出地點 :" Grid.Row="3" Grid.Column="0"></Label>
-                                    <Label Style="{StaticResource gooutanddayoffcontent}"
+                                        <Label Style="{StaticResource gooutanddayoffcontent}"
                                                HorizontalOptions="Start"
                                            Text="{Binding Location}" Grid.Row="3" Grid.Column="1"></Label>
-                                    <Label Style="{StaticResource gooutanddayofftitle}"
+                                        <Label Style="{StaticResource gooutanddayofftitle}"
                                             Text="公出事由 :" Grid.Row="4" Grid.Column="0"></Label>
-                                    <Label Style="{StaticResource gooutanddayoffcontent}"
+                                        <Label Style="{StaticResource gooutanddayoffcontent}"
                                                HorizontalOptions="Start"
                                            Text="{Binding Reason}"  Grid.Row="4" Grid.Column="1"></Label>
+                                    </Grid>
                                 </Grid>
                             </Grid>
 
@@ -304,16 +347,29 @@
                             </OnPlatform>
                         </Frame.HasShadow>
                         <StackLayout>
-                            <Grid Grid.Row="0" ColumnSpacing="1" ColumnDefinitions="1*, 4*">
-                                <Grid.Margin>
-                                    <OnIdiom x:TypeArguments="Thickness">
-                                        <OnIdiom.Phone>0,0,0,0</OnIdiom.Phone>
-                                        <OnIdiom.Tablet>220,0,0,0</OnIdiom.Tablet>
+                            <Grid>
+                                <Grid Grid.Row="0"  ColumnSpacing="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition>
+                                            <ColumnDefinition.Width>
+                                                <OnIdiom x:TypeArguments="GridLength" Tablet="3.6*" Phone="1*" />
+                                            </ColumnDefinition.Width>
+                                        </ColumnDefinition>
+                                        <ColumnDefinition>
+                                            <ColumnDefinition.Width>
+                                                <OnIdiom x:TypeArguments="GridLength" Tablet="6.2*" Phone="4*" />
+                                            </ColumnDefinition.Width>
+                                        </ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <OnIdiom x:TypeArguments="View">
+                                        <OnIdiom.Phone >
+                                            <Image HeightRequest="50" Source="{Binding advanceimage}" HorizontalOptions="Start" VerticalOptions="Start" Margin="10,0,0,0"  Grid.Row="0"  Grid.Column="0" />
+                                        </OnIdiom.Phone>
+                                        <OnIdiom.Tablet >
+                                            <Image HeightRequest="50" Source="{Binding advanceimage}" HorizontalOptions="End" VerticalOptions="Start" Margin="0,0,50,0"  Grid.Row="0"  Grid.Column="0" />
+                                        </OnIdiom.Tablet>
                                     </OnIdiom>
-                                </Grid.Margin>
-                                <Image HeightRequest="45" Source="{Binding advanceimage}" HorizontalOptions="Start" VerticalOptions="Start" Margin="10,0,0,0" Grid.Row="0"  Grid.Column="0" />
-
-                                <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="5*,5*,10*" ColumnDefinitions="2*, 9*">
+                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="5*,5*,10*" ColumnDefinitions="2*, 9*">
 
                                     <Label Style="{StaticResource gooutanddayofftitle}"
                                               Text="狀態 :" Grid.Row="0" Grid.Column="0"></Label>
@@ -337,7 +393,7 @@
                                    
                                 </Grid>
                             </Grid>
-
+                            </Grid>
                         </StackLayout>
 
                     </Frame>

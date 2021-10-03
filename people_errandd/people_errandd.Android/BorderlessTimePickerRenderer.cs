@@ -24,6 +24,7 @@ namespace people_errandd.Droid
             protected override void OnElementChanged(ElementChangedEventArgs<TimePicker> e)
             {
                 base.OnElementChanged(e);
+            
                 if (e.OldElement == null)
                 {
                     Control.Background = null;
