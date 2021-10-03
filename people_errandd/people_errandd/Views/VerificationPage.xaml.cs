@@ -27,7 +27,7 @@ namespace people_errandd.Views
 
         private async void LoginButton(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(UserNameResult.Text) && string.IsNullOrEmpty(UserEmailResult.Text))
+            if (string.IsNullOrEmpty(UserNameResult.Text) || string.IsNullOrEmpty(UserEmailResult.Text))
             {
                 await DisplayAlert("錯誤", "請勿輸入空白", "確認");
             }

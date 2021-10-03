@@ -17,15 +17,21 @@ namespace people_errandd.Models
         public event PropertyChangedEventHandler PropertyChanged;
         //private static string GetResponse;
         public async Task<bool> ConfirmCompanyHash(string code)
-        {
-            response = await client.GetAsync(basic_url + ControllerNameCompany + code);//HTTP GET
-            if (response.StatusCode.ToString() == "OK")
+        {          
+            try
             {
-                GetResponse = await response.Content.ReadAsStringAsync();//將JSON轉成string
-                string[] _CompanyInformation = GetResponse.Split('\n');//分割字串
-                Preferences.Set("CompanyHash",_CompanyInformation[0]);
-                return true;
+                response = await client.GetAsync(basic_url + ControllerNameCompany + code);//HTTP GET
+                if (response.StatusCode.ToString() == "OK")
+                {
+                    GetResponse = await response.Content.ReadAsStringAsync();//將JSON轉成string
+                    string[] _CompanyInformation = GetResponse.Split('\n');//分割字串
+                    Preferences.Set("CompanyHash", _CompanyInformation[0]);
+                    return true;
+                }
             }
+            catch (Exception)
+            {
+            }        
             return false;
         }
         public async Task<bool> ConfirmUUID(string UUID)//判斷裝置UUID是否存在資料庫
