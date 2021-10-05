@@ -5,7 +5,7 @@
     <ActiveDebugProfile>本機裝置</ActiveDebugProfile>
     <DeveloperId>bigtw178%40gmail.com</DeveloperId>
     <DevelopmentTeamId>769XWU8586</DevelopmentTeamId>
-    <DefaultDevice>iPhone 8 iOS 14.5</DefaultDevice>
+    <DefaultDevice>iPhone 11 Pro Max iOS 14.5</DefaultDevice>
     <TargetiOSDevice>&lt;%3fxml version="1.0" encoding="UTF-8"%3f&gt;
 &lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
 &lt;plist version="1.0"&gt;

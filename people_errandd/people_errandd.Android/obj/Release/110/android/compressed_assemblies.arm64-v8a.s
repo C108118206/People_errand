@@ -782,7 +782,11 @@
 
 	/* 86: people_errandd.dll */
 	/* uncompressed_file_size */
+<<<<<<< HEAD
 	.word	324096
+=======
+	.word	323584
+>>>>>>> d7165ac7969c0ac609b9d7c4d438237e45a126a7
 	/* loaded */
 	.byte	0
 	/* data */

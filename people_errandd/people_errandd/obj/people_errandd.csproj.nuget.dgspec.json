@@ -1,25 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {}
+    "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {}
   },
   "projects": {
-    "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+    "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
+        "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
         "projectName": "people_errandd",
-        "projectPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
-        "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
-        "outputPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\obj\\",
+        "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
+        "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\lonel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\lmh_flower\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -28,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\Public\\Documents\\Infragistics\\NuGet\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,7 +57,7 @@
             },
             "Rg.Plugins.Popup": {
               "target": "Package",
-              "version": "[2.0.0.12, )"
+              "version": "[2.0.0.13, )"
             },
             "Xam.Plugin.Media": {
               "target": "Package",
@@ -74,11 +73,11 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[5.0.0.2083, )"
+              "version": "[5.0.0.2125, )"
             },
             "Xamarin.Forms.Maps": {
               "target": "Package",
-              "version": "[5.0.0.2083, )"
+              "version": "[5.0.0.2125, )"
             },
             "Xamarin.Plugin.SharedTransitions": {
               "target": "Package",
@@ -86,7 +85,7 @@
             },
             "sqlite-net-pcl": {
               "target": "Package",
-              "version": "[1.8.0-beta, )"
+              "version": "[1.8.116, )"
             }
           },
           "imports": [
@@ -99,7 +98,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

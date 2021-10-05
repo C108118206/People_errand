@@ -263,9 +263,8 @@
                                     <DatePicker Grid.Row="1" x:Name="startDatePicker" DateSelected="startDatePicker_DateSelected" Style="{StaticResource date}"/>
                                         <!--開始日期選擇-->
 
-                                    <TimePicker   Grid.Row="2" x:Name="startTimePicker" PropertyChanged="startTimePicker_PropertyChanged" Style="{StaticResource time}" />
-                                
-                                    </StackLayout>
+                                            <TimePicker   Grid.Row="2" x:Name="startTimePicker" PropertyChanged="startTimePicker_PropertyChanged" Style="{StaticResource time}" />
+                                        </StackLayout>
                                 </Frame>
                                 <!--開始時間選擇-->
                             </StackLayout>
@@ -288,6 +287,7 @@
                             MinimumDate="{Binding Source={x:Reference startDatePicker},Path=Date}"
                                                   
                             />
+
                                         <!--結束日期選擇(需小於開始日期)-->
                                     <TimePicker Grid.Row="2" x:Name="endTimePicker" PropertyChanged="endTimePicker_PropertyChanged"  Style="{StaticResource time}"  />
                                         <!--結束時間選擇-->

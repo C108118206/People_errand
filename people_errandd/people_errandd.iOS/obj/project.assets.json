@@ -31,7 +31,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.12": {
+      "Rg.Plugins.Popup/2.0.0.13": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
@@ -310,10 +310,10 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.Maps/5.0.0.2083": {
+      "Xamarin.Forms.Maps/5.0.0.2125": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Forms": "5.0.0.2083"
+          "Xamarin.Forms": "5.0.0.2125"
         },
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
@@ -341,14 +341,14 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
-          "Rg.Plugins.Popup": "2.0.0.12",
+          "Rg.Plugins.Popup": "2.0.0.13",
           "Xam.Plugin.Media": "5.0.1",
           "Xamarin.CommunityToolkit": "1.3.0-pre1",
           "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2083",
-          "Xamarin.Forms.Maps": "5.0.0.2083",
+          "Xamarin.Forms": "5.0.0.2125",
+          "Xamarin.Forms.Maps": "5.0.0.2125",
           "Xamarin.Plugin.SharedTransitions": "2.4.0",
-          "sqlite-net-pcl": "1.8.0-beta"
+          "sqlite-net-pcl": "1.8.116"
         },
         "compile": {
           "bin/placeholder/people_errandd.dll": {}
@@ -388,7 +388,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.12": {
+      "Rg.Plugins.Popup/2.0.0.13": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
@@ -667,10 +667,10 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.Maps/5.0.0.2083": {
+      "Xamarin.Forms.Maps/5.0.0.2125": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Forms": "5.0.0.2083"
+          "Xamarin.Forms": "5.0.0.2125"
         },
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
@@ -698,14 +698,14 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
-          "Rg.Plugins.Popup": "2.0.0.12",
+          "Rg.Plugins.Popup": "2.0.0.13",
           "Xam.Plugin.Media": "5.0.1",
           "Xamarin.CommunityToolkit": "1.3.0-pre1",
           "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2083",
-          "Xamarin.Forms.Maps": "5.0.0.2083",
+          "Xamarin.Forms": "5.0.0.2125",
+          "Xamarin.Forms.Maps": "5.0.0.2125",
           "Xamarin.Plugin.SharedTransitions": "2.4.0",
-          "sqlite-net-pcl": "1.8.0-beta"
+          "sqlite-net-pcl": "1.8.116"
         },
         "compile": {
           "bin/placeholder/people_errandd.dll": {}
@@ -745,7 +745,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.12": {
+      "Rg.Plugins.Popup/2.0.0.13": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
@@ -1024,10 +1024,10 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.Maps/5.0.0.2083": {
+      "Xamarin.Forms.Maps/5.0.0.2125": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Forms": "5.0.0.2083"
+          "Xamarin.Forms": "5.0.0.2125"
         },
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
@@ -1055,14 +1055,14 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
-          "Rg.Plugins.Popup": "2.0.0.12",
+          "Rg.Plugins.Popup": "2.0.0.13",
           "Xam.Plugin.Media": "5.0.1",
           "Xamarin.CommunityToolkit": "1.3.0-pre1",
           "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2083",
-          "Xamarin.Forms.Maps": "5.0.0.2083",
+          "Xamarin.Forms": "5.0.0.2125",
+          "Xamarin.Forms.Maps": "5.0.0.2125",
           "Xamarin.Plugin.SharedTransitions": "2.4.0",
-          "sqlite-net-pcl": "1.8.0-beta"
+          "sqlite-net-pcl": "1.8.116"
         },
         "compile": {
           "bin/placeholder/people_errandd.dll": {}
@@ -1102,7 +1102,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.12": {
+      "Rg.Plugins.Popup/2.0.0.13": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
@@ -1381,10 +1381,10 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.Maps/5.0.0.2083": {
+      "Xamarin.Forms.Maps/5.0.0.2125": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Forms": "5.0.0.2083"
+          "Xamarin.Forms": "5.0.0.2125"
         },
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Maps.dll": {},
@@ -1412,14 +1412,14 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
-          "Rg.Plugins.Popup": "2.0.0.12",
+          "Rg.Plugins.Popup": "2.0.0.13",
           "Xam.Plugin.Media": "5.0.1",
           "Xamarin.CommunityToolkit": "1.3.0-pre1",
           "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2083",
-          "Xamarin.Forms.Maps": "5.0.0.2083",
+          "Xamarin.Forms": "5.0.0.2125",
+          "Xamarin.Forms.Maps": "5.0.0.2125",
           "Xamarin.Plugin.SharedTransitions": "2.4.0",
-          "sqlite-net-pcl": "1.8.0-beta"
+          "sqlite-net-pcl": "1.8.116"
         },
         "compile": {
           "bin/placeholder/people_errandd.dll": {}
@@ -1474,10 +1474,10 @@
         "packageIcon.png"
       ]
     },
-    "Rg.Plugins.Popup/2.0.0.12": {
-      "sha512": "6Eb4bjZlIwJC39/8ae82G0BM3rC1FS7WwSU2eExRnXg1X0GIJ8yFmz89mYWrxRa7eCzsxI12cdG1/UqNQ3sYBA==",
+    "Rg.Plugins.Popup/2.0.0.13": {
+      "sha512": "eT5nhJdSBPGlPh5qCbwCwstegcREHKav0EXa4FOYP5MttPWTAQMERDuT6PzxbHykTisfS8w+1J+pXTANVN8i6w==",
       "type": "package",
-      "path": "rg.plugins.popup/2.0.0.12",
+      "path": "rg.plugins.popup/2.0.0.13",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1518,7 +1518,7 @@
         "lib/xamarinwatchos10/Rg.Plugins.Popup.pdb",
         "lib/xamarinwatchos10/Rg.Plugins.Popup.xml",
         "readme.txt",
-        "rg.plugins.popup.2.0.0.12.nupkg.sha512",
+        "rg.plugins.popup.2.0.0.13.nupkg.sha512",
         "rg.plugins.popup.nuspec"
       ]
     },
@@ -2037,10 +2037,10 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "Xamarin.Forms.Maps/5.0.0.2083": {
-      "sha512": "fCrJIl7t5NDJ9sOfV0Hu7nX4b9dHvaPiyJzZRwVVFMIbb3JarmS+GVDSx/oqeAom/HywV+UOFdenQNCqJ8x5CA==",
+    "Xamarin.Forms.Maps/5.0.0.2125": {
+      "sha512": "2FDWADipiF8agAqoFNOTHdefJsIO1mHdLe/yI9GxdVtnIUPrs7CR7z48XWMx+1h0/nltTzQEpSksqImg7gZshQ==",
       "type": "package",
-      "path": "xamarin.forms.maps/5.0.0.2083",
+      "path": "xamarin.forms.maps/5.0.0.2125",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2067,7 +2067,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Maps.UWP.dll",
         "lib/uap10.0.16299/Xamarin.Forms.Maps.UWP.pri",
         "lib/uap10.0.16299/Xamarin.Forms.Maps.dll",
-        "xamarin.forms.maps.5.0.0.2083.nupkg.sha512",
+        "xamarin.forms.maps.5.0.0.2125.nupkg.sha512",
         "xamarin.forms.maps.nuspec"
       ]
     },
@@ -2109,27 +2109,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lonel\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Users\\lmh_flower\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Punch\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
       "projectName": "people_errandd.iOS",
-      "projectPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
-      "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
-      "outputPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\",
+      "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "packagesPath": "C:\\Users\\lmh_flower\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\lonel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\lmh_flower\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2138,13 +2135,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\Public\\Documents\\Infragistics\\NuGet\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
-              "projectPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+            "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "C:\\Users\\lmh_flower\\source\\repos\\People_errand\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
             }
           }
         }
@@ -2195,5 +2193,33 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "偵測到套件降級: sqlite-net-pcl 從 1.8.116 降到 1.8.0-beta。請直接從專案參考套件，以選取不同的版本。 \r\n people_errandd.iOS -> people_errandd -> sqlite-net-pcl (>= 1.8.116) \r\n people_errandd.iOS -> sqlite-net-pcl (>= 1.8.0-beta)",
+      "libraryId": "sqlite-net-pcl",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "偵測到套件降級: Xamarin.Forms 從 5.0.0.2125 降到 5.0.0.2083。請直接從專案參考套件，以選取不同的版本。 \r\n people_errandd.iOS -> people_errandd -> Xamarin.Forms (>= 5.0.0.2125) \r\n people_errandd.iOS -> Xamarin.Forms (>= 5.0.0.2083)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    }
+  ]
 }

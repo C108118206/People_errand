@@ -344,5 +344,9 @@
 
 	.type	compressed_assembly_data_86, @object
 	.local	compressed_assembly_data_86
+<<<<<<< HEAD
 	.comm	compressed_assembly_data_86,324096,16
+=======
+	.comm	compressed_assembly_data_86,323584,16
+>>>>>>> d7165ac7969c0ac609b9d7c4d438237e45a126a7
 
