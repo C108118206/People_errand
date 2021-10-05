@@ -50,7 +50,7 @@ namespace people_errandd.ViewModels
                 {
                     try
                     {                       
-                            await sendEmail(await GetEmail(), "差勤打卡員工請假申請通知", "<h2>您的員工已進行請假申請，請至APP或後臺上進行確認！</h2>");                        
+                        sendEmail(await GetEmail(), "差勤打卡員工請假申請通知", "<h2>您的員工已進行請假申請，請至APP或後臺上進行確認！</h2>");                       
                     }
                     catch (Exception)
                     {
@@ -60,7 +60,6 @@ namespace people_errandd.ViewModels
             }
             catch (Exception)
             {
-                return false;
             }
             return false;
         }

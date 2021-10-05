@@ -30,7 +30,7 @@ namespace people_errandd.Models
         public static readonly string LanguageRoute = "/detect?api-version=3.0";//language route             
         public static string GetResponse { get; set; }
 
-        public static async Task sendEmail(List<string> to_email, string email_subject, string email_body)//寄EMAIL
+        public static void sendEmail(List<string> to_email, string email_subject, string email_body)//寄EMAIL
         {
             try
             {
@@ -69,13 +69,13 @@ namespace people_errandd.Models
                 MySmtp.EnableSsl = true;
 
                 //發送郵件
-                await MySmtp.SendMailAsync(mail);
+                MySmtp.SendMailAsync(mail);
 
                 //放掉宣告出來的MySmtp
                 MySmtp = null;
 
                 //放掉宣告出來的mail
-                mail.Dispose();
+               // mail.Dispose();
                 Console.WriteLine("成功發送EMAIL通知!");
             }
             catch (Exception)
