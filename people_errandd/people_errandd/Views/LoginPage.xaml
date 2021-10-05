@@ -61,7 +61,7 @@
     <Grid  x:Name="RootContainer"
             BackgroundColor="#EDEEEF"
             ColumnDefinitions="*,Auto"
-            RowDefinitions="*,120">
+            RowDefinitions="5*,*">
         <!--設置背景深藍色-->
         <Frame Margin="0,-75,-10,150"
                 x:Name="transition"
@@ -71,7 +71,7 @@
                 BackgroundColor="White"
                 CornerRadius="40">
             <ScrollView VerticalScrollBarVisibility="Never">
-                <StackLayout Orientation="Vertical" Spacing="18" Padding="0,10,0,0">
+                <StackLayout Orientation="Vertical" Spacing="15">
                     <Grid Grid.Row="0" ColumnDefinitions="*,Auto" RowDefinitions="1.2*,*" RowSpacing="5">
                         <Grid.Margin>
                             <OnIdiom x:TypeArguments="Thickness">
@@ -86,7 +86,7 @@
                     </Grid>
                  
                         <!--組織ID標題-->
-                    <Grid Grid.Row="1" ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto" Margin="0,10,0,10">
+                    <Grid Grid.Row="1" ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto" Margin="0,5,0,5">
                         <Entry x:Name="company" Placeholder=" 請輸入組織ID" Style="{StaticResource entry}" Grid.Row="0">
                             <Entry.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">

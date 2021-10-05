@@ -142,7 +142,7 @@
     <!--內容樣式設定結束-->
 
    
-        <ScrollView VerticalScrollBarVisibility="Never">
+        <ScrollView VerticalScrollBarVisibility="Never" Orientation="Vertical">
         <StackLayout>
             <StackLayout Orientation="Horizontal" Margin="20,20,0,0">
                 <!--*-->
@@ -225,10 +225,10 @@
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
-            <Frame BackgroundColor="White" HasShadow="False"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" CornerRadius="30" Margin="0,0,0,-250">
+            <Frame BackgroundColor="White" HasShadow="False"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" CornerRadius="30" Margin="0,0,0,-150"><!--000-250-->
 
                 <StackLayout >
-                    <ScrollView>
+                    <ScrollView VerticalScrollBarVisibility="Never" Orientation="Vertical">
                         <StackLayout>
                        
                     <StackLayout>
@@ -318,8 +318,8 @@
                     <Button  Grid.Row="4" Style="{StaticResource button}"  Clicked="EnterButton">
                         <Button.Margin>
                             <OnIdiom x:TypeArguments="Thickness">
-                                <OnIdiom.Phone>0,10,0,5</OnIdiom.Phone>
-                                <OnIdiom.Tablet>0,20,0,20</OnIdiom.Tablet>
+                                <OnIdiom.Phone>0,10,0,140</OnIdiom.Phone>
+                                <OnIdiom.Tablet>0,20,0,180</OnIdiom.Tablet>
                             </OnIdiom>
                         </Button.Margin>
                     </Button>
