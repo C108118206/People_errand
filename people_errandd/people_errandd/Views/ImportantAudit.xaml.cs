@@ -26,7 +26,6 @@ namespace people_errandd.Views
             base.OnAppearing();
             Audits.ItemsSource = await MainPageViewModel.GetAudit();
         }
-
         private async void Review(object sender, EventArgs e)
         {
             Console.WriteLine(((Button)sender).CommandParameter);
@@ -40,7 +39,6 @@ namespace people_errandd.Views
             {
                 await Error();
             }
-
         }
         private async void Reject(object sender, EventArgs e)
         {

@@ -32,6 +32,23 @@ namespace people_errandd.Models
                 response = await client.PutAsync(basic_url + ControllerNameLeaveRecord + "review_leaveRecord", content);
                 if (response.StatusCode.ToString().Equals("OK"))
                 {
+                    response = await client.GetAsync(basic_url + ControllerNameLeaveRecord + "LeaveRecordId_Get_HashAccount?leaveRecordId=" + id);
+                    var result = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine(result);
+                    response = await client.GetAsync(basic_url + ControllerNameInformation + result);
+                    result = await response.Content.ReadAsStringAsync();
+                    List<information> informations = JsonConvert.DeserializeObject<List<information>>(result);
+                    var to_email = new List<string>();
+                    to_email.Add(informations[0].email);
+                    
+                    if (review)
+                    {
+                        sendEmail(to_email, "差勤打卡請假審核通知", "<h1>您的請假申請</h1>\n<h1>審核通過</h1>\n請至差勤打卡APP請假紀錄進行確認，如有問題請連繫後台");
+                    }                        
+                    else
+                    {
+                        sendEmail(to_email, "差勤打卡請假審核通知", "<h1>您的請假申請</h1>\n<h1><font color='red'>審核遭拒</font></h1>\n請至差勤打卡APP請假紀錄進行確認，如有問題請連繫後台");
+                    }                            
                     return true;
                 }
             }

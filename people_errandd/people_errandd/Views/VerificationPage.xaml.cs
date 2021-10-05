@@ -33,9 +33,13 @@ namespace people_errandd.Views
                 if(allowTap)
                 {
                     allowTap = false;
-                    if (string.IsNullOrWhiteSpace(UserNameResult.Text) || string.IsNullOrWhiteSpace(UserEmailResult.Text))
+                    if (string.IsNullOrWhiteSpace(UserNameResult.Text))
                     {
-                        await DisplayAlert("錯誤", "請勿輸入空白", "確認");
+                        await DisplayAlert("錯誤", "請輸入姓名", "確認");                        
+                    }
+                    else if(string.IsNullOrWhiteSpace(UserEmailResult.Text))
+                    {
+                        await DisplayAlert("錯誤", "請輸入信箱", "確認");
                     }
                     else
                     {

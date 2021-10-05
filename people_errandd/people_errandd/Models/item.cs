@@ -49,7 +49,7 @@ namespace people_errandd.Models
         public string Reason { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-
+     
         public bool? Review { get; set; }
         public string status { get; set; }
         public string image { get { return "nerd.png"; } }

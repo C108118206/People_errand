@@ -30,7 +30,7 @@ namespace people_errandd.Models
         public static readonly string LanguageRoute = "/detect?api-version=3.0";//language route             
         public static string GetResponse { get; set; }
 
-        public static async Task sendEmail(List<string> to_email, string email_subject, string email_body)//寄EMAIL
+        public static void sendEmail(List<string> to_email, string email_subject, string email_body)//寄EMAIL
         {
             try
             {
