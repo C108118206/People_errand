@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <SelectedDevice>MenGhuA</SelectedDevice>
-    <ActiveDebugProfile>MenGhuA</ActiveDebugProfile>
+    <SelectedDevice>本機裝置</SelectedDevice>
+    <ActiveDebugProfile>本機裝置</ActiveDebugProfile>
     <DeveloperId>bigtw178%40gmail.com</DeveloperId>
     <DevelopmentTeamId>769XWU8586</DevelopmentTeamId>
-    <DefaultDevice>iPod touch %287th generation%29 iOS 14.5</DefaultDevice>
+    <DefaultDevice>iPad %288th generation%29 iOS 14.5</DefaultDevice>
     <TargetiOSDevice>&lt;%3fxml version="1.0" encoding="UTF-8"%3f&gt;
 &lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
 &lt;plist version="1.0"&gt;
