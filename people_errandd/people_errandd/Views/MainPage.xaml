@@ -197,8 +197,8 @@
                             </OnIdiom>
                         </StackLayout.Margin>
                         <Label x:Name="AuditText" Text="審核通知" Grid.Row="0" FontSize="30" TextColor="#555555" Margin="0,0,0,10"/>
-                    <CollectionView Style="{StaticResource Collection}" x:Name="Audits" HeightRequest="150"  Margin="0,0,0,20" >
-                        <CollectionView.ItemsLayout>
+                        <CollectionView Style="{StaticResource Collection}" x:Name="Audits" HeightRequest="150"  Margin="0,0,0,20">
+                            <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Vertical" />
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
@@ -240,8 +240,22 @@
                                                   
                                                 </StackLayout>
                                                 <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
-                                                    <Label Text="時間 :" FontSize="13" TextColor="#585858"/>
-                                                    <Label Text="{Binding Time}" FontSize="13" TextColor="#585858"/>
+                                                    <Label Text="時間 :"  TextColor="#585858">
+                                                        <Label.FontSize>
+                                                            <OnIdiom x:TypeArguments="x:Double">
+                                                                <OnIdiom.Phone>12</OnIdiom.Phone>
+                                                                <OnIdiom.Tablet>14</OnIdiom.Tablet>
+                                                            </OnIdiom>
+                                                        </Label.FontSize>
+                                                    </Label>
+                                                    <Label Text="{Binding Time}"  TextColor="#585858">
+                                                        <Label.FontSize>
+                                                            <OnIdiom x:TypeArguments="x:Double">
+                                                                <OnIdiom.Phone>12</OnIdiom.Phone>
+                                                                <OnIdiom.Tablet>14</OnIdiom.Tablet>
+                                                            </OnIdiom>
+                                                        </Label.FontSize>
+                                                    </Label>
                                                 </StackLayout>
                                                 <BoxView Style="{StaticResource line}" Grid.Row="1" Margin="-18,0,0,-20">
                                                 <BoxView.BackgroundColor>

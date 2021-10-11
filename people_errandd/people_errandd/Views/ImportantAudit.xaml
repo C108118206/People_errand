@@ -82,6 +82,7 @@
                 <Setter Property="HorizontalOptions" Value="Start"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="FontSize" Value="14"/>
+              
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -129,18 +130,24 @@
                                             <Image HeightRequest="50" Source="nerd.png" HorizontalOptions="End" VerticalOptions="Start" Margin="0,0,50,0"  Grid.Row="0"  Grid.Column="0" />
                                         </OnIdiom.Tablet>
                                     </OnIdiom>
-                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="30, 30, 30, Auto" ColumnDefinitions="2*, 5*" >
+                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="36, 36, 36, Auto" ColumnDefinitions="4*, 8*">
                                         
                                         <Label x:Name="RecordId" Text="{Binding LeaveRecordId}" IsVisible="false"  Grid.Row="0" Grid.Column="0"></Label>
                                         <Label Style="{StaticResource gooutanddayofftitle}" Text="開始時間 :" Grid.Row="0" Grid.Column="0"></Label>
                                         <Label  Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding StartDate}"
-                                            TextColor="#5C76B1" Grid.Row="0" Grid.Column="1"></Label>
+                                                
+                                                Margin="0,2,0,0"
+                                            TextColor="#5C76B1" Grid.Row="0" Grid.Column="1">
+                                       
+                                        </Label>
                                         <Label  Style="{StaticResource gooutanddayofftitle}"
                                             Text="結束時間 :" Grid.Row="1" Grid.Column="0"></Label>
                                         <Label Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding EndDate}"
-                                            TextColor="#5C76B1" Grid.Row="1" Grid.Column="1"></Label>
+                                            TextColor="#5C76B1" Grid.Row="1" Grid.Column="1">
+                                          
+                                        </Label>
                                         <Label  Style="{StaticResource gooutanddayofftitle}"
                                             Text="申請人員 :" Grid.Row="2" Grid.Column="0"></Label>
                                         <Label Style="{StaticResource gooutanddayoffcontent}"
