@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <mono-debug version="1">
   <app-id>com.esst.PeopleErrand</app-id>
-<<<<<<< HEAD
-  <build-date>2021-10-04T16:14:57.5708597Z</build-date>
-=======
-  <build-date>2021-10-01T07:34:04.2113479Z</build-date>
->>>>>>> d7165ac7969c0ac609b9d7c4d438237e45a126a7
-  <build-id>f75567ab-1e6b-4282-99fe-9be3906b6514</build-id>
+  <build-date>2021-10-11T08:02:40.5886428Z</build-date>
+  <build-id>404c9f70-9679-4d80-b7c3-07b1655e748b</build-id>
 </mono-debug>

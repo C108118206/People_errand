@@ -116,7 +116,7 @@ namespace people_errandd.Models
             }
             return null;
         }
-        public async Task<List<DayOff>> GetLeaveRecord(string date , string employee_HashAccount)
+        public async Task<List<DayOff>> GetLeaveRecord(DateTime date , string employee_HashAccount)
         {
             try
             {
@@ -158,8 +158,14 @@ namespace people_errandd.Models
                     }                    
                     rs.status = rs.Review!=null? (bool)rs.Review ? "已審核" : "已拒絕":"待審核";                    
                     i++;
-                }              
-                DayOffRecords = DayOffRecords.Where(DayOff => DayOff.createdTime.ToString().Contains(date)).ToList();
+                }
+                 bool IsInDate(DateTime dt, DateTime dt1, DateTime dt2)
+                {
+                    return dt.CompareTo(dt1) >= 0 && dt.CompareTo(dt2) <= 0;
+                }
+               
+                //DayOffRecords = DayOffRecords.Where(DayOff => DayOff.StartDate.ToString().Contains(date)).ToList();
+                DayOffRecords = DayOffRecords.Where(DayOff => date.CompareTo(DayOff.StartDate)>=0 && date.CompareTo(DayOff.EndDate)<=0).ToList();
                 return DayOffRecords;
             }
             catch (Exception)

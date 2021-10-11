@@ -172,5 +172,24 @@ namespace people_errandd.Views
                 }
             }           
         }
+
+        private async void LogOut(object sender, EventArgs e)
+        {
+            try
+            {
+                if(allowTap)
+                {
+                    allowTap = false;
+                    Navigation.InsertPageBefore(new LoginPage(), this);
+                    await Navigation.PopAsync();
+                    Preferences.Remove("HashAccount");
+                }
+            }
+            finally
+            {
+                allowTap = true;
+                
+            }
+        }
     }
 }

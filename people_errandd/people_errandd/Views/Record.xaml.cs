@@ -71,7 +71,7 @@ namespace people_errandd.Views
                             RecordTitle.Text = "打卡紀錄";
                             break;
                         case "請假":
-                            Worklist.ItemsSource = await Records.GetLeaveRecord(dt.ToString("yyyy/M/d"),"");
+                            Worklist.ItemsSource = await Records.GetLeaveRecord(dt,"");
                             Console.WriteLine(dt.ToString("yyyy/M/d"));
                             RecordTypeId = 2;
                             RecordTitle.Text = "請假紀錄";
@@ -98,7 +98,7 @@ namespace people_errandd.Views
                     Worklist.ItemsSource = await Records.GetWorkRecord(dt.ToString("yyyy/M/d"));
                     break;
                 case 2:
-                    Worklist.ItemsSource = await Records.GetLeaveRecord(dt.ToString("yyyy/M/d"),"");
+                    Worklist.ItemsSource = await Records.GetLeaveRecord(dt,"");
                     break;
                 case 3:
                     Worklist.ItemsSource = await Records.GetAdvanceGoOutsRecord(dt.ToString("yyyy/M/d"));
@@ -170,8 +170,9 @@ namespace people_errandd.Views
         }
         private void setDate(double Date)
         {
-            dt = DatePicker.Date.AddDays(-Dt);
+            dt = _DatePicker.Date.AddDays(-Dt);
             dt = dt.AddDays(Date);
+            _DatePicker.Date = dt;
         }
         private void SetDateButton()
         {
@@ -200,11 +201,11 @@ namespace people_errandd.Views
             thu.Text = dt.AddDays(4).ToString("dd");
             fri.Text = dt.AddDays(5).ToString("dd");
             sat.Text = dt.AddDays(6).ToString("dd");
-            dt = DatePicker.Date;
+            dt = _DatePicker.Date;
         }
         private void DateButtonSwitch()
         {
-            dt = DatePicker.Date;
+            dt = _DatePicker.Date;
             Console.WriteLine(dt.ToString());
             switch (dt.ToString("dddd"))
             {

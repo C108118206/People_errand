@@ -43,6 +43,14 @@
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="TextColor" Value="#B9B9B9" />
             </Style>
+            <Style x:Key="contentLogOut" TargetType="Button">
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="Margin" Value="0,20,0,-10" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BackgroundColor" Value="#DE3737"/>
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="CornerRadius" Value="6"/>
+            </Style>
             <Style x:Key="contententry" TargetType="Entry">
                 <Setter Property="FontSize" Value="17" />
                 <Setter Property="FontAttributes" Value="Bold" />
@@ -125,7 +133,7 @@
                         </Label>
                         
 
-                        <Entry Placeholder="" x:Name="department" PlaceholderColor="#555555" IsReadOnly="True" Style="{StaticResource contententry}" Grid.Row="1">
+                        <Entry Placeholder="" x:Name="department" TextColor="Gray" IsReadOnly="True" Style="{StaticResource contententry}" Grid.Row="1">
                             <Entry.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
                                     <On Platform="iOS" Value="0,0,10,5" />
@@ -155,7 +163,7 @@
                         </Label>
 
 
-                        <Entry Placeholder="" x:Name="jobTitle" IsReadOnly="True" PlaceholderColor="#555555" Style="{StaticResource contententry}">
+                        <Entry Placeholder="" x:Name="jobTitle" IsReadOnly="True" TextColor="Gray" Style="{StaticResource contententry}">
                             <Entry.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
                                     <On Platform="iOS" Value="0,0,10,5" />
@@ -229,6 +237,14 @@
                         </Entry>
                             <!--Email輸入-->
                         <BoxView Style="{StaticResource line}" HeightRequest="1"/>
+                        <Button Text="登出" Clicked="LogOut" Style="{StaticResource contentLogOut}">
+                            <Button.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <On Platform="iOS" Value="0,30,10,5" />
+                                    <On Platform="Android" Value="-5,30,15,-10" />
+                                </OnPlatform>
+                            </Button.Margin>
+                        </Button>
                     </StackLayout>
                     <Label x:Name="emailValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="End" FontAttributes="Bold" Margin="0,5,20,0"></Label>
                    

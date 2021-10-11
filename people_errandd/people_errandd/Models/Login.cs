@@ -130,8 +130,8 @@ namespace people_errandd.Models
             }
             catch(Exception)
             {
+                return true;
             }
-            return false;
         }
         protected virtual void OnPropertyChanged(string propertyName)
         {

@@ -58,9 +58,10 @@ namespace people_errandd.Views
                                 await DisplayAlert("", "帳號已停用", "確認");
                                 return;
                             }
+                            Preferences.Set("HashAccount", await Login.GetHashAccount(Preferences.Get("uuid", "")));
                             Navigation.InsertPageBefore(new MainPage(), this);
                             await Navigation.PopAsync();
-                            Preferences.Set("HashAccount", await Login.GetHashAccount(Preferences.Get("uuid", "")));
+                            
                         }
                         else
                         {
