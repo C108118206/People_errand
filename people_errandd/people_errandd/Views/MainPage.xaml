@@ -125,14 +125,14 @@
                     </StackLayout>-->
                     <!--
                 <Button ImageSource="messenger" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Margin="0,-40,20,0" BackgroundColor="#8CC5D7" Clicked="ColleagueButton" /> -->
-                    <StackLayout Grid.Row="0" Margin="0,40,0,0">
+                    <StackLayout Grid.Row="0" Margin="0,50,0,0">
                         <Image Source="logo" Grid.Row="0" Grid.Column="0"  HeightRequest="45" HorizontalOptions="Start"/>
                         <StackLayout  Grid.Row="0" Grid.Column="1"  Margin="0,-62,0,0" VerticalOptions="End" HorizontalOptions="End" Orientation="Horizontal" >
                             <!--使用者姓名-->
                             <Label x:Name="username" Text="" Margin="0,20,0,0"   Style="{StaticResource name}"></Label>
                             <!--頭貼框架-->
                             <Frame Margin="0,8,0,0"
-                                   CornerRadius="25"
+                                   CornerRadius="23"
                                    HasShadow="False"
                                    BackgroundColor="White"
                                    HeightRequest="10"

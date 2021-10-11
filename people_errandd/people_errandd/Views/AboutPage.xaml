@@ -44,10 +44,10 @@
                 <Setter Property="TextColor" Value="#B9B9B9" />
             </Style>
             <Style x:Key="contentLogOut" TargetType="Button">
-                <Setter Property="FontSize" Value="20" />
-                <Setter Property="Margin" Value="0,20,0,-10" />
+                <Setter Property="FontSize" Value="17" />
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="BackgroundColor" Value="#DE3737"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="BackgroundColor" Value="#CA2D2D"/>
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="CornerRadius" Value="6"/>
             </Style>
@@ -76,7 +76,7 @@
         </Grid.RowDefinitions>
 
 
-        <ScrollView>
+        <ScrollView VerticalScrollBarVisibility="Never">
             <StackLayout Orientation="Vertical">
                 <StackLayout Grid.Row="0" BackgroundColor="#EDEEEF" HeightRequest="200" >
                     <!--頭貼.姓名背景高度與顏色-->
@@ -237,17 +237,17 @@
                         </Entry>
                             <!--Email輸入-->
                         <BoxView Style="{StaticResource line}" HeightRequest="1"/>
-                        <Button Text="登出" Clicked="LogOut" Style="{StaticResource contentLogOut}">
+                          <Label x:Name="emailValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="End" FontAttributes="Bold" Margin="0,5,20,0"></Label> 
+                    </StackLayout>
+                 
+                   <Button Text="登出" Clicked="LogOut" Style="{StaticResource contentLogOut}">
                             <Button.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
-                                    <On Platform="iOS" Value="0,30,10,5" />
-                                    <On Platform="Android" Value="-5,30,15,-10" />
+                                    <On Platform="iOS" Value="15,30,15,30" />
+                                    <On Platform="Android" Value="15,30,15,30" />
                                 </OnPlatform>
                             </Button.Margin>
                         </Button>
-                    </StackLayout>
-                    <Label x:Name="emailValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="End" FontAttributes="Bold" Margin="0,5,20,0"></Label>
-                   
                 </StackLayout>
             </StackLayout>
         </ScrollView>

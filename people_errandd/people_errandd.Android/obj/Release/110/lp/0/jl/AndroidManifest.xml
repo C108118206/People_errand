@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <!--
  Copyright (C) 2018 The Android Open Source Project
 
@@ -24,4 +25,15 @@
     <application>
     </application>
 
+=======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.akexorcist.snaptimepicker"
+    android:versionCode="10000"
+    android:versionName="1.0.0" >
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="28" />
+
+>>>>>>> 0b441b2a83fb7addd5e0c6bb88c4e8e9f7ca134a
 </manifest>
