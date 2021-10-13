@@ -19,7 +19,6 @@
 
     <!--內容樣式設定-->
     <ContentPage.Resources>
-        
         <ResourceDictionary>
             <Style x:Key="datetitle" TargetType="Label">
                 <Setter Property="FontSize" Value="14.5" />
@@ -203,7 +202,7 @@
                                             </OnIdiom.Tablet>
                                         </OnIdiom>
 
-                                        <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="36, 36, 36, 36,36,Auto" ColumnDefinitions="4*, 8*" >
+                                        <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="36, 36, 36, 36,36,Auto" ColumnDefinitions="4*, 9*" >
                                         <Label Style="{StaticResource gooutanddayofftitle}" Text="開始時間 :" Grid.Row="0" Grid.Column="0"></Label>
                                         <Label  Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding StartDate}"
@@ -293,7 +292,7 @@
                                         </OnIdiom.Tablet>
                                     </OnIdiom>
 
-                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="36, 36, 36, 36,Auto" ColumnDefinitions="4*, 8*">
+                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="36, 36, 36, 36,Auto" ColumnDefinitions="4*, 9*">
                                         <Label Style="{StaticResource gooutanddayofftitle}"
                                             Text="開始時間 :" Grid.Row="0" Grid.Column="0"></Label>
                                         <Label 
