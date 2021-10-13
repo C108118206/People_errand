@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+int integer google_play_services_version 0x1
+int string common_google_play_services_unknown_issue 0x1
+=======
 int attr alpha 0x7f040001
 int attr coordinatorLayoutStyle 0x7f040002
 int attr font 0x7f040003
@@ -157,3 +161,4 @@ int styleable GradientColor_android_type 11
 int[] styleable GradientColorItem { 0x10101a5, 0x1010514 }
 int styleable GradientColorItem_android_color 0
 int styleable GradientColorItem_android_offset 1
+>>>>>>> 0b441b2a83fb7addd5e0c6bb88c4e8e9f7ca134a

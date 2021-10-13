@@ -6,7 +6,10 @@ androidembedprofilers=
 androidenableprofiledaot=false
 androiddextool=d8
 androidlinktool=
+<<<<<<< HEAD
+=======
 androidlinkresources=false
+>>>>>>> 0b441b2a83fb7addd5e0c6bb88c4e8e9f7ca134a
 androidpackageformat=apk
 embedassembliesintoapk=true
 androidlinkmode=sdkonly
@@ -16,7 +19,11 @@ androidsdkpath=c:\program files (x86)\android\android-sdk\
 androidndkpath=
 javasdkpath=c:\program files\android\jdk\microsoft_dist_openjdk_1.8.0.25\
 androidsequencepointsmode=normal
+<<<<<<< HEAD
+xamarinandroidversion=11.2.0-21
+=======
 xamarinandroidversion=11.3.0-4
+>>>>>>> 0b441b2a83fb7addd5e0c6bb88c4e8e9f7ca134a
 monosymbolarchive=true
 androiduselatestplatformsdk=false
 targetframeworkversion=v11.0
@@ -25,7 +32,11 @@ androidgeneratejnimarshalmethods=false
 os=windows_nt
 androidincludedebugsymbols=false
 androidpackagenamingpolicy=lowercasecrc64
+<<<<<<< HEAD
+_nugetassetstimestamp=637695669638737916
+=======
 _nugetassetstimestamp=637695762409150878
+>>>>>>> 0b441b2a83fb7addd5e0c6bb88c4e8e9f7ca134a
 typemapkind=mvid
 androidsupportedabis=arm64-v8a
 armeabi-v7a

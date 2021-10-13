@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.google.android.gms.tasks" >
+
+    <uses-sdk android:minSdkVersion="14" />
+
+    <application />
+=======
 <!--
  Copyright 2015 The Android Open Source Project
 
@@ -20,5 +28,6 @@
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="30" />
+>>>>>>> 0b441b2a83fb7addd5e0c6bb88c4e8e9f7ca134a
 
 </manifest>
