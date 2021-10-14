@@ -7,6 +7,7 @@ using Xamarin.Forms.Xaml;
 using people_errandd.Models;
 using Xamarin.Essentials;
 using System.Text.RegularExpressions;
+using Plugin.SharedTransitions;
 
 namespace people_errandd.Views
 {
@@ -179,16 +180,15 @@ namespace people_errandd.Views
             {
                 if(allowTap)
                 {
-                    allowTap = false;
-                    Navigation.InsertPageBefore(new LoginPage(), this);
-                    await Navigation.PopAsync();
-                    Preferences.Remove("HashAccount");
+                   allowTap = false;                
+                   App.Current.MainPage = new SharedTransitionNavigationPage(new LoginPage());
+                    await Navigation.PopToRootAsync();
+                   Preferences.Remove("HashAccount");
                 }
             }
             finally
             {
-                allowTap = true;
-                
+                allowTap = true;                
             }
         }
     }

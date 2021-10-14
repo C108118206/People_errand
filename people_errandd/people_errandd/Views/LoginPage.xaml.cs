@@ -60,8 +60,7 @@ namespace people_errandd.Views
                             }
                             Preferences.Set("HashAccount", await Login.GetHashAccount(Preferences.Get("uuid", "")));
                             Navigation.InsertPageBefore(new MainPage(), this);
-                            await Navigation.PopAsync();
-                            
+                            await Navigation.PopAsync();              
                         }
                         else
                         {

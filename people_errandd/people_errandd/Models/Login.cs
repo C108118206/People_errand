@@ -36,7 +36,7 @@ namespace people_errandd.Models
         }
         public async Task<bool> ConfirmUUID(string UUID)//判斷裝置UUID是否存在資料庫
         {
-            response = await client.GetAsync(basic_url + ControllerNameEmployee + UUID);
+            response = await client.GetAsync(basic_url +"Employees?phone_code=" +UUID + "&company_hash="+ Preferences.Get("CompanyHash", ""));
             if (response.StatusCode.ToString() == "OK")
             {
                 return true;
@@ -62,12 +62,13 @@ namespace people_errandd.Models
             }
             catch (Exception)
             {
+                Console.WriteLine("SetUUIDError");
                 return false;
             }
         }
         public async Task<string> GetHashAccount(string uuid)
         {
-            response = await client.GetAsync(basic_url + ControllerNameEmployee + uuid);
+            response = await client.GetAsync(basic_url + "Employees?phone_code=" + uuid + "&company_hash=" + Preferences.Get("CompanyHash", ""));
             GetResponse = await response.Content.ReadAsStringAsync();//將JSON轉成string
             return GetResponse;
         }
@@ -82,6 +83,7 @@ namespace people_errandd.Models
                     name = _Name,
                     email = _Email
                 };
+                Console.WriteLine(information.hashaccount);
                 informations.Add(information);
                 var str = JsonConvert.SerializeObject(informations);
                 HttpContent content = new StringContent(str, Encoding.UTF8, "application/json");
@@ -95,6 +97,7 @@ namespace people_errandd.Models
                 }
                 else
                 {
+                    Console.WriteLine("SetInformationError");
                     return false;
                 }
             }
