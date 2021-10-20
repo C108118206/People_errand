@@ -59,6 +59,7 @@ namespace people_errandd.Models
     {
         public string hashAccount { get; set; }
         public string Location { get; set; }
+        public string address { get; set; }
         public string Reason { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }

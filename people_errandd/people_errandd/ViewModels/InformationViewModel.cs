@@ -64,16 +64,19 @@ namespace people_errandd.ViewModels
         {           
             try
             {
-                response = await client.GetAsync(basic_url + ControllerNameInformation + _HashAccount);
+                response = await client.GetAsync(basic_url + ControllerNameInformation + _HashAccount);               
                 var result = await response.Content.ReadAsStringAsync();
+                
                 if (response.StatusCode.ToString() == "OK")
                 {
                     List<information> information = JsonConvert.DeserializeObject<List<information>>(result);
-                    Preferences.Set("UserName",information[0].name);
+                    Preferences.Set("UserName",information[0].name);                    
+                    return information[0].name;
                 }
+                 
             }
             catch (Exception)
-            {
+            {                
             }
             return null;
         }

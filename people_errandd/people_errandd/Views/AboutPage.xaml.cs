@@ -108,14 +108,10 @@ namespace people_errandd.Views
                 if (allowTap)
                 {
                     allowTap = false;
-                    if(!string.IsNullOrEmpty(email.Text) && !string.IsNullOrEmpty(phone.Text))
+                    if (string.IsNullOrWhiteSpace(phone.Text))
                     {
-                        //email regular expression
-                        Match matchemail = regexemail.Match(email.Text);
-                        //phone regular expression
-                        Match matchphone = regexphone.Match(phone.Text);
-                        if (matchemail.Success && matchphone.Success)
-                        {
+                        phone.Text = "";
+                    }
                             if (await informationViewModel.UpdateInformationRecord(name.Text, phone.Text, email.Text))
                             {
                                 Preferences.Set("phone", phone.Text);
@@ -125,14 +121,7 @@ namespace people_errandd.Views
                             else
                             {
                                 await DisplayAlert("錯誤", "信箱重複或是網路錯誤","確認");
-                            }
-                        }
-                        else
-                        {
-                            await DisplayAlert("", "信箱或電話格式錯誤", "確認");
-                            return;
-                        }                       
-                    }
+                            }                                                                                 
                     await Navigation.PopAsync();
                 }
             }
@@ -150,12 +139,20 @@ namespace people_errandd.Views
                 if (!matchemail.Success)
                 {
                     emailValidator.Text = "格式錯誤";
+                    Confirm.IsEnabled = false;
                 }
                 else
                 {
                     emailValidator.Text = "";
-                }
-            }       
+                    Confirm.IsEnabled = true;
+                }               
+            }
+            else
+            {
+                emailValidator.Text = "信箱不可為空";
+                Confirm.IsEnabled = false;
+
+            }
         }
 
         private void Phone_Unfocused(object sender, FocusEventArgs e)
@@ -166,11 +163,18 @@ namespace people_errandd.Views
                 if (!matchphone.Success)
                 {
                     phoneValidator.Text = "格式錯誤";
+                    Confirm.IsEnabled = false;
                 }
                 else
                 {
                     phoneValidator.Text = "";
+                    Confirm.IsEnabled = true;
                 }
+            }
+            else
+            {
+                phoneValidator.Text = "";
+                Confirm.IsEnabled = true;
             }           
         }
 
@@ -180,10 +184,15 @@ namespace people_errandd.Views
             {
                 if(allowTap)
                 {
-                   allowTap = false;                
-                   App.Current.MainPage = new SharedTransitionNavigationPage(new LoginPage());
-                    await Navigation.PopToRootAsync();
-                   Preferences.Remove("HashAccount");
+                   allowTap = false;
+                    bool answer = await DisplayAlert("登出","確定要進行登出？","確認","取消");
+                    if (answer)
+                    {
+                        App.Current.MainPage = new SharedTransitionNavigationPage(new LoginPage());
+                        await Navigation.PopToRootAsync();
+                        Preferences.Remove("HashAccount");
+                    }
+                    
                 }
             }
             finally

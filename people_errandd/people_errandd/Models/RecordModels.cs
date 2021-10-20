@@ -183,13 +183,9 @@ namespace people_errandd.Models
                 response = await client.GetAsync(basic_url + ControllerNameTrip2Record + "GetEmployeeTrip2Records/" + Preferences.Get("HashAccount", ""));
                 var result = await response.Content.ReadAsStringAsync();
                 List<GoOut> GoOutRecords = JsonConvert.DeserializeObject<List<GoOut>>(result);
-                int i = 0;
-                
+                int i = 0;              
                 foreach (var goOut in GoOutRecords)
-                {
-                    Position position = new Position(goOut.coordinateX, goOut.coordinateY);
-                    IEnumerable<string> possibleAddresses = await geoCoder.GetAddressesForPositionAsync(position);
-                    GoOutRecords[i].Location=possibleAddresses.FirstOrDefault();
+                {          
                     switch (goOut.trip2TypeId)
                     {
                         case 1:
@@ -210,12 +206,10 @@ namespace people_errandd.Models
                         default:
                             break;
                     }
-                    i++;
-                    
+                    i++;                   
                 }
                 GoOutRecords = GoOutRecords.Where(GoOut => GoOut.createdTime.ToString().Contains(date)).ToList();
                 return GoOutRecords;
-
             }
             catch (Exception)
             {

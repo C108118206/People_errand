@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "people_errandd.Android", "p
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "people_errandd.iOS", "people_errandd\people_errandd.iOS\people_errandd.iOS.csproj", "{74E121EF-5B44-4E89-9FC1-F5247E132ABB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "people_errandd", "people_errandd\people_errandd\people_errandd.csproj", "{3946BA5F-0C7A-4582-9860-DEB180FBBDC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "people_errandd", "people_errandd\people_errandd\people_errandd.csproj", "{3946BA5F-0C7A-4582-9860-DEB180FBBDC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

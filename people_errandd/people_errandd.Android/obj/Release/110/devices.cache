@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-<Devices><Device id="emulator-5556"><ResultingAbi>x86</ResultingAbi><SdkVersion>29</SdkVersion></Device></Devices>
-=======
-<Devices><Device id="JAAZB760D081WD8"><ResultingAbi>arm64-v8a</ResultingAbi><SdkVersion>26</SdkVersion></Device></Devices>
->>>>>>> 0b441b2a83fb7addd5e0c6bb88c4e8e9f7ca134a
+<Devices><Device id="emulator-5554"><ResultingAbi>x86</ResultingAbi><SdkVersion>28</SdkVersion></Device></Devices>

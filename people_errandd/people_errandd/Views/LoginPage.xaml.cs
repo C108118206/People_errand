@@ -15,6 +15,7 @@ namespace people_errandd.Views
         private bool allowTap = true;
         private readonly Login Login = new Login();
         public static string CompanyId;
+         InformationViewModel _InfVM = new InformationViewModel();
         public LoginPage()
         {
             InitializeComponent();
@@ -46,7 +47,7 @@ namespace people_errandd.Views
                     }
                     else if (await Login.ConfirmCompanyHash(company.Text.Trim()))
                     {
-                        if (await Login.ConfirmUUID(Preferences.Get("uuid", "")) && company.Text.Trim()==Preferences.Get("CompanyId",""))
+                        if (await Login.ConfirmUUID(Preferences.Get("uuid", "")))
                         {
                             if (!await Login.Reviewed())
                             {                           
@@ -59,7 +60,8 @@ namespace people_errandd.Views
                                 return;
                             }
                             Preferences.Set("HashAccount", await Login.GetHashAccount(Preferences.Get("uuid", "")));
-                            Navigation.InsertPageBefore(new MainPage(), this);
+                            await _InfVM.GetUserName(Preferences.Get("HashAccount",""));
+                            Navigation.InsertPageBefore(new MainPage(), this);                           
                             await Navigation.PopAsync();              
                         }
                         else
@@ -78,7 +80,6 @@ namespace people_errandd.Views
             {
                 allowTap = true;
             }
-
         }
         private async void QuestionButton(object sender, EventArgs e)
         {

@@ -397,7 +397,7 @@
                                             Text="地點 :" Grid.Row="2" Grid.Column="0"></Label>
                                     <Label  Style="{StaticResource gooutanddayoffcontent}"
                                                 HorizontalOptions="Start"
-                                             Text="{Binding Location}" Grid.Row="2" Grid.Column="1"></Label>
+                                             Text="{Binding address}" Grid.Row="2" Grid.Column="1"></Label>
                                   
                                    
                                 </Grid>

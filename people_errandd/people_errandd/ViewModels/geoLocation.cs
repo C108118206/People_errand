@@ -84,6 +84,7 @@ namespace people_errandd.ViewModels
                 {
                     GetResponse = await response.Content.ReadAsStringAsync();//將JSON轉成string
                     List<Address> addresses = JsonConvert.DeserializeObject<List<Address>>(GetResponse);
+                    Preferences.Set("CompanyAddress", addresses[0].address);
                     Location locationCompany = new Location(addresses[0].coordinateX, addresses[0].coordinateY);
                     Location locationNow = new Location(X,Y);
                     double distance = Location.CalculateDistance(locationNow, locationCompany, DistanceUnits.Kilometers);

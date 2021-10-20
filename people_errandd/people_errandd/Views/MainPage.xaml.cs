@@ -35,15 +35,16 @@ namespace people_errandd.Views
             Audits.ItemsSource=await MainPageViewModel.GetAudit();
             Audits.IsVisible = Audits.ItemsSource != null;
             AuditText.IsVisible = Audits.IsVisible;
-            workOn.IsEnabled = Preferences.Get("WorkOnButtonStauts", workOn.IsEnabled = true);
-            workOff.IsEnabled = Preferences.Get("WorkOffButtonStauts", workOff.IsEnabled = false);
-            workOn.Opacity = Preferences.Get("WorkOnButtonView", workOn.Opacity = 1);
-            workOff.Opacity = Preferences.Get("WorkOffButtonView", workOff.Opacity = 0.2);
-            workOnText.Opacity = Preferences.Get("WorkOnText", workOnText.Opacity = 1);
-            workOffText.Opacity = Preferences.Get("WorkOffText", workOffText.Opacity = 0.2);
+            workOn.IsEnabled = Preferences.Get(Preferences.Get("HashAccount","")+"WorkOnButtonStauts", workOn.IsEnabled = true);
+            workOff.IsEnabled = Preferences.Get(Preferences.Get("HashAccount", "")+"WorkOffButtonStauts", workOff.IsEnabled = false);
+            workOn.Opacity = Preferences.Get(Preferences.Get("HashAccount", "")+"WorkOnButtonView", workOn.Opacity = 1);
+            workOff.Opacity = Preferences.Get(Preferences.Get("HashAccount", "")+"WorkOffButtonView", workOff.Opacity = 0.2);
+            workOnText.Opacity = Preferences.Get(Preferences.Get("HashAccount", "") + "WorkOnText", workOnText.Opacity = 1);
+            workOffText.Opacity = Preferences.Get(Preferences.Get("HashAccount", "") + "WorkOffText", workOffText.Opacity = 0.2);
+            Console.WriteLine(Preferences.Get("HashAccount", ""));            
             username.Text = Preferences.Get("UserName", "");
-            worktimetitle.Text = Preferences.Get("WorkTimeTitle","");
-            worktime.Text = Preferences.Get("WorkTime","");         
+            worktimetitle.Text = Preferences.Get(Preferences.Get("HashAccount", "") + "WorkTimeTitle","");
+            worktime.Text = Preferences.Get(Preferences.Get("HashAccount", "") + "WorkTime","");         
         }
         protected override void OnDisappearing()
         {
@@ -62,26 +63,38 @@ namespace people_errandd.Views
                     if (await Work.GetWorkType() == 2 || await Work.GetWorkType() == 0)
                     {
                         (double x, double y) = await geoLocation.GetLocation("WorkOn");
-                        if (await geoLocation.GetCurrentLocation(x, y) == true)
+                        if (await geoLocation.GetCurrentLocation(x, y) != true)
                         {
-                            if (await Work.PostWork(1, x, y, true))
+                            if (DeviceInfo.Platform == DevicePlatform.Android)
                             {
-                                await DisplayAlert("", "上班打卡成功", "確定");                           
-                                WorkOnSet();
+                                await DisplayAlert("位置錯誤", "請檢查定位是否開啟與所在位置\n(設定->安全性與定位->定位)", "確定");
                             }
+                            else
+                            {
+                                await DisplayAlert("位置錯誤", "請檢查定位是否開啟與所在位置\n(設定->隱私->位置)", "確定");                               
+                            }
+                        if (!await DisplayAlert("", "是否強制進行打卡?\n(公司位置:" + Preferences.Get("CompanyAddress", "") + ")", "確定", "取消"))
+                            {
+                                return;
+                            }
+                        }                                             
+                        if (await Work.PostWork(1, x, y, true))
+                        {
+                            await DisplayAlert("", "上班打卡成功", "確定");
+                            WorkOnSet();
                         }
                         else
                         {
-                            await DisplayAlert("", "位置錯誤", "確定");
+                            await DisplayAlert("", "網路錯誤", "確定");
                         }
                     }
                     else if (await Work.GetWorkType() == 500)
                     {
-                        await DisplayAlert("Error", "網路錯誤", "確定");
+                        await DisplayAlert("", "網路錯誤", "確定");
                     }
                     else
                     {
-                        await DisplayAlert("Error", "已上班", "確定");
+                        await DisplayAlert("", "已上班", "確定");
                     }
                 }
             }
@@ -104,30 +117,38 @@ namespace people_errandd.Views
                     if (await Work.GetWorkType() == 1)
                     {
                         (double x, double y) = await geoLocation.GetLocation("WorkOff");
-                        if (await geoLocation.GetCurrentLocation(x, y) == true)
+                        if (await geoLocation.GetCurrentLocation(x, y) != true)
                         {
-                            if (await Work.PostWork(2, x, y, true))
+                            if (DeviceInfo.Platform == DevicePlatform.Android)
                             {
-                                await DisplayAlert("", "下班打卡成功", "確定");                               
-                                WorkOffSet();
+                                await DisplayAlert("位置錯誤", "請檢查定位是否開啟與所在位置\n(設定->安全性與定位->定位)", "確定");
                             }
                             else
                             {
-                                await DisplayAlert("Error", "發生錯誤", "確定");
+                                await DisplayAlert("位置錯誤", "請檢查定位是否開啟與所在位置\n(設定->隱私->位置)", "確定");
                             }
+                            if (!await DisplayAlert("", "是否強制進行打卡?\n(公司位置:" + Preferences.Get("CompanyAddress", "") + ")", "確定", "取消"))
+                            {
+                                return;
+                            }
+                        }
+                        if (await Work.PostWork(2, x, y, true))
+                        {
+                            await DisplayAlert("", "下班打卡成功", "確定");
+                            WorkOffSet();
                         }
                         else
                         {
-                            await DisplayAlert("", "位置錯誤", "確定");
+                            await DisplayAlert("", "網路錯誤", "確定");
                         }
                     }
                     else if (await Work.GetWorkType() == 500)
                     {
-                        await DisplayAlert("Error", "錯誤", "確定");
+                        await DisplayAlert("", "網路錯誤", "確定");
                     }
                     else
                     {
-                        await DisplayAlert("Error", "已下班", "確定");
+                        await DisplayAlert("", "已下班", "確定");
                     }
                 }
             }
@@ -144,28 +165,28 @@ namespace people_errandd.Views
         public void WorkOffSet()
         {
             //Preferences.Set("statusNow", status.Text = "已下班");
-            Preferences.Set("WorkOffButtonStauts", workOff.IsEnabled = false);
-            Preferences.Set("WorkOnButtonStauts", workOn.IsEnabled = true);
-            Preferences.Set("WorkOnButtonView", workOn.Opacity = 1);
-            Preferences.Set("WorkOffButtonView", workOff.Opacity = 0.2);
-            Preferences.Set("WorkOnText", workOnText.Opacity = 1);
-            Preferences.Set("WorkOffText", workOffText.Opacity = 0.2);
-            Preferences.Set("WorkTimeTitle", worktimetitle.Text="下班打卡 at ");
-            Preferences.Set("WorkTime", worktime.Text = DateTime.Now.ToString("t"));
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkOffButtonStauts", workOff.IsEnabled = false);
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkOnButtonStauts", workOn.IsEnabled = true);
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkOnButtonView", workOn.Opacity = 1);
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkOffButtonView", workOff.Opacity = 0.2);
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkOnText", workOnText.Opacity = 1);
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkOffText", workOffText.Opacity = 0.2);
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkTimeTitle", worktimetitle.Text="下班打卡 at ");
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkTime", worktime.Text = DateTime.Now.ToString("t"));
             //Preferences.Set("statusBack", "#CB2E2E");
             //statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
         }
         public void WorkOnSet()
         {
             //Preferences.Set("statusNow", status.Text = "上班中");
-            Preferences.Set("WorkOnButtonStauts", workOn.IsEnabled = false);
-            Preferences.Set("WorkOffButtonStauts", workOff.IsEnabled = true);
-            Preferences.Set("WorkOnButtonView", workOn.Opacity = 0.2);
-            Preferences.Set("WorkOffButtonView", workOff.Opacity = 0.8);
-            Preferences.Set("WorkOnText", workOnText.Opacity = 0.2);
-            Preferences.Set("WorkOffText", workOffText.Opacity = 0.8);
-            Preferences.Set("WorkTimeTitle", worktimetitle.Text = "上班打卡 at ");
-            Preferences.Set("WorkTime", worktime.Text = DateTime.Now.ToString("t"));
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkOnButtonStauts", workOn.IsEnabled = false);
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkOffButtonStauts", workOff.IsEnabled = true);
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkOnButtonView", workOn.Opacity = 0.2);
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkOffButtonView", workOff.Opacity = 0.8);
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkOnText", workOnText.Opacity = 0.2);
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkOffText", workOffText.Opacity = 0.8);
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkTimeTitle", worktimetitle.Text = "上班打卡 at ");
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkTime", worktime.Text = DateTime.Now.ToString("t"));
             //Preferences.Set("statusBack", "#4AD395");
             //statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
         }
