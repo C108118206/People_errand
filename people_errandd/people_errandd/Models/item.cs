@@ -8,7 +8,7 @@ namespace people_errandd.Models
     public class work
     {
         //  public int ID { get; set; }
-       
+
         public string hashAccount { get; set; }
         public int workTypeId { get; set; }
         public double coordinateX { get; set; }
@@ -20,7 +20,7 @@ namespace people_errandd.Models
         public string statuscolor { get; set; }
         public string time { get; set; }
         public string image { get; set; }
-        
+
     }
     public class Address
     {
@@ -49,7 +49,7 @@ namespace people_errandd.Models
         public string Reason { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-     
+
         public bool? Review { get; set; }
         public string status { get; set; }
         public string image { get { return "nerd.png"; } }
@@ -87,8 +87,8 @@ namespace people_errandd.Models
     }
     public class Language
     {
-          public string language { get; set; }  
-     }
+        public string language { get; set; }
+    }
     public class Audit
     {
         public int LeaveRecordId { get; set; }
@@ -97,10 +97,17 @@ namespace people_errandd.Models
         public string LeaveType { get; set; }
         public string Time { get; set; }
         public string Reason { get; set; }
-        public  bool? Review { get; set; }
+        public bool? Review { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
     }
-    
+    public class Log
+    {
+        public string url { get; set; }
+        public string input { get; set; }
+        public string response { get; set; }
+        public string output { get; set; }
+
+    }
 
 }

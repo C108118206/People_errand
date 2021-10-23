@@ -13,7 +13,8 @@ namespace people_errandd.ViewModels
     {
         public  async Task<int> GetWorkType()
         {
-            response = await client.GetAsync(basic_url + ControllerNameWorkRecord + Preferences.Get("HashAccount", ""));
+            string url = basic_url + ControllerNameWorkRecord + Preferences.Get("HashAccount", "");
+            response = await client.GetAsync(url);
             //Console.WriteLine(response.StatusCode);
             if (response.StatusCode.ToString() == "NoContent")
             {
@@ -23,6 +24,7 @@ namespace people_errandd.ViewModels
             {
                 GetResponse = await response.Content.ReadAsStringAsync();               
                 work workStatus = JsonConvert.DeserializeObject<work>(GetResponse);
+                await Log(url, null, response.StatusCode.ToString(), GetResponse);
                 return workStatus.workTypeId;
             }
             return 500;
@@ -42,7 +44,10 @@ namespace people_errandd.ViewModels
             var WorkRecord= JsonConvert.SerializeObject(works);
             HttpContent content = new StringContent(WorkRecord);
             content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-            response = await client.PostAsync(basic_url + ControllerNameWorkRecord + "add_workRecord", content);
+            string url = basic_url + ControllerNameWorkRecord + "add_workRecord";
+            response = await client.PostAsync(url, content);
+            var result = response.Content.ReadAsStringAsync();
+            await Log(url, WorkRecord, response.StatusCode.ToString(), result.Result);
             if (response.StatusCode.ToString() == "OK")
             {
                 return true;

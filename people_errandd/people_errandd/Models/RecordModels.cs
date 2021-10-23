@@ -29,18 +29,25 @@ namespace people_errandd.Models
             try
             {
                 HttpContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-                response = await client.PutAsync(basic_url + ControllerNameLeaveRecord + "review_leaveRecord", content);
+                string url = basic_url + ControllerNameLeaveRecord + "review_leaveRecord";
+                response = await client.PutAsync(url, content);
+                var _result = response.Content.ReadAsStringAsync();
+                await Log(url, jsonData, response.StatusCode.ToString(), _result.Result);
                 if (response.StatusCode.ToString().Equals("OK"))
                 {
-                    response = await client.GetAsync(basic_url + ControllerNameLeaveRecord + "LeaveRecordId_Get_HashAccount?leaveRecordId=" + id);
+                    url = basic_url + ControllerNameLeaveRecord + "LeaveRecordId_Get_HashAccount?leaveRecordId=" + id;
+                    response = await client.GetAsync(url);
                     var result = await response.Content.ReadAsStringAsync();
-                    Console.WriteLine(result);
-                    response = await client.GetAsync(basic_url + ControllerNameInformation + result);
+                    await Log(url, null, response.StatusCode.ToString(), result);
+                    url = basic_url + ControllerNameInformation + result;
+                    response = await client.GetAsync(url);
                     result = await response.Content.ReadAsStringAsync();
+                    await Log(url, null, response.StatusCode.ToString(), result);
                     List<information> informations = JsonConvert.DeserializeObject<List<information>>(result);
-                    var to_email = new List<string>();
-                    to_email.Add(informations[0].email);
-                    
+                    var to_email = new List<string>
+                    {
+                        informations[0].email
+                    }; 
                     if (review)
                     {
                         sendEmail(to_email, "差勤打卡請假審核通知", "<h1>您的請假申請</h1>\n<h1>審核通過</h1>\n請至差勤打卡APP請假紀錄進行確認，如有問題請連繫後台");
@@ -61,9 +68,11 @@ namespace people_errandd.Models
         {
             try
             {
-                response = await client.GetAsync(basic_url + ControllerNameWorkRecord + "GetEmployeeAllWorkRecords/" + Preferences.Get("HashAccount", ""));
+                string url = basic_url + ControllerNameWorkRecord + "GetEmployeeAllWorkRecords/" + Preferences.Get("HashAccount", "");
+                response = await client.GetAsync(url);
                 var result = await response.Content.ReadAsStringAsync();
-                List<work> workRecords = JsonConvert.DeserializeObject<List<work>>(result);
+                await Log(url, null, response.StatusCode.ToString(), result);
+                List<work> workRecords = JsonConvert.DeserializeObject<List<work>>(result);               
                 int i = 0;
                 foreach (var work in workRecords)
                 {
@@ -103,8 +112,10 @@ namespace people_errandd.Models
         {
             try
             {
-                response = await client.GetAsync(basic_url + ControllerNameTripRecord + Preferences.Get("HashAccount", ""));                   
+                string url = basic_url + ControllerNameTripRecord + Preferences.Get("HashAccount", "");
+                response = await client.GetAsync(url);                   
                 var result = await response.Content.ReadAsStringAsync();
+                await Log(url, null, response.StatusCode.ToString(), result);
                 List<GoOut> GoOutRecords = JsonConvert.DeserializeObject<List<GoOut>>(result);
                 GoOutRecords = GoOutRecords.Where(GoOut => GoOut.createdTime.ToString().Contains(date)).ToList();
                 return GoOutRecords;
@@ -120,11 +131,10 @@ namespace people_errandd.Models
         {
             try
             {
-
-                response = /*string.IsNullOrEmpty(employee_HashAccount) ?*/
-                    await client.GetAsync(basic_url + ControllerNameLeaveRecord + "GetEmployeeAllLeaveRecords/" + Preferences.Get("HashAccount", ""));
-                  // : await client.GetAsync(basic_url + ControllerNameLeaveRecord + "GetEmployeeAllLeaveRecords/" + employee_HashAccount);
+                string url = basic_url + ControllerNameLeaveRecord + "GetEmployeeAllLeaveRecords/" + Preferences.Get("HashAccount", "");
+                response =await client.GetAsync(url);                 
                 var result = await response.Content.ReadAsStringAsync();
+                await Log(url, null, response.StatusCode.ToString(), result);
                 List<DayOff> DayOffRecords = JsonConvert.DeserializeObject<List<DayOff>>(result);
                 int i = 0;
                 foreach(var rs in DayOffRecords)
@@ -158,12 +168,7 @@ namespace people_errandd.Models
                     }                    
                     rs.status = rs.Review!=null? (bool)rs.Review ? "已審核" : "已拒絕":"待審核";                    
                     i++;
-                }
-                 bool IsInDate(DateTime dt, DateTime dt1, DateTime dt2)
-                {
-                    return dt.CompareTo(dt1) >= 0 && dt.CompareTo(dt2) <= 0;
-                }
-               
+                }                              
                 //DayOffRecords = DayOffRecords.Where(DayOff => DayOff.StartDate.ToString().Contains(date)).ToList();
                 DayOffRecords = DayOffRecords.Where(DayOff => date.CompareTo(DayOff.StartDate)>=0 && date.CompareTo(DayOff.EndDate)<=0).ToList();
                 return DayOffRecords;
@@ -180,8 +185,10 @@ namespace people_errandd.Models
             Geocoder geoCoder = new Geocoder();
             try
             {
-                response = await client.GetAsync(basic_url + ControllerNameTrip2Record + "GetEmployeeTrip2Records/" + Preferences.Get("HashAccount", ""));
+                string url = basic_url + ControllerNameTrip2Record + "GetEmployeeTrip2Records/" + Preferences.Get("HashAccount", "");
+                response = await client.GetAsync(url);
                 var result = await response.Content.ReadAsStringAsync();
+                await Log(url, null, response.StatusCode.ToString(), result);
                 List<GoOut> GoOutRecords = JsonConvert.DeserializeObject<List<GoOut>>(result);
                 int i = 0;              
                 foreach (var goOut in GoOutRecords)
@@ -206,6 +213,7 @@ namespace people_errandd.Models
                         default:
                             break;
                     }
+                    GoOutRecords[i].address = goOut.address.Substring(5);
                     i++;                   
                 }
                 GoOutRecords = GoOutRecords.Where(GoOut => GoOut.createdTime.ToString().Contains(date)).ToList();

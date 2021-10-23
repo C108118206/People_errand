@@ -17,10 +17,11 @@ namespace people_errandd.ViewModels
         {
             try
             {
-                response = await client.GetAsync(basic_url + ControllerNameEmployee + "get_employee_manager_email?hash_company=" + Preferences.Get("CompanyHash", "") + "&hash_account=" + Preferences.Get("HashAccount", ""));
-                //response = await client.GetAsync("http://163.18.110.100/api/Employees/get_employee_manager_email?company_hash=17C99EADD5A77BD5117719B12478E7&hash_account=1B677A3D9C56372BDAE191EA940440");
+                string url = basic_url + ControllerNameEmployee + "get_employee_manager_email?hash_company=" + Preferences.Get("CompanyHash", "") + "&hash_account=" + Preferences.Get("HashAccount", "");
+                response = await client.GetAsync(url);
                 var result = await response.Content.ReadAsStringAsync();
                 List<string> Emails = JsonConvert.DeserializeObject<List<string>>(result);
+                await Log(url, null, response.StatusCode.ToString(), result);
                 return Emails;
             }
             catch (Exception)
@@ -45,12 +46,15 @@ namespace people_errandd.ViewModels
                 var WorkRecord = JsonConvert.SerializeObject(dayOffs);
                 HttpContent content = new StringContent(WorkRecord);
                 content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-                response = await client.PostAsync(basic_url + ControllerNameLeaveRecord + "add_leaveRecord", content);
+                string url = basic_url + ControllerNameLeaveRecord + "add_leaveRecord";
+                response = await client.PostAsync(url, content);
+                var result = response.Content.ReadAsStringAsync();
                 if (response.StatusCode.ToString() == "OK")
                 {
                     try
-                    {                       
-                        sendEmail(await GetEmail(), "差勤打卡員工請假申請通知", "<h2>您的員工已進行請假申請，請至APP或後臺上進行確認！</h2>");                       
+                    {
+                        sendEmail(await GetEmail(), "差勤打卡員工請假申請通知", "<h2>您的員工已進行請假申請，請至APP或後臺上進行確認！</h2>");
+                        await Log(url, WorkRecord, response.StatusCode.ToString(), result.Result);
                     }
                     catch (Exception)
                     {

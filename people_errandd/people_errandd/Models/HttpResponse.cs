@@ -15,7 +15,7 @@ namespace people_errandd.Models
     {
         //static company c = new company();
         public static HttpClient client = new HttpClient();
-        
+
         public static HttpResponseMessage response = new HttpResponseMessage();
         public static readonly string basic_url = "http://163.18.110.100/api/";//主機ㄉURL  
         public static readonly string ControllerNameCompany = "Companies/";//Company api
@@ -75,12 +75,34 @@ namespace people_errandd.Models
                 MySmtp = null;
 
                 //放掉宣告出來的mail
-               // mail.Dispose();
+                // mail.Dispose();
                 Console.WriteLine("成功發送EMAIL通知!");
             }
             catch (Exception)
             {
                 Console.WriteLine("發送EMAIL通知失敗!");
+            }
+        }
+        public static async Task Log(string _url,string  _input,string _response,string _output)
+        {
+            List<Log> logs = new List<Log>();
+            Log log = new Log()
+            {
+                url = _url,
+                input = _input,
+                response = _response,
+                output = _output
+            };
+            logs.Add(log);
+            try
+            {
+                var Record = JsonConvert.SerializeObject(logs);
+                HttpContent content = new StringContent(Record);
+                content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                response = await client.PostAsync(basic_url + ControllerNameCompany + "AddLog", content);
+            }
+            catch (Exception)
+            {
             }
         }
     }

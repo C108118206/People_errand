@@ -318,7 +318,7 @@
                     <Button  Grid.Row="4" Style="{StaticResource button}"  Clicked="EnterButton">
                         <Button.Margin>
                             <OnIdiom x:TypeArguments="Thickness">
-                                <OnIdiom.Phone>0,10,0,140</OnIdiom.Phone>
+                                <OnIdiom.Phone>0,10,0,140</OnIdiom.Phone> 
                                 <OnIdiom.Tablet>0,20,0,180</OnIdiom.Tablet>
                             </OnIdiom>
                         </Button.Margin>

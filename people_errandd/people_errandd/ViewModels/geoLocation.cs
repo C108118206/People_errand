@@ -78,11 +78,13 @@ namespace people_errandd.ViewModels
         {
             try
             {
-                response = await client.GetAsync(basic_url + ControllerNameCompany + "Get_CompanyAddress?company_hash=" + Preferences.Get("CompanyHash",""));
+                string url = basic_url + ControllerNameCompany + "Get_CompanyAddress?company_hash=" + Preferences.Get("CompanyHash", "");
+                response = await client.GetAsync(url);
                 Console.WriteLine(response.StatusCode.ToString());
                 if (response.StatusCode.ToString() == "OK")
                 {
                     GetResponse = await response.Content.ReadAsStringAsync();//將JSON轉成string
+                    await Log(url, null, response.StatusCode.ToString(), GetResponse);
                     List<Address> addresses = JsonConvert.DeserializeObject<List<Address>>(GetResponse);
                     Preferences.Set("CompanyAddress", addresses[0].address);
                     Location locationCompany = new Location(addresses[0].coordinateX, addresses[0].coordinateY);

@@ -100,11 +100,15 @@ namespace people_errandd.Views
             }
             catch (Exception)
             {
-                await DisplayAlert("", "錯誤", "確定");
+                await DisplayAlert("", "網路錯誤", "確定");
             }
             finally
             {
-                allowTap = true;
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }
         }
         private async void OffWork(object sender, EventArgs e)
@@ -154,11 +158,15 @@ namespace people_errandd.Views
             }
             catch (Exception)
             {
-                await DisplayAlert("", "錯誤", "確定");
+                await DisplayAlert("", "網路錯誤", "確定");
             }
             finally
             {
-                allowTap = true;
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }
         }
 
@@ -202,7 +210,11 @@ namespace people_errandd.Views
             }
             finally
             {
-                allowTap = true;
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }
         }
         private async void GoOutButton(object sender, EventArgs e)
@@ -218,7 +230,11 @@ namespace people_errandd.Views
             }
             finally
             {
-                allowTap = true;
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }
         }
         private async void AboutPageButton(object sender, EventArgs e)
@@ -233,7 +249,11 @@ namespace people_errandd.Views
             }
             finally
             {
-                allowTap = true;
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }
         }
         private async void DayOffButton(object sender, EventArgs e)
@@ -248,7 +268,11 @@ namespace people_errandd.Views
             }
             finally
             {
-                allowTap = true;
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }
         }
 
@@ -269,7 +293,11 @@ namespace people_errandd.Views
             }
             finally
             {
-                allowTap = true;
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }
         }
     }
