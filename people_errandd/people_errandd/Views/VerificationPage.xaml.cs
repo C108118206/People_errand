@@ -30,6 +30,7 @@ namespace people_errandd.Views
         {
             try
             {
+                Button.IsEnabled = false;
                 if(allowTap)
                 {
                     allowTap = false;
@@ -71,10 +72,16 @@ namespace people_errandd.Views
                         }
                     }
                 }
+                
             }
             finally
             {
-                allowTap = true;
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    Button.IsEnabled = true;
+                    return false;
+                });
             }
            
         }

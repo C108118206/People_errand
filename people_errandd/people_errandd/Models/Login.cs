@@ -20,12 +20,14 @@ namespace people_errandd.Models
         {          
             try
             {
-                response = await client.GetAsync(basic_url + ControllerNameCompany + code);//HTTP GET
+                string url = basic_url + ControllerNameCompany + code;//HTTP URL
+                response = await client.GetAsync(url);//HTTP GET
                 if (response.StatusCode.ToString() == "OK")
                 {
                     GetResponse = await response.Content.ReadAsStringAsync();//將JSON轉成string
                     string[] _CompanyInformation = GetResponse.Split('\n');//分割字串
                     Preferences.Set("CompanyHash", _CompanyInformation[0]);
+                    await Log(url, null, response.StatusCode.ToString(), GetResponse);
                     return true;
                 }
             }
@@ -36,9 +38,12 @@ namespace people_errandd.Models
         }
         public async Task<bool> ConfirmUUID(string UUID)//判斷裝置UUID是否存在資料庫
         {
-            response = await client.GetAsync(basic_url +"Employees?phone_code=" +UUID + "&company_hash="+ Preferences.Get("CompanyHash", ""));
+            string url = basic_url + "Employees?phone_code=" + UUID + "&company_hash=" + Preferences.Get("CompanyHash", "");
+            response = await client.GetAsync(url);
             if (response.StatusCode.ToString() == "OK")
             {
+                GetResponse = await response.Content.ReadAsStringAsync();
+                await Log(url, null, response.StatusCode.ToString(), GetResponse);
                 return true;
             }
             return false;
@@ -55,9 +60,12 @@ namespace people_errandd.Models
             employees.Add(employee);
             try
             {
+                string url = basic_url + ControllerNameEmployee + "regist_employee";
                 var str = JsonConvert.SerializeObject(employees);//序列化成json
                 HttpContent content = new StringContent(str, Encoding.UTF8, "application/json");//set content-Type header
-                response = await client.PostAsync(basic_url + ControllerNameEmployee + "regist_employee", content);//HTTP POST               
+                response = await client.PostAsync(url, content);//HTTP POST
+                var result = response.Content.ReadAsStringAsync();
+                await Log(url, str, response.StatusCode.ToString(),result.Result);
                 return true;
             }
             catch (Exception)
@@ -68,8 +76,10 @@ namespace people_errandd.Models
         }
         public async Task<string> GetHashAccount(string uuid)
         {
-            response = await client.GetAsync(basic_url + "Employees?phone_code=" + uuid + "&company_hash=" + Preferences.Get("CompanyHash", ""));
+            string url = basic_url + "Employees?phone_code=" + uuid + "&company_hash=" + Preferences.Get("CompanyHash", "");
+            response = await client.GetAsync(url);
             GetResponse = await response.Content.ReadAsStringAsync();//將JSON轉成string
+            await Log(url, null, response.StatusCode.ToString(), GetResponse);
             return GetResponse;
         }
         public async Task<bool> SetInformation(string _Name, string _Email)
@@ -87,12 +97,14 @@ namespace people_errandd.Models
                 informations.Add(information);
                 var str = JsonConvert.SerializeObject(informations);
                 HttpContent content = new StringContent(str, Encoding.UTF8, "application/json");
-                response = await client.PostAsync(basic_url + ControllerNameInformation + "add_information", content);
+                string url = basic_url + ControllerNameInformation + "add_information";
+                response = await client.PostAsync(url, content);
                 Preferences.Set("UserName", _Name);
                 Preferences.Set("email", _Email);
-                
+                var result = response.Content.ReadAsStringAsync();
                 if (response.StatusCode.ToString() == "OK")
                 {
+                    await Log(url, str, response.StatusCode.ToString(), result.Result);
                     return true;
                 }
                 else
@@ -112,10 +124,12 @@ namespace people_errandd.Models
             try
             {
                 string _Ha = await GetHashAccount(Preferences.Get("uuid", ""));
-                response = await client.GetAsync(basic_url + ControllerNameInformation + _Ha);
+                string url = basic_url + ControllerNameInformation + _Ha;
+                response = await client.GetAsync(url);
                 GetResponse = await response.Content.ReadAsStringAsync();
                 //information UserInf = JsonConvert.DeserializeObject<information>(GetResponse);
-                string[] _UserInf = GetResponse.Split(',');                
+                string[] _UserInf = GetResponse.Split(',');
+                await Log(url, null, response.StatusCode.ToString(), GetResponse);
                 return _UserInf[1] != null;                
             }
             catch (Exception)
@@ -127,8 +141,10 @@ namespace people_errandd.Models
         {
             try
             {
-                response = await client.GetAsync(basic_url + ControllerNameEmployee + "get_employee_enabled/"+Preferences.Get("uuid", ""));
+                string url = basic_url + ControllerNameEmployee + "get_employee_enabled/" + Preferences.Get("HashAccount", "");
+                response = await client.GetAsync(url);
                 var result = await response.Content.ReadAsStringAsync();
+                await Log(url, null, response.StatusCode.ToString(), result);
                 return Convert.ToBoolean(result);
             }
             catch(Exception)

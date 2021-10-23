@@ -78,7 +78,11 @@ namespace people_errandd.Views
             }
             finally
             {
-                allowTap = true;
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }
         }
         private async void QuestionButton(object sender, EventArgs e)
@@ -93,7 +97,11 @@ namespace people_errandd.Views
             }
             finally
             {
-                allowTap = true;
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }
         }
         protected async override void OnAppearing()

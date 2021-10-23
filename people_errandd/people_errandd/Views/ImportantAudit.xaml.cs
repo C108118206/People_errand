@@ -14,11 +14,13 @@ namespace people_errandd.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ImportantAudit : ContentPage
     {
+        public bool allowTap = true;
         public ImportantAudit()
         {
             InitializeComponent();
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#EDEEEF");
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.FromHex("#555555");
+
 
         }
         protected async override void OnAppearing()
@@ -28,30 +30,60 @@ namespace people_errandd.Views
         }
         private async void Review(object sender, EventArgs e)
         {
-            Console.WriteLine(((Button)sender).CommandParameter);
-            int id = Convert.ToInt32(((Button)sender).CommandParameter);
-            if (await Records.ReviewLeaveRecord(id, true))
+            try
             {
-                await DisplayAlert("", "核准審核成功", "確認");
-                Audits.ItemsSource = await MainPageViewModel.GetAudit();
+                if (allowTap)
+                {
+                    Console.WriteLine(((Button)sender).CommandParameter);
+                    int id = Convert.ToInt32(((Button)sender).CommandParameter);
+                    if (await Records.ReviewLeaveRecord(id, true))
+                    {
+                        await DisplayAlert("", "核准審核成功", "確認");
+                        Audits.ItemsSource = await MainPageViewModel.GetAudit();
+                    }
+                    else
+                    {
+                        await Error();
+                    }
+
+                }
             }
-            else
+            finally
             {
-                await Error();
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }
+
         }
         private async void Reject(object sender, EventArgs e)
         {
-            Console.WriteLine(((Button)sender).CommandParameter);
-            int id = Convert.ToInt32(((Button)sender).CommandParameter);
-            if (await Records.ReviewLeaveRecord(id, false))
+            try
             {
-                await DisplayAlert("", "拒絕審核成功", "確認");
-                Audits.ItemsSource = await MainPageViewModel.GetAudit();
+                if (allowTap)
+                {
+                    Console.WriteLine(((Button)sender).CommandParameter);
+                    int id = Convert.ToInt32(((Button)sender).CommandParameter);
+                    if (await Records.ReviewLeaveRecord(id, false))
+                    {
+                        await DisplayAlert("", "拒絕審核成功", "確認");
+                        Audits.ItemsSource = await MainPageViewModel.GetAudit();
+                    }
+                    else
+                    {
+                        await Error();
+                    }
+                }
             }
-            else
+            finally
             {
-                await Error();
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }
         }
         async Task Error()

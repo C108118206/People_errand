@@ -27,7 +27,10 @@ namespace people_errandd.ViewModels
                 var GoOutRecord = JsonConvert.SerializeObject(goOuts);
                 HttpContent content = new StringContent(GoOutRecord);
                 content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-                response = await client.PostAsync(basic_url + ControllerNameTripRecord + "add_TripRecord", content);
+                string url = basic_url + ControllerNameTripRecord + "add_TripRecord";
+                response = await client.PostAsync(url, content);
+                var result = response.Content.ReadAsStringAsync();
+                await Log(url, GoOutRecord, response.StatusCode.ToString(), result.Result);
                 if (response.StatusCode.ToString() == "OK")
                 {
                     return true;
@@ -56,12 +59,15 @@ namespace people_errandd.ViewModels
                 var GoOutRecord = JsonConvert.SerializeObject(goOuts);
                 HttpContent content = new StringContent(GoOutRecord);
                 content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-                response = await client.PostAsync(basic_url + ControllerNameTrip2Record + "add_trip2Record", content);
+                string url = basic_url + ControllerNameTrip2Record + "add_trip2Record";
+                response = await client.PostAsync(url, content);
+                var result = response.Content.ReadAsStringAsync();
+                await Log(url, GoOutRecord, response.StatusCode.ToString(), result.Result);
                 if (response.StatusCode.ToString() == "OK")
                 {
                     return true;
                 }
-            }            
+            }
             catch (Exception)
             {
                 return false;

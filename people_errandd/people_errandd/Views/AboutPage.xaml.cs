@@ -34,10 +34,17 @@ namespace people_errandd.Views
            // Console.WriteLine(Preferences.Get("HashAccount", ""));
             information inf = await informationViewModel.GetInformation(Preferences.Get("HashAccount", ""));
             //Console.WriteLine(" "+inf.name + inf.department + inf.email);
+            try
+            {
                 jobTitle.Text = inf.jobtitle;
                 department.Text = inf.department;
                 phone.Text = inf.phone;
-                email.Text = inf.email;                    
+                email.Text = inf.email;
+            }
+            catch (Exception)
+            {
+            }
+                                   
         }
         void RefButtonClicked(object sender, EventArgs e)
         {         
@@ -112,7 +119,7 @@ namespace people_errandd.Views
                     {
                         phone.Text = "";
                     }
-                            if (await informationViewModel.UpdateInformationRecord(name.Text, phone.Text, email.Text))
+                            if (await informationViewModel.UpdateInformationRecord(name.Text, phone.Text, email.Text) && await informationViewModel.ConfirmEmail(email.Text))
                             {
                                 Preferences.Set("phone", phone.Text);
                                 Preferences.Set("email", email.Text);
@@ -127,7 +134,11 @@ namespace people_errandd.Views
             }
             finally
             {
-                allowTap = true;
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }
         }
 

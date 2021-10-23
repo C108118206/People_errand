@@ -5,6 +5,8 @@ using people_errandd.ViewModels;
 using people_errandd.Models;
 using System.Collections.Generic;
 using Xamarin.Essentials;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace people_errandd.Views
 {
@@ -110,8 +112,7 @@ namespace people_errandd.Views
             {
                 if (allowTap)
                 {
-                    allowTap = false;
-
+                    allowTap = false;                  
                     DateTime StartDateTime, EndDateTime;
 
                     if (startTimePicker.IsVisible)
@@ -152,7 +153,11 @@ namespace people_errandd.Views
             }
             finally
             {
-                allowTap = true;
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }
 
         }

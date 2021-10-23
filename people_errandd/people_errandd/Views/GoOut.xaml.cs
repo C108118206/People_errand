@@ -60,7 +60,11 @@ namespace people_errandd.Views
             }
             finally
             {
-                allowTap = true;
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }
         }
         private void AlldaySwitch_Toggled(object sender, ToggledEventArgs e)

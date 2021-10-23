@@ -907,7 +907,7 @@
 
 	/* 100: people_errandd.dll */
 	/* uncompressed_file_size */
-	.long	332288
+	.long	340992
 	/* loaded */
 	.byte	0
 	/* data */

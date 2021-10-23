@@ -104,9 +104,11 @@ namespace people_errandd.ViewModels
         {
             try
             {
-                response = await client.GetAsync(basic_url + ControllerNameLeaveRecord + "Review_LeaveRecord?hash_company=" + Preferences.Get("CompanyHash", "") + "&hash_account=" + Preferences.Get("HashAccount", ""));
-                Console.WriteLine(basic_url + ControllerNameLeaveRecord + "Review_LeaveRecord?hash_company=" + Preferences.Get("CompanyHash", "") + "&hash_account=" + Preferences.Get("HashAccount", ""));
+                string url = basic_url + ControllerNameLeaveRecord + "Review_LeaveRecord?hash_company=" + Preferences.Get("CompanyHash", "") + "&hash_account=" + Preferences.Get("HashAccount", "");
+                response = await client.GetAsync(url);
+                Console.WriteLine(url);
                 var result = await response.Content.ReadAsStringAsync();
+                await Log(url, null, response.StatusCode.ToString(), result);
                 List<Audit> Audits = JsonConvert.DeserializeObject<List<Audit>>(result);
                 int i = 0;
                 foreach (var a in Audits)
@@ -114,8 +116,7 @@ namespace people_errandd.ViewModels
                     Audits[i].Time = a.StartDate.ToString("yyyy/MM/dd HH:mm") + " - " + a.EndDate.ToString("yyyy/MM/dd HH:mm");
                     Console.WriteLine(a.LeaveRecordId);
                     i++;
-                }
-                
+                }           
                 return Audits.Count!=0? Audits:null;
             }
             catch (Exception)

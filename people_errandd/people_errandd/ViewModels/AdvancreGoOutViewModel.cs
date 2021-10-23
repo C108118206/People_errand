@@ -138,13 +138,17 @@ namespace people_errandd.ViewModels
                     }
                     else
                     {
-                        await App.Current.MainPage.DisplayAlert("", "錯誤", "確認");
+                        await App.Current.MainPage.DisplayAlert("", "網路錯誤", "確認");
                     }
                 }
             }
             finally
             {
-                allowTap = true;
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }          
         }
 
@@ -161,13 +165,17 @@ namespace people_errandd.ViewModels
                     }
                     else
                     {
-                        await App.Current.MainPage.DisplayAlert("", "錯誤", "確認");
+                        await App.Current.MainPage.DisplayAlert("", "網路錯誤", "確認");
                     }
                 }
             }
             finally
             {
-                allowTap = true;
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }
             
         }
@@ -189,13 +197,17 @@ namespace people_errandd.ViewModels
                     }
                     else
                     {
-                        await App.Current.MainPage.DisplayAlert("", "錯誤", "確認");
+                        await App.Current.MainPage.DisplayAlert("", "網路錯誤", "確認");
                     }
                 }
             }
             finally
             {
-                allowTap = true;
+                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                {
+                    allowTap = true;
+                    return false;
+                });
             }           
         }
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)  
