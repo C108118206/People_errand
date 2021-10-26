@@ -458,5 +458,7 @@
     <BundleResource Include="Resources\startgoout.png" />
     <BundleResource Include="Resources\recordpage.png" />
     <BundleResource Include="Resources\calenderpage.png" />
+    <BundleResource Include="Resources\holidays1.png" />
+    <BundleResource Include="Resources\holidays2.png" />
   </ItemGroup>
 </Project>

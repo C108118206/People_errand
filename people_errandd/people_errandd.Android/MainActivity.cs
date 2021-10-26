@@ -5,6 +5,7 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 using Android;
+using Android.Content.Res;
 
 namespace people_errandd.Droid
 {
@@ -33,6 +34,18 @@ namespace people_errandd.Droid
                     // Permissions already granted - display a message.
                 }
             }
+        }
+        public override Resources Resources
+        {
+            get
+            {
+                Resources res = base.Resources;
+                Configuration config = new Configuration();
+                config.SetToDefaults();
+                res.UpdateConfiguration(config, res.DisplayMetrics);
+                return res;
+            }
+
         }
         protected override void OnCreate(Bundle savedInstanceState)
         {
