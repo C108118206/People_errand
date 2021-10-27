@@ -1630,3 +1630,5 @@ C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\peop
 C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\holidays1.png
 C:\Users\lmh_flower\source\repos\People_errand\People_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\holidays2.png
+D:\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\holidays1.png
+D:\people_errand\people_errandd\people_errandd.Android\obj\Debug\110\res\drawable\holidays2.png

@@ -36,21 +36,6 @@ namespace people_errandd.Views
             //leaveType.ItemsSource = dayoffList;
             startTimePicker.IsVisible = !AlldaySwitch.IsToggled;
         }
-        //private void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
-        //{
-        //    try
-        //    {
-        //        if (allowTap)
-        //        {
-        //            allowTap = false;
-        //            Navigation.PopAsync();
-        //        }
-        //    }
-        //    finally
-        //    {
-        //        allowTap = true;
-        //    }
-        //}
         private void AlldaySwitch_Toggled(object sender, ToggledEventArgs e)
         {
             if (AlldaySwitch.IsToggled == true)
@@ -104,6 +89,11 @@ namespace people_errandd.Views
         {
             leavetype.Text = "陪產假";
             LeaveTypeId = 8;
+        }
+        private void Annual(object sender, CheckedChangedEventArgs e)
+        {
+            leavetype.Text = "特休假";
+            LeaveTypeId = 9;
         }
         private async void EnterButton(object sender, EventArgs e)
         {
@@ -187,6 +177,8 @@ namespace people_errandd.Views
         {
             minTime();
         }
+
+        
     }
 }
 

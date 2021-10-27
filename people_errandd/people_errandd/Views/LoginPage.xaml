@@ -87,7 +87,7 @@
                  
                         <!--組織ID標題-->
                     <Grid Grid.Row="1" ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto" Margin="0,5,0,5">
-                        <Entry x:Name="company" Placeholder=" 請輸入組織ID" Style="{StaticResource entry}" Grid.Row="0">
+                        <Entry x:Name="company" Unfocused="CompanyIdChecked"    Placeholder=" 請輸入組織ID" Style="{StaticResource entry}" Grid.Row="0">
                             <Entry.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
                                     <On Platform="iOS" Value="48,0,48,5" />

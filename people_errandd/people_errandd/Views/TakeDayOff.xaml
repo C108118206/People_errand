@@ -189,7 +189,7 @@
                                 </StackLayout>
                             </RadioButton.Content>
                         </RadioButton>
-                        <RadioButton Value="特休假" CheckedChanged="Physiological" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
+                        <RadioButton Value="特休假" CheckedChanged="Annual" HeightRequest="200" WidthRequest="150" Margin="0,0,-25,0">
                             <RadioButton.Content>
                                 <StackLayout >
                                     <Image Source="holidays2.png" Style="{StaticResource rdimage}"/>

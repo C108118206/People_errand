@@ -145,7 +145,16 @@ namespace people_errandd.Models
                 response = await client.GetAsync(url);
                 var result = await response.Content.ReadAsStringAsync();
                 await Log(url, null, response.StatusCode.ToString(), result);
-                return Convert.ToBoolean(result);
+                if (response.StatusCode.ToString() == "OK")
+                {
+                    return Convert.ToBoolean(result);
+                }
+                else if (response.StatusCode.ToString() == "NoContent")
+                {
+                    return false;
+                }
+                return true;
+                
             }
             catch(Exception)
             {
