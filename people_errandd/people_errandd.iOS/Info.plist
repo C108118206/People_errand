@@ -30,19 +30,19 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>PeopleErrand</string>
-  <key>NSLocationAlwaysUsageDescription</key>
-  <string>Your message goes here</string>
-  <key>NSLocationWhenInUseUsageDescription</key>
-  <string>Your message goes here</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your message goes here</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your message goes here</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
-	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NSLocationWhenInUseUsageDescirption</key>
 	<string>This app wants to use your location</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcons.appiconset</string>
 </dict>
 </plist>
