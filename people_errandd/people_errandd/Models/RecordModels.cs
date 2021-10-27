@@ -95,7 +95,7 @@ namespace people_errandd.Models
                     Console.WriteLine(workRecords[i].time);
                     i++;
                 }
-
+                workRecords = workRecords.OrderByDescending(work => work.time).ToList();
                 workRecords = workRecords.Where(work => work.time.Contains(date)).ToList();
                 //List<work> workRecord;
 
@@ -165,11 +165,15 @@ namespace people_errandd.Models
                         case 8:
                             DayOffRecords[i].LeaveType = "陪產假";
                             break;
+                        case 9:
+                            DayOffRecords[i].LeaveType = "特休";
+                            break;
                     }                    
                     rs.status = rs.Review!=null? (bool)rs.Review ? "已審核" : "已拒絕":"待審核";                    
                     i++;
-                }                              
+                }
                 //DayOffRecords = DayOffRecords.Where(DayOff => DayOff.StartDate.ToString().Contains(date)).ToList();
+                DayOffRecords = DayOffRecords.OrderByDescending(DayOff => DayOff.StartDate).ToList();
                 DayOffRecords = DayOffRecords.Where(DayOff => date.CompareTo(DayOff.StartDate)>=0 && date.CompareTo(DayOff.EndDate)<=0).ToList();
                 return DayOffRecords;
             }
@@ -216,6 +220,7 @@ namespace people_errandd.Models
                     GoOutRecords[i].address = goOut.address.Substring(5);
                     i++;                   
                 }
+                GoOutRecords = GoOutRecords.OrderByDescending(GoOut => GoOut.createdTime).ToList();
                 GoOutRecords = GoOutRecords.Where(GoOut => GoOut.createdTime.ToString().Contains(date)).ToList();
                 return GoOutRecords;
             }

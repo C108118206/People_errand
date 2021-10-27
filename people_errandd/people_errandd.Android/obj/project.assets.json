@@ -4197,7 +4197,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lonel\\.nuget\\packages\\": {},
+    "C:\\Users\\likem\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
@@ -4207,7 +4207,7 @@
       "projectUniqueName": "D:\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
       "projectName": "people_errandd.Android",
       "projectPath": "D:\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
-      "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\likem\\.nuget\\packages\\",
       "outputPath": "D:\\people_errand\\people_errandd\\people_errandd.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
@@ -4216,7 +4216,7 @@
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\lonel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\likem\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"

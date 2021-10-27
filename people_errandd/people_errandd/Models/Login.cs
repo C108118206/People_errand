@@ -141,13 +141,12 @@ namespace people_errandd.Models
         {
             try
             {
-                string url = basic_url + ControllerNameEmployee + "get_employee_enabled/" + Preferences.Get("HashAccount", "");               
+                string url = basic_url + ControllerNameEmployee + "get_employee_enabled/" + Preferences.Get("HashAccount", "");
                 response = await client.GetAsync(url);
-                Console.WriteLine(response.StatusCode.ToString());
-                if (response.StatusCode.ToString()=="OK")
+                var result = await response.Content.ReadAsStringAsync();
+                await Log(url, null, response.StatusCode.ToString(), result);
+                if (response.StatusCode.ToString() == "OK")
                 {
-                    var result = await response.Content.ReadAsStringAsync();
-                    await Log(url, null, response.StatusCode.ToString(), result);
                     return Convert.ToBoolean(result);
                 }
                 else if (response.StatusCode.ToString() == "NoContent")
@@ -155,6 +154,7 @@ namespace people_errandd.Models
                     return false;
                 }
                 return true;
+                
             }
             catch(Exception)
             {
