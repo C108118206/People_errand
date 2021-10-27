@@ -11,6 +11,7 @@ public class MainActivity
 	static {
 		__md_methods = 
 			"n_onStart:()V:GetOnStartHandler\n" +
+			"n_getResources:()Landroid/content/res/Resources;:GetGetResourcesHandler\n" +
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
 			"n_onRequestPermissionsResult:(I[Ljava/lang/String;[I)V:GetOnRequestPermissionsResult_IarrayLjava_lang_String_arrayIHandler\n" +
 			"";
@@ -40,6 +41,14 @@ public class MainActivity
 	}
 
 	private native void n_onStart ();
+
+
+	public android.content.res.Resources getResources ()
+	{
+		return n_getResources ();
+	}
+
+	private native android.content.res.Resources n_getResources ();
 
 
 	public void onCreate (android.os.Bundle p0)

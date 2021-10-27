@@ -23,6 +23,7 @@ namespace people_errandd.Views
             NavigationPage.SetHasNavigationBar(this, false);
             Application.Current.UserAppTheme = OSAppTheme.Light;
             Animation ani = new Animation();
+            company.Text = Preferences.Get("CompanyId","");
             if (string.IsNullOrEmpty(Preferences.Get("uuid", string.Empty)))
             {
                 Preferences.Set("uuid", Guid.NewGuid().ToString());
@@ -60,8 +61,10 @@ namespace people_errandd.Views
                                 return;
                             }
                             Preferences.Set("HashAccount", await Login.GetHashAccount(Preferences.Get("uuid", "")));
+                            Preferences.Set("CompanyId", company.Text.Trim());
                             await _InfVM.GetUserName(Preferences.Get("HashAccount",""));
-                            Navigation.InsertPageBefore(new MainPage(), this);                           
+                            Navigation.InsertPageBefore(new MainPage(), this);   
+                            
                             await Navigation.PopAsync();              
                         }
                         else
@@ -112,11 +115,19 @@ namespace people_errandd.Views
             await image.ScaleTo(1.5, 1000, Easing.CubicIn);
             await image.ScaleTo(1, 1000, Easing.CubicOut);
         }
-        /*
-        private async void Test_Clicked(object sender, EventArgs e)
+
+        private void CompanyIdChecked(object sender, FocusEventArgs e)
         {
-            await PopupNavigation.Instance.PushAsync(new VerificationPage("繼承資料"));
+            if (string.IsNullOrEmpty(company.Text))
+            {
+                Preferences.Set("CompanyID", "");
+            }
         }
-        */
+        /*
+private async void Test_Clicked(object sender, EventArgs e)
+{
+   await PopupNavigation.Instance.PushAsync(new VerificationPage("繼承資料"));
+}
+*/
     }
 }

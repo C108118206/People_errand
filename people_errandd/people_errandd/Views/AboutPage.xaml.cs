@@ -201,7 +201,7 @@ namespace people_errandd.Views
                     {
                         App.Current.MainPage = new SharedTransitionNavigationPage(new LoginPage());
                         await Navigation.PopToRootAsync();
-                        Preferences.Remove("HashAccount");
+                        Preferences.Remove("HashAccount");                       
                     }
                     
                 }

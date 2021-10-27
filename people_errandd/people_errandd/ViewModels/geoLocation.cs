@@ -78,7 +78,15 @@ namespace people_errandd.ViewModels
         {
             try
             {
-                string url = basic_url + ControllerNameCompany + "Get_CompanyAddress?company_hash=" + Preferences.Get("CompanyHash", "");
+                string url = basic_url + ControllerNameCompany + "GetCompanySettingWorkRecordEnabled/" + Preferences.Get("CompanyHash", "");
+                response = await client.GetAsync(url);
+                GetResponse = await response.Content.ReadAsStringAsync();//將JSON轉成string
+                await Log(url, null, response.StatusCode.ToString(), GetResponse);
+                if (!Convert.ToBoolean(GetResponse))
+                {
+                    return true;
+                }
+                url = basic_url + ControllerNameCompany + "Get_CompanyAddress?company_hash=" + Preferences.Get("CompanyHash", "");
                 response = await client.GetAsync(url);
                 Console.WriteLine(response.StatusCode.ToString());
                 if (response.StatusCode.ToString() == "OK")
@@ -90,7 +98,13 @@ namespace people_errandd.ViewModels
                     Location locationCompany = new Location(addresses[0].coordinateX, addresses[0].coordinateY);
                     Location locationNow = new Location(X,Y);
                     double distance = Location.CalculateDistance(locationNow, locationCompany, DistanceUnits.Kilometers);
-                    if (distance < 0.5)
+                    url = basic_url+ControllerNameCompany+"GetCompanyPositionDifference/"+Preferences.Get("CompanyHash","");
+                    response = await client.GetAsync(url);
+                    GetResponse = await response.Content.ReadAsStringAsync();
+                    double x = Convert.ToDouble(GetResponse);
+                    await Log(url, null, response.StatusCode.ToString(), GetResponse);
+                    Console.WriteLine(x / 1000);
+                    if (distance < x/1000)
                     {
                         return true;
                     }
@@ -99,7 +113,6 @@ namespace people_errandd.ViewModels
             }
             catch (Exception)
             {
-                throw;
             }
             return false;
         }

@@ -32,6 +32,7 @@ namespace people_errandd.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();          
+
             Audits.ItemsSource=await MainPageViewModel.GetAudit();
             Audits.IsVisible = Audits.ItemsSource != null;
             AuditText.IsVisible = Audits.IsVisible;

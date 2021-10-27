@@ -41,7 +41,7 @@
                         <Label Text="公出開始" HorizontalOptions="Center" TextColor="#555555"  FontSize="16"/>
                 </StackLayout>
             </Frame>
-                <Frame HorizontalOptions="Center" BackgroundColor="#F5B3B3" HasShadow="False" CornerRadius="10" Margin="10,0,10,0" WidthRequest="75" IsEnabled="{Binding CanBack}" Opacity="{Binding BackOpacity}">
+                <Frame HorizontalOptions="Center" x:Name="Arrival" BackgroundColor="#F5B3B3" HasShadow="False" CornerRadius="10" Margin="10,0,10,0" WidthRequest="75" IsEnabled="{Binding CanBack}" Opacity="{Binding BackOpacity}">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding ArrivalCommand}" />
                     </Frame.GestureRecognizers>

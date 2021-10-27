@@ -74,6 +74,21 @@ namespace people_errandd.ViewModels
             }
             return false;
         }
+        public static async Task<bool> ConfirmArrival()
+        {
+            try
+            {
+                string url = basic_url + ControllerNameCompany +"GetCompanySettingTrip2Enabled/"+Preferences.Get("CompanyHash","");
+                response = await client.GetAsync(url);
+                GetResponse = await response.Content.ReadAsStringAsync();
+                await Log(url, null, response.StatusCode.ToString(), GetResponse);
+                return Convert.ToBoolean(GetResponse);
+            }
+            catch (Exception)
+            {
+                return false;
+            }         
+        }
     }
 
 }

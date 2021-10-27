@@ -19,7 +19,13 @@ namespace people_errandd.Views
         {
             InitializeComponent();
             PageTitle.Text = _Title;
+            
         }
-        
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            Arrival.IsVisible = await GoOutViewModel.ConfirmArrival();
+        }
+
     }
 }
