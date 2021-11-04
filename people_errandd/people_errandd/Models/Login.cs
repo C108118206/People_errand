@@ -143,18 +143,17 @@ namespace people_errandd.Models
             {
                 string url = basic_url + ControllerNameEmployee + "get_employee_enabled/" + Preferences.Get("HashAccount", "");
                 response = await client.GetAsync(url);
+                if (response.StatusCode.ToString() == "NoContent")
+                {
+                    return false;
+                }
                 var result = await response.Content.ReadAsStringAsync();
                 await Log(url, null, response.StatusCode.ToString(), result);
                 if (response.StatusCode.ToString() == "OK")
                 {
                     return Convert.ToBoolean(result);
                 }
-                else if (response.StatusCode.ToString() == "NoContent")
-                {
-                    return false;
-                }
-                return true;
-                
+                return true;                
             }
             catch(Exception)
             {

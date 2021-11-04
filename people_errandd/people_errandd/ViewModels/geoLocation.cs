@@ -82,7 +82,7 @@ namespace people_errandd.ViewModels
                 response = await client.GetAsync(url);
                 GetResponse = await response.Content.ReadAsStringAsync();//將JSON轉成string
                 await Log(url, null, response.StatusCode.ToString(), GetResponse);
-                if (!Convert.ToBoolean(GetResponse))
+                if (Convert.ToBoolean(GetResponse))
                 {
                     return true;
                 }

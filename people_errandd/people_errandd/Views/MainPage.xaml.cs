@@ -74,10 +74,11 @@ namespace people_errandd.Views
                             {
                                 await DisplayAlert("位置錯誤", "請檢查定位是否開啟與所在位置\n(設定->隱私->位置)", "確定");                               
                             }
-                        if (!await DisplayAlert("", "是否強制進行打卡?\n(公司位置:" + Preferences.Get("CompanyAddress", "") + ")", "確定", "取消"))
-                            {
-                                return;
-                            }
+                            //if (!await DisplayAlert("", "是否強制進行打卡?\n(公司位置:" + Preferences.Get("CompanyAddress", "") + ")", "確定", "取消"))
+                            //    {
+                            //        return;
+                            //    }
+                            return;
                         }                                             
                         if (await Work.PostWork(1, x, y, true))
                         {
@@ -132,10 +133,11 @@ namespace people_errandd.Views
                             {
                                 await DisplayAlert("位置錯誤", "請檢查定位是否開啟與所在位置\n(設定->隱私->位置)", "確定");
                             }
-                            if (!await DisplayAlert("", "是否強制進行打卡?\n(公司位置:" + Preferences.Get("CompanyAddress", "") + ")", "確定", "取消"))
-                            {
-                                return;
-                            }
+                            //if (!await DisplayAlert("", "是否強制進行打卡?\n(公司位置:" + Preferences.Get("CompanyAddress", "") + ")", "確定", "取消"))
+                            //{
+                            //    return;
+                            //}
+                            return;
                         }
                         if (await Work.PostWork(2, x, y, true))
                         {
