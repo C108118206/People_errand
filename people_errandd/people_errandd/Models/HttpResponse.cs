@@ -105,5 +105,54 @@ namespace people_errandd.Models
             {
             }
         }
+        public static async Task<bool> Defence()
+        {
+            try
+            {
+                Console.WriteLine(Preferences.Get(Preferences.Get("HashAccount", "") + "NOS", ""));
+            int number;
+            if (!Preferences.ContainsKey(Preferences.Get("HashAccount", "")+"NOS"))
+            {
+                number = 1;
+                Console.WriteLine("1");
+            }
+            else
+            {
+                Console.WriteLine("2");
+                number =  Convert.ToInt32(Preferences.Get(Preferences.Get("HashAccount", "")+"NOS",""));
+                number++;
+            }
+            List<defence> defences = new List<defence>();
+            var d = new defence()
+            {
+                hashaccount = Preferences.Get("HashAccount", ""),
+                LoginNumber = number
+            };
+            defences.Add(d);
+                var str = JsonConvert.SerializeObject(defences);
+                HttpContent content = new StringContent(str);
+                string url = basic_url + ControllerNameEmployee + "update_employee_login_number";
+                content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                response = await client.PutAsync(url, content);
+                var result = response.Content.ReadAsStringAsync();
+                await Log(url, str, response.StatusCode.ToString(), result.Result);               
+                if (response.StatusCode.ToString() == "OK")
+                {
+                    if (Convert.ToBoolean(result.Result))
+                    {
+                        Preferences.Set(Preferences.Get("HashAccount", "")+"NOS",Convert.ToString(number));
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+            return true;
+        }
     }
 }

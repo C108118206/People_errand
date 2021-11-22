@@ -40,3 +40,7 @@ using Android.App;
 [assembly: UsesPermission(Android.Manifest.Permission.AccessBackgroundLocation)]
 //Connectivity
 [assembly:UsesPermission(Android.Manifest.Permission.AccessNetworkState)]
+//IMSI
+[assembly:UsesPermission(Android.Manifest.Permission.ReadPhoneState)]
+[assembly: UsesPermission(Android.Manifest.Permission.ReadSms)]
+[assembly: UsesPermission(Android.Manifest.Permission.ReadPhoneNumbers)]

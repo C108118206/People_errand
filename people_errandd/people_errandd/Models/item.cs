@@ -107,7 +107,11 @@ namespace people_errandd.Models
         public string input { get; set; }
         public string response { get; set; }
         public string output { get; set; }
-
+    }
+    public class defence
+    {
+        public string hashaccount { get; set; }
+        public int LoginNumber{get;set;} 
     }
 
 }

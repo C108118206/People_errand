@@ -55,28 +55,29 @@ namespace people_errandd
                     MainPage = new SharedTransitionNavigationPage(new MainPage());
                     await information.GetUserName(Preferences.Get("HashAccount", ""));
                     await GetLocation();
-                    GetConnectivity("start");
-                if(!await Login.AccountEnabled())
+                    await GetConnectivity("start");
+                    await location.GetLocationText(Latitude, Longitude);
+                if (!await Login.AccountEnabled())
                 {
                     MainPage = new SharedTransitionNavigationPage(new LoginPage());
                     await App.Current.MainPage.DisplayAlert("", "帳號已停用", "確認");
                     Preferences.Remove("HashAccount");
                 }
-
             }
             var Seconds = TimeSpan.FromSeconds(8);
-            Device.StartTimer(Seconds, () => {               
+            Device.StartTimer(Seconds, () => {
+                location.GetLocationText(Latitude,Longitude);
                 GetLocation();
                 return true;
-            });
+            });            
         }
         protected override void OnSleep()
         {
 
         }
-        protected override void OnResume()
+        protected override async void OnResume()
         {
-            GetConnectivity("resume");
+            await GetConnectivity("resume");
             MessagingCenter.Send<App>(this, "Hi");
         }
         private async Task GetLocation()
@@ -90,13 +91,14 @@ namespace people_errandd
                 Console.WriteLine("Error");
             }
         }
-        private async void GetConnectivity(string status)
+        private async Task GetConnectivity(string status)
         {
             Page page = MainPage;            
             try
             {
                 if (status == "start")
                 {
+
                     switch (await work.GetWorkType())
                     {
                         case 0:
@@ -109,11 +111,19 @@ namespace people_errandd
                         default:
                             break;
                     }
+                    if (!await HttpResponse.Defence() && Preferences.ContainsKey("HashAccount"))
+                    {
+                        await page.DisplayAlert("","錯誤","確定");
+                        //MainPage = new SharedTransitionNavigationPage(new LoginPage());
+                        //Preferences.Clear();
+                        //Preferences.Set("uuid", Guid.NewGuid().ToString());
+                        //await App.Current.MainPage.DisplayAlert("", "偵測到違規行為，帳號已停用", "確認");                       
+                    }
                 }
                 else
                 {
                     await work.GetWorkType();
-                }
+                }          
             }
             catch (Exception)
             {

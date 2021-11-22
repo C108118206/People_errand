@@ -21,9 +21,8 @@ namespace people_errandd.ViewModels
         {
             this.DateTime = DateTime.Now;
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
-            {
-               
-                LocationText = geoLocation.LocationNowText;
+            {            
+                //LocationText = geoLocation.LocationNowText;
                 DateTime = DateTime.Now;
                 GpsText = Preferences.Get("GpsText", "");
                 GpsTextColor = Preferences.Get("GpsButtonColor", "");
@@ -76,22 +75,22 @@ namespace people_errandd.ViewModels
             }
         }
 
-        public string LocationText
-        {
-            private set
-            {
-                if (LocationNowText != value)
-                {
-                    LocationNowText = value;
-                    OnPropertyChanged();
-                }
+        //public string LocationText
+        //{
+        //    private set
+        //    {
+        //        if (LocationNowText != value)
+        //        {
+        //            LocationNowText = value;
+        //            OnPropertyChanged();
+        //        }
 
-            }
-            get
-            {
-                return LocationNowText;
-            }
-        }      
+        //    }
+        //    get
+        //    {
+        //        return LocationNowText;
+        //    }
+        //}      
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChangedEventHandler handler = PropertyChanged;

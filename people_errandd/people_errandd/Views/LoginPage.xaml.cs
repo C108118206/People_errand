@@ -29,6 +29,8 @@ namespace people_errandd.Views
                 Preferences.Set("uuid", Guid.NewGuid().ToString());
             }
             Console.WriteLine(Preferences.Get("uuid", ""));
+           // TelephonyManager mTelephonyMgr = 
+
         }
         private async void LogInButton(object sender, EventArgs e)
         {
@@ -37,9 +39,10 @@ namespace people_errandd.Views
                 if (allowTap)
                 {
                     allowTap = false;
+                    loading.IsRunning = true;
                     if (Connectivity.NetworkAccess != NetworkAccess.Internet)
                     {
-                        await DisplayAlert("Error", "No Intenet", "OK");
+                        await DisplayAlert("", "網路錯誤，請檢查網路", "確認");
                         return;
                     }
                     if (string.IsNullOrWhiteSpace(company.Text))
@@ -63,8 +66,7 @@ namespace people_errandd.Views
                             Preferences.Set("HashAccount", await Login.GetHashAccount(Preferences.Get("uuid", "")));
                             Preferences.Set("CompanyId", company.Text.Trim());
                             await _InfVM.GetUserName(Preferences.Get("HashAccount",""));
-                            Navigation.InsertPageBefore(new MainPage(), this);   
-                            
+                            Navigation.InsertPageBefore(new MainPage(), this);                           
                             await Navigation.PopAsync();              
                         }
                         else
@@ -81,11 +83,14 @@ namespace people_errandd.Views
             }
             finally
             {
+                    
                 Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
                 {
+                    loading.IsRunning = false;
                     allowTap = true;
                     return false;
                 });
+                
             }
         }
         private async void QuestionButton(object sender, EventArgs e)

@@ -2109,18 +2109,18 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\likem\\.nuget\\packages\\": {},
+    "C:\\Users\\lonel\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Punch\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "projectUniqueName": "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
       "projectName": "people_errandd.iOS",
-      "projectPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
-      "packagesPath": "C:\\Users\\likem\\.nuget\\packages\\",
-      "outputPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\",
+      "projectPath": "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
+      "outputPath": "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2128,7 +2128,7 @@
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\likem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lonel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -2143,8 +2143,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
-              "projectPath": "D:\\Punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+            "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
             }
           }
         }

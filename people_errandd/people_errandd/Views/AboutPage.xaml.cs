@@ -211,5 +211,7 @@ namespace people_errandd.Views
                 allowTap = true;                
             }
         }
+
+        
     }
 }

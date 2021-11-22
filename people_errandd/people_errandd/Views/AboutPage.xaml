@@ -37,6 +37,12 @@
                 <Setter Property="HeightRequest" Value="25" />
 
             </Style>
+            <Style x:Key="titletext" TargetType="Label">
+                <Setter Property="Margin" Value="0,0,0,0" />
+                <Setter Property="TextColor" Value="#555555" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="16" />
+            </Style>
             <Style x:Key="contenttitle" TargetType="Label">
                 <Setter Property="FontSize" Value="16" />
                 <Setter Property="Margin" Value="0,10,0,-10" /><!--4,10,0,-10-->
@@ -235,12 +241,11 @@
                                 </OnPlatform>
                             </Entry.Margin>
                         </Entry>
-                            <!--Email輸入-->
+                        <!--Email輸入-->
                         <BoxView Style="{StaticResource line}" HeightRequest="1"/>
-                          <Label x:Name="emailValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="End" FontAttributes="Bold" Margin="0,5,20,0"></Label> 
+                        <Label x:Name="emailValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="End" FontAttributes="Bold" Margin="0,5,20,0"></Label>
                     </StackLayout>
-                 
-                   <Button Text="登出" Clicked="LogOut" Style="{StaticResource contentLogOut}">
+                    <Button Text="登出" Clicked="LogOut" Style="{StaticResource contentLogOut}">
                             <Button.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
                                     <On Platform="iOS" Value="15,20,15,30" />

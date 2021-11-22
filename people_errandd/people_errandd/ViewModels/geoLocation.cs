@@ -116,20 +116,29 @@ namespace people_errandd.ViewModels
             }
             return false;
         }
-        public async Task GetLocationText(double X , double Y)
-        {            
-            Position position = new Position(X,Y);
-            IEnumerable<string> possibleAddresses = await geoCoder.GetAddressesForPositionAsync(position);
-            if(DeviceInfo.Platform == DevicePlatform.Android && await GetTraslateText(possibleAddresses.FirstOrDefault()))
+        public async  Task GetLocationText(double X , double Y)
+        {
+            try
             {
-                LocationNowText = possibleAddresses.FirstOrDefault().Substring(5);
-            }
-            else
-            {
+                Position position = new Position(X, Y);
+                IEnumerable<string> possibleAddresses = await geoCoder.GetAddressesForPositionAsync(position);
+                //if(DeviceInfo.Platform == DevicePlatform.Android && await GetTraslateText(possibleAddresses.FirstOrDefault()))
+                //{
+                //    LocationNowText = possibleAddresses.FirstOrDefault().Substring(5);
+                //}
+                //else
+                //{
+                //    LocationNowText = possibleAddresses.FirstOrDefault();
+                //}
                 LocationNowText = possibleAddresses.FirstOrDefault();
+                Console.WriteLine(LocationNowText);
             }
+            catch (Exception)
+            {
+            }
+           
         }
-        public async Task<bool> GetTraslateText(string _Text)
+        public async  Task<bool> GetTraslateText(string _Text)
         {
             string _language;
             object[] body = new object[] { new { Text = _Text } };
