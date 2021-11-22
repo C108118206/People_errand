@@ -26,8 +26,14 @@ namespace people_errandd.Views
                 HeightRequest = 50,
                 WidthRequest = 250,
                 HasScrollEnabled = true,
-                HasZoomEnabled = true
-               
+                HasZoomEnabled = true              
+            };
+            
+            WebView View = new WebView
+            {
+                Source= "https://uri.amap.com/marker?position="+App.Longitude+","+App.Latitude+"&callnative=1"
+                ,
+                VerticalOptions = LayoutOptions.FillAndExpand
             };
             Label L=new Label
             {
@@ -37,11 +43,21 @@ namespace people_errandd.Views
                 HorizontalOptions = LayoutOptions.Center
             };
             StackLayout s = new StackLayout()
-            {
+            {     
                     Margin = new Thickness(50,200)
             };
             s.Children.Add(L);
-            s.Children.Add(map);
+            if(map.IsEnabled)
+            {
+                s.Children.Add(map);
+         }
+            else
+            {
+                s.Margin = new Thickness(20, 100);
+                s.Children.Add(View);
+                
+            }
+            //s.Children.Add(map);
             Content = s;           
         }
     }

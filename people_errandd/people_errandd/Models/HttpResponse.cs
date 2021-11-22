@@ -105,5 +105,55 @@ namespace people_errandd.Models
             {
             }
         }
+        public static async Task<bool> Defence()
+        {
+            Console.WriteLine(Preferences.Get("NOS", ""));
+            int number;
+            if (!Preferences.ContainsKey("NOS"))
+            {
+                number = 1;
+                Console.WriteLine("1");
+            }
+            else
+            {
+                Console.WriteLine("2");
+                number = Convert.ToInt32(Preferences.Get("NOS",""));
+                number++;
+            }
+            List<defence> defences = new List<defence>();
+            var d = new defence()
+            {
+                hashaccount = Preferences.Get("HashAccount", ""),
+                LoginNumber = number
+            };
+            defences.Add(d);
+            try
+            {
+                var str = JsonConvert.SerializeObject(defences);
+                HttpContent content = new StringContent(str);
+                string url = basic_url + ControllerNameEmployee + "update_employee_login_number";
+                content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                response = await client.PutAsync(url, content);
+                var result = response.Content.ReadAsStringAsync();
+                await Log(url, str, response.StatusCode.ToString(), result.Result);               
+                if (response.StatusCode.ToString() == "OK")
+                {
+                    if(Convert.ToBoolean(result.Result))
+                    {
+                        Preferences.Set("NOS", Convert.ToString(number));
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return true;
+        }
     }
 }

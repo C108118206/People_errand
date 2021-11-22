@@ -62,13 +62,12 @@ namespace people_errandd
                     await App.Current.MainPage.DisplayAlert("", "帳號已停用", "確認");
                     Preferences.Remove("HashAccount");
                 }
-
             }
             var Seconds = TimeSpan.FromSeconds(8);
             Device.StartTimer(Seconds, () => {               
                 GetLocation();
                 return true;
-            });
+            });            
         }
         protected override void OnSleep()
         {
@@ -97,6 +96,7 @@ namespace people_errandd
             {
                 if (status == "start")
                 {
+
                     switch (await work.GetWorkType())
                     {
                         case 0:
@@ -109,14 +109,22 @@ namespace people_errandd
                         default:
                             break;
                     }
+                    if (!await HttpResponse.Defence())
+                    {
+                        MainPage = new SharedTransitionNavigationPage(new LoginPage());
+                        await App.Current.MainPage.DisplayAlert("", "偵測到違規行為，帳號已停用", "確認");
+                        Preferences.Clear();
+                    }
                 }
                 else
                 {
                     await work.GetWorkType();
                 }
+                
             }
             catch (Exception)
             {
+                throw;
                 await page.DisplayAlert("", "請檢查網路狀態", "確定");
                 return;
             }

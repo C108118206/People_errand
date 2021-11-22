@@ -50,3 +50,7 @@ D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\Xa
 D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.dll
 D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\ref\people_errandd.dll
 D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.pdb
+D:\Punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\Mono.Android.dll
+D:\Punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\Mono.Android.pdb
+D:\Punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\Mono.Android.xml
+D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.csproj.CopyComplete

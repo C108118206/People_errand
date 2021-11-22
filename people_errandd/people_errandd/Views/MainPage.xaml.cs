@@ -25,27 +25,26 @@ namespace people_errandd.Views
         {
             Application.Current.UserAppTheme = OSAppTheme.Light;
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);           
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
 
         protected async override void OnAppearing()
         {
-            base.OnAppearing();          
-
-            Audits.ItemsSource=await MainPageViewModel.GetAudit();
+            base.OnAppearing();
+            Audits.ItemsSource = await MainPageViewModel.GetAudit();
             Audits.IsVisible = Audits.ItemsSource != null;
             AuditText.IsVisible = Audits.IsVisible;
-            workOn.IsEnabled = Preferences.Get(Preferences.Get("HashAccount","")+"WorkOnButtonStauts", workOn.IsEnabled = true);
-            workOff.IsEnabled = Preferences.Get(Preferences.Get("HashAccount", "")+"WorkOffButtonStauts", workOff.IsEnabled = false);
-            workOn.Opacity = Preferences.Get(Preferences.Get("HashAccount", "")+"WorkOnButtonView", workOn.Opacity = 1);
-            workOff.Opacity = Preferences.Get(Preferences.Get("HashAccount", "")+"WorkOffButtonView", workOff.Opacity = 0.2);
+            workOn.IsEnabled = Preferences.Get(Preferences.Get("HashAccount", "") + "WorkOnButtonStauts", workOn.IsEnabled = true);
+            workOff.IsEnabled = Preferences.Get(Preferences.Get("HashAccount", "") + "WorkOffButtonStauts", workOff.IsEnabled = false);
+            workOn.Opacity = Preferences.Get(Preferences.Get("HashAccount", "") + "WorkOnButtonView", workOn.Opacity = 1);
+            workOff.Opacity = Preferences.Get(Preferences.Get("HashAccount", "") + "WorkOffButtonView", workOff.Opacity = 0.2);
             workOnText.Opacity = Preferences.Get(Preferences.Get("HashAccount", "") + "WorkOnText", workOnText.Opacity = 1);
             workOffText.Opacity = Preferences.Get(Preferences.Get("HashAccount", "") + "WorkOffText", workOffText.Opacity = 0.2);
-            Console.WriteLine(Preferences.Get("HashAccount", ""));            
+            Console.WriteLine(Preferences.Get("HashAccount", ""));
             username.Text = Preferences.Get("UserName", "");
-            worktimetitle.Text = Preferences.Get(Preferences.Get("HashAccount", "") + "WorkTimeTitle","");
-            worktime.Text = Preferences.Get(Preferences.Get("HashAccount", "") + "WorkTime","");         
+            worktimetitle.Text = Preferences.Get(Preferences.Get("HashAccount", "") + "WorkTimeTitle", "");
+            worktime.Text = Preferences.Get(Preferences.Get("HashAccount", "") + "WorkTime", "");
         }
         protected override void OnDisappearing()
         {
@@ -72,14 +71,14 @@ namespace people_errandd.Views
                             }
                             else
                             {
-                                await DisplayAlert("位置錯誤", "請檢查定位是否開啟與所在位置\n(設定->隱私->位置)", "確定");                               
+                                await DisplayAlert("位置錯誤", "請檢查定位是否開啟與所在位置\n(設定->隱私->位置)", "確定");
                             }
                             //if (!await DisplayAlert("", "是否強制進行打卡?\n(公司位置:" + Preferences.Get("CompanyAddress", "") + ")", "確定", "取消"))
                             //    {
                             //        return;
                             //    }
                             return;
-                        }                                             
+                        }
                         if (await Work.PostWork(1, x, y, true))
                         {
                             await DisplayAlert("", "上班打卡成功", "確定");
@@ -182,7 +181,7 @@ namespace people_errandd.Views
             Preferences.Set(Preferences.Get("HashAccount", "") + "WorkOffButtonView", workOff.Opacity = 0.2);
             Preferences.Set(Preferences.Get("HashAccount", "") + "WorkOnText", workOnText.Opacity = 1);
             Preferences.Set(Preferences.Get("HashAccount", "") + "WorkOffText", workOffText.Opacity = 0.2);
-            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkTimeTitle", worktimetitle.Text="下班打卡 at ");
+            Preferences.Set(Preferences.Get("HashAccount", "") + "WorkTimeTitle", worktimetitle.Text = "下班打卡 at ");
             Preferences.Set(Preferences.Get("HashAccount", "") + "WorkTime", worktime.Text = DateTime.Now.ToString("t"));
             //Preferences.Set("statusBack", "#CB2E2E");
             //statusBack.BackgroundColor = Color.FromHex(Preferences.Get("statusBack", ""));
@@ -271,7 +270,7 @@ namespace people_errandd.Views
             }
             finally
             {
-                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                Device.StartTimer(TimeSpan.FromSeconds(2), () =>
                 {
                     allowTap = true;
                     return false;
@@ -290,6 +289,12 @@ namespace people_errandd.Views
                         DependencyService.Get<IAppSettingsHelper>().OpenAppSetting();
                     else
                     {
+                        //var supportsUri = await Launcher.CanOpenAsync("");
+                        //if (supportsUri)
+                        //{
+                        //    Console.WriteLine("true");
+                        //    await Launcher.OpenAsync("");
+                        //}                                
                         await PopupNavigation.Instance.PushAsync(new MapPage());
                     }
                 }

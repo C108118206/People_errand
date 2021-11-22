@@ -6,6 +6,10 @@ using Android.Runtime;
 using Android.OS;
 using Android;
 using Android.Content.Res;
+using Android.Telephony;
+using Android.Net.Wifi;
+using Android.Content;
+using Android.Net;
 
 namespace people_errandd.Droid
 {
@@ -34,6 +38,7 @@ namespace people_errandd.Droid
                     // Permissions already granted - display a message.
                 }
             }
+
         }
         public override Resources Resources
         {
@@ -45,7 +50,6 @@ namespace people_errandd.Droid
                 res.UpdateConfiguration(config, res.DisplayMetrics);
                 return res;
             }
-
         }
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -55,9 +59,15 @@ namespace people_errandd.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Xamarin.FormsMaps.Init(this, savedInstanceState);
             LoadApplication(new App());
-
-
-
+            //TelephonyManager mTelephonyMgr;
+            //mTelephonyMgr = (TelephonyManager)GetSystemService(TelephonyService);
+            //var Number = mTelephonyMgr.SubscriberId;
+            //Xamarin.Essentials.Preferences.Set("IMSI", Number);
+            //Console.WriteLine("系望會成功ㄉ" + Number);
+            //  WifiManager wifiManager =
+            //(WifiManager)this.GetSystemService(Context.WifiService);
+            //  WifiInfo info = (null == wifiManager ? null : wifiManager.getConnectionInfo());
+            //  MacAddress = info.getMacAddress();
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
@@ -69,13 +79,11 @@ namespace people_errandd.Droid
                 else
                 {
                 }
-
             }
             else
             {
                 Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             }
-        
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 

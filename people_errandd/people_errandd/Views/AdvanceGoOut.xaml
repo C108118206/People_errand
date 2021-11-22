@@ -23,7 +23,7 @@
                                    ScaleOut="0.8" />
     </pages:PopupPage.Animation>
     <pages:PopupPage.BindingContext>
-        <Viewmodels:AdvancreGoOutViewModel/>
+        <Viewmodels:AdvanceGoOutViewModel/>
     </pages:PopupPage.BindingContext>
     
     

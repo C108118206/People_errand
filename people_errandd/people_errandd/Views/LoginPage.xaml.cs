@@ -29,6 +29,8 @@ namespace people_errandd.Views
                 Preferences.Set("uuid", Guid.NewGuid().ToString());
             }
             Console.WriteLine(Preferences.Get("uuid", ""));
+           // TelephonyManager mTelephonyMgr = 
+
         }
         private async void LogInButton(object sender, EventArgs e)
         {
@@ -39,7 +41,7 @@ namespace people_errandd.Views
                     allowTap = false;
                     if (Connectivity.NetworkAccess != NetworkAccess.Internet)
                     {
-                        await DisplayAlert("Error", "No Intenet", "OK");
+                        await DisplayAlert("", "網路錯誤，請檢查網路", "確認");
                         return;
                     }
                     if (string.IsNullOrWhiteSpace(company.Text))
