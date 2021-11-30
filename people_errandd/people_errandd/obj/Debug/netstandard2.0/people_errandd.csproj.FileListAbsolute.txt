@@ -54,6 +54,7 @@ D:\Punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\Mo
 D:\Punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\Mono.Android.pdb
 D:\Punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\Mono.Android.xml
 D:\Punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.csproj.CopyComplete
+<<<<<<< HEAD
 D:\Xy\punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.deps.json
 D:\Xy\punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\people_errandd.dll
 D:\Xy\punch\people_errand\people_errandd\people_errandd\bin\Debug\netstandard2.0\ref\people_errandd.dll
@@ -80,3 +81,5 @@ D:\Xy\punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0
 D:\Xy\punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.dll
 D:\Xy\punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\ref\people_errandd.dll
 D:\Xy\punch\people_errand\people_errandd\people_errandd\obj\Debug\netstandard2.0\people_errandd.pdb
+=======
+>>>>>>> fcd7090336499b8d173bd37f5d34465533a996d5

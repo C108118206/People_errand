@@ -18,7 +18,8 @@
           "Xamarin.Forms": "5.0.0.2125",
           "Xamarin.Forms.Maps": "5.0.0.2125",
           "Xamarin.Plugin.SharedTransitions": "2.4.0",
-          "sqlite-net-pcl": "1.8.116"
+          "sqlite-net-pcl": "1.8.116",
+          "Mono.Android": "0.0.0.0"
         },
         "runtime": {
           "people_errandd.dll": {}
@@ -235,6 +236,14 @@
             "fileVersion": "2.4.0.0"
           }
         }
+      },
+      "Mono.Android/0.0.0.0": {
+        "runtime": {
+          "Mono.Android.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
       }
     }
   },
@@ -397,6 +406,11 @@
       "sha512": "sha512-upju4Pst1knGfdLQWWjT4ASuKQk2s7RhK8B4Yw6TILRerPZmhPmqJ/fV8NIR6HuLIsX8CxOg8fR+tNjOC6YwFA==",
       "path": "xamarin.plugin.sharedtransitions/2.4.0",
       "hashPath": "xamarin.plugin.sharedtransitions.2.4.0.nupkg.sha512"
+    },
+    "Mono.Android/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

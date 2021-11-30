@@ -91,5 +91,12 @@
     "C:\\Users\\lonel\\.nuget\\packages\\xamarin.kotlin.stdlib.jdk7\\1.3.50.1\\xamarin.kotlin.stdlib.jdk7.1.3.50.1.nupkg.sha512",
     "C:\\Users\\lonel\\.nuget\\packages\\xamarin.plugin.sharedtransitions\\2.4.0\\xamarin.plugin.sharedtransitions.2.4.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "讀取快取檔案 D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd.Android\\obj\\project.nuget.cache 時發生問題: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
