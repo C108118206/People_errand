@@ -17,7 +17,7 @@ namespace people_errandd.Models
         public static HttpClient client = new HttpClient();
 
         public static HttpResponseMessage response = new HttpResponseMessage();
-        public static readonly string basic_url = "http://163.18.110.100/api/";//主機ㄉURL  
+        public static readonly string basic_url = "http://163.18.110.100:5000/api/";//主機ㄉURL  
         public static readonly string ControllerNameCompany = "Companies/";//Company api
         public static readonly string ControllerNameEmployee = "employees/";//Employee api
         public static readonly string ControllerNameWorkRecord = "EmployeeWorkRecords/";//workRecord api

@@ -4204,11 +4204,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+      "projectUniqueName": "C:\\Users\\lonel\\Desktop\\punch\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
       "projectName": "people_errandd.Android",
-      "projectPath": "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+      "projectPath": "C:\\Users\\lonel\\Desktop\\punch\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
       "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
-      "outputPath": "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd.Android\\obj\\",
+      "outputPath": "C:\\Users\\lonel\\Desktop\\punch\\People_errand\\people_errandd\\people_errandd.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -4231,8 +4231,8 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
-              "projectPath": "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+            "C:\\Users\\lonel\\Desktop\\punch\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "C:\\Users\\lonel\\Desktop\\punch\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
             }
           }
         }
@@ -4272,13 +4272,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "讀取快取檔案 D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd.Android\\obj\\project.nuget.cache 時發生問題: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

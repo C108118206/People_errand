@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wfM7XTJhalfbisQhNT1O1quSz6GgOsrk+y+IG+Xd4zH3QiSxsjs067zIPqQxiG4cvSVLe8OD7skLsgxq/IDAOg==",
+  "dgSpecHash": "rKp6okfhkMTtd7nLyN202TaUKue5uDkkusda98bq9RMn6PMhrszjvOR96rQZtPAx5gY38hnoHvK9PJThu1Qe3Q==",
   "success": true,
-  "projectFilePath": "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
+  "projectFilePath": "C:\\Users\\lonel\\Desktop\\punch\\People_errand\\people_errandd\\people_errandd.Android\\people_errandd.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lonel\\.nuget\\packages\\karamunting.android.akexorcist.snaptimepicker\\1.0.0\\karamunting.android.akexorcist.snaptimepicker.1.0.0.nupkg.sha512",
     "C:\\Users\\lonel\\.nuget\\packages\\karamunting.kotlin.android.extensions.runtime\\1.3.50.2\\karamunting.kotlin.android.extensions.runtime.1.3.50.2.nupkg.sha512",
@@ -91,12 +91,5 @@
     "C:\\Users\\lonel\\.nuget\\packages\\xamarin.kotlin.stdlib.jdk7\\1.3.50.1\\xamarin.kotlin.stdlib.jdk7.1.3.50.1.nupkg.sha512",
     "C:\\Users\\lonel\\.nuget\\packages\\xamarin.plugin.sharedtransitions\\2.4.0\\xamarin.plugin.sharedtransitions.2.4.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "讀取快取檔案 D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd.Android\\obj\\project.nuget.cache 時發生問題: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

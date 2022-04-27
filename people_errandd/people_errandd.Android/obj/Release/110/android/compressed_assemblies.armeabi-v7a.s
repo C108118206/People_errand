@@ -37,7 +37,7 @@
 
 	/* 1: FormsViewGroup.dll */
 	/* uncompressed_file_size */
-	.long	15872
+	.long	16384
 	/* loaded */
 	.byte	0
 	/* data */

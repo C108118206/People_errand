@@ -22,11 +22,7 @@ CodegenTarget=
 AndroidDexTool=d8
 AndroidLinkTool=
 AndroidEnableProfiledAot=false
-AndroidInstallAfterBuild=True
-<<<<<<< HEAD
-AndroidSessionId=4f4563e4-4f85-46e6-a1f6-0bd6125db1b9
-=======
-AndroidSessionId=eec6045e-5f51-49b2-b3b0-f808ee55d181
->>>>>>> fcd7090336499b8d173bd37f5d34465533a996d5
+AndroidInstallAfterBuild=False
+AndroidSessionId=
 BuildConfiguration=Debug
 TemplateName={c9e5eea5-ca05-42a1-839b-61506e0a37df}

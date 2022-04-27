@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rIUHg+sopQFc4D5ljkFoMMlBLa8hEjbAyB3jM7bJxaLRY0q7yyvcGOQSO0HEDXX55wr0svePka1WOc4BPDbCEA==",
+  "dgSpecHash": "6KoUfIPta7zihelJht9pNLh2BLyOscmhAxwVt/8nk7Yhkn+xll2JUKl7OP7TQKVUhJY1jLKwVeIolL4gaui1/g==",
   "success": true,
-  "projectFilePath": "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
+  "projectFilePath": "C:\\Users\\lonel\\Desktop\\punch\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lonel\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\lonel\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
@@ -27,12 +27,5 @@
     "C:\\Users\\lonel\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2125\\xamarin.forms.maps.5.0.0.2125.nupkg.sha512",
     "C:\\Users\\lonel\\.nuget\\packages\\xamarin.plugin.sharedtransitions\\2.4.0\\xamarin.plugin.sharedtransitions.2.4.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "讀取快取檔案 D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd\\obj\\project.nuget.cache 時發生問題: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

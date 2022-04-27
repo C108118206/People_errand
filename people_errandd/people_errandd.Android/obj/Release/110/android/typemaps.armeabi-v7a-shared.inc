@@ -67,56 +67,56 @@
 	.section	.rodata.map_aname.11,"aMS",%progbits,1
 	.type	.L.map_aname.11, %object
 .L.map_aname.11:
-	.asciz	"people_errandd.Android"
-	.size	.L.map_aname.11, 23
+	.asciz	"Plugin.Media"
+	.size	.L.map_aname.11, 13
 
 	.section	.rodata.map_aname.12,"aMS",%progbits,1
 	.type	.L.map_aname.12, %object
 .L.map_aname.12:
-	.asciz	"Plugin.Media"
-	.size	.L.map_aname.12, 13
+	.asciz	"Akexorcist.SnapTimePicker"
+	.size	.L.map_aname.12, 26
 
 	.section	.rodata.map_aname.13,"aMS",%progbits,1
 	.type	.L.map_aname.13, %object
 .L.map_aname.13:
-	.asciz	"Akexorcist.SnapTimePicker"
-	.size	.L.map_aname.13, 26
+	.asciz	"Rg.Plugins.Popup"
+	.size	.L.map_aname.13, 17
 
 	.section	.rodata.map_aname.14,"aMS",%progbits,1
 	.type	.L.map_aname.14, %object
 .L.map_aname.14:
-	.asciz	"Rg.Plugins.Popup"
-	.size	.L.map_aname.14, 17
+	.asciz	"Xamarin.Kotlin.StdLib"
+	.size	.L.map_aname.14, 22
 
 	.section	.rodata.map_aname.15,"aMS",%progbits,1
 	.type	.L.map_aname.15, %object
 .L.map_aname.15:
-	.asciz	"Xamarin.Kotlin.StdLib"
-	.size	.L.map_aname.15, 22
+	.asciz	"Xamarin.Google.Android.Material"
+	.size	.L.map_aname.15, 32
 
 	.section	.rodata.map_aname.16,"aMS",%progbits,1
 	.type	.L.map_aname.16, %object
 .L.map_aname.16:
-	.asciz	"Xamarin.Google.Android.Material"
-	.size	.L.map_aname.16, 32
+	.asciz	"Xamarin.AndroidX.Lifecycle.Common"
+	.size	.L.map_aname.16, 34
 
 	.section	.rodata.map_aname.17,"aMS",%progbits,1
 	.type	.L.map_aname.17, %object
 .L.map_aname.17:
-	.asciz	"Xamarin.AndroidX.Lifecycle.Common"
-	.size	.L.map_aname.17, 34
+	.asciz	"Xamarin.GooglePlayServices.Basement"
+	.size	.L.map_aname.17, 36
 
 	.section	.rodata.map_aname.18,"aMS",%progbits,1
 	.type	.L.map_aname.18, %object
 .L.map_aname.18:
-	.asciz	"Xamarin.GooglePlayServices.Basement"
-	.size	.L.map_aname.18, 36
+	.asciz	"Xamarin.AndroidX.Lifecycle.LiveData.Core"
+	.size	.L.map_aname.18, 41
 
 	.section	.rodata.map_aname.19,"aMS",%progbits,1
 	.type	.L.map_aname.19, %object
 .L.map_aname.19:
-	.asciz	"Xamarin.AndroidX.Lifecycle.LiveData.Core"
-	.size	.L.map_aname.19, 41
+	.asciz	"people_errandd.Android"
+	.size	.L.map_aname.19, 23
 
 	.section	.rodata.map_aname.20,"aMS",%progbits,1
 	.type	.L.map_aname.20, %object

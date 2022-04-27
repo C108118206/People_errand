@@ -17,7 +17,7 @@
 
 	/* 1: FormsViewGroup.dll */
 	/* uncompressed_file_size */
-	.word	15872
+	.word	16384
 	/* loaded */
 	.byte	0
 	/* data */

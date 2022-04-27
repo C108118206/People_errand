@@ -2116,11 +2116,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\lonel\\Desktop\\punch\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
       "projectName": "people_errandd.iOS",
-      "projectPath": "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
+      "projectPath": "C:\\Users\\lonel\\Desktop\\punch\\People_errand\\people_errandd\\people_errandd.iOS\\people_errandd.iOS.csproj",
       "packagesPath": "C:\\Users\\lonel\\.nuget\\packages\\",
-      "outputPath": "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\",
+      "outputPath": "C:\\Users\\lonel\\Desktop\\punch\\People_errand\\people_errandd\\people_errandd.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2143,8 +2143,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
-              "projectPath": "D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
+            "C:\\Users\\lonel\\Desktop\\punch\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj": {
+              "projectPath": "C:\\Users\\lonel\\Desktop\\punch\\People_errand\\people_errandd\\people_errandd\\people_errandd.csproj"
             }
           }
         }
@@ -2197,12 +2197,6 @@
     }
   },
   "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "讀取快取檔案 D:\\Xy\\punch\\people_errand\\people_errandd\\people_errandd.iOS\\obj\\project.nuget.cache 時發生問題: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    },
     {
       "code": "NU1605",
       "level": "Warning",
