@@ -21,6 +21,7 @@ namespace people_errandd.Views
         private readonly Work Work = new Work();
         bool allowTap = true;
         private readonly geoLocation geoLocation = new geoLocation();
+
         public MainPage()
         {
             Application.Current.UserAppTheme = OSAppTheme.Light;
@@ -55,10 +56,12 @@ namespace people_errandd.Views
 
         private async void GoToWork(object sender, EventArgs e)
         {
+            workOn.BackgroundColor = Color.White;
             try
             {
                 if (allowTap)
                 {
+                    
                     allowTap = false;
                     if (await Work.GetWorkType() == 2 || await Work.GetWorkType() == 0)
                     {
@@ -101,11 +104,13 @@ namespace people_errandd.Views
             }
             catch (Exception)
             {
+                
                 await DisplayAlert("", "網路錯誤", "確定");
             }
             finally
             {
-                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
                     allowTap = true;
                     return false;
@@ -114,6 +119,7 @@ namespace people_errandd.Views
         }
         private async void OffWork(object sender, EventArgs e)
         {
+            workOff.BackgroundColor = Color.White;
             try
             {
                 if (allowTap)
@@ -154,6 +160,7 @@ namespace people_errandd.Views
                     }
                     else
                     {
+
                         await DisplayAlert("", "已下班", "確定");
                     }
                 }
@@ -164,7 +171,7 @@ namespace people_errandd.Views
             }
             finally
             {
-                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
                     allowTap = true;
                     return false;
@@ -212,7 +219,7 @@ namespace people_errandd.Views
             }
             finally
             {
-                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
                     allowTap = true;
                     return false;
@@ -221,6 +228,7 @@ namespace people_errandd.Views
         }
         private async void GoOutButton(object sender, EventArgs e)
         {
+            GoOut.BackgroundColor = Color.White;
             try
             {
                 if (allowTap)
@@ -232,7 +240,7 @@ namespace people_errandd.Views
             }
             finally
             {
-                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
                     allowTap = true;
                     return false;
@@ -251,7 +259,7 @@ namespace people_errandd.Views
             }
             finally
             {
-                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
                     allowTap = true;
                     return false;
@@ -260,6 +268,7 @@ namespace people_errandd.Views
         }
         private async void DayOffButton(object sender, EventArgs e)
         {
+            DayOff.BackgroundColor = Color.White;
             try
             {
                 if (allowTap)
@@ -270,7 +279,7 @@ namespace people_errandd.Views
             }
             finally
             {
-                Device.StartTimer(TimeSpan.FromSeconds(2), () =>
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
                     allowTap = true;
                     return false;
@@ -301,12 +310,32 @@ namespace people_errandd.Views
             }
             finally
             {
-                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
                     allowTap = true;
                     return false;
                 });
             }
+        }
+        void OnGoToWorkButtonPressed(object sender, EventArgs args)
+        {
+            workOn.BackgroundColor = Color.FromHex("#E0E0E0");
+           
+        }
+        void OnOffWorkButtonPressed(object sender, EventArgs args)
+        {
+            workOff.BackgroundColor = Color.FromHex("#E0E0E0");
+
+        }
+        void OnGoOutButtonPressed(object sender, EventArgs args)
+        {
+            GoOut.BackgroundColor = Color.FromHex("#E0E0E0");
+
+        }
+        void OnDayOffButtonPressed(object sender, EventArgs args)
+        {
+            DayOff.BackgroundColor = Color.FromHex("#E0E0E0");
+
         }
     }
 }

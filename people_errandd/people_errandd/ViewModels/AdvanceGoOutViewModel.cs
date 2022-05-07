@@ -144,7 +144,7 @@ namespace people_errandd.ViewModels
             }
             finally
             {
-                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
                     allowTap = true;
                     return false;
@@ -171,7 +171,7 @@ namespace people_errandd.ViewModels
             }
             finally
             {
-                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
                     allowTap = true;
                     return false;
@@ -203,7 +203,7 @@ namespace people_errandd.ViewModels
             }
             finally
             {
-                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
                     allowTap = true;
                     return false;

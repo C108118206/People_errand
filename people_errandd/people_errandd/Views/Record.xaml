@@ -132,7 +132,7 @@
                                             <Image HeightRequest="50" Source="{Binding image}" HorizontalOptions="End" VerticalOptions="Start" Margin="0,0,50,0"  Grid.Row="0"  Grid.Column="0" />
                                         </OnIdiom.Tablet>
                                     </OnIdiom>
-                                    <Grid Grid.Row="0" Grid.Column="1"  RowDefinitions="5*,5*" ColumnDefinitions="2*, 9*">
+                                    <Grid Grid.Row="0" Grid.Column="1"  RowDefinitions="5*,5*" ColumnDefinitions="2*, 11*">
                                     <Label Style="{StaticResource gooutanddayofftitle}" Text="狀態 :" Grid.Row="0" Grid.Column="0"></Label>
                                     <Label   TextColor="{Binding statuscolor}"
                                              Style="{StaticResource gooutanddayoffcontent}"
@@ -202,7 +202,7 @@
                                             </OnIdiom.Tablet>
                                         </OnIdiom>
 
-                                        <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="36, 36, 36, 36,36,Auto" ColumnDefinitions="4*, 9*" >
+                                        <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="36, 36, 36, 36,36,Auto" ColumnDefinitions="4*, 11*" >
                                         <Label Style="{StaticResource gooutanddayofftitle}" Text="開始時間 :" Grid.Row="0" Grid.Column="0"></Label>
                                         <Label  Style="{StaticResource gooutanddayoffcontent}"
                                             Text="{Binding StartDate}"
@@ -378,7 +378,7 @@
                                             <Image HeightRequest="50" Source="{Binding advanceimage}" HorizontalOptions="End" VerticalOptions="Start" Margin="0,0,50,0"  Grid.Row="0"  Grid.Column="0" />
                                         </OnIdiom.Tablet>
                                     </OnIdiom>
-                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="5*,5*,10*" ColumnDefinitions="2*, 9*">
+                                    <Grid Grid.Row="0" Grid.Column="1" RowDefinitions="5*,5*,10*" ColumnDefinitions="2*, 11*">
 
                                     <Label Style="{StaticResource gooutanddayofftitle}"
                                               Text="狀態 :" Grid.Row="0" Grid.Column="0"></Label>

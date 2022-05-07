@@ -299,8 +299,8 @@
                                 </OnIdiom>
                             </StackLayout.Margin>
                             <!--上班-->
-                                    <!--上班按鈕陰影-->
-                                    <ImageButton x:Name="workOn" Grid.Row="0"  Source="worker.png"  Style="{StaticResource ImageButton}" Clicked="GoToWork">
+                            <!--上班按鈕陰影-->
+                            <ImageButton x:Name="workOn" Grid.Row="0"  Source="worker.png"  Style="{StaticResource ImageButton}" Clicked="GoToWork" Pressed="OnGoToWorkButtonPressed">
                                         <ImageButton.HeightRequest>
                                             <OnIdiom x:TypeArguments="x:Double">
                                                 <OnIdiom.Phone>100</OnIdiom.Phone>
@@ -315,7 +315,6 @@
                                         </ImageButton.WidthRequest>
                                     </ImageButton>
                                     <!--上班按鈕-->
-
                                     <Label x:Name="workOnText"  Margin="0,10,0,10" Grid.Row="1"    Text="上班" Style="{StaticResource text}">
                                         <Label.FontSize>
                                             <OnIdiom x:TypeArguments="x:Double">
@@ -334,9 +333,8 @@
                                 </OnIdiom>
                             </StackLayout.Margin>
                             <!--下班-->
-
-                                    <!--下班按鈕陰影-->
-                                    <ImageButton x:Name="workOff" Grid.Row="0"   Source="workeroff.png" Style="{StaticResource ImageButton}" Clicked="OffWork">
+                            <!--下班按鈕陰影-->
+                            <ImageButton x:Name="workOff" Grid.Row="0"   Source="workeroff.png" Style="{StaticResource ImageButton}" Clicked="OffWork" Pressed="OnOffWorkButtonPressed">
                                         <ImageButton.HeightRequest>
                                             <OnIdiom x:TypeArguments="x:Double">
                                                 <OnIdiom.Phone>100</OnIdiom.Phone>
@@ -351,7 +349,6 @@
                                         </ImageButton.WidthRequest>
                                     </ImageButton>
                                     <!--下班按鈕-->
-
                                     <Label  x:Name="workOffText" Grid.Row="1"   Margin="0,10,0,10"   Text="下班" Style="{StaticResource text}">
                                         <Label.FontSize>
                                             <OnIdiom x:TypeArguments="x:Double">
@@ -373,7 +370,7 @@
                                 </OnIdiom>
                             </StackLayout.Margin>
                             <!--公出按鈕陰影-->
-                                    <ImageButton x:Name="GoOut" Grid.Row="0" Source="goout2.png" Style="{StaticResource ImageButton}"   Clicked="GoOutButton">
+                            <ImageButton x:Name="GoOut" Grid.Row="0" Source="goout2.png" Style="{StaticResource ImageButton}"   Clicked="GoOutButton" Pressed="OnGoOutButtonPressed">
                                         <ImageButton.HeightRequest>
                                             <OnIdiom x:TypeArguments="x:Double">
                                                 <OnIdiom.Phone>100</OnIdiom.Phone>
@@ -406,7 +403,7 @@
                                 </OnIdiom>
                             </StackLayout.Margin>
                             <!--請假按鈕陰影-->
-                            <ImageButton Source="nerd" Grid.Row="0"  Style="{StaticResource ImageButton}" Clicked="DayOffButton" >
+                            <ImageButton x:Name="DayOff" Source="nerd" Grid.Row="0"  Style="{StaticResource ImageButton}" Clicked="DayOffButton" Pressed="OnDayOffButtonPressed">
                                 <ImageButton.HeightRequest>
                                     <OnIdiom x:TypeArguments="x:Double">
                                         <OnIdiom.Phone>100</OnIdiom.Phone>
