@@ -245,7 +245,7 @@
                         <BoxView Style="{StaticResource line}" HeightRequest="1"/>
                         <Label x:Name="emailValidator" Text="" FontSize="15" TextColor="#CA2D2D" HorizontalOptions="End" FontAttributes="Bold" Margin="0,5,20,0"></Label>
                     </StackLayout>
-                    <Button Text="登出" Clicked="LogOut" Style="{StaticResource contentLogOut}">
+                    <Button x:Name="LogOutButton" Text="登出" Clicked="LogOut" Style="{StaticResource contentLogOut}" Pressed="OnLogOutButtonPressed">
                             <Button.Margin>
                                 <OnPlatform x:TypeArguments="Thickness">
                                     <On Platform="iOS" Value="15,20,15,30" />

@@ -337,6 +337,7 @@ namespace people_errandd.Views
             DayOff.BackgroundColor = Color.FromHex("#E0E0E0");
 
         }
+        
     }
 }
 

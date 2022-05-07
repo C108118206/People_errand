@@ -32,17 +32,17 @@ namespace people_errandd.Views
         private void StartTripTapped(object sender, EventArgs e)
         {
 
-            Start.BackgroundColor = Color.FromHex("#FDF1DD");
+            Start.BackgroundColor = Color.FromHex("#FFCE78");
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
-                Start.BackgroundColor = Color.FromHex("#FCE7C3");
+                Start.BackgroundColor = Color.FromHex("#FBDDAA");
                 return true;
             });
         }
 
         private void ArrivalTapped(object sender, EventArgs e)
         {
-            Arrival.BackgroundColor = Color.FromHex("#F8CACB");
+            Arrival.BackgroundColor = Color.FromHex("#E89C9D");
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
                 Arrival.BackgroundColor = Color.FromHex("#F5B3B3");
@@ -52,7 +52,7 @@ namespace people_errandd.Views
         private void BackTapped(object sender, EventArgs e)
         {
 
-            Back.BackgroundColor = Color.FromHex("#D4DFF8");
+            Back.BackgroundColor = Color.FromHex("#9CB4F1");
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
                 Back.BackgroundColor = Color.FromHex("#C2D2F6");

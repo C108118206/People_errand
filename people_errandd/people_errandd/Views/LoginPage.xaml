@@ -101,7 +101,7 @@
                     
                         <!--輸入組織ID-->
                     <Grid Grid.Row="2" ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto" RowSpacing="10">
-                        <Button x:Name="button" Text="登入" Style="{StaticResource Button}" Clicked="LogInButton" Grid.Row="1" />
+                        <Button x:Name="button" Text="登入" Style="{StaticResource Button}" Clicked="LogInButton" Grid.Row="1" Pressed="OnLogInButtonPressed"/>
                         <!--登入按鈕-->
                         <!-- <Button  Text="繼承資料" x:Name="Test" Style="{StaticResource Button}" Clicked="Test_Clicked"  Grid.Row="3" Margin="0,0,0,15" />-->
                         <Button  Text="如何使用" x:Name="question" Style="{StaticResource Question}" Clicked="QuestionButton" Grid.Row="2" />

@@ -34,6 +34,7 @@ namespace people_errandd.Views
         }
         private async void LogInButton(object sender, EventArgs e)
         {
+            button.BackgroundColor = Color.FromHex("#34549E");
             try
             {
                 if (allowTap)
@@ -84,7 +85,7 @@ namespace people_errandd.Views
             finally
             {
                     
-                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
                     loading.IsRunning = false;
                     allowTap = true;
@@ -105,7 +106,7 @@ namespace people_errandd.Views
             }
             finally
             {
-                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
                     allowTap = true;
                     return false;
@@ -127,6 +128,11 @@ namespace people_errandd.Views
             {
                 Preferences.Set("CompanyID", "");
             }
+        }
+        void OnLogInButtonPressed(object sender, EventArgs args)
+        {
+            button.BackgroundColor = Color.FromHex("#50618C");
+
         }
         /*
 private async void Test_Clicked(object sender, EventArgs e)

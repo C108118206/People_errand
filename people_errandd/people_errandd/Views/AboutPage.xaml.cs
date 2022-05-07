@@ -110,6 +110,7 @@ namespace people_errandd.Views
         */
         private async void ConfirmButton(object sender, EventArgs e)
         {
+            
             try
             {
                 if (allowTap)
@@ -134,7 +135,7 @@ namespace people_errandd.Views
             }
             finally
             {
-                Device.StartTimer(TimeSpan.FromSeconds(2.5), () =>
+                Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
                     allowTap = true;
                     return false;
@@ -191,6 +192,7 @@ namespace people_errandd.Views
 
         private async void LogOut(object sender, EventArgs e)
         {
+            LogOutButton.BackgroundColor = Color.FromHex("#CA2D2D");
             try
             {
                 if(allowTap)
@@ -211,7 +213,11 @@ namespace people_errandd.Views
                 allowTap = true;                
             }
         }
+        void OnLogOutButtonPressed(object sender, EventArgs args)
+        {
+            LogOutButton.BackgroundColor = Color.FromHex("#972121");
 
-        
+        }
+
     }
 }
