@@ -114,10 +114,10 @@ namespace people_errandd
                     if (!await HttpResponse.Defence() && Preferences.ContainsKey("HashAccount"))
                     {
                         await page.DisplayAlert("","錯誤","確定");
-                        //MainPage = new SharedTransitionNavigationPage(new LoginPage());
-                        //Preferences.Clear();
-                        //Preferences.Set("uuid", Guid.NewGuid().ToString());
-                        //await App.Current.MainPage.DisplayAlert("", "偵測到違規行為，帳號已停用", "確認");                       
+                        MainPage = new SharedTransitionNavigationPage(new LoginPage());
+                        Preferences.Clear();
+                        Preferences.Set("uuid", Guid.NewGuid().ToString());
+                        await App.Current.MainPage.DisplayAlert("", "偵測到違規行為，帳號已停用", "確認");                       
                     }
                 }
                 else
