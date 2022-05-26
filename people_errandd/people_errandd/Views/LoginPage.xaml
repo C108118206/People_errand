@@ -63,8 +63,7 @@
             ColumnDefinitions="*,Auto"
             RowDefinitions="5*,*">
         <!--設置背景深藍色-->
-        <Frame
-                Margin="0,-75,-10,150"
+        <Frame  Margin="0,-75,-10,150"
                 x:Name="transition"
                 HasShadow="False"
                 VerticalOptions="FillAndExpand"
