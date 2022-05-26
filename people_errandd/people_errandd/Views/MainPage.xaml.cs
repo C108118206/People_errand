@@ -347,11 +347,21 @@ namespace people_errandd.Views
         void OnGoOutButtonPressed(object sender, EventArgs args)
         {
             GoOut.BackgroundColor = Color.FromHex("#E0E0E0");
+            Device.StartTimer(TimeSpan.FromMilliseconds(10), () =>
+            {
+                GoOut.BackgroundColor = Color.White;
+                return true;
+            });
 
         }
         void OnDayOffButtonPressed(object sender, EventArgs args)
         {
             DayOff.BackgroundColor = Color.FromHex("#E0E0E0");
+            Device.StartTimer(TimeSpan.FromMilliseconds(10), () =>
+            {
+                DayOff.BackgroundColor = Color.White;
+                return true;
+            });
 
         }
         
