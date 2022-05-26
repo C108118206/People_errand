@@ -63,15 +63,22 @@
             ColumnDefinitions="*,Auto"
             RowDefinitions="5*,*">
         <!--設置背景深藍色-->
-        <Frame Margin="0,-75,-10,150"
+        <Frame
+                Margin="0,-75,-10,150"
                 x:Name="transition"
                 HasShadow="False"
                 VerticalOptions="FillAndExpand"
                 HorizontalOptions="FillAndExpand"
                 BackgroundColor="White"
                 CornerRadius="40">
+            <Frame.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS" Value="0,-75,-10,150" />
+                    <On Platform="Android" Value="0,-75,-10,135" />
+                </OnPlatform>
+            </Frame.Margin>
             <ScrollView VerticalScrollBarVisibility="Never">
-                <StackLayout Orientation="Vertical" Spacing="15">
+                <StackLayout Orientation="Vertical" Spacing="10">
                     <Grid Grid.Row="0" ColumnDefinitions="*,Auto" RowDefinitions="1.2*,*" RowSpacing="5">
                         <Grid.Margin>
                             <OnIdiom x:TypeArguments="Thickness">

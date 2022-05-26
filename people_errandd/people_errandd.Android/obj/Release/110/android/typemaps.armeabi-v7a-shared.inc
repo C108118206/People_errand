@@ -79,92 +79,92 @@
 	.section	.rodata.map_aname.13,"aMS",%progbits,1
 	.type	.L.map_aname.13, %object
 .L.map_aname.13:
-	.asciz	"people_errandd.Android"
-	.size	.L.map_aname.13, 23
+	.asciz	"Xamarin.GooglePlayServices.Maps"
+	.size	.L.map_aname.13, 32
 
 	.section	.rodata.map_aname.14,"aMS",%progbits,1
 	.type	.L.map_aname.14, %object
 .L.map_aname.14:
-	.asciz	"Xamarin.GooglePlayServices.Maps"
-	.size	.L.map_aname.14, 32
+	.asciz	"Xamarin.GooglePlayServices.Basement"
+	.size	.L.map_aname.14, 36
 
 	.section	.rodata.map_aname.15,"aMS",%progbits,1
 	.type	.L.map_aname.15, %object
 .L.map_aname.15:
-	.asciz	"Xamarin.GooglePlayServices.Basement"
-	.size	.L.map_aname.15, 36
+	.asciz	"Xamarin.AndroidX.Legacy.Support.Core.UI"
+	.size	.L.map_aname.15, 40
 
 	.section	.rodata.map_aname.16,"aMS",%progbits,1
 	.type	.L.map_aname.16, %object
 .L.map_aname.16:
-	.asciz	"Xamarin.AndroidX.Legacy.Support.Core.UI"
-	.size	.L.map_aname.16, 40
+	.asciz	"Xamarin.AndroidX.SavedState"
+	.size	.L.map_aname.16, 28
 
 	.section	.rodata.map_aname.17,"aMS",%progbits,1
 	.type	.L.map_aname.17, %object
 .L.map_aname.17:
-	.asciz	"Xamarin.AndroidX.SavedState"
-	.size	.L.map_aname.17, 28
+	.asciz	"Xamarin.AndroidX.Lifecycle.LiveData.Core"
+	.size	.L.map_aname.17, 41
 
 	.section	.rodata.map_aname.18,"aMS",%progbits,1
 	.type	.L.map_aname.18, %object
 .L.map_aname.18:
-	.asciz	"Xamarin.AndroidX.Lifecycle.LiveData.Core"
-	.size	.L.map_aname.18, 41
+	.asciz	"Xamarin.Kotlin.StdLib.Jdk7"
+	.size	.L.map_aname.18, 27
 
 	.section	.rodata.map_aname.19,"aMS",%progbits,1
 	.type	.L.map_aname.19, %object
 .L.map_aname.19:
-	.asciz	"Xamarin.Kotlin.StdLib.Jdk7"
-	.size	.L.map_aname.19, 27
+	.asciz	"Xamarin.AndroidX.Core"
+	.size	.L.map_aname.19, 22
 
 	.section	.rodata.map_aname.20,"aMS",%progbits,1
 	.type	.L.map_aname.20, %object
 .L.map_aname.20:
-	.asciz	"Xamarin.AndroidX.Core"
-	.size	.L.map_aname.20, 22
+	.asciz	"Xamarin.Google.Android.Material"
+	.size	.L.map_aname.20, 32
 
 	.section	.rodata.map_aname.21,"aMS",%progbits,1
 	.type	.L.map_aname.21, %object
 .L.map_aname.21:
-	.asciz	"Xamarin.Google.Android.Material"
-	.size	.L.map_aname.21, 32
+	.asciz	"Xamarin.Jetbrains.Annotations"
+	.size	.L.map_aname.21, 30
 
 	.section	.rodata.map_aname.22,"aMS",%progbits,1
 	.type	.L.map_aname.22, %object
 .L.map_aname.22:
-	.asciz	"Xamarin.Jetbrains.Annotations"
+	.asciz	"Xamarin.AndroidX.DrawerLayout"
 	.size	.L.map_aname.22, 30
 
 	.section	.rodata.map_aname.23,"aMS",%progbits,1
 	.type	.L.map_aname.23, %object
 .L.map_aname.23:
-	.asciz	"Xamarin.AndroidX.DrawerLayout"
+	.asciz	"Xamarin.AndroidX.RecyclerView"
 	.size	.L.map_aname.23, 30
 
 	.section	.rodata.map_aname.24,"aMS",%progbits,1
 	.type	.L.map_aname.24, %object
 .L.map_aname.24:
-	.asciz	"Xamarin.AndroidX.RecyclerView"
-	.size	.L.map_aname.24, 30
+	.asciz	"Xamarin.CommunityToolkit"
+	.size	.L.map_aname.24, 25
 
 	.section	.rodata.map_aname.25,"aMS",%progbits,1
 	.type	.L.map_aname.25, %object
 .L.map_aname.25:
-	.asciz	"Xamarin.CommunityToolkit"
-	.size	.L.map_aname.25, 25
+	.asciz	"Xamarin.Essentials"
+	.size	.L.map_aname.25, 19
 
 	.section	.rodata.map_aname.26,"aMS",%progbits,1
 	.type	.L.map_aname.26, %object
 .L.map_aname.26:
-	.asciz	"Xamarin.Essentials"
-	.size	.L.map_aname.26, 19
+	.asciz	"Xamarin.AndroidX.AppCompat"
+	.size	.L.map_aname.26, 27
 
 	.section	.rodata.map_aname.27,"aMS",%progbits,1
 	.type	.L.map_aname.27, %object
 .L.map_aname.27:
-	.asciz	"Xamarin.AndroidX.AppCompat"
-	.size	.L.map_aname.27, 27
+	.asciz	"people_errandd.Android"
+	.size	.L.map_aname.27, 23
 
 	.section	.rodata.map_aname.28,"aMS",%progbits,1
 	.type	.L.map_aname.28, %object

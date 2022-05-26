@@ -601,7 +601,7 @@
 
 	/* 66: people_errandd.dll */
 	/* uncompressed_file_size */
-	.long	351232
+	.long	353280
 	/* loaded */
 	.byte	0
 	/* data */

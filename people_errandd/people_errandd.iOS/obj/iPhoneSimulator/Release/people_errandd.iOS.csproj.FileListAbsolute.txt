@@ -73,3 +73,12 @@ D:\Xy\punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhoneSimulator\
 D:\Xy\punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhoneSimulator\Release\people_errandd.iOS.csproj.CoreCompileInputs.cache
 D:\Xy\punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhoneSimulator\Release\people_errandd.iOS.csproj.CopyComplete
 D:\Xy\punch\people_errand\people_errandd\people_errandd.iOS\obj\iPhoneSimulator\Release\people_errandd.iOS.exe
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.iOS\obj\iPhoneSimulator\Release\actool\_PartialAppManifest.items
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.iOS\obj\iPhoneSimulator\Release\actool\_BundleResourceWithLogicalName.items
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.iOS\obj\iPhoneSimulator\Release\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.iOS\obj\iPhoneSimulator\Release\coremlc\_PartialAppManifest.items
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.iOS\obj\iPhoneSimulator\Release\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.iOS\obj\iPhoneSimulator\Release\optimized\
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.iOS\obj\iPhoneSimulator\Release\people_errandd.iOS.csproj.AssemblyReference.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.iOS\obj\iPhoneSimulator\Release\people_errandd.iOS.csproj.CoreCompileInputs.cache
+C:\Users\lmh_flower\source\repos\People_errand\people_errandd\people_errandd.iOS\obj\iPhoneSimulator\Release\people_errandd.iOS.exe

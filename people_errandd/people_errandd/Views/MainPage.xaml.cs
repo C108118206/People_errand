@@ -18,6 +18,7 @@ namespace people_errandd.Views
 {
     public partial class MainPage : TabbedPage
     {
+
         private readonly Work Work = new Work();
         bool allowTap = true;
         private readonly geoLocation geoLocation = new geoLocation();
@@ -26,6 +27,8 @@ namespace people_errandd.Views
         {
             Application.Current.UserAppTheme = OSAppTheme.Light;
             InitializeComponent();
+            var clr = Color.FromHex("#FFFFFF"); 
+            this.BarBackgroundColor = clr;
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
@@ -112,6 +115,7 @@ namespace people_errandd.Views
                 
                 Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
+                    workOn.BackgroundColor = Color.White;
                     allowTap = true;
                     return false;
                 });
@@ -173,6 +177,7 @@ namespace people_errandd.Views
             {
                 Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
+                    workOff.BackgroundColor = Color.White;
                     allowTap = true;
                     return false;
                 });
@@ -242,6 +247,7 @@ namespace people_errandd.Views
             {
                 Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
+                    workOff.BackgroundColor = Color.White;
                     allowTap = true;
                     return false;
                 });
@@ -281,6 +287,7 @@ namespace people_errandd.Views
             {
                 Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                 {
+                    
                     allowTap = true;
                     return false;
                 });
@@ -320,11 +327,21 @@ namespace people_errandd.Views
         void OnGoToWorkButtonPressed(object sender, EventArgs args)
         {
             workOn.BackgroundColor = Color.FromHex("#E0E0E0");
-           
+            Device.StartTimer(TimeSpan.FromMilliseconds(10), () =>
+            {
+                workOn.BackgroundColor = Color.White;
+                return true;
+            });
+
         }
         void OnOffWorkButtonPressed(object sender, EventArgs args)
         {
             workOff.BackgroundColor = Color.FromHex("#E0E0E0");
+            Device.StartTimer(TimeSpan.FromMilliseconds(10), () =>
+            {
+                workOff.BackgroundColor = Color.White;
+                return true;
+            });
 
         }
         void OnGoOutButtonPressed(object sender, EventArgs args)
